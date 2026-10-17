@@ -1,0 +1,13 @@
+{
+  "venvPath": ".",
+  "venv": ".venv",
+  "include": [
+    "*.py"
+  ],
+  "exclude": [
+    "**/__pycache__",
+    ".cache",
+    ".langgraph_api",
+    ".venv"
+  ]
+}

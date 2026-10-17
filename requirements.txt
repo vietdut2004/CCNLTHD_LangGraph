@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+python-dotenv
+langchain
+langchain-community
+langchain-core
+langchain-groq
+langchain-huggingface
+langchain-tavily
+langserve
+langgraph
+langgraph-cli[inmem]==0.4.33
+langsmith
+faiss-cpu
+pypdf
+sentence-transformers
