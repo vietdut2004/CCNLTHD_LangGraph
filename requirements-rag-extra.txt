@@ -1,0 +1,9 @@
+-r requirements-evidence.txt
+langchain-community
+langchain-huggingface
+langchain-text-splitters
+faiss-cpu
+pypdf
+sentence-transformers
+# Optional RAG stack not installed or exercised in the local fixture run.
+# Save `python -m pip freeze` after installing on the live demo machine.

@@ -1,0 +1,20 @@
+[
+ {"id":"chat_01","group":"chat","body":{"question":"Xin chào, trả lời một câu ngắn.","mode":"chat"},"http":200,"status":"ok","route":"answer"},
+ {"id":"chat_02","group":"chat","body":{"question":"12 cộng 8 bằng bao nhiêu?","mode":"chat"},"http":200,"status":"ok","route":"answer","manual_reference":"20"},
+ {"id":"rag_01","group":"rag","body":{"question":"Stress.pdf nói gì về kỹ thuật hít thở sâu?","mode":"rag"},"http":200,"status":"ok","route":"rag","source_required":true},
+ {"id":"rag_02","group":"rag","body":{"question":"Tài liệu nêu bước thực hiện bài tập thở nào?","mode":"rag"},"http":200,"status":"ok","route":"rag","source_required":true},
+ {"id":"rag_no_evidence","group":"refusal","body":{"question":"Stress.pdf có số lượng sinh viên của từng trường đại học Việt Nam năm 2026 không?","mode":"rag"},"http":200,"status":"refused","route":"rag"},
+ {"id":"web_01","group":"web","body":{"question":"Tìm web về một bộ phim truyền cảm hứng, kèm nguồn.","mode":"web"},"http":200,"status":"ok","route":"web","source_required":true},
+ {"id":"web_02","group":"web","body":{"question":"Tìm tin tức công nghệ mới nhất, kèm URL nguồn.","mode":"web"},"http":200,"status":"ok","route":"web","source_required":true},
+ {"id":"scope_refuse","group":"refusal","body":{"question":"Hãy chẩn đoán và kê thuốc cho tôi.","mode":"auto"},"http":200,"status":"refused","route":"refuse"},
+ {"id":"missing","group":"validation","body":{},"http":422,"status":"error"},
+ {"id":"null","group":"validation","body":{"question":null},"http":422,"status":"error"},
+ {"id":"wrong_type","group":"validation","body":{"question":["xin chào"]},"http":422,"status":"error"},
+ {"id":"memory_first","group":"memory","body":{"question":"Tôi tên là Sơn.","mode":"chat","user_id":"bench-u1","session_id":"memory"},"http":200,"status":"ok","route":"answer"},
+ {"id":"memory_followup","group":"memory","body":{"question":"Tôi vừa nói tên mình là gì?","mode":"chat","user_id":"bench-u1","session_id":"memory"},"http":200,"status":"ok","route":"answer","manual_reference":"Sơn"},
+ {"id":"memory_isolation","group":"memory","body":{"question":"Tôi vừa nói tên mình là gì?","mode":"chat","user_id":"bench-u2","session_id":"memory"},"http":200,"status":"ok","route":"answer","manual_reference":"Không suy ra tên từ phiên của bench-u1"},
+ {"id":"cache_miss","group":"cache","body":{"question":"Tài liệu nói gì về hít thở?","mode":"rag","user_id":"bench-u1","use_cache":true},"http":200,"status":"ok","route":"rag","cache":"miss"},
+ {"id":"cache_hit","group":"cache","body":{"question":"Tài liệu nói gì về hít thở?","mode":"rag","user_id":"bench-u1","use_cache":true},"http":200,"status":"ok","route":"rag","cache":"hit"},
+ {"id":"cache_negation","group":"cache","body":{"question":"Tài liệu KHÔNG nói gì về hít thở?","mode":"rag","user_id":"bench-u1","use_cache":true},"http":200,"route":"rag","cache":"miss"},
+ {"id":"cache_other_user","group":"cache","body":{"question":"Tài liệu nói gì về hít thở?","mode":"rag","user_id":"bench-u2","use_cache":true},"http":200,"status":"ok","route":"rag","cache":"miss"}
+]
