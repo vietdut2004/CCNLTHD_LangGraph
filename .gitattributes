@@ -1,0 +1,14 @@
+# Preserve measured bytes on Windows and Linux.
+agent.py -text
+main.py -text
+Rag_tool.py -text
+searchweb_tool.py -text
+telemetry.py -text
+response_cache.py -text
+math_graph.py -text
+retrieval.py -text
+runtime_policy.py -text
+Stress.pdf -text
+handover/** -text
+benchmarks/rag_check_cases.json -text
+benchmarks/week8/*.json -text
