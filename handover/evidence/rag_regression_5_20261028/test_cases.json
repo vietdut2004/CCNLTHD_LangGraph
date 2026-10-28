@@ -1,0 +1,67 @@
+[
+  {
+    "id": "rag_03",
+    "group": "old_8",
+    "question": "Theo Stress.pdf, bài tập thở bụng được lặp lại bao nhiêu lần?",
+    "reference": "Từ 3 đến 10 lần.",
+    "reference_pages": [
+      2
+    ],
+    "required_spans": [
+      "từ 3 đến 10 lần"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "rag_05",
+    "group": "old_8",
+    "question": "Theo Stress.pdf, khi mới làm quen bài tập thở cuộn nên chọn tư thế nào?",
+    "reference": "Nằm ngửa, co đầu gối.",
+    "reference_pages": [
+      3
+    ],
+    "required_spans": [
+      "nên nằm ngửa, co đầu gối"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "rag_06",
+    "group": "old_8",
+    "question": "Theo Stress.pdf, thời lượng thực hành hít vào và thở ra ở bài tập thở cuộn là mấy phút?",
+    "reference": "3 đến 5 phút.",
+    "reference_pages": [
+      4
+    ],
+    "required_spans": [
+      "trong 3 đến 5 phút"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "rag_07",
+    "group": "old_8",
+    "question": "Theo Stress.pdf, trong bài thở buổi sáng khi trở lại tư thế đứng cần nâng bộ phận nào lên sau cùng?",
+    "reference": "Nâng đầu lên sau cùng.",
+    "reference_pages": [
+      4
+    ],
+    "required_spans": [
+      "nâng đầu lên sau cùng"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "rag_08",
+    "group": "old_8",
+    "question": "Theo Stress.pdf, bài tập tập trung vào hơi thở nên tiếp tục trong bao lâu?",
+    "reference": "10 đến 20 phút.",
+    "reference_pages": [
+      5
+    ],
+    "required_spans": [
+      "Tiếp tục trong 10 đến 20 phút"
+    ],
+    "answerable": true
+  }
+]

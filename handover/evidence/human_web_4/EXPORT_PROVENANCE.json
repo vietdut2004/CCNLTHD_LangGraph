@@ -1,0 +1,30 @@
+{
+  "exported_at": "2026-10-28T14:26:52.797166+00:00",
+  "input_archive": "Viec3_WEB_nhom15_20261028 (1).zip",
+  "input_archive_sha256": "e44cef3bcc4dd3747707c9e7ec16b4c86573cd99506ad41d6b4b411f074bf68b",
+  "input_manifest_verified_entries": 29,
+  "runtime_unchanged": true,
+  "provider_calls_during_export": 0,
+  "raw_run_files_sha256": {
+    "ket_qua_web_viec3_lan1/citation_guard_diagnostics.json": "a7affa257a5f856b320eed595c3c001f06cb5a184aa4d664527fcb58ad776fcf",
+    "ket_qua_web_viec3_lan1/credential_audit_child.json": "045d5a5d5f8ea60ac834695c71fbea1c0b14b262d3625481e2ff838551cb2b49",
+    "ket_qua_web_viec3_lan1/credential_audit_parent.json": "bdb747eddff21c24ca8be10b19ffd5b4afd405a7a604a41313b36dd56b1a730f",
+    "ket_qua_web_viec3_lan1/environment.json": "85238257d53eff6527309a7080594c8d4869010e0aec1540d27e83ad8d16cdd4",
+    "ket_qua_web_viec3_lan1/health.json": "4c0771a2accdfbe7ec1da4e0921acc4649c6d8b48e363d5fdc99e919f1011aea",
+    "ket_qua_web_viec3_lan1/identity.json": "f05e677a4688ea5570f1468fa7b538a81456b0399221b672d8e3964538159b2b",
+    "ket_qua_web_viec3_lan1/model_outputs.jsonl": "4fab9c239ebc64135e32aa4f0f582697bd32642b70851b0a014888cb5c8f01d4",
+    "ket_qua_web_viec3_lan1/openapi.json": "a51a2a519ef9f32b6262b307bfd3f1edd35c442cc5f0be5221ebf737c9bf0ef2",
+    "ket_qua_web_viec3_lan1/pre_run_identity.json": "f05e677a4688ea5570f1468fa7b538a81456b0399221b672d8e3964538159b2b",
+    "ket_qua_web_viec3_lan1/process.json": "6adc1a3a06ae0321dfb2ea19453efca592d2c91d3d43c516c51f784f3050cdc3",
+    "ket_qua_web_viec3_lan1/results.csv": "bdfccecd61ea4651de430d3fbb5e4227128c0fa1ec3b0499697ecd3c57ee4433",
+    "ket_qua_web_viec3_lan1/results.json": "a6ccc16edc58dc32c05ed134e8228e740fb194af19961794f9bc51f3c56ccc48",
+    "ket_qua_web_viec3_lan1/results.jsonl": "78e4de1e38c5bfa25b634b24ea2f156eeb3d7ac57a61790741f4f52bb704c3e6",
+    "ket_qua_web_viec3_lan1/server.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ket_qua_web_viec3_lan1/server_traces.jsonl": "9659017ce640740cbab32e7767d4eed3e451635cf5e784a1d45dd179513759dc",
+    "ket_qua_web_viec3_lan1/summary.json": "b911cec866936d657bcb7e87caeeed9dd3688c6788938a8e894e077f50e15930",
+    "ket_qua_web_viec3_lan1/test_cases.json": "eff7cc4d47d17912fadc21b2542364387331cd7617bf93e17e74e94fdac8d045",
+    "ket_qua_web_viec3_lan1/unexecuted_cases.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "ket_qua_web_viec3_lan1/url_context_timestamps.csv": "86c942b2f6f527380bcf019a09fa7590711fdbb2522b7f8687f0668d3429ca28",
+    "ket_qua_web_viec3_lan1/web_contexts.jsonl": "86799bcb650a1f5310445c32f6fd7081e4eb1d40ea825ef98255f81f6a42fb5d"
+  }
+}

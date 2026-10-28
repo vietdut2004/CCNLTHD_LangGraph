@@ -1,0 +1,122 @@
+[
+  {
+    "id": "rag_01",
+    "group": "rag",
+    "body": {
+      "question": "Theo Stress.pdf, hít thở sâu tác động thế nào đến não bộ và trạng thái cơ thể?",
+      "mode": "rag"
+    },
+    "expected_status": "ok",
+    "expected_http": 200,
+    "reference": "Não nhận thông điệp bình tĩnh/thư giãn và gửi đến cơ thể; các biểu hiện căng thẳng giảm.",
+    "reference_pages": [
+      1
+    ],
+    "expected_cache": null
+  },
+  {
+    "id": "rag_02",
+    "group": "rag",
+    "body": {
+      "question": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?",
+      "mode": "rag"
+    },
+    "expected_status": "ok",
+    "expected_http": 200,
+    "reference": "Một tay ở bụng ngay dưới xương sườn, tay kia trên ngực.",
+    "reference_pages": [
+      2
+    ],
+    "expected_cache": null
+  },
+  {
+    "id": "rag_03",
+    "group": "rag",
+    "body": {
+      "question": "Theo Stress.pdf, bài tập thở bụng được lặp lại bao nhiêu lần?",
+      "mode": "rag"
+    },
+    "expected_status": "ok",
+    "expected_http": 200,
+    "reference": "Từ 3 đến 10 lần.",
+    "reference_pages": [
+      2
+    ],
+    "expected_cache": null
+  },
+  {
+    "id": "rag_04",
+    "group": "rag",
+    "body": {
+      "question": "Theo Stress.pdf, trong kỹ thuật 4-7-8 phải đếm đến mấy khi hít vào, nín thở và thở ra?",
+      "mode": "rag"
+    },
+    "expected_status": "ok",
+    "expected_http": 200,
+    "reference": "Hít vào đếm đến 4, nín thở đếm đến 7, thở ra đếm đến 8.",
+    "reference_pages": [
+      3
+    ],
+    "expected_cache": null
+  },
+  {
+    "id": "rag_05",
+    "group": "rag",
+    "body": {
+      "question": "Theo Stress.pdf, khi mới làm quen bài tập thở cuộn nên chọn tư thế nào?",
+      "mode": "rag"
+    },
+    "expected_status": "ok",
+    "expected_http": 200,
+    "reference": "Nằm ngửa, co đầu gối.",
+    "reference_pages": [
+      3
+    ],
+    "expected_cache": null
+  },
+  {
+    "id": "rag_06",
+    "group": "rag",
+    "body": {
+      "question": "Theo Stress.pdf, thời lượng thực hành hít vào và thở ra ở bài tập thở cuộn là mấy phút?",
+      "mode": "rag"
+    },
+    "expected_status": "ok",
+    "expected_http": 200,
+    "reference": "3 đến 5 phút.",
+    "reference_pages": [
+      4
+    ],
+    "expected_cache": null
+  },
+  {
+    "id": "rag_07",
+    "group": "rag",
+    "body": {
+      "question": "Theo Stress.pdf, trong bài thở buổi sáng khi trở lại tư thế đứng cần nâng bộ phận nào lên sau cùng?",
+      "mode": "rag"
+    },
+    "expected_status": "ok",
+    "expected_http": 200,
+    "reference": "Nâng đầu lên sau cùng.",
+    "reference_pages": [
+      4
+    ],
+    "expected_cache": null
+  },
+  {
+    "id": "rag_08",
+    "group": "rag",
+    "body": {
+      "question": "Theo Stress.pdf, bài tập tập trung vào hơi thở nên tiếp tục trong bao lâu?",
+      "mode": "rag"
+    },
+    "expected_status": "ok",
+    "expected_http": 200,
+    "reference": "10 đến 20 phút.",
+    "reference_pages": [
+      5
+    ],
+    "expected_cache": null
+  }
+]

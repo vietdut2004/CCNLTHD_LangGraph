@@ -1,0 +1,91 @@
+{
+  "cases": [
+    {
+      "case_id": "web_01",
+      "trace_id": "495c9e00ed3d444894901e0d25796e12",
+      "outcome": "correct_with_source",
+      "notes": "Trả đúng /docs và /redoc, trích dẫn khớp nguồn chính thức FastAPI.",
+      "model_draft_citation_checks": [
+        {
+          "source_id": "web-1",
+          "matches_retrieved_text": true
+        }
+      ],
+      "reviewer": "Codex (AI source audit)",
+      "human_reviewed": false
+    },
+    {
+      "case_id": "web_02",
+      "trace_id": "a9f3221de07f4b948bf29e3ef275b398",
+      "outcome": "refused_on_citation_check",
+      "notes": "Tavily có trả nguồn LangChain chính thức, model sinh nội dung nhưng ít nhất một quote không khớp nguyên văn đoạn truy xuất; API từ chối. Không coi bản nháp model là câu trả lời cuối.",
+      "model_draft_citation_checks": [
+        {
+          "source_id": "web-3",
+          "matches_retrieved_text": true
+        },
+        {
+          "source_id": "web-3",
+          "matches_retrieved_text": false
+        },
+        {
+          "source_id": "web-3",
+          "matches_retrieved_text": false
+        },
+        {
+          "source_id": "web-3",
+          "matches_retrieved_text": true
+        },
+        {
+          "source_id": "web-1",
+          "matches_retrieved_text": true
+        },
+        {
+          "source_id": "web-1",
+          "matches_retrieved_text": true
+        }
+      ],
+      "reviewer": "Codex (AI source audit)",
+      "human_reviewed": false
+    },
+    {
+      "case_id": "web_03",
+      "trace_id": "7711b829434342758ec908f45af415e3",
+      "outcome": "correct_with_source",
+      "notes": "Trả đúng checkpoint của InMemorySaver ở RAM và mất khi khởi động lại; quote khớp nguồn LangChain chính thức.",
+      "model_draft_citation_checks": [
+        {
+          "source_id": "web-2",
+          "matches_retrieved_text": true
+        }
+      ],
+      "reviewer": "Codex (AI source audit)",
+      "human_reviewed": false
+    },
+    {
+      "case_id": "web_04",
+      "trace_id": "91383a42dc404d0a9e4132b74f94c349",
+      "outcome": "refused_on_citation_check",
+      "notes": "Tavily có trả reference add_messages chính thức, model sinh nội dung nhưng quote không khớp nguyên văn đoạn truy xuất; API từ chối. Không coi bản nháp model là câu trả lời cuối.",
+      "model_draft_citation_checks": [
+        {
+          "source_id": "web-1",
+          "matches_retrieved_text": true
+        },
+        {
+          "source_id": "web-1",
+          "matches_retrieved_text": false
+        },
+        {
+          "source_id": "web-1",
+          "matches_retrieved_text": false
+        }
+      ],
+      "reviewer": "Codex (AI source audit)",
+      "human_reviewed": false
+    }
+  ],
+  "correct_final_answers": 2,
+  "refused": 2,
+  "human_reviewed": false
+}

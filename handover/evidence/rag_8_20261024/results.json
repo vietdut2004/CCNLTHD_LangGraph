@@ -1,0 +1,3237 @@
+[
+  {
+    "case_id": "rag_01",
+    "group": "rag",
+    "request": {
+      "question": "Theo Stress.pdf, hít thở sâu tác động thế nào đến não bộ và trạng thái cơ thể?",
+      "mode": "rag"
+    },
+    "reference": "Não nhận thông điệp bình tĩnh/thư giãn và gửi đến cơ thể; các biểu hiện căng thẳng giảm.",
+    "reference_pages": [
+      1
+    ],
+    "timestamp": "2026-10-23T17:19:32.103081+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "trace_id": "82f253b7f4c3435ba6ec50ea0adca322",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 749,
+          "output_tokens": 801,
+          "total_tokens": 1550
+        },
+        "total_tokens": 1550
+      }
+    },
+    "latency_ms": 2747.856,
+    "trace": {
+      "trace_id": "82f253b7f4c3435ba6ec50ea0adca322",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:19:32.106778+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "INSUFFICIENT_EVIDENCE",
+      "route": "rag",
+      "server_latency_ms": 2738.96,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:19:32.136156+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:32.147078+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:32.147135+00:00",
+          "kind": "tool_start",
+          "run_id": "95776066cd114736b1eabd6cb19e80b2",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, hít thở sâu tác động thế nào đến não bộ và trạng thái cơ thể?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:19:32.912574+00:00",
+          "kind": "tool_end",
+          "run_id": "95776066cd114736b1eabd6cb19e80b2",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 6,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 69.35862731933594,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.2433853149414,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:19:32.916402+00:00",
+          "kind": "model_start",
+          "run_id": "3a8fb915123b4e84b9aaf6d84ceae413",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:34.838709+00:00",
+          "kind": "model_end",
+          "run_id": "3a8fb915123b4e84b9aaf6d84ceae413",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 749,
+            "output_tokens": 801,
+            "total_tokens": 1550,
+            "output_token_details": {
+              "reasoning": 622
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:19:34.840492+00:00",
+          "kind": "evidence_check",
+          "status": "insufficient",
+          "source_ids": []
+        },
+        {
+          "timestamp": "2026-10-23T17:19:34.843870+00:00",
+          "kind": "refuse",
+          "reason": "scope_or_insufficient_evidence"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:34.844997+00:00",
+          "kind": "final",
+          "status": "refused",
+          "code": "INSUFFICIENT_EVIDENCE",
+          "route": "rag",
+          "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+          "sources": []
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "3a8fb915123b4e84b9aaf6d84ceae413",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 749,
+            "output_tokens": 801,
+            "total_tokens": 1550,
+            "output_token_details": {
+              "reasoning": 622
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 749,
+          "output_tokens": 801,
+          "total_tokens": 1550
+        },
+        "total_tokens": 1550
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [
+      "status_mismatch",
+      "missing_sources"
+    ],
+    "observable_case_pass": false
+  },
+  {
+    "case_id": "rag_02",
+    "group": "rag",
+    "request": {
+      "question": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?",
+      "mode": "rag"
+    },
+    "reference": "Một tay ở bụng ngay dưới xương sườn, tay kia trên ngực.",
+    "reference_pages": [
+      2
+    ],
+    "timestamp": "2026-10-23T17:19:40.883232+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "7896478e15584c8091444e3273ad2efe",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "Stress.pdf",
+          "page": 3,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 70.04348754882812,
+          "metric": "squared_l2",
+          "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+        },
+        {
+          "id": "pdf-2",
+          "title": "Stress.pdf",
+          "page": 5,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 71.13784790039062,
+          "metric": "squared_l2",
+          "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 830,
+          "output_tokens": 738,
+          "total_tokens": 1568
+        },
+        "total_tokens": 1568
+      }
+    },
+    "latency_ms": 2045.743,
+    "trace": {
+      "trace_id": "7896478e15584c8091444e3273ad2efe",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:19:40.892723+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 2031.734,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:19:40.925804+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:40.933595+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:40.933667+00:00",
+          "kind": "tool_start",
+          "run_id": "c702fa7d685647f4bc4c16e9102eea76",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:19:41.289599+00:00",
+          "kind": "tool_end",
+          "run_id": "c702fa7d685647f4bc4c16e9102eea76",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 70.04348754882812,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.13784790039062,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:19:41.292584+00:00",
+          "kind": "model_start",
+          "run_id": "fc7c63516a77407eb99430602fb81ba8",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:42.918440+00:00",
+          "kind": "model_end",
+          "run_id": "fc7c63516a77407eb99430602fb81ba8",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 830,
+            "output_tokens": 738,
+            "total_tokens": 1568,
+            "output_token_details": {
+              "reasoning": 656
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:19:42.921174+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1",
+            "pdf-2"
+          ]
+        },
+        {
+          "timestamp": "2026-10-23T17:19:42.923490+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 70.04348754882812,
+              "metric": "squared_l2",
+              "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.13784790039062,
+              "metric": "squared_l2",
+              "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực"
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "fc7c63516a77407eb99430602fb81ba8",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 830,
+            "output_tokens": 738,
+            "total_tokens": 1568,
+            "output_token_details": {
+              "reasoning": 656
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 830,
+          "output_tokens": 738,
+          "total_tokens": 1568
+        },
+        "total_tokens": 1568
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "rag_03",
+    "group": "rag",
+    "request": {
+      "question": "Theo Stress.pdf, bài tập thở bụng được lặp lại bao nhiêu lần?",
+      "mode": "rag"
+    },
+    "reference": "Từ 3 đến 10 lần.",
+    "reference_pages": [
+      2
+    ],
+    "timestamp": "2026-10-23T17:19:48.948562+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "trace_id": "fefd05350d774d68b07785775144963f",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 772,
+          "output_tokens": 219,
+          "total_tokens": 991
+        },
+        "total_tokens": 991
+      }
+    },
+    "latency_ms": 1612.456,
+    "trace": {
+      "trace_id": "fefd05350d774d68b07785775144963f",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:19:48.952566+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "INSUFFICIENT_EVIDENCE",
+      "route": "rag",
+      "server_latency_ms": 1603.931,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:19:48.979582+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:48.985397+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:48.985457+00:00",
+          "kind": "tool_start",
+          "run_id": "35d7769c09494bb9b443b6163445c2f2",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, bài tập thở bụng được lặp lại bao nhiêu lần?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:19:49.313383+00:00",
+          "kind": "tool_end",
+          "run_id": "35d7769c09494bb9b443b6163445c2f2",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 64.0833511352539,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 2,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 64.2816162109375,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:19:49.315888+00:00",
+          "kind": "model_start",
+          "run_id": "1fd7277014cc4d008b5dd5db5a07d109",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:50.550454+00:00",
+          "kind": "model_end",
+          "run_id": "1fd7277014cc4d008b5dd5db5a07d109",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 772,
+            "output_tokens": 219,
+            "total_tokens": 991,
+            "output_token_details": {
+              "reasoning": 188
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:19:50.551813+00:00",
+          "kind": "evidence_check",
+          "status": "insufficient",
+          "source_ids": []
+        },
+        {
+          "timestamp": "2026-10-23T17:19:50.554965+00:00",
+          "kind": "refuse",
+          "reason": "scope_or_insufficient_evidence"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:50.556096+00:00",
+          "kind": "final",
+          "status": "refused",
+          "code": "INSUFFICIENT_EVIDENCE",
+          "route": "rag",
+          "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+          "sources": []
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "1fd7277014cc4d008b5dd5db5a07d109",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 772,
+            "output_tokens": 219,
+            "total_tokens": 991,
+            "output_token_details": {
+              "reasoning": 188
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 772,
+          "output_tokens": 219,
+          "total_tokens": 991
+        },
+        "total_tokens": 991
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [
+      "status_mismatch",
+      "missing_sources"
+    ],
+    "observable_case_pass": false
+  },
+  {
+    "case_id": "rag_04",
+    "group": "rag",
+    "request": {
+      "question": "Theo Stress.pdf, trong kỹ thuật 4-7-8 phải đếm đến mấy khi hít vào, nín thở và thở ra?",
+      "mode": "rag"
+    },
+    "reference": "Hít vào đếm đến 4, nín thở đếm đến 7, thở ra đếm đến 8.",
+    "reference_pages": [
+      3
+    ],
+    "timestamp": "2026-10-23T17:19:56.581221+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Trong kỹ thuật 4‑7‑8, bạn hít sâu và chậm từ bụng và đếm thầm đến **4** khi hít vào; **nín thở** và đếm thầm từ **1 đến 7**; rồi **thở ra hoàn toàn** khi đếm thầm từ **1 đến 8**.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "0e46ebf19b554b5380013fe6db13daa3",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "Stress.pdf",
+          "page": 3,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 53.86960220336914,
+          "metric": "squared_l2",
+          "quote": "Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7."
+        },
+        {
+          "id": "pdf-2",
+          "title": "Stress.pdf",
+          "page": 3,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 58.80746078491211,
+          "metric": "squared_l2",
+          "quote": "Thở ra hoàn toàn khi đếm thầm từ 1 đến 8."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 843,
+          "output_tokens": 678,
+          "total_tokens": 1521
+        },
+        "total_tokens": 1521
+      }
+    },
+    "latency_ms": 2299.516,
+    "trace": {
+      "trace_id": "0e46ebf19b554b5380013fe6db13daa3",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:19:56.586869+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 2290.305,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:19:56.612081+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:56.616465+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:56.616529+00:00",
+          "kind": "tool_start",
+          "run_id": "a02a508b22724e00b68a2e0f4935f064",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, trong kỹ thuật 4-7-8 phải đếm đến mấy khi hít vào, nín thở và thở ra?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:19:56.956562+00:00",
+          "kind": "tool_end",
+          "run_id": "a02a508b22724e00b68a2e0f4935f064",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 53.86960220336914,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 58.80746078491211,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:19:56.958706+00:00",
+          "kind": "model_start",
+          "run_id": "32992bc27c0547ff855210772fc58320",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:19:58.871758+00:00",
+          "kind": "model_end",
+          "run_id": "32992bc27c0547ff855210772fc58320",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 843,
+            "output_tokens": 678,
+            "total_tokens": 1521,
+            "output_token_details": {
+              "reasoning": 510
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:19:58.874221+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1",
+            "pdf-2"
+          ]
+        },
+        {
+          "timestamp": "2026-10-23T17:19:58.876761+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Trong kỹ thuật 4‑7‑8, bạn hít sâu và chậm từ bụng và đếm thầm đến **4** khi hít vào; **nín thở** và đếm thầm từ **1 đến 7**; rồi **thở ra hoàn toàn** khi đếm thầm từ **1 đến 8**.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 53.86960220336914,
+              "metric": "squared_l2",
+              "quote": "Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7."
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 58.80746078491211,
+              "metric": "squared_l2",
+              "quote": "Thở ra hoàn toàn khi đếm thầm từ 1 đến 8."
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "32992bc27c0547ff855210772fc58320",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 843,
+            "output_tokens": 678,
+            "total_tokens": 1521,
+            "output_token_details": {
+              "reasoning": 510
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 843,
+          "output_tokens": 678,
+          "total_tokens": 1521
+        },
+        "total_tokens": 1521
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "rag_05",
+    "group": "rag",
+    "request": {
+      "question": "Theo Stress.pdf, khi mới làm quen bài tập thở cuộn nên chọn tư thế nào?",
+      "mode": "rag"
+    },
+    "reference": "Nằm ngửa, co đầu gối.",
+    "reference_pages": [
+      3
+    ],
+    "timestamp": "2026-10-23T17:20:04.900726+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "trace_id": "28e57a33975a4087b7bc7e564a9fdd4b",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 773,
+          "output_tokens": 572,
+          "total_tokens": 1345
+        },
+        "total_tokens": 1345
+      }
+    },
+    "latency_ms": 1963.917,
+    "trace": {
+      "trace_id": "28e57a33975a4087b7bc7e564a9fdd4b",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:20:04.904550+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "INSUFFICIENT_EVIDENCE",
+      "route": "rag",
+      "server_latency_ms": 1954.13,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:20:04.927876+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:04.931329+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:04.931376+00:00",
+          "kind": "tool_start",
+          "run_id": "fdb158bd964f475ba7664ee2556fcfa2",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, khi mới làm quen bài tập thở cuộn nên chọn tư thế nào?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:05.143247+00:00",
+          "kind": "tool_end",
+          "run_id": "fdb158bd964f475ba7664ee2556fcfa2",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 2,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 57.658199310302734,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 65.76036071777344,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:20:05.146074+00:00",
+          "kind": "model_start",
+          "run_id": "87117805a717457399ca947ee0f93a2e",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:06.852886+00:00",
+          "kind": "model_end",
+          "run_id": "87117805a717457399ca947ee0f93a2e",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 773,
+            "output_tokens": 572,
+            "total_tokens": 1345,
+            "output_token_details": {
+              "reasoning": 531
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:06.855149+00:00",
+          "kind": "evidence_check",
+          "status": "insufficient",
+          "source_ids": []
+        },
+        {
+          "timestamp": "2026-10-23T17:20:06.857505+00:00",
+          "kind": "refuse",
+          "reason": "scope_or_insufficient_evidence"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:06.858271+00:00",
+          "kind": "final",
+          "status": "refused",
+          "code": "INSUFFICIENT_EVIDENCE",
+          "route": "rag",
+          "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+          "sources": []
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "87117805a717457399ca947ee0f93a2e",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 773,
+            "output_tokens": 572,
+            "total_tokens": 1345,
+            "output_token_details": {
+              "reasoning": 531
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 773,
+          "output_tokens": 572,
+          "total_tokens": 1345
+        },
+        "total_tokens": 1345
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [
+      "status_mismatch",
+      "missing_sources"
+    ],
+    "observable_case_pass": false
+  },
+  {
+    "case_id": "rag_06",
+    "group": "rag",
+    "request": {
+      "question": "Theo Stress.pdf, thời lượng thực hành hít vào và thở ra ở bài tập thở cuộn là mấy phút?",
+      "mode": "rag"
+    },
+    "reference": "3 đến 5 phút.",
+    "reference_pages": [
+      4
+    ],
+    "timestamp": "2026-10-23T17:20:12.893549+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "trace_id": "81a2fa4f0683447b9b3305fffaa63cc7",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 729,
+          "output_tokens": 461,
+          "total_tokens": 1190
+        },
+        "total_tokens": 1190
+      }
+    },
+    "latency_ms": 2095.254,
+    "trace": {
+      "trace_id": "81a2fa4f0683447b9b3305fffaa63cc7",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:20:12.897339+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "INSUFFICIENT_EVIDENCE",
+      "route": "rag",
+      "server_latency_ms": 2087.837,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:20:12.924687+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:12.929124+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:12.929196+00:00",
+          "kind": "tool_start",
+          "run_id": "8f56f63860964c4f942102bec428df92",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, thời lượng thực hành hít vào và thở ra ở bài tập thở cuộn là mấy phút?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:13.140501+00:00",
+          "kind": "tool_end",
+          "run_id": "8f56f63860964c4f942102bec428df92",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 60.51897048950195,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 4,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 69.9127197265625,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:20:13.142403+00:00",
+          "kind": "model_start",
+          "run_id": "b4277ca6b2e94e3bb2be0629e6998749",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:14.979806+00:00",
+          "kind": "model_end",
+          "run_id": "b4277ca6b2e94e3bb2be0629e6998749",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 729,
+            "output_tokens": 461,
+            "total_tokens": 1190,
+            "output_token_details": {
+              "reasoning": 410
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:14.981176+00:00",
+          "kind": "evidence_check",
+          "status": "insufficient",
+          "source_ids": []
+        },
+        {
+          "timestamp": "2026-10-23T17:20:14.983518+00:00",
+          "kind": "refuse",
+          "reason": "scope_or_insufficient_evidence"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:14.984668+00:00",
+          "kind": "final",
+          "status": "refused",
+          "code": "INSUFFICIENT_EVIDENCE",
+          "route": "rag",
+          "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+          "sources": []
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "b4277ca6b2e94e3bb2be0629e6998749",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 729,
+            "output_tokens": 461,
+            "total_tokens": 1190,
+            "output_token_details": {
+              "reasoning": 410
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 729,
+          "output_tokens": 461,
+          "total_tokens": 1190
+        },
+        "total_tokens": 1190
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [
+      "status_mismatch",
+      "missing_sources"
+    ],
+    "observable_case_pass": false
+  },
+  {
+    "case_id": "rag_07",
+    "group": "rag",
+    "request": {
+      "question": "Theo Stress.pdf, trong bài thở buổi sáng khi trở lại tư thế đứng cần nâng bộ phận nào lên sau cùng?",
+      "mode": "rag"
+    },
+    "reference": "Nâng đầu lên sau cùng.",
+    "reference_pages": [
+      4
+    ],
+    "timestamp": "2026-10-23T17:20:21.014487+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "trace_id": "4a6b1449e5f84e33a61a07c3054ac2c2",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 709,
+          "output_tokens": 930,
+          "total_tokens": 1639
+        },
+        "total_tokens": 1639
+      }
+    },
+    "latency_ms": 2278.161,
+    "trace": {
+      "trace_id": "4a6b1449e5f84e33a61a07c3054ac2c2",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:20:21.018752+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "INSUFFICIENT_EVIDENCE",
+      "route": "rag",
+      "server_latency_ms": 2270.18,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:20:21.039424+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:21.043005+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:21.043060+00:00",
+          "kind": "tool_start",
+          "run_id": "da5fc6bf1f474066b79eb2bea55a0e55",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, trong bài thở buổi sáng khi trở lại tư thế đứng cần nâng bộ phận nào lên sau cùng?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:21.279026+00:00",
+          "kind": "tool_end",
+          "run_id": "da5fc6bf1f474066b79eb2bea55a0e55",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 4,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 77.27938842773438,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 4,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 85.01470947265625,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:20:21.281183+00:00",
+          "kind": "model_start",
+          "run_id": "c60604dfff7f4695bc3f32d3d6decc8f",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:23.283697+00:00",
+          "kind": "model_end",
+          "run_id": "c60604dfff7f4695bc3f32d3d6decc8f",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 709,
+            "output_tokens": 930,
+            "total_tokens": 1639,
+            "output_token_details": {
+              "reasoning": 899
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:23.285466+00:00",
+          "kind": "evidence_check",
+          "status": "insufficient",
+          "source_ids": []
+        },
+        {
+          "timestamp": "2026-10-23T17:20:23.287716+00:00",
+          "kind": "refuse",
+          "reason": "scope_or_insufficient_evidence"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:23.288597+00:00",
+          "kind": "final",
+          "status": "refused",
+          "code": "INSUFFICIENT_EVIDENCE",
+          "route": "rag",
+          "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+          "sources": []
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "c60604dfff7f4695bc3f32d3d6decc8f",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 709,
+            "output_tokens": 930,
+            "total_tokens": 1639,
+            "output_token_details": {
+              "reasoning": 899
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 709,
+          "output_tokens": 930,
+          "total_tokens": 1639
+        },
+        "total_tokens": 1639
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [
+      "status_mismatch",
+      "missing_sources"
+    ],
+    "observable_case_pass": false
+  },
+  {
+    "case_id": "rag_08",
+    "group": "rag",
+    "request": {
+      "question": "Theo Stress.pdf, bài tập tập trung vào hơi thở nên tiếp tục trong bao lâu?",
+      "mode": "rag"
+    },
+    "reference": "10 đến 20 phút.",
+    "reference_pages": [
+      5
+    ],
+    "timestamp": "2026-10-23T17:20:29.310694+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Bài tập thở theo nhịp 4–7–8 yêu cầu hít sâu và chậm từ bụng, đếm thầm đến 4 khi hít vào, rồi nín thở và đếm thầm từ 1–7.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "4fbf4a7652074900b635e4881c3a8dcd",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-2",
+          "title": "Stress.pdf",
+          "page": 3,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 60.196022033691406,
+          "metric": "squared_l2",
+          "quote": "Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 772,
+          "output_tokens": 1274,
+          "total_tokens": 2046
+        },
+        "total_tokens": 2046
+      }
+    },
+    "latency_ms": 2859.43,
+    "trace": {
+      "trace_id": "4fbf4a7652074900b635e4881c3a8dcd",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:20:29.314404+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 2851.046,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:20:29.335240+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:29.340657+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:29.340697+00:00",
+          "kind": "tool_start",
+          "run_id": "d24b86f921924e87a9236ba589974d94",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, bài tập tập trung vào hơi thở nên tiếp tục trong bao lâu?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:29.479382+00:00",
+          "kind": "tool_end",
+          "run_id": "d24b86f921924e87a9236ba589974d94",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 2,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 59.96624755859375,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 60.196022033691406,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:20:29.481078+00:00",
+          "kind": "model_start",
+          "run_id": "7530b142d29748e0a6a60531a5b716c8",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:32.160847+00:00",
+          "kind": "model_end",
+          "run_id": "7530b142d29748e0a6a60531a5b716c8",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 772,
+            "output_tokens": 1274,
+            "total_tokens": 2046,
+            "output_token_details": {
+              "reasoning": 1151
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:32.162199+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-2"
+          ]
+        },
+        {
+          "timestamp": "2026-10-23T17:20:32.165045+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Bài tập thở theo nhịp 4–7–8 yêu cầu hít sâu và chậm từ bụng, đếm thầm đến 4 khi hít vào, rồi nín thở và đếm thầm từ 1–7.",
+          "sources": [
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 60.196022033691406,
+              "metric": "squared_l2",
+              "quote": "Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7."
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "7530b142d29748e0a6a60531a5b716c8",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 772,
+            "output_tokens": 1274,
+            "total_tokens": 2046,
+            "output_token_details": {
+              "reasoning": 1151
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 772,
+          "output_tokens": 1274,
+          "total_tokens": 2046
+        },
+        "total_tokens": 2046
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "rag_outside_01",
+    "group": "no_evidence",
+    "request": {
+      "question": "Theo Stress.pdf, dân số Việt Nam năm 2026 là bao nhiêu người?",
+      "mode": "rag"
+    },
+    "reference": "Tài liệu không cung cấp; cần từ chối thay vì tạo số liệu.",
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:20:38.193679+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "trace_id": "a772d303e29841009e6d53d4587323f1",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 758,
+          "output_tokens": 170,
+          "total_tokens": 928
+        },
+        "total_tokens": 928
+      }
+    },
+    "latency_ms": 2409.154,
+    "trace": {
+      "trace_id": "a772d303e29841009e6d53d4587323f1",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:20:38.196782+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "INSUFFICIENT_EVIDENCE",
+      "route": "rag",
+      "server_latency_ms": 2400.786,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:20:38.214006+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:38.216719+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:38.216772+00:00",
+          "kind": "tool_start",
+          "run_id": "df52f45693144e7da976a952282e731e",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, dân số Việt Nam năm 2026 là bao nhiêu người?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:38.403824+00:00",
+          "kind": "tool_end",
+          "run_id": "df52f45693144e7da976a952282e731e",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 2,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 142.87257385253906,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 4,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 145.76315307617188,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:20:38.406468+00:00",
+          "kind": "model_start",
+          "run_id": "e7b7133e0a2b4d589a60687b2c8643eb",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:40.593081+00:00",
+          "kind": "model_end",
+          "run_id": "e7b7133e0a2b4d589a60687b2c8643eb",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 758,
+            "output_tokens": 170,
+            "total_tokens": 928,
+            "output_token_details": {
+              "reasoning": 140
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:40.594360+00:00",
+          "kind": "evidence_check",
+          "status": "insufficient",
+          "source_ids": []
+        },
+        {
+          "timestamp": "2026-10-23T17:20:40.596649+00:00",
+          "kind": "refuse",
+          "reason": "scope_or_insufficient_evidence"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:40.597353+00:00",
+          "kind": "final",
+          "status": "refused",
+          "code": "INSUFFICIENT_EVIDENCE",
+          "route": "rag",
+          "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+          "sources": []
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "e7b7133e0a2b4d589a60687b2c8643eb",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 758,
+            "output_tokens": 170,
+            "total_tokens": 928,
+            "output_token_details": {
+              "reasoning": 140
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 758,
+          "output_tokens": 170,
+          "total_tokens": 928
+        },
+        "total_tokens": 928
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "rag_outside_02",
+    "group": "no_evidence",
+    "request": {
+      "question": "Theo Stress.pdf, học phí ngành công nghệ thông tin năm 2026 của Đại học Bách khoa Đà Nẵng là bao nhiêu?",
+      "mode": "rag"
+    },
+    "reference": "Tài liệu không cung cấp; cần từ chối thay vì tạo mức học phí.",
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:20:46.625248+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "trace_id": "3e302844e0b64b219db6a2a1bfabb82c",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 771,
+          "output_tokens": 199,
+          "total_tokens": 970
+        },
+        "total_tokens": 970
+      }
+    },
+    "latency_ms": 1378.867,
+    "trace": {
+      "trace_id": "3e302844e0b64b219db6a2a1bfabb82c",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:20:46.629044+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "INSUFFICIENT_EVIDENCE",
+      "route": "rag",
+      "server_latency_ms": 1370.606,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:20:46.650852+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:46.654835+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:46.654891+00:00",
+          "kind": "tool_start",
+          "run_id": "b1565badbdc3448d906934ef0844d076",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, học phí ngành công nghệ thông tin năm 2026 của Đại học Bách khoa Đà Nẵng là bao nhiêu?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:46.864194+00:00",
+          "kind": "tool_end",
+          "run_id": "b1565badbdc3448d906934ef0844d076",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 2,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 154.8216552734375,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 4,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 155.93978881835938,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:20:46.866392+00:00",
+          "kind": "model_start",
+          "run_id": "d9ae41ee59044b189ff518644b76052f",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:47.993188+00:00",
+          "kind": "model_end",
+          "run_id": "d9ae41ee59044b189ff518644b76052f",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 771,
+            "output_tokens": 199,
+            "total_tokens": 970,
+            "output_token_details": {
+              "reasoning": 168
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:47.994976+00:00",
+          "kind": "evidence_check",
+          "status": "insufficient",
+          "source_ids": []
+        },
+        {
+          "timestamp": "2026-10-23T17:20:47.997897+00:00",
+          "kind": "refuse",
+          "reason": "scope_or_insufficient_evidence"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:47.999142+00:00",
+          "kind": "final",
+          "status": "refused",
+          "code": "INSUFFICIENT_EVIDENCE",
+          "route": "rag",
+          "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+          "sources": []
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "d9ae41ee59044b189ff518644b76052f",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 771,
+            "output_tokens": 199,
+            "total_tokens": 970,
+            "output_token_details": {
+              "reasoning": 168
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 771,
+          "output_tokens": 199,
+          "total_tokens": 970
+        },
+        "total_tokens": 970
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "cache_miss",
+    "group": "cache",
+    "request": {
+      "question": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?",
+      "mode": "rag",
+      "user_id": "live-rag-u1",
+      "use_cache": true
+    },
+    "reference": "Kiểm tra sự kiện hit/miss, số model/tool call và phân tách user; không suy ra chất lượng từ cache event.",
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:20:54.024819+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "4cfac78e6b7b4c66aaef51ebcdfe1fa9",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "Stress.pdf",
+          "page": 3,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 70.04348754882812,
+          "metric": "squared_l2",
+          "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+        },
+        {
+          "id": "pdf-2",
+          "title": "Stress.pdf",
+          "page": 5,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 71.13784790039062,
+          "metric": "squared_l2",
+          "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 830,
+          "output_tokens": 731,
+          "total_tokens": 1561
+        },
+        "total_tokens": 1561
+      }
+    },
+    "latency_ms": 2162.275,
+    "trace": {
+      "trace_id": "4cfac78e6b7b4c66aaef51ebcdfe1fa9",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:20:54.029990+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 2152.57,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:20:54.053563+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:54.060431+00:00",
+          "kind": "cache",
+          "status": "miss",
+          "cache_type": "exact",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:54.060509+00:00",
+          "kind": "tool_start",
+          "run_id": "fcd9a2584f474d1086c621e0ec227594",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:54.303539+00:00",
+          "kind": "tool_end",
+          "run_id": "fcd9a2584f474d1086c621e0ec227594",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 70.04348754882812,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.13784790039062,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:20:54.306538+00:00",
+          "kind": "model_start",
+          "run_id": "b40ac61cd0f74c03af90727879dc937c",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:56.176598+00:00",
+          "kind": "model_end",
+          "run_id": "b40ac61cd0f74c03af90727879dc937c",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 830,
+            "output_tokens": 731,
+            "total_tokens": 1561,
+            "output_token_details": {
+              "reasoning": 649
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:56.179227+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1",
+            "pdf-2"
+          ]
+        },
+        {
+          "timestamp": "2026-10-23T17:20:56.181847+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 70.04348754882812,
+              "metric": "squared_l2",
+              "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.13784790039062,
+              "metric": "squared_l2",
+              "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực"
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "b40ac61cd0f74c03af90727879dc937c",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 830,
+            "output_tokens": 731,
+            "total_tokens": 1561,
+            "output_token_details": {
+              "reasoning": 649
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 830,
+          "output_tokens": 731,
+          "total_tokens": 1561
+        },
+        "total_tokens": 1561
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "cache_hit",
+    "group": "cache",
+    "request": {
+      "question": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?",
+      "mode": "rag",
+      "user_id": "live-rag-u1",
+      "use_cache": true
+    },
+    "reference": "Kiểm tra sự kiện hit/miss, số model/tool call và phân tách user; không suy ra chất lượng từ cache event.",
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:21:02.217222+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "1c06d358715941c0bc0389c805d662d5",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "Stress.pdf",
+          "page": 3,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 70.04348754882812,
+          "metric": "squared_l2",
+          "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+        },
+        {
+          "id": "pdf-2",
+          "title": "Stress.pdf",
+          "page": 5,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 71.13784790039062,
+          "metric": "squared_l2",
+          "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "latency_ms": 40.615,
+    "trace": {
+      "trace_id": "1c06d358715941c0bc0389c805d662d5",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:21:02.222752+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 30.027,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:21:02.244844+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:02.248480+00:00",
+          "kind": "cache",
+          "status": "hit",
+          "cache_type": "exact",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:02.250764+00:00",
+          "kind": "evidence_check",
+          "status": "cached_previously_validated"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:02.252447+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 70.04348754882812,
+              "metric": "squared_l2",
+              "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.13784790039062,
+              "metric": "squared_l2",
+              "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực"
+            }
+          ]
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "cache_negation",
+    "group": "cache",
+    "request": {
+      "question": "Theo Stress.pdf, có phải khi thở bụng KHÔNG đặt một tay trên ngực không?",
+      "mode": "rag",
+      "user_id": "live-rag-u1",
+      "use_cache": true
+    },
+    "reference": "Kiểm tra sự kiện hit/miss, số model/tool call và phân tách user; không suy ra chất lượng từ cache event.",
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:21:08.281608+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Không, khi thực hiện thở bụng, bạn đặt một tay lên bụng và tay kia đặt lên ngực.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "900962036f774a6b85ae88bfb4f58cd1",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "Stress.pdf",
+          "page": 3,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 88.73863220214844,
+          "metric": "squared_l2",
+          "quote": "Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng."
+        },
+        {
+          "id": "pdf-2",
+          "title": "Stress.pdf",
+          "page": 5,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 89.66227722167969,
+          "metric": "squared_l2",
+          "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 836,
+          "output_tokens": 356,
+          "total_tokens": 1192
+        },
+        "total_tokens": 1192
+      }
+    },
+    "latency_ms": 2854.742,
+    "trace": {
+      "trace_id": "900962036f774a6b85ae88bfb4f58cd1",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:21:08.285221+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 2845.825,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:21:08.309902+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:08.314518+00:00",
+          "kind": "cache",
+          "status": "miss",
+          "cache_type": "exact",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:08.314573+00:00",
+          "kind": "tool_start",
+          "run_id": "e405c8d09ca54eb9a2e582c99ccea239",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, có phải khi thở bụng KHÔNG đặt một tay trên ngực không?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:21:09.814628+00:00",
+          "kind": "tool_end",
+          "run_id": "e405c8d09ca54eb9a2e582c99ccea239",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 88.73863220214844,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 89.66227722167969,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:21:09.819383+00:00",
+          "kind": "model_start",
+          "run_id": "8e77852a6efb4d16b9fbb781dda9f842",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:11.124519+00:00",
+          "kind": "model_end",
+          "run_id": "8e77852a6efb4d16b9fbb781dda9f842",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 836,
+            "output_tokens": 356,
+            "total_tokens": 1192,
+            "output_token_details": {
+              "reasoning": 247
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:21:11.128426+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1",
+            "pdf-2"
+          ]
+        },
+        {
+          "timestamp": "2026-10-23T17:21:11.130556+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Không, khi thực hiện thở bụng, bạn đặt một tay lên bụng và tay kia đặt lên ngực.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 88.73863220214844,
+              "metric": "squared_l2",
+              "quote": "Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng."
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 89.66227722167969,
+              "metric": "squared_l2",
+              "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực."
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "8e77852a6efb4d16b9fbb781dda9f842",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 836,
+            "output_tokens": 356,
+            "total_tokens": 1192,
+            "output_token_details": {
+              "reasoning": 247
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 836,
+          "output_tokens": 356,
+          "total_tokens": 1192
+        },
+        "total_tokens": 1192
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "cache_other_user",
+    "group": "cache",
+    "request": {
+      "question": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?",
+      "mode": "rag",
+      "user_id": "live-rag-u2",
+      "use_cache": true
+    },
+    "reference": "Kiểm tra sự kiện hit/miss, số model/tool call và phân tách user; không suy ra chất lượng từ cache event.",
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:21:17.165051+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "84628c0832a143fa811da8b35817e3da",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "Stress.pdf",
+          "page": 3,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 70.04348754882812,
+          "metric": "squared_l2",
+          "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+        },
+        {
+          "id": "pdf-2",
+          "title": "Stress.pdf",
+          "page": 5,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 71.13784790039062,
+          "metric": "squared_l2",
+          "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 830,
+          "output_tokens": 802,
+          "total_tokens": 1632
+        },
+        "total_tokens": 1632
+      }
+    },
+    "latency_ms": 2064.974,
+    "trace": {
+      "trace_id": "84628c0832a143fa811da8b35817e3da",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:21:17.170026+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 2056.487,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:21:17.194640+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:17.198489+00:00",
+          "kind": "cache",
+          "status": "miss",
+          "cache_type": "exact",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:17.198544+00:00",
+          "kind": "tool_start",
+          "run_id": "cc91fa49686a45a38be1232c8ce54303",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:21:17.353662+00:00",
+          "kind": "tool_end",
+          "run_id": "cc91fa49686a45a38be1232c8ce54303",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 70.04348754882812,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.13784790039062,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:21:17.356765+00:00",
+          "kind": "model_start",
+          "run_id": "d377377321634a2b8bf50c80b8f87459",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:19.221025+00:00",
+          "kind": "model_end",
+          "run_id": "d377377321634a2b8bf50c80b8f87459",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 830,
+            "output_tokens": 802,
+            "total_tokens": 1632,
+            "output_token_details": {
+              "reasoning": 719
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:21:19.224201+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1",
+            "pdf-2"
+          ]
+        },
+        {
+          "timestamp": "2026-10-23T17:21:19.226129+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 70.04348754882812,
+              "metric": "squared_l2",
+              "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.13784790039062,
+              "metric": "squared_l2",
+              "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực."
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "d377377321634a2b8bf50c80b8f87459",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 830,
+            "output_tokens": 802,
+            "total_tokens": 1632,
+            "output_token_details": {
+              "reasoning": 719
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 830,
+          "output_tokens": 802,
+          "total_tokens": 1632
+        },
+        "total_tokens": 1632
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "scope_refuse",
+    "group": "scope",
+    "request": {
+      "question": "Hãy chẩn đoán và kê thuốc cho tôi.",
+      "mode": "auto"
+    },
+    "reference": null,
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:21:25.246679+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "OUT_OF_SCOPE",
+      "trace_id": "964afb5d27304569babcb32f80eb47b3",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "refuse",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "latency_ms": 30.713,
+    "trace": {
+      "trace_id": "964afb5d27304569babcb32f80eb47b3",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:21:25.251292+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "OUT_OF_SCOPE",
+      "route": "refuse",
+      "server_latency_ms": 22.51,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:21:25.270233+00:00",
+          "kind": "classify",
+          "route": "refuse",
+          "policy": "keywords-v1",
+          "mode": "auto"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:25.272323+00:00",
+          "kind": "refuse",
+          "reason": "scope_or_insufficient_evidence"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:25.273208+00:00",
+          "kind": "final",
+          "status": "refused",
+          "code": "OUT_OF_SCOPE",
+          "route": "refuse",
+          "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+          "sources": []
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "invalid_missing",
+    "group": "validation",
+    "request": {},
+    "reference": null,
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:21:31.300809+00:00",
+    "http_status": 422,
+    "body": {
+      "response": "Yeu cau chua hoan tat. Hay doi chieu trace_id de kiem tra.",
+      "status": "error",
+      "code": "INVALID_REQUEST",
+      "trace_id": "179c041b8b0646fb80258055458ca6c6",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": null,
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "latency_ms": 34.542,
+    "trace": {
+      "trace_id": "179c041b8b0646fb80258055458ca6c6",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:21:31.304299+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 422,
+      "code": "INVALID_REQUEST",
+      "route": null,
+      "server_latency_ms": 27.727,
+      "events": [],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "invalid_null",
+    "group": "validation",
+    "request": {
+      "question": null
+    },
+    "reference": null,
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:21:37.358163+00:00",
+    "http_status": 422,
+    "body": {
+      "response": "Yeu cau chua hoan tat. Hay doi chieu trace_id de kiem tra.",
+      "status": "error",
+      "code": "INVALID_REQUEST",
+      "trace_id": "c7543ccc885849d5bef602b6a44ca06a",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": null,
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "latency_ms": 19.721,
+    "trace": {
+      "trace_id": "c7543ccc885849d5bef602b6a44ca06a",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:21:37.362059+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 422,
+      "code": "INVALID_REQUEST",
+      "route": null,
+      "server_latency_ms": 13.407,
+      "events": [],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "invalid_type",
+    "group": "validation",
+    "request": {
+      "question": [
+        "xin chào"
+      ]
+    },
+    "reference": null,
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:21:43.397318+00:00",
+    "http_status": 422,
+    "body": {
+      "response": "Yeu cau chua hoan tat. Hay doi chieu trace_id de kiem tra.",
+      "status": "error",
+      "code": "INVALID_REQUEST",
+      "trace_id": "7abd668e750343cc9f6234295796a075",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": null,
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "latency_ms": 25.904,
+    "trace": {
+      "trace_id": "7abd668e750343cc9f6234295796a075",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:21:43.400509+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 422,
+      "code": "INVALID_REQUEST",
+      "route": null,
+      "server_latency_ms": 19.033,
+      "events": [],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  }
+]

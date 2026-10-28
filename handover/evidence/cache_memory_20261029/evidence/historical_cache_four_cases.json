@@ -1,0 +1,846 @@
+[
+  {
+    "case_id": "cache_miss",
+    "group": "cache",
+    "request": {
+      "question": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?",
+      "mode": "rag",
+      "user_id": "live-rag-u1",
+      "use_cache": true
+    },
+    "reference": "Kiểm tra sự kiện hit/miss, số model/tool call và phân tách user; không suy ra chất lượng từ cache event.",
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:20:54.024819+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "4cfac78e6b7b4c66aaef51ebcdfe1fa9",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "Stress.pdf",
+          "page": 3,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 70.04348754882812,
+          "metric": "squared_l2",
+          "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+        },
+        {
+          "id": "pdf-2",
+          "title": "Stress.pdf",
+          "page": 5,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 71.13784790039062,
+          "metric": "squared_l2",
+          "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 830,
+          "output_tokens": 731,
+          "total_tokens": 1561
+        },
+        "total_tokens": 1561
+      }
+    },
+    "latency_ms": 2162.275,
+    "trace": {
+      "trace_id": "4cfac78e6b7b4c66aaef51ebcdfe1fa9",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:20:54.029990+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 2152.57,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:20:54.053563+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:54.060431+00:00",
+          "kind": "cache",
+          "status": "miss",
+          "cache_type": "exact",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:54.060509+00:00",
+          "kind": "tool_start",
+          "run_id": "fcd9a2584f474d1086c621e0ec227594",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:54.303539+00:00",
+          "kind": "tool_end",
+          "run_id": "fcd9a2584f474d1086c621e0ec227594",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 70.04348754882812,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.13784790039062,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:20:54.306538+00:00",
+          "kind": "model_start",
+          "run_id": "b40ac61cd0f74c03af90727879dc937c",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:20:56.176598+00:00",
+          "kind": "model_end",
+          "run_id": "b40ac61cd0f74c03af90727879dc937c",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 830,
+            "output_tokens": 731,
+            "total_tokens": 1561,
+            "output_token_details": {
+              "reasoning": 649
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:20:56.179227+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1",
+            "pdf-2"
+          ]
+        },
+        {
+          "timestamp": "2026-10-23T17:20:56.181847+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 70.04348754882812,
+              "metric": "squared_l2",
+              "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.13784790039062,
+              "metric": "squared_l2",
+              "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực"
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "b40ac61cd0f74c03af90727879dc937c",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 830,
+            "output_tokens": 731,
+            "total_tokens": 1561,
+            "output_token_details": {
+              "reasoning": 649
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 830,
+          "output_tokens": 731,
+          "total_tokens": 1561
+        },
+        "total_tokens": 1561
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "cache_hit",
+    "group": "cache",
+    "request": {
+      "question": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?",
+      "mode": "rag",
+      "user_id": "live-rag-u1",
+      "use_cache": true
+    },
+    "reference": "Kiểm tra sự kiện hit/miss, số model/tool call và phân tách user; không suy ra chất lượng từ cache event.",
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:21:02.217222+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "1c06d358715941c0bc0389c805d662d5",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "Stress.pdf",
+          "page": 3,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 70.04348754882812,
+          "metric": "squared_l2",
+          "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+        },
+        {
+          "id": "pdf-2",
+          "title": "Stress.pdf",
+          "page": 5,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 71.13784790039062,
+          "metric": "squared_l2",
+          "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "latency_ms": 40.615,
+    "trace": {
+      "trace_id": "1c06d358715941c0bc0389c805d662d5",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:21:02.222752+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 30.027,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:21:02.244844+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:02.248480+00:00",
+          "kind": "cache",
+          "status": "hit",
+          "cache_type": "exact",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:02.250764+00:00",
+          "kind": "evidence_check",
+          "status": "cached_previously_validated"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:02.252447+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 70.04348754882812,
+              "metric": "squared_l2",
+              "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.13784790039062,
+              "metric": "squared_l2",
+              "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực"
+            }
+          ]
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "cache_negation",
+    "group": "cache",
+    "request": {
+      "question": "Theo Stress.pdf, có phải khi thở bụng KHÔNG đặt một tay trên ngực không?",
+      "mode": "rag",
+      "user_id": "live-rag-u1",
+      "use_cache": true
+    },
+    "reference": "Kiểm tra sự kiện hit/miss, số model/tool call và phân tách user; không suy ra chất lượng từ cache event.",
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:21:08.281608+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Không, khi thực hiện thở bụng, bạn đặt một tay lên bụng và tay kia đặt lên ngực.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "900962036f774a6b85ae88bfb4f58cd1",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "Stress.pdf",
+          "page": 3,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 88.73863220214844,
+          "metric": "squared_l2",
+          "quote": "Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng."
+        },
+        {
+          "id": "pdf-2",
+          "title": "Stress.pdf",
+          "page": 5,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 89.66227722167969,
+          "metric": "squared_l2",
+          "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 836,
+          "output_tokens": 356,
+          "total_tokens": 1192
+        },
+        "total_tokens": 1192
+      }
+    },
+    "latency_ms": 2854.742,
+    "trace": {
+      "trace_id": "900962036f774a6b85ae88bfb4f58cd1",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:21:08.285221+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 2845.825,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:21:08.309902+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:08.314518+00:00",
+          "kind": "cache",
+          "status": "miss",
+          "cache_type": "exact",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:08.314573+00:00",
+          "kind": "tool_start",
+          "run_id": "e405c8d09ca54eb9a2e582c99ccea239",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, có phải khi thở bụng KHÔNG đặt một tay trên ngực không?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:21:09.814628+00:00",
+          "kind": "tool_end",
+          "run_id": "e405c8d09ca54eb9a2e582c99ccea239",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 88.73863220214844,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 89.66227722167969,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:21:09.819383+00:00",
+          "kind": "model_start",
+          "run_id": "8e77852a6efb4d16b9fbb781dda9f842",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:11.124519+00:00",
+          "kind": "model_end",
+          "run_id": "8e77852a6efb4d16b9fbb781dda9f842",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 836,
+            "output_tokens": 356,
+            "total_tokens": 1192,
+            "output_token_details": {
+              "reasoning": 247
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:21:11.128426+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1",
+            "pdf-2"
+          ]
+        },
+        {
+          "timestamp": "2026-10-23T17:21:11.130556+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Không, khi thực hiện thở bụng, bạn đặt một tay lên bụng và tay kia đặt lên ngực.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 88.73863220214844,
+              "metric": "squared_l2",
+              "quote": "Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng."
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 89.66227722167969,
+              "metric": "squared_l2",
+              "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực."
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "8e77852a6efb4d16b9fbb781dda9f842",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 836,
+            "output_tokens": 356,
+            "total_tokens": 1192,
+            "output_token_details": {
+              "reasoning": 247
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 836,
+          "output_tokens": 356,
+          "total_tokens": 1192
+        },
+        "total_tokens": 1192
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  },
+  {
+    "case_id": "cache_other_user",
+    "group": "cache",
+    "request": {
+      "question": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?",
+      "mode": "rag",
+      "user_id": "live-rag-u2",
+      "use_cache": true
+    },
+    "reference": "Kiểm tra sự kiện hit/miss, số model/tool call và phân tách user; không suy ra chất lượng từ cache event.",
+    "reference_pages": [],
+    "timestamp": "2026-10-23T17:21:17.165051+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "84628c0832a143fa811da8b35817e3da",
+      "graph_id": "9babf4881af66ca761ce",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "Stress.pdf",
+          "page": 3,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 70.04348754882812,
+          "metric": "squared_l2",
+          "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+        },
+        {
+          "id": "pdf-2",
+          "title": "Stress.pdf",
+          "page": 5,
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+          "score": 71.13784790039062,
+          "metric": "squared_l2",
+          "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 830,
+          "output_tokens": 802,
+          "total_tokens": 1632
+        },
+        "total_tokens": 1632
+      }
+    },
+    "latency_ms": 2064.974,
+    "trace": {
+      "trace_id": "84628c0832a143fa811da8b35817e3da",
+      "suite": "live",
+      "timestamp": "2026-10-23T17:21:17.170026+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "b9e095de8d9685289468fd3e5f541e59ea043dfac97cb9b1b5717ec63393a6e3",
+        "Rag_tool.py": "d1cfa2140bcab37bf30e18069a2c3ca30d6fc78e531a545fcd74f11eaf08c30c",
+        "searchweb_tool.py": "35b4e1935794d9473436747e02bfdab918df6d41cb7b36acd3d01696308e0a9b",
+        "telemetry.py": "5474bdbb5d58c1f68bcd72f0aac5313d78c3194346409f084fc45ee8840be352",
+        "response_cache.py": "12a2b57927e839a2ddb3122d22ccada99227cc07d09a544356c144ea3ec9595a",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1"
+      },
+      "prompt_version": "evidence-v1.1-rag-live",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9babf4881af66ca761ce",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 2056.487,
+      "events": [
+        {
+          "timestamp": "2026-10-23T17:21:17.194640+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:17.198489+00:00",
+          "kind": "cache",
+          "status": "miss",
+          "cache_type": "exact",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:17.198544+00:00",
+          "kind": "tool_start",
+          "run_id": "cc91fa49686a45a38be1232c8ce54303",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?"
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:21:17.353662+00:00",
+          "kind": "tool_end",
+          "run_id": "cc91fa49686a45a38be1232c8ce54303",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 70.04348754882812,
+              "metric": "squared_l2"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.13784790039062,
+              "metric": "squared_l2"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-23T17:21:17.356765+00:00",
+          "kind": "model_start",
+          "run_id": "d377377321634a2b8bf50c80b8f87459",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-23T17:21:19.221025+00:00",
+          "kind": "model_end",
+          "run_id": "d377377321634a2b8bf50c80b8f87459",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 830,
+            "output_tokens": 802,
+            "total_tokens": 1632,
+            "output_token_details": {
+              "reasoning": 719
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-23T17:21:19.224201+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1",
+            "pdf-2"
+          ]
+        },
+        {
+          "timestamp": "2026-10-23T17:21:19.226129+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "title": "Stress.pdf",
+              "page": 3,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 70.04348754882812,
+              "metric": "squared_l2",
+              "quote": "đặt một tay lên bụng và tay kia đặt lên ngực"
+            },
+            {
+              "id": "pdf-2",
+              "title": "Stress.pdf",
+              "page": 5,
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+              "score": 71.13784790039062,
+              "metric": "squared_l2",
+              "quote": "Đặt một tay lên bụng. Đặt tay kia lên ngực."
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "d377377321634a2b8bf50c80b8f87459",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 830,
+            "output_tokens": 802,
+            "total_tokens": 1632,
+            "output_token_details": {
+              "reasoning": 719
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 830,
+          "output_tokens": 802,
+          "total_tokens": 1632
+        },
+        "total_tokens": 1632
+      }
+    },
+    "technical_error": false,
+    "observable_errors": [],
+    "observable_case_pass": true
+  }
+]

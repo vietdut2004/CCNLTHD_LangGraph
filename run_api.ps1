@@ -1,13 +1,9 @@
 $ErrorActionPreference = "Stop"
-
-$env:PYTHONIOENCODING = "utf-8"
-$env:HF_HUB_DISABLE_SYMLINKS_WARNING = "1"
-
 $projectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$python = Join-Path $projectDir ".venv\Scripts\python.exe"
-
-if (-not (Test-Path $python)) {
-    $python = "python"
-}
-
-& $python -m uvicorn main:app --reload
+$projectPython = Join-Path $projectDir ".venv\Scripts\python.exe"
+if (-not (Test-Path $projectPython)) { $projectPython = "python" }
+$env:PYTHONIOENCODING = "utf-8"
+Push-Location $projectDir
+try { & $projectPython (Join-Path $projectDir "start_api.py"); $runExitCode = $LASTEXITCODE }
+finally { Pop-Location }
+exit $runExitCode

@@ -1,0 +1,8 @@
+{
+  "779": "Ứng dụng dùng InMemorySaver theo cặp user_id/session_id; node answer truyền tối đa 5 tin nhắn gần nhất. Fixture kiểm tra lịch sử được truyền, chưa đánh giá model thật nhớ đúng; ID do request tự khai chỉ tách State, không xác nhận quyền người dùng (13.7).",
+  "780": "Bộ nhớ phiên ở RAM, mất khi restart; chưa có MySQL lưu bền vững. Các ảnh ConversationBufferWindowMemory dưới đây là ví dụ LangChain riêng, không chứng minh bộ nhớ của ứng dụng cuối.",
+  "1025": "Exact cache RAG bật khi use_cache=true, có user_id, không có session_id. Khóa: câu hỏi/user/nguồn/model/prompt version. RAM, TTL 300 giây, tối đa 128 mục.",
+  "1027": "Bảng là bốn ca cũ, chưa đủ suy ra tiết kiệm toàn hệ thống. Fixture mới kiểm tra TTL 300 giây bằng đồng hồ ảo và đổi khóa. Chưa có semantic cache/MySQL.",
+  "1029": "InMemorySaver lưu State theo user_id/session_id, tuần tự hóa cùng phiên. Node answer nhận tối đa 5 tin nhắn; grounded chỉ nhận câu hỏi hiện tại và nguồn, chưa dùng lịch sử.",
+  "1030": "Ba ca fixture cũ chỉ kiểm tra truyền lịch sử. Kiểm tra bổ sung xác nhận cửa sổ 5 tin, tách ID và State rỗng khi tạo lại Agent. Dùng lại cùng ID vẫn nhận lịch sử: chưa có xác thực/phân quyền. Chưa chấm model thật nhớ đúng; RAM mất khi restart, chưa lưu MySQL."
+}

@@ -1,0 +1,9 @@
+{
+  "881": "Đây là mẫu minh họa LLM tool calling, chưa dùng làm bằng chứng model tự chọn công cụ. ToolNode thực thi tool_calls; recursion_limit chỉ giới hạn số bước. Phần kiểm chứng của đồ án giữ ở executor add/multiply riêng và router theo luật tại mục 13.5.",
+  "892": "Ảnh báo OutputParserException, chưa xác nhận Agent gọi multiply thành công. Số 30 trong văn bản sinh không thay thế trace thực thi tool. Đồ án chỉ xác nhận multiply qua executor riêng ở 13.5, chưa đo khả năng chọn công cụ của LLM.",
+  "896": "Ảnh cũ báo lỗi parser, chưa chứng minh chuỗi add rồi multiply đã chạy. Bộ kiểm tra 13.5 truyền sẵn tên/arguments cho đồ thị toán riêng; router chatbot không gắn đồ thị này. Kết quả không xác nhận model điều phối biểu thức (2 + 3) × 4.",
+  "962": "* Pipeline điều phối theo luật:",
+  "1021": "Đồ thị toán riêng nhận sẵn tên/arguments để gọi add hoặc multiply, không qua LLM và không gắn vào router chatbot. Bốn ca đạt kỳ vọng:",
+  "1023": "classify chọn nhánh theo mode/từ khóa, không gọi LLM; 12 ca chỉ xác nhận khớp luật. Token 0 thuộc bốn ca executor, chưa chứng minh LLM chọn tool, lập kế hoạch hoặc giải chuỗi (2 + 3) × 4.",
+  "1020": "13.5 Công cụ toán và định tuyến"
+}

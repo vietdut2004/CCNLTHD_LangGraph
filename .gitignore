@@ -16,3 +16,15 @@ __pycache__/
 
 # IDE
 .vscode/
+
+# Rechecks and test output
+.pytest_cache/
+evidence_week8/
+evidence_recheck/
+lab_metrics.jsonl
+
+# Rechecks and test output
+.pytest_cache/
+evidence_week8/
+evidence_recheck/
+lab_metrics.jsonl

@@ -1,0 +1,70 @@
+[
+  {
+    "case": "memory_first",
+    "transmitted_messages": [
+      "Toi ten la Son"
+    ]
+  },
+  {
+    "case": "memory_followup",
+    "transmitted_messages": [
+      "Toi ten la Son",
+      "Da doc 1 tin nhan. Toi ten la Son",
+      "Toi ten gi?"
+    ]
+  },
+  {
+    "case": "memory_third",
+    "transmitted_messages": [
+      "Toi ten la Son",
+      "Da doc 1 tin nhan. Toi ten la Son",
+      "Toi ten gi?",
+      "Da doc 3 tin nhan. Toi ten gi?",
+      "luot ba"
+    ]
+  },
+  {
+    "case": "memory_window",
+    "transmitted_messages": [
+      "Toi ten gi?",
+      "Da doc 3 tin nhan. Toi ten gi?",
+      "luot ba",
+      "Da doc 5 tin nhan. luot ba",
+      "luot bon"
+    ]
+  },
+  {
+    "case": "other_user_same_session",
+    "transmitted_messages": [
+      "hoi moi"
+    ]
+  },
+  {
+    "case": "same_user_other_session",
+    "transmitted_messages": [
+      "hoi moi"
+    ]
+  },
+  {
+    "case": "without_session",
+    "transmitted_messages": [
+      "hoi moi"
+    ]
+  },
+  {
+    "case": "same_claimed_ids_get_history",
+    "transmitted_messages": [
+      "luot ba",
+      "Da doc 5 tin nhan. luot ba",
+      "luot bon",
+      "Da doc 5 tin nhan. luot bon",
+      "nguoi goi khac dung cung ID"
+    ]
+  },
+  {
+    "case": "new_engine_has_no_history",
+    "transmitted_messages": [
+      "Toi ten gi?"
+    ]
+  }
+]

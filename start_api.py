@@ -1,19 +1,8 @@
-import os
-import subprocess
-import sys
+"""Local entrypoint; use this project's Python environment."""
 from pathlib import Path
+import os
+import uvicorn
 
-
-PROJECT_DIR = Path(__file__).resolve().parent
-VENV_PYTHON = PROJECT_DIR / ".venv" / "Scripts" / "python.exe"
-
-
-def main() -> int:
-    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
-    os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")
-    python = str(VENV_PYTHON if VENV_PYTHON.exists() else Path(sys.executable))
-    return subprocess.call([python, "-m", "uvicorn", "main:app", "--reload"])
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+if __name__=='__main__':
+    os.chdir(Path(__file__).resolve().parent)
+    uvicorn.run('main:app',host='127.0.0.1',port=8000)

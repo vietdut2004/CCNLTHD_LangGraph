@@ -1,0 +1,10 @@
+{
+  "sha256": {
+    "original.docx": "cf363b2de05d5fdc7b157fafa97bcd3a5cef25a06a0b6dbe24146228d6449e5b",
+    "report_updated.docx": "3fc0fe50f2bc90975f3f15e232d5e7140531d705d06ac57bd152c7f36371b426",
+    "drive_readback.docx": "3fc0fe50f2bc90975f3f15e232d5e7140531d705d06ac57bd152c7f36371b426"
+  },
+  "drive_id": "11cNh6hQX64hYrv2I_pGwWpW6c0LoIePp",
+  "modified_utc": "2026-10-28T17:15:45.936Z",
+  "readback_matches": true
+}

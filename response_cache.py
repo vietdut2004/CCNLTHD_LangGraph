@@ -6,6 +6,7 @@ import unicodedata
 from collections import OrderedDict
 from copy import deepcopy
 from threading import Lock
+from runtime_policy import PROMPT_VERSION
 
 class AnswerCache:
     def __init__(self, ttl_seconds=300, capacity=128):
@@ -15,7 +16,7 @@ class AnswerCache:
     @staticmethod
     def key(question, user_id, source_version, model_id):
         normalized = ' '.join(unicodedata.normalize('NFKC',question).casefold().split())
-        value = [normalized,user_id,source_version,model_id,'evidence-v1']
+        value = [normalized,user_id,source_version,model_id,PROMPT_VERSION]
         return hashlib.sha256(json.dumps(value,ensure_ascii=False).encode()).hexdigest()
 
     def get(self, key):

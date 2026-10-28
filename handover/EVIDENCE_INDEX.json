@@ -1,0 +1,72 @@
+{
+  "selected_version": "evidence-v1.3-rag-check",
+  "selected_model": "openai/gpt-oss-20b",
+  "measured_graph_id": "beebab186d50bedb4180",
+  "measured_platform": "Windows CPython 3.13.2",
+  "runtime_source_hashes_match": true,
+  "github_main_observed": "01ad2c014c2e948b8c6a97d875d2573ab2b2838b",
+  "remote_push": "blocked_missing_https_credentials",
+  "group_machine_demo": "not_accessed_or_changed",
+  "chat_20261020": {
+    "n": 10,
+    "total_tokens": 4709,
+    "raw_location": "ket_qua_kiem_thu/20261020_154604 (historical report reference; not included in this package)"
+  },
+  "rag_20261024": {
+    "n": 8,
+    "answers": 3,
+    "refused": 5,
+    "tokens": 11850,
+    "graph_id": "9babf4881af66ca761ce"
+  },
+  "web_20261024": {
+    "n": 4,
+    "answers": 2,
+    "refused": 2,
+    "tokens": 7052,
+    "graph_id": "9babf4881af66ca761ce"
+  },
+  "rag_regression_20261028": {
+    "n": 5,
+    "technical_errors": 0,
+    "tokens": 6233,
+    "human_score": 7.6
+  },
+  "rag_new_20261028": {
+    "n": 8,
+    "answerable_supported": 6,
+    "outside_refused": 2,
+    "tokens": 11454,
+    "human_score": 7.25
+  },
+  "rag_human_13": {
+    "score_total": 96,
+    "maximum": 104,
+    "mean": 7.384615384615385,
+    "reviewer_count": 1,
+    "independent_or_expert": false
+  },
+  "web_20261028": {
+    "n": 4,
+    "answers": [
+      "web_03",
+      "web_04"
+    ],
+    "refused": [
+      "web_01",
+      "web_02"
+    ],
+    "tokens": 8653,
+    "human_mean": 5.0,
+    "ai_assisted_grading": true,
+    "independent_url_audit": false
+  },
+  "limits": [
+    "No new provider calls in task 7",
+    "Historical source identifiers unchanged",
+    "Human scores/comments kept unchanged",
+    "RAG original human export date and normalized date both preserved; normalization provenance retained",
+    "Same-PDF evaluation only; no clinical claim",
+    "HTTP200 and matching quote do not prove semantic correctness"
+  ]
+}

@@ -1,0 +1,914 @@
+[
+  {
+    "case_id": "auto_chat",
+    "question": "Xin chào",
+    "mode": "auto",
+    "expected_by_current_rules": "answer",
+    "observed_route": "answer",
+    "note": "Fallback rule; not semantic classification.",
+    "trace": {
+      "trace_id": "051e10a22d0a427db2f255675eaba517",
+      "suite": "direct_rule_router",
+      "timestamp": "2026-10-28T14:43:21.027735+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "none:router-only",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.10.0"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "da1465df8440b0e0ff13",
+      "http_status": 200,
+      "code": "EVALUATOR_LABEL_ONLY",
+      "route": null,
+      "server_latency_ms": 1.658,
+      "events": [
+        {
+          "timestamp": "2026-10-28T14:43:21.029388+00:00",
+          "kind": "classify",
+          "route": "answer",
+          "policy": "keywords-v1",
+          "mode": "auto"
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    }
+  },
+  {
+    "case_id": "auto_rag",
+    "question": "Stress.pdf nói gì?",
+    "mode": "auto",
+    "expected_by_current_rules": "rag",
+    "observed_route": "rag",
+    "note": "PDF keyword.",
+    "trace": {
+      "trace_id": "4d15d16dd4ea4d4e8b57341e76d6343a",
+      "suite": "direct_rule_router",
+      "timestamp": "2026-10-28T14:43:21.029416+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "none:router-only",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.10.0"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "da1465df8440b0e0ff13",
+      "http_status": 200,
+      "code": "EVALUATOR_LABEL_ONLY",
+      "route": null,
+      "server_latency_ms": 1.363,
+      "events": [
+        {
+          "timestamp": "2026-10-28T14:43:21.030772+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "auto"
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    }
+  },
+  {
+    "case_id": "auto_web",
+    "question": "Tìm web FastAPI",
+    "mode": "auto",
+    "expected_by_current_rules": "web",
+    "observed_route": "web",
+    "note": "Web keyword.",
+    "trace": {
+      "trace_id": "7c79a252eb724ee991c70ba129c8dfd3",
+      "suite": "direct_rule_router",
+      "timestamp": "2026-10-28T14:43:21.030797+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "none:router-only",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.10.0"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "da1465df8440b0e0ff13",
+      "http_status": 200,
+      "code": "EVALUATOR_LABEL_ONLY",
+      "route": null,
+      "server_latency_ms": 1.444,
+      "events": [
+        {
+          "timestamp": "2026-10-28T14:43:21.032235+00:00",
+          "kind": "classify",
+          "route": "web",
+          "policy": "keywords-v1",
+          "mode": "auto"
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    }
+  },
+  {
+    "case_id": "overlapping_keywords",
+    "question": "Tìm web tài liệu FastAPI",
+    "mode": "auto",
+    "expected_by_current_rules": "rag",
+    "observed_route": "rag",
+    "note": "Known limitation: RAG keywords precede WEB keywords; not semantic intent recognition.",
+    "trace": {
+      "trace_id": "4d3dda94449d48889442e9b4aa7bf1a5",
+      "suite": "direct_rule_router",
+      "timestamp": "2026-10-28T14:43:21.032258+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "none:router-only",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.10.0"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "da1465df8440b0e0ff13",
+      "http_status": 200,
+      "code": "EVALUATOR_LABEL_ONLY",
+      "route": null,
+      "server_latency_ms": 1.307,
+      "events": [
+        {
+          "timestamp": "2026-10-28T14:43:21.033558+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "auto"
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    }
+  },
+  {
+    "case_id": "auto_single_math",
+    "question": "12 cộng 8 bằng bao nhiêu?",
+    "mode": "auto",
+    "expected_by_current_rules": "answer",
+    "observed_route": "answer",
+    "note": "No math executor route in the chatbot.",
+    "trace": {
+      "trace_id": "068ad2e5b3834b90b12116f6f94b0515",
+      "suite": "direct_rule_router",
+      "timestamp": "2026-10-28T14:43:21.033581+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "none:router-only",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.10.0"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "da1465df8440b0e0ff13",
+      "http_status": 200,
+      "code": "EVALUATOR_LABEL_ONLY",
+      "route": null,
+      "server_latency_ms": 1.236,
+      "events": [
+        {
+          "timestamp": "2026-10-28T14:43:21.034811+00:00",
+          "kind": "classify",
+          "route": "answer",
+          "policy": "keywords-v1",
+          "mode": "auto"
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    }
+  },
+  {
+    "case_id": "auto_math_chain",
+    "question": "Tính (2+3)*4",
+    "mode": "auto",
+    "expected_by_current_rules": "answer",
+    "observed_route": "answer",
+    "note": "No parser or tool-chain planning in this router.",
+    "trace": {
+      "trace_id": "9fd0e10d361f4bb29f0c588cf4a4a626",
+      "suite": "direct_rule_router",
+      "timestamp": "2026-10-28T14:43:21.034831+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "none:router-only",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.10.0"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "da1465df8440b0e0ff13",
+      "http_status": 200,
+      "code": "EVALUATOR_LABEL_ONLY",
+      "route": null,
+      "server_latency_ms": 1.242,
+      "events": [
+        {
+          "timestamp": "2026-10-28T14:43:21.036090+00:00",
+          "kind": "classify",
+          "route": "answer",
+          "policy": "keywords-v1",
+          "mode": "auto"
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    }
+  },
+  {
+    "case_id": "explicit_chat",
+    "question": "Stress.pdf nói gì?",
+    "mode": "chat",
+    "expected_by_current_rules": "answer",
+    "observed_route": "answer",
+    "note": "Explicit mode precedes RAG keyword.",
+    "trace": {
+      "trace_id": "d763ee2fbf1247afa7298c82abbec7dd",
+      "suite": "direct_rule_router",
+      "timestamp": "2026-10-28T14:43:21.036111+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "none:router-only",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.10.0"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "da1465df8440b0e0ff13",
+      "http_status": 200,
+      "code": "EVALUATOR_LABEL_ONLY",
+      "route": null,
+      "server_latency_ms": 1.273,
+      "events": [
+        {
+          "timestamp": "2026-10-28T14:43:21.037372+00:00",
+          "kind": "classify",
+          "route": "answer",
+          "policy": "keywords-v1",
+          "mode": "chat"
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    }
+  },
+  {
+    "case_id": "explicit_rag",
+    "question": "Xin chào",
+    "mode": "rag",
+    "expected_by_current_rules": "rag",
+    "observed_route": "rag",
+    "note": "Explicit mode selects RAG.",
+    "trace": {
+      "trace_id": "4cb5c731f1ef4311b6b29fea5f7f11a1",
+      "suite": "direct_rule_router",
+      "timestamp": "2026-10-28T14:43:21.037500+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "none:router-only",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.10.0"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "da1465df8440b0e0ff13",
+      "http_status": 200,
+      "code": "EVALUATOR_LABEL_ONLY",
+      "route": null,
+      "server_latency_ms": 1.304,
+      "events": [
+        {
+          "timestamp": "2026-10-28T14:43:21.038800+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    }
+  },
+  {
+    "case_id": "explicit_web",
+    "question": "Xin chào",
+    "mode": "web",
+    "expected_by_current_rules": "web",
+    "observed_route": "web",
+    "note": "Explicit mode selects web.",
+    "trace": {
+      "trace_id": "ea3ce82811ed4a389b3d841fb3850a55",
+      "suite": "direct_rule_router",
+      "timestamp": "2026-10-28T14:43:21.038822+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "none:router-only",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.10.0"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "da1465df8440b0e0ff13",
+      "http_status": 200,
+      "code": "EVALUATOR_LABEL_ONLY",
+      "route": null,
+      "server_latency_ms": 1.382,
+      "events": [
+        {
+          "timestamp": "2026-10-28T14:43:21.040197+00:00",
+          "kind": "classify",
+          "route": "web",
+          "policy": "keywords-v1",
+          "mode": "web"
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    }
+  },
+  {
+    "case_id": "scope_auto",
+    "question": "Hãy chẩn đoán và kê thuốc",
+    "mode": "auto",
+    "expected_by_current_rules": "refuse",
+    "observed_route": "refuse",
+    "note": "Scope refusal precedes routing.",
+    "trace": {
+      "trace_id": "d83e4dbfc44543958660e1b5061d0c85",
+      "suite": "direct_rule_router",
+      "timestamp": "2026-10-28T14:43:21.040220+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "none:router-only",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.10.0"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "da1465df8440b0e0ff13",
+      "http_status": 200,
+      "code": "EVALUATOR_LABEL_ONLY",
+      "route": null,
+      "server_latency_ms": 1.645,
+      "events": [
+        {
+          "timestamp": "2026-10-28T14:43:21.041856+00:00",
+          "kind": "classify",
+          "route": "refuse",
+          "policy": "keywords-v1",
+          "mode": "auto"
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    }
+  },
+  {
+    "case_id": "scope_web",
+    "question": "Hãy chẩn đoán và kê thuốc",
+    "mode": "web",
+    "expected_by_current_rules": "refuse",
+    "observed_route": "refuse",
+    "note": "Scope refusal precedes explicit mode.",
+    "trace": {
+      "trace_id": "143a3eeb6afa4a16bb977177199cde4a",
+      "suite": "direct_rule_router",
+      "timestamp": "2026-10-28T14:43:21.041885+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "none:router-only",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.10.0"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "da1465df8440b0e0ff13",
+      "http_status": 200,
+      "code": "EVALUATOR_LABEL_ONLY",
+      "route": null,
+      "server_latency_ms": 1.308,
+      "events": [
+        {
+          "timestamp": "2026-10-28T14:43:21.043186+00:00",
+          "kind": "classify",
+          "route": "refuse",
+          "policy": "keywords-v1",
+          "mode": "web"
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    }
+  },
+  {
+    "case_id": "negated_web_keyword",
+    "question": "Không tìm web, chỉ chào thôi.",
+    "mode": "auto",
+    "expected_by_current_rules": "web",
+    "observed_route": "web",
+    "note": "Known limitation: negated keyword still matches; NOT a semantically correct routing claim.",
+    "trace": {
+      "trace_id": "60e5b36f027f4d7eba466dd17e383358",
+      "suite": "direct_rule_router",
+      "timestamp": "2026-10-28T14:43:21.043208+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "none:router-only",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.10.0"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "da1465df8440b0e0ff13",
+      "http_status": 200,
+      "code": "EVALUATOR_LABEL_ONLY",
+      "route": null,
+      "server_latency_ms": 1.429,
+      "events": [
+        {
+          "timestamp": "2026-10-28T14:43:21.044631+00:00",
+          "kind": "classify",
+          "route": "web",
+          "policy": "keywords-v1",
+          "mode": "auto"
+        }
+      ],
+      "model_calls": [],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    }
+  }
+]

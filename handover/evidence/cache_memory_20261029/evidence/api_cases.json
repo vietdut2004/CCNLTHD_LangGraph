@@ -1,0 +1,977 @@
+[
+  {
+    "case": "cache_first_miss",
+    "request": {
+      "question": "toi muon hit tho",
+      "mode": "rag",
+      "user_id": "u1",
+      "use_cache": true
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "3b203844eb7245c2ab9f588bbcf40a6e",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-source-v1",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    }
+  },
+  {
+    "case": "cache_same_key_hit",
+    "request": {
+      "question": "toi muon hit tho",
+      "mode": "rag",
+      "user_id": "u1",
+      "use_cache": true
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "24a4dd8aaf2b4ac3a1997ce3f25270fe",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-source-v1",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 0,
+      "retrieval_calls": 0
+    }
+  },
+  {
+    "case": "cache_normalized_case_space",
+    "request": {
+      "question": "  TOI  MUON HIT THO ",
+      "mode": "rag",
+      "user_id": "u1",
+      "use_cache": true
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "337c0353fece4fb9a987cd92690d0d7f",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-source-v1",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 0,
+      "retrieval_calls": 0
+    }
+  },
+  {
+    "case": "cache_changed_user",
+    "request": {
+      "question": "toi muon hit tho",
+      "mode": "rag",
+      "user_id": "u2",
+      "use_cache": true
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "69a60c730f3b4a8ab972377968b99b5d",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-source-v1",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    }
+  },
+  {
+    "case": "cache_added_negation",
+    "request": {
+      "question": "toi KHONG muon hit tho",
+      "mode": "rag",
+      "user_id": "u1",
+      "use_cache": true
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "eff718ac9efe4b6ea87287a3b72aac3b",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-source-v1",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    }
+  },
+  {
+    "case": "cache_changed_source",
+    "request": {
+      "question": "toi muon hit tho",
+      "mode": "rag",
+      "user_id": "u1",
+      "use_cache": true
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "9b8ad4556ddc49c9b1ffebbce175fefa",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-v2",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    }
+  },
+  {
+    "case": "cache_changed_prompt",
+    "request": {
+      "question": "toi muon hit tho",
+      "mode": "rag",
+      "user_id": "u1",
+      "use_cache": true
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "3aa5b284a9c042938cc808dffea53010",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-v2",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    }
+  },
+  {
+    "case": "cache_changed_model",
+    "request": {
+      "question": "toi muon hit tho",
+      "mode": "rag",
+      "user_id": "u1",
+      "use_cache": true
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "331b247fb5cd4938b909251a67d729a5",
+      "graph_id": "e0e96f06960c6abd1424",
+      "model_id": "fixture:changed-model",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-v2",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    }
+  },
+  {
+    "case": "cache_opt_out",
+    "request": {
+      "question": "toi muon hit tho",
+      "mode": "rag",
+      "user_id": "u1",
+      "use_cache": false
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "cb9293a2a1c5411e803e4643514b93de",
+      "graph_id": "e0e96f06960c6abd1424",
+      "model_id": "fixture:changed-model",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-v2",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    }
+  },
+  {
+    "case": "cache_anonymous",
+    "request": {
+      "question": "toi muon hit tho",
+      "mode": "rag",
+      "use_cache": true
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "337d4dd884104bf49b04611a2148166b",
+      "graph_id": "e0e96f06960c6abd1424",
+      "model_id": "fixture:changed-model",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-v2",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    }
+  },
+  {
+    "case": "cache_session_first",
+    "request": {
+      "question": "toi muon hit tho",
+      "mode": "rag",
+      "user_id": "u1",
+      "use_cache": true,
+      "session_id": "s"
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "3e044d74bc6740dfa2906076b2b54824",
+      "graph_id": "e0e96f06960c6abd1424",
+      "model_id": "fixture:changed-model",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-v2",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    }
+  },
+  {
+    "case": "cache_session_second",
+    "request": {
+      "question": "toi muon hit tho",
+      "mode": "rag",
+      "user_id": "u1",
+      "use_cache": true,
+      "session_id": "s"
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "2b18e46aef4049e3be6103f3e7972869",
+      "graph_id": "e0e96f06960c6abd1424",
+      "model_id": "fixture:changed-model",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-v2",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    }
+  },
+  {
+    "case": "same_claimed_id_reuses_cache",
+    "request": {
+      "question": "toi muon hit tho",
+      "mode": "rag",
+      "user_id": "u1",
+      "use_cache": true
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "35352241b8d942a897a0478225c0dff1",
+      "graph_id": "e0e96f06960c6abd1424",
+      "model_id": "fixture:changed-model",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-v2",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 0,
+      "retrieval_calls": 0
+    }
+  },
+  {
+    "case": "new_engine_has_empty_cache",
+    "request": {
+      "question": "toi muon hit tho",
+      "mode": "rag",
+      "user_id": "u1",
+      "use_cache": true
+    },
+    "response": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "347aca20c9ad464aa747ad38b8b87e2c",
+      "graph_id": "e0e96f06960c6abd1424",
+      "model_id": "fixture:changed-model",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "title": "fixture.txt",
+          "page": 1,
+          "source_version": "fixture-v2",
+          "quote": "Day la du lieu gia lap kiem tra luong; k"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    }
+  },
+  {
+    "case": "memory_first",
+    "request": {
+      "mode": "chat",
+      "user_id": "u1",
+      "session_id": "same",
+      "use_cache": true,
+      "question": "Toi ten la Son"
+    },
+    "response": {
+      "response": "Da doc 1 tin nhan. Toi ten la Son",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "44120e4f5d4b4d8ca490c95a22f640e0",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    }
+  },
+  {
+    "case": "memory_followup",
+    "request": {
+      "mode": "chat",
+      "user_id": "u1",
+      "session_id": "same",
+      "use_cache": true,
+      "question": "Toi ten gi?"
+    },
+    "response": {
+      "response": "Da doc 3 tin nhan. Toi ten gi?",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "f9abb9c9532c40a3bfaea59fabaa71ed",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    }
+  },
+  {
+    "case": "memory_third",
+    "request": {
+      "mode": "chat",
+      "user_id": "u1",
+      "session_id": "same",
+      "use_cache": true,
+      "question": "luot ba"
+    },
+    "response": {
+      "response": "Da doc 5 tin nhan. luot ba",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "9db8a5acb7c246ecabb5ac0c34a518cb",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    }
+  },
+  {
+    "case": "memory_window",
+    "request": {
+      "mode": "chat",
+      "user_id": "u1",
+      "session_id": "same",
+      "use_cache": true,
+      "question": "luot bon"
+    },
+    "response": {
+      "response": "Da doc 5 tin nhan. luot bon",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "bedc991626c94978a513e2c000dfb0b5",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    }
+  },
+  {
+    "case": "other_user_same_session",
+    "request": {
+      "mode": "chat",
+      "user_id": "u2",
+      "session_id": "same",
+      "use_cache": true,
+      "question": "hoi moi"
+    },
+    "response": {
+      "response": "Da doc 1 tin nhan. hoi moi",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "b3ef6184a4a3433494d261037c112493",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    }
+  },
+  {
+    "case": "same_user_other_session",
+    "request": {
+      "mode": "chat",
+      "user_id": "u1",
+      "session_id": "other",
+      "use_cache": true,
+      "question": "hoi moi"
+    },
+    "response": {
+      "response": "Da doc 1 tin nhan. hoi moi",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "38a556aa8cfd4feaa375455f68d90032",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    }
+  },
+  {
+    "case": "without_session",
+    "request": {
+      "mode": "chat",
+      "user_id": "u1",
+      "session_id": null,
+      "use_cache": true,
+      "question": "hoi moi"
+    },
+    "response": {
+      "response": "Da doc 1 tin nhan. hoi moi",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "847c9b35c1a348c5b25e4e78a9fe9bbf",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    }
+  },
+  {
+    "case": "same_claimed_ids_get_history",
+    "request": {
+      "mode": "chat",
+      "user_id": "u1",
+      "session_id": "same",
+      "use_cache": true,
+      "question": "nguoi goi khac dung cung ID"
+    },
+    "response": {
+      "response": "Da doc 5 tin nhan. nguoi goi khac dung cung ID",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "b1091f56d54741bdac9a8d927ee7cd38",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    }
+  },
+  {
+    "case": "session_without_user_invalid",
+    "response": {
+      "response": "Yeu cau chua hoan tat. Hay doi chieu trace_id de kiem tra.",
+      "status": "error",
+      "code": "INVALID_REQUEST",
+      "trace_id": "41ff4a9fd47645b39ff951d6e63e0fa2",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": null,
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "http": 422
+  },
+  {
+    "case": "new_engine_has_no_history",
+    "request": {
+      "mode": "chat",
+      "user_id": "u1",
+      "session_id": "same",
+      "use_cache": true,
+      "question": "Toi ten gi?"
+    },
+    "response": {
+      "response": "Da doc 1 tin nhan. Toi ten gi?",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "c6384d1cacb54ece9f7d17bd450f12c5",
+      "graph_id": "5844b40de3e164f4c307",
+      "model_id": "fixture:cache-memory",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    }
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "frozen_before_evaluation": true,
+  "selection": "AI-authored from same supplied PDF; not external or blinded validation",
+  "cases": [
+    {
+      "id": "new_01",
+      "question": "Theo Stress.pdf, trước khi tập thở nên mặc quần áo như thế nào?",
+      "reference": "Mặc quần áo thoải mái.",
+      "page": 2,
+      "evidence": "Mặc quần áo thoải mái."
+    },
+    {
+      "id": "new_02",
+      "question": "Theo Stress.pdf, thở theo nhịp 4–7–8 lặp lại bao nhiêu lần?",
+      "reference": "Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh.",
+      "page": 3,
+      "evidence": "Lặp lại 3 đến 7 lần"
+    },
+    {
+      "id": "new_03",
+      "question": "Theo Stress.pdf, khi hít vào trong bài thở bụng thì ngực có di chuyển không?",
+      "reference": "Giữ nguyên vị trí của ngực.",
+      "page": 2,
+      "evidence": "Giữ nguyên vị trí của ngực."
+    },
+    {
+      "id": "new_04",
+      "question": "Theo Stress.pdf, khi thư giãn cơ bắp thì căng cơ bàn chân vào lúc hít vào hay thở ra?",
+      "reference": "Hít vào. Căng cơ bàn chân.",
+      "page": 6,
+      "evidence": "Hít vào. Căng cơ bàn chân."
+    },
+    {
+      "id": "new_05",
+      "question": "Theo Stress.pdf, thở buổi sáng bắt đầu ở tư thế nào?",
+      "reference": "Đứng, gập người về phía trước từ thắt lưng, đầu gối hơi cong, cánh tay buông thõng.",
+      "page": 4,
+      "evidence": "Từ tư thế đứng, gập người về phía trước từ thắt lưng"
+    },
+    {
+      "id": "new_06",
+      "question": "Theo Stress.pdf, bài tập tập trung vào hơi thở bắt đầu bằng việc mở mắt hay nhắm mắt?",
+      "reference": "Nhắm mắt lại.",
+      "page": 5,
+      "evidence": "Nhắm mắt lại."
+    }
+  ]
+}

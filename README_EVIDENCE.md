@@ -1,9 +1,9 @@
-# Evidence and error-contract correction
+# Runtime contract for evidence v1.3
 
 Base repository: https://github.com/vietdut2004/CCNLTHD_LangGraph
 Base commit: 01ad2c014c2e948b8c6a97d875d2573ab2b2838b
 
-This patch implements the six review items in their numbered order. It is a new graph (`evidence-v1`), not a rerun of the historical screenshots. It has not been pushed or deployed to the original demo. Preserve the 20 October baseline as a separate experiment.
+Current runtime: evidence-v1.3-rag-check. README.md is the current handover status; handover/EVIDENCE_INDEX.json separates historical and current experiments. Source is integrated locally; remote push/merge and the group machine demo remain unverified.
 
 ## 1 Evidence identity
 
@@ -25,7 +25,7 @@ python -m benchmarks.run_evidence --fixture --output evidence_fixture
 
 Fixture adapters make no external HTTP, model or embedding calls. Fixture token usage is missing for a simulated model call, not zero; calls that provably never invoked a model are zero. Fixture timings must never be copied into the Groq/RAG/web performance table.
 
-For real RAG, install `requirements-rag-extra.txt`, supply a reviewed Stress.pdf via RAG_PDF_PATH, and configure GROQ_API_KEY and TAVILY_API_KEY locally. Never include a real .env in a shared package. Start the new API in a separate port so the baseline can be retained:
+For current BM25 RAG, install `requirements-locked.txt` (FAISS requirements-rag-extra.txt is historical), supply a reviewed Stress.pdf via RAG_PDF_PATH, and configure GROQ_API_KEY and TAVILY_API_KEY locally. Never include a real .env in a shared package. Start the new API in a separate port so the baseline can be retained:
 
 ```powershell
 python -m pip freeze > environment_live.txt
@@ -40,13 +40,13 @@ The benchmark separately records technical_error, observable_case_pass, semantic
 
 ## 4 Error and retry contract
 
-POST /chatbot retains the response text field and adds status, code, trace_id, graph_id, model_id, route, sources and usage. HTTP 200 has status=ok or refused. 422=INVALID_REQUEST; 429=UPSTREAM_QUOTA; 502=UPSTREAM_AUTH or UPSTREAM_OR_GRAPH_ERROR; 503=missing configuration/source/session capacity/graph step limit; 504=UPSTREAM_TIMEOUT. Error bodies never expose raw exception messages. Retrying is explicitly zero at the Groq SDK, Tavily HTTP transport, tool, graph and benchmark-client layers. Model timeout=25s; web timeout=20s; whole API deadline=60s; recursion_limit=12; max output=512 tokens/call. Sync PDF/model-loading threads may continue after a deadline cancellation; process isolation is needed for hard CPU-job cancellation.
+POST /chatbot retains the response text field and adds status, code, trace_id, graph_id, model_id, route, sources and usage. HTTP 200 has status=ok or refused. 422=INVALID_REQUEST; 429=UPSTREAM_QUOTA; 502=UPSTREAM_AUTH or UPSTREAM_OR_GRAPH_ERROR; 503=missing configuration/source/session capacity/graph step limit; 504=UPSTREAM_TIMEOUT. Error bodies never expose raw exception messages. Retrying is explicitly zero at the Groq SDK, Tavily HTTP transport, tool, graph and benchmark-client layers. Model timeout=25s; web timeout=20s; whole API deadline=60s; recursion_limit=12; max output=1536 tokens/call. Sync PDF/model-loading threads may continue after a deadline cancellation; process isolation is needed for hard CPU-job cancellation.
 
 ## 5 Cache and sessions
 
-The old FAISS example is similarity retrieval, not a complete semantic answer cache. The new AnswerCache is an **exact normalized-question cache**, only for RAG, opt-in, TTL 300s, capacity 128; it is disabled for anonymous and session requests. Keys include demo user, source-content hash, embedding/split configuration, model and prompt version. It stores the supported answer and returned source quotes. The PDF index is rebuilt when its source version changes. Similar but different wording/negation misses; user and source changes miss. This is not semantic-hit accuracy or a calibrated similarity threshold experiment.
+The old FAISS example is similarity retrieval, not a complete semantic answer cache. The new AnswerCache is an **exact normalized-question cache**, only for RAG, opt-in, TTL 300s, capacity 128; it is disabled for anonymous and session requests. Keys include demo user, source-content hash, retrieval/chunk configuration, model and prompt version. It stores the supported answer and returned source quotes. The PDF index is rebuilt when its source version changes. Similar but different wording/negation misses; user and source changes miss. This is not semantic-hit accuracy or a calibrated similarity threshold experiment.
 
-Session requests must supply user_id and session_id. Hashing the pair namespaces an InMemorySaver. The same user/session sends up to two prior human/AI exchanges to the model; a different user/session starts fresh. Requests within a session are serialized; 128 session namespaces maximum per process. Persistence is RAM only. Caller-supplied user_id is a demonstration namespace, NOT authentication or production authorization; add authenticated identity before multi-user deployment. MySQL long-term memory is still a planned extension.
+Session requests must supply user_id and session_id. Hashing the pair namespaces an InMemorySaver. Only node answer sends up to two prior human/AI exchanges; grounded currently uses the current question and retrieved sources; a different user/session starts fresh. Requests within a session are serialized; 128 session namespaces maximum per process. Persistence is RAM only. Caller-supplied user_id is a demonstration namespace, NOT authentication or production authorization; add authenticated identity before multi-user deployment. MySQL long-term memory is still a planned extension.
 
 ## 6 Sources, refusal and scope
 

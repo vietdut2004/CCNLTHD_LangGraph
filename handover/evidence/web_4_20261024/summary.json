@@ -1,0 +1,31 @@
+{
+  "n": 4,
+  "live_web_executed": true,
+  "fixture": false,
+  "warmup_excluded": true,
+  "technical_errors": 0,
+  "technical_error_rate_pct": 0.0,
+  "observable_pass": 2,
+  "latency_ms": {
+    "mean": 6097.145,
+    "p50": 6074.339,
+    "p95": 7111.803
+  },
+  "percentile_method": "nearest-rank",
+  "complete_usage_requests": 4,
+  "observed_tokens": {
+    "input_tokens": 4620,
+    "output_tokens": 2432,
+    "total_tokens": 7052
+  },
+  "content_quality": "Pending source review; citation integrity is not semantic correctness",
+  "scope": "Four factual technical documentation queries; not news, clinical advice, load testing, or broad web quality",
+  "environment": {
+    "python": "3.13.2",
+    "concurrency": 1,
+    "model_max_tokens": 1536,
+    "model_timeout_seconds": 25,
+    "search_timeout_seconds": 20,
+    "retry": 0
+  }
+}

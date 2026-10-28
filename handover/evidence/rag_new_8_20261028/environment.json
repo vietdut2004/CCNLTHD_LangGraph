@@ -1,0 +1,31 @@
+{
+  "started_at": "2026-10-28T12:36:04.520114+00:00",
+  "python": "3.13.2",
+  "provider": "Groq real",
+  "model_id": "openai/gpt-oss-20b",
+  "fixture": false,
+  "credentials_present": true,
+  "requests_planned": 8,
+  "concurrency": 1,
+  "delay_seconds": 6,
+  "retries": 0,
+  "model_timeout_seconds": 25,
+  "api_deadline_seconds": 60,
+  "max_output_tokens": 1536,
+  "client_timeout_seconds": 70,
+  "cases_sha256": "8d512cb241a64330f88fa6e1bfbff7828255c73a99069c1ffd1dee209ff32a6c",
+  "warmup_used": false,
+  "first_request_includes_cold_connection_and_pdf_preparation": true,
+  "packages": {
+    "pypdf": "6.21.2",
+    "langgraph": "1.2.16",
+    "langchain-core": "1.7.0",
+    "langchain-groq": "1.1.3",
+    "fastapi": "0.141.1",
+    "httpx": "0.28.1",
+    "uvicorn": "0.54.0",
+    "python-dotenv": "1.2.4",
+    "pytest": "9.1.1"
+  },
+  "finished_at": "2026-10-28T12:37:13.052438+00:00"
+}

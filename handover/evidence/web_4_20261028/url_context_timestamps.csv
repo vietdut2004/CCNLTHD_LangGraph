@@ -1,0 +1,228 @@
+﻿case_id,trace_id,source_id,title,url,retrieved_at,search_started_at,search_finished_at,context,timestamp_basis
+web_01,705960d54b17468fbb678b1cc03148af,web-1,FastAPI Tutorial for Beginners #2 | API Documentation with Swagger UI & ReDoc,https://www.youtube.com/watch?v=fFjGJ_B0FF4&vl=en-US,2026-10-28T13:50:03.195590+00:00,2026-10-28T13:50:00.122549+00:00,2026-10-28T13:50:03.195630+00:00,"[3:39] Now let's look at another documentation page provided by fast API. In the browser instead of / doc we will write
+[3:47] here let me remove this and instead of docs I will write here redoc.
+[3:58] This is another automatically generated documentation page. This one is called redoc. It uses the same OpenAI
+[4:07] specification but the layout is different. Swagger UI is more interactive and better for testing. Red is cleaner and better for reading [...] [4:44] information. So both swagger UI and redoc are generated automatically from our fast API application. We only write
+[4:51] our API code. Fast API handles the documentation for us. And this becomes very useful when our application grows
+[4:58] and we have many endpoints. It also help us or helps other developers understand and test our API easily. That's it for this video. [...] [2:35] this from here and then I will paste it here and instead of shipment I will
+[2:41] write here docs and here we can see our automatically generated API documentation. This interface is called
+[2:49] swagger UI and fast API generates sometimes called an open API specification and swagger UI uses that
+[2:58] specification to create this interactive documentation. Right now we have only one endpoint and the method that we are","retrieved_at is client observation after Tavily response, not publication date"
+web_01,705960d54b17468fbb678b1cc03148af,web-2,Custom Docs UI Static Assets (Self-Hosting) - FastAPI,https://fastapi.tiangolo.com/how-to/custom-docs-ui-assets,2026-10-28T13:50:03.195608+00:00,2026-10-28T13:50:00.122549+00:00,2026-10-28T13:50:03.195630+00:00,"@app. get(app. swagger_ui_oauth2_redirect_url, include_in_schema = False)async def swagger_ui_redirect(): async def  swagger_ui_redirect(): return get_swagger_ui_oauth2_redirect_html() return get_swagger_ui_oauth2_redirect_html()   @app.get(""/redoc"", include_in_schema=False) @app. get(""/redoc"", include_in_schema = False)async def redoc_html(): async def  redoc_html(): return get_redoc_html( return get_redoc_html( openapi_url=app.openapi_url, openapi_url = app. openapi_url, title=app.title + "" - [...] Swagger UI uses the files:
+
+ `swagger-ui-bundle.js`
+ `swagger-ui.css`
+
+And ReDoc uses the file:
+
+ `redoc.standalone.js`
+
+After that, your file structure could look like:
+
+```
+. ├── app │   ├── __init__.py │   ├── main.py └── static  ├── redoc.standalone.js  ├── swagger-ui-bundle.js  └── swagger-ui.css 
+```
+
+### Serve the static files¶
+
+ Import `StaticFiles`.
+ ""Mount"" a `StaticFiles()` instance in a specific path. [...] @app. get(app. swagger_ui_oauth2_redirect_url, include_in_schema = False)async def swagger_ui_redirect(): async def swagger_ui_redirect(): async def  swagger_ui_redirect(): return get_swagger_ui_oauth2_redirect_html()  return get_swagger_ui_oauth2_redirect_html() return get_swagger_ui_oauth2_redirect_html()   @app.get(""/redoc"", include_in_schema=False) @app.get(""/redoc"", include_in_schema=False) @app. get(""/redoc"", include_in_schema = False)async def redoc_html(): async def redoc_html(): async","retrieved_at is client observation after Tavily response, not publication date"
+web_01,705960d54b17468fbb678b1cc03148af,web-3,"FastAPI Documentation Best Practices: Using Swagger, Redoc, and Scalar for Production-Ready APIs",https://blog.nnitiwe.io/p/fastapi-documentation-best-practices,2026-10-28T13:50:03.195613+00:00,2026-10-28T13:50:00.122549+00:00,2026-10-28T13:50:03.195630+00:00,"FastAPI’s documentation is powered by OpenAPI, a specification that describes APIs in a structured way. Here’s what OpenAPI covers:
+
+ Resources: The “things” your API manages (e.g., users, items).
+ Properties: Details about those things (e.g., a user’s name or email).
+ Endpoints: The URLs you call (e.g., /users/1 to get a user).
+ Operations: Actions like GET (retrieve) or POST (create).
+ Parameters: Inputs like IDs or search terms.
+ Authentication: How to secure access (e.g., API keys). [...] FastAPI shines here because it’s designed to be self-documenting. As you write your code, it generates documentation automatically using the OpenAPI standard—a widely adopted format for describing APIs.
+
+55% of API providers use documentation tools to create high-quality APIs. These tools help ensure clarity and consistency, making APIs more reliable and user-friendly. [...] But here’s the catch: an API is only as good as its documentation. Without clear, accessible documentation, even the most brilliant API can become a source of frustration for developers and users alike.
+
+FastAPI is a modern Python framework that not only makes building APIs fast and intuitive but also comes with powerful, self-documenting features. By leveraging the OpenAPI standard, FastAPI automatically generates interactive documentation that developers can easily explore and test.","retrieved_at is client observation after Tavily response, not publication date"
+web_02,7874d4f946694c7db3af9ffc7ed366d5,web-1,langgraph.checkpoint | LangChain Reference,https://reference.langchain.com/python/langgraph.checkpoint,2026-10-28T13:50:16.527682+00:00,2026-10-28T13:50:11.378858+00:00,2026-10-28T13:50:16.528145+00:00,"### Thread
+
+Threads enable the checkpointing of multiple different runs, making them essential for multi-tenant chat applications and other scenarios where maintaining separate states is necessary. A thread is a unique ID assigned to a series of checkpoints saved by a checkpointer. When using a checkpointer, you must specify a `thread_id` and optionally `checkpoint_id` when running the graph. [...] `thread_id` is simply the ID of a thread. This is always required.
+ `checkpoint_id` can optionally be passed. This identifier refers to a specific checkpoint within a thread. This can be used to kick off a run of a graph from some point halfway through a thread.
+
+You must pass these when invoking the graph as part of the configurable part of the config, e.g. [...] Checkpointers allow LangGraph agents to persist their state within and across multiple interactions.
+
+When a checkpointer is configured, you should passClass
+
+### EmptyChannelError
+
+Raised when attempting to get the value of a channel that hasn't been updated for the first time yet.Class
+
+### UUID
+
+UUID draft version objectsClass
+
+### ChannelProtocolClass
+
+### SendProtocolClass
+
+### JsonPlusSerializer
+
+Serializer that uses ormsgpack, with optional fallbacks.
+
+Warning","retrieved_at is client observation after Tavily response, not publication date"
+web_02,7874d4f946694c7db3af9ffc7ed366d5,web-2,LangGraph là gì? Hướng dẫn xây dựng tác nhân AI ghi nhớ trạng thái,https://apidog.com/vi/blog/langgraph,2026-10-28T13:50:16.528107+00:00,2026-10-28T13:50:11.378858+00:00,2026-10-28T13:50:16.528145+00:00,"Làm cách nào LangGraph ghi nhớ các thứ giữa các lần gọi? Thông qua các checkpointer. Biên dịch đồ thị của bạn với một checkpointer và truyền một `thread_id`, và LangGraph sẽ lưu một ảnh chụp nhanh trạng thái sau mỗi bước, sau đó khôi phục nó trong lần gọi tiếp theo cho luồng đó. Đó là cách bạn có được bộ nhớ cuộc trò chuyện và khả năng phục hồi sau sự cố mà không thay đổi logic node của bạn. [...] Biên dịch một đồ thị với một checkpointer và nó sẽ lưu một ảnh chụp nhanh trạng thái sau mỗi bước. Truyền một `thread_id` trong cấu hình, và LangGraph khôi phục điểm kiểm tra gần nhất cho luồng đó trong lần gọi tiếp theo. Các node của bạn không thay đổi; môi trường chạy xử lý việc lưu và khôi phục. [...] | LangChain | LangGraph |
+ --- |
+| Vai trò | Các thành phần và tích hợp | Điều phối và môi trường chạy |
+| Luồng điều khiển | Chuỗi tuyến tính | Đồ thị có chu trình và nhánh |
+| Trạng thái tích hợp | Hạn chế | Được chia sẻ, có kiểu dữ liệu, bền vững |
+| Khả năng duy trì / tiếp tục | Không phải trọng tm | Checkpointer + thread ID |
+| Tốt nhất cho | Ghép nối các cuộc gọi mô hình và công cụ | Các agent có trạng thái, nhiều bước |","retrieved_at is client observation after Tavily response, not publication date"
+web_02,7874d4f946694c7db3af9ffc7ed366d5,web-3,"Mastering Persistence in LangGraph: Checkpoints, Threads, and Beyond 🚀",https://medium.com/@vinodkrane/mastering-persistence-in-langgraph-checkpoints-threads-and-beyond-21e412aaed60,2026-10-28T13:50:16.528117+00:00,2026-10-28T13:50:11.378858+00:00,2026-10-28T13:50:16.528145+00:00,"graph = workflow.compile(checkpointer=checkpointer)  
+  
+# Run the graph  
+graph.invoke({""message"": """", ""steps"": []}, config={""configurable"": {""thread_id"": ""1""}})  
+  
+# Access checkpoint data  
+print(checkpointer.get_thread(""1""))
+LangGraph’s InMemorySaver checkpointer saves a checkpoint at every super-step, which generally means after each node execution.","retrieved_at is client observation after Tavily response, not publication date"
+web_03,a6f89c5416a148c1b001ceaf8831d759,web-1,LangGraph Persistence Explained From Scratch (Part 1): Why Your AI Agent Needs a Memory That…,https://medium.com/@gmshakil786/langgraph-persistence-explained-from-scratch-part-1-why-your-ai-agent-needs-a-memory-that-a9adb1bbfbd5,2026-10-28T13:50:30.290623+00:00,2026-10-28T13:50:25.533431+00:00,2026-10-28T13:50:30.290667+00:00,"Use it for:
+
+   Local development and debugging
+   Automated tests (unit tests, CI pipelines)
+   Quick prototypes and notebooks where you don’t care about surviving a restart
+
+Do not use it for anything a real user depends on in production. The official LangGraph documentation is explicit about this: `InMemorySaver` should only be used for debugging or testing — production systems should use a real database-backed checkpointer, such as `PostgresSaver`. [...] Here’s something beginners find surprising: you don’t have to manually save checkpoints. As long as you’ve attached a checkpointer to your graph (we’ll cover checkpointers next), LangGraph automatically creates a new checkpoint after every “super-step” — which basically means after every node finishes running.
+
+## Get Shakil Ur Rehman’s stories in your inbox
+
+Join Medium for free to get updates from this writer.
+
+Subscribe
+
+Subscribe
+
+- [x] 
+
+Remember me for faster sign in [...] If you call `graph.ainvoke(...)` again with the same`thread_id`, LangGraph will pick up from the last saved checkpoint for that thread, instead of starting over at `1`.
+
+## Advantages of InMemorySaver
+
+   ✅ Zero setup — no database, no external service, works instantly
+   ✅ Very fast, since RAM access has no network or disk delay
+   ✅ Perfect for writing unit tests
+   ✅ Great for learning and experimenting in notebooks
+
+## Limitations of InMemorySaver","retrieved_at is client observation after Tavily response, not publication date"
+web_03,a6f89c5416a148c1b001ceaf8831d759,web-2,Persistence - Docs by LangChain,https://docs.langchain.com/oss/python/langgraph/persistence,2026-10-28T13:50:30.290642+00:00,2026-10-28T13:50:25.533431+00:00,2026-10-28T13:50:30.290667+00:00,"```
+from langchain_core.utils.uuid import uuid7 from  langchain_core. utils. uuid import  uuid7config = {""configurable"": {""thread_id"": str(uuid7())[:255]}} config = {""configurable"": {""thread_id"":  str(uuid7())[: 255]}}
+```
+
+### ​ `MemorySaver` does not persist between restarts
+
+`MemorySaver` and `InMemorySaver` store checkpoints in RAM. When the process restarts, all checkpoints are lost. Fix: Use a persistent checkpointer for production:","retrieved_at is client observation after Tavily response, not publication date"
+web_03,a6f89c5416a148c1b001ceaf8831d759,web-3,InMemorySaver | langgraph.checkpoint | LangChain Reference,https://reference.langchain.com/python/langgraph.checkpoint/memory/InMemorySaver,2026-10-28T13:50:30.290649+00:00,2026-10-28T13:50:25.533431+00:00,2026-10-28T13:50:30.290667+00:00,"This checkpoint saver stores checkpoints in memory using a `defaultdict`.
+
+Copy
+
+```
+InMemorySaver( self,  ,  serde:   |  None  =  None,  factory:  type[defaultdict]  =  defaultdict  )
+```
+
+## Bases
+
+`[]``AbstractContextManager``AbstractAsyncContextManager`
+
+Note:
+
+Only use `InMemorySaver` for debugging or testing purposes. For production use cases we recommend installing langgraph-checkpoint-postgres and using `PostgresSaver` / `AsyncPostgresSaver`. [...] If you are using LangSmith Deployment, no checkpointer needs to be specified. The correct managed checkpointer will be used automatically.
+
+Example: [...] ```","retrieved_at is client observation after Tavily response, not publication date"
+web_04,eb7f69ad61f34f528aff5328bfdbf4c0,web-1,add_messages | langgraph | LangChain Reference,https://reference.langchain.com/python/langgraph/graph/message/add_messages,2026-10-28T13:50:42.535933+00:00,2026-10-28T13:50:38.345497+00:00,2026-10-28T13:50:42.535977+00:00,"Merges two lists of messages, updating existing messages by ID.
+
+By default, this ensures the state is ""append-only"", unless the new message has the same ID as an existing message.
+
+Basic usage: [...] Overwrite existing message:
+
+```
+msgs1 = [HumanMessage(content=""Hello"", id=""1"")] msgs1 = [HumanMessage(content = ""Hello"", id = ""1"")]msgs2 = [HumanMessage(content=""Hello again"", id=""1"")] msgs2 = [HumanMessage(content = ""Hello again"", id = ""1"")]add_messages(msgs1, msgs2)add_messages(msgs1, msgs2)# [HumanMessage(content='Hello again', id='1')]# [HumanMessage(content='Hello again', id='1')]
+```
+
+Use in a StateGraph: [...] from langchain_core.messages import AIMessage, HumanMessage from langchain_core.messages import AIMessage, HumanMessage msgs1 = [HumanMessage(content=""Hello"", id=""1"")] msgs1 = [HumanMessage(content = ""Hello"", id = ""1"")]msgs2 = [AIMessage(content=""Hi there!"", id=""2"")] msgs2 = [AIMessage(content =""Hi there!"", id = ""2"")]add_messages(msgs1, msgs2)add_messages(msgs1, msgs2)# [HumanMessage(content='Hello', id='1'), AIMessage(content='Hi there!', id='2')]# [HumanMessage(content='Hello', id='1'),","retrieved_at is client observation after Tavily response, not publication date"
+web_04,eb7f69ad61f34f528aff5328bfdbf4c0,web-2,A Beginner’s Guide to Getting Started with add_messages Reducer in LangGraph,https://medium.com/ai-engineering-bootcamp/a-beginners-guide-to-getting-started-with-add-messages-reducer-in-langgraph-3800d19ba1be,2026-10-28T13:50:42.535955+00:00,2026-10-28T13:50:38.345497+00:00,2026-10-28T13:50:42.535977+00:00,"Now that you know what `add_messages` does, let’s see how it works behind the scenes.
+
+When you call `add_messages`, two things happen:
+
+1.   It looks at the current state of your LangGraph agent.
+2.   It appends new messages to the existing message list.
+
+You give it a state and a message or list of messages, and it returns a new state with those messages added in.
+
+Nothing fancy, just clean state management that makes conversation tracking reliable.
+
+Here’s a quick example: [...] ## Using `add_messages` in Your LangGraph Workflow
+
+You’ve seen what `add_messages` does in isolation. Now let’s see how it fits inside a typical LangGraph setup.
+
+In most cases, you use `add_messages` inside a workflow or node that handles interactions between the user and the model. Each time a message is generated or received, the reducer updates the agent’s state to include the new message.
+
+Here’s a simple example that shows how it comes together: [...] Always let `add_messages` handle updates for you:
+
+state = add_messages(state, {""role"": ""user"", ""content"": ""Hi!""}) # Correct
+## ❌ Mistake 2: Using the Wrong Message Format
+
+LangGraph expects messages to follow a simple structure with `role` and `content`.
+
+If you forget one of these keys, the reducer might not behave as expected.","retrieved_at is client observation after Tavily response, not publication date"
+web_04,eb7f69ad61f34f528aff5328bfdbf4c0,web-3,addMessages | @langchain/langgraph | LangChain Reference,https://reference.langchain.com/javascript/langchain-langgraph/web/addMessages,2026-10-28T13:50:42.535962+00:00,2026-10-28T13:50:38.345497+00:00,2026-10-28T13:50:42.535977+00:00,"If a message in `right` shares an ID with a message in `left`:
+     + If it is a `RemoveMessage`, that message (by ID) is marked for removal.
+     + If it is a normal message, it replaces the message with the same ID from `left`.
+    If a message in `right` does not exist in `left`:
+     + If it is a `RemoveMessage`, this is considered an error (cannot remove non-existent ID).
+     + Otherwise, the message is appended.
+    Messages flagged for removal are omitted from the final output. [...] 1. Normalizes both `left` and `right` message inputs to arrays.
+2. Coerces any message-like objects into real `BaseMessage` instances.
+3. Ensures all messages have unique, stable IDs by generating missing ones.
+4. If a `RemoveMessage` instance is encountered in `right` with the ID `REMOVE_ALL_MESSAGES`, all previous messages are discarded and only the subsequent messages in `right` are returned.
+5. Otherwise, merges `left` and `right` messages together following these rules: [...] LangGraph CLI
+
+LangGraph CUA
+
+Utils
+
+LangGraph Supervisor
+
+LangGraph Swarm
+
+Language
+
+Theme
+
+Function●Since v1.0
+
+# addMessages
+
+Copy
+
+```
+messagesStateReducer( left:  ,  right:   ):  <<
+```
+
+## Used in Docs
+
+ Quickstart
+ Use the functional API
+ Workflows and agents
+
+View source on GitHub
+
+>
+
+,
+
+MessageType
+
+>
+
+## Parameters
+
+| Name | Type | Description |
+ --- 
+| `left`\ | `Messages` |
+| `right`\ | `Messages` |
+
+Reducer function for combining two sets of messages in LangGraph's state system.","retrieved_at is client observation after Tavily response, not publication date"

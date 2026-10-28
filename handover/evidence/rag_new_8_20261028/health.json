@@ -1,0 +1,42 @@
+{
+  "service": "week8-handover",
+  "configured": true,
+  "fixture": false,
+  "source_sha256": {
+    "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+    "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+    "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+    "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+    "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+    "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+    "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+    "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+    "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+  },
+  "model_id": "openai/gpt-oss-20b",
+  "versions": {
+    "langgraph": "1.2.16",
+    "langchain-core": "1.7.0",
+    "langchain-groq": "1.1.3",
+    "fastapi": "0.141.1",
+    "pypdf": "6.21.2"
+  },
+  "prompt_version": "evidence-v1.3-rag-check",
+  "retrieval_policy": {
+    "name": "section-balanced-bm25-v3",
+    "max_chars": 650,
+    "overlap": 180,
+    "k": 3
+  },
+  "generation_policy": {
+    "temperature": 0,
+    "max_output_tokens": 1536,
+    "timeout_seconds": 25
+  },
+  "retry_policy": {
+    "sdk": 0,
+    "tool": 0,
+    "graph": 0
+  },
+  "graph_id": "beebab186d50bedb4180"
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "heldout_01",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, người chưa từng tập thở nên bắt đầu bằng bài nào và tại sao?",
+    "reference": "Bắt đầu bằng thở bụng vì đơn giản để học và dễ thực hiện.",
+    "reference_pages": [
+      1
+    ],
+    "required_spans": [
+      "thở bằng bụng",
+      "rất đơn giản để học và dễ thực hiện"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "heldout_02",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, lời khuyên chung về thời điểm và số lần tập trong một ngày là gì?",
+    "reference": "Cố gắng tập cùng một thời điểm, một hoặc hai lần mỗi ngày.",
+    "reference_pages": [
+      2
+    ],
+    "required_spans": [
+      "cùng một thời điểm một hoặc hai lần mỗi ngày"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "heldout_03",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, trong bước đầu của thở cuộn, làm đầy và làm trống phổi dưới mấy lần trước khi thêm bước thứ hai?",
+    "reference": "8 đến 10 lần; đây là số lần của bước đầu, không phải thời lượng 3–5 phút của phần thực hành sau.",
+    "reference_pages": [
+      3
+    ],
+    "required_spans": [
+      "làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "heldout_04",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, ở bước thứ hai của thở cuộn, hít vào ngực trên trước hay phổi dưới trước?",
+    "reference": "Hít vào phổi dưới trước rồi tiếp tục hít vào ngực trên.",
+    "reference_pages": [
+      3
+    ],
+    "required_spans": [
+      "Trước tiên hít vào phổi",
+      "dưới như trước, rồi sau đó tiếp tục hít vào ngực trên"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "heldout_05",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, nếu thực hiện bài thở sâu ở tư thế nằm thì chiếc gối được kê ở những vị trí nào?",
+    "reference": "Kê dưới đầu và đầu gối.",
+    "reference_pages": [
+      5
+    ],
+    "required_spans": [
+      "một chiếc gối kê dưới đầu và đầu gối"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "heldout_06",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, trong bài tập tập trung vào hơi thở, khi thở ra người tập nên hình dung điều gì?",
+    "reference": "Hình dung không khí rời đi cùng sự căng thẳng.",
+    "reference_pages": [
+      5
+    ],
+    "required_spans": [
+      "không khí rời đi cùng với sự căng",
+      "thẳng của mình"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "heldout_07",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, tác giả cá nhân của bài viết là ai và ngày xuất bản nội dung được ghi là ngày nào?",
+    "reference": "Văn bản PDF không nêu tên tác giả cá nhân hoặc ngày xuất bản; cần nói thiếu thông tin, không lấy tên người xuất file/metadata làm tác giả bài viết.",
+    "reference_pages": [],
+    "required_spans": [],
+    "answerable": false
+  },
+  {
+    "id": "heldout_08",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, ứng dụng điện thoại nào được đề xuất để theo dõi các bài tập thở?",
+    "reference": "PDF không đề xuất tên ứng dụng; cần nói không có thông tin hoặc từ chối có căn cứ, không tự nêu ứng dụng ngoài nguồn.",
+    "reference_pages": [],
+    "required_spans": [],
+    "answerable": false
+  }
+]

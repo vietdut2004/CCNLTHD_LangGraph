@@ -1,0 +1,10 @@
+{
+  "transport": "in-process graph.invoke, no HTTP request",
+  "warning": "http_status in raw Trace.finish is an evaluator label, not an observed API response",
+  "cases": 4,
+  "passed": 4,
+  "provider_calls": 0,
+  "llm_calls": 0,
+  "tool_selection": "Caller supplied name/arguments; not model-selected",
+  "multi_step_expression_support_proven": false
+}

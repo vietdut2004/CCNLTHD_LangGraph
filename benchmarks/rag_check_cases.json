@@ -1,0 +1,360 @@
+{
+  "frozen_at": "2026-10-28T01:23:24.551833+00:00",
+  "selection": "AI-authored source-based labels; supplied sets are regression sets; fresh cases fixed before this turn changes; not external/human/clinical validation",
+  "cases": [
+    {
+      "id": "rag_01",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, hít thở sâu tác động thế nào đến não bộ và trạng thái cơ thể?",
+      "reference": "Não nhận thông điệp bình tĩnh/thư giãn và gửi đến cơ thể; các biểu hiện căng thẳng giảm.",
+      "reference_pages": [
+        1
+      ],
+      "required_spans": [
+        "bình tĩnh và thư giãn",
+        "bộ não sẽ gửi thông điệp này"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "rag_02",
+      "group": "old_8",
+      "question": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?",
+      "reference": "Một tay ở bụng ngay dưới xương sườn, tay kia trên ngực.",
+      "reference_pages": [
+        2
+      ],
+      "required_spans": [
+        "ngay dưới xương sườn",
+        "tay kia đặt trên ngực"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "rag_03",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, bài tập thở bụng được lặp lại bao nhiêu lần?",
+      "reference": "Từ 3 đến 10 lần.",
+      "reference_pages": [
+        2
+      ],
+      "required_spans": [
+        "từ 3 đến 10 lần"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "rag_04",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, trong kỹ thuật 4-7-8 phải đếm đến mấy khi hít vào, nín thở và thở ra?",
+      "reference": "Hít vào đếm đến 4, nín thở đếm đến 7, thở ra đếm đến 8.",
+      "reference_pages": [
+        3
+      ],
+      "required_spans": [
+        "đếm thầm đến 4",
+        "đếm thầm từ 1 - 7",
+        "đếm thầm từ 1 đến 8"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "rag_05",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, khi mới làm quen bài tập thở cuộn nên chọn tư thế nào?",
+      "reference": "Nằm ngửa, co đầu gối.",
+      "reference_pages": [
+        3
+      ],
+      "required_spans": [
+        "nên nằm ngửa, co đầu gối"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "rag_06",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, thời lượng thực hành hít vào và thở ra ở bài tập thở cuộn là mấy phút?",
+      "reference": "3 đến 5 phút.",
+      "reference_pages": [
+        4
+      ],
+      "required_spans": [
+        "trong 3 đến 5 phút"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "rag_07",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, trong bài thở buổi sáng khi trở lại tư thế đứng cần nâng bộ phận nào lên sau cùng?",
+      "reference": "Nâng đầu lên sau cùng.",
+      "reference_pages": [
+        4
+      ],
+      "required_spans": [
+        "nâng đầu lên sau cùng"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "rag_08",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, bài tập tập trung vào hơi thở nên tiếp tục trong bao lâu?",
+      "reference": "10 đến 20 phút.",
+      "reference_pages": [
+        5
+      ],
+      "required_spans": [
+        "Tiếp tục trong 10 đến 20 phút"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "new_01",
+      "group": "supplied_6",
+      "question": "Theo Stress.pdf, trước khi tập thở nên mặc quần áo như thế nào?",
+      "reference": "Mặc quần áo thoải mái.",
+      "reference_pages": [
+        2
+      ],
+      "required_spans": [
+        "Mặc quần áo thoải mái."
+      ],
+      "answerable": true
+    },
+    {
+      "id": "new_02",
+      "group": "supplied_6",
+      "question": "Theo Stress.pdf, thở theo nhịp 4–7–8 lặp lại bao nhiêu lần?",
+      "reference": "Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh.",
+      "reference_pages": [
+        3
+      ],
+      "required_spans": [
+        "Lặp lại 3 đến 7 lần"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "new_03",
+      "group": "supplied_6",
+      "question": "Theo Stress.pdf, khi hít vào trong bài thở bụng thì ngực có di chuyển không?",
+      "reference": "Giữ nguyên vị trí của ngực.",
+      "reference_pages": [
+        2
+      ],
+      "required_spans": [
+        "Giữ nguyên vị trí của ngực."
+      ],
+      "answerable": true
+    },
+    {
+      "id": "new_04",
+      "group": "supplied_6",
+      "question": "Theo Stress.pdf, khi thư giãn cơ bắp thì căng cơ bàn chân vào lúc hít vào hay thở ra?",
+      "reference": "Hít vào. Căng cơ bàn chân.",
+      "reference_pages": [
+        6
+      ],
+      "required_spans": [
+        "Hít vào. Căng cơ bàn chân."
+      ],
+      "answerable": true
+    },
+    {
+      "id": "new_05",
+      "group": "supplied_6",
+      "question": "Theo Stress.pdf, thở buổi sáng bắt đầu ở tư thế nào?",
+      "reference": "Đứng, gập người về phía trước từ thắt lưng, đầu gối hơi cong, cánh tay buông thõng.",
+      "reference_pages": [
+        4
+      ],
+      "required_spans": [
+        "Từ tư thế đứng, gập người về phía trước từ thắt lưng"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "new_06",
+      "group": "supplied_6",
+      "question": "Theo Stress.pdf, bài tập tập trung vào hơi thở bắt đầu bằng việc mở mắt hay nhắm mắt?",
+      "reference": "Nhắm mắt lại.",
+      "reference_pages": [
+        5
+      ],
+      "required_spans": [
+        "Nhắm mắt lại."
+      ],
+      "answerable": true
+    },
+    {
+      "id": "validation_01",
+      "group": "supplied_5",
+      "question": "Theo Stress.pdf, tập thở có cần công cụ hay thiết bị đặc biệt không?",
+      "reference": "Không cần công cụ hoặc thiết bị đặc biệt.",
+      "reference_pages": [
+        1
+      ],
+      "required_spans": [
+        "không cần bất kỳ công cụ hoặc thiết bị đặc biệt nào"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "validation_02",
+      "group": "supplied_5",
+      "question": "Theo Stress.pdf, trong bài thở bụng khi thở ra môi cần như thế nào?",
+      "reference": "Đôi môi mím chặt như đang huýt sáo.",
+      "reference_pages": [
+        2
+      ],
+      "required_spans": [
+        "đôi môi mím chặt như thể đang huýt sáo"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "validation_03",
+      "group": "supplied_5",
+      "question": "Theo Stress.pdf, bài thở cuộn đặt tay trái và tay phải ở đâu?",
+      "reference": "Tay trái trên bụng, tay phải trên ngực.",
+      "reference_pages": [
+        3
+      ],
+      "required_spans": [
+        "Đặt tay trái trên bụng và tay phải trên ngực"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "validation_04",
+      "group": "supplied_5",
+      "question": "Theo Stress.pdf, thở buổi sáng giữ hơi thở bao lâu ở tư thế đứng?",
+      "reference": "Chỉ trong vài giây.",
+      "reference_pages": [
+        4
+      ],
+      "required_spans": [
+        "Giữ hơi thở chỉ trong vài giây"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "validation_05",
+      "group": "supplied_5",
+      "question": "Theo Stress.pdf, bài thở sâu hít vào và thở ra bằng mũi hay miệng?",
+      "reference": "Hít vào bằng mũi, thở ra bằng mũi.",
+      "reference_pages": [
+        5
+      ],
+      "required_spans": [
+        "Hít vào bằng mũi.",
+        "Thở ra bằng mũi."
+      ],
+      "answerable": true
+    },
+    {
+      "id": "fresh_01",
+      "group": "fresh_6",
+      "question": "Theo Stress.pdf, so sánh số lần lặp lại của thở bụng và thở theo nhịp 4–7–8.",
+      "reference": "Thở bụng: 3–10 lần; 4–7–8: 3–7 lần hoặc đến khi bình tĩnh.",
+      "reference_pages": [
+        2,
+        3
+      ],
+      "required_spans": [
+        "từ 3 đến 10 lần",
+        "Lặp lại 3 đến 7 lần"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "fresh_02",
+      "group": "fresh_6",
+      "question": "Theo Stress.pdf, thời lượng thở cuộn và tập trung vào hơi thở lần lượt bao nhiêu phút?",
+      "reference": "Thở cuộn: 3–5 phút; tập trung vào hơi thở: 10–20 phút.",
+      "reference_pages": [
+        4,
+        5
+      ],
+      "required_spans": [
+        "trong 3 đến 5 phút",
+        "Tiếp tục trong 10 đến 20 phút"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "fresh_03",
+      "group": "fresh_6",
+      "question": "Theo Stress.pdf, nếu muốn cảm thấy thư giãn thì có phải cố ép bản thân tập thật căng không?",
+      "reference": "Không ép buộc bản thân; điều đó có thể làm căng thẳng hơn.",
+      "reference_pages": [
+        2
+      ],
+      "required_spans": [
+        "Đừng ép buộc bản thân",
+        "căng thẳng hơn"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "fresh_04",
+      "group": "fresh_6",
+      "question": "Theo Stress.pdf, lúc bắt đầu bài thở cuộn, tay phải ở bụng còn tay trái ở ngực đúng không?",
+      "reference": "Không. Tay trái trên bụng, tay phải trên ngực.",
+      "reference_pages": [
+        3
+      ],
+      "required_spans": [
+        "Đặt tay trái trên bụng và tay phải trên ngực"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "fresh_05",
+      "group": "fresh_6",
+      "question": "Theo Stress.pdf, sau khi thở ra trong bài thư giãn cơ bắp, bàn chân cần căng hay thả lỏng?",
+      "reference": "Thả lỏng/giải phóng căng thẳng ở bàn chân.",
+      "reference_pages": [
+        6
+      ],
+      "required_spans": [
+        "Thở ra. Giải phóng sự căng thẳng ở bàn chân."
+      ],
+      "answerable": true
+    },
+    {
+      "id": "fresh_06",
+      "group": "fresh_6",
+      "question": "Theo Stress.pdf, trước khi tập thở nên chọn nơi tập như thế nào?",
+      "reference": "Chọn nơi thoải mái, ví dụ giường, sàn phòng khách hoặc ghế thoải mái.",
+      "reference_pages": [
+        1
+      ],
+      "required_spans": [
+        "Chọn một nơi để thực hiện bài tập thở",
+        "thoải mái"
+      ],
+      "answerable": true
+    },
+    {
+      "id": "negative_01",
+      "group": "negative_2",
+      "question": "Theo Stress.pdf, dân số Việt Nam năm 2026 là bao nhiêu?",
+      "reference": "Không có trong PDF; cần từ chối, không bịa số liệu.",
+      "reference_pages": [],
+      "required_spans": [],
+      "answerable": false
+    },
+    {
+      "id": "negative_02",
+      "group": "negative_2",
+      "question": "Theo Stress.pdf, học phí đại học năm 2026 là bao nhiêu?",
+      "reference": "Không có trong PDF; cần từ chối, không bịa số liệu.",
+      "reference_pages": [],
+      "required_spans": [],
+      "answerable": false
+    }
+  ]
+}

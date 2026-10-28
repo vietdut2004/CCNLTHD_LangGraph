@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-10-28T14:26:52.797166+00:00",
+  "human_grading_completed": true,
+  "graded_count": 4,
+  "reviewer": "Huỳnh Lê Sơn",
+  "reviewer_role": "Thành viên nhóm",
+  "reviewed_on": "2026-10-28",
+  "scores_total": 20,
+  "maximum_total": 32,
+  "mean_score_0_8": 5.0,
+  "criteria": [
+    "supported_complete",
+    "relevance",
+    "scope",
+    "source_accuracy"
+  ],
+  "criteria_range": [
+    0,
+    2
+  ],
+  "json_csv_match": true,
+  "case_response_trace_graph_match": true,
+  "each_score_matches_explicit_chat_selection": true,
+  "comments_preserved_verbatim": true,
+  "blank_comment_web_04_requested_by_user": true,
+  "not_accuracy_or_expert_rating": true,
+  "raw_run_unchanged": true,
+  "grade_files_sha256": {
+    "CHAM_WEB_NGUOI_THAT.json": "1a443282131c25f79392fa062de986ced21d5220d2584972583bb9aaec29b143",
+    "CHAM_WEB_NGUOI_THAT.csv": "85a0027f642d25240688d034e2628b915231e7fb4cb89f56d5302b0974cc0596"
+  },
+  "provenance": {
+    "method": "Human selected scores and comments in chat; Codex transcribed and exported.",
+    "ai_assistance": "Codex displayed rubric explanations, question/answer and source evidence, and asked each criterion. No automated score was substituted.",
+    "last_case": "User explicitly set all remaining web_04 criteria to 2 and requested no comment; previous cases unchanged.",
+    "reviewer_metadata": "Name/date/role accepted by user immediately before export.",
+    "expert_or_independent_review_claimed": false,
+    "reviewer_count": 1,
+    "scope": "Four final API responses from the new run only; no old WEB or RAG scores reused.",
+    "journal": "CHAT_GRADING_PROGRESS.json"
+  }
+}

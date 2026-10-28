@@ -3,15 +3,16 @@ import asyncio
 import hashlib
 import json
 import os
+from pathlib import Path
 from typing import Literal
 from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse,FileResponse
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from agent import Agent
-from telemetry import Trace, trace_scope, save
+from telemetry import Trace, trace_scope, save,identity
 
 load_dotenv()
 
@@ -58,11 +59,21 @@ def classify_exception(exc):
 
 
 def create_app(engine=None,trace_path=None,request_timeout=60):
-    app=FastAPI(title='Chatbot tham khao - evidence-v1',version='2.0')
+    app=FastAPI(title='Chatbot tham khao - week8',version='2.1')
     app.add_middleware(CORSMiddleware,allow_origins=['*'],allow_credentials=False,
                        allow_methods=['GET','POST'],allow_headers=['*'])
     app.state.engine=engine
     app.state.session_locks={}
+
+    @app.get('/',include_in_schema=False)
+    async def frontend():
+        return FileResponse(Path(__file__).resolve().parent/'frontend/index.html')
+
+    @app.get('/health')
+    async def health():
+        model=getattr(app.state.engine,'model_id',os.getenv('GROQ_MODEL','openai/gpt-oss-20b'))
+        return {'service':'week8-handover','configured':app.state.engine is not None or bool(os.getenv('GROQ_API_KEY')),
+                'fixture':model.startswith('fixture:'),**identity(model)}
 
     @app.middleware('http')
     async def evidence(request:Request,call_next):

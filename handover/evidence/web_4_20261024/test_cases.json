@@ -1,0 +1,26 @@
+[
+  {
+    "id": "web_01",
+    "question": "Tìm trên web tài liệu chính thức FastAPI: đường dẫn mặc định của Swagger UI và ReDoc là gì?",
+    "reference": "Swagger UI: /docs; ReDoc: /redoc.",
+    "reference_url": "https://fastapi.tiangolo.com/reference/openapi/docs/"
+  },
+  {
+    "id": "web_02",
+    "question": "Tìm trên web tài liệu LangGraph chính thức: checkpointer lưu loại dữ liệu nào và thread_id có vai trò gì?",
+    "reference": "Checkpointer lưu trạng thái graph thành checkpoint theo thread; thread_id xác định thread.",
+    "reference_url": "https://docs.langchain.com/oss/python/langgraph/persistence"
+  },
+  {
+    "id": "web_03",
+    "question": "Tìm trên web tài liệu LangGraph chính thức: InMemorySaver có giữ checkpoint sau khi tiến trình khởi động lại không?",
+    "reference": "Không; checkpoint ở RAM bị mất sau khi tiến trình khởi động lại.",
+    "reference_url": "https://docs.langchain.com/oss/python/langgraph/persistence"
+  },
+  {
+    "id": "web_04",
+    "question": "Tìm trên web tài liệu LangGraph chính thức: reducer add_messages xử lý tin nhắn mới và tin nhắn có cùng ID như thế nào?",
+    "reference": "Thêm tin nhắn mới, cập nhật tin nhắn đã có theo ID.",
+    "reference_url": "https://docs.langchain.com/oss/python/langgraph/graph-api"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "files": {
+    "CHECK_REPORT.md": "ad656f3fff807857735006612606600037659f7aabdcdaad4c1e06e9bdb2ee92",
+    "README.md": "144989a6ab101c904e211bbd5b58a10d4c22cb1b278a81bd99672dab475464f2",
+    "benchmarks/check_math_routing.py": "c3aad186242572210a8fe8cd1a517452ff96adeb6d9fc9886a95c6cc8db4606b",
+    "evidence/chatbot_graph_actual.json": "2b3123b3f5e0de3b08fb23362fc60e1e17754dc5ea1a6c2ba38ccf58f6750cad",
+    "evidence/chatbot_graph_actual.mmd": "0c01aab9131587396ff9f18fc7dc4922e83f42b3a97163325364d4079e70f9b0",
+    "evidence/chatbot_math_chain_probe.json": "5cdafc9435567421c585dd4acb761279a094619a58879474444b80b9f7b6ba87",
+    "evidence/chatbot_probe_trace.jsonl": "40ea00757da5a35ac0b7c1bb20b711b324e85fe48506de50c04d8eb9840681ca",
+    "evidence/math_executor_raw.json": "5ed641141bb47bbca1f0e35b32293e2bac9446839777e18f2e58a2a85ff39508",
+    "evidence/math_executor_scope.json": "7a5666614be861e28c080c05c8b138cf78bde3259c1fe1ed21a5b6bce539a47d",
+    "evidence/math_graph_actual.json": "e76dce5445a95305ab85e6a36ad0dde09715299411f098dc3c5d6d0b63cedd9f",
+    "evidence/math_graph_actual.mmd": "105cfd4a9e19fe4352b411e36f1d3652ef4489e871f1c1b8077ed1cb62d01cdd",
+    "evidence/router_node_cases.json": "f584c35c16472d034cd88bc01d30d2e672e0c5c20110bacca5d1502473919eff",
+    "evidence/source_hashes.json": "d9f6962aa8ee65a01a7e6eb4025a242cdf25e65732017d3dcc9932e121c4df37",
+    "evidence/summary.json": "7567ca81712dc9726e0fdffdd68f4b1e43d95ce83f4977358fe4ea8c9dbee307",
+    "relevant_tests.xml": "8c52c5ec86c6f09cbeb6f62cff0b9b5321038048bc7a00159e2cd834ca12bbd4",
+    "report_changes.json": "012e311b2213852991ff7c1e4eb7c375a45484d7670b6da8e491e09ca86739b4",
+    "source_snapshots/agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+    "source_snapshots/math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee"
+  },
+  "provider_calls": 0,
+  "runtime_changed": false,
+  "scope": "math executor/rule routing only"
+}

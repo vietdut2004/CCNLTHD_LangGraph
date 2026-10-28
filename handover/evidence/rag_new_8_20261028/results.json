@@ -1,0 +1,2018 @@
+[
+  {
+    "id": "heldout_01",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, người chưa từng tập thở nên bắt đầu bằng bài nào và tại sao?",
+    "reference": "Bắt đầu bằng thở bụng vì đơn giản để học và dễ thực hiện.",
+    "reference_pages": [
+      1
+    ],
+    "required_spans": [
+      "thở bằng bụng",
+      "rất đơn giản để học và dễ thực hiện"
+    ],
+    "answerable": true,
+    "request": {
+      "question": "Theo Stress.pdf, người chưa từng tập thở nên bắt đầu bằng bài nào và tại sao?",
+      "mode": "rag",
+      "use_cache": false
+    },
+    "started_at": "2026-10-28T12:36:13.925575+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Người chưa từng tập thở nên bắt đầu bằng bài tập thở bằng bụng, vì nó rất đơn giản để học và dễ thực hiện, nên phù hợp nhất cho người mới bắt đầu.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "f2064999382b480e9aaa63480a7fd4c3",
+      "graph_id": "beebab186d50bedb4180",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-004",
+          "start": 1402,
+          "end": 2048,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+          "score": 8.57450274666258,
+          "metric": "bm25_lexical",
+          "quote": "Bài tập \nđầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1222,
+          "output_tokens": 328,
+          "total_tokens": 1550
+        },
+        "total_tokens": 1550
+      }
+    },
+    "response_trace_header": "f2064999382b480e9aaa63480a7fd4c3",
+    "latency_ms": 3389.45,
+    "finished_at": "2026-10-28T12:36:17.315074+00:00",
+    "trace": {
+      "trace_id": "f2064999382b480e9aaa63480a7fd4c3",
+      "suite": "live",
+      "timestamp": "2026-10-28T12:36:13.927203+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.21.2"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "beebab186d50bedb4180",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 3384.028,
+      "events": [
+        {
+          "timestamp": "2026-10-28T12:36:13.966334+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:13.972088+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:13.972141+00:00",
+          "kind": "tool_start",
+          "run_id": "546e623d3bbf48238cf8e81cc22d85e2",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, người chưa từng tập thở nên bắt đầu bằng bài nào và tại sao?"
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:36:14.941611+00:00",
+          "kind": "tool_end",
+          "run_id": "546e623d3bbf48238cf8e81cc22d85e2",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 1,
+              "chunk_id": "chunk-004",
+              "start": 1402,
+              "end": 2048,
+              "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 8.57450274666258,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-2",
+              "rank": 2,
+              "title": "Stress.pdf",
+              "page": 3,
+              "chunk_id": "chunk-012",
+              "start": 670,
+              "end": 1282,
+              "section": "2.2.2. Thở cuộn",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 7.514455908333413,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-3",
+              "rank": 3,
+              "title": "Stress.pdf",
+              "page": 2,
+              "chunk_id": "chunk-008",
+              "start": 760,
+              "end": 1037,
+              "section": "2.1. Thở bụng",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 6.146348972094202,
+              "metric": "bm25_lexical"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-28T12:36:14.944512+00:00",
+          "kind": "model_start",
+          "run_id": "17dbdaa0c0e5488bb8f05ccb14053916",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:17.303407+00:00",
+          "kind": "model_end",
+          "run_id": "17dbdaa0c0e5488bb8f05ccb14053916",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1222,
+            "output_tokens": 328,
+            "total_tokens": 1550,
+            "output_token_details": {
+              "reasoning": 212
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:36:17.305761+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1"
+          ]
+        },
+        {
+          "timestamp": "2026-10-28T12:36:17.308479+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Người chưa từng tập thở nên bắt đầu bằng bài tập thở bằng bụng, vì nó rất đơn giản để học và dễ thực hiện, nên phù hợp nhất cho người mới bắt đầu.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 1,
+              "chunk_id": "chunk-004",
+              "start": 1402,
+              "end": 2048,
+              "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 8.57450274666258,
+              "metric": "bm25_lexical",
+              "quote": "Bài tập \nđầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây."
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "17dbdaa0c0e5488bb8f05ccb14053916",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1222,
+            "output_tokens": 328,
+            "total_tokens": 1550,
+            "output_token_details": {
+              "reasoning": 212
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1222,
+          "output_tokens": 328,
+          "total_tokens": 1550
+        },
+        "total_tokens": 1550
+      }
+    },
+    "technical_completion": true,
+    "answer_returned": true,
+    "content_quality": "pending separate source audit; HTTP/citation validity is not correctness"
+  },
+  {
+    "id": "heldout_02",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, lời khuyên chung về thời điểm và số lần tập trong một ngày là gì?",
+    "reference": "Cố gắng tập cùng một thời điểm, một hoặc hai lần mỗi ngày.",
+    "reference_pages": [
+      2
+    ],
+    "required_spans": [
+      "cùng một thời điểm một hoặc hai lần mỗi ngày"
+    ],
+    "answerable": true,
+    "request": {
+      "question": "Theo Stress.pdf, lời khuyên chung về thời điểm và số lần tập trong một ngày là gì?",
+      "mode": "rag",
+      "use_cache": false
+    },
+    "started_at": "2026-10-28T12:36:23.345568+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Lời khuyên chung là cố gắng thực hiện các bài tập thở vào cùng một thời điểm và thực hiện một hoặc hai lần mỗi ngày.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "c6868078447f46c594978922f2a4eff4",
+      "graph_id": "beebab186d50bedb4180",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 2,
+          "chunk_id": "chunk-006",
+          "start": 0,
+          "end": 381,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+          "score": 10.687502374363255,
+          "metric": "bm25_lexical",
+          "quote": "Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1041,
+          "output_tokens": 324,
+          "total_tokens": 1365
+        },
+        "total_tokens": 1365
+      }
+    },
+    "response_trace_header": "c6868078447f46c594978922f2a4eff4",
+    "latency_ms": 3154.394,
+    "finished_at": "2026-10-28T12:36:26.500006+00:00",
+    "trace": {
+      "trace_id": "c6868078447f46c594978922f2a4eff4",
+      "suite": "live",
+      "timestamp": "2026-10-28T12:36:23.348208+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.21.2"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "beebab186d50bedb4180",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 3148.761,
+      "events": [
+        {
+          "timestamp": "2026-10-28T12:36:23.367738+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:23.371773+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:23.371836+00:00",
+          "kind": "tool_start",
+          "run_id": "d2f5f01f1b1f4b0da9e84e440f370816",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, lời khuyên chung về thời điểm và số lần tập trong một ngày là gì?"
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:36:23.376875+00:00",
+          "kind": "tool_end",
+          "run_id": "d2f5f01f1b1f4b0da9e84e440f370816",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 2,
+              "chunk_id": "chunk-006",
+              "start": 0,
+              "end": 381,
+              "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 10.687502374363255,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-2",
+              "rank": 2,
+              "title": "Stress.pdf",
+              "page": 2,
+              "chunk_id": "chunk-009",
+              "start": 1037,
+              "end": 1299,
+              "section": "2.2. Các bài tập thở nâng cao",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 6.179918591256446,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-3",
+              "rank": 3,
+              "title": "Stress.pdf",
+              "page": 1,
+              "chunk_id": "chunk-001",
+              "start": 0,
+              "end": 419,
+              "section": "",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 5.611673615487639,
+              "metric": "bm25_lexical"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-28T12:36:23.378716+00:00",
+          "kind": "model_start",
+          "run_id": "cc88b53f7f784ca8a6376227de2bd7a5",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:26.492815+00:00",
+          "kind": "model_end",
+          "run_id": "cc88b53f7f784ca8a6376227de2bd7a5",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1041,
+            "output_tokens": 324,
+            "total_tokens": 1365,
+            "output_token_details": {
+              "reasoning": 245
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:36:26.494596+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1"
+          ]
+        },
+        {
+          "timestamp": "2026-10-28T12:36:26.496563+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Lời khuyên chung là cố gắng thực hiện các bài tập thở vào cùng một thời điểm và thực hiện một hoặc hai lần mỗi ngày.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 2,
+              "chunk_id": "chunk-006",
+              "start": 0,
+              "end": 381,
+              "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 10.687502374363255,
+              "metric": "bm25_lexical",
+              "quote": "Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày."
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "cc88b53f7f784ca8a6376227de2bd7a5",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1041,
+            "output_tokens": 324,
+            "total_tokens": 1365,
+            "output_token_details": {
+              "reasoning": 245
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1041,
+          "output_tokens": 324,
+          "total_tokens": 1365
+        },
+        "total_tokens": 1365
+      }
+    },
+    "technical_completion": true,
+    "answer_returned": true,
+    "content_quality": "pending separate source audit; HTTP/citation validity is not correctness"
+  },
+  {
+    "id": "heldout_03",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, trong bước đầu của thở cuộn, làm đầy và làm trống phổi dưới mấy lần trước khi thêm bước thứ hai?",
+    "reference": "8 đến 10 lần; đây là số lần của bước đầu, không phải thời lượng 3–5 phút của phần thực hành sau.",
+    "reference_pages": [
+      3
+    ],
+    "required_spans": [
+      "làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần"
+    ],
+    "answerable": true,
+    "request": {
+      "question": "Theo Stress.pdf, trong bước đầu của thở cuộn, làm đầy và làm trống phổi dưới mấy lần trước khi thêm bước thứ hai?",
+      "mode": "rag",
+      "use_cache": false
+    },
+    "started_at": "2026-10-28T12:36:32.515760+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Trong bước đầu của thở cuộn, bạn nên làm đầy và làm trống phổi dưới 8 đến 10 lần trước khi thêm bước thứ hai.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "d6a603b07a0a4594adb6dd4710f67aca",
+      "graph_id": "beebab186d50bedb4180",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 3,
+          "chunk_id": "chunk-013",
+          "start": 1087,
+          "end": 1597,
+          "section": "2.2.2. Thở cuộn",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+          "score": 20.307736611082873,
+          "metric": "bm25_lexical",
+          "quote": "Làm điều này 8 đến 10 lần."
+        },
+        {
+          "id": "pdf-2",
+          "rank": 2,
+          "title": "Stress.pdf",
+          "page": 3,
+          "chunk_id": "chunk-012",
+          "start": 670,
+          "end": 1282,
+          "section": "2.2.2. Thở cuộn",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+          "score": 13.489195144171763,
+          "metric": "bm25_lexical",
+          "quote": "Làm điều này 8 đến 10 lần."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1255,
+          "output_tokens": 309,
+          "total_tokens": 1564
+        },
+        "total_tokens": 1564
+      }
+    },
+    "response_trace_header": "d6a603b07a0a4594adb6dd4710f67aca",
+    "latency_ms": 1317.908,
+    "finished_at": "2026-10-28T12:36:33.833710+00:00",
+    "trace": {
+      "trace_id": "d6a603b07a0a4594adb6dd4710f67aca",
+      "suite": "live",
+      "timestamp": "2026-10-28T12:36:32.519026+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.21.2"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "beebab186d50bedb4180",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 1311.855,
+      "events": [
+        {
+          "timestamp": "2026-10-28T12:36:32.534339+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:32.536963+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:32.536993+00:00",
+          "kind": "tool_start",
+          "run_id": "9912fe65b847475c8e835a7b8b0dca08",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, trong bước đầu của thở cuộn, làm đầy và làm trống phổi dưới mấy lần trước khi thêm bước thứ hai?"
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:36:32.540154+00:00",
+          "kind": "tool_end",
+          "run_id": "9912fe65b847475c8e835a7b8b0dca08",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 3,
+              "chunk_id": "chunk-013",
+              "start": 1087,
+              "end": 1597,
+              "section": "2.2.2. Thở cuộn",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 20.307736611082873,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-2",
+              "rank": 2,
+              "title": "Stress.pdf",
+              "page": 3,
+              "chunk_id": "chunk-012",
+              "start": 670,
+              "end": 1282,
+              "section": "2.2.2. Thở cuộn",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 13.489195144171763,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-3",
+              "rank": 3,
+              "title": "Stress.pdf",
+              "page": 4,
+              "chunk_id": "chunk-015",
+              "start": 378,
+              "end": 826,
+              "section": "2.2.2. Thở cuộn",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 9.75493388473247,
+              "metric": "bm25_lexical"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-28T12:36:32.541687+00:00",
+          "kind": "model_start",
+          "run_id": "3286fc66f7904746a6177c2d93e9cad0",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:33.827089+00:00",
+          "kind": "model_end",
+          "run_id": "3286fc66f7904746a6177c2d93e9cad0",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1255,
+            "output_tokens": 309,
+            "total_tokens": 1564,
+            "output_token_details": {
+              "reasoning": 215
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:36:33.828981+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1",
+            "pdf-2"
+          ]
+        },
+        {
+          "timestamp": "2026-10-28T12:36:33.830560+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Trong bước đầu của thở cuộn, bạn nên làm đầy và làm trống phổi dưới 8 đến 10 lần trước khi thêm bước thứ hai.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 3,
+              "chunk_id": "chunk-013",
+              "start": 1087,
+              "end": 1597,
+              "section": "2.2.2. Thở cuộn",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 20.307736611082873,
+              "metric": "bm25_lexical",
+              "quote": "Làm điều này 8 đến 10 lần."
+            },
+            {
+              "id": "pdf-2",
+              "rank": 2,
+              "title": "Stress.pdf",
+              "page": 3,
+              "chunk_id": "chunk-012",
+              "start": 670,
+              "end": 1282,
+              "section": "2.2.2. Thở cuộn",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 13.489195144171763,
+              "metric": "bm25_lexical",
+              "quote": "Làm điều này 8 đến 10 lần."
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "3286fc66f7904746a6177c2d93e9cad0",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1255,
+            "output_tokens": 309,
+            "total_tokens": 1564,
+            "output_token_details": {
+              "reasoning": 215
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1255,
+          "output_tokens": 309,
+          "total_tokens": 1564
+        },
+        "total_tokens": 1564
+      }
+    },
+    "technical_completion": true,
+    "answer_returned": true,
+    "content_quality": "pending separate source audit; HTTP/citation validity is not correctness"
+  },
+  {
+    "id": "heldout_04",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, ở bước thứ hai của thở cuộn, hít vào ngực trên trước hay phổi dưới trước?",
+    "reference": "Hít vào phổi dưới trước rồi tiếp tục hít vào ngực trên.",
+    "reference_pages": [
+      3
+    ],
+    "required_spans": [
+      "Trước tiên hít vào phổi",
+      "dưới như trước, rồi sau đó tiếp tục hít vào ngực trên"
+    ],
+    "answerable": true,
+    "request": {
+      "question": "Theo Stress.pdf, ở bước thứ hai của thở cuộn, hít vào ngực trên trước hay phổi dưới trước?",
+      "mode": "rag",
+      "use_cache": false
+    },
+    "started_at": "2026-10-28T12:36:39.850976+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Ở bước thứ hai của thở cuộn, bạn nên hít vào phổi dưới trước, rồi tiếp tục hít vào ngực trên.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "f305a41039c342a3929120c7748a7a3c",
+      "graph_id": "beebab186d50bedb4180",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 3,
+          "chunk_id": "chunk-013",
+          "start": 1087,
+          "end": 1597,
+          "section": "2.2.2. Thở cuộn",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+          "score": 18.067602509911556,
+          "metric": "bm25_lexical",
+          "quote": "Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1292,
+          "output_tokens": 596,
+          "total_tokens": 1888
+        },
+        "total_tokens": 1888
+      }
+    },
+    "response_trace_header": "f305a41039c342a3929120c7748a7a3c",
+    "latency_ms": 2113.248,
+    "finished_at": "2026-10-28T12:36:41.964273+00:00",
+    "trace": {
+      "trace_id": "f305a41039c342a3929120c7748a7a3c",
+      "suite": "live",
+      "timestamp": "2026-10-28T12:36:39.853906+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.21.2"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "beebab186d50bedb4180",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 2106.837,
+      "events": [
+        {
+          "timestamp": "2026-10-28T12:36:39.875296+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:39.878552+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:39.878601+00:00",
+          "kind": "tool_start",
+          "run_id": "980fab95792745959a4af74aceaf1280",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, ở bước thứ hai của thở cuộn, hít vào ngực trên trước hay phổi dưới trước?"
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:36:39.884063+00:00",
+          "kind": "tool_end",
+          "run_id": "980fab95792745959a4af74aceaf1280",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 3,
+              "chunk_id": "chunk-013",
+              "start": 1087,
+              "end": 1597,
+              "section": "2.2.2. Thở cuộn",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 18.067602509911556,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-2",
+              "rank": 2,
+              "title": "Stress.pdf",
+              "page": 3,
+              "chunk_id": "chunk-012",
+              "start": 670,
+              "end": 1282,
+              "section": "2.2.2. Thở cuộn",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 13.310299568329652,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-3",
+              "rank": 3,
+              "title": "Stress.pdf",
+              "page": 4,
+              "chunk_id": "chunk-014",
+              "start": 0,
+              "end": 576,
+              "section": "2.2.2. Thở cuộn",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 6.1367161052941945,
+              "metric": "bm25_lexical"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-28T12:36:39.886268+00:00",
+          "kind": "model_start",
+          "run_id": "4061fa5a05bd4c3bbafaf0b657484fc5",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:41.954875+00:00",
+          "kind": "model_end",
+          "run_id": "4061fa5a05bd4c3bbafaf0b657484fc5",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1292,
+            "output_tokens": 596,
+            "total_tokens": 1888,
+            "output_token_details": {
+              "reasoning": 512
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:36:41.958086+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1"
+          ]
+        },
+        {
+          "timestamp": "2026-10-28T12:36:41.960367+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Ở bước thứ hai của thở cuộn, bạn nên hít vào phổi dưới trước, rồi tiếp tục hít vào ngực trên.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 3,
+              "chunk_id": "chunk-013",
+              "start": 1087,
+              "end": 1597,
+              "section": "2.2.2. Thở cuộn",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 18.067602509911556,
+              "metric": "bm25_lexical",
+              "quote": "Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên."
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "4061fa5a05bd4c3bbafaf0b657484fc5",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1292,
+            "output_tokens": 596,
+            "total_tokens": 1888,
+            "output_token_details": {
+              "reasoning": 512
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1292,
+          "output_tokens": 596,
+          "total_tokens": 1888
+        },
+        "total_tokens": 1888
+      }
+    },
+    "technical_completion": true,
+    "answer_returned": true,
+    "content_quality": "pending separate source audit; HTTP/citation validity is not correctness"
+  },
+  {
+    "id": "heldout_05",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, nếu thực hiện bài thở sâu ở tư thế nằm thì chiếc gối được kê ở những vị trí nào?",
+    "reference": "Kê dưới đầu và đầu gối.",
+    "reference_pages": [
+      5
+    ],
+    "required_spans": [
+      "một chiếc gối kê dưới đầu và đầu gối"
+    ],
+    "answerable": true,
+    "request": {
+      "question": "Theo Stress.pdf, nếu thực hiện bài thở sâu ở tư thế nằm thì chiếc gối được kê ở những vị trí nào?",
+      "mode": "rag",
+      "use_cache": false
+    },
+    "started_at": "2026-10-28T12:36:47.986838+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Theo tài liệu Stress.pdf, khi thực hiện bài thở sâu ở tư thế nằm, bạn nên đặt chiếc gối kê dưới đầu và dưới đầu gối.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "113c4f290c61425b9d1798b1d4c94900",
+      "graph_id": "beebab186d50bedb4180",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 5,
+          "chunk_id": "chunk-020",
+          "start": 0,
+          "end": 575,
+          "section": "2.3.1. Thở sâu",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+          "score": 11.39023140838408,
+          "metric": "bm25_lexical",
+          "quote": "với một chiếc gối kê dưới đầu và đầu gối."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1260,
+          "output_tokens": 276,
+          "total_tokens": 1536
+        },
+        "total_tokens": 1536
+      }
+    },
+    "response_trace_header": "113c4f290c61425b9d1798b1d4c94900",
+    "latency_ms": 1439.296,
+    "finished_at": "2026-10-28T12:36:49.426194+00:00",
+    "trace": {
+      "trace_id": "113c4f290c61425b9d1798b1d4c94900",
+      "suite": "live",
+      "timestamp": "2026-10-28T12:36:47.989558+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.21.2"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "beebab186d50bedb4180",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 1432.953,
+      "events": [
+        {
+          "timestamp": "2026-10-28T12:36:48.011091+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:48.014624+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:48.014677+00:00",
+          "kind": "tool_start",
+          "run_id": "7dbb6c17b81e4669b4d24aa264ca30d4",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, nếu thực hiện bài thở sâu ở tư thế nằm thì chiếc gối được kê ở những vị trí nào?"
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:36:48.018367+00:00",
+          "kind": "tool_end",
+          "run_id": "7dbb6c17b81e4669b4d24aa264ca30d4",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 5,
+              "chunk_id": "chunk-020",
+              "start": 0,
+              "end": 575,
+              "section": "2.3.1. Thở sâu",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 11.39023140838408,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-2",
+              "rank": 2,
+              "title": "Stress.pdf",
+              "page": 5,
+              "chunk_id": "chunk-021",
+              "start": 332,
+              "end": 709,
+              "section": "2.3.1. Thở sâu",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 9.143450291395494,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-3",
+              "rank": 3,
+              "title": "Stress.pdf",
+              "page": 1,
+              "chunk_id": "chunk-004",
+              "start": 1402,
+              "end": 2048,
+              "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 6.327374853480017,
+              "metric": "bm25_lexical"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-28T12:36:48.020736+00:00",
+          "kind": "model_start",
+          "run_id": "cdda419e3a14489c8a0d55526781f00a",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:49.418225+00:00",
+          "kind": "model_end",
+          "run_id": "cdda419e3a14489c8a0d55526781f00a",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1260,
+            "output_tokens": 276,
+            "total_tokens": 1536,
+            "output_token_details": {
+              "reasoning": 199
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:36:49.419813+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1"
+          ]
+        },
+        {
+          "timestamp": "2026-10-28T12:36:49.422108+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Theo tài liệu Stress.pdf, khi thực hiện bài thở sâu ở tư thế nằm, bạn nên đặt chiếc gối kê dưới đầu và dưới đầu gối.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 5,
+              "chunk_id": "chunk-020",
+              "start": 0,
+              "end": 575,
+              "section": "2.3.1. Thở sâu",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 11.39023140838408,
+              "metric": "bm25_lexical",
+              "quote": "với một chiếc gối kê dưới đầu và đầu gối."
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "cdda419e3a14489c8a0d55526781f00a",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1260,
+            "output_tokens": 276,
+            "total_tokens": 1536,
+            "output_token_details": {
+              "reasoning": 199
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1260,
+          "output_tokens": 276,
+          "total_tokens": 1536
+        },
+        "total_tokens": 1536
+      }
+    },
+    "technical_completion": true,
+    "answer_returned": true,
+    "content_quality": "pending separate source audit; HTTP/citation validity is not correctness"
+  },
+  {
+    "id": "heldout_06",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, trong bài tập tập trung vào hơi thở, khi thở ra người tập nên hình dung điều gì?",
+    "reference": "Hình dung không khí rời đi cùng sự căng thẳng.",
+    "reference_pages": [
+      5
+    ],
+    "required_spans": [
+      "không khí rời đi cùng với sự căng",
+      "thẳng của mình"
+    ],
+    "answerable": true,
+    "request": {
+      "question": "Theo Stress.pdf, trong bài tập tập trung vào hơi thở, khi thở ra người tập nên hình dung điều gì?",
+      "mode": "rag",
+      "use_cache": false
+    },
+    "started_at": "2026-10-28T12:36:55.447114+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Khi thở ra, người tập nên hình dung rằng không khí rời đi cùng với sự căng thẳng của mình.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "f905aa55907247be80aba6e53124664a",
+      "graph_id": "beebab186d50bedb4180",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 5,
+          "chunk_id": "chunk-022",
+          "start": 709,
+          "end": 1168,
+          "section": "2.3.2. Tập trung vào hơi thở",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+          "score": 12.262912007573929,
+          "metric": "bm25_lexical",
+          "quote": "Khi thở ra, hãy tưởng tượng rằng không khí rời đi cùng với sự căng \nthẳng của mình."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 575,
+          "output_tokens": 178,
+          "total_tokens": 753
+        },
+        "total_tokens": 753
+      }
+    },
+    "response_trace_header": "f905aa55907247be80aba6e53124664a",
+    "latency_ms": 1305.085,
+    "finished_at": "2026-10-28T12:36:56.752286+00:00",
+    "trace": {
+      "trace_id": "f905aa55907247be80aba6e53124664a",
+      "suite": "live",
+      "timestamp": "2026-10-28T12:36:55.450571+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.21.2"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "beebab186d50bedb4180",
+      "http_status": 200,
+      "code": "OK",
+      "route": "rag",
+      "server_latency_ms": 1298.397,
+      "events": [
+        {
+          "timestamp": "2026-10-28T12:36:55.479693+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:55.484283+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:55.484336+00:00",
+          "kind": "tool_start",
+          "run_id": "16a70f9aefe344d6a0ccfe1e493e6755",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, trong bài tập tập trung vào hơi thở, khi thở ra người tập nên hình dung điều gì?"
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:36:55.489403+00:00",
+          "kind": "tool_end",
+          "run_id": "16a70f9aefe344d6a0ccfe1e493e6755",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 5,
+              "chunk_id": "chunk-022",
+              "start": 709,
+              "end": 1168,
+              "section": "2.3.2. Tập trung vào hơi thở",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 12.262912007573929,
+              "metric": "bm25_lexical"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-28T12:36:55.492380+00:00",
+          "kind": "model_start",
+          "run_id": "4f2afa3c3da449459471eeefb07016ca",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-28T12:36:56.744482+00:00",
+          "kind": "model_end",
+          "run_id": "4f2afa3c3da449459471eeefb07016ca",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 575,
+            "output_tokens": 178,
+            "total_tokens": 753,
+            "output_token_details": {
+              "reasoning": 96
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:36:56.745968+00:00",
+          "kind": "evidence_check",
+          "status": "accepted",
+          "source_ids": [
+            "pdf-1"
+          ]
+        },
+        {
+          "timestamp": "2026-10-28T12:36:56.748533+00:00",
+          "kind": "final",
+          "status": "ok",
+          "code": "OK",
+          "route": "rag",
+          "response": "Khi thở ra, người tập nên hình dung rằng không khí rời đi cùng với sự căng thẳng của mình.",
+          "sources": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 5,
+              "chunk_id": "chunk-022",
+              "start": 709,
+              "end": 1168,
+              "section": "2.3.2. Tập trung vào hơi thở",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 12.262912007573929,
+              "metric": "bm25_lexical",
+              "quote": "Khi thở ra, hãy tưởng tượng rằng không khí rời đi cùng với sự căng \nthẳng của mình."
+            }
+          ]
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "4f2afa3c3da449459471eeefb07016ca",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 575,
+            "output_tokens": 178,
+            "total_tokens": 753,
+            "output_token_details": {
+              "reasoning": 96
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 575,
+          "output_tokens": 178,
+          "total_tokens": 753
+        },
+        "total_tokens": 753
+      }
+    },
+    "technical_completion": true,
+    "answer_returned": true,
+    "content_quality": "pending separate source audit; HTTP/citation validity is not correctness"
+  },
+  {
+    "id": "heldout_07",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, tác giả cá nhân của bài viết là ai và ngày xuất bản nội dung được ghi là ngày nào?",
+    "reference": "Văn bản PDF không nêu tên tác giả cá nhân hoặc ngày xuất bản; cần nói thiếu thông tin, không lấy tên người xuất file/metadata làm tác giả bài viết.",
+    "reference_pages": [],
+    "required_spans": [],
+    "answerable": false,
+    "request": {
+      "question": "Theo Stress.pdf, tác giả cá nhân của bài viết là ai và ngày xuất bản nội dung được ghi là ngày nào?",
+      "mode": "rag",
+      "use_cache": false
+    },
+    "started_at": "2026-10-28T12:37:02.786646+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "trace_id": "5b4d635ca472419aaf924971af5fd419",
+      "graph_id": "beebab186d50bedb4180",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1210,
+          "output_tokens": 226,
+          "total_tokens": 1436
+        },
+        "total_tokens": 1436
+      }
+    },
+    "response_trace_header": "5b4d635ca472419aaf924971af5fd419",
+    "latency_ms": 2563.895,
+    "finished_at": "2026-10-28T12:37:05.350584+00:00",
+    "trace": {
+      "trace_id": "5b4d635ca472419aaf924971af5fd419",
+      "suite": "live",
+      "timestamp": "2026-10-28T12:37:02.789232+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.21.2"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "beebab186d50bedb4180",
+      "http_status": 200,
+      "code": "INSUFFICIENT_EVIDENCE",
+      "route": "rag",
+      "server_latency_ms": 2558.012,
+      "events": [
+        {
+          "timestamp": "2026-10-28T12:37:02.810363+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-28T12:37:02.813424+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-28T12:37:02.813479+00:00",
+          "kind": "tool_start",
+          "run_id": "db5cca5e26bc47cf8b4b2bdd3e69cfb2",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, tác giả cá nhân của bài viết là ai và ngày xuất bản nội dung được ghi là ngày nào?"
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:37:02.819058+00:00",
+          "kind": "tool_end",
+          "run_id": "db5cca5e26bc47cf8b4b2bdd3e69cfb2",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 4,
+              "chunk_id": "chunk-016",
+              "start": 826,
+              "end": 1438,
+              "section": "2.2.3. Thở buổi sáng",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 5.79815258778838,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-2",
+              "rank": 2,
+              "title": "Stress.pdf",
+              "page": 1,
+              "chunk_id": "chunk-005",
+              "start": 1820,
+              "end": 2055,
+              "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 5.674939653779957,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-3",
+              "rank": 3,
+              "title": "Stress.pdf",
+              "page": 1,
+              "chunk_id": "chunk-004",
+              "start": 1402,
+              "end": 2048,
+              "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 5.302924546843995,
+              "metric": "bm25_lexical"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-28T12:37:02.820729+00:00",
+          "kind": "model_start",
+          "run_id": "8218326177604fedbdd466999553d656",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-28T12:37:05.342569+00:00",
+          "kind": "model_end",
+          "run_id": "8218326177604fedbdd466999553d656",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1210,
+            "output_tokens": 226,
+            "total_tokens": 1436,
+            "output_token_details": {
+              "reasoning": 185
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:37:05.343803+00:00",
+          "kind": "evidence_check",
+          "status": "insufficient",
+          "source_ids": []
+        },
+        {
+          "timestamp": "2026-10-28T12:37:05.345921+00:00",
+          "kind": "refuse",
+          "reason": "scope_or_insufficient_evidence"
+        },
+        {
+          "timestamp": "2026-10-28T12:37:05.346662+00:00",
+          "kind": "final",
+          "status": "refused",
+          "code": "INSUFFICIENT_EVIDENCE",
+          "route": "rag",
+          "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+          "sources": []
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "8218326177604fedbdd466999553d656",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1210,
+            "output_tokens": 226,
+            "total_tokens": 1436,
+            "output_token_details": {
+              "reasoning": 185
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1210,
+          "output_tokens": 226,
+          "total_tokens": 1436
+        },
+        "total_tokens": 1436
+      }
+    },
+    "technical_completion": true,
+    "answer_returned": false,
+    "content_quality": "pending separate source audit; HTTP/citation validity is not correctness"
+  },
+  {
+    "id": "heldout_08",
+    "group": "heldout_28oct",
+    "question": "Theo Stress.pdf, ứng dụng điện thoại nào được đề xuất để theo dõi các bài tập thở?",
+    "reference": "PDF không đề xuất tên ứng dụng; cần nói không có thông tin hoặc từ chối có căn cứ, không tự nêu ứng dụng ngoài nguồn.",
+    "reference_pages": [],
+    "required_spans": [],
+    "answerable": false,
+    "request": {
+      "question": "Theo Stress.pdf, ứng dụng điện thoại nào được đề xuất để theo dõi các bài tập thở?",
+      "mode": "rag",
+      "use_cache": false
+    },
+    "started_at": "2026-10-28T12:37:11.365087+00:00",
+    "http_status": 200,
+    "body": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "trace_id": "f7e9f3609696484e8da2b9271f002b4c",
+      "graph_id": "beebab186d50bedb4180",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1148,
+          "output_tokens": 214,
+          "total_tokens": 1362
+        },
+        "total_tokens": 1362
+      }
+    },
+    "response_trace_header": "f7e9f3609696484e8da2b9271f002b4c",
+    "latency_ms": 1445.913,
+    "finished_at": "2026-10-28T12:37:12.811040+00:00",
+    "trace": {
+      "trace_id": "f7e9f3609696484e8da2b9271f002b4c",
+      "suite": "live",
+      "timestamp": "2026-10-28T12:37:11.367841+00:00",
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.21.2"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "beebab186d50bedb4180",
+      "http_status": 200,
+      "code": "INSUFFICIENT_EVIDENCE",
+      "route": "rag",
+      "server_latency_ms": 1440.293,
+      "events": [
+        {
+          "timestamp": "2026-10-28T12:37:11.390538+00:00",
+          "kind": "classify",
+          "route": "rag",
+          "policy": "keywords-v1",
+          "mode": "rag"
+        },
+        {
+          "timestamp": "2026-10-28T12:37:11.393045+00:00",
+          "kind": "cache",
+          "status": "disabled",
+          "reason": "session_or_anonymous_or_opt_out"
+        },
+        {
+          "timestamp": "2026-10-28T12:37:11.393099+00:00",
+          "kind": "tool_start",
+          "run_id": "b4a52e3dc23b4efdb60545f2c008c5bf",
+          "tool_name": "rag_tool",
+          "arguments": {
+            "query": "Theo Stress.pdf, ứng dụng điện thoại nào được đề xuất để theo dõi các bài tập thở?"
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:37:11.398539+00:00",
+          "kind": "tool_end",
+          "run_id": "b4a52e3dc23b4efdb60545f2c008c5bf",
+          "tool_name": "rag_tool",
+          "result": [
+            {
+              "id": "pdf-1",
+              "rank": 1,
+              "title": "Stress.pdf",
+              "page": 2,
+              "chunk_id": "chunk-007",
+              "start": 381,
+              "end": 980,
+              "section": "2.1. Thở bụng",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 4.7159011084383105,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-2",
+              "rank": 2,
+              "title": "Stress.pdf",
+              "page": 2,
+              "chunk_id": "chunk-008",
+              "start": 760,
+              "end": 1037,
+              "section": "2.1. Thở bụng",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 4.373639566548051,
+              "metric": "bm25_lexical"
+            },
+            {
+              "id": "pdf-3",
+              "rank": 3,
+              "title": "Stress.pdf",
+              "page": 6,
+              "chunk_id": "chunk-025",
+              "start": 403,
+              "end": 857,
+              "section": "2.3.3. Thư giãn cơ bắp",
+              "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+              "score": 3.7122946797607135,
+              "metric": "bm25_lexical"
+            }
+          ],
+          "error_code": null
+        },
+        {
+          "timestamp": "2026-10-28T12:37:11.401101+00:00",
+          "kind": "model_start",
+          "run_id": "67a8e81771ef4ad690aa90a0bf13157f",
+          "model_id": "openai/gpt-oss-20b"
+        },
+        {
+          "timestamp": "2026-10-28T12:37:12.803197+00:00",
+          "kind": "model_end",
+          "run_id": "67a8e81771ef4ad690aa90a0bf13157f",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1148,
+            "output_tokens": 214,
+            "total_tokens": 1362,
+            "output_token_details": {
+              "reasoning": 176
+            }
+          }
+        },
+        {
+          "timestamp": "2026-10-28T12:37:12.804738+00:00",
+          "kind": "evidence_check",
+          "status": "insufficient",
+          "source_ids": []
+        },
+        {
+          "timestamp": "2026-10-28T12:37:12.806857+00:00",
+          "kind": "refuse",
+          "reason": "scope_or_insufficient_evidence"
+        },
+        {
+          "timestamp": "2026-10-28T12:37:12.807799+00:00",
+          "kind": "final",
+          "status": "refused",
+          "code": "INSUFFICIENT_EVIDENCE",
+          "route": "rag",
+          "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+          "sources": []
+        }
+      ],
+      "model_calls": [
+        {
+          "run_id": "67a8e81771ef4ad690aa90a0bf13157f",
+          "model_id": "openai/gpt-oss-20b",
+          "usage": {
+            "input_tokens": 1148,
+            "output_tokens": 214,
+            "total_tokens": 1362,
+            "output_token_details": {
+              "reasoning": 176
+            }
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1148,
+          "output_tokens": 214,
+          "total_tokens": 1362
+        },
+        "total_tokens": 1362
+      }
+    },
+    "technical_completion": true,
+    "answer_returned": false,
+    "content_quality": "pending separate source audit; HTTP/citation validity is not correctness"
+  }
+]

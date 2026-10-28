@@ -1,0 +1,30 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	classify(classify)
+	rag(rag)
+	web(web)
+	grounded(grounded)
+	answer(answer)
+	refuse(refuse)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> classify;
+	classify -.-> answer;
+	classify -.-> rag;
+	classify -.-> refuse;
+	classify -.-> web;
+	grounded -. &nbsp;end&nbsp; .-> __end__;
+	grounded -.-> refuse;
+	rag -.-> grounded;
+	rag -.-> refuse;
+	web -.-> grounded;
+	web -.-> refuse;
+	answer --> __end__;
+	refuse --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

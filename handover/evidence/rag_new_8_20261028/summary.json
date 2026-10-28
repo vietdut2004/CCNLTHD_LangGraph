@@ -1,0 +1,30 @@
+{
+  "executed": true,
+  "fixture": false,
+  "n": 8,
+  "planned": 8,
+  "stopped_reason": null,
+  "technical_completed": 8,
+  "technical_errors": 0,
+  "answers_returned": 6,
+  "refused": 2,
+  "latency_ms": {
+    "mean": 2091.149,
+    "p50": 1445.913,
+    "p95": 3389.45
+  },
+  "percentile_method": "nearest-rank",
+  "warmup_used": false,
+  "usage_complete_requests": 8,
+  "observed_tokens": {
+    "input_tokens": 9003,
+    "output_tokens": 2451,
+    "total_tokens": 11454
+  },
+  "usage_totals": {
+    "input_tokens": 9003,
+    "output_tokens": 2451,
+    "total_tokens": 11454
+  },
+  "semantic_correctness": "Not inferred; see separate source audit"
+}

@@ -1,0 +1,490 @@
+[
+  {
+    "case": "cache_first_miss",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "cache_same_key_hit",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 0,
+      "retrieval_calls": 0
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 0,
+      "retrieval_calls": 0
+    },
+    "passed": true
+  },
+  {
+    "case": "cache_normalized_case_space",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 0,
+      "retrieval_calls": 0
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 0,
+      "retrieval_calls": 0
+    },
+    "passed": true
+  },
+  {
+    "case": "cache_changed_user",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "cache_added_negation",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "cache_changed_source",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "cache_changed_prompt",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "cache_changed_model",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "cache_opt_out",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "cache_anonymous",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "cache_session_first",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "cache_session_second",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "same_claimed_id_reuses_cache",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 0,
+      "retrieval_calls": 0
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 0,
+      "retrieval_calls": 0
+    },
+    "passed": true
+  },
+  {
+    "case": "new_engine_has_empty_cache",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "ttl_before_300_seconds",
+    "observed": {
+      "answer": "cached"
+    },
+    "expected": {
+      "answer": "cached"
+    },
+    "passed": true
+  },
+  {
+    "case": "ttl_at_300_seconds",
+    "observed": null,
+    "expected": null,
+    "passed": true
+  },
+  {
+    "case": "lru_evicts_oldest_unused",
+    "observed": null,
+    "expected": null,
+    "passed": true
+  },
+  {
+    "case": "lru_retains_recent",
+    "observed": {
+      "v": 1
+    },
+    "expected": {
+      "v": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "get_returns_copy",
+    "observed": {
+      "v": 1
+    },
+    "expected": {
+      "v": 1
+    },
+    "passed": true
+  },
+  {
+    "case": "memory_first",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "passed": true
+  },
+  {
+    "case": "memory_first_context_length",
+    "observed": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "case": "memory_followup",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "passed": true
+  },
+  {
+    "case": "memory_followup_context_length",
+    "observed": 3,
+    "expected": 3,
+    "passed": true
+  },
+  {
+    "case": "history_contains_first_question",
+    "observed": "Toi ten la Son",
+    "expected": "Toi ten la Son",
+    "passed": true
+  },
+  {
+    "case": "memory_third",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "passed": true
+  },
+  {
+    "case": "memory_third_context_length",
+    "observed": 5,
+    "expected": 5,
+    "passed": true
+  },
+  {
+    "case": "memory_window",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "passed": true
+  },
+  {
+    "case": "memory_window_context_length",
+    "observed": 5,
+    "expected": 5,
+    "passed": true
+  },
+  {
+    "case": "window_drops_first_turn",
+    "observed": false,
+    "expected": false,
+    "passed": true
+  },
+  {
+    "case": "other_user_same_session",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "passed": true
+  },
+  {
+    "case": "other_user_same_session_context_length",
+    "observed": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "case": "same_user_other_session",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "passed": true
+  },
+  {
+    "case": "same_user_other_session_context_length",
+    "observed": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "case": "without_session",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "passed": true
+  },
+  {
+    "case": "without_session_context_length",
+    "observed": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "case": "same_claimed_ids_get_history",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "passed": true
+  },
+  {
+    "case": "same_claimed_ids_get_history_context_length",
+    "observed": 5,
+    "expected": 5,
+    "passed": true
+  },
+  {
+    "case": "claimed_ids_can_access_previous_context",
+    "observed": true,
+    "expected": true,
+    "passed": true
+  },
+  {
+    "case": "session_without_user_http",
+    "observed": 422,
+    "expected": 422,
+    "passed": true
+  },
+  {
+    "case": "new_engine_has_no_history",
+    "observed": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "expected": {
+      "http": 200,
+      "status": "ok",
+      "model_calls": 1,
+      "retrieval_calls": 0
+    },
+    "passed": true
+  },
+  {
+    "case": "new_engine_has_no_history_context_length",
+    "observed": 1,
+    "expected": 1,
+    "passed": true
+  }
+]

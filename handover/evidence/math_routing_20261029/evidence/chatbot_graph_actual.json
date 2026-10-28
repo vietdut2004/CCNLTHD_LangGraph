@@ -1,0 +1,163 @@
+{
+  "nodes": [
+    {
+      "id": "__start__",
+      "type": "runnable",
+      "data": {
+        "id": [
+          "langgraph",
+          "_internal",
+          "_runnable",
+          "RunnableCallable"
+        ],
+        "name": "__start__"
+      }
+    },
+    {
+      "id": "classify",
+      "type": "runnable",
+      "data": {
+        "id": [
+          "langgraph",
+          "_internal",
+          "_runnable",
+          "RunnableCallable"
+        ],
+        "name": "classify"
+      }
+    },
+    {
+      "id": "rag",
+      "type": "runnable",
+      "data": {
+        "id": [
+          "langgraph",
+          "_internal",
+          "_runnable",
+          "RunnableCallable"
+        ],
+        "name": "rag"
+      }
+    },
+    {
+      "id": "web",
+      "type": "runnable",
+      "data": {
+        "id": [
+          "langgraph",
+          "_internal",
+          "_runnable",
+          "RunnableCallable"
+        ],
+        "name": "web"
+      }
+    },
+    {
+      "id": "grounded",
+      "type": "runnable",
+      "data": {
+        "id": [
+          "langgraph",
+          "_internal",
+          "_runnable",
+          "RunnableCallable"
+        ],
+        "name": "grounded"
+      }
+    },
+    {
+      "id": "answer",
+      "type": "runnable",
+      "data": {
+        "id": [
+          "langgraph",
+          "_internal",
+          "_runnable",
+          "RunnableCallable"
+        ],
+        "name": "answer"
+      }
+    },
+    {
+      "id": "refuse",
+      "type": "runnable",
+      "data": {
+        "id": [
+          "langgraph",
+          "_internal",
+          "_runnable",
+          "RunnableCallable"
+        ],
+        "name": "refuse"
+      }
+    },
+    {
+      "id": "__end__"
+    }
+  ],
+  "edges": [
+    {
+      "source": "__start__",
+      "target": "classify"
+    },
+    {
+      "source": "classify",
+      "target": "answer",
+      "conditional": true
+    },
+    {
+      "source": "classify",
+      "target": "rag",
+      "conditional": true
+    },
+    {
+      "source": "classify",
+      "target": "refuse",
+      "conditional": true
+    },
+    {
+      "source": "classify",
+      "target": "web",
+      "conditional": true
+    },
+    {
+      "source": "grounded",
+      "target": "__end__",
+      "data": "end",
+      "conditional": true
+    },
+    {
+      "source": "grounded",
+      "target": "refuse",
+      "conditional": true
+    },
+    {
+      "source": "rag",
+      "target": "grounded",
+      "conditional": true
+    },
+    {
+      "source": "rag",
+      "target": "refuse",
+      "conditional": true
+    },
+    {
+      "source": "web",
+      "target": "grounded",
+      "conditional": true
+    },
+    {
+      "source": "web",
+      "target": "refuse",
+      "conditional": true
+    },
+    {
+      "source": "answer",
+      "target": "__end__"
+    },
+    {
+      "source": "refuse",
+      "target": "__end__"
+    }
+  ]
+}

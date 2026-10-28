@@ -1,0 +1,205 @@
+{
+  "summary": {
+    "reviewed_at": "2026-10-24T00:23:20.351622+07:00",
+    "reviewer": "Codex (AI source audit), not a human/clinical evaluation",
+    "n": 8,
+    "fully_correct": 1,
+    "partially_correct": 1,
+    "off_topic": 1,
+    "refused": 5,
+    "mean_score_0_8": 3.5,
+    "answered_with_sources": 3,
+    "technical_errors": 0,
+    "negative_cases_correct": 2,
+    "negative_cases_n": 2,
+    "human_grading_completed": false,
+    "warning": "Scores describe source/task alignment for this small observed set, not medical validity or population performance."
+  },
+  "cases": [
+    {
+      "case_id": "rag_01",
+      "trace_id": "82f253b7f4c3435ba6ec50ea0adca322",
+      "reference": "Não nhận thông điệp bình tĩnh/thư giãn và gửi đến cơ thể; các biểu hiện căng thẳng giảm.",
+      "reference_pages": [
+        1
+      ],
+      "answer": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "source_support_and_completion_0_2": 0,
+      "relevance_0_2": 0,
+      "scope_0_2": 2,
+      "source_accuracy_0_2": 0,
+      "total_0_8": 2,
+      "outcome": "refused",
+      "reviewer": "Codex (AI source audit)",
+      "notes": "PDF trang 1 có giải thích về não bộ nhưng top-2 trả trang 6/5 không có ý này. Model sinh quote có dấu ... không liên tục với nguồn và bị chặn; API từ chối, chưa hoàn thành câu có đáp án.",
+      "source_checks": []
+    },
+    {
+      "case_id": "rag_02",
+      "trace_id": "7896478e15584c8091444e3273ad2efe",
+      "reference": "Một tay ở bụng ngay dưới xương sườn, tay kia trên ngực.",
+      "reference_pages": [
+        2
+      ],
+      "answer": "Một tay đặt lên bụng, tay kia đặt lên ngực.",
+      "status": "ok",
+      "source_support_and_completion_0_2": 1,
+      "relevance_0_2": 2,
+      "scope_0_2": 2,
+      "source_accuracy_0_2": 2,
+      "total_0_8": 7,
+      "outcome": "partially_correct",
+      "reviewer": "Codex (AI source audit)",
+      "notes": "Trả đúng một tay ở bụng, một tay trên ngực và quote/trang khớp nguồn. Thiếu chi tiết bụng ngay dưới xương sườn ở đáp án chuẩn trang 2; các chunk thực tế ở trang 3/5 chỉ hỗ trợ phần chung.",
+      "source_checks": [
+        {
+          "source_id": "pdf-1",
+          "page": 3,
+          "quote_in_retrieved_chunk": true,
+          "quote_on_pdf_page": true
+        },
+        {
+          "source_id": "pdf-2",
+          "page": 5,
+          "quote_in_retrieved_chunk": true,
+          "quote_on_pdf_page": true
+        }
+      ]
+    },
+    {
+      "case_id": "rag_03",
+      "trace_id": "fefd05350d774d68b07785775144963f",
+      "reference": "Từ 3 đến 10 lần.",
+      "reference_pages": [
+        2
+      ],
+      "answer": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "source_support_and_completion_0_2": 0,
+      "relevance_0_2": 0,
+      "scope_0_2": 2,
+      "source_accuracy_0_2": 0,
+      "total_0_8": 2,
+      "outcome": "refused",
+      "reviewer": "Codex (AI source audit)",
+      "notes": "Đáp án 3–10 lần có ở trang 2, nhưng hai chunk trả về không chứa số này. Từ chối thay vì bịa phù hợp với context hạn chế, song chưa hoàn thành truy vấn có đáp án trong PDF.",
+      "source_checks": []
+    },
+    {
+      "case_id": "rag_04",
+      "trace_id": "0e46ebf19b554b5380013fe6db13daa3",
+      "reference": "Hít vào đếm đến 4, nín thở đếm đến 7, thở ra đếm đến 8.",
+      "reference_pages": [
+        3
+      ],
+      "answer": "Trong kỹ thuật 4‑7‑8, bạn hít sâu và chậm từ bụng và đếm thầm đến **4** khi hít vào; **nín thở** và đếm thầm từ **1 đến 7**; rồi **thở ra hoàn toàn** khi đếm thầm từ **1 đến 8**.",
+      "status": "ok",
+      "source_support_and_completion_0_2": 2,
+      "relevance_0_2": 2,
+      "scope_0_2": 2,
+      "source_accuracy_0_2": 2,
+      "total_0_8": 8,
+      "outcome": "fully_correct",
+      "reviewer": "Codex (AI source audit)",
+      "notes": "Nêu đúng các số đếm 4/7/8 theo từng pha, không tự thêm đơn vị giây. Hai quote giữ nguyên span của nguồn trang 3, có cả xuống dòng/bullet. Nội dung được cả hai chunk thực tế hỗ trợ.",
+      "source_checks": [
+        {
+          "source_id": "pdf-1",
+          "page": 3,
+          "quote_in_retrieved_chunk": true,
+          "quote_on_pdf_page": true
+        },
+        {
+          "source_id": "pdf-2",
+          "page": 3,
+          "quote_in_retrieved_chunk": true,
+          "quote_on_pdf_page": true
+        }
+      ]
+    },
+    {
+      "case_id": "rag_05",
+      "trace_id": "28e57a33975a4087b7bc7e564a9fdd4b",
+      "reference": "Nằm ngửa, co đầu gối.",
+      "reference_pages": [
+        3
+      ],
+      "answer": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "source_support_and_completion_0_2": 0,
+      "relevance_0_2": 0,
+      "scope_0_2": 2,
+      "source_accuracy_0_2": 0,
+      "total_0_8": 2,
+      "outcome": "refused",
+      "reviewer": "Codex (AI source audit)",
+      "notes": "PDF trang 3 nêu nằm ngửa, co đầu gối. Top-2 chỉ chứa danh sách bài nâng cao và bài 4–7–8, không chứa tư thế thở cuộn; phản hồi từ chối chưa đáp ứng nhiệm vụ.",
+      "source_checks": []
+    },
+    {
+      "case_id": "rag_06",
+      "trace_id": "81a2fa4f0683447b9b3305fffaa63cc7",
+      "reference": "3 đến 5 phút.",
+      "reference_pages": [
+        4
+      ],
+      "answer": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "source_support_and_completion_0_2": 0,
+      "relevance_0_2": 0,
+      "scope_0_2": 2,
+      "source_accuracy_0_2": 0,
+      "total_0_8": 2,
+      "outcome": "refused",
+      "reviewer": "Codex (AI source audit)",
+      "notes": "PDF trang 4 nêu 3–5 phút. Chunk trang 3 và phần cuối trang 4 được truy xuất không có đoạn này, nên hệ thống từ chối. Chưa trả được đáp án có sẵn trong tài liệu.",
+      "source_checks": []
+    },
+    {
+      "case_id": "rag_07",
+      "trace_id": "4a6b1449e5f84e33a61a07c3054ac2c2",
+      "reference": "Nâng đầu lên sau cùng.",
+      "reference_pages": [
+        4
+      ],
+      "answer": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "source_support_and_completion_0_2": 0,
+      "relevance_0_2": 0,
+      "scope_0_2": 2,
+      "source_accuracy_0_2": 0,
+      "total_0_8": 2,
+      "outcome": "refused",
+      "reviewer": "Codex (AI source audit)",
+      "notes": "PDF trang 4 nêu nâng đầu lên sau cùng. Hai chunk cùng ở trang 4 nhưng bỏ sót bước giữa có đáp án. Đúng số trang không đủ chứng minh truy xuất đúng đoạn; API từ chối.",
+      "source_checks": []
+    },
+    {
+      "case_id": "rag_08",
+      "trace_id": "4fbf4a7652074900b635e4881c3a8dcd",
+      "reference": "10 đến 20 phút.",
+      "reference_pages": [
+        5
+      ],
+      "answer": "Bài tập thở theo nhịp 4–7–8 yêu cầu hít sâu và chậm từ bụng, đếm thầm đến 4 khi hít vào, rồi nín thở và đếm thầm từ 1–7.",
+      "status": "ok",
+      "source_support_and_completion_0_2": 0,
+      "relevance_0_2": 0,
+      "scope_0_2": 2,
+      "source_accuracy_0_2": 1,
+      "total_0_8": 3,
+      "outcome": "off_topic",
+      "reviewer": "Codex (AI source audit)",
+      "notes": "Câu hỏi yêu cầu thời lượng bài tập tập trung vào hơi thở (10–20 phút, trang 5). Phản hồi nói số đếm của bài 4–7–8 ở trang 3. Quote có thật nhưng khác chủ đề, không trả lời thời lượng được hỏi.",
+      "source_checks": [
+        {
+          "source_id": "pdf-2",
+          "page": 3,
+          "quote_in_retrieved_chunk": true,
+          "quote_on_pdf_page": true
+        }
+      ]
+    }
+  ]
+}

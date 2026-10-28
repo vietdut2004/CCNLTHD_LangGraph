@@ -10,6 +10,8 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 from threading import Lock
+from runtime_policy import PROMPT_VERSION
+from retrieval import POLICY,MAX_CHARS,OVERLAP,DEFAULT_K
 
 CURRENT = contextvars.ContextVar('request_trace', default=None)
 WRITE_LOCK = Lock()
@@ -20,15 +22,17 @@ def utc():
 
 def identity(model):
     names = ('agent.py','main.py','Rag_tool.py','searchweb_tool.py',
-             'telemetry.py','response_cache.py','math_graph.py')
+             'telemetry.py','response_cache.py','math_graph.py','retrieval.py','runtime_policy.py')
     hashes = {n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest()
               for n in names if (ROOT/n).exists()}
     versions = {}
-    for name in ('langgraph','langchain-core','langchain-groq','fastapi'):
+    for name in ('langgraph','langchain-core','langchain-groq','fastapi','pypdf'):
         try: versions[name] = importlib.metadata.version(name)
         except importlib.metadata.PackageNotFoundError: versions[name] = None
     signature = {'source_sha256':hashes,'model_id':model,'versions':versions,
-                 'prompt_version':'evidence-v1',
+                 'prompt_version':PROMPT_VERSION,
+                 'retrieval_policy':{'name':POLICY,'max_chars':MAX_CHARS,'overlap':OVERLAP,'k':DEFAULT_K},
+                 'generation_policy':{'temperature':0,'max_output_tokens':1536,'timeout_seconds':25},
                  'retry_policy':{'sdk':0,'tool':0,'graph':0}}
     signature['graph_id'] = hashlib.sha256(json.dumps(signature,sort_keys=True).encode()).hexdigest()[:20]
     return signature

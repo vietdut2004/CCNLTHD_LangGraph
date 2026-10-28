@@ -1,0 +1,2 @@
+# Bài lab độc lập không cần khóa API
+Cài langgraph trong môi trường riêng. Chép starter/ sang thư mục làm bài, hoàn thành TODO route rồi chạy python lab_run.py. Đáp án ở solution/. Ba nhánh, lỗi chủ động và bộ đếm phiên 1–2–1 phải được kiểm tra; token=0 vì không gọi LLM. Lookup là văn bản cố định, không phải RAG vector. Phần Groq trong phụ lục là mở rộng tùy chọn, không dùng để quyết định hoàn thành bài cốt lõi.

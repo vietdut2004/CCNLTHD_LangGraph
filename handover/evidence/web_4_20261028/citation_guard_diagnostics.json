@@ -1,0 +1,99 @@
+{
+  "scope": "Derived objective guard diagnostics, no answer grades",
+  "cases": [
+    {
+      "id": "web_01",
+      "trace_id": "705960d54b17468fbb678b1cc03148af",
+      "final_status": "refused",
+      "draft_supported": true,
+      "draft_citation_checks": [
+        {
+          "id": "web-1",
+          "source_id_exists": true,
+          "quote_matches_guard": false
+        },
+        {
+          "id": "web-1",
+          "source_id_exists": true,
+          "quote_matches_guard": false
+        },
+        {
+          "id": "web-2",
+          "source_id_exists": true,
+          "quote_matches_guard": true
+        }
+      ],
+      "answer_correctness": null,
+      "human_score": null,
+      "note": "Draft is not the final API answer. Quote checks do not assign semantic or human scores."
+    },
+    {
+      "id": "web_02",
+      "trace_id": "7874d4f946694c7db3af9ffc7ed366d5",
+      "final_status": "refused",
+      "draft_supported": true,
+      "draft_citation_checks": [
+        {
+          "id": "web-2",
+          "source_id_exists": true,
+          "quote_matches_guard": true
+        },
+        {
+          "id": "web-1",
+          "source_id_exists": true,
+          "quote_matches_guard": false
+        }
+      ],
+      "answer_correctness": null,
+      "human_score": null,
+      "note": "Draft is not the final API answer. Quote checks do not assign semantic or human scores."
+    },
+    {
+      "id": "web_03",
+      "trace_id": "a6f89c5416a148c1b001ceaf8831d759",
+      "final_status": "ok",
+      "draft_supported": true,
+      "draft_citation_checks": [
+        {
+          "id": "web-2",
+          "source_id_exists": true,
+          "quote_matches_guard": true
+        },
+        {
+          "id": "web-1",
+          "source_id_exists": true,
+          "quote_matches_guard": true
+        }
+      ],
+      "answer_correctness": null,
+      "human_score": null,
+      "note": "Draft is not the final API answer. Quote checks do not assign semantic or human scores."
+    },
+    {
+      "id": "web_04",
+      "trace_id": "eb7f69ad61f34f528aff5328bfdbf4c0",
+      "final_status": "ok",
+      "draft_supported": true,
+      "draft_citation_checks": [
+        {
+          "id": "web-1",
+          "source_id_exists": true,
+          "quote_matches_guard": true
+        },
+        {
+          "id": "web-1",
+          "source_id_exists": true,
+          "quote_matches_guard": true
+        },
+        {
+          "id": "web-3",
+          "source_id_exists": true,
+          "quote_matches_guard": true
+        }
+      ],
+      "answer_correctness": null,
+      "human_score": null,
+      "note": "Draft is not the final API answer. Quote checks do not assign semantic or human scores."
+    }
+  ]
+}

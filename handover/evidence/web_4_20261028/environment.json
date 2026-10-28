@@ -1,0 +1,36 @@
+{
+  "started_at": "2026-10-28T13:49:48.748496+00:00",
+  "python": "3.13.2",
+  "provider": "Groq + Tavily real",
+  "model_id": "openai/gpt-oss-20b",
+  "fixture": false,
+  "credentials_present": true,
+  "requests_planned": 4,
+  "concurrency": 1,
+  "delay_seconds": 6,
+  "retries": 0,
+  "model_timeout_seconds": 25,
+  "api_deadline_seconds": 60,
+  "max_output_tokens": 1536,
+  "client_timeout_seconds": 70,
+  "cases_sha256": "cef7f538324e6e0ff3e8616197b9bd5ebe298dc4ed1410910b28c8e3bb48a4d3",
+  "warmup_used": false,
+  "first_request_includes_cold_connections": true,
+  "observer_sha256": {
+    "run_web_item3.py": "db134846d930b3b4a0bfb420ad36e96b3f27faf2a5f88a1c7c88ab5a11fe5f1d",
+    "serve_web_item3.py": "f17406c65229fa34d88b1628d61ed9b24873168d21287d85d1679d73c34bd081",
+    "web_check_credentials.py": "aeb6135ea3059d811f37e02df03384db3aa8beb1c7babf6d97fdcc09952cf8c9"
+  },
+  "packages": {
+    "pypdf": "6.21.2",
+    "langgraph": "1.2.16",
+    "langchain-core": "1.7.0",
+    "langchain-groq": "1.1.3",
+    "fastapi": "0.141.1",
+    "httpx": "0.28.1",
+    "uvicorn": "0.54.0",
+    "python-dotenv": "1.2.4",
+    "pytest": "9.1.1"
+  },
+  "finished_at": "2026-10-28T13:50:45.862064+00:00"
+}

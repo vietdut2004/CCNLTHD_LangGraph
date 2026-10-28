@@ -1,0 +1,15 @@
+{
+  "recorded_at": "2026-10-28T14:43:21.092033+00:00",
+  "python": "3.12.14",
+  "provider_calls": 0,
+  "math_executor_cases": 4,
+  "math_executor_passed": 4,
+  "math_llm_calls": 0,
+  "direct_classify_cases": 12,
+  "matched_implemented_rules": 12,
+  "classify_llm_calls": 0,
+  "known_rule_limitation_cases": 2,
+  "chatbot_chain_probe_fixture": true,
+  "chatbot_chain_probe_math_tool_calls": 0,
+  "scope": "Rule conformance and tool execution only; no learned tool selection, autonomous planning or end-to-end multi-step math claim"
+}

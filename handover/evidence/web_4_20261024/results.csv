@@ -1,0 +1,5 @@
+﻿case_id,trace_id,http_status,status,latency_ms,technical_error,observable_pass,total_tokens
+web_01,495c9e00ed3d444894901e0d25796e12,200,ok,4646.782,False,True,1303
+web_02,a9f3221de07f4b948bf29e3ef275b398,200,refused,7111.803,False,False,2084
+web_03,7711b829434342758ec908f45af415e3,200,ok,6074.339,False,True,1657
+web_04,91383a42dc404d0a9e4132b74f94c349,200,refused,6555.655,False,False,2008

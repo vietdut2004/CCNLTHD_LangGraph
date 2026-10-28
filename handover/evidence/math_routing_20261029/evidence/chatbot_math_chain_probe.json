@@ -1,0 +1,32 @@
+{
+  "request": {
+    "question": "Tính (2+3)*4",
+    "mode": "auto"
+  },
+  "http_status": 200,
+  "body": {
+    "response": "FIXTURE_ONLY: nhánh trả lời, không chạy công cụ toán.",
+    "status": "ok",
+    "code": "OK",
+    "trace_id": "726f2550d49744829197b18b4e148cf3",
+    "graph_id": "4f28c584ad53e1e5e50a",
+    "model_id": "fixture:math-chain-boundary",
+    "route": "answer",
+    "sources": [],
+    "usage": {
+      "attempted_model_calls": 1,
+      "calls_with_usage": 0,
+      "usage_complete": false,
+      "observed_tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0
+      },
+      "total_tokens": null
+    }
+  },
+  "scope": "TestClient with fixture answer; tests routing boundary, NOT math correctness or a real LLM answer",
+  "fixture_model_invocations": 1,
+  "math_tool_calls": 0,
+  "provider_calls": 0
+}

@@ -1,6 +1,7 @@
 """Single-attempt Tavily adapter; failures propagate to the API contract."""
 import os
 import httpx
+from datetime import datetime,timezone
 
 class SearchWebTool:
     name='search_web'
@@ -15,6 +16,7 @@ class SearchWebTool:
             payload=response.json()
         if payload.get('error'): raise RuntimeError('WEB_PROVIDER_ERROR')
         return [{'id':f'web-{i+1}','title':row.get('title',''),
-                 'url':row['url'],'text':row.get('content','')}
+                 'url':row['url'],'text':row.get('content',''),
+                 'retrieved_at':datetime.now(timezone.utc).isoformat()}
                 for i,row in enumerate(payload.get('results',[]))
                 if row.get('url','').startswith(('https://','http://')) and row.get('content')]

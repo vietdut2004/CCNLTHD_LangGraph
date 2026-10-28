@@ -1,0 +1,41 @@
+{
+  "frozen_before_final_implementation": true,
+  "selection": "AI-authored source questions; same supplied PDF, not human/blinded external validation",
+  "cases": [
+    {
+      "id": "validation_01",
+      "question": "Theo Stress.pdf, tập thở có cần công cụ hay thiết bị đặc biệt không?",
+      "reference": "Không cần công cụ hoặc thiết bị đặc biệt.",
+      "page": 1,
+      "evidence": "không cần bất kỳ công cụ hoặc thiết bị đặc biệt nào"
+    },
+    {
+      "id": "validation_02",
+      "question": "Theo Stress.pdf, trong bài thở bụng khi thở ra môi cần như thế nào?",
+      "reference": "Đôi môi mím chặt như đang huýt sáo.",
+      "page": 2,
+      "evidence": "đôi môi mím chặt như thể đang huýt sáo"
+    },
+    {
+      "id": "validation_03",
+      "question": "Theo Stress.pdf, bài thở cuộn đặt tay trái và tay phải ở đâu?",
+      "reference": "Tay trái trên bụng, tay phải trên ngực.",
+      "page": 3,
+      "evidence": "Đặt tay trái trên bụng và tay phải trên ngực"
+    },
+    {
+      "id": "validation_04",
+      "question": "Theo Stress.pdf, thở buổi sáng giữ hơi thở bao lâu ở tư thế đứng?",
+      "reference": "Chỉ trong vài giây.",
+      "page": 4,
+      "evidence": "Giữ hơi thở chỉ trong vài giây"
+    },
+    {
+      "id": "validation_05",
+      "question": "Theo Stress.pdf, bài thở sâu hít vào và thở ra bằng mũi hay miệng?",
+      "reference": "Hít vào bằng mũi, thở ra bằng mũi.",
+      "page": 5,
+      "evidence": "Thở ra bằng mũi."
+    }
+  ]
+}

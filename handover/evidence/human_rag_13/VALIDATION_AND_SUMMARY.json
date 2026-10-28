@@ -1,0 +1,58 @@
+{
+  "human_grading_completed": true,
+  "graded_count": 13,
+  "reviewers": [
+    "Huỳnh Lê Sơn"
+  ],
+  "reviewer_role": "Not collected by the supplied form; no expert/independent status claimed",
+  "reviewed_on": "2026-10-28",
+  "total_score": 96,
+  "maximum_score": 104,
+  "mean_score_0_8": 7.384615,
+  "groups": {
+    "regression_5": {
+      "n": 5,
+      "total_score": 38,
+      "mean_score_0_8": 7.6
+    },
+    "new_8": {
+      "n": 8,
+      "total_score": 58,
+      "mean_score_0_8": 7.25
+    },
+    "new_answerable_6": {
+      "n": 6,
+      "total_score": 44,
+      "mean_score_0_8": 7.333333
+    },
+    "new_outside_pdf_2": {
+      "n": 2,
+      "total_score": 14,
+      "mean_score_0_8": 7.0
+    }
+  },
+  "criterion_means_0_2": {
+    "supported_complete": 1.923077,
+    "relevance": 1.769231,
+    "scope": 1.923077,
+    "source_accuracy": 1.769231
+  },
+  "score_distribution": {
+    "5": 1,
+    "7": 5,
+    "8": 7
+  },
+  "source_sha256": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a",
+  "validation": {
+    "unique_cases": 13,
+    "JSON_CSV_agree": true,
+    "reference_answer_trace_graph_match_actual_form": true,
+    "scores_in_0_2_and_totals_valid": true,
+    "scores_names_notes_unchanged": true,
+    "date_correction_user_confirmed": true
+  },
+  "original_files_sha256": {
+    "CHAM_NGUOI_THAT.json": "ba43ec38f0cc38b7a6201ad16ca3c12a1f6d49fe5ec02ec00aa827c56280bca7",
+    "CHAM_NGUOI_THAT.csv": "08d1821fbfee0c4baca95e6c6ee41abac5e9daeaa9845a58cb386079474f3aef"
+  }
+}

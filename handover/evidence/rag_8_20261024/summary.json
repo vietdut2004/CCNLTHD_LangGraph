@@ -1,0 +1,125 @@
+{
+  "groups": {
+    "cache": {
+      "n": 4,
+      "technical_errors": 0,
+      "technical_error_rate_pct": 0.0,
+      "observable_pass": 4,
+      "latency_ms": {
+        "mean": 1780.652,
+        "p50": 2064.974,
+        "p95": 2854.742
+      },
+      "successful_latency_ms": {
+        "mean": 1780.652,
+        "p50": 2064.974,
+        "p95": 2854.742
+      },
+      "complete_usage_requests": 4,
+      "requests_with_model_call": 3,
+      "observed_tokens": {
+        "input_tokens": 2496,
+        "output_tokens": 1889,
+        "total_tokens": 4385
+      }
+    },
+    "no_evidence": {
+      "n": 2,
+      "technical_errors": 0,
+      "technical_error_rate_pct": 0.0,
+      "observable_pass": 2,
+      "latency_ms": {
+        "mean": 1894.01,
+        "p50": 1378.867,
+        "p95": 2409.154
+      },
+      "successful_latency_ms": {
+        "mean": 1894.01,
+        "p50": 1378.867,
+        "p95": 2409.154
+      },
+      "complete_usage_requests": 2,
+      "requests_with_model_call": 2,
+      "observed_tokens": {
+        "input_tokens": 1529,
+        "output_tokens": 369,
+        "total_tokens": 1898
+      }
+    },
+    "rag": {
+      "n": 8,
+      "technical_errors": 0,
+      "technical_error_rate_pct": 0.0,
+      "observable_pass": 3,
+      "latency_ms": {
+        "mean": 2237.792,
+        "p50": 2095.254,
+        "p95": 2859.43
+      },
+      "successful_latency_ms": {
+        "mean": 2237.792,
+        "p50": 2095.254,
+        "p95": 2859.43
+      },
+      "complete_usage_requests": 8,
+      "requests_with_model_call": 8,
+      "observed_tokens": {
+        "input_tokens": 6177,
+        "output_tokens": 5673,
+        "total_tokens": 11850
+      }
+    },
+    "scope": {
+      "n": 1,
+      "technical_errors": 0,
+      "technical_error_rate_pct": 0.0,
+      "observable_pass": 1,
+      "latency_ms": {
+        "mean": 30.713,
+        "p50": 30.713,
+        "p95": 30.713
+      },
+      "successful_latency_ms": {
+        "mean": 30.713,
+        "p50": 30.713,
+        "p95": 30.713
+      },
+      "complete_usage_requests": 1,
+      "requests_with_model_call": 0,
+      "observed_tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "validation": {
+      "n": 3,
+      "technical_errors": 0,
+      "technical_error_rate_pct": 0.0,
+      "observable_pass": 3,
+      "latency_ms": {
+        "mean": 26.722,
+        "p50": 25.904,
+        "p95": 34.542
+      },
+      "successful_latency_ms": {
+        "mean": 26.722,
+        "p50": 25.904,
+        "p95": 34.542
+      },
+      "complete_usage_requests": 3,
+      "requests_with_model_call": 0,
+      "observed_tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0
+      }
+    }
+  },
+  "n": 18,
+  "warmup_excluded": true,
+  "preparation_excluded": true,
+  "latency_definition": "Client-observed full HTTP response, nearest-rank percentiles; source/model preparation separately recorded.",
+  "technical_error_vs_observable_pass_separate": true,
+  "content_quality": "Pending explicit source audit; no invented scores"
+}

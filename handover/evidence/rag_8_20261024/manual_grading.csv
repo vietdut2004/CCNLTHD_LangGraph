@@ -1,0 +1,9 @@
+﻿case_id,trace_id,supported_by_source_0_2,relevance_0_2,scope_0_2,source_accuracy_0_2,reference,reviewer,notes
+rag_01,82f253b7f4c3435ba6ec50ea0adca322,,,,,Não nhận thông điệp bình tĩnh/thư giãn và gửi đến cơ thể; các biểu hiện căng thẳng giảm.,,
+rag_02,7896478e15584c8091444e3273ad2efe,,,,,"Một tay ở bụng ngay dưới xương sườn, tay kia trên ngực.",,
+rag_03,fefd05350d774d68b07785775144963f,,,,,Từ 3 đến 10 lần.,,
+rag_04,0e46ebf19b554b5380013fe6db13daa3,,,,,"Hít vào đếm đến 4, nín thở đếm đến 7, thở ra đếm đến 8.",,
+rag_05,28e57a33975a4087b7bc7e564a9fdd4b,,,,,"Nằm ngửa, co đầu gối.",,
+rag_06,81a2fa4f0683447b9b3305fffaa63cc7,,,,,3 đến 5 phút.,,
+rag_07,4a6b1449e5f84e33a61a07c3054ac2c2,,,,,Nâng đầu lên sau cùng.,,
+rag_08,4fbf4a7652074900b635e4881c3a8dcd,,,,,10 đến 20 phút.,,

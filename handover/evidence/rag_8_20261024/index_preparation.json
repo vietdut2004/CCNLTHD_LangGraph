@@ -1,0 +1,12 @@
+{
+  "duration_ms": 104761.435,
+  "excluded_from_http_latency": true,
+  "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+  "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base:500:50:2",
+  "index_type": "IndexFlatL2",
+  "vectors": 22,
+  "dimension": 768,
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "top_k": 2
+}

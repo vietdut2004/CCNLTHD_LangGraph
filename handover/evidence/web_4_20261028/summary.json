@@ -1,0 +1,31 @@
+{
+  "executed": true,
+  "fixture": false,
+  "n": 4,
+  "planned": 4,
+  "stopped_reason": null,
+  "technical_completed": 4,
+  "technical_errors": 0,
+  "answers_returned": 2,
+  "refused": 2,
+  "latency_ms": {
+    "mean": 6921.186,
+    "p50": 6807.497,
+    "p95": 8114.22
+  },
+  "percentile_method": "nearest-rank",
+  "warmup_used": false,
+  "usage_complete_requests": 4,
+  "observed_tokens": {
+    "input_tokens": 5310,
+    "output_tokens": 3343,
+    "total_tokens": 8653
+  },
+  "usage_totals": {
+    "input_tokens": 5310,
+    "output_tokens": 3343,
+    "total_tokens": 8653
+  },
+  "semantic_correctness": "Not inferred; see separate source audit",
+  "scope": "Four technical-documentation regression queries; not psychology, current news, medical efficacy or broad web quality"
+}

@@ -1,0 +1,26 @@
+{
+  "http_status": 200,
+  "body": {
+    "response": "Chào bạn!",
+    "status": "ok",
+    "code": "OK",
+    "trace_id": "a7388b2279a84e20862f2a5b2a3ae57c",
+    "graph_id": "9babf4881af66ca761ce",
+    "model_id": "openai/gpt-oss-20b",
+    "route": "answer",
+    "sources": [],
+    "usage": {
+      "attempted_model_calls": 1,
+      "calls_with_usage": 1,
+      "usage_complete": true,
+      "observed_tokens": {
+        "input_tokens": 132,
+        "output_tokens": 52,
+        "total_tokens": 184
+      },
+      "total_tokens": 184
+    }
+  },
+  "latency_ms": 5623.09,
+  "excluded": true
+}
