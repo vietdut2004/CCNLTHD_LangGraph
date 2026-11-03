@@ -23,6 +23,11 @@ evidence_week8/
 evidence_recheck/
 lab_metrics.jsonl
 
+# Temporary test directories are not submission evidence.
+evidence/verification/**/pytest_tmp/
+evidence/verification/**/pytest_tmp*/
+!evidence/verification/**/lab_metrics.jsonl
+
 # Rechecks and test output
 .pytest_cache/
 evidence_week8/

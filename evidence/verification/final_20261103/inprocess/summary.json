@@ -1,0 +1,10 @@
+{
+  "cases": 7,
+  "passed": 7,
+  "provider_calls": 0,
+  "fixture_llm_and_web": true,
+  "real_local_pdf_retrieval": true,
+  "frontend_http": 200,
+  "graph_id": "3b9febfe6d769326e9ba",
+  "scope": "Integration smoke only, not live Groq/Tavily or semantic quality"
+}

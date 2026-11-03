@@ -1,3 +1,7 @@
+# Phạm vi tài liệu
+
+README.md là hướng dẫn bản nộp cuối. Các lệnh/miêu tả dưới đây giữ cách kiểm thử evidence; stack RAG hiện tại là BM25, các recipe FAISS chỉ là lịch sử.
+
 # Runtime contract for evidence v1.3
 
 Base repository: https://github.com/vietdut2004/CCNLTHD_LangGraph
@@ -18,14 +22,14 @@ Every response and JSONL trace carries the same server-generated trace_id, graph
 Create a fresh virtual environment, then:
 
 ```powershell
-python -m pip install -r requirements-evidence.txt
+python -m pip install -r docs/historical_requirements/requirements-evidence.txt
 python -m pytest -q tests/test_evidence.py
 python -m benchmarks.run_evidence --fixture --output evidence_fixture
 ```
 
 Fixture adapters make no external HTTP, model or embedding calls. Fixture token usage is missing for a simulated model call, not zero; calls that provably never invoked a model are zero. Fixture timings must never be copied into the Groq/RAG/web performance table.
 
-For current BM25 RAG, install `requirements-locked.txt` (FAISS requirements-rag-extra.txt is historical), supply a reviewed Stress.pdf via RAG_PDF_PATH, and configure GROQ_API_KEY and TAVILY_API_KEY locally. Never include a real .env in a shared package. Start the new API in a separate port so the baseline can be retained:
+For current BM25 RAG, install `requirements-locked.txt` (FAISS docs/historical_requirements/requirements-rag-extra.txt is historical), supply a reviewed Stress.pdf via RAG_PDF_PATH, and configure GROQ_API_KEY and TAVILY_API_KEY locally. Never include a real .env in a shared package. Start the new API in a separate port so the baseline can be retained:
 
 ```powershell
 python -m pip freeze > environment_live.txt

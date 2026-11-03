@@ -1,0 +1,2 @@
+﻿id,question,reference,http,status,trace_id,model,timestamp,latency_ms,input_tokens,output_tokens,total_tokens,usage_complete
+rag_03,"Theo Stress.pdf, bài tập thở bụng được lặp lại bao nhiêu lần?",Từ 3 đến 10 lần.,502,error,35008cb2c38d4d74acf6f727ee63d102,openai/gpt-oss-20b,2026-10-28T01:53:17.040146+00:00,1423.517,,,,False

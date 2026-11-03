@@ -1,0 +1,658 @@
+[
+  {
+    "request_id": "warmup",
+    "category": "warmup",
+    "request_body": {
+      "question": "Xin chào. Chỉ chào lại một câu ngắn, không dùng công cụ."
+    },
+    "expected_status": 200,
+    "started_at": "2026-10-20T15:46:18.540573+07:00",
+    "http_status": 200,
+    "response_body": {
+      "response": "Chào bạn!"
+    },
+    "application_fallback": false,
+    "client_latency_ms": 2304.293,
+    "model_calls": [
+      {
+        "run_id": "01a1587d-71bf-778b-9cc4-2ac3b044cd38",
+        "model": "openai/gpt-oss-20b",
+        "usage_metadata": {
+          "input_tokens": 324,
+          "output_tokens": 56,
+          "total_tokens": 380,
+          "output_token_details": {
+            "reasoning": 43
+          }
+        },
+        "provider_token_usage": {
+          "completion_tokens": 56,
+          "prompt_tokens": 324,
+          "total_tokens": 380,
+          "completion_time": 0.057758217,
+          "completion_tokens_details": {
+            "reasoning_tokens": 43
+          },
+          "prompt_time": 0.019691579,
+          "prompt_tokens_details": null,
+          "queue_time": 0.39512354,
+          "total_time": 0.077449796
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 2297.906,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "basic_01",
+    "category": "basic",
+    "request_body": {
+      "question": "Xin chào. Chỉ chào lại một câu ngắn, không dùng công cụ."
+    },
+    "expected_status": 200,
+    "started_at": "2026-10-20T15:46:22.854571+07:00",
+    "http_status": 200,
+    "response_body": {
+      "response": "Chào bạn!"
+    },
+    "application_fallback": false,
+    "client_latency_ms": 772.125,
+    "model_calls": [
+      {
+        "run_id": "01a1587d-8291-7642-9ea1-eae2513c2119",
+        "model": "openai/gpt-oss-20b",
+        "usage_metadata": {
+          "input_tokens": 324,
+          "output_tokens": 56,
+          "total_tokens": 380,
+          "output_token_details": {
+            "reasoning": 43
+          }
+        },
+        "provider_token_usage": {
+          "completion_tokens": 56,
+          "prompt_tokens": 324,
+          "total_tokens": 380,
+          "completion_time": 0.058178919,
+          "completion_tokens_details": {
+            "reasoning_tokens": 43
+          },
+          "prompt_time": 0.016014672,
+          "prompt_tokens_details": null,
+          "queue_time": 0.39457602,
+          "total_time": 0.074193591
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 755.638,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "basic_02",
+    "category": "basic",
+    "request_body": {
+      "question": "Hãy tính 12 cộng 8. Trả lời ngắn, không dùng công cụ."
+    },
+    "expected_status": 200,
+    "started_at": "2026-10-20T15:46:25.628423+07:00",
+    "http_status": 200,
+    "response_body": {
+      "response": "20"
+    },
+    "application_fallback": false,
+    "client_latency_ms": 705.189,
+    "model_calls": [
+      {
+        "run_id": "01a1587d-8d78-769c-b13a-48ebeee05cdc",
+        "model": "openai/gpt-oss-20b",
+        "usage_metadata": {
+          "input_tokens": 325,
+          "output_tokens": 65,
+          "total_tokens": 390,
+          "input_token_details": {
+            "cache_read": 256
+          },
+          "output_token_details": {
+            "reasoning": 55
+          }
+        },
+        "provider_token_usage": {
+          "completion_tokens": 65,
+          "prompt_tokens": 325,
+          "total_tokens": 390,
+          "completion_time": 0.066212701,
+          "completion_tokens_details": {
+            "reasoning_tokens": 55
+          },
+          "prompt_time": 0.004385751,
+          "prompt_tokens_details": {
+            "cached_tokens": 256
+          },
+          "queue_time": 0.395663067,
+          "total_time": 0.070598452
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 668.449,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "basic_03",
+    "category": "basic",
+    "request_body": {
+      "question": "Dịch 'Have a nice day' sang tiếng Việt, không dùng công cụ."
+    },
+    "expected_status": 200,
+    "started_at": "2026-10-20T15:46:28.336200+07:00",
+    "http_status": 200,
+    "response_body": {
+      "response": "Chúc một ngày tốt lành."
+    },
+    "application_fallback": false,
+    "client_latency_ms": 474.383,
+    "model_calls": [
+      {
+        "run_id": "01a1587d-97f6-70b9-be8e-c4b8485b8ff1",
+        "model": "openai/gpt-oss-20b",
+        "usage_metadata": {
+          "input_tokens": 322,
+          "output_tokens": 48,
+          "total_tokens": 370,
+          "output_token_details": {
+            "reasoning": 31
+          }
+        },
+        "provider_token_usage": {
+          "completion_tokens": 48,
+          "prompt_tokens": 322,
+          "total_tokens": 370,
+          "completion_time": 0.050315321,
+          "completion_tokens_details": {
+            "reasoning_tokens": 31
+          },
+          "prompt_time": 0.020782203,
+          "prompt_tokens_details": null,
+          "queue_time": 0.210223846,
+          "total_time": 0.071097524
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 467.136,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "basic_04",
+    "category": "basic",
+    "request_body": {
+      "question": "Viết một lời cảm ơn người bạn đã giúp tôi làm bài, không dùng công cụ."
+    },
+    "expected_status": 200,
+    "started_at": "2026-10-20T15:46:30.825047+07:00",
+    "http_status": 200,
+    "response_body": {
+      "response": "Cảm ơn bạn rất nhiều vì đã giúp mình hoàn thành bài tập. Sự hỗ trợ của bạn thật tuyệt vời và mình rất biết ơn!"
+    },
+    "application_fallback": false,
+    "client_latency_ms": 905.452,
+    "model_calls": [
+      {
+        "run_id": "01a1587d-a1f9-7073-aa15-3ef109b80056",
+        "model": "openai/gpt-oss-20b",
+        "usage_metadata": {
+          "input_tokens": 325,
+          "output_tokens": 182,
+          "total_tokens": 507,
+          "output_token_details": {
+            "reasoning": 140
+          }
+        },
+        "provider_token_usage": {
+          "completion_tokens": 182,
+          "prompt_tokens": 325,
+          "total_tokens": 507,
+          "completion_time": 0.257036739,
+          "completion_tokens_details": {
+            "reasoning_tokens": 140
+          },
+          "prompt_time": 0.018857165,
+          "prompt_tokens_details": null,
+          "queue_time": 0.342027397,
+          "total_time": 0.275893904
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 890.345,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "basic_05",
+    "category": "basic",
+    "request_body": {
+      "question": "Gợi ý cách chia một bài tập lớn thành ba bước nhỏ, không dùng công cụ."
+    },
+    "expected_status": 200,
+    "started_at": "2026-10-20T15:46:33.732671+07:00",
+    "http_status": 200,
+    "response_body": {
+      "response": "1. **Xác định mục tiêu chính** – Viết ra kết quả cuối cùng bạn muốn đạt được.  \n2. **Chia thành các phần lớn** – Phân thành 2–3 phần lớn (ví dụ: nghiên cứu, phát triển, viết báo cáo).  \n3. **Lập kế hoạch chi tiết** – Đặt thời hạn, công việc cụ thể cho từng phần, rồi thực hiện từng bước một."
+    },
+    "application_fallback": false,
+    "client_latency_ms": 1108.563,
+    "model_calls": [
+      {
+        "run_id": "01a1587d-ad0e-76f5-8800-7f9f0286ebf3",
+        "model": "openai/gpt-oss-20b",
+        "usage_metadata": {
+          "input_tokens": 324,
+          "output_tokens": 360,
+          "total_tokens": 684,
+          "output_token_details": {
+            "reasoning": 261
+          }
+        },
+        "provider_token_usage": {
+          "completion_tokens": 360,
+          "prompt_tokens": 324,
+          "total_tokens": 684,
+          "completion_time": 0.381094691,
+          "completion_tokens_details": {
+            "reasoning_tokens": 261
+          },
+          "prompt_time": 0.017984859,
+          "prompt_tokens_details": null,
+          "queue_time": 0.396335002,
+          "total_time": 0.39907955
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 1100.8,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "basic_06",
+    "category": "basic",
+    "request_body": {
+      "question": "Cho tôi một lời động viên trước buổi thuyết trình, không dùng công cụ."
+    },
+    "expected_status": 200,
+    "started_at": "2026-10-20T15:46:36.843519+07:00",
+    "http_status": 200,
+    "response_body": {
+      "response": "Bạn đã chuẩn bị kỹ lưỡng, kiến thức của bạn là sức mạnh. Hãy tự tin bước lên, truyền cảm hứng và chia sẻ đam mê. Mọi người đang chờ đợi những suy nghĩ sáng tạo của bạn—hãy làm cho họ cảm thấy tuyệt vời! 🚀"
+    },
+    "application_fallback": false,
+    "client_latency_ms": 714.993,
+    "model_calls": [
+      {
+        "run_id": "01a1587d-b936-7321-935f-fe1711613d76",
+        "model": "openai/gpt-oss-20b",
+        "usage_metadata": {
+          "input_tokens": 324,
+          "output_tokens": 98,
+          "total_tokens": 422,
+          "output_token_details": {
+            "reasoning": 25
+          }
+        },
+        "provider_token_usage": {
+          "completion_tokens": 98,
+          "prompt_tokens": 324,
+          "total_tokens": 422,
+          "completion_time": 0.105407371,
+          "completion_tokens_details": {
+            "reasoning_tokens": 25
+          },
+          "prompt_time": 0.015929369,
+          "prompt_tokens_details": null,
+          "queue_time": 0.394394128,
+          "total_time": 0.12133674
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 709.188,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "basic_07",
+    "category": "basic",
+    "request_body": {
+      "question": "Kể tên ba màu cơ bản. Trả lời ngắn, không dùng công cụ."
+    },
+    "expected_status": 200,
+    "started_at": "2026-10-20T15:46:39.562394+07:00",
+    "http_status": 200,
+    "response_body": {
+      "response": "Đỏ, xanh lá, xanh dương."
+    },
+    "application_fallback": false,
+    "client_latency_ms": 561.016,
+    "model_calls": [
+      {
+        "run_id": "01a1587d-c3e0-71bb-9f8f-7ac219aa339b",
+        "model": "openai/gpt-oss-20b",
+        "usage_metadata": {
+          "input_tokens": 324,
+          "output_tokens": 85,
+          "total_tokens": 409,
+          "output_token_details": {
+            "reasoning": 66
+          }
+        },
+        "provider_token_usage": {
+          "completion_tokens": 85,
+          "prompt_tokens": 324,
+          "total_tokens": 409,
+          "completion_time": 0.093918244,
+          "completion_tokens_details": {
+            "reasoning_tokens": 66
+          },
+          "prompt_time": 0.025853799,
+          "prompt_tokens_details": null,
+          "queue_time": 0.210420986,
+          "total_time": 0.119772043
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 555.293,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "basic_08",
+    "category": "basic",
+    "request_body": {
+      "question": "Viết một câu chúc ngủ ngon nhẹ nhàng, không dùng công cụ."
+    },
+    "expected_status": 200,
+    "started_at": "2026-10-20T15:46:42.125089+07:00",
+    "http_status": 200,
+    "response_body": {
+      "response": "Chúc bạn có một giấc ngủ êm đềm, tràn đầy ước mơ ngọt ngào. 🌙✨"
+    },
+    "application_fallback": false,
+    "client_latency_ms": 581.308,
+    "model_calls": [
+      {
+        "run_id": "01a1587d-cdd6-7379-83a1-89ccbfcd6e47",
+        "model": "openai/gpt-oss-20b",
+        "usage_metadata": {
+          "input_tokens": 322,
+          "output_tokens": 81,
+          "total_tokens": 403,
+          "output_token_details": {
+            "reasoning": 43
+          }
+        },
+        "provider_token_usage": {
+          "completion_tokens": 81,
+          "prompt_tokens": 322,
+          "total_tokens": 403,
+          "completion_time": 0.08653965,
+          "completion_tokens_details": {
+            "reasoning_tokens": 43
+          },
+          "prompt_time": 0.017740263,
+          "prompt_tokens_details": null,
+          "queue_time": 0.209886196,
+          "total_time": 0.104279913
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 574.316,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "basic_09",
+    "category": "basic",
+    "request_body": {
+      "question": "Giải thích sự khác nhau giữa mục tiêu và kế hoạch bằng hai câu, không dùng công cụ."
+    },
+    "expected_status": 200,
+    "started_at": "2026-10-20T15:46:44.708233+07:00",
+    "http_status": 200,
+    "response_body": {
+      "response": "Mục tiêu là điểm đến cuối cùng bạn muốn đạt được, một kết quả cụ thể và rõ ràng. Kế hoạch là lộ trình chi tiết, các bước hành động cần thực hiện để tới mục tiêu đó."
+    },
+    "application_fallback": false,
+    "client_latency_ms": 700.835,
+    "model_calls": [
+      {
+        "run_id": "01a1587d-d7ec-721a-8c99-78385850641d",
+        "model": "openai/gpt-oss-20b",
+        "usage_metadata": {
+          "input_tokens": 326,
+          "output_tokens": 109,
+          "total_tokens": 435,
+          "output_token_details": {
+            "reasoning": 54
+          }
+        },
+        "provider_token_usage": {
+          "completion_tokens": 109,
+          "prompt_tokens": 326,
+          "total_tokens": 435,
+          "completion_time": 0.11280549,
+          "completion_tokens_details": {
+            "reasoning_tokens": 54
+          },
+          "prompt_time": 0.016043638,
+          "prompt_tokens_details": null,
+          "queue_time": 0.337003165,
+          "total_time": 0.128849128
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 695.861,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "basic_10",
+    "category": "basic",
+    "request_body": {
+      "question": "Gợi ý một cách sắp xếp bàn học gọn gàng, không dùng công cụ."
+    },
+    "expected_status": 200,
+    "started_at": "2026-10-20T15:46:47.414543+07:00",
+    "http_status": 200,
+    "response_body": {
+      "response": "- **Chia khu vực**:  \n  1️⃣ **Khu làm việc**: bàn phẳng, giấy, bút, laptop.  \n  2️⃣ **Khu lưu trữ**: ngăn kéo, hộp nhỏ, kệ sách.  \n  3️⃣ **Khu điện**: sạc, cáp, ổ cắm.\n\n- **Sắp xếp theo chức năng**:  \n  - Bút, bút bi, bút mực → hộp bút.  \n  - Sách, tài liệu → kệ hoặc ngăn kéo.  \n  - Laptop, máy tính bảng → đặt ở góc, tránh tràn lề.\n\n- **Giữ sạch sẽ**:  \n  - Dùng hộp đựng giấy, bút, găng tay.  \n  - Đặt một chiếc hộp rác nhỏ để vứt giấy vụn.  \n  - Dọn dẹp 5 phút cuối mỗi buổi học.\n\n- **Tối ưu không gian**:  \n  - Dùng kệ treo tường cho sách.  \n  - Đặt bàn gấp hoặc bàn có ngăn kéo tích hợp.  \n  - Sử dụng kệ đứng để giữ tài liệu dọc.\n\n- **Thêm yếu tố thư giãn**:  \n  - Đặt một cây xanh nhỏ hoặc ảnh động vật.  \n  - Đặt đèn bàn có ánh sáng ấm.  \n\nNhớ kiểm tra lại hàng tuần để giữ bàn luôn gọn gàng!"
+    },
+    "application_fallback": false,
+    "client_latency_ms": 1016.864,
+    "model_calls": [
+      {
+        "run_id": "01a1587d-e27e-751f-aaef-4125c8cb82ea",
+        "model": "openai/gpt-oss-20b",
+        "usage_metadata": {
+          "input_tokens": 326,
+          "output_tokens": 383,
+          "total_tokens": 709,
+          "output_token_details": {
+            "reasoning": 55
+          }
+        },
+        "provider_token_usage": {
+          "completion_tokens": 383,
+          "prompt_tokens": 326,
+          "total_tokens": 709,
+          "completion_time": 0.482482267,
+          "completion_tokens_details": {
+            "reasoning_tokens": 55
+          },
+          "prompt_time": 0.018658919,
+          "prompt_tokens_details": null,
+          "queue_time": 0.316264359,
+          "total_time": 0.501141186
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 1009.585,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "invalid_missing",
+    "category": "validation",
+    "request_body": {},
+    "expected_status": 422,
+    "started_at": "2026-10-20T15:46:50.452109+07:00",
+    "http_status": 422,
+    "response_body": {
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "body",
+            "question"
+          ],
+          "msg": "Field required",
+          "input": {}
+        }
+      ]
+    },
+    "application_fallback": false,
+    "client_latency_ms": 58.792,
+    "model_calls": [],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 40.654,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "invalid_type",
+    "category": "validation",
+    "request_body": {
+      "question": [
+        "xin chào"
+      ]
+    },
+    "expected_status": 422,
+    "started_at": "2026-10-20T15:46:52.512877+07:00",
+    "http_status": 422,
+    "response_body": {
+      "detail": [
+        {
+          "type": "string_type",
+          "loc": [
+            "body",
+            "question"
+          ],
+          "msg": "Input should be a valid string",
+          "input": [
+            "xin chào"
+          ]
+        }
+      ]
+    },
+    "application_fallback": false,
+    "client_latency_ms": 13.566,
+    "model_calls": [],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 6.899,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  },
+  {
+    "request_id": "invalid_null",
+    "category": "validation",
+    "request_body": {
+      "question": null
+    },
+    "expected_status": 422,
+    "started_at": "2026-10-20T15:46:54.530387+07:00",
+    "http_status": 422,
+    "response_body": {
+      "detail": [
+        {
+          "type": "string_type",
+          "loc": [
+            "body",
+            "question"
+          ],
+          "msg": "Input should be a valid string",
+          "input": null
+        }
+      ]
+    },
+    "application_fallback": false,
+    "client_latency_ms": 14.869,
+    "model_calls": [],
+    "tool_calls": [],
+    "errors": [],
+    "server_latency_ms": 2.053,
+    "metrics_record_present": true,
+    "tool_error": false,
+    "required_tool_invoked": null,
+    "passed": true
+  }
+]

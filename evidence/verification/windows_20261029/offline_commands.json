@@ -1,0 +1,80 @@
+[
+  {
+    "name": "verify_strict",
+    "args": [
+      "-m",
+      "benchmarks.verify_handover",
+      "--strict",
+      "--output",
+      "C:\\Users\\Admin\\Downloads\\CCNLTHD\\viec7_lan2_20261029\\checks_windows\\verify_strict.json"
+    ],
+    "cwd_relative_to_workspace": "demo_week8_v13",
+    "started_at_utc": "2026-10-29T08:23:41.076276+00:00",
+    "elapsed_seconds": 0.881,
+    "exit_code": 0
+  },
+  {
+    "name": "unit_tests",
+    "args": [
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "tests",
+      "--basetemp",
+      "C:\\Users\\Admin\\Downloads\\CCNLTHD\\viec7_lan2_20261029\\checks_windows\\pytest_tmp",
+      "--junitxml",
+      "C:\\Users\\Admin\\Downloads\\CCNLTHD\\viec7_lan2_20261029\\checks_windows\\unit_tests.xml"
+    ],
+    "cwd_relative_to_workspace": "demo_week8_v13",
+    "started_at_utc": "2026-10-29T08:23:41.959603+00:00",
+    "elapsed_seconds": 14.21,
+    "exit_code": 0
+  },
+  {
+    "name": "inprocess_smoke",
+    "args": [
+      "-m",
+      "benchmarks.smoke_handover"
+    ],
+    "cwd_relative_to_workspace": "demo_week8_v13",
+    "started_at_utc": "2026-10-29T08:23:56.171725+00:00",
+    "elapsed_seconds": 4.686,
+    "exit_code": 0
+  },
+  {
+    "name": "retrieval",
+    "args": [
+      "-m",
+      "benchmarks.check_rag_retrieval",
+      "--output",
+      "C:\\Users\\Admin\\Downloads\\CCNLTHD\\viec7_lan2_20261029\\checks_windows\\retrieval"
+    ],
+    "cwd_relative_to_workspace": "demo_week8_v13",
+    "started_at_utc": "2026-10-29T08:24:00.871322+00:00",
+    "elapsed_seconds": 1.445,
+    "exit_code": 0
+  },
+  {
+    "name": "graph_export",
+    "args": [
+      "-m",
+      "benchmarks.export_handover"
+    ],
+    "cwd_relative_to_workspace": "demo_week8_v13",
+    "started_at_utc": "2026-10-29T08:24:02.318078+00:00",
+    "elapsed_seconds": 3.96,
+    "exit_code": 0
+  },
+  {
+    "name": "lab_solution",
+    "args": [
+      "lab_run.py"
+    ],
+    "cwd_relative_to_workspace": "demo_week8_v13\\labs\\solution",
+    "started_at_utc": "2026-10-29T08:24:06.288395+00:00",
+    "elapsed_seconds": 3.165,
+    "exit_code": 0
+  }
+]

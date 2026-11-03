@@ -1,0 +1,80 @@
+[
+  {
+    "name": "verify_strict",
+    "args": [
+      "-m",
+      "benchmarks.verify_handover",
+      "--strict",
+      "--output",
+      "C:\\Users\\Admin\\Downloads\\CCNLTHD\\final_submission\\evidence\\verification\\final_20261103\\verify_strict.json"
+    ],
+    "cwd_relative_to_workspace": "final_submission",
+    "started_at_utc": "2026-11-03T16:27:15.555649+00:00",
+    "elapsed_seconds": 1.57,
+    "exit_code": 0
+  },
+  {
+    "name": "unit_tests",
+    "args": [
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "tests",
+      "--basetemp",
+      "C:\\Users\\Admin\\Downloads\\CCNLTHD\\final_submission\\evidence\\verification\\final_20261103\\pytest_tmp",
+      "--junitxml",
+      "C:\\Users\\Admin\\Downloads\\CCNLTHD\\final_submission\\evidence\\verification\\final_20261103\\unit_tests.xml"
+    ],
+    "cwd_relative_to_workspace": "final_submission",
+    "started_at_utc": "2026-11-03T16:27:17.127935+00:00",
+    "elapsed_seconds": 16.055,
+    "exit_code": 0
+  },
+  {
+    "name": "inprocess_smoke",
+    "args": [
+      "-m",
+      "benchmarks.smoke_handover"
+    ],
+    "cwd_relative_to_workspace": "final_submission",
+    "started_at_utc": "2026-11-03T16:27:33.185483+00:00",
+    "elapsed_seconds": 6.253,
+    "exit_code": 0
+  },
+  {
+    "name": "retrieval",
+    "args": [
+      "-m",
+      "benchmarks.check_rag_retrieval",
+      "--output",
+      "C:\\Users\\Admin\\Downloads\\CCNLTHD\\final_submission\\evidence\\verification\\final_20261103\\retrieval"
+    ],
+    "cwd_relative_to_workspace": "final_submission",
+    "started_at_utc": "2026-11-03T16:27:39.453892+00:00",
+    "elapsed_seconds": 1.427,
+    "exit_code": 0
+  },
+  {
+    "name": "graph_export",
+    "args": [
+      "-m",
+      "benchmarks.export_handover"
+    ],
+    "cwd_relative_to_workspace": "final_submission",
+    "started_at_utc": "2026-11-03T16:27:40.882546+00:00",
+    "elapsed_seconds": 4.291,
+    "exit_code": 0
+  },
+  {
+    "name": "lab_solution",
+    "args": [
+      "lab_run.py"
+    ],
+    "cwd_relative_to_workspace": "final_submission\\labs\\solution",
+    "started_at_utc": "2026-11-03T16:27:45.184397+00:00",
+    "elapsed_seconds": 4.879,
+    "exit_code": 0
+  }
+]

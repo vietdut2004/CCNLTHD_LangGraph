@@ -1,0 +1,48 @@
+{
+  "frozen_archive": "Ban_chot_viec7_20261103_v2.zip",
+  "archive_sha256": "1384a17487a11edbb805827baf1a5882f6746c673ec62393dcb66199f0f84c3f",
+  "baseline_commit": "60b2a03f6e277b7add0e9bdf7a06452086b0c841",
+  "runtime_changed": false,
+  "raw_evidence_changed": false,
+  "path_mapping_for_derived_indexes": {
+    "source/": "",
+    "failures/": "evidence/failures/",
+    "historical/": "evidence/historical/",
+    "checks_windows/": "evidence/verification/windows_20261029/"
+  },
+  "removed_legacy_files": [
+    "AgentTool.ipynb",
+    "Báo cáo nhóm 15.docx",
+    "Báo cáo.docx",
+    "Chunking & RAG.ipynb",
+    "Embedding & Vector DB .ipynb",
+    "LangServe.py",
+    "LangSmith.py",
+    "System.Drawing.Drawing2D.GraphicsPath",
+    "baitap.ipynb",
+    "btap1.py",
+    "chain.py",
+    "generated_langgraph_assets/agent.png",
+    "generated_langgraph_assets/api.png",
+    "generated_langgraph_assets/install.png",
+    "generated_langgraph_assets/overview.jpeg",
+    "generated_langgraph_assets/overview.png",
+    "generated_langgraph_assets/rag.png",
+    "generated_langgraph_assets/stategraph.png",
+    "langgraph.json",
+    "make_langgraph_report.ps1",
+    "memory_test.ipynb",
+    "promt.py",
+    "pyrightconfig.json",
+    "run_langgraph.bat",
+    "run_langgraph.ps1",
+    "start_langgraph.py",
+    "update_report_langgraph.py"
+  ],
+  "moved_historical_requirements": [
+    "requirements-evidence.txt",
+    "requirements-rag-extra.txt",
+    "requirements-week8.txt",
+    "requirements-live-locked.txt"
+  ]
+}

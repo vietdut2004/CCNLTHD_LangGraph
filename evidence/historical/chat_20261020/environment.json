@@ -1,0 +1,58 @@
+{
+  "started_at": "2026-10-20T15:46:06.271154+07:00",
+  "timezone": "Asia/Ho_Chi_Minh (UTC+07:00)",
+  "baseline_url": "http://127.0.0.1:8000",
+  "measured_url": "http://127.0.0.1:8001",
+  "baseline_docs_http_status": 200,
+  "git_revision": "01ad2c014c2e948b8c6a97d875d2573ab2b2838b",
+  "source_sha256": {
+    "main.py": "b7f36908e6f04a2e133535bf524a37a8d687285d149b233676b0eb78b43c3d56",
+    "agent.py": "3afb82c2073f88b91705bf6de64202473b118e2e33fac19058509c9575461ae5",
+    "Rag_tool.py": "611f23665236b9af85da20c005b7a24d7e513dc06518ce42bb5fd475ebfd0200",
+    "searchweb_tool.py": "3f4992374494dd6c90469e31e5c9e8b4d1b98aa54664039a0a6ba19e3c358562",
+    "requirements.txt": "807bab49d773a95410e62559fce0c481cce9a5984996a7ba13ae157245a1e189"
+  },
+  "python": "3.13.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+  "logical_cpu_count": 12,
+  "packages": {
+    "fastapi": "0.141.1",
+    "uvicorn": "0.54.0",
+    "langchain": "1.4.6",
+    "langchain-core": "1.6.12",
+    "langchain-groq": "1.1.3",
+    "langgraph": "1.2.16",
+    "sentence-transformers": "6.1.0",
+    "torch": "2.14.1",
+    "httpx": "0.28.1"
+  },
+  "model": "openai/gpt-oss-20b",
+  "temperature": 0,
+  "groq_key_present": true,
+  "tavily_key_present": false,
+  "concurrency": 1,
+  "warmup_requests": 1,
+  "delay_between_requests_seconds": 2,
+  "request_timeout_seconds": 120,
+  "retries_by_benchmark": 0,
+  "tool_tests_enabled": false,
+  "planned_requests_including_warmup": 14,
+  "notes": [
+    "Same main.app imported by benchmarks.probe_api; callbacks and middleware only; original demo remains on 8000.",
+    "Latency is client-observed full HTTP response time, not time to first token.",
+    "Input tokens include system prompt and tool schemas; output tokens use provider-reported usage including reasoning where reported.",
+    "Completed model calls without provider usage are missing data, not zero; failed requests can have unreported token consumption.",
+    "No claims about concurrent load, clinical quality, or production reliability are made."
+  ],
+  "schema_equal_between_instances": true,
+  "finished_at": "2026-10-20T15:46:57.118252+07:00",
+  "source_sha256_after": {
+    "main.py": "b7f36908e6f04a2e133535bf524a37a8d687285d149b233676b0eb78b43c3d56",
+    "agent.py": "3afb82c2073f88b91705bf6de64202473b118e2e33fac19058509c9575461ae5",
+    "Rag_tool.py": "611f23665236b9af85da20c005b7a24d7e513dc06518ce42bb5fd475ebfd0200",
+    "searchweb_tool.py": "3f4992374494dd6c90469e31e5c9e8b4d1b98aa54664039a0a6ba19e3c358562",
+    "requirements.txt": "807bab49d773a95410e62559fce0c481cce9a5984996a7ba13ae157245a1e189"
+  },
+  "source_unchanged_during_run": true
+}

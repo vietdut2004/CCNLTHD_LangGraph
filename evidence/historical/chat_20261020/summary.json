@@ -1,0 +1,97 @@
+{
+  "groups": {
+    "basic": {
+      "requests": 10,
+      "passed": 10,
+      "failed": 0,
+      "failure_rate_pct": 0.0,
+      "http_4xx_5xx": 0,
+      "transport_errors": 0,
+      "application_fallbacks": 0,
+      "requests_with_tool_error": 0,
+      "latency_ms": {
+        "mean": 754.073,
+        "p50": 705.189,
+        "p95": 1108.563,
+        "min": 474.383,
+        "max": 1108.563
+      },
+      "successful_latency_ms": {
+        "mean": 754.073,
+        "p50": 705.189,
+        "p95": 1108.563
+      },
+      "completed_model_calls": 10,
+      "calls_with_usage_metadata": 10,
+      "observed_tokens": {
+        "input_tokens": 3242,
+        "output_tokens": 1467,
+        "total_tokens": 4709
+      }
+    },
+    "validation": {
+      "requests": 3,
+      "passed": 3,
+      "failed": 0,
+      "failure_rate_pct": 0.0,
+      "http_4xx_5xx": 3,
+      "transport_errors": 0,
+      "application_fallbacks": 0,
+      "requests_with_tool_error": 0,
+      "latency_ms": {
+        "mean": 29.076,
+        "p50": 14.869,
+        "p95": 58.792,
+        "min": 13.566,
+        "max": 58.792
+      },
+      "successful_latency_ms": {
+        "mean": 29.076,
+        "p50": 14.869,
+        "p95": 58.792
+      },
+      "completed_model_calls": 0,
+      "calls_with_usage_metadata": 0,
+      "observed_tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0
+      }
+    }
+  },
+  "valid_workload": {
+    "requests": 10,
+    "passed": 10,
+    "failed": 0,
+    "failure_rate_pct": 0.0,
+    "http_4xx_5xx": 0,
+    "transport_errors": 0,
+    "application_fallbacks": 0,
+    "requests_with_tool_error": 0,
+    "latency_ms": {
+      "mean": 754.073,
+      "p50": 705.189,
+      "p95": 1108.563,
+      "min": 474.383,
+      "max": 1108.563
+    },
+    "successful_latency_ms": {
+      "mean": 754.073,
+      "p50": 705.189,
+      "p95": 1108.563
+    },
+    "completed_model_calls": 10,
+    "calls_with_usage_metadata": 10,
+    "observed_tokens": {
+      "input_tokens": 3242,
+      "output_tokens": 1467,
+      "total_tokens": 4709
+    }
+  },
+  "planned_requests_including_warmup": 14,
+  "executed_requests_including_warmup": 14,
+  "warmup_excluded_from_summary": true,
+  "percentile_method": "nearest rank ceil(p * n)",
+  "failure_definition": "Expected HTTP status mismatch, transport error, application fallback, observed LLM/tool error, empty answer, or requested tool not invoked. 422 on deliberately invalid input is a passing validation test.",
+  "quality_scoring": "No semantic/clinical quality score; pass means observable technical completion only."
+}

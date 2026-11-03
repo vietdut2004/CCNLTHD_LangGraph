@@ -1,0 +1,11 @@
+{
+  "source_and_evidence_valid": true,
+  "measured_graph_id": "beebab186d50bedb4180",
+  "current_configured_graph_id": "beebab186d50bedb4180",
+  "exact_environment_match": true,
+  "version_differences": {},
+  "checked_evidence_files": 154,
+  "provider_calls": 0,
+  "strict": true,
+  "errors": []
+}

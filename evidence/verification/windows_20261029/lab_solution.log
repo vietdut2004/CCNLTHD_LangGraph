@@ -1,0 +1,4 @@
+A1 ok clarify
+A2 ok lookup
+A3 ok answer
+PASS: 3 nhánh, 1 lỗi chủ động, 2 thread; đã ghi JSONL.

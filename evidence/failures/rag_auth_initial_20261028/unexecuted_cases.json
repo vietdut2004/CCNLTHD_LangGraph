@@ -1,0 +1,102 @@
+[
+  {
+    "id": "rag_02",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "rag_04",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "rag_05",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "rag_06",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "rag_07",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "rag_08",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "new_01",
+    "reason": "not_selected_for_live_run"
+  },
+  {
+    "id": "new_02",
+    "reason": "not_selected_for_live_run"
+  },
+  {
+    "id": "new_03",
+    "reason": "not_selected_for_live_run"
+  },
+  {
+    "id": "new_04",
+    "reason": "not_selected_for_live_run"
+  },
+  {
+    "id": "new_05",
+    "reason": "not_selected_for_live_run"
+  },
+  {
+    "id": "new_06",
+    "reason": "not_selected_for_live_run"
+  },
+  {
+    "id": "validation_01",
+    "reason": "not_selected_for_live_run"
+  },
+  {
+    "id": "validation_02",
+    "reason": "not_selected_for_live_run"
+  },
+  {
+    "id": "validation_03",
+    "reason": "not_selected_for_live_run"
+  },
+  {
+    "id": "validation_04",
+    "reason": "not_selected_for_live_run"
+  },
+  {
+    "id": "validation_05",
+    "reason": "not_selected_for_live_run"
+  },
+  {
+    "id": "fresh_01",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "fresh_02",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "fresh_03",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "fresh_04",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "fresh_05",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "fresh_06",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "negative_01",
+    "reason": "skipped_after_auth_failure"
+  },
+  {
+    "id": "negative_02",
+    "reason": "skipped_after_auth_failure"
+  }
+]

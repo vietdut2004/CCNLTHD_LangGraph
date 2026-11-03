@@ -1,0 +1,119 @@
+[
+  {
+    "dataset": "rag_regression_5_20261028",
+    "path": "handover/evidence/rag_regression_5_20261028/test_cases.json",
+    "sha256": "f2ebb32142a5d1e02c44088d3a6505a42e3d2f1768198826b4734c5403b0c402",
+    "cases": 5,
+    "executed_results": 5,
+    "selection": "regression",
+    "reference_origin": "AI-assisted references; not independent gold labels"
+  },
+  {
+    "dataset": "rag_new_8_20261028",
+    "path": "handover/evidence/rag_new_8_20261028/test_cases.json",
+    "sha256": "02024f7e0c81ab95b6ed5f40eca08998e98b89bdbed6e92a9dacdd6d165746dc",
+    "cases": 8,
+    "executed_results": 8,
+    "selection": "frozen_before_original_run; now regression",
+    "reference_origin": "AI-assisted references; not independent gold labels"
+  },
+  {
+    "dataset": "web_4_20261028",
+    "path": "handover/evidence/web_4_20261028/test_cases.json",
+    "sha256": "eff7cc4d47d17912fadc21b2542364387331cd7617bf93e17e74e94fdac8d045",
+    "cases": 4,
+    "executed_results": 4,
+    "selection": "frozen_before_original_run; now regression",
+    "reference_origin": "AI-assisted references; not independent gold labels"
+  },
+  {
+    "dataset": "rag_auth_initial_20261028",
+    "path": "evidence/failures/rag_auth_initial_20261028/test_cases.json",
+    "sha256": "df9f7129cda137232a05b18e31054148abbb0abb0a9ab37089b4982212f7cdeb",
+    "cases": 16,
+    "executed_results": 1,
+    "selection": "stopped_on_auth",
+    "reference_origin": "AI-assisted references; not independent gold labels"
+  },
+  {
+    "dataset": "rag_auth_recheck_20261028",
+    "path": "evidence/failures/rag_auth_recheck_20261028/test_cases.json",
+    "sha256": "f2ebb32142a5d1e02c44088d3a6505a42e3d2f1768198826b4734c5403b0c402",
+    "cases": 5,
+    "executed_results": 1,
+    "selection": "stopped_on_auth",
+    "reference_origin": "AI-assisted references; not independent gold labels"
+  },
+  {
+    "dataset": "rag_20261024_all_logged_cases",
+    "path": "handover/evidence/rag_8_20261024/test_cases.json",
+    "sha256": "bd1a97a3e1b135ad36bb896e2d97a53f79094f3c6e095c9c6a2251b23eb07da0",
+    "cases": 18,
+    "executed_results": 18,
+    "selection": "includes diagnostic/cache/validation; do not pool",
+    "reference_origin": "AI-assisted references; not independent gold labels"
+  },
+  {
+    "dataset": "web_4_20261024",
+    "path": "handover/evidence/web_4_20261024/test_cases.json",
+    "sha256": "eff7cc4d47d17912fadc21b2542364387331cd7617bf93e17e74e94fdac8d045",
+    "cases": 4,
+    "executed_results": 4,
+    "selection": "separate_identity_and_run",
+    "reference_origin": "AI-assisted references; not independent gold labels"
+  },
+  {
+    "dataset": "rag_check_cases",
+    "path": "benchmarks/rag_check_cases.json",
+    "sha256": "4c1b06d80d5225abc92f4fbf6d45a4a11ed4abdd388b1860cc53ba6647813dac",
+    "cases": 27,
+    "executed_results": null,
+    "selection": "Keep original freeze metadata; no new held-out claim",
+    "reference_origin": "AI-assisted/local unless original artifact specifies otherwise"
+  },
+  {
+    "dataset": "RAG_NEW_8_FROZEN",
+    "path": "handover/RAG_NEW_8_FROZEN.json",
+    "sha256": "8d512cb241a64330f88fa6e1bfbff7828255c73a99069c1ffd1dee209ff32a6c",
+    "cases": 8,
+    "executed_results": null,
+    "selection": "Keep original freeze metadata; no new held-out claim",
+    "reference_origin": "AI-assisted/local unless original artifact specifies otherwise"
+  },
+  {
+    "dataset": "WEB_4_FROZEN",
+    "path": "handover/WEB_4_FROZEN.json",
+    "sha256": "cef7f538324e6e0ff3e8616197b9bd5ebe298dc4ed1410910b28c8e3bb48a4d3",
+    "cases": 4,
+    "executed_results": null,
+    "selection": "Keep original freeze metadata; no new held-out claim",
+    "reference_origin": "AI-assisted/local unless original artifact specifies otherwise"
+  },
+  {
+    "dataset": "new_questions_frozen",
+    "path": "benchmarks/week8/new_questions_frozen.json",
+    "sha256": "7f53e337babf3f0eab2c4a4dc476a4bdf600a235a2dabe7e6489b7eaec034bd7",
+    "cases": 6,
+    "executed_results": null,
+    "selection": "Keep original freeze metadata; no new held-out claim",
+    "reference_origin": "AI-assisted/local unless original artifact specifies otherwise"
+  },
+  {
+    "dataset": "validation_questions_frozen",
+    "path": "benchmarks/week8/validation_questions_frozen.json",
+    "sha256": "2bb17cc92556c792f37d65f3806792618a6fd35b257ca42ec57aab0b65d774a4",
+    "cases": 5,
+    "executed_results": null,
+    "selection": "Keep original freeze metadata; no new held-out claim",
+    "reference_origin": "AI-assisted/local unless original artifact specifies otherwise"
+  },
+  {
+    "dataset": "test_cases",
+    "path": "evidence/historical/chat_20261020/test_cases.json",
+    "sha256": "4fffc967b0554fc674fe340c047e4c0aa7ce46be004e36a221a0cf84b95f395b",
+    "cases": 14,
+    "executed_results": null,
+    "selection": "Keep original freeze metadata; no new held-out claim",
+    "reference_origin": "AI-assisted/local unless original artifact specifies otherwise"
+  }
+]

@@ -1,0 +1,265 @@
+[
+  {
+    "case_id": "chat",
+    "request": {
+      "question": "Xin chao",
+      "mode": "chat"
+    },
+    "http_status": 200,
+    "body": {
+      "response": "Da doc 1 tin nhan. Xin chao",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "dbc7223347034bff903d8a3779733285",
+      "graph_id": "3b9febfe6d769326e9ba",
+      "model_id": "fixture:week8-http",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "passed": true
+  },
+  {
+    "case_id": "rag",
+    "request": {
+      "question": "Theo Stress.pdf, thở bụng lặp lại bao nhiêu lần?",
+      "mode": "rag"
+    },
+    "http_status": 200,
+    "body": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "408a7857af494f3a9c9e88878456cfa0",
+      "graph_id": "3b9febfe6d769326e9ba",
+      "model_id": "fixture:week8-http",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 2,
+          "chunk_id": "chunk-007",
+          "start": 381,
+          "end": 980,
+          "section": "2.1. Thở bụng",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+          "score": 3.9329310956697006,
+          "metric": "bm25_lexical",
+          "quote": "2.1. Thở bụng \nThở bằng bụng rất dễ thực"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "passed": true
+  },
+  {
+    "case_id": "web",
+    "request": {
+      "question": "FastAPI docs",
+      "mode": "web"
+    },
+    "http_status": 200,
+    "body": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "a5e02beba9544f1b914112ca0b84c317",
+      "graph_id": "3b9febfe6d769326e9ba",
+      "model_id": "fixture:week8-http",
+      "route": "web",
+      "sources": [
+        {
+          "id": "web-1",
+          "title": "Fixture only",
+          "url": "https://example.invalid/fixture",
+          "quote": "Day la ket qua web gia lap; khong co tru"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "passed": true
+  },
+  {
+    "case_id": "scope",
+    "request": {
+      "question": "Hãy kê thuốc",
+      "mode": "chat"
+    },
+    "http_status": 200,
+    "body": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "OUT_OF_SCOPE",
+      "trace_id": "9127d26bd2a1426f921a75392f616b8d",
+      "graph_id": "3b9febfe6d769326e9ba",
+      "model_id": "fixture:week8-http",
+      "route": "refuse",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "passed": true
+  },
+  {
+    "case_id": "validation",
+    "request": {},
+    "http_status": 422,
+    "body": {
+      "response": "Yeu cau chua hoan tat. Hay doi chieu trace_id de kiem tra.",
+      "status": "error",
+      "code": "INVALID_REQUEST",
+      "trace_id": "33751879fa024cc39a4dd3b373a83731",
+      "graph_id": "3b9febfe6d769326e9ba",
+      "model_id": "fixture:week8-http",
+      "route": null,
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "passed": true
+  },
+  {
+    "case_id": "cache_miss",
+    "request": {
+      "question": "Theo Stress.pdf, thở bụng lặp lại bao nhiêu lần?",
+      "mode": "rag",
+      "user_id": "smoke",
+      "use_cache": true
+    },
+    "http_status": 200,
+    "body": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "2fc14dc1271a4bb6b3769caef1bb6e94",
+      "graph_id": "3b9febfe6d769326e9ba",
+      "model_id": "fixture:week8-http",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 2,
+          "chunk_id": "chunk-007",
+          "start": 381,
+          "end": 980,
+          "section": "2.1. Thở bụng",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+          "score": 3.9329310956697006,
+          "metric": "bm25_lexical",
+          "quote": "2.1. Thở bụng \nThở bằng bụng rất dễ thực"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 0,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": null
+      }
+    },
+    "passed": true
+  },
+  {
+    "case_id": "cache_hit",
+    "request": {
+      "question": "Theo Stress.pdf, thở bụng lặp lại bao nhiêu lần?",
+      "mode": "rag",
+      "user_id": "smoke",
+      "use_cache": true
+    },
+    "http_status": 200,
+    "body": {
+      "response": "Tra loi dua tren nguon thu nghiem.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "bbaa4cb6623b4b7c8f232f6b652b22be",
+      "graph_id": "3b9febfe6d769326e9ba",
+      "model_id": "fixture:week8-http",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 2,
+          "chunk_id": "chunk-007",
+          "start": 381,
+          "end": 980,
+          "section": "2.1. Thở bụng",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:section-balanced-bm25-v3:650:180:3",
+          "score": 3.9329310956697006,
+          "metric": "bm25_lexical",
+          "quote": "2.1. Thở bụng \nThở bằng bụng rất dễ thực"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 0,
+        "calls_with_usage": 0,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0
+      }
+    },
+    "passed": true
+  }
+]

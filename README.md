@@ -1,43 +1,62 @@
-# Bản bàn giao nhóm 15 evidence v1.3
+# Nhóm 15 — Bản nộp cuối LangGraph
 
-Bản chọn là **evidence-v1.3-rag-check**, model `openai/gpt-oss-20b`. Chín file runtime giữ nguyên byte so với các log RAG/web thật ngày 28/10; API và frontend tại `/` dùng cùng `main:app`. BM25 cân bằng mục, chunk tối đa 650 ký tự, overlap mục tiêu 180, top-3; không cần embedding/FAISS cho bản chọn. Router theo mode/từ khóa; chưa phải agent tự lập kế hoạch. Toán là executor riêng, không gắn vào chatbot.
+Chatbot tham khảo dùng **FastAPI + LangGraph**, model **openai/gpt-oss-20b**.
+Runtime được đo ngày 28/10 là `evidence-v1.3-rag-check`, graph ID
+`beebab186d50bedb4180`; chín file runtime và PDF giữ nguyên byte. Bản cuối chỉ
+thống nhất tài liệu, requirements, minh chứng và loại file làm việc cũ.
 
-## Chạy demo trên Windows
+## Cài đặt và chạy
 
-Đứng tại thư mục chứa main.py, dùng Python 3.13.2 như lần đo:
+Dùng Windows, Python **3.13.2**. Tại thư mục có `main.py`:
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements-locked.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 Copy-Item .env.example .env
-# Điền khóa của bạn trong .env trên máy; không gửi khóa vào chat/git.
-.\.venv\Scripts\python.exe -m benchmarks.verify_handover --strict
+# Tự điền GROQ_API_KEY và TAVILY_API_KEY vào .env cục bộ.
+.\.venv\Scripts\python.exe -X utf8 -m benchmarks.verify_handover --strict
 .\.venv\Scripts\python.exe start_api.py
 ```
 
-Mở http://127.0.0.1:8000/ để dùng frontend; `/docs` là giao diện API, `/health` chứa định danh. Bật một worker vì cache/checkpoint ở RAM. GROQ_API_KEY cần cho câu trả lời model; TAVILY_API_KEY thêm cho web. Thiếu khóa trả lỗi cấu hình, không thay bằng fixture. run_api.ps1 và run_api.bat đều gọi start_api.py từ đúng thư mục. Không mở trực tiếp frontend bằng file://.
+Mở http://127.0.0.1:8000/ ; API tại `/docs`, định danh tại `/health`.
+Chỉ dùng một worker vì cache/checkpoint lưu RAM. Giữ model mặc định ở trên.
+`requirements.txt` dẫn tới **một lock duy nhất**: `requirements-locked.txt`.
+Các recipe FAISS/ví dụ cũ ở `docs/historical_requirements/`, không cài chồng.
+Không đưa `.env`, API key hoặc `.venv` vào Git/bài nộp.
 
-## Kiểm tra không cần API key
+## Kiểm tra không gọi dịch vụ
 
 ```powershell
-.\.venv\Scripts\python.exe -m pytest -q tests
-.\.venv\Scripts\python.exe -m benchmarks.smoke_handover
-.\.venv\Scripts\python.exe -m benchmarks.export_handover
-.\.venv\Scripts\python.exe -m benchmarks.check_rag_retrieval --output evidence_recheck
+.\.venv\Scripts\python.exe -X utf8 -m pytest -q -p no:cacheprovider tests
+.\.venv\Scripts\python.exe -X utf8 -m benchmarks.smoke_handover
+.\.venv\Scripts\python.exe -X utf8 -m benchmarks.check_rag_retrieval --output evidence_recheck
+.\.venv\Scripts\python.exe -X utf8 -m benchmarks.verify_final
 ```
 
-Smoke dùng LLM/web fixture và PDF thật, không chứng minh model trả lời đúng. verify_handover kiểm tra hash nguồn, log và môi trường; không gọi provider. graph_id có cả phiên bản thư viện: nếu môi trường khác lần đo, giữ ID thực của lần chạy mới. Không sửa ID/log để làm khớp. requirements-locked.txt là lock BM25 đã nhận từ Windows; requirements-live-locked.txt chỉ giữ cho stack FAISS lịch sử, không cài chồng cho bản chọn.
+Smoke dùng model/web fixture và PDF thật. Không gọi đây là kết quả Groq/Tavily mới.
+Các script live vẫn được giữ để tái lập phép đo, chỉ chạy khi chủ động dùng quota.
 
-## Kết quả đã chốt
+## Nội dung code và minh chứng
 
-- RAG 28/10: 5 câu hồi quy có nguồn; 8 câu mới gồm 6 đáp án khớp PDF và 2 câu ngoài nguồn từ chối phù hợp theo đối chiếu AI. Huỳnh Lê Sơn chấm 13 câu: 96/104, trung bình 7,38/8; một người trên cùng PDF, không phải chuyên gia hoặc bộ dữ liệu độc lập.
-- Web 28/10: 4/4 hoàn tất kỹ thuật; web_03/04 trả lời, web_01/02 từ chối do quote. Điểm người dùng chọn qua hội thoại có Codex hỗ trợ: 20/32, trung bình 5,00/8. Chưa thẩm định độc lập từng URL. Không lấy đáp án tốt từ lượt 24/10 ghép thành 4/4.
-- 57 unit test trên source tích hợp đạt; đây là fixture/kiểm tra cục bộ, không phải 57 lượt provider. Cache/memory chỉ xác nhận cơ chế và dữ liệu truyền; chưa đo model thật nhớ đúng. Exact cache RAM TTL300/capacity128; ID do caller tự khai không phải đăng nhập/phân quyền.
+- `agent.py`, `main.py`, `frontend/`: API `/chatbot` và graph phân nhánh theo luật;
+  RAG/web truy xuất rồi kiểm citation/quote. Chưa có agent tự lập kế hoạch.
+- `Stress.pdf`, `Rag_tool.py`, `retrieval.py`: BM25 cân bằng mục, tối đa 650 ký tự,
+  overlap mục tiêu 180, top-3. Hash PDF và runtime ở `handover/EXPECTED_RUNTIME_IDENTITY.json`.
+- `response_cache.py`: exact cache RAM TTL 300 giây, capacity 128. Bộ nhớ phiên
+  dùng InMemorySaver; ID caller tự khai không phải cơ chế đăng nhập/phân quyền.
+- `math_graph.py`: executor riêng, chưa gắn vào chatbot hoặc LLM tool choice.
+- `handover/`: nguyên bản log/trace/context/usage, bộ đề và phiếu người chấm.
+- `evidence/`: chat lịch sử, lỗi auth, các lượt kiểm tra có ngày và chỉ mục từng câu.
+- `docs/`: bảng phủ, giới hạn, AI Disclosure, chỉ mục bộ đề và nhật ký thay đổi.
+- `labs/`: bài tập độc lập có starter/solution; gói lab được phát riêng khi nộp.
 
-handover/EVIDENCE_INDEX.json phân tách từng đợt và giới hạn. Raw/trace/usage/nguồn/điểm cùng bản xuất gốc nằm trong handover/evidence. Log có ngày trong mốc cũ được giữ nguyên; README trong từng thư mục evidence là ghi chú ở thời điểm xuất đó, không thay thế trạng thái ở README này. Chat 20/10 chỉ dẫn tới gói lịch sử, raw chat không có trong gói này.
+RAG thật: 5 hồi quy + 8 câu mới ngày 28/10; 13 phiếu đạt tổng **96/104**.
+Web thật: 4 câu kỹ thuật, **2 trả lời/2 từ chối**, điểm người dùng **20/32**.
+Một người chấm; web có Codex hỗ trợ, chưa thẩm định URL độc lập. Không quy các điểm
+này thành độ chính xác hay hiệu quả lâm sàng. HTTP 200, quote khớp và retrieval có
+đủ span là ba minh chứng riêng, không tự chứng minh đáp án đúng.
 
-## Trạng thái tích hợp
-
-Source đã gom tại nhánh bàn giao cục bộ `codex/week8-evidence-v13`. GitHub main được đọc vẫn ở 01ad2c0; kiểm tra đẩy báo thiếu xác thực HTTPS. Chưa push/merge, chưa truy cập hoặc thay demo trên máy nhóm. Gói git bundle/patch và hướng dẫn Codex đi kèm để áp dụng trên máy có quyền, kiểm tra rồi đẩy nhánh. Không xem kết quả của bản mã riêng là kết quả demo đang triển khai.
-
-Báo cáo gốc được quản lý tại https://docs.google.com/document/d/11cNh6hQX64hYrv2I_pGwWpW6c0LoIePp/edit ; các file Word/notebook có sẵn trong repository được giữ nguyên. README_EVIDENCE.md giải thích hợp đồng runtime, README_WEEK8.md chỉ tới bản bàn giao này. Lab độc lập ở labs/starter và labs/solution; phần bắt buộc không cần khóa trả phí. Giới hạn ứng dụng ở tra cứu/thông tin tham khảo; không suy hiệu quả lâm sàng hoặc khả năng phát hiện khủng hoảng.
+Các README/metadata trong thư mục bằng chứng là ghi chú tại thời điểm xuất; giữ
+nguyên cả lỗi, từ chối và trạng thái trước push. Nhật ký bản cuối ở `docs/JOURNAL.md`.
+Word/notebook cũ, ảnh sinh báo cáo và launcher CLI không thuộc demo đã được loại
+khỏi cây nộp; vẫn còn trong lịch sử Git. Báo cáo được nộp riêng cùng code.

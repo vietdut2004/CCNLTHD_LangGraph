@@ -1,0 +1,12 @@
+{
+  "verified": true,
+  "runtime_files": 9,
+  "preserved_evidence_files": 154,
+  "indexed_http_results": 41,
+  "retrieval_cases": 27,
+  "answerable_span_hits": 25,
+  "real_auth_failure_runs_preserved": 2,
+  "human_scores_unchanged": true,
+  "provider_calls": 0,
+  "semantic_scores_generated": false
+}

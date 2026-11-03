@@ -1,0 +1,114 @@
+[
+  {
+    "id": "warmup",
+    "category": "warmup",
+    "body": {
+      "question": "Xin chào. Chỉ chào lại một câu ngắn, không dùng công cụ."
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "basic_01",
+    "category": "basic",
+    "body": {
+      "question": "Xin chào. Chỉ chào lại một câu ngắn, không dùng công cụ."
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "basic_02",
+    "category": "basic",
+    "body": {
+      "question": "Hãy tính 12 cộng 8. Trả lời ngắn, không dùng công cụ."
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "basic_03",
+    "category": "basic",
+    "body": {
+      "question": "Dịch 'Have a nice day' sang tiếng Việt, không dùng công cụ."
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "basic_04",
+    "category": "basic",
+    "body": {
+      "question": "Viết một lời cảm ơn người bạn đã giúp tôi làm bài, không dùng công cụ."
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "basic_05",
+    "category": "basic",
+    "body": {
+      "question": "Gợi ý cách chia một bài tập lớn thành ba bước nhỏ, không dùng công cụ."
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "basic_06",
+    "category": "basic",
+    "body": {
+      "question": "Cho tôi một lời động viên trước buổi thuyết trình, không dùng công cụ."
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "basic_07",
+    "category": "basic",
+    "body": {
+      "question": "Kể tên ba màu cơ bản. Trả lời ngắn, không dùng công cụ."
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "basic_08",
+    "category": "basic",
+    "body": {
+      "question": "Viết một câu chúc ngủ ngon nhẹ nhàng, không dùng công cụ."
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "basic_09",
+    "category": "basic",
+    "body": {
+      "question": "Giải thích sự khác nhau giữa mục tiêu và kế hoạch bằng hai câu, không dùng công cụ."
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "basic_10",
+    "category": "basic",
+    "body": {
+      "question": "Gợi ý một cách sắp xếp bàn học gọn gàng, không dùng công cụ."
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "invalid_missing",
+    "category": "validation",
+    "body": {},
+    "expected_status": 422
+  },
+  {
+    "id": "invalid_type",
+    "category": "validation",
+    "body": {
+      "question": [
+        "xin chào"
+      ]
+    },
+    "expected_status": 422
+  },
+  {
+    "id": "invalid_null",
+    "category": "validation",
+    "body": {
+      "question": null
+    },
+    "expected_status": 422
+  }
+]

@@ -1,0 +1,28 @@
+﻿id,group,question,reference,answerable,all_reference_spans_present,retrieval_ms
+rag_01,old_8,"Theo Stress.pdf, hít thở sâu tác động thế nào đến não bộ và trạng thái cơ thể?",Não nhận thông điệp bình tĩnh/thư giãn và gửi đến cơ thể; các biểu hiện căng thẳng giảm.,True,True,328.108
+rag_02,old_8,"Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?","Một tay ở bụng ngay dưới xương sườn, tay kia trên ngực.",True,True,1.304
+rag_03,old_8,"Theo Stress.pdf, bài tập thở bụng được lặp lại bao nhiêu lần?",Từ 3 đến 10 lần.,True,True,1.261
+rag_04,old_8,"Theo Stress.pdf, trong kỹ thuật 4-7-8 phải đếm đến mấy khi hít vào, nín thở và thở ra?","Hít vào đếm đến 4, nín thở đếm đến 7, thở ra đếm đến 8.",True,True,2.011
+rag_05,old_8,"Theo Stress.pdf, khi mới làm quen bài tập thở cuộn nên chọn tư thế nào?","Nằm ngửa, co đầu gối.",True,True,1.587
+rag_06,old_8,"Theo Stress.pdf, thời lượng thực hành hít vào và thở ra ở bài tập thở cuộn là mấy phút?",3 đến 5 phút.,True,True,1.968
+rag_07,old_8,"Theo Stress.pdf, trong bài thở buổi sáng khi trở lại tư thế đứng cần nâng bộ phận nào lên sau cùng?",Nâng đầu lên sau cùng.,True,True,1.622
+rag_08,old_8,"Theo Stress.pdf, bài tập tập trung vào hơi thở nên tiếp tục trong bao lâu?",10 đến 20 phút.,True,True,1.442
+new_01,supplied_6,"Theo Stress.pdf, trước khi tập thở nên mặc quần áo như thế nào?",Mặc quần áo thoải mái.,True,True,1.798
+new_02,supplied_6,"Theo Stress.pdf, thở theo nhịp 4–7–8 lặp lại bao nhiêu lần?",Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh.,True,True,1.196
+new_03,supplied_6,"Theo Stress.pdf, khi hít vào trong bài thở bụng thì ngực có di chuyển không?",Giữ nguyên vị trí của ngực.,True,True,1.584
+new_04,supplied_6,"Theo Stress.pdf, khi thư giãn cơ bắp thì căng cơ bàn chân vào lúc hít vào hay thở ra?",Hít vào. Căng cơ bàn chân.,True,True,1.387
+new_05,supplied_6,"Theo Stress.pdf, thở buổi sáng bắt đầu ở tư thế nào?","Đứng, gập người về phía trước từ thắt lưng, đầu gối hơi cong, cánh tay buông thõng.",True,True,1.399
+new_06,supplied_6,"Theo Stress.pdf, bài tập tập trung vào hơi thở bắt đầu bằng việc mở mắt hay nhắm mắt?",Nhắm mắt lại.,True,True,1.182
+validation_01,supplied_5,"Theo Stress.pdf, tập thở có cần công cụ hay thiết bị đặc biệt không?",Không cần công cụ hoặc thiết bị đặc biệt.,True,True,2.521
+validation_02,supplied_5,"Theo Stress.pdf, trong bài thở bụng khi thở ra môi cần như thế nào?",Đôi môi mím chặt như đang huýt sáo.,True,True,1.9
+validation_03,supplied_5,"Theo Stress.pdf, bài thở cuộn đặt tay trái và tay phải ở đâu?","Tay trái trên bụng, tay phải trên ngực.",True,True,1.553
+validation_04,supplied_5,"Theo Stress.pdf, thở buổi sáng giữ hơi thở bao lâu ở tư thế đứng?",Chỉ trong vài giây.,True,True,1.211
+validation_05,supplied_5,"Theo Stress.pdf, bài thở sâu hít vào và thở ra bằng mũi hay miệng?","Hít vào bằng mũi, thở ra bằng mũi.",True,True,1.353
+fresh_01,fresh_6,"Theo Stress.pdf, so sánh số lần lặp lại của thở bụng và thở theo nhịp 4–7–8.",Thở bụng: 3–10 lần; 4–7–8: 3–7 lần hoặc đến khi bình tĩnh.,True,True,1.775
+fresh_02,fresh_6,"Theo Stress.pdf, thời lượng thở cuộn và tập trung vào hơi thở lần lượt bao nhiêu phút?",Thở cuộn: 3–5 phút; tập trung vào hơi thở: 10–20 phút.,True,True,2.699
+fresh_03,fresh_6,"Theo Stress.pdf, nếu muốn cảm thấy thư giãn thì có phải cố ép bản thân tập thật căng không?",Không ép buộc bản thân; điều đó có thể làm căng thẳng hơn.,True,True,1.83
+fresh_04,fresh_6,"Theo Stress.pdf, lúc bắt đầu bài thở cuộn, tay phải ở bụng còn tay trái ở ngực đúng không?","Không. Tay trái trên bụng, tay phải trên ngực.",True,True,1.266
+fresh_05,fresh_6,"Theo Stress.pdf, sau khi thở ra trong bài thư giãn cơ bắp, bàn chân cần căng hay thả lỏng?",Thả lỏng/giải phóng căng thẳng ở bàn chân.,True,True,1.308
+fresh_06,fresh_6,"Theo Stress.pdf, trước khi tập thở nên chọn nơi tập như thế nào?","Chọn nơi thoải mái, ví dụ giường, sàn phòng khách hoặc ghế thoải mái.",True,True,1.813
+negative_01,negative_2,"Theo Stress.pdf, dân số Việt Nam năm 2026 là bao nhiêu?","Không có trong PDF; cần từ chối, không bịa số liệu.",False,,1.691
+negative_02,negative_2,"Theo Stress.pdf, học phí đại học năm 2026 là bao nhiêu?","Không có trong PDF; cần từ chối, không bịa số liệu.",False,,1.407

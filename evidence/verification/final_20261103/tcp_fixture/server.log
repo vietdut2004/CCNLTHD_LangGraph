@@ -1,0 +1,11 @@
+INFO:     Started server process [12900]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:55849 (Press CTRL+C to quit)
+INFO:     127.0.0.1:56449 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61567 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61568 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61569 - "POST /chatbot HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58139 - "POST /chatbot HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58140 - "POST /chatbot HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58141 - "POST /chatbot HTTP/1.1" 422 Unprocessable Content

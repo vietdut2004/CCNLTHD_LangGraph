@@ -12,3 +12,5 @@ Stress.pdf -text
 handover/** -text
 benchmarks/rag_check_cases.json -text
 benchmarks/week8/*.json -text
+evidence/** -text
+docs/*.csv -text

@@ -1,0 +1,10 @@
+{
+  "attempted_at_utc": "2026-10-29T07:12:29.204791+00:00",
+  "origin": "https://github.com/vietdut2004/CCNLTHD_LangGraph.git",
+  "target_ref": "refs/heads/codex/week8-evidence-v13",
+  "expected_commit": "60b2a03f6e277b7add0e9bdf7a06452086b0c841",
+  "force_push": false,
+  "exit_code": 128,
+  "stdout": "",
+  "stderr": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/vietdut2004/CCNLTHD_LangGraph.git/'\n"
+}

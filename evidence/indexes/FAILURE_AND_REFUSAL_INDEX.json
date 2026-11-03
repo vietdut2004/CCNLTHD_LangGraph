@@ -1,0 +1,192 @@
+[
+  {
+    "run_label": "rag_new_8_20261028",
+    "case_id": "heldout_07",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "5b4d635ca472419aaf924971af5fd419",
+    "raw_results": "handover/evidence/rag_new_8_20261028/results.json",
+    "raw_result_index_0_based": 6
+  },
+  {
+    "run_label": "rag_new_8_20261028",
+    "case_id": "heldout_08",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "f7e9f3609696484e8da2b9271f002b4c",
+    "raw_results": "handover/evidence/rag_new_8_20261028/results.json",
+    "raw_result_index_0_based": 7
+  },
+  {
+    "run_label": "web_4_20261028",
+    "case_id": "web_01",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "705960d54b17468fbb678b1cc03148af",
+    "raw_results": "handover/evidence/web_4_20261028/results.json",
+    "raw_result_index_0_based": 0
+  },
+  {
+    "run_label": "web_4_20261028",
+    "case_id": "web_02",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "7874d4f946694c7db3af9ffc7ed366d5",
+    "raw_results": "handover/evidence/web_4_20261028/results.json",
+    "raw_result_index_0_based": 1
+  },
+  {
+    "run_label": "rag_auth_initial_20261028",
+    "case_id": "rag_01",
+    "http_status": 502,
+    "status": "error",
+    "code": "UPSTREAM_AUTH",
+    "trace_id": "9f76ea9fd404455385f2ad70a6dd497a",
+    "raw_results": "evidence/failures/rag_auth_initial_20261028/results.json",
+    "raw_result_index_0_based": 0
+  },
+  {
+    "run_label": "rag_auth_recheck_20261028",
+    "case_id": "rag_03",
+    "http_status": 502,
+    "status": "error",
+    "code": "UPSTREAM_AUTH",
+    "trace_id": "35008cb2c38d4d74acf6f727ee63d102",
+    "raw_results": "evidence/failures/rag_auth_recheck_20261028/results.json",
+    "raw_result_index_0_based": 0
+  },
+  {
+    "run_label": "rag_20261024_all_logged_cases",
+    "case_id": "rag_01",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "82f253b7f4c3435ba6ec50ea0adca322",
+    "raw_results": "handover/evidence/rag_8_20261024/results.json",
+    "raw_result_index_0_based": 0
+  },
+  {
+    "run_label": "rag_20261024_all_logged_cases",
+    "case_id": "rag_03",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "fefd05350d774d68b07785775144963f",
+    "raw_results": "handover/evidence/rag_8_20261024/results.json",
+    "raw_result_index_0_based": 2
+  },
+  {
+    "run_label": "rag_20261024_all_logged_cases",
+    "case_id": "rag_05",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "28e57a33975a4087b7bc7e564a9fdd4b",
+    "raw_results": "handover/evidence/rag_8_20261024/results.json",
+    "raw_result_index_0_based": 4
+  },
+  {
+    "run_label": "rag_20261024_all_logged_cases",
+    "case_id": "rag_06",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "81a2fa4f0683447b9b3305fffaa63cc7",
+    "raw_results": "handover/evidence/rag_8_20261024/results.json",
+    "raw_result_index_0_based": 5
+  },
+  {
+    "run_label": "rag_20261024_all_logged_cases",
+    "case_id": "rag_07",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "4a6b1449e5f84e33a61a07c3054ac2c2",
+    "raw_results": "handover/evidence/rag_8_20261024/results.json",
+    "raw_result_index_0_based": 6
+  },
+  {
+    "run_label": "rag_20261024_all_logged_cases",
+    "case_id": "rag_outside_01",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "a772d303e29841009e6d53d4587323f1",
+    "raw_results": "handover/evidence/rag_8_20261024/results.json",
+    "raw_result_index_0_based": 8
+  },
+  {
+    "run_label": "rag_20261024_all_logged_cases",
+    "case_id": "rag_outside_02",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "3e302844e0b64b219db6a2a1bfabb82c",
+    "raw_results": "handover/evidence/rag_8_20261024/results.json",
+    "raw_result_index_0_based": 9
+  },
+  {
+    "run_label": "rag_20261024_all_logged_cases",
+    "case_id": "scope_refuse",
+    "http_status": 200,
+    "status": "refused",
+    "code": "OUT_OF_SCOPE",
+    "trace_id": "964afb5d27304569babcb32f80eb47b3",
+    "raw_results": "handover/evidence/rag_8_20261024/results.json",
+    "raw_result_index_0_based": 14
+  },
+  {
+    "run_label": "rag_20261024_all_logged_cases",
+    "case_id": "invalid_missing",
+    "http_status": 422,
+    "status": "error",
+    "code": "INVALID_REQUEST",
+    "trace_id": "179c041b8b0646fb80258055458ca6c6",
+    "raw_results": "handover/evidence/rag_8_20261024/results.json",
+    "raw_result_index_0_based": 15
+  },
+  {
+    "run_label": "rag_20261024_all_logged_cases",
+    "case_id": "invalid_null",
+    "http_status": 422,
+    "status": "error",
+    "code": "INVALID_REQUEST",
+    "trace_id": "c7543ccc885849d5bef602b6a44ca06a",
+    "raw_results": "handover/evidence/rag_8_20261024/results.json",
+    "raw_result_index_0_based": 16
+  },
+  {
+    "run_label": "rag_20261024_all_logged_cases",
+    "case_id": "invalid_type",
+    "http_status": 422,
+    "status": "error",
+    "code": "INVALID_REQUEST",
+    "trace_id": "7abd668e750343cc9f6234295796a075",
+    "raw_results": "handover/evidence/rag_8_20261024/results.json",
+    "raw_result_index_0_based": 17
+  },
+  {
+    "run_label": "web_4_20261024",
+    "case_id": "web_02",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "a9f3221de07f4b948bf29e3ef275b398",
+    "raw_results": "handover/evidence/web_4_20261024/results.json",
+    "raw_result_index_0_based": 1
+  },
+  {
+    "run_label": "web_4_20261024",
+    "case_id": "web_04",
+    "http_status": 200,
+    "status": "refused",
+    "code": "INSUFFICIENT_EVIDENCE",
+    "trace_id": "91383a42dc404d0a9e4132b74f94c349",
+    "raw_results": "handover/evidence/web_4_20261024/results.json",
+    "raw_result_index_0_based": 3
+  }
+]

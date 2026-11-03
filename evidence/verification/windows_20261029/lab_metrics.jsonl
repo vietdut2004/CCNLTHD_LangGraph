@@ -1,0 +1,4 @@
+{"case_id": "A1", "group": "baseline", "latency_ms": 13.293, "status": "ok", "error_type": null, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
+{"case_id": "A2", "group": "baseline", "latency_ms": 3.832, "status": "ok", "error_type": null, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
+{"case_id": "A3", "group": "baseline", "latency_ms": 3.34, "status": "ok", "error_type": null, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
+{"case_id": "A4", "group": "fault_injection", "latency_ms": 2.886, "status": "error", "error_type": "RuntimeError", "input_tokens": null, "output_tokens": null, "total_tokens": null}

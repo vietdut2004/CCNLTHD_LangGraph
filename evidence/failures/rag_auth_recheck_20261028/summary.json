@@ -1,0 +1,25 @@
+{
+  "executed": true,
+  "fixture": false,
+  "n": 1,
+  "planned": 5,
+  "stopped_reason": "UPSTREAM_AUTH",
+  "technical_completed": 0,
+  "technical_errors": 1,
+  "answers_returned": 0,
+  "refused": 0,
+  "latency_ms": {
+    "mean": 1423.517,
+    "p50": 1423.517,
+    "p95": 1423.517
+  },
+  "percentile_method": "nearest-rank",
+  "warmup_used": false,
+  "usage_complete_requests": 0,
+  "observed_tokens": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0
+  },
+  "semantic_correctness": "Not inferred; see separate source audit"
+}
