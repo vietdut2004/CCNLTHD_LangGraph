@@ -3,7 +3,7 @@ import argparse,csv,hashlib,json,re,time
 from pathlib import Path
 from pypdf import PdfReader
 from Rag_tool import RAGTOOL
-from retrieval import POLICY
+from faiss_retrieval import POLICY
 from telemetry import identity,utc
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -30,7 +30,7 @@ def main():
             trace=next(x['body']['trace_id'] for x in prior if x['case_id']==c['id']);before=check(contexts[trace])
         rows.append({**c,'timestamp':utc(),'metric':'all_reference_spans_present_at_k','k':tool.k,'evidence_hit':check(docs),'historical_embedding_top2_hit':before,'retrieval_ms':round(ms,3),'documents':docs})
     counts={g:{'n':len(a:=[x for x in rows if x['group']==g]),'hits':sum(x['evidence_hit'] for x in a)} for g in ['existing_8','new_6','validation_5']}
-    summary={'recorded_at':utc(),'scope':'offline retrieval coverage, NOT model answers, clinical quality or live provider latency','provider_calls':0,'groups':counts,'historical_top2_existing_hits':sum(x['historical_embedding_top2_hit'] is True for x in rows),'historical_n':8,'current_backend':POLICY,'k':3,'source_version':tool.version(),'new_question_file_sha256':hashlib.sha256(newpath.read_bytes()).hexdigest(),'validation_file_sha256':hashlib.sha256(validation_path.read_bytes()).hexdigest(),'identity':identity('none:retrieval-only'),'limitations':['Existing 8 and additional 6 are now regression sets after the observed boundary failure; first 5/6 result preserved separately. Final validation 5 frozen before the boundary fix and evaluated once.','Both sets are AI-authored/annotated from the same small PDF; not independent human or clinical validation.','Changing chunking, ranking and k together does not isolate a single causal improvement.','A hit means source evidence is present, NOT that an LLM will answer correctly.']}
+    summary={'recorded_at':utc(),'scope':'offline local embedding + FAISS retrieval coverage, NOT model answers, clinical quality or live provider latency','provider_calls':0,'groups':counts,'historical_top2_existing_hits':sum(x['historical_embedding_top2_hit'] is True for x in rows),'historical_n':8,'current_backend':POLICY,'k':tool.k,'config':tool.configuration(),'source_version':tool.version(),'new_question_file_sha256':hashlib.sha256(newpath.read_bytes()).hexdigest(),'validation_file_sha256':hashlib.sha256(validation_path.read_bytes()).hexdigest(),'identity':identity('none:retrieval-only'),'limitations':['These question sets have been inspected and reused before the current restoration; they are regression sets, not an independent holdout.','Both sets are AI-authored/annotated from the same small PDF; not independent human or clinical validation.','Changing chunking, ranking and k together does not isolate a single causal improvement.','A hit means source evidence is present, NOT that an LLM will answer correctly.']}
     (args.output/'results.jsonl').write_text(''.join(json.dumps(x,ensure_ascii=False)+'\n' for x in rows),encoding='utf8')
     (args.output/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf8')
     with (args.output/'results.csv').open('w',encoding='utf-8-sig',newline='') as f:

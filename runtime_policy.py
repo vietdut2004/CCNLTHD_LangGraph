@@ -1,1 +1,1 @@
-PROMPT_VERSION = "evidence-v1.3-rag-check"
+PROMPT_VERSION = "report-restored-faiss-tool-calling-20261105"

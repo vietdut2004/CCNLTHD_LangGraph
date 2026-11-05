@@ -8,6 +8,8 @@ class FixtureModel:
         self.missing_usage=missing_usage
         self.bad_citation=bad_citation
         self.contexts=[]
+    def bind_tools(self,tools,**kwargs):
+        return FixtureToolSelection(self)
     async def ainvoke(self,messages):
         self.calls+=1
         self.contexts.append(messages)
@@ -17,12 +19,26 @@ class FixtureModel:
             doc=docs[0]
             content=json.dumps({'supported':True,'answer':'Tra loi dua tren nguon thu nghiem.',
                 'citations':[{'id':'fake-source' if self.bad_citation else doc['id'],
-                              'quote':doc['text'][:40]}]},ensure_ascii=False)
+                              'quote':doc['quotes'][0]['code']}]},ensure_ascii=False)
         else:
             contents=[m.content if hasattr(m,'content') else m[1] for m in messages]
             content='Da doc '+str(len(contents)-1)+' tin nhan. '+contents[-1]
         # Deliberately absent usage: never fabricate provider token counts for fixtures.
         return AIMessage(content=content)
+
+class FixtureToolSelection:
+    """Simulate named model tool calls only; this is not production routing."""
+    def __init__(self,model):self.model=model
+    async def ainvoke(self,messages):
+        self.model.calls+=1
+        self.model.contexts.append(messages)
+        value=messages[-1].content if hasattr(messages[-1],'content') else messages[-1][1]
+        lowered=value.casefold()
+        name=('rag_tool' if any(s in lowered for s in ('stress.pdf','tai lieu','hit tho'))
+              else 'search_web' if any(s in lowered for s in ('tim kiem','phim','web')) else None)
+        if name:
+            return AIMessage(content='',tool_calls=[{'name':name,'args':{'query':value},'id':'fixture-call','type':'tool_call'}])
+        return AIMessage(content='Phan hoi gia lap; khong phai model that.')
 
 class FixtureRag:
     def __init__(self,empty=False,fail=False):

@@ -1,56 +1,1308 @@
 {
-  "runtime_baseline_commit": "60b2a03f6e277b7add0e9bdf7a06452086b0c841",
-  "runtime_identity": {
-    "source_sha256": {
-      "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
-      "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
-      "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
-      "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
-      "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
-      "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
-      "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
-      "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
-      "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+  "schema_version": 2,
+  "updated_on": "2026-11-05",
+  "scope": "Active restored source and historical submission are separate; do not relabel earlier runs.",
+  "active_restoration_20261105": {
+    "status": "real_final_runs_recorded_content_review_required",
+    "base_commit": "78b118f1bca7988970abf3d1627d144716aa0846",
+    "final_commit": null,
+    "identity_manifest": "docs/RESTORED_RUNTIME_IDENTITY.json",
+    "identity": {
+      "source_sha256": {
+        "agent.py": "307ee3529d20e75e8f2382430cd22e6a4c0918f054a43a86afa3726a84a1483a",
+        "main.py": "10eddf581ccdf88d666fd7115d4dc0a0e8279d0908e25eb5a6aba58f8f70469a",
+        "Rag_tool.py": "75fee3b5a6268a6081987c34a4d33a9d4ea0685fbeaa2ab2e979235a2a221b01",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "ed9007642cf0394b40a1b571501722f17995ba4ffcfe564493d6a86d9cd0d73d",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "faiss_retrieval.py": "9942ef52b08656c7f665f641a4eed9ae9897c5554987b33fb80f9f291c5c7080",
+        "runtime_policy.py": "da44806c5c272b69e54b5821a0d61562a03aed9561b24e5c9cbd463e4b2e2f8f"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.21.2",
+        "faiss-cpu": "1.15.1",
+        "sentence-transformers": "6.1.0",
+        "langchain-huggingface": "1.2.3",
+        "pyvi": "0.1.1"
+      },
+      "prompt_version": "report-restored-faiss-tool-calling-20261105",
+      "retrieval_policy": {
+        "name": "phobert-pyvi-faiss-normalized-l2-v1",
+        "max_chars": 1000,
+        "overlap": 180,
+        "k": 6,
+        "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+        "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+        "embedding_device": "cpu",
+        "normalize_embeddings": true,
+        "pooling": "mean",
+        "word_segmentation": "pyvi",
+        "query_preprocessing": "strip-leading-source-pdf-preamble",
+        "max_input_tokens": 256,
+        "index_type": "IndexFlatL2",
+        "metric": "squared_l2",
+        "score_direction": "smaller_is_nearer"
+      },
+      "routing_policy": "model-tool-calling; explicit API modes available",
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "9df445c208d40dc57c00"
     },
-    "model_id": "openai/gpt-oss-20b",
-    "versions": {
-      "langgraph": "1.2.16",
-      "langchain-core": "1.7.0",
-      "langchain-groq": "1.1.3",
-      "fastapi": "0.141.1",
-      "pypdf": "6.21.2"
+    "frontend_sha256": {
+      "frontend/index.html": "2dab1c9bc0db96f7dea3e7df48fc57be7dc1039eba782fbf28ed3882049e7b0b",
+      "frontend/style.css": "d4d6eb6a6cc401bd3793965c79fa8f4b17ffe9a65fc335bbe481ecc6ff95513c",
+      "frontend/app.js": "799b01346e9226ca4648dcd17c920930bbc0b6d8508e9872f521fccce6759bad",
+      "frontend/assets/sgu-report.png": "e8e4f42ccc26042cb719144cfa75e13871343e394ecd14cc75dfd0a142957ece"
     },
-    "prompt_version": "evidence-v1.3-rag-check",
-    "retrieval_policy": {
-      "name": "section-balanced-bm25-v3",
-      "max_chars": 650,
+    "requirements": {
+      "path": "requirements-locked.txt",
+      "sha256": "5923a9ef5dbdc61f4a9d38a51b03ba993931a50d2bd6d6ba6c4bd5477271de92"
+    },
+    "pdf": {
+      "path": "Stress.pdf",
+      "pages": 6,
+      "sha256": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a"
+    },
+    "human_scores_apply_to_this_runtime": false,
+    "final_live_validation": {
+      "status": "completed_technical_recording_not_human_quality_score",
+      "graph_id": "9df445c208d40dc57c00",
+      "rag_batch": {
+        "path": "evidence/restored_20261105/faiss_live_final_13/",
+        "n": 13,
+        "planned": 13,
+        "technical_completed": 13,
+        "technical_errors": 0,
+        "answers_returned": 10,
+        "refused": 3,
+        "stopped_reason": null,
+        "latency_ms": {
+          "mean": 5432.524,
+          "p50": 5197.01,
+          "p95": 9686.932,
+          "percentile_method": "nearest-rank"
+        },
+        "requests": 13,
+        "usage_complete_requests": 13,
+        "usage_totals": {
+          "input_tokens": 54420,
+          "output_tokens": 4582,
+          "total_tokens": 59002
+        },
+        "observed_tokens": {
+          "input_tokens": 54420,
+          "output_tokens": 4582,
+          "total_tokens": 59002
+        },
+        "attempted_model_calls": 13,
+        "missing_tokens_remain_null": true,
+        "per_case": [
+          {
+            "id": "rag_01",
+            "http_status": 200,
+            "status": "ok",
+            "code": "OK",
+            "route": "rag",
+            "trace_id": "e1cd5f85f20b483eb41b5ecaf776820a",
+            "latency_ms": 6117.832,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 4121,
+                "output_tokens": 384,
+                "total_tokens": 4505
+              },
+              "total_tokens": 4505
+            },
+            "answer_returned": true,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 5,
+              "quote_checks": [
+                {
+                  "id": "pdf-1",
+                  "page": 1,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "pdf-1",
+                  "page": 1,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "pdf-6",
+                  "page": 1,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "pdf-6",
+                  "page": 1,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "pdf-6",
+                  "page": 1,
+                  "quote_is_original_source_span": true
+                }
+              ],
+              "evidence_checks": [
+                {
+                  "status": "accepted",
+                  "reason": "accepted"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": true,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          },
+          {
+            "id": "rag_02",
+            "http_status": 200,
+            "status": "ok",
+            "code": "OK",
+            "route": "rag",
+            "trace_id": "2363c9048cef4c7a89720b7c9069f1d3",
+            "latency_ms": 3811.82,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 4329,
+                "output_tokens": 267,
+                "total_tokens": 4596
+              },
+              "total_tokens": 4596
+            },
+            "answer_returned": true,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 2,
+              "quote_checks": [
+                {
+                  "id": "pdf-6",
+                  "page": 2,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "pdf-3",
+                  "page": 5,
+                  "quote_is_original_source_span": true
+                }
+              ],
+              "evidence_checks": [
+                {
+                  "status": "accepted",
+                  "reason": "accepted"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": true,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          },
+          {
+            "id": "rag_03",
+            "http_status": 200,
+            "status": "ok",
+            "code": "OK",
+            "route": "rag",
+            "trace_id": "7b6bd4a474214d17b8bca4fec345ad95",
+            "latency_ms": 5013.548,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 4217,
+                "output_tokens": 221,
+                "total_tokens": 4438
+              },
+              "total_tokens": 4438
+            },
+            "answer_returned": true,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 1,
+              "quote_checks": [
+                {
+                  "id": "pdf-4",
+                  "page": 2,
+                  "quote_is_original_source_span": true
+                }
+              ],
+              "evidence_checks": [
+                {
+                  "status": "accepted",
+                  "reason": "accepted"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": true,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          },
+          {
+            "id": "rag_04",
+            "http_status": 200,
+            "status": "ok",
+            "code": "OK",
+            "route": "rag",
+            "trace_id": "4556234cc8684418b947b05b72c33aa9",
+            "latency_ms": 3409.074,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 4231,
+                "output_tokens": 303,
+                "total_tokens": 4534
+              },
+              "total_tokens": 4534
+            },
+            "answer_returned": true,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 3,
+              "quote_checks": [
+                {
+                  "id": "pdf-1",
+                  "page": 3,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "pdf-1",
+                  "page": 3,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "pdf-1",
+                  "page": 3,
+                  "quote_is_original_source_span": true
+                }
+              ],
+              "evidence_checks": [
+                {
+                  "status": "accepted",
+                  "reason": "accepted"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": true,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          },
+          {
+            "id": "rag_05",
+            "http_status": 200,
+            "status": "ok",
+            "code": "OK",
+            "route": "rag",
+            "trace_id": "3dd2705dd7f34389bd3af41b6de07044",
+            "latency_ms": 9686.932,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 3913,
+                "output_tokens": 607,
+                "total_tokens": 4520
+              },
+              "total_tokens": 4520
+            },
+            "answer_returned": true,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 1,
+              "quote_checks": [
+                {
+                  "id": "pdf-2",
+                  "page": 3,
+                  "quote_is_original_source_span": true
+                }
+              ],
+              "evidence_checks": [
+                {
+                  "status": "accepted",
+                  "reason": "accepted"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": true,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          },
+          {
+            "id": "rag_06",
+            "http_status": 200,
+            "status": "refused",
+            "code": "INSUFFICIENT_EVIDENCE",
+            "route": "rag",
+            "trace_id": "830204d891c747a4b102626c615b08a7",
+            "latency_ms": 6222.974,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 4301,
+                "output_tokens": 379,
+                "total_tokens": 4680
+              },
+              "total_tokens": 4680
+            },
+            "answer_returned": false,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 0,
+              "quote_checks": [],
+              "evidence_checks": [
+                {
+                  "status": "insufficient",
+                  "reason": "model_reported_insufficient"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": null,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          },
+          {
+            "id": "rag_07",
+            "http_status": 200,
+            "status": "ok",
+            "code": "OK",
+            "route": "rag",
+            "trace_id": "d5462bb3eba84692b0fc33313223de89",
+            "latency_ms": 6917.481,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 4300,
+                "output_tokens": 313,
+                "total_tokens": 4613
+              },
+              "total_tokens": 4613
+            },
+            "answer_returned": true,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 1,
+              "quote_checks": [
+                {
+                  "id": "pdf-1",
+                  "page": 4,
+                  "quote_is_original_source_span": true
+                }
+              ],
+              "evidence_checks": [
+                {
+                  "status": "accepted",
+                  "reason": "accepted"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": true,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          },
+          {
+            "id": "rag_08",
+            "http_status": 200,
+            "status": "ok",
+            "code": "OK",
+            "route": "rag",
+            "trace_id": "e84f6db4c1284db2bc2d187a149c2cb8",
+            "latency_ms": 5903.49,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 4138,
+                "output_tokens": 520,
+                "total_tokens": 4658
+              },
+              "total_tokens": 4658
+            },
+            "answer_returned": true,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 2,
+              "quote_checks": [
+                {
+                  "id": "pdf-5",
+                  "page": 5,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "pdf-3",
+                  "page": 2,
+                  "quote_is_original_source_span": true
+                }
+              ],
+              "evidence_checks": [
+                {
+                  "status": "accepted",
+                  "reason": "accepted"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": true,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          },
+          {
+            "id": "new_01",
+            "http_status": 200,
+            "status": "ok",
+            "code": "OK",
+            "route": "rag",
+            "trace_id": "b084742ba7cc456194c555c867b52688",
+            "latency_ms": 5337.12,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 3951,
+                "output_tokens": 300,
+                "total_tokens": 4251
+              },
+              "total_tokens": 4251
+            },
+            "answer_returned": true,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 1,
+              "quote_checks": [
+                {
+                  "id": "pdf-6",
+                  "page": 2,
+                  "quote_is_original_source_span": true
+                }
+              ],
+              "evidence_checks": [
+                {
+                  "status": "accepted",
+                  "reason": "accepted"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": true,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          },
+          {
+            "id": "new_03",
+            "http_status": 200,
+            "status": "ok",
+            "code": "OK",
+            "route": "rag",
+            "trace_id": "471704d92db64f15a187f748b68fc7ff",
+            "latency_ms": 4577.223,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 4471,
+                "output_tokens": 400,
+                "total_tokens": 4871
+              },
+              "total_tokens": 4871
+            },
+            "answer_returned": true,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 1,
+              "quote_checks": [
+                {
+                  "id": "pdf-6",
+                  "page": 2,
+                  "quote_is_original_source_span": true
+                }
+              ],
+              "evidence_checks": [
+                {
+                  "status": "accepted",
+                  "reason": "accepted"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": true,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          },
+          {
+            "id": "new_06",
+            "http_status": 200,
+            "status": "ok",
+            "code": "OK",
+            "route": "rag",
+            "trace_id": "143acd72b5dd417786530632ab488061",
+            "latency_ms": 5155.691,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 4149,
+                "output_tokens": 494,
+                "total_tokens": 4643
+              },
+              "total_tokens": 4643
+            },
+            "answer_returned": true,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 1,
+              "quote_checks": [
+                {
+                  "id": "pdf-4",
+                  "page": 5,
+                  "quote_is_original_source_span": true
+                }
+              ],
+              "evidence_checks": [
+                {
+                  "status": "accepted",
+                  "reason": "accepted"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": true,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          },
+          {
+            "id": "negative_01",
+            "http_status": 200,
+            "status": "refused",
+            "code": "INSUFFICIENT_EVIDENCE",
+            "route": "rag",
+            "trace_id": "47fde85fe49b46afbffa7754d82a41c8",
+            "latency_ms": 3272.617,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 4249,
+                "output_tokens": 200,
+                "total_tokens": 4449
+              },
+              "total_tokens": 4449
+            },
+            "answer_returned": false,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 0,
+              "quote_checks": [],
+              "evidence_checks": [
+                {
+                  "status": "insufficient",
+                  "reason": "model_reported_insufficient"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": null,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          },
+          {
+            "id": "negative_02",
+            "http_status": 200,
+            "status": "refused",
+            "code": "INSUFFICIENT_EVIDENCE",
+            "route": "rag",
+            "trace_id": "8e284ebc05f14b60bcff7a5eca28cd25",
+            "latency_ms": 5197.01,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 4050,
+                "output_tokens": 194,
+                "total_tokens": 4244
+              },
+              "total_tokens": 4244
+            },
+            "answer_returned": false,
+            "technical_completion": true,
+            "source_resolution": {
+              "source_entries": 0,
+              "quote_checks": [],
+              "evidence_checks": [
+                {
+                  "status": "insufficient",
+                  "reason": "model_reported_insufficient"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": null,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null,
+            "semantic_correctness": null
+          }
+        ]
+      },
+      "ui_run": {
+        "path": "evidence/restored_20261105/ui_restore/live_conversation_2026-11-05T16-33-55-604Z/",
+        "cases": [
+          {
+            "question": "bạn cho mình biết ý nghĩa của hít thở sâu là gì",
+            "http_status": 200,
+            "status": "ok",
+            "route": "rag",
+            "trace_id": "27807932154845fe8051681e33affcdb",
+            "latency_ms_browser": 8183,
+            "usage": {
+              "attempted_model_calls": 2,
+              "calls_with_usage": 2,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 4788,
+                "output_tokens": 523,
+                "total_tokens": 5311
+              },
+              "total_tokens": 5311
+            },
+            "source_resolution": {
+              "source_entries": 5,
+              "quote_checks": [
+                {
+                  "id": "pdf-1",
+                  "page": 1,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "pdf-1",
+                  "page": 1,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "pdf-1",
+                  "page": 1,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "pdf-1",
+                  "page": 1,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "pdf-1",
+                  "page": 1,
+                  "quote_is_original_source_span": true
+                }
+              ],
+              "evidence_checks": [
+                {
+                  "status": "accepted",
+                  "reason": "accepted"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": true,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null
+          },
+          {
+            "question": "bạn có khỏe kh",
+            "http_status": 200,
+            "status": "ok",
+            "route": "answer",
+            "trace_id": "f1b58d16d65e4ccb90ff050ff8ea1b6c",
+            "latency_ms_browser": 3307,
+            "usage": {
+              "attempted_model_calls": 1,
+              "calls_with_usage": 1,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 571,
+                "output_tokens": 102,
+                "total_tokens": 673
+              },
+              "total_tokens": 673
+            },
+            "source_resolution": {
+              "source_entries": 0,
+              "quote_checks": [],
+              "evidence_checks": [],
+              "all_returned_quotes_match_original_spans": null,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null
+          },
+          {
+            "question": "bạn gợi ý cho tôi vài bộ phim truyền động lực sống được kh",
+            "http_status": 200,
+            "status": "ok",
+            "route": "web",
+            "trace_id": "7738a52e3aa84b25882590fd6df1c2ba",
+            "latency_ms_browser": 11239,
+            "usage": {
+              "attempted_model_calls": 2,
+              "calls_with_usage": 2,
+              "usage_complete": true,
+              "observed_tokens": {
+                "input_tokens": 3435,
+                "output_tokens": 909,
+                "total_tokens": 4344
+              },
+              "total_tokens": 4344
+            },
+            "source_resolution": {
+              "source_entries": 3,
+              "quote_checks": [
+                {
+                  "id": "web-1",
+                  "page": null,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "web-2",
+                  "page": null,
+                  "quote_is_original_source_span": true
+                },
+                {
+                  "id": "web-3",
+                  "page": null,
+                  "quote_is_original_source_span": true
+                }
+              ],
+              "evidence_checks": [
+                {
+                  "status": "accepted",
+                  "reason": "accepted"
+                }
+              ],
+              "all_returned_quotes_match_original_spans": true,
+              "semantic_entailment_or_answer_correctness": null
+            },
+            "human_score": null
+          }
+        ],
+        "latency_ms_browser": {
+          "mean": 7576.333,
+          "p50": 8183,
+          "p95": 11239,
+          "percentile_method": "nearest-rank"
+        },
+        "requests": 3,
+        "usage_complete_requests": 3,
+        "usage_totals": {
+          "input_tokens": 8794,
+          "output_tokens": 1534,
+          "total_tokens": 10328
+        },
+        "observed_tokens": {
+          "input_tokens": 8794,
+          "output_tokens": 1534,
+          "total_tokens": 10328
+        },
+        "attempted_model_calls": 5,
+        "missing_tokens_remain_null": true
+      },
+      "answer_accuracy": null,
+      "human_scores": null
+    }
+  },
+  "verification_20261105": {
+    "unit_light": {
+      "tests": 69,
+      "skipped": 2,
+      "failures": 0,
+      "errors": 0,
+      "passed": 67,
+      "seconds": 12.81,
+      "junit_xml": "evidence/restored_20261105/unit_tests_light_final.xml",
+      "provider_calls": 0,
+      "scope": "Unit/API mechanism checks; two skipped heavy cases are not passes and fixture results are not content quality."
+    },
+    "production_retrieval": {
+      "summary": "evidence/restored_20261105/faiss_final_production_retrieval/summary.json",
+      "source_lock": "evidence/restored_20261105/faiss_final_production_run_identity.json",
+      "measured_graph_id": "119cf12980be6cbf1824",
+      "cases": 27,
+      "answerable_cases": 25,
+      "outside_pdf_cases": 2,
+      "all_reference_spans_retrieved": 25,
+      "max_chars": 1000,
       "overlap": 180,
-      "k": 3
+      "k": 6,
+      "provider_calls": 0,
+      "real_local_embedding_and_faiss": true,
+      "fixture": false,
+      "used_for_parameter_selection": true,
+      "independent_evaluation": false,
+      "model_answer_accuracy": null,
+      "note": "Preserve the measured identity in the raw result. Do not replace it with the active graph ID."
     },
-    "generation_policy": {
-      "temperature": 0,
-      "max_output_tokens": 1536,
-      "timeout_seconds": 25
+    "ui_checks": {
+      "results": "evidence/restored_20261105/ui_restore/ui_check_results.json",
+      "passed": 12,
+      "fixture_requests": true,
+      "provider_calls": 0,
+      "scope": "Browser layout, session, error and safe-rendering behavior; not content quality."
     },
-    "retry_policy": {
-      "sdk": 0,
-      "tool": 0,
-      "graph": 0
+    "earlier_live_attempts": [
+      {
+        "path": "evidence/restored_20261105/ui_restore/live_conversation_2026-11-05T13-28-10-364Z/",
+        "selected_final_ui_run": false,
+        "recorded_requests": 3,
+        "graph_ids": [
+          "5200e395426bb2a4f7e0"
+        ],
+        "http_statuses": [
+          200,
+          200,
+          200
+        ],
+        "statuses": [
+          "ok",
+          "ok",
+          "refused"
+        ],
+        "trace_ids": [
+          "7e20e906950e423290b5231267bd482e",
+          "d51cbc1198214cc98c47b1fc25ca610c",
+          "a6e281dc82364e5c9f28bbba2ca52ca6"
+        ],
+        "capture_error_retained": false,
+        "stopped_live_retained": false,
+        "note": "Keep the whole recorded attempt; do not select answers across runs."
+      },
+      {
+        "path": "evidence/restored_20261105/ui_restore/live_conversation_2026-11-05T13-35-23-475Z/",
+        "selected_final_ui_run": false,
+        "recorded_requests": 3,
+        "graph_ids": [
+          "3ad0ff8f1e1c46ee9f5b"
+        ],
+        "http_statuses": [
+          200,
+          200,
+          200
+        ],
+        "statuses": [
+          "ok",
+          "ok",
+          "refused"
+        ],
+        "trace_ids": [
+          "f513f159610d4debb57d896e76e5ffa7",
+          "6db3a4c0681640b7a1e9b5b2117851de",
+          "2b988e97a13d437da68b152e2b80b69b"
+        ],
+        "capture_error_retained": false,
+        "stopped_live_retained": false,
+        "note": "Keep the whole recorded attempt; do not select answers across runs."
+      },
+      {
+        "path": "evidence/restored_20261105/ui_restore/live_conversation_2026-11-05T15-55-34-553Z/",
+        "selected_final_ui_run": false,
+        "recorded_requests": 3,
+        "graph_ids": [
+          "d5fc2b65b0f2bb37e888"
+        ],
+        "http_statuses": [
+          502,
+          200,
+          200
+        ],
+        "statuses": [
+          "error",
+          "ok",
+          "ok"
+        ],
+        "trace_ids": [
+          "726380027925429ca775e5445e41a4c5",
+          "5253aea0e5a54fc98a27dde3ebb8dd44",
+          "bbabf8e3303a41aca47020a8806bf2d8"
+        ],
+        "capture_error_retained": false,
+        "stopped_live_retained": false,
+        "note": "Keep the whole recorded attempt; do not select answers across runs."
+      },
+      {
+        "path": "evidence/restored_20261105/ui_restore/live_conversation_2026-11-05T16-08-17-665Z/",
+        "selected_final_ui_run": false,
+        "recorded_requests": 3,
+        "graph_ids": [
+          "c3a56f3ce2edcf1508d6"
+        ],
+        "http_statuses": [
+          200,
+          200,
+          200
+        ],
+        "statuses": [
+          "ok",
+          "ok",
+          "refused"
+        ],
+        "trace_ids": [
+          "760e89fba549451798cc68fe2046f39b",
+          "ecadcff93b514bc3a1d6e9bd01a2effe",
+          "02fd53ff673641079d0664e7eaa35090"
+        ],
+        "capture_error_retained": false,
+        "stopped_live_retained": false,
+        "note": "Keep the whole recorded attempt; do not select answers across runs."
+      },
+      {
+        "path": "evidence/restored_20261105/ui_restore/live_conversation_2026-11-05T16-23-31-466Z/",
+        "selected_final_ui_run": false,
+        "recorded_requests": 3,
+        "graph_ids": [
+          "65e597933e68f414b8e6"
+        ],
+        "http_statuses": [
+          502,
+          200,
+          502
+        ],
+        "statuses": [
+          "error",
+          "ok",
+          "error"
+        ],
+        "trace_ids": [
+          "cd6cfe14778b41d98ffb92b0853738f2",
+          "1dcb6bdcd06541bc8fa2fb2645954da2",
+          "c02757fbfe1c4c75b6fe0b316be1624c"
+        ],
+        "capture_error_retained": false,
+        "stopped_live_retained": false,
+        "note": "Keep the whole recorded attempt; do not select answers across runs."
+      },
+      {
+        "path": "evidence/restored_20261105/ui_restore/live_conversation_2026-11-05T16-29-08-998Z/",
+        "selected_final_ui_run": false,
+        "recorded_requests": 3,
+        "graph_ids": [
+          "2329a7abe36d6302844f"
+        ],
+        "http_statuses": [
+          502,
+          200,
+          502
+        ],
+        "statuses": [
+          "error",
+          "ok",
+          "error"
+        ],
+        "trace_ids": [
+          "dbd1eb2e0a814442b5047e319bef6653",
+          "60ccd6aef3e9465b8ded08bc3c3d8724",
+          "e4d5d8373ca4473c87d334cec097415a"
+        ],
+        "capture_error_retained": false,
+        "stopped_live_retained": false,
+        "note": "Keep the whole recorded attempt; do not select answers across runs."
+      }
+    ],
+    "selected_final_ui_run": {
+      "path": "evidence/restored_20261105/ui_restore/live_conversation_2026-11-05T16-33-55-604Z/",
+      "cases": [
+        {
+          "question": "bạn cho mình biết ý nghĩa của hít thở sâu là gì",
+          "http_status": 200,
+          "status": "ok",
+          "route": "rag",
+          "trace_id": "27807932154845fe8051681e33affcdb",
+          "latency_ms_browser": 8183,
+          "usage": {
+            "attempted_model_calls": 2,
+            "calls_with_usage": 2,
+            "usage_complete": true,
+            "observed_tokens": {
+              "input_tokens": 4788,
+              "output_tokens": 523,
+              "total_tokens": 5311
+            },
+            "total_tokens": 5311
+          },
+          "source_resolution": {
+            "source_entries": 5,
+            "quote_checks": [
+              {
+                "id": "pdf-1",
+                "page": 1,
+                "quote_is_original_source_span": true
+              },
+              {
+                "id": "pdf-1",
+                "page": 1,
+                "quote_is_original_source_span": true
+              },
+              {
+                "id": "pdf-1",
+                "page": 1,
+                "quote_is_original_source_span": true
+              },
+              {
+                "id": "pdf-1",
+                "page": 1,
+                "quote_is_original_source_span": true
+              },
+              {
+                "id": "pdf-1",
+                "page": 1,
+                "quote_is_original_source_span": true
+              }
+            ],
+            "evidence_checks": [
+              {
+                "status": "accepted",
+                "reason": "accepted"
+              }
+            ],
+            "all_returned_quotes_match_original_spans": true,
+            "semantic_entailment_or_answer_correctness": null
+          },
+          "human_score": null
+        },
+        {
+          "question": "bạn có khỏe kh",
+          "http_status": 200,
+          "status": "ok",
+          "route": "answer",
+          "trace_id": "f1b58d16d65e4ccb90ff050ff8ea1b6c",
+          "latency_ms_browser": 3307,
+          "usage": {
+            "attempted_model_calls": 1,
+            "calls_with_usage": 1,
+            "usage_complete": true,
+            "observed_tokens": {
+              "input_tokens": 571,
+              "output_tokens": 102,
+              "total_tokens": 673
+            },
+            "total_tokens": 673
+          },
+          "source_resolution": {
+            "source_entries": 0,
+            "quote_checks": [],
+            "evidence_checks": [],
+            "all_returned_quotes_match_original_spans": null,
+            "semantic_entailment_or_answer_correctness": null
+          },
+          "human_score": null
+        },
+        {
+          "question": "bạn gợi ý cho tôi vài bộ phim truyền động lực sống được kh",
+          "http_status": 200,
+          "status": "ok",
+          "route": "web",
+          "trace_id": "7738a52e3aa84b25882590fd6df1c2ba",
+          "latency_ms_browser": 11239,
+          "usage": {
+            "attempted_model_calls": 2,
+            "calls_with_usage": 2,
+            "usage_complete": true,
+            "observed_tokens": {
+              "input_tokens": 3435,
+              "output_tokens": 909,
+              "total_tokens": 4344
+            },
+            "total_tokens": 4344
+          },
+          "source_resolution": {
+            "source_entries": 3,
+            "quote_checks": [
+              {
+                "id": "web-1",
+                "page": null,
+                "quote_is_original_source_span": true
+              },
+              {
+                "id": "web-2",
+                "page": null,
+                "quote_is_original_source_span": true
+              },
+              {
+                "id": "web-3",
+                "page": null,
+                "quote_is_original_source_span": true
+              }
+            ],
+            "evidence_checks": [
+              {
+                "status": "accepted",
+                "reason": "accepted"
+              }
+            ],
+            "all_returned_quotes_match_original_spans": true,
+            "semantic_entailment_or_answer_correctness": null
+          },
+          "human_score": null
+        }
+      ],
+      "latency_ms_browser": {
+        "mean": 7576.333,
+        "p50": 8183,
+        "p95": 11239,
+        "percentile_method": "nearest-rank"
+      },
+      "requests": 3,
+      "usage_complete_requests": 3,
+      "usage_totals": {
+        "input_tokens": 8794,
+        "output_tokens": 1534,
+        "total_tokens": 10328
+      },
+      "observed_tokens": {
+        "input_tokens": 8794,
+        "output_tokens": 1534,
+        "total_tokens": 10328
+      },
+      "attempted_model_calls": 5,
+      "missing_tokens_remain_null": true
     },
-    "graph_id": "beebab186d50bedb4180"
+    "final_rag_batch": {
+      "path": "evidence/restored_20261105/faiss_live_final_13/",
+      "n": 13,
+      "planned": 13,
+      "technical_completed": 13,
+      "technical_errors": 0,
+      "answers_returned": 10,
+      "refused": 3,
+      "stopped_reason": null,
+      "latency_ms": {
+        "mean": 5432.524,
+        "p50": 5197.01,
+        "p95": 9686.932,
+        "percentile_method": "nearest-rank"
+      },
+      "requests": 13,
+      "usage_complete_requests": 13,
+      "usage_totals": {
+        "input_tokens": 54420,
+        "output_tokens": 4582,
+        "total_tokens": 59002
+      },
+      "observed_tokens": {
+        "input_tokens": 54420,
+        "output_tokens": 4582,
+        "total_tokens": 59002
+      },
+      "attempted_model_calls": 13,
+      "missing_tokens_remain_null": true
+    },
+    "ai_source_audit": {
+      "path": "evidence/restored_20261105/faiss_live_final_13/content_audit.json",
+      "method": "AI comparison of full recorded response, reference and retrieved PDF contexts; not a human grade or independent evaluation",
+      "scope": "All 13 cases in one completed batch; no cherry-picking",
+      "human_grades_generated": false,
+      "clinical_validation": false,
+      "note": "Qualitative source comparison by Codex, not a human grade or independent accuracy estimate."
+    }
   },
-  "final_revision": "See RELEASE_LOCK.json supplied alongside the final Git main archive; do not relabel recorded runs with the final revision.",
-  "requirements": {
-    "path": "requirements-locked.txt",
-    "sha256": "59228563ff4cd17f12a8dc86333dc5e173a5cb499f313958b582a80e22b16781"
+  "historical_submission_20261103": {
+    "runtime_baseline_commit": "60b2a03f6e277b7add0e9bdf7a06452086b0c841",
+    "runtime_identity": {
+      "source_sha256": {
+        "agent.py": "f3620ebc3274399b32d93f454b27942d05c3022b441267faeaadad5d5ebd38ae",
+        "main.py": "8104023dbe0c8b56b627ba70e6517be9b2c525aa1e13e85dbfa8eb5f9b008061",
+        "Rag_tool.py": "583fe56b7af25fd98402e0cac8b223f553a9957388d2cfa0396173e3eb5853a8",
+        "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+        "telemetry.py": "25b58171272b6c06050515a7835f00e708dd88660bcd5211fafccb6fec7419c1",
+        "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+        "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+        "retrieval.py": "f08990a17d0d027ad6e362cbf88268dbe880ffd75758cff26aedd49c51e73bb0",
+        "runtime_policy.py": "8b40610181261b54b377b6d96907c429cdc74723e21b7a49361ec084d255bf09"
+      },
+      "model_id": "openai/gpt-oss-20b",
+      "versions": {
+        "langgraph": "1.2.16",
+        "langchain-core": "1.7.0",
+        "langchain-groq": "1.1.3",
+        "fastapi": "0.141.1",
+        "pypdf": "6.21.2"
+      },
+      "prompt_version": "evidence-v1.3-rag-check",
+      "retrieval_policy": {
+        "name": "section-balanced-bm25-v3",
+        "max_chars": 650,
+        "overlap": 180,
+        "k": 3
+      },
+      "generation_policy": {
+        "temperature": 0,
+        "max_output_tokens": 1536,
+        "timeout_seconds": 25
+      },
+      "retry_policy": {
+        "sdk": 0,
+        "tool": 0,
+        "graph": 0
+      },
+      "graph_id": "beebab186d50bedb4180"
+    },
+    "final_revision": "See RELEASE_LOCK.json supplied alongside the final Git main archive; do not relabel recorded runs with the final revision.",
+    "requirements": {
+      "path": "requirements-locked.txt",
+      "sha256": "59228563ff4cd17f12a8dc86333dc5e173a5cb499f313958b582a80e22b16781"
+    },
+    "pdf": {
+      "path": "Stress.pdf",
+      "pages": 6,
+      "sha256": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a"
+    },
+    "human_rag_total": 96,
+    "human_web_total": 20,
+    "raw_evidence_unchanged": true,
+    "provider_calls_in_final_checks": 0
   },
-  "pdf": {
-    "path": "Stress.pdf",
-    "pages": 6,
-    "sha256": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a"
-  },
-  "human_rag_total": 96,
-  "human_web_total": 20,
-  "raw_evidence_unchanged": true,
-  "provider_calls_in_final_checks": 0
+  "historical_preservation": {
+    "raw_evidence_files": 154,
+    "measured_runtime_snapshot_files": 9,
+    "raw_evidence_unchanged": true,
+    "measured_runtime_snapshots_unchanged": true,
+    "identity": "handover/EXPECTED_RUNTIME_IDENTITY.json",
+    "runtime_snapshots": "handover/evidence/cache_memory_20261029/source_snapshots/",
+    "integrity_check": "evidence/restored_20261105/verify_historical_integrity.json",
+    "historical_graph_id": "beebab186d50bedb4180",
+    "historical_retrieval": "BM25 650/180/top-3",
+    "human_scores_apply_to_historical_responses_only": true,
+    "note": "The integrity check retains the active graph observed at its own timestamp; it is not rewritten after runtime edits."
+  }
 }

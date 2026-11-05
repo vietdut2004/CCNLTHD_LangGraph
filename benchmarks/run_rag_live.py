@@ -13,8 +13,14 @@ def main():
     parser.add_argument('--output',type=Path)
     parser.add_argument('--port',type=int,default=8010)
     parser.add_argument('--delay',type=float,default=6)
+    parser.add_argument('--prepare-index',action='store_true',help='Prepare PDF embeddings/FAISS before timed HTTP requests; log preparation separately, no model warm-up')
+    parser.add_argument('--base-url',help='Use an already-running local API to avoid loading a second embedding model')
+    parser.add_argument('--trace-file',type=Path,help='Trace file of the existing API, used only with --base-url')
     parser.add_argument('--ids',nargs='+',help='Optional explicit subset; default old 8 + fresh 6 + negative 2')
     args=parser.parse_args()
+    if args.base_url:
+        from benchmarks.run_rag_existing import run
+        return run(args)
     credential_audit=configure_credentials(args.env_file,ROOT/'.env')
     out=(args.output or ROOT.parent/'evidence'/datetime.now(timezone(timedelta(hours=7))).strftime('live_%Y%m%d_%H%M%S')).resolve()
     out.mkdir(parents=True,exist_ok=False)
@@ -30,7 +36,8 @@ def main():
      'credentials_present':bool(os.getenv('GROQ_API_KEY')),'requests_planned':len(selected),'concurrency':1,
      'delay_seconds':args.delay,'retries':0,'model_timeout_seconds':25,'api_deadline_seconds':60,
      'max_output_tokens':1536,'client_timeout_seconds':70,'cases_sha256':hashlib.sha256(dataset.read_bytes()).hexdigest(),
-     'warmup_used':False,'first_request_includes_cold_connection_and_pdf_preparation':True,
+     'warmup_used':False,'index_prepared_before_requests':args.prepare_index,
+     'first_request_includes_cold_connection_and_pdf_preparation':not args.prepare_index,
      'packages':{p:importlib.metadata.version(p) for p in ('pypdf','langgraph','langchain-core','langchain-groq','fastapi','httpx','uvicorn','python-dotenv','pytest')}}
     dump('environment.json',env_info)
     if not os.getenv('GROQ_API_KEY'):
@@ -38,7 +45,8 @@ def main():
         print('Groq key missing. No live model calls were made.');return
     with socket.socket() as sock:
         assert sock.connect_ex(('127.0.0.1',args.port))!=0,'Port already in use; no existing process stopped'
-    env=dict(os.environ,RAG_CHECK_OUTPUT=str(out),RAG_CHECK_PORT=str(args.port),LANGSMITH_TRACING='false',PYTHONIOENCODING='utf-8')
+    env=dict(os.environ,RAG_CHECK_OUTPUT=str(out),RAG_CHECK_PORT=str(args.port),
+             RAG_CHECK_PREPARE_INDEX='1' if args.prepare_index else '0',LANGSMITH_TRACING='false',PYTHONIOENCODING='utf-8')
     log=(out/'server.log').open('w',encoding='utf-8')
     server=subprocess.Popen([sys.executable,'-X','utf8','-m','benchmarks.serve_rag_live'],cwd=ROOT,env=env,
         stdout=log,stderr=log,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
@@ -47,7 +55,7 @@ def main():
     try:
         with httpx.Client(base_url=f'http://127.0.0.1:{args.port}',timeout=70,trust_env=False,
                           transport=httpx.HTTPTransport(retries=0)) as client:
-            for _ in range(60):
+            for _ in range(180 if args.prepare_index else 60):
                 if server.poll() is not None:raise RuntimeError('Server stopped; see server.log')
                 try:
                     response=client.get('/openapi.json',timeout=1)

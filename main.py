@@ -3,6 +3,9 @@ import asyncio
 import hashlib
 import json
 import os
+import logging
+import time
+from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Literal
 from dotenv import load_dotenv
@@ -10,11 +13,12 @@ from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse,FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from agent import Agent
-from telemetry import Trace, trace_scope, save,identity
+from telemetry import Trace, trace_scope, save,identity,utc
 
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parent/'.env',override=True)
 
 class MessageIn(BaseModel):
     model_config=ConfigDict(str_strip_whitespace=True,extra='forbid')
@@ -59,11 +63,46 @@ def classify_exception(exc):
 
 
 def create_app(engine=None,trace_path=None,request_timeout=60):
-    app=FastAPI(title='Chatbot tham khao - week8',version='2.1')
+    @asynccontextmanager
+    async def lifespan(app):
+        if engine is None and os.getenv('GROQ_API_KEY'):
+            app.state.engine=Agent().create_agent()
+            capture_runtime(app)
+            start=time.perf_counter()
+            record={'started_at':utc(),'provider_calls':0,'query_embedded':False}
+            logging.getLogger(__name__).info('Preparing the local PDF embedding and FAISS index')
+            try:
+                record.update(await asyncio.to_thread(app.state.engine.rag.prepare))
+                record['status']='ready'
+            except Exception as exc:
+                record.update(status='error',error_type=type(exc).__name__)
+                logging.getLogger(__name__).warning('PDF preparation failed: %s',type(exc).__name__)
+            record.update(finished_at=utc(),duration_ms=round((time.perf_counter()-start)*1000,3))
+            app.state.rag_preparation=record
+            path=Path(__file__).resolve().parent/'.cache'/'rag_preparation.json'
+            path.parent.mkdir(exist_ok=True)
+            path.write_text(json.dumps(record,ensure_ascii=False,indent=2),encoding='utf-8')
+        capture_runtime(app)
+        yield
+    app=FastAPI(title='Chatbot Hỗ trợ tâm lý',version='3.0-faiss',lifespan=lifespan)
     app.add_middleware(CORSMiddleware,allow_origins=['*'],allow_credentials=False,
                        allow_methods=['GET','POST'],allow_headers=['*'])
     app.state.engine=engine
     app.state.session_locks={}
+    app.state.rag_preparation=None
+    app.state.runtime_identity=None
+    app.mount('/frontend',StaticFiles(directory=Path(__file__).resolve().parent/'frontend'),name='frontend')
+
+    def capture_runtime(current_app):
+        # Capture the loaded runtime once; later edits on disk must not relabel
+        # responses from an older process that has not been restarted yet.
+        if current_app.state.runtime_identity is None:
+            runner=current_app.state.engine
+            model=getattr(runner,'model_id',os.getenv('GROQ_MODEL','openai/gpt-oss-20b'))
+            rag=getattr(runner,'rag',None)
+            config=rag.configuration() if hasattr(rag,'configuration') else None
+            current_app.state.runtime_identity=identity(model,config)
+        return current_app.state.runtime_identity
 
     @app.get('/',include_in_schema=False)
     async def frontend():
@@ -72,14 +111,19 @@ def create_app(engine=None,trace_path=None,request_timeout=60):
     @app.get('/health')
     async def health():
         model=getattr(app.state.engine,'model_id',os.getenv('GROQ_MODEL','openai/gpt-oss-20b'))
-        return {'service':'week8-handover','configured':app.state.engine is not None or bool(os.getenv('GROQ_API_KEY')),
-                'fixture':model.startswith('fixture:'),**identity(model)}
+        rag=getattr(app.state.engine,'rag',None)
+        config=rag.configuration() if hasattr(rag,'configuration') else None
+        return {'service':'chatbot-ho-tro-tam-ly','configured':app.state.engine is not None or bool(os.getenv('GROQ_API_KEY')),
+                'fixture':model.startswith('fixture:'),'rag_preparation':app.state.rag_preparation,**capture_runtime(app)}
 
     @app.middleware('http')
     async def evidence(request:Request,call_next):
         if request.url.path!='/chatbot': return await call_next(request)
         model=getattr(app.state.engine,'model_id',os.getenv('GROQ_MODEL','openai/gpt-oss-20b'))
-        trace=Trace(model,'local_fixture' if model.startswith('fixture:') else 'live')
+        rag=getattr(app.state.engine,'rag',None)
+        config=rag.configuration() if hasattr(rag,'configuration') else None
+        trace=Trace(model,'local_fixture' if model.startswith('fixture:') else 'live',
+                    retrieval_policy=config,signature=capture_runtime(app))
         request.state.trace=trace
         request.state.code='UNHANDLED_ERROR'
         request.state.route=None

@@ -9,7 +9,12 @@ Tài liệu chính thức, kiểm tra ngày 28/10/2026:
 - Persistence: https://docs.langchain.com/oss/python/langgraph/persistence
 - Groq: https://console.groq.com/docs/quickstart
 - Tavily Search: https://docs.tavily.com/documentation/api-reference/endpoint/search
-- FAISS lịch sử: https://github.com/facebookresearch/faiss/wiki
-- Model card embedding lịch sử: https://huggingface.co/VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+- FAISS, dùng lại trong bản khôi phục 05/11: https://github.com/facebookresearch/faiss/wiki
+- Model card embedding, cùng checkpoint trong bản gốc và bản khôi phục: https://huggingface.co/VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+- Groq Structured Outputs, kiểm tra 05/11/2026 để dùng JSON Schema strict với model hiện tại: https://console.groq.com/docs/structured-outputs
 
-Bản tuần 8 mặc định BM25 nội bộ không gọi embedding; giữ FAISS/model card để giải thích các phép đo lịch sử. Không so chất lượng mô hình khác bằng một lượt chạy khác điều kiện.
+Bản tuần 8 lịch sử dùng BM25. Bản khôi phục 05/11 dùng lại embedding + FAISS,
+revision `608779b86741a8acd8c8d38132974ff04086b138`, PyVi và mean pooling.
+Giữ riêng cấu hình/số liệu từng bản; không quy thay đổi kết quả cho riêng một
+thuật toán khi đã đổi cả cách chia đoạn, chuẩn hóa và top-k. JSON Schema kiểm
+soát cấu trúc phản hồi, không tự xác nhận nội dung trả lời đúng.

@@ -1,0 +1,55 @@
+{
+  "graph_id": "9df445c208d40dc57c00",
+  "model_id": "openai/gpt-oss-20b",
+  "source_sha256": {
+    "agent.py": "307ee3529d20e75e8f2382430cd22e6a4c0918f054a43a86afa3726a84a1483a",
+    "main.py": "10eddf581ccdf88d666fd7115d4dc0a0e8279d0908e25eb5a6aba58f8f70469a",
+    "Rag_tool.py": "75fee3b5a6268a6081987c34a4d33a9d4ea0685fbeaa2ab2e979235a2a221b01",
+    "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+    "telemetry.py": "ed9007642cf0394b40a1b571501722f17995ba4ffcfe564493d6a86d9cd0d73d",
+    "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+    "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+    "faiss_retrieval.py": "9942ef52b08656c7f665f641a4eed9ae9897c5554987b33fb80f9f291c5c7080",
+    "runtime_policy.py": "da44806c5c272b69e54b5821a0d61562a03aed9561b24e5c9cbd463e4b2e2f8f"
+  },
+  "versions": {
+    "langgraph": "1.2.16",
+    "langchain-core": "1.7.0",
+    "langchain-groq": "1.1.3",
+    "fastapi": "0.141.1",
+    "pypdf": "6.21.2",
+    "faiss-cpu": "1.15.1",
+    "sentence-transformers": "6.1.0",
+    "langchain-huggingface": "1.2.3",
+    "pyvi": "0.1.1"
+  },
+  "retrieval_policy": {
+    "name": "phobert-pyvi-faiss-normalized-l2-v1",
+    "max_chars": 1000,
+    "overlap": 180,
+    "k": 6,
+    "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+    "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+    "embedding_device": "cpu",
+    "normalize_embeddings": true,
+    "pooling": "mean",
+    "word_segmentation": "pyvi",
+    "query_preprocessing": "strip-leading-source-pdf-preamble",
+    "max_input_tokens": 256,
+    "index_type": "IndexFlatL2",
+    "metric": "squared_l2",
+    "score_direction": "smaller_is_nearer"
+  },
+  "prompt_version": "report-restored-faiss-tool-calling-20261105",
+  "generation_policy": {
+    "temperature": 0,
+    "max_output_tokens": 1536,
+    "timeout_seconds": 25
+  },
+  "routing_policy": "model-tool-calling; explicit API modes available",
+  "retry_policy": {
+    "sdk": 0,
+    "tool": 0,
+    "graph": 0
+  }
+}

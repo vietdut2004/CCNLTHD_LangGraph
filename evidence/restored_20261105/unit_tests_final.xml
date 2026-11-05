@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="1" skipped="0" tests="63" time="142.036" timestamp="2026-11-05T20:42:45.906426+07:00" hostname="LAPTOP-K0BVV114"><testcase classname="tests.test_evidence" name="test_math_actual_tool_invocations" time="0.372" /><testcase classname="tests.test_evidence" name="test_full_trace_routes[chat-answer-False]" time="0.376" /><testcase classname="tests.test_evidence" name="test_full_trace_routes[rag-rag-True]" time="0.327" /><testcase classname="tests.test_evidence" name="test_full_trace_routes[web-web-True]" time="0.330" /><testcase classname="tests.test_evidence" name="test_auto_classification[Xin chao-answer]" time="0.310" /><testcase classname="tests.test_evidence" name="test_auto_classification[Stress.pdf noi gi ve hit tho?-rag]" time="0.424" /><testcase classname="tests.test_evidence" name="test_auto_classification[Tim kiem phim moi nhat-web]" time="0.400" /><testcase classname="tests.test_evidence" name="test_auto_classification[Hay ke thuoc cho toi-refuse]" time="0.544" /><testcase classname="tests.test_evidence" name="test_refusal_when_evidence_missing[no_documents]" time="0.292" /><testcase classname="tests.test_evidence" name="test_refusal_when_evidence_missing[bad_citation]" time="0.340" /><testcase classname="tests.test_evidence" name="test_validation_contract[payload0]" time="0.238" /><testcase classname="tests.test_evidence" name="test_validation_contract[payload1]" time="0.280" /><testcase classname="tests.test_evidence" name="test_validation_contract[payload2]" time="0.270" /><testcase classname="tests.test_evidence" name="test_validation_contract[payload3]" time="0.187" /><testcase classname="tests.test_evidence" name="test_validation_contract[payload4]" time="0.174" /><testcase classname="tests.test_evidence" name="test_provider_errors_are_not_http_200[exc0-504-UPSTREAM_TIMEOUT]" time="0.191" /><testcase classname="tests.test_evidence" name="test_provider_errors_are_not_http_200[exc1-429-UPSTREAM_QUOTA]" time="0.252" /><testcase classname="tests.test_evidence" name="test_provider_errors_are_not_http_200[exc2-502-UPSTREAM_AUTH]" time="0.236" /><testcase classname="tests.test_evidence" name="test_provider_errors_are_not_http_200[exc3-502-UPSTREAM_OR_GRAPH_ERROR]" time="0.780" /><testcase classname="tests.test_evidence" name="test_graph_deadline" time="0.231" /><testcase classname="tests.test_evidence" name="test_rag_exception_is_not_answer" time="0.336" /><testcase classname="tests.test_evidence" name="test_cache_hit_miss_user_isolation_version_and_negation" time="0.404" /><testcase classname="tests.test_evidence" name="test_cache_ttl_and_capacity" time="0.003" /><testcase classname="tests.test_evidence" name="test_session_context_1_2_and_other_user_isolation" time="0.486" /><testcase classname="tests.test_evidence" name="test_usage_unknown_and_zero_are_distinct" time="0.126" /><testcase classname="tests.test_evidence" name="test_benchmark_requires_telemetry[None]" time="0.014" /><testcase classname="tests.test_evidence" name="test_benchmark_requires_telemetry[missing1]" time="0.015" /><testcase classname="tests.test_evidence" name="test_bad_grounding_json_refuses" time="0.383" /><testcase classname="tests.test_evidence" name="test_session_disables_cache_and_stale_sources" time="0.325" /><testcase classname="tests.test_live_grounding" name="test_quote_preserves_original_span_with_pdf_whitespace" time="0.005" /><testcase classname="tests.test_live_grounding" name="test_typographic_quotes_match_but_return_original_source_characters" time="0.003" /><testcase classname="tests.test_live_grounding" name="test_typographic_normalization_does_not_remove_negation_or_change_numbers" time="0.002" /><testcase classname="tests.test_live_grounding" name="test_quote_does_not_accept_changed_words_numbers_or_units[kh\xf4ng n\xedn th\u1edf \u0111\u1ebfn 7]" time="0.006" /><testcase classname="tests.test_live_grounding" name="test_quote_does_not_accept_changed_words_numbers_or_units[n\xedn th\u1edf \u0111\u1ebfn 8]" time="0.004" /><testcase classname="tests.test_live_grounding" name="test_quote_does_not_accept_changed_words_numbers_or_units[n\xedn th\u1edf \u0111\u1ebfn 7 gi\xe2y]" time="0.005" /><testcase classname="tests.test_live_grounding" name="test_quote_does_not_accept_changed_words_numbers_or_units[]" time="0.004" /><testcase classname="tests.test_live_grounding" name="test_api_returns_original_source_quote_after_normalization" time="0.292" /><testcase classname="tests.test_live_observations" name="test_explicit_file_wins_over_stale_environment_without_logging_key" time="0.283" /><testcase classname="tests.test_live_observations" name="test_explicit_empty_key_does_not_fall_back_to_stale_key" time="0.049" /><testcase classname="tests.test_live_observations" name="test_unknown_usage_is_blank_in_exported_csv[usage0]" time="0.055" /><testcase classname="tests.test_live_observations" name="test_unknown_usage_is_blank_in_exported_csv[usage1]" time="0.027" /><testcase classname="tests.test_live_observations" name="test_unknown_usage_is_blank_in_exported_csv[usage2]" time="0.048" /><testcase classname="tests.test_live_observations" name="test_complete_usage_preserves_known_zero_and_known_tokens[values0]" time="0.007" /><testcase classname="tests.test_live_observations" name="test_complete_usage_preserves_known_zero_and_known_tokens[values1]" time="0.005" /><testcase classname="tests.test_rag_check" name="test_multiple_named_sections_both_survive_top_k" time="0.008" /><testcase classname="tests.test_rag_check" name="test_invalid_configuration_is_rejected[kwargs0]" time="0.004" /><testcase classname="tests.test_rag_check" name="test_invalid_configuration_is_rejected[kwargs1]" time="0.006" /><testcase classname="tests.test_rag_check" name="test_invalid_configuration_is_rejected[kwargs2]" time="0.005" /><testcase classname="tests.test_rag_check" name="test_invalid_configuration_is_rejected[kwargs3]" time="0.004" /><testcase classname="tests.test_rag_check" name="test_invalid_configuration_is_rejected[kwargs4]" time="0.005" /><testcase classname="tests.test_rag_check" name="test_invalid_configuration_is_rejected[kwargs5]" time="0.005" /><testcase classname="tests.test_rag_check" name="test_version_and_offsets_follow_actual_configuration" time="6.453" /><testcase classname="tests.test_rag_check" name="test_faiss_returns_squared_distances_and_reuses_loaded_index" time="1.121" /><testcase classname="tests.test_rag_check" name="test_embedding_failure_is_not_replaced_with_lexical_results" time="0.860" /><testcase classname="tests.test_tool_calling_restore" name="test_auto_executes_model_choice_and_rewritten_query_without_keywords" time="1.173" /><testcase classname="tests.test_tool_calling_restore" name="test_direct_auto_reply_is_not_generated_twice_or_reused_next_turn" time="0.858" /><testcase classname="tests.test_tool_calling_restore" name="test_grounded_followup_receives_real_session_history" time="0.521" /><testcase classname="tests.test_tool_calling_restore" name="test_unknown_model_tool_is_an_error_without_retrieval" time="0.619" /><testcase classname="tests.test_week8" name="test_pdf_spans_keep_offsets_and_section_boundaries" time="0.078" /><testcase classname="tests.test_week8" name="test_faiss_finds_requested_duration_and_keeps_source_spans" time="22.381"><failure message="OSError: [WinError 1450] Insufficient system resources exist to complete the requested service: 'C:\\Users\\Admin\\Downloads\\CCNLTHD\\CCNLTHD_LangGraph\\.venv\\Lib\\site-packages\\langchain_community\\document_loaders\\hn.py'">def test_faiss_finds_requested_duration_and_keeps_source_spans():
+        tool=RAGTOOL(ROOT/'Stress.pdf')
+&gt;       docs=tool.retrieve('Theo Stress.pdf, bài tập tập trung vào hơi thở nên tiếp tục bao lâu?')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_week8.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Rag_tool.py:46: in retrieve
+    self._prepare_locked(pdf_bytes,version)
+Rag_tool.py:61: in _prepare_locked
+    self.embeddings=load_embeddings(self.embedding_model,self.embedding_revision,
+faiss_retrieval.py:78: in load_embeddings
+    base = HuggingFaceEmbeddings(
+.venv\Lib\site-packages\langchain_huggingface\embeddings\huggingface.py:60: in __init__
+    import sentence_transformers  # type: ignore[import]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\sentence_transformers\__init__.py:10: in &lt;module&gt;
+    from sentence_transformers.backend import (
+.venv\Lib\site-packages\sentence_transformers\backend\__init__.py:3: in &lt;module&gt;
+    from .load import load_onnx_model, load_openvino_model
+.venv\Lib\site-packages\sentence_transformers\backend\load.py:7: in &lt;module&gt;
+    from transformers.configuration_utils import PretrainedConfig
+.venv\Lib\site-packages\transformers\__init__.py:30: in &lt;module&gt;
+    from . import dependency_versions_check
+.venv\Lib\site-packages\transformers\dependency_versions_check.py:16: in &lt;module&gt;
+    from .utils.versions import require_version, require_version_core
+.venv\Lib\site-packages\transformers\utils\__init__.py:22: in &lt;module&gt;
+    from .auto_docstring import (
+.venv\Lib\site-packages\transformers\utils\auto_docstring.py:33: in &lt;module&gt;
+    from .generic import ModelOutput
+.venv\Lib\site-packages\transformers\utils\generic.py:39: in &lt;module&gt;
+    from .import_utils import is_mlx_available, is_torch_available, is_torch_fx_proxy, resolve_internal_import
+.venv\Lib\site-packages\transformers\utils\import_utils.py:51: in &lt;module&gt;
+    PACKAGE_DISTRIBUTION_MAPPING = importlib.metadata.packages_distributions()
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Program Files\Python313\Lib\importlib\metadata\__init__.py:1045: in packages_distributions
+    for pkg in _top_level_declared(dist) or _top_level_inferred(dist):
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Program Files\Python313\Lib\importlib\metadata\__init__.py:1088: in _top_level_inferred
+    opt_names = set(map(_get_toplevel_name, always_iterable(dist.files)))
+                                                            ^^^^^^^^^^
+C:\Program Files\Python313\Lib\importlib\metadata\__init__.py:533: in files
+    return skip_missing_files(
+C:\Program Files\Python313\Lib\importlib\metadata\_functools.py:102: in wrapper
+    return func(param, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Program Files\Python313\Lib\importlib\metadata\__init__.py:531: in skip_missing_files
+    return list(filter(lambda path: path.locate().exists(), package_paths))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Program Files\Python313\Lib\importlib\metadata\__init__.py:531: in &lt;lambda&gt;
+    return list(filter(lambda path: path.locate().exists(), package_paths))
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+C:\Program Files\Python313\Lib\pathlib\_abc.py:450: in exists
+    self.stat(follow_symlinks=follow_symlinks)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/Admin/Downloads/CCNLTHD/CCNLTHD_LangGraph/.venv/Lib/site-packages/langchain_community/document_loaders/hn.py')
+follow_symlinks = True
+
+    def stat(self, *, follow_symlinks=True):
+        """
+        Return the result of the stat() system call on this path, like
+        os.stat() does.
+        """
+&gt;       return os.stat(self, follow_symlinks=follow_symlinks)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       OSError: [WinError 1450] Insufficient system resources exist to complete the requested service: 'C:\\Users\\Admin\\Downloads\\CCNLTHD\\CCNLTHD_LangGraph\\.venv\\Lib\\site-packages\\langchain_community\\document_loaders\\hn.py'
+
+C:\Program Files\Python313\Lib\pathlib\_local.py:515: OSError</failure></testcase><testcase classname="tests.test_week8" name="test_version_changes_with_pdf_bytes" time="0.046" /><testcase classname="tests.test_week8" name="test_cache_key_invalidates_on_prompt_policy_change" time="0.006" /><testcase time="0.007" /><testcase classname="pytest" name="internal" time="0.000"><error message="internal error">MemoryError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\main.py", line 330, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+                         ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\main.py", line 384, in _main
+    config.hook.pytest_runtestloop(session=session)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_caller.py", line 197, in __call__
+    return self._hookexec(
+           ~~~~~~~~~~~~~~^
+        self.name, self._hookimpls.copy(), call_kwargs, firstresult
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_manager.py", line 183, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 195, in _multicall
+    raise exception
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 167, in _multicall
+    teardown.throw(exception)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\logging.py", line 816, in pytest_runtestloop
+    return (yield)  # Run all the tests.
+            ^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 167, in _multicall
+    teardown.throw(exception)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\terminal.py", line 708, in pytest_runtestloop
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 147, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\main.py", line 408, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_caller.py", line 197, in __call__
+    return self._hookexec(
+           ~~~~~~~~~~~~~~^
+        self.name, self._hookimpls.copy(), call_kwargs, firstresult
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_manager.py", line 183, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 195, in _multicall
+    raise exception
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 167, in _multicall
+    teardown.throw(exception)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\warnings.py", line 90, in pytest_runtest_protocol
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 167, in _multicall
+    teardown.throw(exception)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\assertion\__init__.py", line 205, in pytest_runtest_protocol
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 167, in _multicall
+    teardown.throw(exception)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\unittest.py", line 612, in pytest_runtest_protocol
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 167, in _multicall
+    teardown.throw(exception)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\faulthandler.py", line 102, in pytest_runtest_protocol
+    return (yield)
+            ^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 147, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\runner.py", line 118, in pytest_runtest_protocol
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\runner.py", line 139, in runtestprotocol
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\runner.py", line 254, in call_and_report
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_caller.py", line 197, in __call__
+    return self._hookexec(
+           ~~~~~~~~~~~~~~^
+        self.name, self._hookimpls.copy(), call_kwargs, firstresult
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_manager.py", line 183, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 195, in _multicall
+    raise exception
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 167, in _multicall
+    teardown.throw(exception)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\tmpdir.py", line 347, in pytest_runtest_makereport
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 167, in _multicall
+    teardown.throw(exception)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\skipping.py", line 280, in pytest_runtest_makereport
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\pluggy\_execution.py", line 147, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\runner.py", line 385, in pytest_runtest_makereport
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\reports.py", line 438, in from_item_and_call
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\reports.py", line 263, in _format_failed_longrepr
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\python.py", line 1749, in repr_failure
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\nodes.py", line 448, in _repr_failure_py
+    return excinfo.getrepr(
+           ~~~~~~~~~~~~~~~^
+        funcargs=True,
+        ^^^^^^^^^^^^^^
+    ...&lt;5 lines&gt;...
+        truncate_args=truncate_args,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\_code\code.py", line 774, in getrepr
+    return fmt.repr_excinfo(self)
+           ~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\_code\code.py", line 1224, in repr_excinfo
+    reprtraceback = self.repr_traceback(excinfo_)
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\_code\code.py", line 1131, in repr_traceback
+    traceback = filter_excinfo_traceback(self.tbfilter, excinfo)
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\_code\code.py", line 1628, in filter_excinfo_traceback
+    return tbfilter(excinfo)
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\python.py", line 1717, in _traceback_filter
+    ntraceback = traceback.cut(path=path, firstlineno=firstlineno)
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\_code\code.py", line 398, in cut
+    codepath = code.path
+               ^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\_pytest\_code\code.py", line 94, in path
+    if not p.exists():
+           ~~~~~~~~^^
+  File "C:\Program Files\Python313\Lib\pathlib\_abc.py", line 450, in exists
+    self.stat(follow_symlinks=follow_symlinks)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\pathlib\_local.py", line 515, in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\pathlib\_local.py", line 167, in __fspath__
+    return str(self)
+SystemError: &lt;function PurePath.__str__ at 0x000002887F13F240&gt; returned a result with an exception set</error></testcase></testsuite></testsuites>

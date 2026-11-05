@@ -1,0 +1,1286 @@
+{
+  "timestamp": "2026-11-05T07:57:27.406331+00:00",
+  "elapsed_seconds": 67.90297850000206,
+  "pdf_sha256": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a",
+  "cases_sha256": "4c1b06d80d5225abc92f4fbf6d45a4a11ed4abdd388b1860cc53ba6647813dac",
+  "source_sha256": {
+    "Rag_tool.py": "0f286590b7280bad552115e3d7eb900212b209edd89caae78a153f9a5c63a5d9",
+    "faiss_retrieval.py": "608d4770cafd1e519cb6895231253af7e5d5ff654a8dc2434ca685d9cfea6862"
+  },
+  "cases_are_regression_set": true,
+  "human_scores": null,
+  "limitations": [
+    "Question/reference set was created and inspected before this restoration; it is not an independent holdout.",
+    "Multiple configurations are compared on the same set; successful coverage is not independent quality validation.",
+    "No LLM is called in this run."
+  ],
+  "runs": [
+    {
+      "configuration": "chunk500_overlap50_k2_normalizedFalse",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 2,
+      "normalize_embeddings": false,
+      "chunk_count": 22,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 1
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 0
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 6,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_02",
+        "rag_03",
+        "rag_05",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_02",
+        "validation_03",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_04"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk500_overlap50_k3_normalizedFalse",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 3,
+      "normalize_embeddings": false,
+      "chunk_count": 22,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 2
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 0
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 7,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_03",
+        "rag_05",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_02",
+        "validation_03",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_04"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk500_overlap50_k4_normalizedFalse",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 4,
+      "normalize_embeddings": false,
+      "chunk_count": 22,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 3
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 1
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 9,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_05",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_02",
+        "validation_03",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_04"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk500_overlap50_k6_normalizedFalse",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 6,
+      "normalize_embeddings": false,
+      "chunk_count": 22,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 4
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 14,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_05",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "validation_03",
+        "validation_04",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk500_overlap50_k2_normalizedTrue",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 2,
+      "normalize_embeddings": true,
+      "chunk_count": 22,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 1
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 0
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 6,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_02",
+        "rag_03",
+        "rag_05",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_02",
+        "validation_03",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_04"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk500_overlap50_k3_normalizedTrue",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 3,
+      "normalize_embeddings": true,
+      "chunk_count": 22,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 1
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 0
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 6,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_02",
+        "rag_03",
+        "rag_05",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_02",
+        "validation_03",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_04"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk500_overlap50_k4_normalizedTrue",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 4,
+      "normalize_embeddings": true,
+      "chunk_count": 22,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 2
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 2
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 9,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_03",
+        "rag_05",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_02",
+        "validation_03",
+        "validation_04",
+        "fresh_01",
+        "fresh_02",
+        "fresh_04"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk500_overlap50_k6_normalizedTrue",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 6,
+      "normalize_embeddings": true,
+      "chunk_count": 22,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 3
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 14,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_03",
+        "rag_05",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "validation_04",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk650_overlap180_k2_normalizedFalse",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 2,
+      "normalize_embeddings": false,
+      "chunk_count": 19,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 3
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 11,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_02",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_05"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk650_overlap180_k3_normalizedFalse",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 3,
+      "normalize_embeddings": false,
+      "chunk_count": 19,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 4
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 13,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_02",
+        "fresh_05"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk650_overlap180_k4_normalizedFalse",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 4,
+      "normalize_embeddings": false,
+      "chunk_count": 19,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 6
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 17,
+      "failed_answerable_ids": [
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk650_overlap180_k6_normalizedFalse",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 6,
+      "normalize_embeddings": false,
+      "chunk_count": 19,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 6
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 18,
+      "failed_answerable_ids": [
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "validation_04",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk650_overlap180_k2_normalizedTrue",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 2,
+      "normalize_embeddings": true,
+      "chunk_count": 19,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 3
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 11,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_02",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_05"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk650_overlap180_k3_normalizedTrue",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 3,
+      "normalize_embeddings": true,
+      "chunk_count": 19,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 4
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 12,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_05"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk650_overlap180_k4_normalizedTrue",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 4,
+      "normalize_embeddings": true,
+      "chunk_count": 19,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 15,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk650_overlap180_k6_normalizedTrue",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 6,
+      "normalize_embeddings": true,
+      "chunk_count": 19,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 6
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 19,
+      "failed_answerable_ids": [
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_05",
+        "validation_04",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk1000_overlap180_k2_normalizedFalse",
+      "chunk_size": 1000,
+      "overlap": 180,
+      "k": 2,
+      "normalize_embeddings": false,
+      "chunk_count": 12,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 2
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 13,
+      "failed_answerable_ids": [
+        "rag_02",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_06",
+        "validation_01",
+        "validation_02",
+        "validation_03",
+        "fresh_01",
+        "fresh_02",
+        "fresh_05"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk1000_overlap180_k3_normalizedFalse",
+      "chunk_size": 1000,
+      "overlap": 180,
+      "k": 3,
+      "normalize_embeddings": false,
+      "chunk_count": 12,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 2
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 15,
+      "failed_answerable_ids": [
+        "rag_02",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "validation_01",
+        "validation_02",
+        "validation_03",
+        "fresh_02",
+        "fresh_05"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk1000_overlap180_k4_normalizedFalse",
+      "chunk_size": 1000,
+      "overlap": 180,
+      "k": 4,
+      "normalize_embeddings": false,
+      "chunk_count": 12,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 16,
+      "failed_answerable_ids": [
+        "rag_02",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "validation_01",
+        "validation_02",
+        "fresh_02",
+        "fresh_05"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk1000_overlap180_k6_normalizedFalse",
+      "chunk_size": 1000,
+      "overlap": 180,
+      "k": 6,
+      "normalize_embeddings": false,
+      "chunk_count": 12,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 7
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 21,
+      "failed_answerable_ids": [
+        "rag_08",
+        "new_03",
+        "validation_02",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk1000_overlap180_k2_normalizedTrue",
+      "chunk_size": 1000,
+      "overlap": 180,
+      "k": 2,
+      "normalize_embeddings": true,
+      "chunk_count": 12,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 2
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 14,
+      "failed_answerable_ids": [
+        "rag_02",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_06",
+        "validation_01",
+        "validation_02",
+        "validation_03",
+        "fresh_02",
+        "fresh_05"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk1000_overlap180_k3_normalizedTrue",
+      "chunk_size": 1000,
+      "overlap": 180,
+      "k": 3,
+      "normalize_embeddings": true,
+      "chunk_count": 12,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 2
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 14,
+      "failed_answerable_ids": [
+        "rag_02",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_06",
+        "validation_01",
+        "validation_02",
+        "validation_03",
+        "fresh_02",
+        "fresh_05"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk1000_overlap180_k4_normalizedTrue",
+      "chunk_size": 1000,
+      "overlap": 180,
+      "k": 4,
+      "normalize_embeddings": true,
+      "chunk_count": 12,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 2
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 16,
+      "failed_answerable_ids": [
+        "rag_02",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "validation_01",
+        "validation_02",
+        "validation_03",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    },
+    {
+      "configuration": "chunk1000_overlap180_k6_normalizedTrue",
+      "chunk_size": 1000,
+      "overlap": 180,
+      "k": 6,
+      "normalize_embeddings": true,
+      "chunk_count": 12,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "dimensions": 768,
+      "index": "IndexFlatL2",
+      "metric": "squared_l2",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 7
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 21,
+      "failed_answerable_ids": [
+        "rag_08",
+        "new_03",
+        "validation_02",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+    }
+  ]
+}

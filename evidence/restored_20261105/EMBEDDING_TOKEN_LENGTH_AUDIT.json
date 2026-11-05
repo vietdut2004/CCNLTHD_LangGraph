@@ -1,0 +1,80 @@
+{
+  "tokenizer_max_length": 256,
+  "observed_chunks": 12,
+  "chunks_exceeding_embedding_limit": [],
+  "chunks": [
+    {
+      "chunk_id": "chunk-001",
+      "page": 1,
+      "chars": 950,
+      "tokens_before_truncation": 193
+    },
+    {
+      "chunk_id": "chunk-002",
+      "page": 1,
+      "chars": 924,
+      "tokens_before_truncation": 187
+    },
+    {
+      "chunk_id": "chunk-003",
+      "page": 1,
+      "chars": 513,
+      "tokens_before_truncation": 107
+    },
+    {
+      "chunk_id": "chunk-004",
+      "page": 2,
+      "chars": 979,
+      "tokens_before_truncation": 203
+    },
+    {
+      "chunk_id": "chunk-005",
+      "page": 2,
+      "chars": 466,
+      "tokens_before_truncation": 109
+    },
+    {
+      "chunk_id": "chunk-006",
+      "page": 3,
+      "chars": 970,
+      "tokens_before_truncation": 216
+    },
+    {
+      "chunk_id": "chunk-007",
+      "page": 3,
+      "chars": 768,
+      "tokens_before_truncation": 181
+    },
+    {
+      "chunk_id": "chunk-008",
+      "page": 4,
+      "chars": 986,
+      "tokens_before_truncation": 208
+    },
+    {
+      "chunk_id": "chunk-009",
+      "page": 4,
+      "chars": 714,
+      "tokens_before_truncation": 159
+    },
+    {
+      "chunk_id": "chunk-010",
+      "page": 5,
+      "chars": 987,
+      "tokens_before_truncation": 221
+    },
+    {
+      "chunk_id": "chunk-011",
+      "page": 5,
+      "chars": 650,
+      "tokens_before_truncation": 131
+    },
+    {
+      "chunk_id": "chunk-012",
+      "page": 6,
+      "chars": 852,
+      "tokens_before_truncation": 180
+    }
+  ],
+  "context_policy": "Original complete chunk text is sent to the LLM; embedding token truncation does not truncate citation text."
+}

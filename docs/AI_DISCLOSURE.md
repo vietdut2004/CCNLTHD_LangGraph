@@ -1,4 +1,19 @@
-# AI Disclosure — bản nộp ngày 03/11/2026
+# AI Disclosure
+
+Ngày 05/11/2026, Codex hỗ trợ khôi phục Embedding + FAISS từ source đã lưu,
+phục dựng giao diện theo ảnh trong báo cáo và sửa luồng chọn công cụ bằng model.
+Không tìm thấy HTML của giao diện cũ trong repo/gói lưu; logo được trích từ ảnh
+báo cáo, bố cục được dựng lại bằng HTML/CSS/JS. Model sinh và checkpoint embedding
+giữ nguyên; không huấn luyện model mới. Codex cũng hỗ trợ biên tập các đoạn mô
+tả triển khai cho đúng source và dễ đọc hơn. Nội dung do AI hỗ trợ vẫn cần nhóm
+đối chiếu với code, tài liệu nguồn và phản hồi thực tế.
+
+Các câu hỏi RAG đã được dùng để điều chỉnh cấu hình nên được xem là bộ hồi quy,
+không phải dữ liệu độc lập. Không tự tạo điểm người thật cho bản khôi phục.
+Điểm 96/104 và 20/32 dưới đây giữ đúng các lượt cũ; lỗi, từ chối và các lần kiểm
+tra chưa đạt ngày 05/11 được lưu riêng cùng các lần chạy sau sửa.
+
+## Hồ sơ lịch sử ngày 03/11/2026
 
 Codex hỗ trợ đọc và đối chiếu source với báo cáo, sửa retrieval RAG, viết script
 kiểm thử, truy vết lỗi, tổ chức dữ liệu, tạo chỉ mục, soạn tài liệu và đóng gói.

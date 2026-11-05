@@ -1,0 +1,484 @@
+{
+  "trace_id": "27807932154845fe8051681e33affcdb",
+  "suite": "live",
+  "timestamp": "2026-11-05T16:33:58.031451+00:00",
+  "source_sha256": {
+    "agent.py": "307ee3529d20e75e8f2382430cd22e6a4c0918f054a43a86afa3726a84a1483a",
+    "main.py": "10eddf581ccdf88d666fd7115d4dc0a0e8279d0908e25eb5a6aba58f8f70469a",
+    "Rag_tool.py": "75fee3b5a6268a6081987c34a4d33a9d4ea0685fbeaa2ab2e979235a2a221b01",
+    "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+    "telemetry.py": "ed9007642cf0394b40a1b571501722f17995ba4ffcfe564493d6a86d9cd0d73d",
+    "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+    "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+    "faiss_retrieval.py": "9942ef52b08656c7f665f641a4eed9ae9897c5554987b33fb80f9f291c5c7080",
+    "runtime_policy.py": "da44806c5c272b69e54b5821a0d61562a03aed9561b24e5c9cbd463e4b2e2f8f"
+  },
+  "model_id": "openai/gpt-oss-20b",
+  "versions": {
+    "langgraph": "1.2.16",
+    "langchain-core": "1.7.0",
+    "langchain-groq": "1.1.3",
+    "fastapi": "0.141.1",
+    "pypdf": "6.21.2",
+    "faiss-cpu": "1.15.1",
+    "sentence-transformers": "6.1.0",
+    "langchain-huggingface": "1.2.3",
+    "pyvi": "0.1.1"
+  },
+  "prompt_version": "report-restored-faiss-tool-calling-20261105",
+  "retrieval_policy": {
+    "name": "phobert-pyvi-faiss-normalized-l2-v1",
+    "max_chars": 1000,
+    "overlap": 180,
+    "k": 6,
+    "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+    "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+    "embedding_device": "cpu",
+    "normalize_embeddings": true,
+    "pooling": "mean",
+    "word_segmentation": "pyvi",
+    "query_preprocessing": "strip-leading-source-pdf-preamble",
+    "max_input_tokens": 256,
+    "index_type": "IndexFlatL2",
+    "metric": "squared_l2",
+    "score_direction": "smaller_is_nearer"
+  },
+  "routing_policy": "model-tool-calling; explicit API modes available",
+  "generation_policy": {
+    "temperature": 0,
+    "max_output_tokens": 1536,
+    "timeout_seconds": 25
+  },
+  "retry_policy": {
+    "sdk": 0,
+    "tool": 0,
+    "graph": 0
+  },
+  "graph_id": "9df445c208d40dc57c00",
+  "http_status": 200,
+  "code": "OK",
+  "route": "rag",
+  "server_latency_ms": 8145.419,
+  "events": [
+    {
+      "timestamp": "2026-11-05T16:33:58.520816+00:00",
+      "kind": "model_start",
+      "run_id": "9af5006735fd4f6ea2234e631ed1a1b7",
+      "model_id": "openai/gpt-oss-20b"
+    },
+    {
+      "timestamp": "2026-11-05T16:34:02.405438+00:00",
+      "kind": "model_end",
+      "run_id": "9af5006735fd4f6ea2234e631ed1a1b7",
+      "model_id": "openai/gpt-oss-20b",
+      "purpose": "tool_selection",
+      "usage": {
+        "input_tokens": 521,
+        "output_tokens": 164,
+        "total_tokens": 685,
+        "output_token_details": {
+          "reasoning": 130
+        }
+      },
+      "tool_calls": [
+        {
+          "name": "rag_tool",
+          "args": {
+            "query": "Ý nghĩa của hít thở sâu là gì?"
+          },
+          "id": "fc_5f0a5ada-15a3-4b06-975b-38cb7ba84ed9",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-11-05T16:34:02.405827+00:00",
+      "kind": "classify",
+      "route": "rag",
+      "policy": "model-tool-calling",
+      "mode": "auto",
+      "selected_tool": "rag_tool",
+      "query": "Ý nghĩa của hít thở sâu là gì?"
+    },
+    {
+      "timestamp": "2026-11-05T16:34:02.424469+00:00",
+      "kind": "cache",
+      "status": "disabled",
+      "reason": "session_or_anonymous_or_opt_out"
+    },
+    {
+      "timestamp": "2026-11-05T16:34:02.424592+00:00",
+      "kind": "tool_start",
+      "run_id": "f656de4669bc4dd4864ac1d8eace4b02",
+      "tool_name": "rag_tool",
+      "arguments": {
+        "query": "Ý nghĩa của hít thở sâu là gì?"
+      }
+    },
+    {
+      "timestamp": "2026-11-05T16:34:04.864568+00:00",
+      "kind": "tool_end",
+      "run_id": "f656de4669bc4dd4864ac1d8eace4b02",
+      "tool_name": "rag_tool",
+      "result": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2"
+        },
+        {
+          "id": "pdf-2",
+          "rank": 2,
+          "title": "Stress.pdf",
+          "page": 5,
+          "chunk_id": "chunk-010",
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.656766414642334,
+          "metric": "squared_l2"
+        },
+        {
+          "id": "pdf-3",
+          "rank": 3,
+          "title": "Stress.pdf",
+          "page": 6,
+          "chunk_id": "chunk-012",
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.6761284470558167,
+          "metric": "squared_l2"
+        },
+        {
+          "id": "pdf-4",
+          "rank": 4,
+          "title": "Stress.pdf",
+          "page": 5,
+          "chunk_id": "chunk-011",
+          "start": 815,
+          "end": 1465,
+          "section": "2.3.2. Tập trung vào hơi thở",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.6849138736724854,
+          "metric": "squared_l2"
+        },
+        {
+          "id": "pdf-5",
+          "rank": 5,
+          "title": "Stress.pdf",
+          "page": 3,
+          "chunk_id": "chunk-006",
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.7011740207672119,
+          "metric": "squared_l2"
+        },
+        {
+          "id": "pdf-6",
+          "rank": 6,
+          "title": "Stress.pdf",
+          "page": 2,
+          "chunk_id": "chunk-005",
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.718011736869812,
+          "metric": "squared_l2"
+        }
+      ],
+      "error_code": null
+    },
+    {
+      "timestamp": "2026-11-05T16:34:04.864618+00:00",
+      "kind": "retrieval_context",
+      "query": "Ý nghĩa của hít thở sâu là gì?",
+      "documents": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "text": "Các kỹ thuật thở sâu để giảm căng thẳng \nBạn đã bao giờ để ý đến cách bạn hít thở sâu khi cảm thấy thư thái chưa? Hãy \ndành một chút thời gian để ý xem cơ thể bạn cảm thấy thế nào. Hoặc nghĩ về \ncách bạn thở khi thức dậy vào buổi sáng hoặc ngay trước khi bạn chìm vào \ngiấc ngủ. Các bài tập thở có thể giúp bạn thư giãn. Cùng tìm hiểu thêm các kỹ \nthuật thở sâu để giảm căng thẳng trong các kĩ thuật hít thở dưới đây. \n1. Ý nghĩa của việc hít thở sâu \nHít thở sâu là một trong những cách tốt nhất để giảm căng thẳng trong cơ thể của \nbạn. Điều này là do khi chúng ta hít thở sâu, não bộ của chúng ta sẽ nhận được một \nthông điệp khiến cơ thể bình tĩnh và thư giãn. Sau đó, bộ não sẽ gửi thông điệp này \nđến toàn bộ cơ thể. Những điều xảy ra khi chúng ta cảm thấy căng thẳng, chẳng \nhạn như nhịp tim tăng, thở nhanh và huyết áp cao, tất cả đều giảm khi bạn hít thở \nsâu để thư giãn. Hãy lưu ý, cách bạn thở ảnh hưởng đến toàn bộ cơ thể của chính \nbạn.",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2"
+        },
+        {
+          "id": "pdf-2",
+          "rank": 2,
+          "title": "Stress.pdf",
+          "page": 5,
+          "chunk_id": "chunk-010",
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "score": 0.656766414642334,
+          "metric": "squared_l2"
+        },
+        {
+          "id": "pdf-3",
+          "rank": 3,
+          "title": "Stress.pdf",
+          "page": 6,
+          "chunk_id": "chunk-012",
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "text": " Hít thở sâu vài lần để thư giãn. \n Hít vào. Căng cơ bàn chân. \n Thở ra. Giải phóng sự căng thẳng ở bàn chân. \n Hít vào. Căng cơ bắp chân. \n Thở ra. Giải phóng sự căng thẳng ở bắp chân. \n Vận động theo cách của riêng mình. Căng cứng từng nhóm cơ. Điều \nnày bao gồm chân, bụng, ngực, ngón tay, cánh tay, vai, cổ và mặt. \nCách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \ncách không cần thiết. Đối với những người thường xuyên gặp phải những áp \nlực trong cuộc sống, họ có thể thử áp dụng một số kỹ thuật thở như : Thở \nbằng bụng, thở theo nhịp 4 – 7 – 8, thở cuộn, thực hiện các bài tập thở vào \nbuổi sáng... để giúp cải thiện tâm trạng cũng như nâng cao sức khỏe nói \nchung.",
+          "score": 0.6761284470558167,
+          "metric": "squared_l2"
+        },
+        {
+          "id": "pdf-4",
+          "rank": 4,
+          "title": "Stress.pdf",
+          "page": 5,
+          "chunk_id": "chunk-011",
+          "start": 815,
+          "end": 1465,
+          "section": "2.3.2. Tập trung vào hơi thở",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "text": "hoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên \nbình và tĩnh lặng. Cố gắng cảm nhận nó khắp cơ thể mình. \n Khi thở ra, hãy tưởng tượng rằng không khí rời đi cùng với sự căng \nthẳng của mình. \n Tiếp tục trong 10 đến 20 phút. \n2.3.3. Thư giãn cơ bắp \nTrong kỹ thuật thở này, bạn hít vào khi căng một nhóm cơ và thở ra khi thả \nlỏng nhóm cơ đó. Thư giãn cơ bắp có thể giúp chúng ta cảm thấy thoải mái \ncả về thể chất lẫn tinh thần. Các bước thực hiện kỹ thuật thư giãn cơ bắp bao \ngồm : \n Nằm thoải mái trên sàn hoặc giường.",
+          "score": 0.6849138736724854,
+          "metric": "squared_l2"
+        },
+        {
+          "id": "pdf-5",
+          "rank": 5,
+          "title": "Stress.pdf",
+          "page": 3,
+          "chunk_id": "chunk-006",
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "score": 0.7011740207672119,
+          "metric": "squared_l2"
+        },
+        {
+          "id": "pdf-6",
+          "rank": 6,
+          "title": "Stress.pdf",
+          "page": 2,
+          "chunk_id": "chunk-005",
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "score": 0.718011736869812,
+          "metric": "squared_l2"
+        }
+      ],
+      "configuration": {
+        "name": "phobert-pyvi-faiss-normalized-l2-v1",
+        "max_chars": 1000,
+        "overlap": 180,
+        "k": 6,
+        "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+        "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+        "embedding_device": "cpu",
+        "normalize_embeddings": true,
+        "pooling": "mean",
+        "word_segmentation": "pyvi",
+        "query_preprocessing": "strip-leading-source-pdf-preamble",
+        "max_input_tokens": 256,
+        "index_type": "IndexFlatL2",
+        "metric": "squared_l2",
+        "score_direction": "smaller_is_nearer"
+      }
+    },
+    {
+      "timestamp": "2026-11-05T16:34:04.884359+00:00",
+      "kind": "model_start",
+      "run_id": "70246fee82914d758ec813ee8536a775",
+      "model_id": "openai/gpt-oss-20b"
+    },
+    {
+      "timestamp": "2026-11-05T16:34:06.122378+00:00",
+      "kind": "model_end",
+      "run_id": "70246fee82914d758ec813ee8536a775",
+      "model_id": "openai/gpt-oss-20b",
+      "purpose": "answer",
+      "usage": {
+        "input_tokens": 4267,
+        "output_tokens": 359,
+        "total_tokens": 4626,
+        "output_token_details": {
+          "reasoning": 228
+        }
+      },
+      "tool_calls": []
+    },
+    {
+      "timestamp": "2026-11-05T16:34:06.150113+00:00",
+      "kind": "evidence_check",
+      "status": "accepted",
+      "reason": "accepted",
+      "source_ids": [
+        "pdf-1",
+        "pdf-1",
+        "pdf-1",
+        "pdf-1",
+        "pdf-1"
+      ]
+    },
+    {
+      "timestamp": "2026-11-05T16:34:06.164357+00:00",
+      "kind": "final",
+      "status": "ok",
+      "code": "OK",
+      "route": "rag",
+      "response": "Hít thở sâu giúp giảm căng thẳng, làm dịu nhịp tim, huyết áp và kích hoạt phản ứng thư giãn trong cơ thể.",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "Hít thở sâu là một trong những cách tốt nhất để giảm căng thẳng trong cơ thể của"
+        },
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "bạn. Điều này là do khi chúng ta hít thở sâu, não bộ của chúng ta sẽ nhận được một"
+        },
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "thông điệp khiến cơ thể bình tĩnh và thư giãn. Sau đó, bộ não sẽ gửi thông điệp này"
+        },
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "hạn như nhịp tim tăng, thở nhanh và huyết áp cao, tất cả đều giảm khi bạn hít thở"
+        },
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "sâu để thư giãn. Hãy lưu ý, cách bạn thở ảnh hưởng đến toàn bộ cơ thể của chính"
+        }
+      ]
+    }
+  ],
+  "model_calls": [
+    {
+      "run_id": "9af5006735fd4f6ea2234e631ed1a1b7",
+      "model_id": "openai/gpt-oss-20b",
+      "purpose": "tool_selection",
+      "usage": {
+        "input_tokens": 521,
+        "output_tokens": 164,
+        "total_tokens": 685,
+        "output_token_details": {
+          "reasoning": 130
+        }
+      },
+      "finish_reason": "tool_calls",
+      "response_content": "",
+      "tool_calls": [
+        {
+          "name": "rag_tool",
+          "args": {
+            "query": "Ý nghĩa của hít thở sâu là gì?"
+          },
+          "id": "fc_5f0a5ada-15a3-4b06-975b-38cb7ba84ed9",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "run_id": "70246fee82914d758ec813ee8536a775",
+      "model_id": "openai/gpt-oss-20b",
+      "purpose": "answer",
+      "usage": {
+        "input_tokens": 4267,
+        "output_tokens": 359,
+        "total_tokens": 4626,
+        "output_token_details": {
+          "reasoning": 228
+        }
+      },
+      "finish_reason": "stop",
+      "response_content": "{\"supported\":true,\"answer\":\"Hít thở sâu giúp giảm căng thẳng, làm dịu nhịp tim, huyết áp và kích hoạt phản ứng thư giãn trong cơ thể.\",\"citations\":[{\"id\":\"pdf-1\",\"quote\":\"pdf-1:q8\"},{\"id\":\"pdf-1\",\"quote\":\"pdf-1:q9\"},{\"id\":\"pdf-1\",\"quote\":\"pdf-1:q10\"},{\"id\":\"pdf-1\",\"quote\":\"pdf-1:q12\"},{\"id\":\"pdf-1\",\"quote\":\"pdf-1:q13\"}]}",
+      "tool_calls": []
+    }
+  ],
+  "errors": [],
+  "usage": {
+    "attempted_model_calls": 2,
+    "calls_with_usage": 2,
+    "usage_complete": true,
+    "observed_tokens": {
+      "input_tokens": 4788,
+      "output_tokens": 523,
+      "total_tokens": 5311
+    },
+    "total_tokens": 5311
+  }
+}

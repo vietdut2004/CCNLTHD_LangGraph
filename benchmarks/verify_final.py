@@ -22,8 +22,16 @@ def checked_path(relative):
 
 def verify():
     expected = load('handover/EXPECTED_RUNTIME_IDENTITY.json')
+    restored_path = ROOT/'docs/RESTORED_RUNTIME_IDENTITY.json'
+    restored = load('docs/RESTORED_RUNTIME_IDENTITY.json') if restored_path.is_file() else None
+    historical_root = restored['historical_runtime_snapshot'] if restored else ''
     for name, digest in expected['source_sha256'].items():
-        assert hashlib.sha256(checked_path(name).read_bytes()).hexdigest() == digest, name
+        relative = historical_root+'/'+name if historical_root else name
+        assert hashlib.sha256(checked_path(relative).read_bytes()).hexdigest() == digest, relative
+    if restored:
+        for name, digest in {**restored['identity']['source_sha256'],**restored['frontend_sha256']}.items():
+            assert hashlib.sha256(checked_path(name).read_bytes()).hexdigest() == digest, name
+        assert hashlib.sha256(checked_path('requirements-locked.txt').read_bytes()).hexdigest() == restored['requirements_sha256']
     evidence_hashes = load('handover/EVIDENCE_SHA256.json')
     for name, digest in evidence_hashes.items():
         assert hashlib.sha256(checked_path('handover/' + name).read_bytes()).hexdigest() == digest, name
@@ -59,7 +67,9 @@ def verify():
         name = 'CHAM_NGUOI_THAT.json' if count == 13 else 'CHAM_WEB_NGUOI_THAT.json'
         grades = load('handover/evidence/' + folder + '/' + name)
         assert len(grades['rows']) == count and sum(r['total'] for r in grades['rows']) == total
-    return {'verified': True, 'runtime_files': len(expected['source_sha256']),
+    return {'verified': True, 'historical_runtime_files': len(expected['source_sha256']),
+            'active_graph_id':restored['identity']['graph_id'] if restored else expected['graph_id'],
+            'historical_graph_id':expected['graph_id'],
             'preserved_evidence_files': len(evidence_hashes), 'indexed_http_results': len(rows),
             'retrieval_cases': 27, 'answerable_span_hits': 25,
             'real_auth_failure_runs_preserved': 2, 'human_scores_unchanged': True,

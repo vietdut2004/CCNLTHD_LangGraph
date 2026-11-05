@@ -1,0 +1,215 @@
+[
+  {
+    "started_at": "2026-11-05T16:33:58.022Z",
+    "request": {
+      "question": "bạn cho mình biết ý nghĩa của hít thở sâu là gì",
+      "mode": "auto",
+      "user_id": "browser-15d3d167-7d2b-4fe9-8800-735fd5968ccf",
+      "session_id": "1e23782f-6fcb-4aae-b90b-b44f9b2059d3",
+      "use_cache": false
+    },
+    "fixture": false,
+    "http_status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-trace-id": "27807932154845fe8051681e33affcdb"
+    },
+    "response_body": "{\"response\":\"Hít thở sâu giúp giảm căng thẳng, làm dịu nhịp tim, huyết áp và kích hoạt phản ứng thư giãn trong cơ thể.\",\"status\":\"ok\",\"code\":\"OK\",\"trace_id\":\"27807932154845fe8051681e33affcdb\",\"graph_id\":\"9df445c208d40dc57c00\",\"model_id\":\"openai/gpt-oss-20b\",\"route\":\"rag\",\"sources\":[{\"id\":\"pdf-1\",\"rank\":1,\"title\":\"Stress.pdf\",\"page\":1,\"chunk_id\":\"chunk-001\",\"start\":0,\"end\":950,\"section\":\"\",\"source_version\":\"91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean\",\"score\":0.5599328279495239,\"metric\":\"squared_l2\",\"quote\":\"Hít thở sâu là một trong những cách tốt nhất để giảm căng thẳng trong cơ thể của\"},{\"id\":\"pdf-1\",\"rank\":1,\"title\":\"Stress.pdf\",\"page\":1,\"chunk_id\":\"chunk-001\",\"start\":0,\"end\":950,\"section\":\"\",\"source_version\":\"91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean\",\"score\":0.5599328279495239,\"metric\":\"squared_l2\",\"quote\":\"bạn. Điều này là do khi chúng ta hít thở sâu, não bộ của chúng ta sẽ nhận được một\"},{\"id\":\"pdf-1\",\"rank\":1,\"title\":\"Stress.pdf\",\"page\":1,\"chunk_id\":\"chunk-001\",\"start\":0,\"end\":950,\"section\":\"\",\"source_version\":\"91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean\",\"score\":0.5599328279495239,\"metric\":\"squared_l2\",\"quote\":\"thông điệp khiến cơ thể bình tĩnh và thư giãn. Sau đó, bộ não sẽ gửi thông điệp này\"},{\"id\":\"pdf-1\",\"rank\":1,\"title\":\"Stress.pdf\",\"page\":1,\"chunk_id\":\"chunk-001\",\"start\":0,\"end\":950,\"section\":\"\",\"source_version\":\"91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean\",\"score\":0.5599328279495239,\"metric\":\"squared_l2\",\"quote\":\"hạn như nhịp tim tăng, thở nhanh và huyết áp cao, tất cả đều giảm khi bạn hít thở\"},{\"id\":\"pdf-1\",\"rank\":1,\"title\":\"Stress.pdf\",\"page\":1,\"chunk_id\":\"chunk-001\",\"start\":0,\"end\":950,\"section\":\"\",\"source_version\":\"91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean\",\"score\":0.5599328279495239,\"metric\":\"squared_l2\",\"quote\":\"sâu để thư giãn. Hãy lưu ý, cách bạn thở ảnh hưởng đến toàn bộ cơ thể của chính\"}],\"usage\":{\"attempted_model_calls\":2,\"calls_with_usage\":2,\"usage_complete\":true,\"observed_tokens\":{\"input_tokens\":4788,\"output_tokens\":523,\"total_tokens\":5311},\"total_tokens\":5311}}",
+    "response": {
+      "response": "Hít thở sâu giúp giảm căng thẳng, làm dịu nhịp tim, huyết áp và kích hoạt phản ứng thư giãn trong cơ thể.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "27807932154845fe8051681e33affcdb",
+      "graph_id": "9df445c208d40dc57c00",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "Hít thở sâu là một trong những cách tốt nhất để giảm căng thẳng trong cơ thể của"
+        },
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "bạn. Điều này là do khi chúng ta hít thở sâu, não bộ của chúng ta sẽ nhận được một"
+        },
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "thông điệp khiến cơ thể bình tĩnh và thư giãn. Sau đó, bộ não sẽ gửi thông điệp này"
+        },
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "hạn như nhịp tim tăng, thở nhanh và huyết áp cao, tất cả đều giảm khi bạn hít thở"
+        },
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "sâu để thư giãn. Hãy lưu ý, cách bạn thở ảnh hưởng đến toàn bộ cơ thể của chính"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 2,
+        "calls_with_usage": 2,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 4788,
+          "output_tokens": 523,
+          "total_tokens": 5311
+        },
+        "total_tokens": 5311
+      }
+    },
+    "latency_ms_browser": 8183,
+    "finished_at": "2026-11-05T16:34:06.206Z"
+  },
+  {
+    "started_at": "2026-11-05T16:34:51.651Z",
+    "request": {
+      "question": "bạn có khỏe kh",
+      "mode": "auto",
+      "user_id": "browser-15d3d167-7d2b-4fe9-8800-735fd5968ccf",
+      "session_id": "1e23782f-6fcb-4aae-b90b-b44f9b2059d3",
+      "use_cache": false
+    },
+    "fixture": false,
+    "http_status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-trace-id": "f1b58d16d65e4ccb90ff050ff8ea1b6c"
+    },
+    "response_body": "{\"response\":\"Mình luôn cố gắng “khỏe” để lắng nghe và hỗ trợ bạn. Bạn có điều gì muốn chia sẻ không?\",\"status\":\"ok\",\"code\":\"OK\",\"trace_id\":\"f1b58d16d65e4ccb90ff050ff8ea1b6c\",\"graph_id\":\"9df445c208d40dc57c00\",\"model_id\":\"openai/gpt-oss-20b\",\"route\":\"answer\",\"sources\":[],\"usage\":{\"attempted_model_calls\":1,\"calls_with_usage\":1,\"usage_complete\":true,\"observed_tokens\":{\"input_tokens\":571,\"output_tokens\":102,\"total_tokens\":673},\"total_tokens\":673}}",
+    "response": {
+      "response": "Mình luôn cố gắng “khỏe” để lắng nghe và hỗ trợ bạn. Bạn có điều gì muốn chia sẻ không?",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "f1b58d16d65e4ccb90ff050ff8ea1b6c",
+      "graph_id": "9df445c208d40dc57c00",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 571,
+          "output_tokens": 102,
+          "total_tokens": 673
+        },
+        "total_tokens": 673
+      }
+    },
+    "latency_ms_browser": 3307,
+    "finished_at": "2026-11-05T16:34:54.958Z"
+  },
+  {
+    "started_at": "2026-11-05T16:35:40.238Z",
+    "request": {
+      "question": "bạn gợi ý cho tôi vài bộ phim truyền động lực sống được kh",
+      "mode": "auto",
+      "user_id": "browser-15d3d167-7d2b-4fe9-8800-735fd5968ccf",
+      "session_id": "1e23782f-6fcb-4aae-b90b-b44f9b2059d3",
+      "use_cache": false
+    },
+    "fixture": false,
+    "http_status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-trace-id": "7738a52e3aa84b25882590fd6df1c2ba"
+    },
+    "response_body": "{\"response\":\"Bạn có thể xem các bộ phim sau: The Pursuit of Happyness, Dead Poets Society, The Secret Life of Walter Mitty, The Karate Kid, Soul Surfer.\",\"status\":\"ok\",\"code\":\"OK\",\"trace_id\":\"7738a52e3aa84b25882590fd6df1c2ba\",\"graph_id\":\"9df445c208d40dc57c00\",\"model_id\":\"openai/gpt-oss-20b\",\"route\":\"web\",\"sources\":[{\"id\":\"web-1\",\"title\":\"[ToMo] 15 Bộ Phim \\\" Tạo Động Lực \\\" Cho Việc Học Tập Mà Nhất Định Bạn Phải Xem - YBOX\",\"url\":\"https://ybox.vn/gia-vi/tomo-15-bo-phim-tao-dong-luc-cho-viec-hoc-tap-ma-nhat-dinh-ban-phai-xem-616a6e6094abd77962479ca3\",\"retrieved_at\":\"2026-11-05T16:35:47.627264+00:00\",\"quote\":\"Everything\\\\, \\\\Freedom Writers\\\\, \\\\The Pursuit of Happyness\\\\ kể về nghị lực phi thường, niềm tin bản thn và đam mê dẫn đến thành công. \\\\Dead Poets Society\\\\, \\\\October Sky\\\\, \\\\Legally Blonde\\\\\"},{\"id\":\"web-2\",\"title\":\"21 phim truyền cảm hứng hay nhất giúp bạn có thêm động lực trong cuộc sống\",\"url\":\"https://voh.com.vn/phim/phim-truyen-cam-hung-451399.html\",\"retrieved_at\":\"2026-11-05T16:35:47.627302+00:00\",\"quote\":\"1. The Secret Life of Walter Mitty - Bí Mật Của Walter Mitty (2013)\"},{\"id\":\"web-3\",\"title\":\"Những bộ phim tạo động lực: 20 phim giúp bạn vượt lên chính mình\",\"url\":\"https://bazaarvietnam.vn/nhung-bo-phim-tao-dong-luc\",\"retrieved_at\":\"2026-11-05T16:35:47.627312+00:00\",\"quote\":\"### Xem thêm [...] Tm hồn trên sóng là một trong những bộ phim tạo động lực hay nhất. Nội dung phim dựa trên quyển tự truyện Soul Surfer: A True Story of Faith, Family, and Fighting to Get\"}],\"usage\":{\"attempted_model_calls\":2,\"calls_with_usage\":2,\"usage_complete\":true,\"observed_tokens\":{\"input_tokens\":3435,\"output_tokens\":909,\"total_tokens\":4344},\"total_tokens\":4344}}",
+    "response": {
+      "response": "Bạn có thể xem các bộ phim sau: The Pursuit of Happyness, Dead Poets Society, The Secret Life of Walter Mitty, The Karate Kid, Soul Surfer.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "7738a52e3aa84b25882590fd6df1c2ba",
+      "graph_id": "9df445c208d40dc57c00",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "web",
+      "sources": [
+        {
+          "id": "web-1",
+          "title": "[ToMo] 15 Bộ Phim \" Tạo Động Lực \" Cho Việc Học Tập Mà Nhất Định Bạn Phải Xem - YBOX",
+          "url": "https://ybox.vn/gia-vi/tomo-15-bo-phim-tao-dong-luc-cho-viec-hoc-tap-ma-nhat-dinh-ban-phai-xem-616a6e6094abd77962479ca3",
+          "retrieved_at": "2026-11-05T16:35:47.627264+00:00",
+          "quote": "Everything\\, \\Freedom Writers\\, \\The Pursuit of Happyness\\ kể về nghị lực phi thường, niềm tin bản thn và đam mê dẫn đến thành công. \\Dead Poets Society\\, \\October Sky\\, \\Legally Blonde\\"
+        },
+        {
+          "id": "web-2",
+          "title": "21 phim truyền cảm hứng hay nhất giúp bạn có thêm động lực trong cuộc sống",
+          "url": "https://voh.com.vn/phim/phim-truyen-cam-hung-451399.html",
+          "retrieved_at": "2026-11-05T16:35:47.627302+00:00",
+          "quote": "1. The Secret Life of Walter Mitty - Bí Mật Của Walter Mitty (2013)"
+        },
+        {
+          "id": "web-3",
+          "title": "Những bộ phim tạo động lực: 20 phim giúp bạn vượt lên chính mình",
+          "url": "https://bazaarvietnam.vn/nhung-bo-phim-tao-dong-luc",
+          "retrieved_at": "2026-11-05T16:35:47.627312+00:00",
+          "quote": "### Xem thêm [...] Tm hồn trên sóng là một trong những bộ phim tạo động lực hay nhất. Nội dung phim dựa trên quyển tự truyện Soul Surfer: A True Story of Faith, Family, and Fighting to Get"
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 2,
+        "calls_with_usage": 2,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 3435,
+          "output_tokens": 909,
+          "total_tokens": 4344
+        },
+        "total_tokens": 4344
+      }
+    },
+    "latency_ms_browser": 11239,
+    "finished_at": "2026-11-05T16:35:51.477Z"
+  }
+]

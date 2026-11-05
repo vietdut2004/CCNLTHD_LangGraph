@@ -1,0 +1,4 @@
+﻿id,question,reference,http,status,trace_id,model,timestamp,latency_ms,input_tokens,output_tokens,total_tokens,usage_complete
+ui_1,bạn cho mình biết ý nghĩa của hít thở sâu là gì,Historical screenshot question; no fixed model answer,502,error,726380027925429ca775e5445e41a4c5,openai/gpt-oss-20b,2026-11-05T15:55:37.682Z,7823,,,,False
+ui_2,bạn có khỏe kh,Historical screenshot question; no fixed model answer,200,ok,5253aea0e5a54fc98a27dde3ebb8dd44,openai/gpt-oss-20b,2026-11-05T15:55:45.661Z,667,530,89,619,True
+ui_3,bạn gợi ý cho tôi vài bộ phim truyền động lực sống được kh,Historical screenshot question; no fixed model answer,200,ok,bbabf8e3303a41aca47020a8806bf2d8,openai/gpt-oss-20b,2026-11-05T15:55:46.538Z,6571,2462,568,3030,True

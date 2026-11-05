@@ -27,6 +27,12 @@ class RecordedAgent(Agent):
         return reply
 
 engine=RecordedAgent(rag=RecordedRAG())
+if os.getenv('RAG_CHECK_PREPARE_INDEX')=='1':
+    preparation_start=time.perf_counter()
+    preparation=engine.rag.prepare()
+    preparation.update(preparation_ms=round((time.perf_counter()-preparation_start)*1000,3),
+                       provider_calls=0,query_embedded=False)
+    (OUT/'index_preparation.json').write_text(json.dumps(preparation,ensure_ascii=False,indent=2),encoding='utf-8')
 (OUT/'credential_audit_child.json').write_text(json.dumps(sdk_credential_audit(engine),indent=2),encoding='utf-8')
 app=create_app(engine,trace_path=OUT/'server_traces.jsonl')
 (OUT/'identity.json').write_text(json.dumps(identity(engine.model_id),indent=2),encoding='utf-8')

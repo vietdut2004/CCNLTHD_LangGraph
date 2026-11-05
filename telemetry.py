@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from threading import Lock
 from runtime_policy import PROMPT_VERSION
-from retrieval import POLICY,MAX_CHARS,OVERLAP,DEFAULT_K
+from faiss_retrieval import DEFAULT_CONFIG
 
 CURRENT = contextvars.ContextVar('request_trace', default=None)
 WRITE_LOCK = Lock()
@@ -20,28 +20,30 @@ ROOT = Path(__file__).resolve().parent
 def utc():
     return datetime.now(timezone.utc).isoformat()
 
-def identity(model):
+def identity(model,retrieval_policy=None):
     names = ('agent.py','main.py','Rag_tool.py','searchweb_tool.py',
-             'telemetry.py','response_cache.py','math_graph.py','retrieval.py','runtime_policy.py')
+             'telemetry.py','response_cache.py','math_graph.py','faiss_retrieval.py','runtime_policy.py')
     hashes = {n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest()
               for n in names if (ROOT/n).exists()}
     versions = {}
-    for name in ('langgraph','langchain-core','langchain-groq','fastapi','pypdf'):
+    for name in ('langgraph','langchain-core','langchain-groq','fastapi','pypdf',
+                 'faiss-cpu','sentence-transformers','langchain-huggingface','pyvi'):
         try: versions[name] = importlib.metadata.version(name)
         except importlib.metadata.PackageNotFoundError: versions[name] = None
     signature = {'source_sha256':hashes,'model_id':model,'versions':versions,
                  'prompt_version':PROMPT_VERSION,
-                 'retrieval_policy':{'name':POLICY,'max_chars':MAX_CHARS,'overlap':OVERLAP,'k':DEFAULT_K},
+                 'retrieval_policy':dict(DEFAULT_CONFIG if retrieval_policy is None else retrieval_policy),
+                 'routing_policy':'model-tool-calling; explicit API modes available',
                  'generation_policy':{'temperature':0,'max_output_tokens':1536,'timeout_seconds':25},
                  'retry_policy':{'sdk':0,'tool':0,'graph':0}}
     signature['graph_id'] = hashlib.sha256(json.dumps(signature,sort_keys=True).encode()).hexdigest()[:20]
     return signature
 
 class Trace:
-    def __init__(self, model='unknown', suite='live', trace_id=None):
+    def __init__(self, model='unknown', suite='live', trace_id=None,retrieval_policy=None,signature=None):
         self.trace_id = trace_id or uuid.uuid4().hex
         self.started_at, self.start = utc(), time.perf_counter()
-        self.signature, self.suite = identity(model), suite
+        self.signature, self.suite = dict(signature) if signature is not None else identity(model,retrieval_policy), suite
         self.events, self.model_calls, self.errors = [], [], []
 
     def event(self, event_type, **data):

@@ -1,0 +1,9 @@
+﻿question,started_at_utc,finished_at_utc,http_status,status,code,route,trace_id,graph_id,model_id,latency_ms_browser,input_tokens,output_tokens,total_tokens,source_count,response
+"bạn cho mình biết ý nghĩa của hít thở sâu là gì","2026-11-05T15:55:37.682Z","2026-11-05T15:55:45.507Z","502","error","UPSTREAM_OR_GRAPH_ERROR",,"726380027925429ca775e5445e41a4c5","d5fc2b65b0f2bb37e888","openai/gpt-oss-20b","7823","521","164","685","0","Yeu cau chua hoan tat. Hay doi chieu trace_id de kiem tra."
+"bạn có khỏe kh","2026-11-05T15:55:45.661Z","2026-11-05T15:55:46.328Z","200","ok","OK","answer","5253aea0e5a54fc98a27dde3ebb8dd44","d5fc2b65b0f2bb37e888","openai/gpt-oss-20b","667","530","89","619","0","Chào bạn! Mình luôn “khỏe” khi được trò chuyện với bạn. Bạn có điều gì muốn chia sẻ không?"
+"bạn gợi ý cho tôi vài bộ phim truyền động lực sống được kh","2026-11-05T15:55:46.538Z","2026-11-05T15:55:53.109Z","200","ok","OK","web","bbabf8e3303a41aca47020a8806bf2d8","d5fc2b65b0f2bb37e888","openai/gpt-oss-20b","6571","2462","568","3030","5","Bạn có thể xem những bộ phim sau để lấy cảm hứng và động lực sống:
+1. The Secret Life of Walter Mitty – Bí Mật Của Walter Mitty (2013)
+2. The Pursuit of Happyness – Mưu Cầu Hạnh Phúc (2006)
+3. Good Will Hunting – Chàng Will Tốt Bụng (1997)
+4. It’s a Wonderful Life – Cuộc Sống Tươi Đẹp (1946)
+5. The Help – Người Giúp Việc (2011)"

@@ -1,0 +1,22 @@
+[
+  {
+    "path": "frontend/app.js",
+    "bytes": 9363,
+    "sha256": "799b01346e9226ca4648dcd17c920930bbc0b6d8508e9872f521fccce6759bad"
+  },
+  {
+    "path": "frontend/assets/sgu-report.png",
+    "bytes": 4308,
+    "sha256": "e8e4f42ccc26042cb719144cfa75e13871343e394ecd14cc75dfd0a142957ece"
+  },
+  {
+    "path": "frontend/index.html",
+    "bytes": 1720,
+    "sha256": "2dab1c9bc0db96f7dea3e7df48fc57be7dc1039eba782fbf28ed3882049e7b0b"
+  },
+  {
+    "path": "frontend/style.css",
+    "bytes": 4670,
+    "sha256": "d4d6eb6a6cc401bd3793965c79fa8f4b17ffe9a65fc335bbe481ecc6ff95513c"
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "executed": true,
+  "fixture": false,
+  "n": 13,
+  "planned": 13,
+  "stopped_reason": null,
+  "technical_completed": 13,
+  "technical_errors": 0,
+  "answers_returned": 10,
+  "refused": 3,
+  "latency_ms": {
+    "mean": 5432.524,
+    "p50": 5197.01,
+    "p95": 9686.932
+  },
+  "percentile_method": "nearest-rank",
+  "usage_complete_requests": 13,
+  "usage_totals": {
+    "input_tokens": 54420,
+    "output_tokens": 4582,
+    "total_tokens": 59002
+  },
+  "semantic_correctness": "Not inferred from HTTP status, source presence or quote matching"
+}

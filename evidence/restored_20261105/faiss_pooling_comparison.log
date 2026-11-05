@@ -1,0 +1,62 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   5%|▌         | 10/199 [00:00<00:01, 98.91it/s]Loading weights:  15%|█▌        | 30/199 [00:00<00:01, 152.22it/s]Loading weights:  26%|██▌       | 51/199 [00:00<00:00, 164.82it/s]Loading weights:  38%|███▊      | 75/199 [00:00<00:00, 183.80it/s]Loading weights:  47%|████▋     | 94/199 [00:00<00:00, 138.01it/s]Loading weights:  55%|█████▌    | 110/199 [00:00<00:00, 111.30it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 225.35it/s]
+[transformers] [1mRobertaModel LOAD REPORT[0m from: C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.cache\huggingface\hub\models--VoVanPhuc--sup-SimCSE-VietNamese-phobert-base\snapshots\608779b86741a8acd8c8d38132974ff04086b138
+Key              | Status     |  | 
+-----------------+------------+--+-
+mlp.dense.weight | UNEXPECTED |  | 
+mlp.dense.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Model loaded; embedding queries
+Embedding 55 chunks 200 50
+chunk200_overlap50_k2_poolingmean 12 /25 ['rag_01', 'rag_07', 'rag_08', 'new_01', 'new_03', 'new_05', 'new_06', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03', 'fresh_06']
+chunk200_overlap50_k3_poolingmean 14 /25 ['rag_01', 'rag_07', 'new_01', 'new_03', 'new_05', 'new_06', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk200_overlap50_k4_poolingmean 14 /25 ['rag_01', 'rag_07', 'new_01', 'new_03', 'new_05', 'new_06', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk200_overlap50_k2_poolingcls 10 /25 ['rag_01', 'rag_03', 'rag_06', 'rag_07', 'rag_08', 'new_01', 'new_03', 'new_05', 'new_06', 'validation_01', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk200_overlap50_k3_poolingcls 12 /25 ['rag_01', 'rag_06', 'rag_07', 'rag_08', 'new_01', 'new_03', 'new_05', 'new_06', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk200_overlap50_k4_poolingcls 13 /25 ['rag_01', 'rag_06', 'rag_07', 'new_01', 'new_03', 'new_05', 'new_06', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk200_overlap50_k2_poolingpooler 10 /25 ['rag_01', 'rag_06', 'rag_07', 'rag_08', 'new_01', 'new_03', 'new_05', 'new_06', 'validation_01', 'validation_02', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk200_overlap50_k3_poolingpooler 12 /25 ['rag_01', 'rag_06', 'rag_07', 'new_01', 'new_03', 'new_05', 'new_06', 'validation_02', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk200_overlap50_k4_poolingpooler 13 /25 ['rag_01', 'rag_06', 'rag_07', 'new_01', 'new_03', 'new_05', 'new_06', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk200_overlap50_k2_poolingtrained_mlp 10 /25 ['rag_01', 'rag_03', 'rag_06', 'rag_07', 'rag_08', 'new_01', 'new_03', 'new_05', 'new_06', 'validation_01', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk200_overlap50_k3_poolingtrained_mlp 11 /25 ['rag_01', 'rag_06', 'rag_07', 'rag_08', 'new_01', 'new_03', 'new_05', 'new_06', 'validation_01', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk200_overlap50_k4_poolingtrained_mlp 12 /25 ['rag_01', 'rag_06', 'rag_07', 'rag_08', 'new_01', 'new_03', 'new_05', 'new_06', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+Embedding 36 chunks 350 100
+chunk350_overlap100_k2_poolingmean 13 /25 ['rag_01', 'rag_03', 'rag_06', 'rag_07', 'new_01', 'new_02', 'new_03', 'new_06', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02']
+chunk350_overlap100_k3_poolingmean 14 /25 ['rag_01', 'rag_06', 'rag_07', 'new_01', 'new_02', 'new_03', 'new_06', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02']
+chunk350_overlap100_k4_poolingmean 14 /25 ['rag_01', 'rag_06', 'rag_07', 'new_01', 'new_02', 'new_03', 'new_06', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02']
+chunk350_overlap100_k2_poolingcls 12 /25 ['rag_01', 'rag_03', 'rag_06', 'rag_07', 'new_01', 'new_02', 'new_03', 'new_06', 'validation_01', 'validation_04', 'validation_05', 'fresh_01', 'fresh_02']
+chunk350_overlap100_k3_poolingcls 14 /25 ['rag_01', 'rag_06', 'rag_07', 'new_01', 'new_02', 'new_03', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02']
+chunk350_overlap100_k4_poolingcls 15 /25 ['rag_01', 'rag_06', 'rag_07', 'new_01', 'new_02', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02']
+chunk350_overlap100_k2_poolingpooler 13 /25 ['rag_01', 'rag_03', 'rag_06', 'rag_07', 'new_01', 'new_02', 'new_03', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02']
+chunk350_overlap100_k3_poolingpooler 15 /25 ['rag_01', 'rag_06', 'rag_07', 'new_01', 'new_03', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02']
+chunk350_overlap100_k4_poolingpooler 15 /25 ['rag_01', 'rag_06', 'rag_07', 'new_01', 'new_03', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02']
+chunk350_overlap100_k2_poolingtrained_mlp 14 /25 ['rag_01', 'rag_06', 'rag_07', 'new_01', 'new_02', 'new_03', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02']
+chunk350_overlap100_k3_poolingtrained_mlp 15 /25 ['rag_01', 'rag_06', 'rag_07', 'new_01', 'new_02', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02']
+chunk350_overlap100_k4_poolingtrained_mlp 15 /25 ['rag_01', 'rag_06', 'rag_07', 'new_01', 'new_02', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02']
+Embedding 22 chunks 500 50
+chunk500_overlap50_k2_poolingmean 13 /25 ['rag_01', 'rag_03', 'rag_05', 'rag_06', 'rag_08', 'new_01', 'new_05', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02']
+chunk500_overlap50_k3_poolingmean 18 /25 ['rag_03', 'rag_06', 'rag_08', 'new_01', 'new_05', 'new_06', 'fresh_01']
+chunk500_overlap50_k4_poolingmean 19 /25 ['rag_03', 'rag_06', 'new_01', 'new_05', 'new_06', 'fresh_01']
+chunk500_overlap50_k2_poolingcls 16 /25 ['rag_03', 'rag_06', 'rag_08', 'new_01', 'new_05', 'new_06', 'validation_01', 'fresh_01', 'fresh_02']
+chunk500_overlap50_k3_poolingcls 17 /25 ['rag_03', 'rag_06', 'rag_08', 'new_01', 'new_06', 'validation_01', 'fresh_01', 'fresh_02']
+chunk500_overlap50_k4_poolingcls 18 /25 ['rag_03', 'rag_06', 'new_01', 'new_06', 'validation_01', 'fresh_01', 'fresh_02']
+chunk500_overlap50_k2_poolingpooler 16 /25 ['rag_03', 'rag_06', 'rag_08', 'new_01', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02']
+chunk500_overlap50_k3_poolingpooler 17 /25 ['rag_03', 'rag_06', 'rag_08', 'new_01', 'new_06', 'validation_01', 'fresh_01', 'fresh_02']
+chunk500_overlap50_k4_poolingpooler 18 /25 ['rag_03', 'rag_06', 'new_01', 'new_06', 'validation_01', 'fresh_01', 'fresh_02']
+chunk500_overlap50_k2_poolingtrained_mlp 15 /25 ['rag_03', 'rag_06', 'rag_08', 'new_01', 'new_05', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02']
+chunk500_overlap50_k3_poolingtrained_mlp 17 /25 ['rag_03', 'rag_06', 'rag_08', 'new_01', 'new_06', 'validation_01', 'fresh_01', 'fresh_02']
+chunk500_overlap50_k4_poolingtrained_mlp 18 /25 ['rag_03', 'rag_06', 'rag_08', 'new_01', 'new_06', 'fresh_01', 'fresh_02']
+Embedding 19 chunks 650 180
+chunk650_overlap180_k2_poolingmean 15 /25 ['rag_01', 'rag_06', 'rag_08', 'new_01', 'new_05', 'new_06', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk650_overlap180_k3_poolingmean 19 /25 ['rag_08', 'new_01', 'new_05', 'new_06', 'validation_05', 'fresh_02']
+chunk650_overlap180_k4_poolingmean 20 /25 ['rag_08', 'new_01', 'new_05', 'new_06', 'fresh_02']
+chunk650_overlap180_k2_poolingcls 15 /25 ['rag_06', 'rag_08', 'new_01', 'new_05', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk650_overlap180_k3_poolingcls 18 /25 ['rag_08', 'new_01', 'new_05', 'new_06', 'validation_01', 'validation_05', 'fresh_02']
+chunk650_overlap180_k4_poolingcls 20 /25 ['rag_08', 'new_01', 'new_06', 'validation_05', 'fresh_02']
+chunk650_overlap180_k2_poolingpooler 15 /25 ['rag_06', 'rag_08', 'new_01', 'new_05', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk650_overlap180_k3_poolingpooler 18 /25 ['rag_08', 'new_01', 'new_05', 'new_06', 'validation_01', 'validation_05', 'fresh_02']
+chunk650_overlap180_k4_poolingpooler 20 /25 ['rag_08', 'new_01', 'new_06', 'validation_05', 'fresh_02']
+chunk650_overlap180_k2_poolingtrained_mlp 15 /25 ['rag_06', 'rag_08', 'new_01', 'new_05', 'new_06', 'validation_01', 'validation_05', 'fresh_01', 'fresh_02', 'fresh_03']
+chunk650_overlap180_k3_poolingtrained_mlp 17 /25 ['rag_06', 'rag_08', 'new_01', 'new_05', 'new_06', 'validation_05', 'fresh_01', 'fresh_02']
+chunk650_overlap180_k4_poolingtrained_mlp 19 /25 ['rag_08', 'new_01', 'new_05', 'new_06', 'validation_05', 'fresh_02']

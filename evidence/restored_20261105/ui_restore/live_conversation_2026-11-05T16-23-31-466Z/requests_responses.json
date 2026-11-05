@@ -1,0 +1,122 @@
+[
+  {
+    "started_at": "2026-11-05T16:23:34.981Z",
+    "request": {
+      "question": "bạn cho mình biết ý nghĩa của hít thở sâu là gì",
+      "mode": "auto",
+      "user_id": "browser-3834bfba-087b-481d-8508-3098d05a95ce",
+      "session_id": "33d82eb6-769c-4bf5-980a-6ff63a867c49",
+      "use_cache": false
+    },
+    "fixture": false,
+    "http_status": 502,
+    "headers": {
+      "content-type": "application/json",
+      "x-trace-id": "cd6cfe14778b41d98ffb92b0853738f2"
+    },
+    "response_body": "{\"response\":\"Yeu cau chua hoan tat. Hay doi chieu trace_id de kiem tra.\",\"status\":\"error\",\"code\":\"UPSTREAM_OR_GRAPH_ERROR\",\"trace_id\":\"cd6cfe14778b41d98ffb92b0853738f2\",\"graph_id\":\"65e597933e68f414b8e6\",\"model_id\":\"openai/gpt-oss-20b\",\"route\":null,\"sources\":[],\"usage\":{\"attempted_model_calls\":2,\"calls_with_usage\":1,\"usage_complete\":false,\"observed_tokens\":{\"input_tokens\":521,\"output_tokens\":164,\"total_tokens\":685},\"total_tokens\":null}}",
+    "response": {
+      "response": "Yeu cau chua hoan tat. Hay doi chieu trace_id de kiem tra.",
+      "status": "error",
+      "code": "UPSTREAM_OR_GRAPH_ERROR",
+      "trace_id": "cd6cfe14778b41d98ffb92b0853738f2",
+      "graph_id": "65e597933e68f414b8e6",
+      "model_id": "openai/gpt-oss-20b",
+      "route": null,
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 2,
+        "calls_with_usage": 1,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 521,
+          "output_tokens": 164,
+          "total_tokens": 685
+        },
+        "total_tokens": null
+      }
+    },
+    "latency_ms_browser": 5624,
+    "finished_at": "2026-11-05T16:23:40.606Z"
+  },
+  {
+    "started_at": "2026-11-05T16:24:25.868Z",
+    "request": {
+      "question": "bạn có khỏe kh",
+      "mode": "auto",
+      "user_id": "browser-3834bfba-087b-481d-8508-3098d05a95ce",
+      "session_id": "33d82eb6-769c-4bf5-980a-6ff63a867c49",
+      "use_cache": false
+    },
+    "fixture": false,
+    "http_status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-trace-id": "1dcb6bdcd06541bc8fa2fb2645954da2"
+    },
+    "response_body": "{\"response\":\"Chào bạn! Mình luôn ở đây, sẵn sàng lắng nghe và chia sẻ. Bạn có điều gì muốn nói hay chia sẻ không?\",\"status\":\"ok\",\"code\":\"OK\",\"trace_id\":\"1dcb6bdcd06541bc8fa2fb2645954da2\",\"graph_id\":\"65e597933e68f414b8e6\",\"model_id\":\"openai/gpt-oss-20b\",\"route\":\"answer\",\"sources\":[],\"usage\":{\"attempted_model_calls\":1,\"calls_with_usage\":1,\"usage_complete\":true,\"observed_tokens\":{\"input_tokens\":530,\"output_tokens\":111,\"total_tokens\":641},\"total_tokens\":641}}",
+    "response": {
+      "response": "Chào bạn! Mình luôn ở đây, sẵn sàng lắng nghe và chia sẻ. Bạn có điều gì muốn nói hay chia sẻ không?",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "1dcb6bdcd06541bc8fa2fb2645954da2",
+      "graph_id": "65e597933e68f414b8e6",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 530,
+          "output_tokens": 111,
+          "total_tokens": 641
+        },
+        "total_tokens": 641
+      }
+    },
+    "latency_ms_browser": 1611,
+    "finished_at": "2026-11-05T16:24:27.479Z"
+  },
+  {
+    "started_at": "2026-11-05T16:25:13.189Z",
+    "request": {
+      "question": "bạn gợi ý cho tôi vài bộ phim truyền động lực sống được kh",
+      "mode": "auto",
+      "user_id": "browser-3834bfba-087b-481d-8508-3098d05a95ce",
+      "session_id": "33d82eb6-769c-4bf5-980a-6ff63a867c49",
+      "use_cache": false
+    },
+    "fixture": false,
+    "http_status": 502,
+    "headers": {
+      "content-type": "application/json",
+      "x-trace-id": "c02757fbfe1c4c75b6fe0b316be1624c"
+    },
+    "response_body": "{\"response\":\"Yeu cau chua hoan tat. Hay doi chieu trace_id de kiem tra.\",\"status\":\"error\",\"code\":\"UPSTREAM_OR_GRAPH_ERROR\",\"trace_id\":\"c02757fbfe1c4c75b6fe0b316be1624c\",\"graph_id\":\"65e597933e68f414b8e6\",\"model_id\":\"openai/gpt-oss-20b\",\"route\":null,\"sources\":[],\"usage\":{\"attempted_model_calls\":2,\"calls_with_usage\":1,\"usage_complete\":false,\"observed_tokens\":{\"input_tokens\":588,\"output_tokens\":94,\"total_tokens\":682},\"total_tokens\":null}}",
+    "response": {
+      "response": "Yeu cau chua hoan tat. Hay doi chieu trace_id de kiem tra.",
+      "status": "error",
+      "code": "UPSTREAM_OR_GRAPH_ERROR",
+      "trace_id": "c02757fbfe1c4c75b6fe0b316be1624c",
+      "graph_id": "65e597933e68f414b8e6",
+      "model_id": "openai/gpt-oss-20b",
+      "route": null,
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 2,
+        "calls_with_usage": 1,
+        "usage_complete": false,
+        "observed_tokens": {
+          "input_tokens": 588,
+          "output_tokens": 94,
+          "total_tokens": 682
+        },
+        "total_tokens": null
+      }
+    },
+    "latency_ms_browser": 7404,
+    "finished_at": "2026-11-05T16:25:20.595Z"
+  }
+]

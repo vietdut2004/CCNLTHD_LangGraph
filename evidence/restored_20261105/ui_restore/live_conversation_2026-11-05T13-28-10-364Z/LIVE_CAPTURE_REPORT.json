@@ -1,0 +1,172 @@
+{
+  "captured_at": "2026-11-05T13:28:30.475Z",
+  "base_url": "http://127.0.0.1:8000/",
+  "fixture": false,
+  "note": "Three questions copied from the historical report screenshot. Answers are new actual API responses. HTTP success is not a content-quality score.",
+  "health_before": {
+    "service": "chatbot-ho-tro-tam-ly",
+    "configured": true,
+    "fixture": false,
+    "rag_preparation": {
+      "started_at": "2026-11-05T13:25:46.227046+00:00",
+      "provider_calls": 0,
+      "query_embedded": false,
+      "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+      "configuration": {
+        "name": "phobert-pyvi-faiss-normalized-l2-v1",
+        "max_chars": 1000,
+        "overlap": 180,
+        "k": 6,
+        "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+        "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+        "embedding_device": "cpu",
+        "normalize_embeddings": true,
+        "pooling": "mean",
+        "word_segmentation": "pyvi",
+        "query_preprocessing": "strip-leading-source-pdf-preamble",
+        "max_input_tokens": 256,
+        "index_type": "IndexFlatL2",
+        "metric": "squared_l2",
+        "score_direction": "smaller_is_nearer"
+      },
+      "chunk_count": 12,
+      "dimensions": 768,
+      "status": "ready",
+      "finished_at": "2026-11-05T13:27:06.874542+00:00",
+      "duration_ms": 80647.823
+    },
+    "source_sha256": {
+      "agent.py": "0771e044ba51eb2a6be92df5d7920fd0814e78712faf9a93b9c5593687297f2a",
+      "main.py": "4dd04e669441ce469b4056a6ee196c4c591a8c9c4a39c63371203a6d15831274",
+      "Rag_tool.py": "75fee3b5a6268a6081987c34a4d33a9d4ea0685fbeaa2ab2e979235a2a221b01",
+      "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+      "telemetry.py": "901d1ff3cb0db170e6010a137e94887a1d3adb6c57c2628f98b5c06482c31980",
+      "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+      "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+      "faiss_retrieval.py": "9942ef52b08656c7f665f641a4eed9ae9897c5554987b33fb80f9f291c5c7080",
+      "runtime_policy.py": "da44806c5c272b69e54b5821a0d61562a03aed9561b24e5c9cbd463e4b2e2f8f"
+    },
+    "model_id": "openai/gpt-oss-20b",
+    "versions": {
+      "langgraph": "1.2.16",
+      "langchain-core": "1.7.0",
+      "langchain-groq": "1.1.3",
+      "fastapi": "0.141.1",
+      "pypdf": "6.21.2",
+      "faiss-cpu": "1.15.1",
+      "sentence-transformers": "6.1.0",
+      "langchain-huggingface": "1.2.3",
+      "pyvi": "0.1.1"
+    },
+    "prompt_version": "report-restored-faiss-tool-calling-20261105",
+    "retrieval_policy": {
+      "name": "phobert-pyvi-faiss-normalized-l2-v1",
+      "max_chars": 1000,
+      "overlap": 180,
+      "k": 6,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "embedding_device": "cpu",
+      "normalize_embeddings": true,
+      "pooling": "mean",
+      "word_segmentation": "pyvi",
+      "query_preprocessing": "strip-leading-source-pdf-preamble",
+      "max_input_tokens": 256,
+      "index_type": "IndexFlatL2",
+      "metric": "squared_l2",
+      "score_direction": "smaller_is_nearer"
+    },
+    "routing_policy": "model-tool-calling; explicit API modes available",
+    "generation_policy": {
+      "temperature": 0,
+      "max_output_tokens": 1536,
+      "timeout_seconds": 25
+    },
+    "retry_policy": {
+      "sdk": 0,
+      "tool": 0,
+      "graph": 0
+    },
+    "graph_id": "5200e395426bb2a4f7e0"
+  },
+  "questions": [
+    "bạn cho mình biết ý nghĩa của hít thở sâu là gì",
+    "bạn có khỏe kh",
+    "bạn gợi ý cho tôi vài bộ phim truyền động lực sống được kh"
+  ],
+  "turns": 3,
+  "results": [
+    {
+      "question": "bạn cho mình biết ý nghĩa của hít thở sâu là gì",
+      "http_status": 200,
+      "status": "ok",
+      "code": "OK",
+      "route": "answer",
+      "trace_id": "7e20e906950e423290b5231267bd482e",
+      "model_id": "openai/gpt-oss-20b",
+      "graph_id": "5200e395426bb2a4f7e0",
+      "latency_ms_browser": 5563,
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 455,
+          "output_tokens": 829,
+          "total_tokens": 1284
+        },
+        "total_tokens": 1284
+      },
+      "sources": [],
+      "network_error": null
+    },
+    {
+      "question": "bạn có khỏe kh",
+      "http_status": 200,
+      "status": "ok",
+      "code": "OK",
+      "route": "answer",
+      "trace_id": "d51cbc1198214cc98c47b1fc25ca610c",
+      "model_id": "openai/gpt-oss-20b",
+      "graph_id": "5200e395426bb2a4f7e0",
+      "latency_ms_browser": 1572,
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1233,
+          "output_tokens": 85,
+          "total_tokens": 1318
+        },
+        "total_tokens": 1318
+      },
+      "sources": [],
+      "network_error": null
+    },
+    {
+      "question": "bạn gợi ý cho tôi vài bộ phim truyền động lực sống được kh",
+      "http_status": 200,
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "route": "web",
+      "trace_id": "a6e281dc82364e5c9f28bbba2ca52ca6",
+      "model_id": "openai/gpt-oss-20b",
+      "graph_id": "5200e395426bb2a4f7e0",
+      "latency_ms_browser": 6931,
+      "usage": {
+        "attempted_model_calls": 2,
+        "calls_with_usage": 2,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 2968,
+          "output_tokens": 622,
+          "total_tokens": 3590
+        },
+        "total_tokens": 3590
+      },
+      "sources": [],
+      "network_error": null
+    }
+  ]
+}

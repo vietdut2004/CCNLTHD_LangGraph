@@ -1,0 +1,20 @@
+{
+  "started_at": "2026-11-05T16:36:44.338450+00:00",
+  "fixture": false,
+  "provider": "Groq real",
+  "model_id": "openai/gpt-oss-20b",
+  "graph_id": "9df445c208d40dc57c00",
+  "python": "3.13.2",
+  "base_url": "http://127.0.0.1:8000",
+  "server_created": false,
+  "concurrency": 1,
+  "retries": 0,
+  "delay_seconds": 45.0,
+  "warmup_used": false,
+  "index_prepared_before_requests": true,
+  "first_request_includes_cold_connection_and_pdf_preparation": false,
+  "benchmark_warmup_requests": 0,
+  "credentials_scope": "The running main.py reads its project .env; this client never reads or transmits API keys",
+  "prior_requests_for_active_graph": 3,
+  "finished_at": "2026-11-05T16:46:56.741610+00:00"
+}

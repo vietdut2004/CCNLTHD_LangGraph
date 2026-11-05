@@ -1,0 +1,151 @@
+[
+  {
+    "started_at": "2026-11-05T16:08:21.342Z",
+    "request": {
+      "question": "bạn cho mình biết ý nghĩa của hít thở sâu là gì",
+      "mode": "auto",
+      "user_id": "browser-42b27e97-1139-4e2f-9c6a-3aa60ce76219",
+      "session_id": "83d77bb5-ddd4-4f1f-81be-9931c34b552c",
+      "use_cache": false
+    },
+    "fixture": false,
+    "http_status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-trace-id": "760e89fba549451798cc68fe2046f39b"
+    },
+    "response_body": "{\"response\":\"Hít thở sâu giúp giảm căng thẳng, làm dịu hệ thần kinh, giảm nhịp tim và huyết áp, giúp cơ thể bình tĩnh và thư giãn.\",\"status\":\"ok\",\"code\":\"OK\",\"trace_id\":\"760e89fba549451798cc68fe2046f39b\",\"graph_id\":\"c3a56f3ce2edcf1508d6\",\"model_id\":\"openai/gpt-oss-20b\",\"route\":\"rag\",\"sources\":[{\"id\":\"pdf-1\",\"rank\":1,\"title\":\"Stress.pdf\",\"page\":1,\"chunk_id\":\"chunk-001\",\"start\":0,\"end\":950,\"section\":\"\",\"source_version\":\"91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean\",\"score\":0.5599328279495239,\"metric\":\"squared_l2\",\"quote\":\"Hít thở sâu là một trong những cách tốt nhất để giảm căng thẳng trong cơ thể của \\nbạn. Điều này là do khi chúng ta hít thở sâu, não bộ của chúng ta sẽ nhận được một \\nthông điệp khiến cơ thể bình tĩnh và thư giãn.\"},{\"id\":\"pdf-3\",\"rank\":3,\"title\":\"Stress.pdf\",\"page\":6,\"chunk_id\":\"chunk-012\",\"start\":0,\"end\":852,\"section\":\"2.3.3. Thư giãn cơ bắp\",\"source_version\":\"91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean\",\"score\":0.6761284470558167,\"metric\":\"squared_l2\",\"quote\":\"Cách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \\nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \\nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \\ncách không cần thiết.\"}],\"usage\":{\"attempted_model_calls\":2,\"calls_with_usage\":2,\"usage_complete\":true,\"observed_tokens\":{\"input_tokens\":4060,\"output_tokens\":1015,\"total_tokens\":5075},\"total_tokens\":5075}}",
+    "response": {
+      "response": "Hít thở sâu giúp giảm căng thẳng, làm dịu hệ thần kinh, giảm nhịp tim và huyết áp, giúp cơ thể bình tĩnh và thư giãn.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "760e89fba549451798cc68fe2046f39b",
+      "graph_id": "c3a56f3ce2edcf1508d6",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "rag",
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "Hít thở sâu là một trong những cách tốt nhất để giảm căng thẳng trong cơ thể của \nbạn. Điều này là do khi chúng ta hít thở sâu, não bộ của chúng ta sẽ nhận được một \nthông điệp khiến cơ thể bình tĩnh và thư giãn."
+        },
+        {
+          "id": "pdf-3",
+          "rank": 3,
+          "title": "Stress.pdf",
+          "page": 6,
+          "chunk_id": "chunk-012",
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.6761284470558167,
+          "metric": "squared_l2",
+          "quote": "Cách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \ncách không cần thiết."
+        }
+      ],
+      "usage": {
+        "attempted_model_calls": 2,
+        "calls_with_usage": 2,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 4060,
+          "output_tokens": 1015,
+          "total_tokens": 5075
+        },
+        "total_tokens": 5075
+      }
+    },
+    "latency_ms_browser": 8761,
+    "finished_at": "2026-11-05T16:08:30.103Z"
+  },
+  {
+    "started_at": "2026-11-05T16:08:30.323Z",
+    "request": {
+      "question": "bạn có khỏe kh",
+      "mode": "auto",
+      "user_id": "browser-42b27e97-1139-4e2f-9c6a-3aa60ce76219",
+      "session_id": "83d77bb5-ddd4-4f1f-81be-9931c34b552c",
+      "use_cache": false
+    },
+    "fixture": false,
+    "http_status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-trace-id": "ecadcff93b514bc3a1d6e9bd01a2effe"
+    },
+    "response_body": "{\"response\":\"Cảm ơn bạn! Mình luôn sẵn sàng lắng nghe và hỗ trợ bạn.\",\"status\":\"ok\",\"code\":\"OK\",\"trace_id\":\"ecadcff93b514bc3a1d6e9bd01a2effe\",\"graph_id\":\"c3a56f3ce2edcf1508d6\",\"model_id\":\"openai/gpt-oss-20b\",\"route\":\"answer\",\"sources\":[],\"usage\":{\"attempted_model_calls\":1,\"calls_with_usage\":1,\"usage_complete\":true,\"observed_tokens\":{\"input_tokens\":576,\"output_tokens\":149,\"total_tokens\":725},\"total_tokens\":725}}",
+    "response": {
+      "response": "Cảm ơn bạn! Mình luôn sẵn sàng lắng nghe và hỗ trợ bạn.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "ecadcff93b514bc3a1d6e9bd01a2effe",
+      "graph_id": "c3a56f3ce2edcf1508d6",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 576,
+          "output_tokens": 149,
+          "total_tokens": 725
+        },
+        "total_tokens": 725
+      }
+    },
+    "latency_ms_browser": 1703,
+    "finished_at": "2026-11-05T16:08:32.026Z"
+  },
+  {
+    "started_at": "2026-11-05T16:08:32.235Z",
+    "request": {
+      "question": "bạn gợi ý cho tôi vài bộ phim truyền động lực sống được kh",
+      "mode": "auto",
+      "user_id": "browser-42b27e97-1139-4e2f-9c6a-3aa60ce76219",
+      "session_id": "83d77bb5-ddd4-4f1f-81be-9931c34b552c",
+      "use_cache": false
+    },
+    "fixture": false,
+    "http_status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-trace-id": "02fd53ff673641079d0664e7eaa35090"
+    },
+    "response_body": "{\"response\":\"Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.\",\"status\":\"refused\",\"code\":\"INSUFFICIENT_EVIDENCE\",\"trace_id\":\"02fd53ff673641079d0664e7eaa35090\",\"graph_id\":\"c3a56f3ce2edcf1508d6\",\"model_id\":\"openai/gpt-oss-20b\",\"route\":\"web\",\"sources\":[],\"usage\":{\"attempted_model_calls\":2,\"calls_with_usage\":2,\"usage_complete\":true,\"observed_tokens\":{\"input_tokens\":2740,\"output_tokens\":735,\"total_tokens\":3475},\"total_tokens\":3475}}",
+    "response": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "trace_id": "02fd53ff673641079d0664e7eaa35090",
+      "graph_id": "c3a56f3ce2edcf1508d6",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "web",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 2,
+        "calls_with_usage": 2,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 2740,
+          "output_tokens": 735,
+          "total_tokens": 3475
+        },
+        "total_tokens": 3475
+      }
+    },
+    "latency_ms_browser": 9944,
+    "finished_at": "2026-11-05T16:08:42.179Z"
+  }
+]

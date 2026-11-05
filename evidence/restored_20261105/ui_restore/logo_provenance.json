@@ -1,0 +1,13 @@
+{
+  "source": "phuc_hoi_theo_bao_cao_20261105\\report_images\\image105.png",
+  "source_sha256": "c733c24fc7a3b5c55e326f87cc74c68d27c3383b306605f0c3eba4b45547de13",
+  "crop_xyxy": [
+    28,
+    118,
+    73,
+    163
+  ],
+  "output": "frontend/assets/sgu-report.png",
+  "output_sha256": "e8e4f42ccc26042cb719144cfa75e13871343e394ecd14cc75dfd0a142957ece",
+  "note": "Logo extracted from the report screenshot, not an independently obtained original asset."
+}

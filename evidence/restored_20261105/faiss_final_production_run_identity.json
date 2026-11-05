@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "source_files_stable": true,
+  "sha256": {
+    "Rag_tool.py": "75fee3b5a6268a6081987c34a4d33a9d4ea0685fbeaa2ab2e979235a2a221b01",
+    "faiss_retrieval.py": "1e27edd24426c99f6a47bc2eeca00254eb6763f7f31854b1a4ec84bbbbc21fb6",
+    "requirements.txt": "7344102b0b83e992bbe0cccfcaebd7727808f218be183e7d5220c25d8e7b02c6",
+    "requirements-locked.txt": "5923a9ef5dbdc61f4a9d38a51b03ba993931a50d2bd6d6ba6c4bd5477271de92",
+    "benchmarks/check_rag_retrieval.py": "f2a5a504107e080670ba0b9369dffc8d90157ebb5c1297d84e8696d61b7e00a7",
+    "tests/test_rag_check.py": "d0f04c99d69bd63204b5cf8ed7f67a35f756e0b14d31d41eb21b6d7b3ecda5e4"
+  }
+}

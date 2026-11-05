@@ -1,0 +1,266 @@
+{
+  "trace_id": "02fd53ff673641079d0664e7eaa35090",
+  "suite": "live",
+  "timestamp": "2026-11-05T16:08:32.238631+00:00",
+  "source_sha256": {
+    "agent.py": "1a5b495104833ccc04c3cda9cad92b14523a67ce71b3901b0aece872c74e25b3",
+    "main.py": "fa9a5d7750d238b2213419742c7d39b2e89800ad5226f9882f743bc977253d9e",
+    "Rag_tool.py": "75fee3b5a6268a6081987c34a4d33a9d4ea0685fbeaa2ab2e979235a2a221b01",
+    "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+    "telemetry.py": "ed9007642cf0394b40a1b571501722f17995ba4ffcfe564493d6a86d9cd0d73d",
+    "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+    "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+    "faiss_retrieval.py": "9942ef52b08656c7f665f641a4eed9ae9897c5554987b33fb80f9f291c5c7080",
+    "runtime_policy.py": "da44806c5c272b69e54b5821a0d61562a03aed9561b24e5c9cbd463e4b2e2f8f"
+  },
+  "model_id": "openai/gpt-oss-20b",
+  "versions": {
+    "langgraph": "1.2.16",
+    "langchain-core": "1.7.0",
+    "langchain-groq": "1.1.3",
+    "fastapi": "0.141.1",
+    "pypdf": "6.21.2",
+    "faiss-cpu": "1.15.1",
+    "sentence-transformers": "6.1.0",
+    "langchain-huggingface": "1.2.3",
+    "pyvi": "0.1.1"
+  },
+  "prompt_version": "report-restored-faiss-tool-calling-20261105",
+  "retrieval_policy": {
+    "name": "phobert-pyvi-faiss-normalized-l2-v1",
+    "max_chars": 1000,
+    "overlap": 180,
+    "k": 6,
+    "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+    "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+    "embedding_device": "cpu",
+    "normalize_embeddings": true,
+    "pooling": "mean",
+    "word_segmentation": "pyvi",
+    "query_preprocessing": "strip-leading-source-pdf-preamble",
+    "max_input_tokens": 256,
+    "index_type": "IndexFlatL2",
+    "metric": "squared_l2",
+    "score_direction": "smaller_is_nearer"
+  },
+  "routing_policy": "model-tool-calling; explicit API modes available",
+  "generation_policy": {
+    "temperature": 0,
+    "max_output_tokens": 1536,
+    "timeout_seconds": 25
+  },
+  "retry_policy": {
+    "sdk": 0,
+    "tool": 0,
+    "graph": 0
+  },
+  "graph_id": "c3a56f3ce2edcf1508d6",
+  "http_status": 200,
+  "code": "INSUFFICIENT_EVIDENCE",
+  "route": "web",
+  "server_latency_ms": 9932.273,
+  "events": [
+    {
+      "timestamp": "2026-11-05T16:08:32.252163+00:00",
+      "kind": "model_start",
+      "run_id": "f7741b553eeb4cfcb4a7aae5b1c4e1d7",
+      "model_id": "openai/gpt-oss-20b"
+    },
+    {
+      "timestamp": "2026-11-05T16:08:35.205535+00:00",
+      "kind": "model_end",
+      "run_id": "f7741b553eeb4cfcb4a7aae5b1c4e1d7",
+      "model_id": "openai/gpt-oss-20b",
+      "purpose": "tool_selection",
+      "usage": {
+        "input_tokens": 623,
+        "output_tokens": 127,
+        "total_tokens": 750,
+        "output_token_details": {
+          "reasoning": 99
+        }
+      },
+      "tool_calls": [
+        {
+          "name": "search_web",
+          "args": {
+            "query": "phim truyền động lực sống"
+          },
+          "id": "fc_5cd683ea-635b-4db9-bc98-def921f84409",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-11-05T16:08:35.205581+00:00",
+      "kind": "classify",
+      "route": "web",
+      "policy": "model-tool-calling",
+      "mode": "auto",
+      "selected_tool": "search_web",
+      "query": "phim truyền động lực sống"
+    },
+    {
+      "timestamp": "2026-11-05T16:08:35.209134+00:00",
+      "kind": "tool_start",
+      "run_id": "25b2818470df48a0a321c7f36ec71bdd",
+      "tool_name": "search_web",
+      "arguments": {
+        "query": "phim truyền động lực sống"
+      }
+    },
+    {
+      "timestamp": "2026-11-05T16:08:40.000042+00:00",
+      "kind": "tool_end",
+      "run_id": "25b2818470df48a0a321c7f36ec71bdd",
+      "tool_name": "search_web",
+      "result": [
+        {
+          "id": "web-1",
+          "title": "21 phim truyền cảm hứng hay nhất giúp bạn có thêm động lực trong cuộc sống",
+          "url": "https://voh.com.vn/phim/phim-truyen-cam-hung-451399.html",
+          "retrieved_at": "2026-11-05T16:08:39.999950+00:00"
+        },
+        {
+          "id": "web-2",
+          "title": "[ToMo] 15 Bộ Phim \" Tạo Động Lực \" Cho Việc Học Tập Mà Nhất Định Bạn Phải Xem - YBOX",
+          "url": "https://ybox.vn/gia-vi/tomo-15-bo-phim-tao-dong-luc-cho-viec-hoc-tap-ma-nhat-dinh-ban-phai-xem-616a6e6094abd77962479ca3",
+          "retrieved_at": "2026-11-05T16:08:39.999987+00:00"
+        },
+        {
+          "id": "web-3",
+          "title": "Những bộ phim tạo động lực: 20 phim giúp bạn vượt lên chính mình",
+          "url": "https://bazaarvietnam.vn/nhung-bo-phim-tao-dong-luc",
+          "retrieved_at": "2026-11-05T16:08:39.999998+00:00"
+        }
+      ],
+      "error_code": null
+    },
+    {
+      "timestamp": "2026-11-05T16:08:40.000059+00:00",
+      "kind": "web_context",
+      "query": "phim truyền động lực sống",
+      "documents": [
+        {
+          "id": "web-1",
+          "title": "21 phim truyền cảm hứng hay nhất giúp bạn có thêm động lực trong cuộc sống",
+          "url": "https://voh.com.vn/phim/phim-truyen-cam-hung-451399.html",
+          "text": "1. The Secret Life of Walter Mitty - Bí Mật Của Walter Mitty (2013)\n2. The Pursuit of Happyness - Mưu Cầu Hạnh Phúc (2006)\n3. The Help - Người Giúp Việc (2011)\n4. Good Will Hunting - Chàng Will Tốt Bụng (1997)\n5. Idiots - Ba Chàng Ngốc (2009)\n6. I Can Speak - Tiếng Anh Là Chuyện Nhỏ (2017)\n7. The Kid Karate - Cậu Bé Karate (2010)\n8. It's a Wonderful Life - Cuộc Sống Tươi Đẹp (1946)\n9. Top Secret - Thiếu Niên Bạc Tỷ (2011)\n10. Yes Man - Người Chỉ Nói Vng! (2018) [...] Will Hunting (do Matt Damon thủ vai) là một nhn viên vệ sinh ở trường đại học MIT, nhưng anh có một trí thông minh thiên phú và khả năng giải quyết các bài toán toán học phức tạp. Một giáo sư tài năng tên là Lambeau (do Stellan Skarsgård thủ vai) phát hiện ra tài năng đặc biệt của Will và quyết định giúp đỡ anh phát triển. [...] Chàng Will Tốt Bụng xoay quanh Will Hunting, một nhn viên gác cổng nhưng lại có năng khiếu toán học. Nhờ sự giúp đỡ của một nhà tm lý học mà Will đã tìm được cho mình một hướng đi mới trong cuộc sống.",
+          "retrieved_at": "2026-11-05T16:08:39.999950+00:00"
+        },
+        {
+          "id": "web-2",
+          "title": "[ToMo] 15 Bộ Phim \" Tạo Động Lực \" Cho Việc Học Tập Mà Nhất Định Bạn Phải Xem - YBOX",
+          "url": "https://ybox.vn/gia-vi/tomo-15-bo-phim-tao-dong-luc-cho-viec-hoc-tap-ma-nhat-dinh-ban-phai-xem-616a6e6094abd77962479ca3",
+          "text": "Những bộ phim “truyền động lực” này sẽ giúp cho bạn tìm được đúng hướng đi. Vì vậy, hãy ngồi xuống nào, gác chn lên bàn, chuẩn bị một bát bỏng ngô và cùng thưởng thức chúng thôi.\n\n1. With Honors\n\nĐy là một bộ phim kể về một cuộc sống đơn giản và giàu ý nghĩa. Nếu bạn thấy được trong cuộc sống này có nhiều điều hơn ngoài việc giành điểm cao, thì bộ phim này sẽ dẫn lối cho bạn đến điều gì thực sự quan trọng và ý nghĩa. [...] Danh sách 15 bộ phim truyền cảm hứng dành cho học sinh, sinh viên giúp vượt qua thách thức học tập và cuộc sống. Các phim như \\The Theory of Everything\\, \\Freedom Writers\\, \\The Pursuit of Happyness\\ kể về nghị lực phi thường, niềm tin bản thn và đam mê dẫn đến thành công. \\Dead Poets Society\\, \\October Sky\\, \\Legally Blonde\\ khuyến khích sống thật với ước mơ, dám khác biệt. \\Rocky\\, \\The Karate Kid\\ nhấn mạnh sự nỗ lực và không bỏ cuộc. Những cu chuyện có thật hay hư cấu đều mang thông điệp [...] 7. October Sky\n\nCu chuyện cảm động này được dựa trên những sự kiện có thật trong cuộc đời của một chàng trai trẻ sống ở Coalwood, Ty Virginia.\n\nHọ mơ ước được phóng tên lửa của riêng mình sau khi được truyền cảm hứng từ vụ phóng tên lửa của Sputnik 1. Họ đã phải tự vượt qua những thử thách của cá nhn và cuộc sống để thực hiện mục tiêu của mình.",
+          "retrieved_at": "2026-11-05T16:08:39.999987+00:00"
+        },
+        {
+          "id": "web-3",
+          "title": "Những bộ phim tạo động lực: 20 phim giúp bạn vượt lên chính mình",
+          "url": "https://bazaarvietnam.vn/nhung-bo-phim-tao-dong-luc",
+          "text": "19. Bí mật của Walter Mitty – The Secret Life Of Walter Mitty (2013)\n\n20. Cuộc đời Steve Jobs – Steve Jobs (2015)\n\nTrên đy là những bộ phim tạo động lực hay nhất mà Bazaar Việt Nam giới thiệu đến bạn. Hy vọng rằng những tác phẩm này sẽ giúp bạn có những giờ xem phim thoải mái, giúp bạn trở nên mạnh mẽ hơn trong cuộc sống!\n\n>>> Đọc thêm: TOP 100 PHIM HAY NHẤT MỌI THỜI ĐẠI\n\nTạp chí thời trang Harper’s Bazaar Việt Nam\n\n### Xem thêm [...] • Thể loại: Thể thao, tm lý xã hội  \n • Thời lượng: 136 phút  \n • Quốc gia: Mỹ  \n • Đạo diễn: Thomas Carter  \n • Diễn viên: Samuel L. Jackson, Rob Brown, Robert Ri’chard, Rick Gonzalez, Channing Tatum…  \n • Điểm iMDb: 7.3/10\n\nHuấn luyện viên Carter là một trong những bộ phim chạm đến cảm xúc người xem, tạo động lực khi nói về tình thầy trò và cố gắng trong cuộc sống. [...] Nội dung phim dựa trên một cu chuyện có thật ở trường trung học Richmond. Cựu cầu thủ bóng rổ nổi tiếng Ken Carter được mời làm huấn luyện viên cho đội bóng của trường. Các cầu thủ đều là những chàng trai sống không có kỷ luật, ngổ ngáo và thô lỗ.\n\nTuy nhiên, Ken Carter đã đưa ra những điều luật khắt khe. Cuối cùng bằng sự nỗ lực của mình, huấn luyện viên Carter không chỉ giúp các cầu thủ vừa thi đấu tốt mà còn có điểm số học tập chấp nhận được.",
+          "retrieved_at": "2026-11-05T16:08:39.999998+00:00"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-11-05T16:08:40.003164+00:00",
+      "kind": "model_start",
+      "run_id": "63081489f83244eeba6e5158993e3565",
+      "model_id": "openai/gpt-oss-20b"
+    },
+    {
+      "timestamp": "2026-11-05T16:08:42.163116+00:00",
+      "kind": "model_end",
+      "run_id": "63081489f83244eeba6e5158993e3565",
+      "model_id": "openai/gpt-oss-20b",
+      "purpose": "answer",
+      "usage": {
+        "input_tokens": 2117,
+        "output_tokens": 608,
+        "total_tokens": 2725,
+        "output_token_details": {
+          "reasoning": 465
+        }
+      },
+      "tool_calls": []
+    },
+    {
+      "timestamp": "2026-11-05T16:08:42.164836+00:00",
+      "kind": "evidence_check",
+      "status": "insufficient",
+      "reason": "quote_not_found",
+      "source_ids": []
+    },
+    {
+      "timestamp": "2026-11-05T16:08:42.167700+00:00",
+      "kind": "refuse",
+      "reason": "scope_or_insufficient_evidence"
+    },
+    {
+      "timestamp": "2026-11-05T16:08:42.170197+00:00",
+      "kind": "final",
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "route": "web",
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "sources": []
+    }
+  ],
+  "model_calls": [
+    {
+      "run_id": "f7741b553eeb4cfcb4a7aae5b1c4e1d7",
+      "model_id": "openai/gpt-oss-20b",
+      "purpose": "tool_selection",
+      "usage": {
+        "input_tokens": 623,
+        "output_tokens": 127,
+        "total_tokens": 750,
+        "output_token_details": {
+          "reasoning": 99
+        }
+      },
+      "finish_reason": "tool_calls",
+      "response_content": "",
+      "tool_calls": [
+        {
+          "name": "search_web",
+          "args": {
+            "query": "phim truyền động lực sống"
+          },
+          "id": "fc_5cd683ea-635b-4db9-bc98-def921f84409",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "run_id": "63081489f83244eeba6e5158993e3565",
+      "model_id": "openai/gpt-oss-20b",
+      "purpose": "answer",
+      "usage": {
+        "input_tokens": 2117,
+        "output_tokens": 608,
+        "total_tokens": 2725,
+        "output_token_details": {
+          "reasoning": 465
+        }
+      },
+      "finish_reason": "stop",
+      "response_content": "{\"supported\":true,\"answer\":\"Bạn có thể xem các bộ phim truyền động lực sau: The Secret Life of Walter Mitty (2013), The Pursuit of Happyness (2006), Good Will Hunting (1997), The Help (2011).\",\"citations\":[{\"id\":\"web-1\",\"quote\":\"The Secret Life of Walter Mitty (2013)\"},{\"id\":\"web-1\",\"quote\":\"The Pursuit of Happyness (2006)\"},{\"id\":\"web-1\",\"quote\":\"Good Will Hunting (1997)\"},{\"id\":\"web-1\",\"quote\":\"The Help (2011)\"}]}",
+      "tool_calls": []
+    }
+  ],
+  "errors": [],
+  "usage": {
+    "attempted_model_calls": 2,
+    "calls_with_usage": 2,
+    "usage_complete": true,
+    "observed_tokens": {
+      "input_tokens": 2740,
+      "output_tokens": 735,
+      "total_tokens": 3475
+    },
+    "total_tokens": 3475
+  }
+}

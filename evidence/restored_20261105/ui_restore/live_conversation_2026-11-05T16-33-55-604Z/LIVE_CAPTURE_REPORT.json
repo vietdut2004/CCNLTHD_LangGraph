@@ -1,0 +1,265 @@
+{
+  "captured_at": "2026-11-05T16:35:52.332Z",
+  "base_url": "http://127.0.0.1:8000/",
+  "fixture": false,
+  "note": "Three questions copied from the historical report screenshot. Answers are new actual API responses. HTTP success is not a content-quality score.",
+  "health_before": {
+    "service": "chatbot-ho-tro-tam-ly",
+    "configured": true,
+    "fixture": false,
+    "rag_preparation": {
+      "started_at": "2026-11-05T16:32:18.117668+00:00",
+      "provider_calls": 0,
+      "query_embedded": false,
+      "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+      "configuration": {
+        "name": "phobert-pyvi-faiss-normalized-l2-v1",
+        "max_chars": 1000,
+        "overlap": 180,
+        "k": 6,
+        "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+        "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+        "embedding_device": "cpu",
+        "normalize_embeddings": true,
+        "pooling": "mean",
+        "word_segmentation": "pyvi",
+        "query_preprocessing": "strip-leading-source-pdf-preamble",
+        "max_input_tokens": 256,
+        "index_type": "IndexFlatL2",
+        "metric": "squared_l2",
+        "score_direction": "smaller_is_nearer"
+      },
+      "chunk_count": 12,
+      "dimensions": 768,
+      "status": "ready",
+      "finished_at": "2026-11-05T16:33:29.845363+00:00",
+      "duration_ms": 71729.375
+    },
+    "source_sha256": {
+      "agent.py": "307ee3529d20e75e8f2382430cd22e6a4c0918f054a43a86afa3726a84a1483a",
+      "main.py": "10eddf581ccdf88d666fd7115d4dc0a0e8279d0908e25eb5a6aba58f8f70469a",
+      "Rag_tool.py": "75fee3b5a6268a6081987c34a4d33a9d4ea0685fbeaa2ab2e979235a2a221b01",
+      "searchweb_tool.py": "bdab29a4f6ed89515c91d53f41742523d45948458fecc0b2a146e13f85b5a4a0",
+      "telemetry.py": "ed9007642cf0394b40a1b571501722f17995ba4ffcfe564493d6a86d9cd0d73d",
+      "response_cache.py": "214e41e60f6eb1740a29eeb89c37629a052d5b24bb8e2158461d130db3deb6d8",
+      "math_graph.py": "c7d2764d585b1d368b36c26b3fa718844283f84ee9b4e65db77852b55b5615ee",
+      "faiss_retrieval.py": "9942ef52b08656c7f665f641a4eed9ae9897c5554987b33fb80f9f291c5c7080",
+      "runtime_policy.py": "da44806c5c272b69e54b5821a0d61562a03aed9561b24e5c9cbd463e4b2e2f8f"
+    },
+    "model_id": "openai/gpt-oss-20b",
+    "versions": {
+      "langgraph": "1.2.16",
+      "langchain-core": "1.7.0",
+      "langchain-groq": "1.1.3",
+      "fastapi": "0.141.1",
+      "pypdf": "6.21.2",
+      "faiss-cpu": "1.15.1",
+      "sentence-transformers": "6.1.0",
+      "langchain-huggingface": "1.2.3",
+      "pyvi": "0.1.1"
+    },
+    "prompt_version": "report-restored-faiss-tool-calling-20261105",
+    "retrieval_policy": {
+      "name": "phobert-pyvi-faiss-normalized-l2-v1",
+      "max_chars": 1000,
+      "overlap": 180,
+      "k": 6,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "embedding_device": "cpu",
+      "normalize_embeddings": true,
+      "pooling": "mean",
+      "word_segmentation": "pyvi",
+      "query_preprocessing": "strip-leading-source-pdf-preamble",
+      "max_input_tokens": 256,
+      "index_type": "IndexFlatL2",
+      "metric": "squared_l2",
+      "score_direction": "smaller_is_nearer"
+    },
+    "routing_policy": "model-tool-calling; explicit API modes available",
+    "generation_policy": {
+      "temperature": 0,
+      "max_output_tokens": 1536,
+      "timeout_seconds": 25
+    },
+    "retry_policy": {
+      "sdk": 0,
+      "tool": 0,
+      "graph": 0
+    },
+    "graph_id": "9df445c208d40dc57c00"
+  },
+  "questions": [
+    "bạn cho mình biết ý nghĩa của hít thở sâu là gì",
+    "bạn có khỏe kh",
+    "bạn gợi ý cho tôi vài bộ phim truyền động lực sống được kh"
+  ],
+  "turns": 3,
+  "results": [
+    {
+      "question": "bạn cho mình biết ý nghĩa của hít thở sâu là gì",
+      "http_status": 200,
+      "status": "ok",
+      "code": "OK",
+      "route": "rag",
+      "trace_id": "27807932154845fe8051681e33affcdb",
+      "model_id": "openai/gpt-oss-20b",
+      "graph_id": "9df445c208d40dc57c00",
+      "latency_ms_browser": 8183,
+      "usage": {
+        "attempted_model_calls": 2,
+        "calls_with_usage": 2,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 4788,
+          "output_tokens": 523,
+          "total_tokens": 5311
+        },
+        "total_tokens": 5311
+      },
+      "sources": [
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "Hít thở sâu là một trong những cách tốt nhất để giảm căng thẳng trong cơ thể của"
+        },
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "bạn. Điều này là do khi chúng ta hít thở sâu, não bộ của chúng ta sẽ nhận được một"
+        },
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "thông điệp khiến cơ thể bình tĩnh và thư giãn. Sau đó, bộ não sẽ gửi thông điệp này"
+        },
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "hạn như nhịp tim tăng, thở nhanh và huyết áp cao, tất cả đều giảm khi bạn hít thở"
+        },
+        {
+          "id": "pdf-1",
+          "rank": 1,
+          "title": "Stress.pdf",
+          "page": 1,
+          "chunk_id": "chunk-001",
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+          "score": 0.5599328279495239,
+          "metric": "squared_l2",
+          "quote": "sâu để thư giãn. Hãy lưu ý, cách bạn thở ảnh hưởng đến toàn bộ cơ thể của chính"
+        }
+      ],
+      "network_error": null
+    },
+    {
+      "question": "bạn có khỏe kh",
+      "http_status": 200,
+      "status": "ok",
+      "code": "OK",
+      "route": "answer",
+      "trace_id": "f1b58d16d65e4ccb90ff050ff8ea1b6c",
+      "model_id": "openai/gpt-oss-20b",
+      "graph_id": "9df445c208d40dc57c00",
+      "latency_ms_browser": 3307,
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 571,
+          "output_tokens": 102,
+          "total_tokens": 673
+        },
+        "total_tokens": 673
+      },
+      "sources": [],
+      "network_error": null
+    },
+    {
+      "question": "bạn gợi ý cho tôi vài bộ phim truyền động lực sống được kh",
+      "http_status": 200,
+      "status": "ok",
+      "code": "OK",
+      "route": "web",
+      "trace_id": "7738a52e3aa84b25882590fd6df1c2ba",
+      "model_id": "openai/gpt-oss-20b",
+      "graph_id": "9df445c208d40dc57c00",
+      "latency_ms_browser": 11239,
+      "usage": {
+        "attempted_model_calls": 2,
+        "calls_with_usage": 2,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 3435,
+          "output_tokens": 909,
+          "total_tokens": 4344
+        },
+        "total_tokens": 4344
+      },
+      "sources": [
+        {
+          "id": "web-1",
+          "title": "[ToMo] 15 Bộ Phim \" Tạo Động Lực \" Cho Việc Học Tập Mà Nhất Định Bạn Phải Xem - YBOX",
+          "url": "https://ybox.vn/gia-vi/tomo-15-bo-phim-tao-dong-luc-cho-viec-hoc-tap-ma-nhat-dinh-ban-phai-xem-616a6e6094abd77962479ca3",
+          "retrieved_at": "2026-11-05T16:35:47.627264+00:00",
+          "quote": "Everything\\, \\Freedom Writers\\, \\The Pursuit of Happyness\\ kể về nghị lực phi thường, niềm tin bản thn và đam mê dẫn đến thành công. \\Dead Poets Society\\, \\October Sky\\, \\Legally Blonde\\"
+        },
+        {
+          "id": "web-2",
+          "title": "21 phim truyền cảm hứng hay nhất giúp bạn có thêm động lực trong cuộc sống",
+          "url": "https://voh.com.vn/phim/phim-truyen-cam-hung-451399.html",
+          "retrieved_at": "2026-11-05T16:35:47.627302+00:00",
+          "quote": "1. The Secret Life of Walter Mitty - Bí Mật Của Walter Mitty (2013)"
+        },
+        {
+          "id": "web-3",
+          "title": "Những bộ phim tạo động lực: 20 phim giúp bạn vượt lên chính mình",
+          "url": "https://bazaarvietnam.vn/nhung-bo-phim-tao-dong-luc",
+          "retrieved_at": "2026-11-05T16:35:47.627312+00:00",
+          "quote": "### Xem thêm [...] Tm hồn trên sóng là một trong những bộ phim tạo động lực hay nhất. Nội dung phim dựa trên quyển tự truyện Soul Surfer: A True Story of Faith, Family, and Fighting to Get"
+        }
+      ],
+      "network_error": null
+    }
+  ]
+}

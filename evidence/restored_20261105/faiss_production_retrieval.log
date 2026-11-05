@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\benchmarks\check_rag_retrieval.py", line 42, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\benchmarks\check_rag_retrieval.py", line 20, in main
+    start=time.perf_counter();docs=tool.retrieve(c['question']);ms=round((time.perf_counter()-start)*1000,3)
+                                   ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\Rag_tool.py", line 53, in retrieve
+    self.embeddings=load_embeddings(self.embedding_model,self.embedding_revision,
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        normalize_embeddings=self.normalize_embeddings,word_segmentation=self.word_segmentation)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\faiss_retrieval.py", line 70, in load_embeddings
+    base = HuggingFaceEmbeddings(
+        model_name=str(snapshot.resolve()) if local else model_name,
+        model_kwargs=model_kwargs,
+        encode_kwargs={'normalize_embeddings': normalize_embeddings}, show_progress=False)
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\langchain_huggingface\embeddings\huggingface.py", line 79, in __init__
+    self._client = model_cls(
+                   ~~~~~~~~~^
+        self.model_name, cache_folder=self.cache_folder, **self.model_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Downloads\CCNLTHD\CCNLTHD_LangGraph\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 46, in wrapper
+    return func(*args, **kwargs)
+TypeError: SentenceTransformer.__init__() got an unexpected keyword argument 'cache_dir'. Did you mean 'cache_folder'?

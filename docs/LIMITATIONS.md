@@ -1,4 +1,40 @@
-# Phạm vi và giới hạn của bản nộp
+# Phạm vi và giới hạn
+
+## Bản FAISS khôi phục ngày 05/11/2026
+
+RAG hiện dùng checkpoint embedding tiếng Việt cũ, PyVi, mean pooling, vector
+chuẩn hóa và FAISS IndexFlatL2; cửa sổ 1000 ký tự, overlap 180, top-6. PDF giữ
+nguyên hash. Cấu hình và source fingerprint nằm trong
+`RESTORED_RUNTIME_IDENTITY.json`. Cấu hình được chọn sau khi thử trên cùng bộ
+câu hỏi, vì vậy độ phủ 25/25 đoạn tham chiếu là kết quả hồi quy, không phải
+đánh giá độc lập hay tỷ lệ trả lời đúng của model. Ngữ cảnh lớn hơn bản 500/50/
+top-2; phải đọc latency và usage của bản mới riêng.
+
+Auto mode dùng một lượt model để chọn công cụ. Nếu dùng RAG/web, model được
+gọi tiếp để trả lời từ nguồn; nếu trò chuyện trực tiếp thì dùng ngay phản hồi
+đã có. Cache hit ở auto vẫn có thể tốn lượt chọn công cụ; explicit mode=rag có
+thể hit mà không gọi model. Không gộp số đo của hai chế độ.
+
+Phiên và cache vẫn lưu RAM, không phải xác thực hay lưu trữ lâu dài. Grounded
+đã nhận tối đa năm tin nhắn để xử lý câu tiếp nối; chưa phải bộ nhớ dài hạn.
+Citation chấp nhận khác biệt khoảng trắng, bullet và kiểu dấu nháy, rồi trả
+nguyên span trong nguồn. Không bỏ từ, số, đơn vị hoặc dấu phủ định. Quote khớp
+chưa chứng minh toàn bộ câu trả lời đúng.
+
+Model embedding cần RAM và thời gian chuẩn bị. Chuẩn bị chỉ mục được ghi riêng
+trước khi phục vụ API, không coi là lượt gọi Groq. Khi kiểm tra trên máy này đã
+gặp MemoryError lúc nạp nhiều model cùng lúc; log được giữ. Unit test mặc định
+dùng fixture, hai ca nạp model thật cần bật riêng. Retrieval thật chạy riêng;
+script live có thể dùng API đang mở để tránh nạp server thứ hai.
+
+Các điểm người chấm cũ chỉ áp dụng cho phản hồi đã chấm. Bản mới chưa có điểm
+người thật. Web vẫn phụ thuộc vào nội dung truy xuất và quota; các lượt từ chối
+trước khi sửa được giữ, không ghép câu trả lời giữa các lượt.
+
+## Hồ sơ lịch sử đến ngày 03/11/2026
+
+Các mục dưới đây ghi phạm vi của bản `78b118f`/runtime `60b2a03`, không mô tả
+pipeline FAISS hiện tại. Chúng được giữ để đọc đúng các số liệu và trace cũ.
 
 1. **Nguồn và phiên bản.** Runtime đã đo giữ nguyên byte của bản
    `60b2a03`, model `openai/gpt-oss-20b`, graph ID đã đo

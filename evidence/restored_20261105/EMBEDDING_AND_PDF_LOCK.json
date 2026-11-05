@@ -1,0 +1,51 @@
+{
+  "model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+  "revision": "608779b86741a8acd8c8d38132974ff04086b138",
+  "weights_source": "public Hugging Face snapshot; recovered from original working cache",
+  "local_cache_relative_to_repository": ".cache\\huggingface\\hub\\models--VoVanPhuc--sup-SimCSE-VietNamese-phobert-base\\snapshots\\608779b86741a8acd8c8d38132974ff04086b138",
+  "files": {
+    "added_tokens.json": {
+      "bytes": 17,
+      "sha256": "895678a80ea84920b4240c0616a1b0b086368c7ca3cbacb80996a2b30b4f2b67"
+    },
+    "bpe.codes": {
+      "bytes": 1135173,
+      "sha256": "9dfe53fb8abbddd3387da99641c36e00bee757a3679aad9cf0a7cdc4b30f6ef8"
+    },
+    "config.json": {
+      "bytes": 731,
+      "sha256": "4bc82a39c36f328f3fbcbfd83c26d00621b396ac7e9ff1a38cfa7c70d88fa608"
+    },
+    "model.safetensors": {
+      "bytes": 542381752,
+      "sha256": "2559811f500b42fa23b8fe313d94a9503299aff1f0e0f58fdd4824571cb4423c"
+    },
+    "special_tokens_map.json": {
+      "bytes": 150,
+      "sha256": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150"
+    },
+    "tokenizer_config.json": {
+      "bytes": 270,
+      "sha256": "f80601760ebdd7737e988a60bb3c14bca12a6786c06e84c99bd2f3329ad80fa0"
+    },
+    "vocab.txt": {
+      "bytes": 895321,
+      "sha256": "dffd7543c401fb6567253ae7c3313004532c33d062525250049c616544bad777"
+    }
+  },
+  "packages": {
+    "faiss-cpu": "1.15.1",
+    "torch": "2.14.1",
+    "transformers": "5.20.2",
+    "sentence-transformers": "6.1.0",
+    "langchain-huggingface": "1.2.3",
+    "langchain-community": "0.4.2",
+    "langchain-text-splitters": "1.1.3",
+    "pyvi": "0.1.1"
+  },
+  "pdf": {
+    "path": "Stress.pdf",
+    "bytes": 305620,
+    "sha256": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a"
+  }
+}

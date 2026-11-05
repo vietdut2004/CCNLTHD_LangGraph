@@ -1,0 +1,2551 @@
+{
+  "timestamp": "2026-11-05T08:06:12.667916+00:00",
+  "pdf_sha256": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a",
+  "cases_sha256": "4c1b06d80d5225abc92f4fbf6d45a4a11ed4abdd388b1860cc53ba6647813dac",
+  "fixture": false,
+  "provider_calls": 0,
+  "scope": "real FAISS retrieval comparison; not LLM answer correctness; regression set used for tuning, not holdout",
+  "modelcard": "https://huggingface.co/VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+  "simcse_implementation": "https://github.com/princeton-nlp/SimCSE/blob/main/simcse/models.py",
+  "runs": [
+    {
+      "configuration": "chunk200_overlap50_k2_poolingmean",
+      "chunk_size": 200,
+      "overlap": 50,
+      "k": 2,
+      "pooling": "mean",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 12,
+      "chunk_count": 55,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03",
+        "fresh_06"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk200_overlap50_k3_poolingmean",
+      "chunk_size": 200,
+      "overlap": 50,
+      "k": 3,
+      "pooling": "mean",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 6
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 14,
+      "chunk_count": 55,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_07",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk200_overlap50_k4_poolingmean",
+      "chunk_size": 200,
+      "overlap": 50,
+      "k": 4,
+      "pooling": "mean",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 6
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 14,
+      "chunk_count": 55,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_07",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk200_overlap50_k2_poolingcls",
+      "chunk_size": 200,
+      "overlap": 50,
+      "k": 2,
+      "pooling": "cls",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 3
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 2
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 10,
+      "chunk_count": 55,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_03",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk200_overlap50_k3_poolingcls",
+      "chunk_size": 200,
+      "overlap": 50,
+      "k": 3,
+      "pooling": "cls",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 4
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 12,
+      "chunk_count": 55,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk200_overlap50_k4_poolingcls",
+      "chunk_size": 200,
+      "overlap": 50,
+      "k": 4,
+      "pooling": "cls",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 13,
+      "chunk_count": 55,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk200_overlap50_k2_poolingpooler",
+      "chunk_size": 200,
+      "overlap": 50,
+      "k": 2,
+      "pooling": "pooler",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 4
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 1
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 10,
+      "chunk_count": 55,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_02",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk200_overlap50_k3_poolingpooler",
+      "chunk_size": 200,
+      "overlap": 50,
+      "k": 3,
+      "pooling": "pooler",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 2
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 12,
+      "chunk_count": 55,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_02",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk200_overlap50_k4_poolingpooler",
+      "chunk_size": 200,
+      "overlap": 50,
+      "k": 4,
+      "pooling": "pooler",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 13,
+      "chunk_count": 55,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk200_overlap50_k2_poolingtrained_mlp",
+      "chunk_size": 200,
+      "overlap": 50,
+      "k": 2,
+      "pooling": "trained_mlp",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 3
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 2
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 10,
+      "chunk_count": 55,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_03",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk200_overlap50_k3_poolingtrained_mlp",
+      "chunk_size": 200,
+      "overlap": 50,
+      "k": 3,
+      "pooling": "trained_mlp",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 4
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 2
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 11,
+      "chunk_count": 55,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk200_overlap50_k4_poolingtrained_mlp",
+      "chunk_size": 200,
+      "overlap": 50,
+      "k": 4,
+      "pooling": "trained_mlp",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 4
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 12,
+      "chunk_count": 55,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "rag_08",
+        "new_01",
+        "new_03",
+        "new_05",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk350_overlap100_k2_poolingmean",
+      "chunk_size": 350,
+      "overlap": 100,
+      "k": 2,
+      "pooling": "mean",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 4
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 13,
+      "chunk_count": 36,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_03",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_02",
+        "new_03",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk350_overlap100_k3_poolingmean",
+      "chunk_size": 350,
+      "overlap": 100,
+      "k": 3,
+      "pooling": "mean",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 14,
+      "chunk_count": 36,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_02",
+        "new_03",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk350_overlap100_k4_poolingmean",
+      "chunk_size": 350,
+      "overlap": 100,
+      "k": 4,
+      "pooling": "mean",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 14,
+      "chunk_count": 36,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_02",
+        "new_03",
+        "new_06",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk350_overlap100_k2_poolingcls",
+      "chunk_size": 350,
+      "overlap": 100,
+      "k": 2,
+      "pooling": "cls",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 4
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 2
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 12,
+      "chunk_count": 36,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_03",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_02",
+        "new_03",
+        "new_06",
+        "validation_01",
+        "validation_04",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk350_overlap100_k3_poolingcls",
+      "chunk_size": 350,
+      "overlap": 100,
+      "k": 3,
+      "pooling": "cls",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 14,
+      "chunk_count": 36,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_02",
+        "new_03",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk350_overlap100_k4_poolingcls",
+      "chunk_size": 350,
+      "overlap": 100,
+      "k": 4,
+      "pooling": "cls",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 15,
+      "chunk_count": 36,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_02",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk350_overlap100_k2_poolingpooler",
+      "chunk_size": 350,
+      "overlap": 100,
+      "k": 2,
+      "pooling": "pooler",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 4
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 13,
+      "chunk_count": 36,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_03",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_02",
+        "new_03",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk350_overlap100_k3_poolingpooler",
+      "chunk_size": 350,
+      "overlap": 100,
+      "k": 3,
+      "pooling": "pooler",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 15,
+      "chunk_count": 36,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_03",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk350_overlap100_k4_poolingpooler",
+      "chunk_size": 350,
+      "overlap": 100,
+      "k": 4,
+      "pooling": "pooler",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 15,
+      "chunk_count": 36,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_03",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk350_overlap100_k2_poolingtrained_mlp",
+      "chunk_size": 350,
+      "overlap": 100,
+      "k": 2,
+      "pooling": "trained_mlp",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 2
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 14,
+      "chunk_count": 36,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_02",
+        "new_03",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk350_overlap100_k3_poolingtrained_mlp",
+      "chunk_size": 350,
+      "overlap": 100,
+      "k": 3,
+      "pooling": "trained_mlp",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 15,
+      "chunk_count": 36,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_02",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk350_overlap100_k4_poolingtrained_mlp",
+      "chunk_size": 350,
+      "overlap": 100,
+      "k": 4,
+      "pooling": "trained_mlp",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 15,
+      "chunk_count": 36,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_07",
+        "new_01",
+        "new_02",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk500_overlap50_k2_poolingmean",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 2,
+      "pooling": "mean",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 3
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 13,
+      "chunk_count": 22,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_03",
+        "rag_05",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk500_overlap50_k3_poolingmean",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 3,
+      "pooling": "mean",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 5
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 18,
+      "chunk_count": 22,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "fresh_01"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk500_overlap50_k4_poolingmean",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 4,
+      "pooling": "mean",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 6
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 5
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 19,
+      "chunk_count": 22,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_06",
+        "new_01",
+        "new_05",
+        "new_06",
+        "fresh_01"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk500_overlap50_k2_poolingcls",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 2,
+      "pooling": "cls",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 16,
+      "chunk_count": 22,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk500_overlap50_k3_poolingcls",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 3,
+      "pooling": "cls",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 17,
+      "chunk_count": 22,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_06",
+        "validation_01",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk500_overlap50_k4_poolingcls",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 4,
+      "pooling": "cls",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 6
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 18,
+      "chunk_count": 22,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_06",
+        "new_01",
+        "new_06",
+        "validation_01",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk500_overlap50_k2_poolingpooler",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 2,
+      "pooling": "pooler",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 16,
+      "chunk_count": 22,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk500_overlap50_k3_poolingpooler",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 3,
+      "pooling": "pooler",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 17,
+      "chunk_count": 22,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_06",
+        "validation_01",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk500_overlap50_k4_poolingpooler",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 4,
+      "pooling": "pooler",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 6
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 18,
+      "chunk_count": 22,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_06",
+        "new_01",
+        "new_06",
+        "validation_01",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk500_overlap50_k2_poolingtrained_mlp",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 2,
+      "pooling": "trained_mlp",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 15,
+      "chunk_count": 22,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk500_overlap50_k3_poolingtrained_mlp",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 3,
+      "pooling": "trained_mlp",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 17,
+      "chunk_count": 22,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_06",
+        "validation_01",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk500_overlap50_k4_poolingtrained_mlp",
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 4,
+      "pooling": "trained_mlp",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 5
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 18,
+      "chunk_count": 22,
+      "failed_answerable_ids": [
+        "rag_03",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_06",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk650_overlap180_k2_poolingmean",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 2,
+      "pooling": "mean",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 5
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 15,
+      "chunk_count": 19,
+      "failed_answerable_ids": [
+        "rag_01",
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk650_overlap180_k3_poolingmean",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 3,
+      "pooling": "mean",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 7
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 19,
+      "chunk_count": 19,
+      "failed_answerable_ids": [
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "validation_05",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk650_overlap180_k4_poolingmean",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 4,
+      "pooling": "mean",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 7
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 5
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 20,
+      "chunk_count": 19,
+      "failed_answerable_ids": [
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk650_overlap180_k2_poolingcls",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 2,
+      "pooling": "cls",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 6
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 15,
+      "chunk_count": 19,
+      "failed_answerable_ids": [
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk650_overlap180_k3_poolingcls",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 3,
+      "pooling": "cls",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 7
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 18,
+      "chunk_count": 19,
+      "failed_answerable_ids": [
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk650_overlap180_k4_poolingcls",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 4,
+      "pooling": "cls",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 7
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 20,
+      "chunk_count": 19,
+      "failed_answerable_ids": [
+        "rag_08",
+        "new_01",
+        "new_06",
+        "validation_05",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk650_overlap180_k2_poolingpooler",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 2,
+      "pooling": "pooler",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 6
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 15,
+      "chunk_count": 19,
+      "failed_answerable_ids": [
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk650_overlap180_k3_poolingpooler",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 3,
+      "pooling": "pooler",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 7
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 18,
+      "chunk_count": 19,
+      "failed_answerable_ids": [
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk650_overlap180_k4_poolingpooler",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 4,
+      "pooling": "pooler",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 7
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 20,
+      "chunk_count": 19,
+      "failed_answerable_ids": [
+        "rag_08",
+        "new_01",
+        "new_06",
+        "validation_05",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk650_overlap180_k2_poolingtrained_mlp",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 2,
+      "pooling": "trained_mlp",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 6
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 3
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 15,
+      "chunk_count": 19,
+      "failed_answerable_ids": [
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "validation_01",
+        "validation_05",
+        "fresh_01",
+        "fresh_02",
+        "fresh_03"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk650_overlap180_k3_poolingtrained_mlp",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 3,
+      "pooling": "trained_mlp",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 6
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 4
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 17,
+      "chunk_count": 19,
+      "failed_answerable_ids": [
+        "rag_06",
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "validation_05",
+        "fresh_01",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    },
+    {
+      "configuration": "chunk650_overlap180_k4_poolingtrained_mlp",
+      "chunk_size": 650,
+      "overlap": 180,
+      "k": 4,
+      "pooling": "trained_mlp",
+      "normalize_embeddings": true,
+      "word_segmentation": "pyvi",
+      "groups": {
+        "old_8": {
+          "n": 8,
+          "all_spans_present": 7
+        },
+        "supplied_6": {
+          "n": 6,
+          "all_spans_present": 3
+        },
+        "supplied_5": {
+          "n": 5,
+          "all_spans_present": 4
+        },
+        "fresh_6": {
+          "n": 6,
+          "all_spans_present": 5
+        },
+        "negative_2": {
+          "n": 2,
+          "all_spans_present": 0
+        }
+      },
+      "all_spans_present": 19,
+      "chunk_count": 19,
+      "failed_answerable_ids": [
+        "rag_08",
+        "new_01",
+        "new_05",
+        "new_06",
+        "validation_05",
+        "fresh_02"
+      ],
+      "fixture": false,
+      "provider_calls": 0,
+      "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+      "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+      "strip_source_prefix": true,
+      "max_input_tokens": 256,
+      "metric": "normalized_squared_l2",
+      "index_type": "IndexFlatL2"
+    }
+  ]
+}

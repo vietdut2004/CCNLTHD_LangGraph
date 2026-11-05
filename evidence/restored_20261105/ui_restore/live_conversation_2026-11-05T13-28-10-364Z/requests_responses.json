@@ -1,0 +1,122 @@
+[
+  {
+    "started_at": "2026-11-05T13:28:15.145Z",
+    "request": {
+      "question": "bạn cho mình biết ý nghĩa của hít thở sâu là gì",
+      "mode": "auto",
+      "user_id": "browser-e53dd71f-4008-4ebe-9f45-7e36c4f39fb5",
+      "session_id": "7abd0fc2-0915-4ffd-9e48-a91a52e886ac",
+      "use_cache": false
+    },
+    "fixture": false,
+    "http_status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-trace-id": "7e20e906950e423290b5231267bd482e"
+    },
+    "response_body": "{\"response\":\"Hít thở sâu (hay còn gọi là hít thở sâu, hít thở chậm, hít thở sâu và sâu) là một kỹ thuật thở mà bạn cố gắng làm cho hơi thở của mình trở nên sâu hơn, chậm hơn và đầy đủ hơn so với thở bình thường. Khi thực hiện, bạn thường:\\n\\n1. **Hít vào qua mũi**: Hít vào một cách nhẹ nhàng, cho hơi thở đi sâu vào phổi, làm cho ngực và bụng hơi nâng lên.\\n2. **Giữ hơi**: Đôi khi giữ hơi trong vài giây (tùy theo cảm giác thoải mái).\\n3. **Thở ra**: Thở ra từ từ, làm cho hơi thở thoát ra hoàn toàn, thường bằng cách mở miệng hoặc mũi.\\n\\n### Ý nghĩa và lợi ích của hít thở sâu\\n\\n| Lợi ích | Mô tả |\\n|---------|-------|\\n| **Giảm căng thẳng** | Khi thở sâu, hệ thống thần kinh giao cảm (gây căng thẳng) được giảm, trong khi hệ thống thần kinh giao cảm (giúp thư giãn) được kích hoạt. |\\n| **Tăng lượng oxy** | Hít sâu giúp cung cấp nhiều oxy hơn cho máu, giúp tế bào và cơ quan hoạt động hiệu quả hơn. |\\n| **Cải thiện tâm trạng** | Thở sâu kích thích sản xuất serotonin và dopamine, những chất dẫn truyền thần kinh giúp cải thiện tâm trạng. |\\n| **Hỗ trợ tiêu hóa** | Thở sâu kích thích hệ thống tiêu hóa, giúp giảm đau bụng và khó tiêu. |\\n| **Tăng cường tập trung** | Khi cơ thể được cung cấp đủ oxy, não bộ có thể tập trung tốt hơn và giảm cảm giác mệt mỏi. |\\n| **Giảm huyết áp** | Thở sâu có thể làm giảm huyết áp và nhịp tim, giúp thư giãn cơ thể. |\\n| **Hỗ trợ giấc ngủ** | Khi bạn thư giãn trước khi ngủ, thở sâu giúp giảm căng thẳng và dễ dàng chìm vào giấc ngủ. |\\n\\n### Khi nào nên thực hiện\\n\\n- Khi cảm thấy căng thẳng, lo lắng hoặc bồn chồn.\\n- Trước khi tập thể dục để làm nóng cơ thể.\\n- Khi cần tập trung vào công việc hoặc học tập.\\n- Trước khi ngủ để thư giãn.\\n- Khi có cảm giác khó thở hoặc đau ngực (đừng quên tham khảo bác sĩ nếu có vấn đề sức khỏe).\\n\\n### Một vài mẹo thực hành\\n\\n1. **Chọn vị trí thoải mái**: Ngồi hoặc nằm, giữ lưng thẳng.\\n2. **Sử dụng ngón tay**: Đặt một tay lên ngực, một tay lên bụng để cảm nhận sự nâng lên khi hít vào.\\n3. **Thở chậm**: Hít vào trong 4-5 giây, giữ hơi 2-3 giây, thở ra trong 6-7 giây.\\n4. **Lặp lại**: Thực hiện 5-10 lần, hoặc cho đến khi cảm thấy thư giãn.\\n\\nHít thở sâu không chỉ là một kỹ thuật thư giãn mà còn là một công cụ hỗ trợ sức khỏe toàn diện, giúp bạn cảm thấy bình yên và năng động hơn trong cuộc sống hàng ngày. Nếu bạn muốn thử một bài tập cụ thể, mình có thể gợi ý một vài bài tập hít thở sâu đơn giản.\",\"status\":\"ok\",\"code\":\"OK\",\"trace_id\":\"7e20e906950e423290b5231267bd482e\",\"graph_id\":\"5200e395426bb2a4f7e0\",\"model_id\":\"openai/gpt-oss-20b\",\"route\":\"answer\",\"sources\":[],\"usage\":{\"attempted_model_calls\":1,\"calls_with_usage\":1,\"usage_complete\":true,\"observed_tokens\":{\"input_tokens\":455,\"output_tokens\":829,\"total_tokens\":1284},\"total_tokens\":1284}}",
+    "response": {
+      "response": "Hít thở sâu (hay còn gọi là hít thở sâu, hít thở chậm, hít thở sâu và sâu) là một kỹ thuật thở mà bạn cố gắng làm cho hơi thở của mình trở nên sâu hơn, chậm hơn và đầy đủ hơn so với thở bình thường. Khi thực hiện, bạn thường:\n\n1. **Hít vào qua mũi**: Hít vào một cách nhẹ nhàng, cho hơi thở đi sâu vào phổi, làm cho ngực và bụng hơi nâng lên.\n2. **Giữ hơi**: Đôi khi giữ hơi trong vài giây (tùy theo cảm giác thoải mái).\n3. **Thở ra**: Thở ra từ từ, làm cho hơi thở thoát ra hoàn toàn, thường bằng cách mở miệng hoặc mũi.\n\n### Ý nghĩa và lợi ích của hít thở sâu\n\n| Lợi ích | Mô tả |\n|---------|-------|\n| **Giảm căng thẳng** | Khi thở sâu, hệ thống thần kinh giao cảm (gây căng thẳng) được giảm, trong khi hệ thống thần kinh giao cảm (giúp thư giãn) được kích hoạt. |\n| **Tăng lượng oxy** | Hít sâu giúp cung cấp nhiều oxy hơn cho máu, giúp tế bào và cơ quan hoạt động hiệu quả hơn. |\n| **Cải thiện tâm trạng** | Thở sâu kích thích sản xuất serotonin và dopamine, những chất dẫn truyền thần kinh giúp cải thiện tâm trạng. |\n| **Hỗ trợ tiêu hóa** | Thở sâu kích thích hệ thống tiêu hóa, giúp giảm đau bụng và khó tiêu. |\n| **Tăng cường tập trung** | Khi cơ thể được cung cấp đủ oxy, não bộ có thể tập trung tốt hơn và giảm cảm giác mệt mỏi. |\n| **Giảm huyết áp** | Thở sâu có thể làm giảm huyết áp và nhịp tim, giúp thư giãn cơ thể. |\n| **Hỗ trợ giấc ngủ** | Khi bạn thư giãn trước khi ngủ, thở sâu giúp giảm căng thẳng và dễ dàng chìm vào giấc ngủ. |\n\n### Khi nào nên thực hiện\n\n- Khi cảm thấy căng thẳng, lo lắng hoặc bồn chồn.\n- Trước khi tập thể dục để làm nóng cơ thể.\n- Khi cần tập trung vào công việc hoặc học tập.\n- Trước khi ngủ để thư giãn.\n- Khi có cảm giác khó thở hoặc đau ngực (đừng quên tham khảo bác sĩ nếu có vấn đề sức khỏe).\n\n### Một vài mẹo thực hành\n\n1. **Chọn vị trí thoải mái**: Ngồi hoặc nằm, giữ lưng thẳng.\n2. **Sử dụng ngón tay**: Đặt một tay lên ngực, một tay lên bụng để cảm nhận sự nâng lên khi hít vào.\n3. **Thở chậm**: Hít vào trong 4-5 giây, giữ hơi 2-3 giây, thở ra trong 6-7 giây.\n4. **Lặp lại**: Thực hiện 5-10 lần, hoặc cho đến khi cảm thấy thư giãn.\n\nHít thở sâu không chỉ là một kỹ thuật thư giãn mà còn là một công cụ hỗ trợ sức khỏe toàn diện, giúp bạn cảm thấy bình yên và năng động hơn trong cuộc sống hàng ngày. Nếu bạn muốn thử một bài tập cụ thể, mình có thể gợi ý một vài bài tập hít thở sâu đơn giản.",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "7e20e906950e423290b5231267bd482e",
+      "graph_id": "5200e395426bb2a4f7e0",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 455,
+          "output_tokens": 829,
+          "total_tokens": 1284
+        },
+        "total_tokens": 1284
+      }
+    },
+    "latency_ms_browser": 5563,
+    "finished_at": "2026-11-05T13:28:20.709Z"
+  },
+  {
+    "started_at": "2026-11-05T13:28:20.988Z",
+    "request": {
+      "question": "bạn có khỏe kh",
+      "mode": "auto",
+      "user_id": "browser-e53dd71f-4008-4ebe-9f45-7e36c4f39fb5",
+      "session_id": "7abd0fc2-0915-4ffd-9e48-a91a52e886ac",
+      "use_cache": false
+    },
+    "fixture": false,
+    "http_status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-trace-id": "d51cbc1198214cc98c47b1fc25ca610c"
+    },
+    "response_body": "{\"response\":\"Mình luôn sẵn sàng giúp bạn! Bạn có điều gì muốn chia sẻ hoặc cần hỗ trợ không?\",\"status\":\"ok\",\"code\":\"OK\",\"trace_id\":\"d51cbc1198214cc98c47b1fc25ca610c\",\"graph_id\":\"5200e395426bb2a4f7e0\",\"model_id\":\"openai/gpt-oss-20b\",\"route\":\"answer\",\"sources\":[],\"usage\":{\"attempted_model_calls\":1,\"calls_with_usage\":1,\"usage_complete\":true,\"observed_tokens\":{\"input_tokens\":1233,\"output_tokens\":85,\"total_tokens\":1318},\"total_tokens\":1318}}",
+    "response": {
+      "response": "Mình luôn sẵn sàng giúp bạn! Bạn có điều gì muốn chia sẻ hoặc cần hỗ trợ không?",
+      "status": "ok",
+      "code": "OK",
+      "trace_id": "d51cbc1198214cc98c47b1fc25ca610c",
+      "graph_id": "5200e395426bb2a4f7e0",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "answer",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 1,
+        "calls_with_usage": 1,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 1233,
+          "output_tokens": 85,
+          "total_tokens": 1318
+        },
+        "total_tokens": 1318
+      }
+    },
+    "latency_ms_browser": 1572,
+    "finished_at": "2026-11-05T13:28:22.561Z"
+  },
+  {
+    "started_at": "2026-11-05T13:28:22.823Z",
+    "request": {
+      "question": "bạn gợi ý cho tôi vài bộ phim truyền động lực sống được kh",
+      "mode": "auto",
+      "user_id": "browser-e53dd71f-4008-4ebe-9f45-7e36c4f39fb5",
+      "session_id": "7abd0fc2-0915-4ffd-9e48-a91a52e886ac",
+      "use_cache": false
+    },
+    "fixture": false,
+    "http_status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-trace-id": "a6e281dc82364e5c9f28bbba2ca52ca6"
+    },
+    "response_body": "{\"response\":\"Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.\",\"status\":\"refused\",\"code\":\"INSUFFICIENT_EVIDENCE\",\"trace_id\":\"a6e281dc82364e5c9f28bbba2ca52ca6\",\"graph_id\":\"5200e395426bb2a4f7e0\",\"model_id\":\"openai/gpt-oss-20b\",\"route\":\"web\",\"sources\":[],\"usage\":{\"attempted_model_calls\":2,\"calls_with_usage\":2,\"usage_complete\":true,\"observed_tokens\":{\"input_tokens\":2968,\"output_tokens\":622,\"total_tokens\":3590},\"total_tokens\":3590}}",
+    "response": {
+      "response": "Chưa có đủ bằng chứng từ nguồn truy xuất để trả lời câu hỏi này.",
+      "status": "refused",
+      "code": "INSUFFICIENT_EVIDENCE",
+      "trace_id": "a6e281dc82364e5c9f28bbba2ca52ca6",
+      "graph_id": "5200e395426bb2a4f7e0",
+      "model_id": "openai/gpt-oss-20b",
+      "route": "web",
+      "sources": [],
+      "usage": {
+        "attempted_model_calls": 2,
+        "calls_with_usage": 2,
+        "usage_complete": true,
+        "observed_tokens": {
+          "input_tokens": 2968,
+          "output_tokens": 622,
+          "total_tokens": 3590
+        },
+        "total_tokens": 3590
+      }
+    },
+    "latency_ms_browser": 6931,
+    "finished_at": "2026-11-05T13:28:29.754Z"
+  }
+]

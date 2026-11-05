@@ -1,0 +1,2518 @@
+{
+  "summary": {
+    "configuration": "chunk1000_overlap180_k6_normalizedTrue",
+    "chunk_size": 1000,
+    "overlap": 180,
+    "k": 6,
+    "normalize_embeddings": true,
+    "chunk_count": 12,
+    "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+    "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+    "dimensions": 768,
+    "index": "IndexFlatL2",
+    "metric": "squared_l2",
+    "groups": {
+      "old_8": {
+        "n": 8,
+        "all_spans_present": 7
+      },
+      "supplied_6": {
+        "n": 6,
+        "all_spans_present": 5
+      },
+      "supplied_5": {
+        "n": 5,
+        "all_spans_present": 4
+      },
+      "fresh_6": {
+        "n": 6,
+        "all_spans_present": 5
+      },
+      "negative_2": {
+        "n": 2,
+        "all_spans_present": 0
+      }
+    },
+    "all_spans_present": 21,
+    "failed_answerable_ids": [
+      "rag_08",
+      "new_03",
+      "validation_02",
+      "fresh_02"
+    ],
+    "fixture": false,
+    "provider_calls": 0,
+    "scope": "real embedding and FAISS; retrieval span coverage is not model answer correctness"
+  },
+  "results": [
+    {
+      "id": "rag_01",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, hít thở sâu tác động thế nào đến não bộ và trạng thái cơ thể?",
+      "reference": "Não nhận thông điệp bình tĩnh/thư giãn và gửi đến cơ thể; các biểu hiện căng thẳng giảm.",
+      "reference_pages": [
+        1
+      ],
+      "required_spans": [
+        "bình tĩnh và thư giãn",
+        "bộ não sẽ gửi thông điệp này"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-012",
+          "page": 6,
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "text": " Hít thở sâu vài lần để thư giãn. \n Hít vào. Căng cơ bàn chân. \n Thở ra. Giải phóng sự căng thẳng ở bàn chân. \n Hít vào. Căng cơ bắp chân. \n Thở ra. Giải phóng sự căng thẳng ở bắp chân. \n Vận động theo cách của riêng mình. Căng cứng từng nhóm cơ. Điều \nnày bao gồm chân, bụng, ngực, ngón tay, cánh tay, vai, cổ và mặt. \nCách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \ncách không cần thiết. Đối với những người thường xuyên gặp phải những áp \nlực trong cuộc sống, họ có thể thử áp dụng một số kỹ thuật thở như : Thở \nbằng bụng, thở theo nhịp 4 – 7 – 8, thở cuộn, thực hiện các bài tập thở vào \nbuổi sáng... để giúp cải thiện tâm trạng cũng như nâng cao sức khỏe nói \nchung.",
+          "rank": 1,
+          "score": 0.648302435874939,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-001",
+          "page": 1,
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "text": "Các kỹ thuật thở sâu để giảm căng thẳng \nBạn đã bao giờ để ý đến cách bạn hít thở sâu khi cảm thấy thư thái chưa? Hãy \ndành một chút thời gian để ý xem cơ thể bạn cảm thấy thế nào. Hoặc nghĩ về \ncách bạn thở khi thức dậy vào buổi sáng hoặc ngay trước khi bạn chìm vào \ngiấc ngủ. Các bài tập thở có thể giúp bạn thư giãn. Cùng tìm hiểu thêm các kỹ \nthuật thở sâu để giảm căng thẳng trong các kĩ thuật hít thở dưới đây. \n1. Ý nghĩa của việc hít thở sâu \nHít thở sâu là một trong những cách tốt nhất để giảm căng thẳng trong cơ thể của \nbạn. Điều này là do khi chúng ta hít thở sâu, não bộ của chúng ta sẽ nhận được một \nthông điệp khiến cơ thể bình tĩnh và thư giãn. Sau đó, bộ não sẽ gửi thông điệp này \nđến toàn bộ cơ thể. Những điều xảy ra khi chúng ta cảm thấy căng thẳng, chẳng \nhạn như nhịp tim tăng, thở nhanh và huyết áp cao, tất cả đều giảm khi bạn hít thở \nsâu để thư giãn. Hãy lưu ý, cách bạn thở ảnh hưởng đến toàn bộ cơ thể của chính \nbạn.",
+          "rank": 2,
+          "score": 0.6751673221588135,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-008",
+          "page": 4,
+          "start": 0,
+          "end": 986,
+          "section": "2.2.2. Thở cuộn",
+          "text": " Khi thở ra từ từ bằng miệng, tạo ra âm thanh khẽ khi bàn tay trái \nhạ xuống đầu tiên và sau đó tay phải hạ xuống. Khi thở ra, cảm \ngiác căng thẳng sẽ thoát khỏi cơ thể và khiến chúng ta ngày càng \ntrở nên thư giãn hơn. \n Thực hành hít vào và thở ra theo cách này trong 3 đến 5 phút. Chú \ný rằng chuyển động của bụng và ngực sẽ lên xuống giống như \nchuyển động của sóng lăn. \n Để ý xem bạn cảm thấy thế nào khi bạn kết thúc bài tập. \nThực hành thở cuộn hàng ngày trong vài tuần cho đến khi cảm thấy có \nthể thực hiện nó ở bất kỳ nơi nào. Bạn có thể sử dụng nó như một công \ncụ thư giãn tức thì ở bất cứ lúc nào bạn cần. Tuy nhiên cần lưu ý: Một số \nngười bị chóng mặt trong vài lần đầu tiên họ thử thở cuộn. Nếu bạn bắt \nđầu thở quá nhanh hoặc cảm thấy choáng váng, hãy làm chậm nhịp thở \ncủa mình, sau đó từ từ đứng dậy. \n2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong",
+          "rank": 3,
+          "score": 0.7424042224884033,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 4,
+          "score": 0.7478605508804321,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 5,
+          "score": 0.7624907493591309,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-011",
+          "page": 5,
+          "start": 815,
+          "end": 1465,
+          "section": "2.3.2. Tập trung vào hơi thở",
+          "text": "hoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên \nbình và tĩnh lặng. Cố gắng cảm nhận nó khắp cơ thể mình. \n Khi thở ra, hãy tưởng tượng rằng không khí rời đi cùng với sự căng \nthẳng của mình. \n Tiếp tục trong 10 đến 20 phút. \n2.3.3. Thư giãn cơ bắp \nTrong kỹ thuật thở này, bạn hít vào khi căng một nhóm cơ và thở ra khi thả \nlỏng nhóm cơ đó. Thư giãn cơ bắp có thể giúp chúng ta cảm thấy thoải mái \ncả về thể chất lẫn tinh thần. Các bước thực hiện kỹ thuật thư giãn cơ bắp bao \ngồm : \n Nằm thoải mái trên sàn hoặc giường.",
+          "rank": 6,
+          "score": 0.7833724021911621,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "bình tĩnh và thư giãn",
+          "matching_ranks": [
+            2
+          ]
+        },
+        {
+          "span": "bộ não sẽ gửi thông điệp này",
+          "matching_ranks": [
+            2
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "rag_02",
+      "group": "old_8",
+      "question": "Theo Stress.pdf mục thở bụng, hai tay cần đặt ở đâu?",
+      "reference": "Một tay ở bụng ngay dưới xương sườn, tay kia trên ngực.",
+      "reference_pages": [
+        2
+      ],
+      "required_spans": [
+        "ngay dưới xương sườn",
+        "tay kia đặt trên ngực"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 1,
+          "score": 0.7114642858505249,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 2,
+          "score": 0.7270786762237549,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 3,
+          "score": 0.7384611964225769,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 4,
+          "score": 0.7736286520957947,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 5,
+          "score": 0.7860960960388184,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 6,
+          "score": 0.7974503636360168,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "ngay dưới xương sườn",
+          "matching_ranks": [
+            6
+          ]
+        },
+        {
+          "span": "tay kia đặt trên ngực",
+          "matching_ranks": [
+            6
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "rag_03",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, bài tập thở bụng được lặp lại bao nhiêu lần?",
+      "reference": "Từ 3 đến 10 lần.",
+      "reference_pages": [
+        2
+      ],
+      "required_spans": [
+        "từ 3 đến 10 lần"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 1,
+          "score": 0.5906234979629517,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 2,
+          "score": 0.6189563870429993,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 3,
+          "score": 0.7040825486183167,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 4,
+          "score": 0.7436940670013428,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 5,
+          "score": 0.7897644639015198,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-003",
+          "page": 1,
+          "start": 1541,
+          "end": 2054,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": "đầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây. Ngoài ra còn có \ncác bài tập khác ở mức nâng cao hơn. Tất cả các bài tập này có thể giúp chúng ta \nthư giãn và giảm căng thẳng. \nTrước khi bắt đầu thực hiện các kỹ thuật thở sâu, hãy ghi nhớ các mẹo sau: \n Chọn một nơi để thực hiện bài tập thở của mình. Đó có thể là trên giường, \ntrên sàn phòng khách, hoặc trên một chiếc ghế khiến bạn cảm thấy thoải mái \nnhất.",
+          "rank": 6,
+          "score": 0.8557506799697876,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "từ 3 đến 10 lần",
+          "matching_ranks": [
+            1,
+            4
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "rag_04",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, trong kỹ thuật 4-7-8 phải đếm đến mấy khi hít vào, nín thở và thở ra?",
+      "reference": "Hít vào đếm đến 4, nín thở đếm đến 7, thở ra đếm đến 8.",
+      "reference_pages": [
+        3
+      ],
+      "required_spans": [
+        "đếm thầm đến 4",
+        "đếm thầm từ 1 - 7",
+        "đếm thầm từ 1 đến 8"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 1,
+          "score": 0.5472564697265625,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 2,
+          "score": 0.5524805784225464,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 3,
+          "score": 0.6789281368255615,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 4,
+          "score": 0.7025374174118042,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-012",
+          "page": 6,
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "text": " Hít thở sâu vài lần để thư giãn. \n Hít vào. Căng cơ bàn chân. \n Thở ra. Giải phóng sự căng thẳng ở bàn chân. \n Hít vào. Căng cơ bắp chân. \n Thở ra. Giải phóng sự căng thẳng ở bắp chân. \n Vận động theo cách của riêng mình. Căng cứng từng nhóm cơ. Điều \nnày bao gồm chân, bụng, ngực, ngón tay, cánh tay, vai, cổ và mặt. \nCách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \ncách không cần thiết. Đối với những người thường xuyên gặp phải những áp \nlực trong cuộc sống, họ có thể thử áp dụng một số kỹ thuật thở như : Thở \nbằng bụng, thở theo nhịp 4 – 7 – 8, thở cuộn, thực hiện các bài tập thở vào \nbuổi sáng... để giúp cải thiện tâm trạng cũng như nâng cao sức khỏe nói \nchung.",
+          "rank": 5,
+          "score": 0.7136107087135315,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 6,
+          "score": 0.7188711762428284,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "đếm thầm đến 4",
+          "matching_ranks": [
+            2
+          ]
+        },
+        {
+          "span": "đếm thầm từ 1 - 7",
+          "matching_ranks": [
+            2
+          ]
+        },
+        {
+          "span": "đếm thầm từ 1 đến 8",
+          "matching_ranks": [
+            2
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "rag_05",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, khi mới làm quen bài tập thở cuộn nên chọn tư thế nào?",
+      "reference": "Nằm ngửa, co đầu gối.",
+      "reference_pages": [
+        3
+      ],
+      "required_spans": [
+        "nên nằm ngửa, co đầu gối"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 1,
+          "score": 0.6062121987342834,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 2,
+          "score": 0.6270143389701843,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-003",
+          "page": 1,
+          "start": 1541,
+          "end": 2054,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": "đầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây. Ngoài ra còn có \ncác bài tập khác ở mức nâng cao hơn. Tất cả các bài tập này có thể giúp chúng ta \nthư giãn và giảm căng thẳng. \nTrước khi bắt đầu thực hiện các kỹ thuật thở sâu, hãy ghi nhớ các mẹo sau: \n Chọn một nơi để thực hiện bài tập thở của mình. Đó có thể là trên giường, \ntrên sàn phòng khách, hoặc trên một chiếc ghế khiến bạn cảm thấy thoải mái \nnhất.",
+          "rank": 3,
+          "score": 0.6907960176467896,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 4,
+          "score": 0.7152937650680542,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 5,
+          "score": 0.7580872774124146,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 6,
+          "score": 0.8113073110580444,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "nên nằm ngửa, co đầu gối",
+          "matching_ranks": [
+            1,
+            5
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "rag_06",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, thời lượng thực hành hít vào và thở ra ở bài tập thở cuộn là mấy phút?",
+      "reference": "3 đến 5 phút.",
+      "reference_pages": [
+        4
+      ],
+      "required_spans": [
+        "trong 3 đến 5 phút"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 1,
+          "score": 0.5879464149475098,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 2,
+          "score": 0.6813280582427979,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 3,
+          "score": 0.6915063858032227,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 4,
+          "score": 0.7039937973022461,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-008",
+          "page": 4,
+          "start": 0,
+          "end": 986,
+          "section": "2.2.2. Thở cuộn",
+          "text": " Khi thở ra từ từ bằng miệng, tạo ra âm thanh khẽ khi bàn tay trái \nhạ xuống đầu tiên và sau đó tay phải hạ xuống. Khi thở ra, cảm \ngiác căng thẳng sẽ thoát khỏi cơ thể và khiến chúng ta ngày càng \ntrở nên thư giãn hơn. \n Thực hành hít vào và thở ra theo cách này trong 3 đến 5 phút. Chú \ný rằng chuyển động của bụng và ngực sẽ lên xuống giống như \nchuyển động của sóng lăn. \n Để ý xem bạn cảm thấy thế nào khi bạn kết thúc bài tập. \nThực hành thở cuộn hàng ngày trong vài tuần cho đến khi cảm thấy có \nthể thực hiện nó ở bất kỳ nơi nào. Bạn có thể sử dụng nó như một công \ncụ thư giãn tức thì ở bất cứ lúc nào bạn cần. Tuy nhiên cần lưu ý: Một số \nngười bị chóng mặt trong vài lần đầu tiên họ thử thở cuộn. Nếu bạn bắt \nđầu thở quá nhanh hoặc cảm thấy choáng váng, hãy làm chậm nhịp thở \ncủa mình, sau đó từ từ đứng dậy. \n2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong",
+          "rank": 5,
+          "score": 0.7310999631881714,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 6,
+          "score": 0.7602131366729736,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "trong 3 đến 5 phút",
+          "matching_ranks": [
+            5
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "rag_07",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, trong bài thở buổi sáng khi trở lại tư thế đứng cần nâng bộ phận nào lên sau cùng?",
+      "reference": "Nâng đầu lên sau cùng.",
+      "reference_pages": [
+        4
+      ],
+      "required_spans": [
+        "nâng đầu lên sau cùng"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 1,
+          "score": 0.7986048460006714,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 2,
+          "score": 0.8361899256706238,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-008",
+          "page": 4,
+          "start": 0,
+          "end": 986,
+          "section": "2.2.2. Thở cuộn",
+          "text": " Khi thở ra từ từ bằng miệng, tạo ra âm thanh khẽ khi bàn tay trái \nhạ xuống đầu tiên và sau đó tay phải hạ xuống. Khi thở ra, cảm \ngiác căng thẳng sẽ thoát khỏi cơ thể và khiến chúng ta ngày càng \ntrở nên thư giãn hơn. \n Thực hành hít vào và thở ra theo cách này trong 3 đến 5 phút. Chú \ný rằng chuyển động của bụng và ngực sẽ lên xuống giống như \nchuyển động của sóng lăn. \n Để ý xem bạn cảm thấy thế nào khi bạn kết thúc bài tập. \nThực hành thở cuộn hàng ngày trong vài tuần cho đến khi cảm thấy có \nthể thực hiện nó ở bất kỳ nơi nào. Bạn có thể sử dụng nó như một công \ncụ thư giãn tức thì ở bất cứ lúc nào bạn cần. Tuy nhiên cần lưu ý: Một số \nngười bị chóng mặt trong vài lần đầu tiên họ thử thở cuộn. Nếu bạn bắt \nđầu thở quá nhanh hoặc cảm thấy choáng váng, hãy làm chậm nhịp thở \ncủa mình, sau đó từ từ đứng dậy. \n2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong",
+          "rank": 3,
+          "score": 0.8853144645690918,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 4,
+          "score": 0.9269654750823975,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 5,
+          "score": 0.9717031121253967,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-003",
+          "page": 1,
+          "start": 1541,
+          "end": 2054,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": "đầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây. Ngoài ra còn có \ncác bài tập khác ở mức nâng cao hơn. Tất cả các bài tập này có thể giúp chúng ta \nthư giãn và giảm căng thẳng. \nTrước khi bắt đầu thực hiện các kỹ thuật thở sâu, hãy ghi nhớ các mẹo sau: \n Chọn một nơi để thực hiện bài tập thở của mình. Đó có thể là trên giường, \ntrên sàn phòng khách, hoặc trên một chiếc ghế khiến bạn cảm thấy thoải mái \nnhất.",
+          "rank": 6,
+          "score": 0.9727487564086914,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "nâng đầu lên sau cùng",
+          "matching_ranks": [
+            1
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "rag_08",
+      "group": "old_8",
+      "question": "Theo Stress.pdf, bài tập tập trung vào hơi thở nên tiếp tục trong bao lâu?",
+      "reference": "10 đến 20 phút.",
+      "reference_pages": [
+        5
+      ],
+      "required_spans": [
+        "Tiếp tục trong 10 đến 20 phút"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 1,
+          "score": 0.5761579275131226,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 2,
+          "score": 0.5888828039169312,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 3,
+          "score": 0.7031891345977783,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 4,
+          "score": 0.7301292419433594,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-003",
+          "page": 1,
+          "start": 1541,
+          "end": 2054,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": "đầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây. Ngoài ra còn có \ncác bài tập khác ở mức nâng cao hơn. Tất cả các bài tập này có thể giúp chúng ta \nthư giãn và giảm căng thẳng. \nTrước khi bắt đầu thực hiện các kỹ thuật thở sâu, hãy ghi nhớ các mẹo sau: \n Chọn một nơi để thực hiện bài tập thở của mình. Đó có thể là trên giường, \ntrên sàn phòng khách, hoặc trên một chiếc ghế khiến bạn cảm thấy thoải mái \nnhất.",
+          "rank": 5,
+          "score": 0.7560396194458008,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 6,
+          "score": 0.7617499828338623,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Tiếp tục trong 10 đến 20 phút",
+          "matching_ranks": []
+        }
+      ],
+      "all_spans_present": false
+    },
+    {
+      "id": "new_01",
+      "group": "supplied_6",
+      "question": "Theo Stress.pdf, trước khi tập thở nên mặc quần áo như thế nào?",
+      "reference": "Mặc quần áo thoải mái.",
+      "reference_pages": [
+        2
+      ],
+      "required_spans": [
+        "Mặc quần áo thoải mái."
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 1,
+          "score": 0.6343977451324463,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 2,
+          "score": 0.6604316830635071,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-003",
+          "page": 1,
+          "start": 1541,
+          "end": 2054,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": "đầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây. Ngoài ra còn có \ncác bài tập khác ở mức nâng cao hơn. Tất cả các bài tập này có thể giúp chúng ta \nthư giãn và giảm căng thẳng. \nTrước khi bắt đầu thực hiện các kỹ thuật thở sâu, hãy ghi nhớ các mẹo sau: \n Chọn một nơi để thực hiện bài tập thở của mình. Đó có thể là trên giường, \ntrên sàn phòng khách, hoặc trên một chiếc ghế khiến bạn cảm thấy thoải mái \nnhất.",
+          "rank": 3,
+          "score": 0.7079501152038574,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 4,
+          "score": 0.739927351474762,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 5,
+          "score": 0.7927654385566711,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 6,
+          "score": 0.796629786491394,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Mặc quần áo thoải mái.",
+          "matching_ranks": [
+            5
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "new_02",
+      "group": "supplied_6",
+      "question": "Theo Stress.pdf, thở theo nhịp 4–7–8 lặp lại bao nhiêu lần?",
+      "reference": "Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh.",
+      "reference_pages": [
+        3
+      ],
+      "required_spans": [
+        "Lặp lại 3 đến 7 lần"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 1,
+          "score": 0.706142246723175,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 2,
+          "score": 0.7464280128479004,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 3,
+          "score": 0.8508400917053223,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 4,
+          "score": 0.8870834708213806,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 5,
+          "score": 0.9044234752655029,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-008",
+          "page": 4,
+          "start": 0,
+          "end": 986,
+          "section": "2.2.2. Thở cuộn",
+          "text": " Khi thở ra từ từ bằng miệng, tạo ra âm thanh khẽ khi bàn tay trái \nhạ xuống đầu tiên và sau đó tay phải hạ xuống. Khi thở ra, cảm \ngiác căng thẳng sẽ thoát khỏi cơ thể và khiến chúng ta ngày càng \ntrở nên thư giãn hơn. \n Thực hành hít vào và thở ra theo cách này trong 3 đến 5 phút. Chú \ný rằng chuyển động của bụng và ngực sẽ lên xuống giống như \nchuyển động của sóng lăn. \n Để ý xem bạn cảm thấy thế nào khi bạn kết thúc bài tập. \nThực hành thở cuộn hàng ngày trong vài tuần cho đến khi cảm thấy có \nthể thực hiện nó ở bất kỳ nơi nào. Bạn có thể sử dụng nó như một công \ncụ thư giãn tức thì ở bất cứ lúc nào bạn cần. Tuy nhiên cần lưu ý: Một số \nngười bị chóng mặt trong vài lần đầu tiên họ thử thở cuộn. Nếu bạn bắt \nđầu thở quá nhanh hoặc cảm thấy choáng váng, hãy làm chậm nhịp thở \ncủa mình, sau đó từ từ đứng dậy. \n2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong",
+          "rank": 6,
+          "score": 0.9422535300254822,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Lặp lại 3 đến 7 lần",
+          "matching_ranks": [
+            1
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "new_03",
+      "group": "supplied_6",
+      "question": "Theo Stress.pdf, khi hít vào trong bài thở bụng thì ngực có di chuyển không?",
+      "reference": "Giữ nguyên vị trí của ngực.",
+      "reference_pages": [
+        2
+      ],
+      "required_spans": [
+        "Giữ nguyên vị trí của ngực."
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 1,
+          "score": 0.6289613246917725,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 2,
+          "score": 0.6347495317459106,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 3,
+          "score": 0.6441289782524109,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-012",
+          "page": 6,
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "text": " Hít thở sâu vài lần để thư giãn. \n Hít vào. Căng cơ bàn chân. \n Thở ra. Giải phóng sự căng thẳng ở bàn chân. \n Hít vào. Căng cơ bắp chân. \n Thở ra. Giải phóng sự căng thẳng ở bắp chân. \n Vận động theo cách của riêng mình. Căng cứng từng nhóm cơ. Điều \nnày bao gồm chân, bụng, ngực, ngón tay, cánh tay, vai, cổ và mặt. \nCách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \ncách không cần thiết. Đối với những người thường xuyên gặp phải những áp \nlực trong cuộc sống, họ có thể thử áp dụng một số kỹ thuật thở như : Thở \nbằng bụng, thở theo nhịp 4 – 7 – 8, thở cuộn, thực hiện các bài tập thở vào \nbuổi sáng... để giúp cải thiện tâm trạng cũng như nâng cao sức khỏe nói \nchung.",
+          "rank": 4,
+          "score": 0.6965204477310181,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-008",
+          "page": 4,
+          "start": 0,
+          "end": 986,
+          "section": "2.2.2. Thở cuộn",
+          "text": " Khi thở ra từ từ bằng miệng, tạo ra âm thanh khẽ khi bàn tay trái \nhạ xuống đầu tiên và sau đó tay phải hạ xuống. Khi thở ra, cảm \ngiác căng thẳng sẽ thoát khỏi cơ thể và khiến chúng ta ngày càng \ntrở nên thư giãn hơn. \n Thực hành hít vào và thở ra theo cách này trong 3 đến 5 phút. Chú \ný rằng chuyển động của bụng và ngực sẽ lên xuống giống như \nchuyển động của sóng lăn. \n Để ý xem bạn cảm thấy thế nào khi bạn kết thúc bài tập. \nThực hành thở cuộn hàng ngày trong vài tuần cho đến khi cảm thấy có \nthể thực hiện nó ở bất kỳ nơi nào. Bạn có thể sử dụng nó như một công \ncụ thư giãn tức thì ở bất cứ lúc nào bạn cần. Tuy nhiên cần lưu ý: Một số \nngười bị chóng mặt trong vài lần đầu tiên họ thử thở cuộn. Nếu bạn bắt \nđầu thở quá nhanh hoặc cảm thấy choáng váng, hãy làm chậm nhịp thở \ncủa mình, sau đó từ từ đứng dậy. \n2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong",
+          "rank": 5,
+          "score": 0.7183424830436707,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-002",
+          "page": 1,
+          "start": 782,
+          "end": 1706,
+          "section": "1. Ý nghĩa của việc hít thở sâu",
+          "text": "hạn như nhịp tim tăng, thở nhanh và huyết áp cao, tất cả đều giảm khi bạn hít thở \nsâu để thư giãn. Hãy lưu ý, cách bạn thở ảnh hưởng đến toàn bộ cơ thể của chính \nbạn. \nHãy hít thở sâu. Bây giờ hãy thở ra. Chúng ta có thể nhận thấy sự khác biệt trong \ncảm giác của bạn. Hơi thở là một công cụ mạnh mẽ để giảm bớt căng thẳng và \ngiảm cảm giác lo lắng. Một số bài tập thở đơn giản có thể tạo ra sự khác biệt lớn \nnếu chúng ta biến chúng thành một phần thói quen thường xuyên của mình. Các \nbài tập thở rất dễ học. Bạn có thể làm chúng bất cứ khi nào bạn muốn và bạn \nkhông cần bất kỳ công cụ hoặc thiết bị đặc biệt nào. \n2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng \nCó rất nhiều bài tập thở bạn có thể làm để giảm và kiểm soát căng thẳng. Bài tập \nđầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây. Ngoài ra còn có",
+          "rank": 6,
+          "score": 0.7202627658843994,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Giữ nguyên vị trí của ngực.",
+          "matching_ranks": []
+        }
+      ],
+      "all_spans_present": false
+    },
+    {
+      "id": "new_04",
+      "group": "supplied_6",
+      "question": "Theo Stress.pdf, khi thư giãn cơ bắp thì căng cơ bàn chân vào lúc hít vào hay thở ra?",
+      "reference": "Hít vào. Căng cơ bàn chân.",
+      "reference_pages": [
+        6
+      ],
+      "required_spans": [
+        "Hít vào. Căng cơ bàn chân."
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-011",
+          "page": 5,
+          "start": 815,
+          "end": 1465,
+          "section": "2.3.2. Tập trung vào hơi thở",
+          "text": "hoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên \nbình và tĩnh lặng. Cố gắng cảm nhận nó khắp cơ thể mình. \n Khi thở ra, hãy tưởng tượng rằng không khí rời đi cùng với sự căng \nthẳng của mình. \n Tiếp tục trong 10 đến 20 phút. \n2.3.3. Thư giãn cơ bắp \nTrong kỹ thuật thở này, bạn hít vào khi căng một nhóm cơ và thở ra khi thả \nlỏng nhóm cơ đó. Thư giãn cơ bắp có thể giúp chúng ta cảm thấy thoải mái \ncả về thể chất lẫn tinh thần. Các bước thực hiện kỹ thuật thư giãn cơ bắp bao \ngồm : \n Nằm thoải mái trên sàn hoặc giường.",
+          "rank": 1,
+          "score": 0.48925983905792236,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-012",
+          "page": 6,
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "text": " Hít thở sâu vài lần để thư giãn. \n Hít vào. Căng cơ bàn chân. \n Thở ra. Giải phóng sự căng thẳng ở bàn chân. \n Hít vào. Căng cơ bắp chân. \n Thở ra. Giải phóng sự căng thẳng ở bắp chân. \n Vận động theo cách của riêng mình. Căng cứng từng nhóm cơ. Điều \nnày bao gồm chân, bụng, ngực, ngón tay, cánh tay, vai, cổ và mặt. \nCách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \ncách không cần thiết. Đối với những người thường xuyên gặp phải những áp \nlực trong cuộc sống, họ có thể thử áp dụng một số kỹ thuật thở như : Thở \nbằng bụng, thở theo nhịp 4 – 7 – 8, thở cuộn, thực hiện các bài tập thở vào \nbuổi sáng... để giúp cải thiện tâm trạng cũng như nâng cao sức khỏe nói \nchung.",
+          "rank": 2,
+          "score": 0.5285086631774902,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 3,
+          "score": 0.5420132875442505,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 4,
+          "score": 0.5605629682540894,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 5,
+          "score": 0.5802720785140991,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 6,
+          "score": 0.5888236165046692,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Hít vào. Căng cơ bàn chân.",
+          "matching_ranks": [
+            2
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "new_05",
+      "group": "supplied_6",
+      "question": "Theo Stress.pdf, thở buổi sáng bắt đầu ở tư thế nào?",
+      "reference": "Đứng, gập người về phía trước từ thắt lưng, đầu gối hơi cong, cánh tay buông thõng.",
+      "reference_pages": [
+        4
+      ],
+      "required_spans": [
+        "Từ tư thế đứng, gập người về phía trước từ thắt lưng"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 1,
+          "score": 0.8341119289398193,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-008",
+          "page": 4,
+          "start": 0,
+          "end": 986,
+          "section": "2.2.2. Thở cuộn",
+          "text": " Khi thở ra từ từ bằng miệng, tạo ra âm thanh khẽ khi bàn tay trái \nhạ xuống đầu tiên và sau đó tay phải hạ xuống. Khi thở ra, cảm \ngiác căng thẳng sẽ thoát khỏi cơ thể và khiến chúng ta ngày càng \ntrở nên thư giãn hơn. \n Thực hành hít vào và thở ra theo cách này trong 3 đến 5 phút. Chú \ný rằng chuyển động của bụng và ngực sẽ lên xuống giống như \nchuyển động của sóng lăn. \n Để ý xem bạn cảm thấy thế nào khi bạn kết thúc bài tập. \nThực hành thở cuộn hàng ngày trong vài tuần cho đến khi cảm thấy có \nthể thực hiện nó ở bất kỳ nơi nào. Bạn có thể sử dụng nó như một công \ncụ thư giãn tức thì ở bất cứ lúc nào bạn cần. Tuy nhiên cần lưu ý: Một số \nngười bị chóng mặt trong vài lần đầu tiên họ thử thở cuộn. Nếu bạn bắt \nđầu thở quá nhanh hoặc cảm thấy choáng váng, hãy làm chậm nhịp thở \ncủa mình, sau đó từ từ đứng dậy. \n2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong",
+          "rank": 2,
+          "score": 0.8615628480911255,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 3,
+          "score": 0.9085698127746582,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-003",
+          "page": 1,
+          "start": 1541,
+          "end": 2054,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": "đầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây. Ngoài ra còn có \ncác bài tập khác ở mức nâng cao hơn. Tất cả các bài tập này có thể giúp chúng ta \nthư giãn và giảm căng thẳng. \nTrước khi bắt đầu thực hiện các kỹ thuật thở sâu, hãy ghi nhớ các mẹo sau: \n Chọn một nơi để thực hiện bài tập thở của mình. Đó có thể là trên giường, \ntrên sàn phòng khách, hoặc trên một chiếc ghế khiến bạn cảm thấy thoải mái \nnhất.",
+          "rank": 4,
+          "score": 0.9119306802749634,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 5,
+          "score": 0.9534462094306946,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 6,
+          "score": 0.954033613204956,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Từ tư thế đứng, gập người về phía trước từ thắt lưng",
+          "matching_ranks": [
+            1
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "new_06",
+      "group": "supplied_6",
+      "question": "Theo Stress.pdf, bài tập tập trung vào hơi thở bắt đầu bằng việc mở mắt hay nhắm mắt?",
+      "reference": "Nhắm mắt lại.",
+      "reference_pages": [
+        5
+      ],
+      "required_spans": [
+        "Nhắm mắt lại."
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 1,
+          "score": 0.6390223503112793,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 2,
+          "score": 0.6558437347412109,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 3,
+          "score": 0.6786889433860779,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 4,
+          "score": 0.6803305149078369,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 5,
+          "score": 0.7255789041519165,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-003",
+          "page": 1,
+          "start": 1541,
+          "end": 2054,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": "đầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây. Ngoài ra còn có \ncác bài tập khác ở mức nâng cao hơn. Tất cả các bài tập này có thể giúp chúng ta \nthư giãn và giảm căng thẳng. \nTrước khi bắt đầu thực hiện các kỹ thuật thở sâu, hãy ghi nhớ các mẹo sau: \n Chọn một nơi để thực hiện bài tập thở của mình. Đó có thể là trên giường, \ntrên sàn phòng khách, hoặc trên một chiếc ghế khiến bạn cảm thấy thoải mái \nnhất.",
+          "rank": 6,
+          "score": 0.7313622832298279,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Nhắm mắt lại.",
+          "matching_ranks": [
+            4
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "validation_01",
+      "group": "supplied_5",
+      "question": "Theo Stress.pdf, tập thở có cần công cụ hay thiết bị đặc biệt không?",
+      "reference": "Không cần công cụ hoặc thiết bị đặc biệt.",
+      "reference_pages": [
+        1
+      ],
+      "required_spans": [
+        "không cần bất kỳ công cụ hoặc thiết bị đặc biệt nào"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 1,
+          "score": 0.5788562297821045,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-003",
+          "page": 1,
+          "start": 1541,
+          "end": 2054,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": "đầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây. Ngoài ra còn có \ncác bài tập khác ở mức nâng cao hơn. Tất cả các bài tập này có thể giúp chúng ta \nthư giãn và giảm căng thẳng. \nTrước khi bắt đầu thực hiện các kỹ thuật thở sâu, hãy ghi nhớ các mẹo sau: \n Chọn một nơi để thực hiện bài tập thở của mình. Đó có thể là trên giường, \ntrên sàn phòng khách, hoặc trên một chiếc ghế khiến bạn cảm thấy thoải mái \nnhất.",
+          "rank": 2,
+          "score": 0.6368048191070557,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 3,
+          "score": 0.6709668636322021,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-012",
+          "page": 6,
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "text": " Hít thở sâu vài lần để thư giãn. \n Hít vào. Căng cơ bàn chân. \n Thở ra. Giải phóng sự căng thẳng ở bàn chân. \n Hít vào. Căng cơ bắp chân. \n Thở ra. Giải phóng sự căng thẳng ở bắp chân. \n Vận động theo cách của riêng mình. Căng cứng từng nhóm cơ. Điều \nnày bao gồm chân, bụng, ngực, ngón tay, cánh tay, vai, cổ và mặt. \nCách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \ncách không cần thiết. Đối với những người thường xuyên gặp phải những áp \nlực trong cuộc sống, họ có thể thử áp dụng một số kỹ thuật thở như : Thở \nbằng bụng, thở theo nhịp 4 – 7 – 8, thở cuộn, thực hiện các bài tập thở vào \nbuổi sáng... để giúp cải thiện tâm trạng cũng như nâng cao sức khỏe nói \nchung.",
+          "rank": 4,
+          "score": 0.6816759705543518,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-002",
+          "page": 1,
+          "start": 782,
+          "end": 1706,
+          "section": "1. Ý nghĩa của việc hít thở sâu",
+          "text": "hạn như nhịp tim tăng, thở nhanh và huyết áp cao, tất cả đều giảm khi bạn hít thở \nsâu để thư giãn. Hãy lưu ý, cách bạn thở ảnh hưởng đến toàn bộ cơ thể của chính \nbạn. \nHãy hít thở sâu. Bây giờ hãy thở ra. Chúng ta có thể nhận thấy sự khác biệt trong \ncảm giác của bạn. Hơi thở là một công cụ mạnh mẽ để giảm bớt căng thẳng và \ngiảm cảm giác lo lắng. Một số bài tập thở đơn giản có thể tạo ra sự khác biệt lớn \nnếu chúng ta biến chúng thành một phần thói quen thường xuyên của mình. Các \nbài tập thở rất dễ học. Bạn có thể làm chúng bất cứ khi nào bạn muốn và bạn \nkhông cần bất kỳ công cụ hoặc thiết bị đặc biệt nào. \n2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng \nCó rất nhiều bài tập thở bạn có thể làm để giảm và kiểm soát căng thẳng. Bài tập \nđầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây. Ngoài ra còn có",
+          "rank": 5,
+          "score": 0.6920819878578186,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 6,
+          "score": 0.7522270679473877,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "không cần bất kỳ công cụ hoặc thiết bị đặc biệt nào",
+          "matching_ranks": [
+            5
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "validation_02",
+      "group": "supplied_5",
+      "question": "Theo Stress.pdf, trong bài thở bụng khi thở ra môi cần như thế nào?",
+      "reference": "Đôi môi mím chặt như đang huýt sáo.",
+      "reference_pages": [
+        2
+      ],
+      "required_spans": [
+        "đôi môi mím chặt như thể đang huýt sáo"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 1,
+          "score": 0.7341556549072266,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 2,
+          "score": 0.7509732246398926,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 3,
+          "score": 0.8008561730384827,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 4,
+          "score": 0.809984564781189,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 5,
+          "score": 0.8226226568222046,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-012",
+          "page": 6,
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "text": " Hít thở sâu vài lần để thư giãn. \n Hít vào. Căng cơ bàn chân. \n Thở ra. Giải phóng sự căng thẳng ở bàn chân. \n Hít vào. Căng cơ bắp chân. \n Thở ra. Giải phóng sự căng thẳng ở bắp chân. \n Vận động theo cách của riêng mình. Căng cứng từng nhóm cơ. Điều \nnày bao gồm chân, bụng, ngực, ngón tay, cánh tay, vai, cổ và mặt. \nCách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \ncách không cần thiết. Đối với những người thường xuyên gặp phải những áp \nlực trong cuộc sống, họ có thể thử áp dụng một số kỹ thuật thở như : Thở \nbằng bụng, thở theo nhịp 4 – 7 – 8, thở cuộn, thực hiện các bài tập thở vào \nbuổi sáng... để giúp cải thiện tâm trạng cũng như nâng cao sức khỏe nói \nchung.",
+          "rank": 6,
+          "score": 0.8544481992721558,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "đôi môi mím chặt như thể đang huýt sáo",
+          "matching_ranks": []
+        }
+      ],
+      "all_spans_present": false
+    },
+    {
+      "id": "validation_03",
+      "group": "supplied_5",
+      "question": "Theo Stress.pdf, bài thở cuộn đặt tay trái và tay phải ở đâu?",
+      "reference": "Tay trái trên bụng, tay phải trên ngực.",
+      "reference_pages": [
+        3
+      ],
+      "required_spans": [
+        "Đặt tay trái trên bụng và tay phải trên ngực"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 1,
+          "score": 0.8172076344490051,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 2,
+          "score": 0.901238203048706,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 3,
+          "score": 0.9339653849601746,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 4,
+          "score": 0.9346972107887268,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 5,
+          "score": 0.9347229599952698,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 6,
+          "score": 0.9757974147796631,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Đặt tay trái trên bụng và tay phải trên ngực",
+          "matching_ranks": [
+            5
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "validation_04",
+      "group": "supplied_5",
+      "question": "Theo Stress.pdf, thở buổi sáng giữ hơi thở bao lâu ở tư thế đứng?",
+      "reference": "Chỉ trong vài giây.",
+      "reference_pages": [
+        4
+      ],
+      "required_spans": [
+        "Giữ hơi thở chỉ trong vài giây"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 1,
+          "score": 0.7914313077926636,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-008",
+          "page": 4,
+          "start": 0,
+          "end": 986,
+          "section": "2.2.2. Thở cuộn",
+          "text": " Khi thở ra từ từ bằng miệng, tạo ra âm thanh khẽ khi bàn tay trái \nhạ xuống đầu tiên và sau đó tay phải hạ xuống. Khi thở ra, cảm \ngiác căng thẳng sẽ thoát khỏi cơ thể và khiến chúng ta ngày càng \ntrở nên thư giãn hơn. \n Thực hành hít vào và thở ra theo cách này trong 3 đến 5 phút. Chú \ný rằng chuyển động của bụng và ngực sẽ lên xuống giống như \nchuyển động của sóng lăn. \n Để ý xem bạn cảm thấy thế nào khi bạn kết thúc bài tập. \nThực hành thở cuộn hàng ngày trong vài tuần cho đến khi cảm thấy có \nthể thực hiện nó ở bất kỳ nơi nào. Bạn có thể sử dụng nó như một công \ncụ thư giãn tức thì ở bất cứ lúc nào bạn cần. Tuy nhiên cần lưu ý: Một số \nngười bị chóng mặt trong vài lần đầu tiên họ thử thở cuộn. Nếu bạn bắt \nđầu thở quá nhanh hoặc cảm thấy choáng váng, hãy làm chậm nhịp thở \ncủa mình, sau đó từ từ đứng dậy. \n2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong",
+          "rank": 2,
+          "score": 0.8070902824401855,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 3,
+          "score": 0.815704345703125,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 4,
+          "score": 0.8608742952346802,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-011",
+          "page": 5,
+          "start": 815,
+          "end": 1465,
+          "section": "2.3.2. Tập trung vào hơi thở",
+          "text": "hoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên \nbình và tĩnh lặng. Cố gắng cảm nhận nó khắp cơ thể mình. \n Khi thở ra, hãy tưởng tượng rằng không khí rời đi cùng với sự căng \nthẳng của mình. \n Tiếp tục trong 10 đến 20 phút. \n2.3.3. Thư giãn cơ bắp \nTrong kỹ thuật thở này, bạn hít vào khi căng một nhóm cơ và thở ra khi thả \nlỏng nhóm cơ đó. Thư giãn cơ bắp có thể giúp chúng ta cảm thấy thoải mái \ncả về thể chất lẫn tinh thần. Các bước thực hiện kỹ thuật thư giãn cơ bắp bao \ngồm : \n Nằm thoải mái trên sàn hoặc giường.",
+          "rank": 5,
+          "score": 0.8793208003044128,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-001",
+          "page": 1,
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "text": "Các kỹ thuật thở sâu để giảm căng thẳng \nBạn đã bao giờ để ý đến cách bạn hít thở sâu khi cảm thấy thư thái chưa? Hãy \ndành một chút thời gian để ý xem cơ thể bạn cảm thấy thế nào. Hoặc nghĩ về \ncách bạn thở khi thức dậy vào buổi sáng hoặc ngay trước khi bạn chìm vào \ngiấc ngủ. Các bài tập thở có thể giúp bạn thư giãn. Cùng tìm hiểu thêm các kỹ \nthuật thở sâu để giảm căng thẳng trong các kĩ thuật hít thở dưới đây. \n1. Ý nghĩa của việc hít thở sâu \nHít thở sâu là một trong những cách tốt nhất để giảm căng thẳng trong cơ thể của \nbạn. Điều này là do khi chúng ta hít thở sâu, não bộ của chúng ta sẽ nhận được một \nthông điệp khiến cơ thể bình tĩnh và thư giãn. Sau đó, bộ não sẽ gửi thông điệp này \nđến toàn bộ cơ thể. Những điều xảy ra khi chúng ta cảm thấy căng thẳng, chẳng \nhạn như nhịp tim tăng, thở nhanh và huyết áp cao, tất cả đều giảm khi bạn hít thở \nsâu để thư giãn. Hãy lưu ý, cách bạn thở ảnh hưởng đến toàn bộ cơ thể của chính \nbạn.",
+          "rank": 6,
+          "score": 0.8814291954040527,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Giữ hơi thở chỉ trong vài giây",
+          "matching_ranks": [
+            1
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "validation_05",
+      "group": "supplied_5",
+      "question": "Theo Stress.pdf, bài thở sâu hít vào và thở ra bằng mũi hay miệng?",
+      "reference": "Hít vào bằng mũi, thở ra bằng mũi.",
+      "reference_pages": [
+        5
+      ],
+      "required_spans": [
+        "Hít vào bằng mũi.",
+        "Thở ra bằng mũi."
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 1,
+          "score": 0.72771155834198,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 2,
+          "score": 0.7414511442184448,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 3,
+          "score": 0.7507286071777344,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-012",
+          "page": 6,
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "text": " Hít thở sâu vài lần để thư giãn. \n Hít vào. Căng cơ bàn chân. \n Thở ra. Giải phóng sự căng thẳng ở bàn chân. \n Hít vào. Căng cơ bắp chân. \n Thở ra. Giải phóng sự căng thẳng ở bắp chân. \n Vận động theo cách của riêng mình. Căng cứng từng nhóm cơ. Điều \nnày bao gồm chân, bụng, ngực, ngón tay, cánh tay, vai, cổ và mặt. \nCách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \ncách không cần thiết. Đối với những người thường xuyên gặp phải những áp \nlực trong cuộc sống, họ có thể thử áp dụng một số kỹ thuật thở như : Thở \nbằng bụng, thở theo nhịp 4 – 7 – 8, thở cuộn, thực hiện các bài tập thở vào \nbuổi sáng... để giúp cải thiện tâm trạng cũng như nâng cao sức khỏe nói \nchung.",
+          "rank": 4,
+          "score": 0.772598385810852,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 5,
+          "score": 0.791762113571167,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 6,
+          "score": 0.7995692491531372,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Hít vào bằng mũi.",
+          "matching_ranks": [
+            1
+          ]
+        },
+        {
+          "span": "Thở ra bằng mũi.",
+          "matching_ranks": [
+            1
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "fresh_01",
+      "group": "fresh_6",
+      "question": "Theo Stress.pdf, so sánh số lần lặp lại của thở bụng và thở theo nhịp 4–7–8.",
+      "reference": "Thở bụng: 3–10 lần; 4–7–8: 3–7 lần hoặc đến khi bình tĩnh.",
+      "reference_pages": [
+        2,
+        3
+      ],
+      "required_spans": [
+        "từ 3 đến 10 lần",
+        "Lặp lại 3 đến 7 lần"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 1,
+          "score": 0.6147040724754333,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 2,
+          "score": 0.7102335095405579,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 3,
+          "score": 0.7369070053100586,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 4,
+          "score": 0.7767208814620972,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 5,
+          "score": 0.7853101491928101,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-008",
+          "page": 4,
+          "start": 0,
+          "end": 986,
+          "section": "2.2.2. Thở cuộn",
+          "text": " Khi thở ra từ từ bằng miệng, tạo ra âm thanh khẽ khi bàn tay trái \nhạ xuống đầu tiên và sau đó tay phải hạ xuống. Khi thở ra, cảm \ngiác căng thẳng sẽ thoát khỏi cơ thể và khiến chúng ta ngày càng \ntrở nên thư giãn hơn. \n Thực hành hít vào và thở ra theo cách này trong 3 đến 5 phút. Chú \ný rằng chuyển động của bụng và ngực sẽ lên xuống giống như \nchuyển động của sóng lăn. \n Để ý xem bạn cảm thấy thế nào khi bạn kết thúc bài tập. \nThực hành thở cuộn hàng ngày trong vài tuần cho đến khi cảm thấy có \nthể thực hiện nó ở bất kỳ nơi nào. Bạn có thể sử dụng nó như một công \ncụ thư giãn tức thì ở bất cứ lúc nào bạn cần. Tuy nhiên cần lưu ý: Một số \nngười bị chóng mặt trong vài lần đầu tiên họ thử thở cuộn. Nếu bạn bắt \nđầu thở quá nhanh hoặc cảm thấy choáng váng, hãy làm chậm nhịp thở \ncủa mình, sau đó từ từ đứng dậy. \n2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong",
+          "rank": 6,
+          "score": 0.8212831020355225,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "từ 3 đến 10 lần",
+          "matching_ranks": [
+            2,
+            4
+          ]
+        },
+        {
+          "span": "Lặp lại 3 đến 7 lần",
+          "matching_ranks": [
+            1
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "fresh_02",
+      "group": "fresh_6",
+      "question": "Theo Stress.pdf, thời lượng thở cuộn và tập trung vào hơi thở lần lượt bao nhiêu phút?",
+      "reference": "Thở cuộn: 3–5 phút; tập trung vào hơi thở: 10–20 phút.",
+      "reference_pages": [
+        4,
+        5
+      ],
+      "required_spans": [
+        "trong 3 đến 5 phút",
+        "Tiếp tục trong 10 đến 20 phút"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 1,
+          "score": 0.6629491448402405,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 2,
+          "score": 0.6666876077651978,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 3,
+          "score": 0.7222379446029663,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 4,
+          "score": 0.742409348487854,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 5,
+          "score": 0.7765463590621948,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-008",
+          "page": 4,
+          "start": 0,
+          "end": 986,
+          "section": "2.2.2. Thở cuộn",
+          "text": " Khi thở ra từ từ bằng miệng, tạo ra âm thanh khẽ khi bàn tay trái \nhạ xuống đầu tiên và sau đó tay phải hạ xuống. Khi thở ra, cảm \ngiác căng thẳng sẽ thoát khỏi cơ thể và khiến chúng ta ngày càng \ntrở nên thư giãn hơn. \n Thực hành hít vào và thở ra theo cách này trong 3 đến 5 phút. Chú \ný rằng chuyển động của bụng và ngực sẽ lên xuống giống như \nchuyển động của sóng lăn. \n Để ý xem bạn cảm thấy thế nào khi bạn kết thúc bài tập. \nThực hành thở cuộn hàng ngày trong vài tuần cho đến khi cảm thấy có \nthể thực hiện nó ở bất kỳ nơi nào. Bạn có thể sử dụng nó như một công \ncụ thư giãn tức thì ở bất cứ lúc nào bạn cần. Tuy nhiên cần lưu ý: Một số \nngười bị chóng mặt trong vài lần đầu tiên họ thử thở cuộn. Nếu bạn bắt \nđầu thở quá nhanh hoặc cảm thấy choáng váng, hãy làm chậm nhịp thở \ncủa mình, sau đó từ từ đứng dậy. \n2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong",
+          "rank": 6,
+          "score": 0.7991999387741089,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "trong 3 đến 5 phút",
+          "matching_ranks": [
+            6
+          ]
+        },
+        {
+          "span": "Tiếp tục trong 10 đến 20 phút",
+          "matching_ranks": []
+        }
+      ],
+      "all_spans_present": false
+    },
+    {
+      "id": "fresh_03",
+      "group": "fresh_6",
+      "question": "Theo Stress.pdf, nếu muốn cảm thấy thư giãn thì có phải cố ép bản thân tập thật căng không?",
+      "reference": "Không ép buộc bản thân; điều đó có thể làm căng thẳng hơn.",
+      "reference_pages": [
+        2
+      ],
+      "required_spans": [
+        "Đừng ép buộc bản thân",
+        "căng thẳng hơn"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 1,
+          "score": 0.5751467943191528,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-011",
+          "page": 5,
+          "start": 815,
+          "end": 1465,
+          "section": "2.3.2. Tập trung vào hơi thở",
+          "text": "hoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên \nbình và tĩnh lặng. Cố gắng cảm nhận nó khắp cơ thể mình. \n Khi thở ra, hãy tưởng tượng rằng không khí rời đi cùng với sự căng \nthẳng của mình. \n Tiếp tục trong 10 đến 20 phút. \n2.3.3. Thư giãn cơ bắp \nTrong kỹ thuật thở này, bạn hít vào khi căng một nhóm cơ và thở ra khi thả \nlỏng nhóm cơ đó. Thư giãn cơ bắp có thể giúp chúng ta cảm thấy thoải mái \ncả về thể chất lẫn tinh thần. Các bước thực hiện kỹ thuật thư giãn cơ bắp bao \ngồm : \n Nằm thoải mái trên sàn hoặc giường.",
+          "rank": 2,
+          "score": 0.5940936803817749,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-003",
+          "page": 1,
+          "start": 1541,
+          "end": 2054,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": "đầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây. Ngoài ra còn có \ncác bài tập khác ở mức nâng cao hơn. Tất cả các bài tập này có thể giúp chúng ta \nthư giãn và giảm căng thẳng. \nTrước khi bắt đầu thực hiện các kỹ thuật thở sâu, hãy ghi nhớ các mẹo sau: \n Chọn một nơi để thực hiện bài tập thở của mình. Đó có thể là trên giường, \ntrên sàn phòng khách, hoặc trên một chiếc ghế khiến bạn cảm thấy thoải mái \nnhất.",
+          "rank": 3,
+          "score": 0.6363040208816528,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 4,
+          "score": 0.6380962133407593,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 5,
+          "score": 0.6389793753623962,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-012",
+          "page": 6,
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "text": " Hít thở sâu vài lần để thư giãn. \n Hít vào. Căng cơ bàn chân. \n Thở ra. Giải phóng sự căng thẳng ở bàn chân. \n Hít vào. Căng cơ bắp chân. \n Thở ra. Giải phóng sự căng thẳng ở bắp chân. \n Vận động theo cách của riêng mình. Căng cứng từng nhóm cơ. Điều \nnày bao gồm chân, bụng, ngực, ngón tay, cánh tay, vai, cổ và mặt. \nCách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \ncách không cần thiết. Đối với những người thường xuyên gặp phải những áp \nlực trong cuộc sống, họ có thể thử áp dụng một số kỹ thuật thở như : Thở \nbằng bụng, thở theo nhịp 4 – 7 – 8, thở cuộn, thực hiện các bài tập thở vào \nbuổi sáng... để giúp cải thiện tâm trạng cũng như nâng cao sức khỏe nói \nchung.",
+          "rank": 6,
+          "score": 0.6466740369796753,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Đừng ép buộc bản thân",
+          "matching_ranks": [
+            1
+          ]
+        },
+        {
+          "span": "căng thẳng hơn",
+          "matching_ranks": [
+            1
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "fresh_04",
+      "group": "fresh_6",
+      "question": "Theo Stress.pdf, lúc bắt đầu bài thở cuộn, tay phải ở bụng còn tay trái ở ngực đúng không?",
+      "reference": "Không. Tay trái trên bụng, tay phải trên ngực.",
+      "reference_pages": [
+        3
+      ],
+      "required_spans": [
+        "Đặt tay trái trên bụng và tay phải trên ngực"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 1,
+          "score": 0.6933127641677856,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 2,
+          "score": 0.7726435661315918,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 3,
+          "score": 0.7870464324951172,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 4,
+          "score": 0.7976060509681702,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 5,
+          "score": 0.8032558560371399,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 6,
+          "score": 0.8071863651275635,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Đặt tay trái trên bụng và tay phải trên ngực",
+          "matching_ranks": [
+            2
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "fresh_05",
+      "group": "fresh_6",
+      "question": "Theo Stress.pdf, sau khi thở ra trong bài thư giãn cơ bắp, bàn chân cần căng hay thả lỏng?",
+      "reference": "Thả lỏng/giải phóng căng thẳng ở bàn chân.",
+      "reference_pages": [
+        6
+      ],
+      "required_spans": [
+        "Thở ra. Giải phóng sự căng thẳng ở bàn chân."
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 1,
+          "score": 0.5436416864395142,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 2,
+          "score": 0.5465327501296997,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 3,
+          "score": 0.5486071109771729,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-012",
+          "page": 6,
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "text": " Hít thở sâu vài lần để thư giãn. \n Hít vào. Căng cơ bàn chân. \n Thở ra. Giải phóng sự căng thẳng ở bàn chân. \n Hít vào. Căng cơ bắp chân. \n Thở ra. Giải phóng sự căng thẳng ở bắp chân. \n Vận động theo cách của riêng mình. Căng cứng từng nhóm cơ. Điều \nnày bao gồm chân, bụng, ngực, ngón tay, cánh tay, vai, cổ và mặt. \nCách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \ncách không cần thiết. Đối với những người thường xuyên gặp phải những áp \nlực trong cuộc sống, họ có thể thử áp dụng một số kỹ thuật thở như : Thở \nbằng bụng, thở theo nhịp 4 – 7 – 8, thở cuộn, thực hiện các bài tập thở vào \nbuổi sáng... để giúp cải thiện tâm trạng cũng như nâng cao sức khỏe nói \nchung.",
+          "rank": 4,
+          "score": 0.571220338344574,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 5,
+          "score": 0.5728988647460938,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-011",
+          "page": 5,
+          "start": 815,
+          "end": 1465,
+          "section": "2.3.2. Tập trung vào hơi thở",
+          "text": "hoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên \nbình và tĩnh lặng. Cố gắng cảm nhận nó khắp cơ thể mình. \n Khi thở ra, hãy tưởng tượng rằng không khí rời đi cùng với sự căng \nthẳng của mình. \n Tiếp tục trong 10 đến 20 phút. \n2.3.3. Thư giãn cơ bắp \nTrong kỹ thuật thở này, bạn hít vào khi căng một nhóm cơ và thở ra khi thả \nlỏng nhóm cơ đó. Thư giãn cơ bắp có thể giúp chúng ta cảm thấy thoải mái \ncả về thể chất lẫn tinh thần. Các bước thực hiện kỹ thuật thư giãn cơ bắp bao \ngồm : \n Nằm thoải mái trên sàn hoặc giường.",
+          "rank": 6,
+          "score": 0.5846964120864868,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Thở ra. Giải phóng sự căng thẳng ở bàn chân.",
+          "matching_ranks": [
+            4
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "fresh_06",
+      "group": "fresh_6",
+      "question": "Theo Stress.pdf, trước khi tập thở nên chọn nơi tập như thế nào?",
+      "reference": "Chọn nơi thoải mái, ví dụ giường, sàn phòng khách hoặc ghế thoải mái.",
+      "reference_pages": [
+        1
+      ],
+      "required_spans": [
+        "Chọn một nơi để thực hiện bài tập thở",
+        "thoải mái"
+      ],
+      "answerable": true,
+      "documents": [
+        {
+          "chunk_id": "chunk-003",
+          "page": 1,
+          "start": 1541,
+          "end": 2054,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": "đầu tiên dưới đây - thở bằng bụng - rất đơn giản để học và dễ thực hiện. Tốt nhất \nngười tập nên bắt đầu từ đó nếu họ chưa bao giờ tập thở trước đây. Ngoài ra còn có \ncác bài tập khác ở mức nâng cao hơn. Tất cả các bài tập này có thể giúp chúng ta \nthư giãn và giảm căng thẳng. \nTrước khi bắt đầu thực hiện các kỹ thuật thở sâu, hãy ghi nhớ các mẹo sau: \n Chọn một nơi để thực hiện bài tập thở của mình. Đó có thể là trên giường, \ntrên sàn phòng khách, hoặc trên một chiếc ghế khiến bạn cảm thấy thoải mái \nnhất.",
+          "rank": 1,
+          "score": 0.5655272603034973,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 2,
+          "score": 0.5901174545288086,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 3,
+          "score": 0.6285837888717651,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 4,
+          "score": 0.7054038047790527,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 5,
+          "score": 0.729548990726471,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-007",
+          "page": 3,
+          "start": 828,
+          "end": 1596,
+          "section": "2.2.2. Thở cuộn",
+          "text": "nào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm : \n Đặt tay trái trên bụng và tay phải trên ngực. Chú ý cách bàn tay \ncủa chúng ta di chuyển khi hít vào và thở ra. \n Tập làm đầy phổi dưới bằng cách thở sao cho tay \"bụng\" (trái) đưa \nlên khi hít vào và tay \"ngực\" (phải) vẫn giữ yên. Hãy luôn hít vào \nbằng mũi và thở ra bằng miệng. Làm điều này 8 đến 10 lần. \n Khi đã làm đầy và làm trống phổi dưới của mình từ 8 đến 10 lần, \nhãy thêm bước thứ hai vào quá trình thở: Trước tiên hít vào phổi \ndưới như trước, rồi sau đó tiếp tục hít vào ngực trên. Thở chậm và \nđều đặn. Khi làm như vậy, tay phải của chúng ta sẽ nâng lên và tay \ntrái sẽ hạ xuống một chút khi bụng hạ xuống.",
+          "rank": 6,
+          "score": 0.7600612640380859,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [
+        {
+          "span": "Chọn một nơi để thực hiện bài tập thở",
+          "matching_ranks": [
+            1
+          ]
+        },
+        {
+          "span": "thoải mái",
+          "matching_ranks": [
+            1,
+            5
+          ]
+        }
+      ],
+      "all_spans_present": true
+    },
+    {
+      "id": "negative_01",
+      "group": "negative_2",
+      "question": "Theo Stress.pdf, dân số Việt Nam năm 2026 là bao nhiêu?",
+      "reference": "Không có trong PDF; cần từ chối, không bịa số liệu.",
+      "reference_pages": [],
+      "required_spans": [],
+      "answerable": false,
+      "documents": [
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 1,
+          "score": 1.4860522747039795,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-006",
+          "page": 3,
+          "start": 0,
+          "end": 970,
+          "section": "2.2.1. Thở theo nhịp 4 – 7 – 8",
+          "text": "2.2.1. Thở theo nhịp 4 – 7 – 8 \nBài tập này cũng sử dụng kỹ thuật thở bằng bụng để giúp chúng ta cảm \nthấy thư giãn. Người thực hiện cũng có thể thực hiện bài tập này cả khi \nngồi hoặc nằm. Các bước thực hiện bài tập thở theo nhịp 4 – 7 – 8 bao \ngồm : \n Để bắt đầu, hãy đặt một tay lên bụng và tay kia đặt lên ngực như \ntrong bài tập thở bằng bụng. \n Hít sâu và chậm từ bụng và đếm thầm đến 4 khi hít vào. \n Nín thở và đếm thầm từ 1 - 7. \n Thở ra hoàn toàn khi đếm thầm từ 1 đến 8. Cố gắng đẩy hết không \nkhí ra khỏi phổi trước thời điểm đếm đến 8. \n Lặp lại 3 đến 7 lần hoặc cho đến khi cảm thấy bình tĩnh. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2.2. Thở cuộn \nThở cuộn giúp cơ thể chúng ta phát huy hết tác dụng của phổi và tập \ntrung vào nhịp thở. Người thực hiện có thể làm điều đó ở bất kỳ vị trí \nnào. Nhưng trong khi đang làm quen với bài tập này, tốt nhất chúng ta \nnên nằm ngửa, co đầu gối. Các bước thực hiện bài tập thở cuộn bao gồm :",
+          "rank": 2,
+          "score": 1.5729060173034668,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-008",
+          "page": 4,
+          "start": 0,
+          "end": 986,
+          "section": "2.2.2. Thở cuộn",
+          "text": " Khi thở ra từ từ bằng miệng, tạo ra âm thanh khẽ khi bàn tay trái \nhạ xuống đầu tiên và sau đó tay phải hạ xuống. Khi thở ra, cảm \ngiác căng thẳng sẽ thoát khỏi cơ thể và khiến chúng ta ngày càng \ntrở nên thư giãn hơn. \n Thực hành hít vào và thở ra theo cách này trong 3 đến 5 phút. Chú \ný rằng chuyển động của bụng và ngực sẽ lên xuống giống như \nchuyển động của sóng lăn. \n Để ý xem bạn cảm thấy thế nào khi bạn kết thúc bài tập. \nThực hành thở cuộn hàng ngày trong vài tuần cho đến khi cảm thấy có \nthể thực hiện nó ở bất kỳ nơi nào. Bạn có thể sử dụng nó như một công \ncụ thư giãn tức thì ở bất cứ lúc nào bạn cần. Tuy nhiên cần lưu ý: Một số \nngười bị chóng mặt trong vài lần đầu tiên họ thử thở cuộn. Nếu bạn bắt \nđầu thở quá nhanh hoặc cảm thấy choáng váng, hãy làm chậm nhịp thở \ncủa mình, sau đó từ từ đứng dậy. \n2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong",
+          "rank": 3,
+          "score": 1.5738041400909424,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-009",
+          "page": 4,
+          "start": 826,
+          "end": 1540,
+          "section": "2.2.3. Thở buổi sáng",
+          "text": "2.2.3. Thở buổi sáng \nHãy thử thực hiện bài tập này khi bạn mới thức dậy vào buổi sáng để \ngiảm căng cứng cơ và thông đường thở bị tắc. Sau đó, sử dụng nó trong \nsuốt cả một ngày để giảm căng thẳng. Các bước thực hiện bài tập thở này \nbao gồm : \n Từ tư thế đứng, gập người về phía trước từ thắt lưng với đầu gối \nhơi cong, để cánh tay buông thõng xuống sát sàn. \n Hít vào thật sâu một cách từ từ, trở về tư thế đứng bằng cách lăn \nngười lên chậm rãi, nâng đầu lên sau cùng. \n Giữ hơi thở chỉ trong vài giây trong tư thế đứng này. Từ từ thở ra \nkhi trở lại vị trí ban đầu, uốn cong về phía trước từ thắt lưng. \n Để ý xem bạn cảm thấy thế nào sau khi kết thúc bài tập. \n2.3. Các kỹ thuật thở khác \n2.3.1. Thở sâu",
+          "rank": 4,
+          "score": 1.576399803161621,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-001",
+          "page": 1,
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "text": "Các kỹ thuật thở sâu để giảm căng thẳng \nBạn đã bao giờ để ý đến cách bạn hít thở sâu khi cảm thấy thư thái chưa? Hãy \ndành một chút thời gian để ý xem cơ thể bạn cảm thấy thế nào. Hoặc nghĩ về \ncách bạn thở khi thức dậy vào buổi sáng hoặc ngay trước khi bạn chìm vào \ngiấc ngủ. Các bài tập thở có thể giúp bạn thư giãn. Cùng tìm hiểu thêm các kỹ \nthuật thở sâu để giảm căng thẳng trong các kĩ thuật hít thở dưới đây. \n1. Ý nghĩa của việc hít thở sâu \nHít thở sâu là một trong những cách tốt nhất để giảm căng thẳng trong cơ thể của \nbạn. Điều này là do khi chúng ta hít thở sâu, não bộ của chúng ta sẽ nhận được một \nthông điệp khiến cơ thể bình tĩnh và thư giãn. Sau đó, bộ não sẽ gửi thông điệp này \nđến toàn bộ cơ thể. Những điều xảy ra khi chúng ta cảm thấy căng thẳng, chẳng \nhạn như nhịp tim tăng, thở nhanh và huyết áp cao, tất cả đều giảm khi bạn hít thở \nsâu để thư giãn. Hãy lưu ý, cách bạn thở ảnh hưởng đến toàn bộ cơ thể của chính \nbạn.",
+          "rank": 5,
+          "score": 1.577303409576416,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 6,
+          "score": 1.5895311832427979,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [],
+      "all_spans_present": null
+    },
+    {
+      "id": "negative_02",
+      "group": "negative_2",
+      "question": "Theo Stress.pdf, học phí đại học năm 2026 là bao nhiêu?",
+      "reference": "Không có trong PDF; cần từ chối, không bịa số liệu.",
+      "reference_pages": [],
+      "required_spans": [],
+      "answerable": false,
+      "documents": [
+        {
+          "chunk_id": "chunk-005",
+          "page": 2,
+          "start": 832,
+          "end": 1298,
+          "section": "2.1. Thở bụng",
+          "text": "trên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở. \n Để ý xem mình cảm thấy thế nào khi kết thúc bài tập. \n2.2. Các bài tập thở nâng cao \nSau khi đã thành thạo kỹ thuật thở bụng, bạn có thể muốn thử một trong những \nbài tập thở nâng cao hơn này. Lời khuyên là hãy thử cả ba và xem cái nào phù \nhợp nhất với mình: \n Thở theo nhịp 4 – 7 – 8 \n Thở cuộn \n Thở buổi sáng",
+          "rank": 1,
+          "score": 1.4631710052490234,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-012",
+          "page": 6,
+          "start": 0,
+          "end": 852,
+          "section": "2.3.3. Thư giãn cơ bắp",
+          "text": " Hít thở sâu vài lần để thư giãn. \n Hít vào. Căng cơ bàn chân. \n Thở ra. Giải phóng sự căng thẳng ở bàn chân. \n Hít vào. Căng cơ bắp chân. \n Thở ra. Giải phóng sự căng thẳng ở bắp chân. \n Vận động theo cách của riêng mình. Căng cứng từng nhóm cơ. Điều \nnày bao gồm chân, bụng, ngực, ngón tay, cánh tay, vai, cổ và mặt. \nCách chúng ta thở đôi khi là phương pháp hiệu quả để giải tỏa căng thẳng và \nmệt mỏi trong cuộc sống. Các nhà khoa học khuyến khích mọi người nên \nthở sâu để giảm cảm giác lo lắng cũng như hạn chế tiêu hao năng lượng một \ncách không cần thiết. Đối với những người thường xuyên gặp phải những áp \nlực trong cuộc sống, họ có thể thử áp dụng một số kỹ thuật thở như : Thở \nbằng bụng, thở theo nhịp 4 – 7 – 8, thở cuộn, thực hiện các bài tập thở vào \nbuổi sáng... để giúp cải thiện tâm trạng cũng như nâng cao sức khỏe nói \nchung.",
+          "rank": 2,
+          "score": 1.5701161623001099,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-004",
+          "page": 2,
+          "start": 0,
+          "end": 979,
+          "section": "2. Các kỹ thuật thở sâu để giảm và kiểm soát căng thẳng",
+          "text": " Đừng ép buộc bản thân vào việc thực hiện các kỹ thuật này. Điều này có thể \nkhiến chúng ta cảm thấy căng thẳng hơn. \n Cố gắng thực hiện vào cùng một thời điểm một hoặc hai lần mỗi ngày. \n Mặc quần áo thoải mái. \n Nhiều bài tập thở chỉ mất vài phút. Tuy nhiên nếu có nhiều thời gian hơn, \nbạn có thể thực hiện chúng trong 10 phút hoặc hơn để nhận được nhiều lợi \ních hơn nữa. \n2.1. Thở bụng \nThở bằng bụng rất dễ thực hiện và rất thư giãn. Hãy thử bài tập cơ bản này bất \ncứ lúc nào bạn cần để giảm căng thẳng. Các bước thực hiện kỹ thuật thở bụng \nbao gồm : \n Ngồi hoặc nằm thẳng ở một tư thế thoải mái. \n Đặt một tay lên bụng ngay dưới xương sườn và tay kia đặt trên ngực. \n Hít sâu bằng mũi và để bụng đẩy tay ra ngoài. Giữ nguyên vị trí của \nngực. \n Thở ra bằng đôi môi mím chặt như thể đang huýt sáo. Cảm thấy bàn tay \ntrên bụng dần đi vào và sử dụng nó để đẩy tất cả không khí ra ngoài. \n Thực hiện động tác này từ 3 đến 10 lần. Tập trung tối đa vào từng hơi \nthở.",
+          "rank": 3,
+          "score": 1.5801584720611572,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-011",
+          "page": 5,
+          "start": 815,
+          "end": 1465,
+          "section": "2.3.2. Tập trung vào hơi thở",
+          "text": "hoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên \nbình và tĩnh lặng. Cố gắng cảm nhận nó khắp cơ thể mình. \n Khi thở ra, hãy tưởng tượng rằng không khí rời đi cùng với sự căng \nthẳng của mình. \n Tiếp tục trong 10 đến 20 phút. \n2.3.3. Thư giãn cơ bắp \nTrong kỹ thuật thở này, bạn hít vào khi căng một nhóm cơ và thở ra khi thả \nlỏng nhóm cơ đó. Thư giãn cơ bắp có thể giúp chúng ta cảm thấy thoải mái \ncả về thể chất lẫn tinh thần. Các bước thực hiện kỹ thuật thư giãn cơ bắp bao \ngồm : \n Nằm thoải mái trên sàn hoặc giường.",
+          "rank": 4,
+          "score": 1.6132490634918213,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-001",
+          "page": 1,
+          "start": 0,
+          "end": 950,
+          "section": "",
+          "text": "Các kỹ thuật thở sâu để giảm căng thẳng \nBạn đã bao giờ để ý đến cách bạn hít thở sâu khi cảm thấy thư thái chưa? Hãy \ndành một chút thời gian để ý xem cơ thể bạn cảm thấy thế nào. Hoặc nghĩ về \ncách bạn thở khi thức dậy vào buổi sáng hoặc ngay trước khi bạn chìm vào \ngiấc ngủ. Các bài tập thở có thể giúp bạn thư giãn. Cùng tìm hiểu thêm các kỹ \nthuật thở sâu để giảm căng thẳng trong các kĩ thuật hít thở dưới đây. \n1. Ý nghĩa của việc hít thở sâu \nHít thở sâu là một trong những cách tốt nhất để giảm căng thẳng trong cơ thể của \nbạn. Điều này là do khi chúng ta hít thở sâu, não bộ của chúng ta sẽ nhận được một \nthông điệp khiến cơ thể bình tĩnh và thư giãn. Sau đó, bộ não sẽ gửi thông điệp này \nđến toàn bộ cơ thể. Những điều xảy ra khi chúng ta cảm thấy căng thẳng, chẳng \nhạn như nhịp tim tăng, thở nhanh và huyết áp cao, tất cả đều giảm khi bạn hít thở \nsâu để thư giãn. Hãy lưu ý, cách bạn thở ảnh hưởng đến toàn bộ cơ thể của chính \nbạn.",
+          "rank": 5,
+          "score": 1.6187009811401367,
+          "metric": "squared_l2"
+        },
+        {
+          "chunk_id": "chunk-010",
+          "page": 5,
+          "start": 0,
+          "end": 987,
+          "section": "2.3.1. Thở sâu",
+          "text": "Hầu hết mọi người hít thở ngắn và nông vào lồng ngực. Điều đó có thể làm \ntăng cảm giác lo lắng và khiến chúng ta tiêu hao nhiều năng lượng hơn. Với \nkỹ thuật thở sâu, bạn sẽ học cách hít thở mạnh hơn, đến tận bụng. Để thực \nhiện kỹ thuật này, người tập cần : \n Giữ tư thế thoải mái. Bạn có thể nằm ngửa trên giường hoặc trên sàn \nvới một chiếc gối kê dưới đầu và đầu gối. Hoặc bạn có thể ngồi trên \nghế với vai, đầu và cổ được tựa vào lưng ghế. \n Hít vào bằng mũi. Để bụng của bạn được lấp đầy không khí. \n Thở ra bằng mũi. \n Đặt một tay lên bụng. Đặt tay kia lên ngực. \n Khi hít vào, bụng sẽ căng lên. Khi thở ra, bụng sẽ nhỏ lại. Bàn tay đặt \ntrên bụng nên di chuyển nhiều hơn bàn tay đặt trên ngực. \n2.3.2. Tập trung vào hơi thở \nTrong khi hít thở sâu, hãy sử dụng một số hình ảnh trong tâm trí và một từ \nhoặc cụm từ để giúp chúng ta cảm thấy thư giãn hơn. \n Nhắm mắt lại. \n Hít thở sâu một cách chậm rãi. \n Khi hít vào, hãy tưởng tượng rằng không khí tràn ngập cảm giác yên",
+          "rank": 6,
+          "score": 1.6254777908325195,
+          "metric": "squared_l2"
+        }
+      ],
+      "span_coverage": [],
+      "all_spans_present": null
+    }
+  ]
+}

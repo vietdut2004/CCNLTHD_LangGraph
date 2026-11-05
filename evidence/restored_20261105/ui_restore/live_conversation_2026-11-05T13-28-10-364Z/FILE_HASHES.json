@@ -1,0 +1,47 @@
+[
+  {
+    "file": "conversation_actual.png",
+    "bytes": 75142,
+    "sha256": "6a469e28858b33699a1a9b52965adf9d25691026c39d42904468b1b316bd06f7"
+  },
+  {
+    "file": "conversation_actual_full.png",
+    "bytes": 139239,
+    "sha256": "7d432d97f197bc202e30dcfbdb232b7990b03ed6588f16fd0db1331981f17a4e"
+  },
+  {
+    "file": "health_before.json",
+    "bytes": 3346,
+    "sha256": "b4924a8fb29e5b6cfcd92b5a05d54d2ab776c026f9c629c304562bb967dfe489"
+  },
+  {
+    "file": "LIVE_CAPTURE_REPORT.json",
+    "bytes": 6129,
+    "sha256": "fbc23392c9e4e0268a01b60cf28b75a2555b08c30a6ee86fda2c362d16aa3bb5"
+  },
+  {
+    "file": "LIVE_RESULTS.csv",
+    "bytes": 4086,
+    "sha256": "8c6d10b2fb810abf0d39f4eaf2e5c6daa434d378d274c79b6843c34aee82d956"
+  },
+  {
+    "file": "requests_responses.json",
+    "bytes": 11296,
+    "sha256": "cf935ba7bb08d0f4322b9e1971ecdda5714ee7a3064e4728bd9e89f434c3e7b0"
+  },
+  {
+    "file": "turn_1_actual.png",
+    "bytes": 86485,
+    "sha256": "9d341c5dc75f156e3e66596468260d72cb178583c59b577137118566eda9cf52"
+  },
+  {
+    "file": "turn_2_actual.png",
+    "bytes": 74986,
+    "sha256": "94c261d5967346892abbb2aea00da8feb73cc4ddf201d3d810bea0116d53234d"
+  },
+  {
+    "file": "turn_3_actual.png",
+    "bytes": 75348,
+    "sha256": "41d80c98bc34cc0d8ffa0fdb7bc386d221410e075ca33049ff494eb9265bd0e4"
+  }
+]

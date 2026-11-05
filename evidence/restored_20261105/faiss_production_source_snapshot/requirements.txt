@@ -1,0 +1,2 @@
+# Canonical environment for the restored embedding + FAISS demo.
+-r requirements-locked.txt

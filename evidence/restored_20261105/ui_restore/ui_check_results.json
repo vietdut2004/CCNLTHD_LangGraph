@@ -1,0 +1,124 @@
+{
+  "checked_at": "2026-11-05T08:06:22.135Z",
+  "base_url": "http://127.0.0.1:8000/",
+  "provider_calls": 0,
+  "fixture_checks_only": true,
+  "screenshots": [
+    "ui_restored_desktop_initial.png",
+    "ui_restored_mobile_initial.png"
+  ],
+  "checks": [
+    {
+      "name": "title_and_greeting_match_report",
+      "passed": true,
+      "details": {
+        "title": "Hỗ trợ tâm lý",
+        "greeting": "Chào bạn! Hôm nay bạn cảm thấy thế nào? Cứ thoải mái chia sẻ với mình nhé.",
+        "rows": 1,
+        "logoLoaded": 45,
+        "sidebarWidth": 381.796875,
+        "appWidth": 1911,
+        "scrollWidth": 1919,
+        "viewportWidth": 1919,
+        "status": null
+      }
+    },
+    {
+      "name": "initial_page_has_no_fabricated_conversation",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "logo_loaded_and_sidebar_is_20_percent",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "desktop_has_no_horizontal_overflow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "mobile_composer_visible_without_horizontal_overflow",
+      "passed": true,
+      "details": {
+        "scrollWidth": 390,
+        "viewportWidth": 390,
+        "inputWidth": 300,
+        "buttonRight": 380,
+        "composerBottom": 808,
+        "height": 844
+      }
+    },
+    {
+      "name": "loading_disables_duplicate_send",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "two_turns_keep_same_backend_session",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "conversation_shows_both_turns_and_releases_loading",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "untrusted_response_and_sources_are_not_executable",
+      "passed": true,
+      "details": {
+        "requests": [
+          {
+            "question": "UI FIXTURE question 1",
+            "mode": "auto",
+            "user_id": "browser-b6cb7b59-5a42-43d8-8e05-5aebd974fac3",
+            "session_id": "4d503476-5f7e-4328-b6eb-f1740b55a5ce",
+            "use_cache": false
+          },
+          {
+            "question": "UI FIXTURE question 2",
+            "mode": "auto",
+            "user_id": "browser-b6cb7b59-5a42-43d8-8e05-5aebd974fac3",
+            "session_id": "4d503476-5f7e-4328-b6eb-f1740b55a5ce",
+            "use_cache": false
+          }
+        ],
+        "rows": 5,
+        "unsafeLink": false,
+        "sourceLinks": [
+          {
+            "href": "https://example.com/source",
+            "rel": "noopener noreferrer"
+          },
+          {
+            "href": "https://example.com/source",
+            "rel": "noopener noreferrer"
+          }
+        ],
+        "executedMarkup": 0,
+        "evidence": 2,
+        "pending": 0,
+        "enabled": true
+      }
+    },
+    {
+      "name": "shift_enter_does_not_submit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "network_and_http_error_remain_visible_with_retry_enabled",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "reload_restores_same_session_and_visible_history",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "passed": true,
+  "failed": []
+}

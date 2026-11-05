@@ -1,0 +1,28 @@
+{
+  "started_at": "2026-11-05T16:32:18.117668+00:00",
+  "provider_calls": 0,
+  "query_embedded": false,
+  "source_version": "91c16764898a88f26bb73706d1188afd3e3631f8a462c08fd76130a64ebc736a:phobert-pyvi-faiss-normalized-l2-v1:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base@608779b86741a8acd8c8d38132974ff04086b138:1000:180:6:normalized=True:pyvi=True:mean",
+  "configuration": {
+    "name": "phobert-pyvi-faiss-normalized-l2-v1",
+    "max_chars": 1000,
+    "overlap": 180,
+    "k": 6,
+    "embedding_model": "VoVanPhuc/sup-SimCSE-VietNamese-phobert-base",
+    "embedding_revision": "608779b86741a8acd8c8d38132974ff04086b138",
+    "embedding_device": "cpu",
+    "normalize_embeddings": true,
+    "pooling": "mean",
+    "word_segmentation": "pyvi",
+    "query_preprocessing": "strip-leading-source-pdf-preamble",
+    "max_input_tokens": 256,
+    "index_type": "IndexFlatL2",
+    "metric": "squared_l2",
+    "score_direction": "smaller_is_nearer"
+  },
+  "chunk_count": 12,
+  "dimensions": 768,
+  "status": "ready",
+  "finished_at": "2026-11-05T16:33:29.845363+00:00",
+  "duration_ms": 71729.375
+}

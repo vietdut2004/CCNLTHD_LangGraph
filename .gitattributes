@@ -8,6 +8,8 @@ response_cache.py -text
 math_graph.py -text
 retrieval.py -text
 runtime_policy.py -text
+faiss_retrieval.py -text
+frontend/** -text
 Stress.pdf -text
 handover/** -text
 benchmarks/rag_check_cases.json -text
