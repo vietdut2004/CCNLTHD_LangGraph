@@ -1,12 +1,6 @@
 # Chatbot Hỗ trợ tâm lý — Nhóm 15
 
-Ứng dụng dùng **FastAPI + LangGraph**, model **openai/gpt-oss-20b**. Bản khôi
-phục ngày 05/11 dùng embedding tiếng Việt + FAISS và để model chọn công cụ
-bằng tool calling. Giao diện được phục dựng theo ảnh trong báo cáo: logo SGU,
-thanh bên, khung hội thoại màu hồng và ô gửi tin nhắn. Không tìm được HTML gốc
-trong repo/gói lưu; logo được trích từ ảnh báo cáo. Câu trả lời lấy từ API thật,
-không chép sẵn các phản hồi trong ảnh. Định danh source và cấu hình hiện tại ở
-`docs/RESTORED_RUNTIME_IDENTITY.json`; các kết quả cũ được giữ riêng theo ngày.
+
 
 ## Cài đặt và chạy
 
