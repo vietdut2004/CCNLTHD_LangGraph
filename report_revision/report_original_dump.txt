@@ -1,0 +1,1284 @@
+0000 [p] 
+0001 [p] 
+0002 [p] 
+0003 [p] BỘ GIÁO DỤC VÀ ĐÀO TẠO
+0004 [p] TRƯỜNG ĐẠI HỌC SÀI GÒN
+0005 [p]          [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId19'}]]
+0006 [p]  
+0007 [p] TÌM HIỂU VÀ ỨNG DỤNG FRAMEWORK LANGGRAPH 
+0008 [p] 
+0009 [p] Bộ môn: Các công nghệ lập trình hiện đại
+0010 [p] Giảng viên hướng dẫn: Thầy Phạm Thi Vương
+0011 [p] 
+0012 [p] Thành viên nhóm 15:
+0013 [p] 
+0014 [p] Hứa Minh Nhật         Mssv: 3123410245
+0015 [p] Huỳnh Lê Sơn      Mssv: 3123410309
+0016 [p] Nguyễn Bảo Trọng                   Mssv: 3123410393
+0017 [p] Lê Quốc Việt                            Mssv: 3122410468
+0018 [p] 
+0019 [p] 
+0020 [p] 
+0021 [p] 
+0022 [p] 
+0023 [p] 
+0024 [p] 
+0025 [p] 
+0026 [p] 
+0027 [p] 
+0028 [p] 
+0029 [p] Mục Lục
+0030 [sdt] Phần 1: Lời mở đầu3Phần 2: Tổng quan về công nghệ LangGraph6Chương 1: Giới thiệu chung6Chương 2: Cơ hội nghề nghiệp và thị trường11Chương 3: Cài đặt môi trường LangGraph14Chương 4: Các khái niệm cơ bản.161. Hệ sinh thái LangGraph162. Hệ sinh thái LangSmith.173. LLM/ Chat Model194. Prompt Template295. Graph và thành phần Chain dùng trong node346. Tool & Tools437. Giao diện cho chatbot.46Chương 5: Embedding và Vector Database47a) Embedding.47b) Vector Database.48c) Thực hành hiểu về tìm kiếm tương đồng ngữ nghĩa (semantic search).50Chương 6: Chunking – xử lý dữ liệu văn bản.55Chương 7: Retrieval Augmented Generation (RAG)56a) Xử lí văn bản cho RAG.56b) Kiến trúc RAG.58c) Thực hành61Chương 8: Memory cho hội thoại66Chương 9: Cache - Tham khảo.70Chương 10: Agents và Tools73Chương 11: Tích hợp API và Triển khai.80Chương 12: Mô tả và phân tích thiết kế đồ án (sơ lược)85a) Ý tưởng và mục tiêu đồ án:85b) Các chức năng chính.85c) Công nghệ sử dụng.86d) Thiết kế hệ thống.86Chương 13: Triển khai và kết quả.89a) Cấu trúc thư mục bản bàn giao89b) Hướng dẫn cài đặt và chạy90c) Demo sản phẩm:90d) Đánh giá thực nghiệm và đo lường hiệu năng94Phần 4: Tổng kết98Chương 14: Đánh giá và tổng kết98Chương 15: Hướng phát triển trong tương lai100Phụ lục A Hands-on Lab LangGraph 103
+0031 [p] LỜI CẢM ƠN
+0032 [p] Chúng em xin cảm ơn Thầy Phạm Thi Vương đã truyền đạt kiến thức bổ ích và thiết thực trong thời gian qua, giúp chúng em hiểu rõ kiến thức liên quan đến môn học và đồ án.Thầy đã đưa ra cho chúng em những hướng đi tìm kiếm phù hợp liên quan đến hướng đi của chúng em. Cùng với đó Thầy cũng đã hết lòng giúp đỡ và theo sát chúng em trong suốt quá trình làm đồ án, chỉ ra hướng đi cho chúng em hoàn thành đồ án tốt nhất. Nhờ đó chúng em đã hoàn thành đồ án này đúng hạn quy định, tránh những sai phạm không đáng, trang bị những kiến thức quý báu và chúng em tin rằng từ môn học này sẽ giúp chúng em rất nhiều về quá trình học và công việc trong thời gian tới của chúng em.
+0033 [p] Phần 1: Lời mở đầu
+0034 [p] Lý do chọn đề tài:  
+0035 [p] Trong kỷ nguyên công nghệ 4.0, trí tuệ nhân tạo (AI) và đặc biệt là các mô hình ngôn ngữ lớn (LLM) đã tạo nên cuộc cách mạng trong xử lý ngôn ngữ tự nhiên (NLP), hỗ trợ mạnh mẽ cho giáo dục, y tế, thương mại điện tử hay chăm sóc khách hàng. Tuy nhiên, các LLM mặc định vẫn tồn tại hạn chế: phạm vi ghi nhớ ngữ cảnh còn giới hạn, dữ liệu huấn luyện dễ lỗi thời và khó truy xuất thông tin mới theo yêu cầu.
+0036 [p] Báo cáo tập trung vào LangGraph và các thành phần tích hợp từ hệ sinh thái LangChain. Việc sử dụng prompt, mô hình hoặc vector store trong node không biến các API đó thành API gốc của LangGraph.
+0037 [p] Việc nghiên cứu LangGraph mang lại nhiều lợi ích thiết thực cho định hướng phát triển của cá nhân chúng em:
+0038 [p] Tính cấp thiết và mới mẻ: LangGraph mở ra hướng đi đột phá, biến LLM từ công cụ đơn lẻ thành thành phần của hệ thống AI phức tạp, cần thiết để bắt kịp tốc độ phát triển công nghệ.
+0039 [p] Giá trị ứng dụng thực tiễn: Kiến thức xây dựng chatbot và agent workflow với LangGraph có thể áp dụng ngay trong các lĩnh vực như chăm sóc khách hàng, trợ lý ảo hay hệ thống hỗ trợ ra quyết định.
+0040 [p] Định hướng nghề nghiệp: Đây là nền tảng vững chắc để theo đuổi các vị trí như AI Engineer, Machine Learning Engineer hoặc Developer.
+0041 [p] Việc tìm hiểu công nghệ LangGraph là cần thiết cho định hướng phát triển của bản thân vì nó thể hiện sự nghiêm túc và tầm nhìn của chúng em đối với lĩnh vực đang theo đuổi. Thay vì chỉ dừng ở lý thuyết chung chung, việc nghiên cứu LangGraph giúp chúng em nhận ra đây chính là ‘chiếc cầu nối’ giữa kiến thức hiện tại và mục tiêu phát triển trong tương lai. Để làm rõ hơn, chúng em xin phân tích trên ba khía cạnh chính sau:
+0042 [p] Xây dựng nền tảng chuyên môn vững chắc
+0043 [p] LangGraph giúp chúng em chuyển hóa kiến thức lý thuyết về LLM, NLP, Machine Learning thành ứng dụng thực tiễn có luồng xử lý rõ ràng, đồng thời tiếp cận các khái niệm cốt lõi như StateGraph, Nodes, Edges, State, Prompts và Tools – nền tảng quan trọng để xây dựng hệ thống AI phức tạp.
+0044 [p] Nâng cao kỹ năng làm việc thực tế
+0045 [p] Quá trình xây dựng chatbot với LangGraph rèn luyện khả năng giải quyết vấn đề (truy xuất dữ liệu, ghi nhớ ngữ cảnh) và kỹ năng tích hợp hệ thống (kết nối LLM với cơ sở dữ liệu, API), những năng lực thiết yếu của AI Engineer hiện đại.
+0046 [p] Tạo lợi thế cạnh tranh trong sự nghiệp
+0047 [p] Việc làm chủ LangGraph giúp chúng em đón đầu xu hướng công nghệ, nâng cao cơ hội việc làm và định hình rõ lộ trình phát triển nghề nghiệp trong các lĩnh vực chuyên sâu như agentic AI hay RAG.
+0048 [p] Mục tiêu của báo cáo: Báo cáo hướng đến việc nghiên cứu toàn diện và xây dựng ứng dụng thực tế với LangGraph, được chia thành ba nhóm chính: Nghiên cứu – Kỹ thuật – Sản phẩm, đảm bảo quy trình làm việc khoa học và hiệu quả.
+0049 [p] Mục tiêu nghiên cứu
+0050 [p] Hiểu sâu về công nghệ LangGraph: Nắm vững kiến trúc, nguyên lý hoạt động và hệ sinh thái, bao gồm các khái niệm trọng yếu như LLM, Prompt Engineering, Embedding và Vector Database.
+0051 [p] Phân tích các thành phần cốt lõi: Tìm hiểu chi tiết và mối quan hệ giữa các module như Graphs (chuỗi hành động), Agents (tác nhân thông minh), Tools (công cụ hỗ trợ) và Memory (bộ nhớ) – nền tảng để xây dựng hệ thống AI hoàn chỉnh.
+0052 [p] Mục tiêu kỹ thuật
+0053 [p] Xây dựng kiến trúc RAG: Thiết lập quy trình Retrieval-Augmented Generation để chatbot có khả năng truy vấn, phân tích và trả lời dựa trên tài liệu ngoài mô hình (PDF, DOCX…).
+0054 [p] Tích hợp Vector Database: Lựa chọn và triển khai cơ sở dữ liệu vector (như ChromaDB, FAISS) phục vụ lưu trữ và truy xuất embedding hiệu quả.
+0055 [p] Ứng dụng Agent và Memory: Kết hợp Agent để điều phối công cụ, ra quyết định, đồng thời quản lý bộ nhớ nhằm duy trì ngữ cảnh hội thoại.
+0056 [p] Phát triển giao diện: Thiết kế giao diện người dùng đơn giản, trực quan, giúp tương tác với chatbot thuận tiện.
+0057 [p] Mục tiêu sản phẩm
+0058 [p] Xây dựng chatbot mẫu hoàn chỉnh: Tạo một chatbot thông minh, kết hợp kiến trúc RAG, Agent và Memory, có khả năng trả lời chính xác câu hỏi dựa trên thông tin đã cung cấp.
+0059 [p] Đánh giá hiệu suất: Kiểm tra độ chính xác, tốc độ phản hồi và mức độ hữu ích của chatbot để tối ưu hóa mô hình.
+0060 [p] Đúc kết kinh nghiệm và định hướng phát triển: Tổng hợp những bài học và thách thức trong quá trình thực hiện, từ đó đề xuất hướng cải tiến, mở rộng ứng dụng trong tương lai.
+0061 [p] Phạm vi báo cáo: 
+0062 [p] Tập trung và giới thiệu và phân tích LangGraph . Sau đó là kiến trúc chatbot.
+0063 [p] Không đi sâu vào huấn luyện LLM từ đầu chỉ dụng các mô hình có sẵn.
+0064 [p] Cấu trúc báo cáo :
+0065 [p] Phần 1: Giới thiệu tổng quan và lý do chọn đề tài. 
+0066 [p] Phần 2: Tổng quan về LangGraph 
+0067 [p] Lịch sử phát triển, bối cảnh ra đời, hệ sinh thái.
+0068 [p] Cơ hội nghề nghiệp, nhu cầu thị trường.
+0069 [p] Phần 3: Kiến trúc và các thành phần chính của LangGraph
+0070 [p] LLM, PromptTemplate, Graphs, Tools, Agents, Memory, RAG.
+0071 [p] Phần 4: Ứng dụng LangGraph trong xây dựng chatbot
+0072 [p] Xây dựng pipeline hoàn chỉnh.
+0073 [p] Tích hợp RAG để chatbot khai thác dữ liệu riêng.
+0074 [p] Xây dựng Agent điều phối tool.
+0075 [p] Quản lý bộ nhớ ( MySql).
+0076 [p] Xây dựng giao diện ( đơn giản) và sử dụng FastAPI làm cầu nối giữa frontend và backend.
+0077 [p] Phần 5: Triển khai và đánh giá hệ thống
+0078 [p] Demo chatbot.
+0079 [p] Đánh giá ưu, nhược điểm.
+0080 [p] Phần 6: Kết luận và định hướng phát triển
+0081 [p] Phần 2: Tổng quan về công nghệ LangGraph framework
+0082 [p] Mục tiêu của phần này là cung cấp một cái nhìn toàn cảnh, giúp người đọc hiểu rõ bối cảnh và vị thế của công nghệ trên thị trường.
+0083 [p] Chương 1: Giới thiệu chung
+0084 [p] Lịch sử hình thành và phát triển:
+0085 [p] Tác giả: 
+0086 [p] LangGraph được phát triển bởi đội ngũ LangChain. Bài giới thiệu chính thức do The LangChain Team công bố; không có cơ sở để gọi công ty phát triển là “LangGraph, Inc.” trong phần lịch sử này.
+0087 [p] Thời điểm ra đời: 
+0088 [p] Bài giới thiệu chính thức về LangGraph được công bố ngày 17/01/2024 trên blog LangChain. Mốc tháng 10/2022 thuộc lịch sử LangChain, không phải mốc ra mắt LangGraph. Nguồn: https://www.langchain.com/blog/langgraph.
+0089 [p] Bối cảnh ra đời: 
+0090 [p] LangGraph xuất hiện để hỗ trợ ứng dụng LLM có trạng thái, nhánh điều kiện và vòng lặp, đặc biệt là các agent cần gọi công cụ nhiều bước. Chuỗi xử lý tuyến tính đơn thuần không biểu đạt thuận tiện mọi luồng điều khiển này.
+0091 [p] Hạn chế về kiến thức (Knowledge Cutoff): LLM được huấn luyện trên bộ dữ liệu tĩnh nên không có thông tin về các sự kiện mới sau thời điểm huấn luyện, cũng như không thể truy cập dữ liệu riêng tư hoặc nội bộ của doanh nghiệp (tài liệu, cơ sở dữ liệu).
+0092 [p] Thiếu tính liên kết: Để xây dựng ứng dụng thực tế, nhà phát triển phải tự kết nối nhiều thành phần như prompts, mô hình ngôn ngữ, công cụ tìm kiếm và lưu trữ, dẫn đến quy trình rời rạc và tốn công sức.
+0093 [p] Khó quản lý ngữ cảnh và trạng thái: ứng dụng cần chủ động lưu, cập nhật và chọn thông tin gửi vào giới hạn context của mô hình. LangGraph quản lý State; khả năng lưu qua nhiều lượt cần cấu hình persistence phù hợp.
+0094 [p] Giải pháp của LangGraph: biểu diễn luồng ứng dụng bằng đồ thị có trạng thái. Các node thực hiện tác vụ, còn cạnh xác định bước chạy tiếp theo; việc tích hợp mô hình và dữ liệu do các thành phần trong node đảm nhiệm.
+0095 [p] Tích hợp RAG: đặt bước truy xuất và sinh câu trả lời vào các node. Chất lượng phụ thuộc tài liệu, retriever, prompt và mô hình; dùng RAG không bảo đảm mọi câu trả lời đều chính xác.
+0096 [p] Điều phối đồ thị: kết hợp node gọi LLM, truy xuất, công cụ và xử lý đầu ra; hỗ trợ phân nhánh hoặc vòng lặp theo thiết kế.
+0097 [p] Quản lý trạng thái: dùng State và bộ gộp cập nhật; cấu hình checkpointer cùng thread_id khi cần duy trì trạng thái giữa các lần gọi. Lưu lâu dài cần backend lưu trữ phù hợp.
+0098 [p] Hỗ trợ tác nhân (Agents) sử dụng công cụ: Cho phép các “AI agent” truy cập và sử dụng nhiều công cụ (Google Search, máy tính, API) để thực hiện tác vụ vượt ngoài việc chỉ tạo văn bản.
+0099 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId20'}]]
+0100 [p] Các mốc và thay đổi kiến trúc:
+0101 [p] LangGraph có hệ thống phiên bản chính thức, bao gồm bản v1. Khi tái hiện ví dụ cần ghi phiên bản cài đặt; không phân chia lịch sử LangGraph theo các giai đoạn phát triển của LangChain.
+0102 [p] Mốc giới thiệu công khai: tháng 01/2024
+0103 [p] Đặc điểm:
+0104 [p] Bài giới thiệu ngày 17/01/2024 trình bày StateGraph, State, node, cạnh và vòng lặp phục vụ agent runtime.
+0105 [p] Prompt, chat model và tool có thể được dùng bên trong node. Những lớp tích hợp này không trở thành API riêng của LangGraph chỉ vì được dùng trong đồ thị.
+0106 [p] Điểm mạnh
+0107 [p] Cho phép kiểm soát đường đi của ứng dụng, thay vì chỉ nối các bước thành một chuỗi tuyến tính.
+0108 [p] Hạn chế
+0109 [p] Người phát triển vẫn phải thiết kế State, điều kiện dừng và xử lý lỗi; đồ thị không tự bảo đảm đầu ra LLM đúng.
+0110 [p] Cần phân biệt quản lý trạng thái của đồ thị với nội dung prompt và giới hạn context của nhà cung cấp mô hình.
+0111 [p] LangGraph v1: ổn định các khái niệm đồ thị cốt lõi
+0112 [p] Thay đổi đột phá:
+0113 [p] Tài liệu v1 xác nhận các khái niệm State, node và edge; không định nghĩa StateGraph là ngôn ngữ biểu thức.
+0114 [p] Cải tiến chính:
+0115 [p] StateGraph là lớp xây dựng đồ thị. Cú pháp prompt | model | parser thuộc LangChain Expression Language (LCEL), có thể được gọi trong một node.
+0116 [p] Streaming cho phép quan sát cập nhật hoặc dữ liệu trong quá trình chạy theo chế độ được chọn; không đồng nghĩa mọi node tự truyền token.
+0117 [p] Các node độc lập có thể thực thi theo cấu trúc đồ thị; lợi ích hiệu năng cần được đo với luồng cụ thể.
+0118 [p] Phân biệt LangGraph và các gói tích hợp LangChain
+0119 [p] Thay đổi chiến lược:
+0120 [p] Không có cơ sở cho mô tả LangGraph tách thành langgraph-core, langgraph-community và langgraph-openai. Các gói tương ứng được sử dụng ở đây thuộc hệ sinh thái LangChain:
+0121 [p] langgraph: StateGraph và cơ chế thực thi đồ thị có trạng thái.
+0122 [p] langchain-core: các trừu tượng như messages, prompts, tools và Runnable/LCEL.
+0123 [p] langchain-openai, langchain-groq, langchain-huggingface: tích hợp các nhà cung cấp mô hình; cài theo nhu cầu.
+0124 [p] Cải tiến chính
+0125 [p] Tách rõ điều phối đồ thị với thành phần gọi mô hình và nguồn dữ liệu.
+0126 [p] Chỉ cài những tích hợp cần thiết và cố định phiên bản tương thích để tái hiện ví dụ.
+0127 [p] Nguồnphiên bản: https://docs.langchain.com/oss/python/releases/langgraph-v1.
+0128 [p] Hệ sinh thái (Ecosystem):
+0129 [p] Thư viện / Framework chính:
+0130 [p] langgraph: thư viện điều phối đồ thị có State, node và edge. Python và JavaScript/TypeScript có SDK/tài liệu riêng.
+0131 [p] langchain-core: định nghĩa messages, prompts, tools và các giao diện mô hình/Runnable dùng trong nhiều ví dụ của báo cáo.
+0132 [p] langchain-community: các tích hợp cộng đồng như vector store và document loader; không phải lõi thực thi LangGraph.
+0133 [p] langchain-openai, langchain-anthropic, langchain-google-genai: các gói tích hợp nhà cung cấp; tên import Python thường dùng dấu gạch dưới.
+0134 [p] StateGraph: lớp khai báo lược đồ State, thêm node/cạnh, rồi compile thành đồ thị có thể invoke hoặc stream. LCEL là cơ chế ghép Runnable của LangChain.
+0135 [p]  Công cụ bổ trợ nổi bật:
+0136 [p] LangSmith: Quản lý, giám sát, debug và đánh giá chất lượng ứng dụng LLM. Giúp theo dõi và tối ưu quy trình.
+0137 [p] LangServe: công cụ phục vụ LangChain Runnable qua API. Đề tài dùng FastAPI để bọc lời gọi đồ thị; LangServe không phải thành phần bắt buộc của LangGraph.
+0138 [p] Persistence của LangGraph: checkpointer lưu trạng thái theo thread; store phục vụ dữ liệu cần truy cập theo thiết kế ứng dụng. Cần phân biệt hai vai trò này.
+0139 [p] LangSmith Prompt Hub: nơi quản lý và chia sẻ prompt; không gọi là “LangGraph Hub”.
+0140 [p] Tích hợp phong phú:
+0141 [p] Vector Databases: Pinecone, Weaviate, Milvus, FAISS, Chroma…
+0142 [p] Nguồn dữ liệu: PDF, trang web, Notion, Slack, Google Drive, v.v.
+0143 [p] Công cụ khác: Hugging Face, Elasticsearch, LlamaIndex…
+0144 [p] Cộng đồng phát triển:
+0145 [p] Quy mô lớn, tăng trưởng mạnh:
+0146 [p] Kho mã nguồn chính thức: https://github.com/langchain-ai/langgraph. Báo cáo không dùng số sao GitHub làm chỉ số nếu chưa ghi thời điểm và nguồn thu thập.
+0147 [p] Cộng đồng trao đổi qua các kênh và tài nguyên được liên kết từ tài liệu chính thức; không đưa số thành viên chưa được kiểm chứng.
+0148 [p] Hoạt động sôi nổi:
+0149 [p] Theo dõi thay đổi qua release notes và tài liệu đúng phiên bản thay vì suy diễn mốc phát hành.
+0150 [p] Rất nhiều tutorial, repo mẫu, blog hướng dẫn từ cộng đồng toàn cầu.
+0151 [p] Chương 2: Cơ hội nghề nghiệp và thị trường
+0152 [p] Các vị trí công việc:
+0153 [p] 1.1. AI Engineer / Machine Learning Engineer
+0154 [p] Xây dựng, huấn luyện và triển khai mô hình AI/ML.
+0155 [p] Tích hợp các LLM (GPT, Claude, LLaMA…) vào ứng dụng thực tế.
+0156 [p] Phát triển chatbot, hệ thống RAG và AI Agent tự động bằng LangGraph.
+0157 [p] Thiết kế và tối ưu pipeline huấn luyện, kết nối dữ liệu.
+0158 [p] 1.2. Chatbot Developer
+0159 [p] Thiết kế và xây dựng trợ lý ảo thông minh dựa trên LLM.
+0160 [p] Tạo luồng hội thoại, tích hợp LangGraph với cơ sở dữ liệu, API.
+0161 [p] Đảm bảo chatbot hoạt động mượt, có khả năng ghi nhớ ngữ cảnh.
+0162 [p] 1.3. Data Scientist
+0163 [p] Phân tích dữ liệu và tạo insight hỗ trợ quyết định.
+0164 [p] Ứng dụng NLP và LLM cho các tác vụ như tóm tắt văn bản, phân tích cảm xúc, trích xuất thông tin.
+0165 [p] Kết hợp LangGraph với vector database để khai thác dữ liệu thông minh và xây dựng workflow RAG.
+0166 [p] 1.4. Data Engineer
+0167 [p] Thiết kế hạ tầng và pipeline xử lý dữ liệu cho các ứng dụng AI.
+0168 [p] Chuẩn bị, làm sạch, và tối ưu dữ liệu phục vụ huấn luyện LLM hoặc RAG pipeline.
+0169 [p] Quản lý ETL/ELT và tích hợp với kho dữ liệu/vector database.
+0170 [p] 1.5. Backend Developer (Python / Node.js)
+0171 [p] Xây dựng API và dịch vụ backend cho ứng dụng AI/Chatbot.
+0172 [p] Tích hợp LangGraph với cơ sở dữ liệu, dịch vụ web và các API ngoài.
+0173 [p] Đảm bảo hiệu năng, bảo mật và khả năng mở rộng của hệ thống.
+0174 [p] 1.6. Fullstack / React Developer
+0175 [p] Phát triển giao diện (UI/UX) cho chatbot hoặc ứng dụng AI (React, Next.js).
+0176 [p] Tích hợp API từ LangGraph backend để mang lại trải nghiệm trực quan.
+0177 [p] Thiết kế luồng hội thoại, tối ưu tương tác người dùng với AI.
+0178 [p] 1.7. DevOps Engineer / MLOps Engineer
+0179 [p] Triển khai, giám sát và duy trì hệ thống AI trong môi trường production.
+0180 [p] Sử dụng Docker, Kubernetes, CI/CD để triển khai ứng dụng LangGraph.
+0181 [p] Thiết lập giám sát (monitoring, logging) đảm bảo hiệu suất và tính ổn định.
+0182 [p] 1.8. NLP Engineer / Applied Scientist
+0183 [p] Chuyên về xử lý ngôn ngữ tự nhiên, xây dựng pipeline NLP.
+0184 [p] Fine-tune LLM cho các tác vụ cụ thể.
+0185 [p] Nghiên cứu, tích hợp LangGraph trong Q&A system, tìm kiếm thông minh, phân tích văn bản.
+0186 [p] 1.9. Prompt Engineer
+0187 [p] Thiết kế và tối ưu prompt để LLM phản hồi chính xác, sáng tạo.
+0188 [p] Xây dựng chiến lược prompt phức tạp (multi-turn prompt, few-shot).
+0189 [p] Hợp tác chặt chẽ với AI Engineer và Data Scientist để cải thiện kết quả mô hình.
+0190 [p] Nhu cầu tuyển dụng:
+0191 [p] LangGraph đang trở thành framework phổ biến nhất để xây dựng ứng dụng AI thực tế, đặc biệt trong các lĩnh vực tài chính, ngân hàng, y tế, và thương mại điện tử. Doanh nghiệp tìm kiếm kỹ sư có khả năng sử dụng LangGraph để xây dựng các giải pháp như chatbot thông minh, hệ thống RAG (Retrieval-Augmented Generation), AI agent tự động hóa quy trình nghiệp vụ.
+0192 [p] Hiện tại:
+0193 [p] Trên các nền tảng tuyển dụng như TopCV, ITviec, LinkedIn, đã xuất hiện tin tuyển AI Engineer/LLM Engineer yêu cầu kỹ năng về LangGraph Ví dụ:AI Engineer/LLM Engineer tại MincaAI, Techvify, FPT AI, Backend Developer có kinh nghiệm LangGraph tại các startup fintech, Solution Architect cho dự án AI Agent.
+0194 [p] Công việc tập trung Xây dựng RAG pipeline với LangGraph để tìm kiếm thông tin từ tài liệu nội bộ. Phát triển chatbot tích hợp với hệ thống CRM, ERP. Thiết kế AI Agent với LangGraph Agent framework (ReAct, Plan-and-Execute). Tích hợp vector database (Pinecone, Chroma, FAISS) vào hệ thống. Xây dựng prompt template và chain phức tạp. Tối ưu hóa memory management và context window.
+0195 [p] Dự báo tương lai gần:
+0196 [p] Hướng kỹ năng có thể phát triển: thiết kế StateGraph, kiểm soát vòng lặp và điều kiện dừng, persistence, theo dõi bằng LangSmith và triển khai API. Đây là định hướng học tập, không phải dự báo định lượng về thị trường.
+0197 [p] Các vai trò liên quan có thể gồm AI Engineer, kỹ sư RAG và kỹ sư nền tảng AI. Tên chức danh phụ thuộc doanh nghiệp; không xem “LangGraph Engineer” là một nhóm nghề đã được thống kê trong báo cáo.
+0198 [p] Thu nhập và mức độ ứng dụng: giới hạn nguồn dữ liệu
+0199 [p] Báo cáo chưa có bộ dữ liệu tuyển dụng kèm thời điểm, địa điểm và cỡ mẫu để xác nhận mức lương Junior.
+0200 [p] Tương tự, chưa đủ bằng chứng để công bố khoảng lương Middle gắn riêng với kỹ năng LangGraph.
+0201 [p] Mức lương Senior phụ thuộc vai trò và thị trường; cần khảo sát có nguồn trước khi đưa số liệu vào kết luận.
+0202 [p] Các hướng tích hợp có thể khảo sát:
+0203 [p] Nhà cung cấp mô hình và hạ tầng:
+0204 [p] OpenAI: có thể gọi mô hình qua langchain-openai bên trong node của LangGraph.
+0205 [p] Các nền tảng triển khai doanh nghiệp: khả năng tích hợp cần xác minh theo SDK và yêu cầu triển khai cụ thể.
+0206 [p] Google: có gói tích hợp mô hình; khả năng kết nối không chứng minh một quan hệ hợp tác hay việc sử dụng trong sản phẩm cụ thể.
+0207 [p] AWS: các tích hợp mô hình và hạ tầng cần được lựa chọn theo tài liệu tương ứng; báo cáo chưa đo hoặc triển khai trên AWS.
+0208 [p] Chưa có nguồn trực tiếp trong báo cáo để kết luận Salesforce dùng LangGraph trong Einstein Copilot.
+0209 [p] Giới hạn của các ví dụ thị trường:
+0210 [p] Không kết luận Zapier AI được xây dựng bằng LangGraph khi chưa có nguồn xác nhận trực tiếp.
+0211 [p] Không kết luận Notion AI dùng LangGraph cho tìm kiếm và hỏi đáp khi chưa có nguồn xác nhận trực tiếp.
+0212 [p] LlamaIndex là một framework khác có thể phối hợp ở cấp ứng dụng; không mặc định mọi giải pháp RAG dùng cả hai framework.
+0213 [p] Tại Việt Nam:
+0214 [p] Báo cáo chưa có khảo sát doanh nghiệp Việt Nam hoặc nguồn xác nhận từng trường hợp sử dụng LangGraph, nên không dùng các tên doanh nghiệp như bằng chứng triển khai.
+0215 [p] Chương 3: Cài đặt môi trường LangGraph
+0216 [p] Lý thuyết: 
+0217 [p] Để sử dụng LangGraph, ta cần một môi trường Python có đầy đủ các thư viện phụ thuộc, giúp kết nối tới mô hình AI (như GPT, Claude, Gemini...) và quản lý dữ liệu, bộ nhớ, chuỗi xử lý. LangGraph hoạt động như một giao diện chung, cho phép xây dựng các ứng dụng phức tạp dựa trên mô hình ngôn ngữ lớn (LLMs).
+0218 [p] Hướng dẫn: Cài đặt chi tiết từng bước. 
+0219 [p] Bước 1: Chuẩn bị Môi trường Python (IDE), đây là nền tảng để chạy tất cả mã lệnh.
+0220 [p] Đảm bảo cài đặt Python 3.10 trở lên, phù hợp với phiên bản LangGraph sử dụng.
+0221 [p] Cài đặt môi trường phát triển tích hợp (IDE) hoặc trình soạn thảo mã (Code Editor).
+0222 [p] Ví dụ : Cài đặt Visual Studio Code tham khảo tại : Hướng dẫn cài đặt Python và Visual Studio Code trên Windows 
+0223 [p] Bước 2: Để tránh xung đột giữa các phiên bản thư viện và đảm bảo dự án LangGraph của bạn hoạt động độc lập, bạn nên tạo một môi trường ảo riêng biệt:
+0224 [p] Mở Terminal hoặc Command Prompt/PowerShell và di chuyển (CD) đến thư mục gốc của dự án.
+0225 [p] Tạo môi trường ảo bằng mô-đun venv: python -m venv venv (venv là tên thư mục môi trường).
+0226 [p] Kích hoạt môi trường ảo và kiểm tra Python:
+0227 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId22'}]]
+0228 [p] 
+0229 [p] Bước 3: Cài đặt LangGraph và các thư viện tích hợp cần thiết:
+0230 [p] pip install langgraph: cài framework điều phối đồ thị và quản lý trạng thái.
+0231 [p] pip install langchain-core: cài các lớp nền tảng của LangChain (BasePromptTemplate, Runnable, BaseMessage, Tool, …).
+0232 [p] langchain-community: gói tích hợp cho các ví dụ PDF và FAISS; cài đúng phiên bản trong requirements.txt.
+0233 [p] Với dự án có sẵn, dùng pip install -r requirements.txt để cài đúng bộ phiên bản, bao gồm gói tích hợp như langchain-groq.
+0234 [p] Tài liệu cài đặt: https://docs.langchain.com/oss/python/langgraph/install.
+0235 [p] 
+0236 [p] Chương 4: Các khái niệm cơ bản.
+0237 [p] 1. Hệ sinh thái LangGraph
+0238 [p] a) Giới thiệu.
+0239 [p]  Langgraph được xây dựng cho các nhà phát triển muốn tạo ra những AI Agent mạnh mẽ và có khả năng thích ứng, vì:
+0240 [p] Độ tin cậy và khả năng kiểm soát: Điều hướng hành động agent bằng cách sử dụng moderation checks ( kiểm tra kiểm duyệt) và human–in-the-loop ( phê duyệt từ con người). Giúp lưu giữ ngữ cảnh cho các workflow chạy lâu dài và đảm bảo agent hoạt động đúng hướng.
+0241 [p] Mực độ thấp và khả năng mở rộng: Xây dụng agent tùy chỉnh với các primitives -nguyên thủy- mô tả chi tiết ở mức thấp, không bị giới hạn bởi các lớp trừu tượng cứng nhắc. Thiết kế các hệ thống multi-agent có thể mở rộng, trong đó mỗi agent đảm nhận một vai trò riêng phù hợp với từng trường hợp sử dụng.
+0242 [p] Hỗ trợ first-class streaming: với khả năng token-by-token streaming ( streaming từng token) và streaming cả các bước trung gian, Langgraph giúp người dùng quan sát rõ ràng quá trình suy luận và hành động của agent theo thời gian thực.
+0243 [p] b) Các thư viện trong LangGraph.
+0244 [p] langgraph: thư viện chính.
+0245 [p] langgraph – prebuilt: cung cấp các thành phần để nhanh chóng tạo các agent phổ biến/mẫu, giúp tiết kiệm thời gian.
+0246 [p] langgraph-supervisor: các công cụ để xây dựng agent “ giám sát” theo dõi hoặc điều phối các agent khác.
+0247 [p] langgraph-swarm: phục vụ cho hệ thống đa agent hoạt động đồng thời -swarm- giúp quản lí nhiều agent làm việc cùng lúc.
+0248 [p] langmem: thư viện bổ trợ quản lý bộ nhớ dài hạn; cần phân biệt với State và checkpointer dùng cho trạng thái ngắn hạn của đồ thị.
+0249 [p] agentevals: các tiện ích để đánh giá hiệu suất agent.
+0250 [p] langchain-mcp-adapters: kết nối công cụ từ MCP servers để sử dụng trong ứng dụng LangChain/LangGraph.
+0251 [p] langgraph-checkpoint: Module để hỗ trợ checkpointing/ lưu trạng thái trung gian, giúp agent có thể tiếp tục trở lại đúng điểm sau lỗi hoặc sau khi tạm dừng.
+0252 [p] 2. Hệ sinh thái LangSmith.
+0253 [p] a) Giới thiệu.
+0254 [p] LangSmith là một nền tảng xây dựng các ứng dụng LLM ở cấp độ production. Cho phép giám sát -monitor- và đánh giá -evaluate- ứng dụng do đó sẽ giúp triển khai nhanh chóng và tự tin hơn.
+0255 [p]                  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId23'}]]
+0256 [p] b) Các thư viện hỗ trợ.
+0257 [p] langsmith( python SDK) : thư viện chính dành cho Python. Ngoài ra còn có cho JavaScript/TypeScript.
+0258 [p] LangSmith API và SDK: tích hợp tracing, quản lý dữ liệu đánh giá và kết quả thử nghiệm theo tài liệu của nền tảng.
+0259 [p] Tích hợp LangChain/LangGraph: các lời gọi được hỗ trợ có thể gửi trace sang LangSmith khi cấu hình tracing và thông tin truy cập hợp lệ.
+0260 [p] c) Code mẫu.
+0261 [p] Mục tiêu: minh họa cấu hình tracing LangSmith cho lời gọi đồ thị. Chưa có kết quả đánh giá từ dịch vụ trong ví dụ này.
+0262 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId24'}]]
+0263 [p] Biến môi trường trong mã dùng tên LANGSMITH_TRACING, LANGSMITH_API_KEY và LANGSMITH_PROJECT.
+0264 [p] LANGSMITH_TRACING="true": bật tracing; giá trị khóa truy cập đọc từ môi trường hoặc nhập bằng getpass.
+0265 [p] LANGSMITH_API_KEY: khóa LangSmith, khác với khóa của nhà cung cấp LLM. Không đưa khóa thật vào báo cáo.
+0266 [p] Muốn đánh giá chất lượng cần chuẩn bị tập câu hỏi, đáp án tham chiếu và tài liệu nguồn, sau đó chạy ứng dụng thực trên tập dữ liệu đó.
+0267 [p] traced_request nhận graph đã compile và messages; đây là lớp bọc gọi graph.invoke. Không dùng hàm trả câu trả lời cố định để chứng minh chất lượng RAG.
+0268 [p] Các tiêu chí đề xuất cho bước đánh giá tiếp theo:
+0269 [p] Faithfulness: kiểm tra câu trả lời có được hỗ trợ bởi context truy xuất hay không. Cần rubric và dữ liệu nguồn; tracing đơn thuần chưa tính chỉ số này.
+0270 [p] Relevance: kiểm tra mức độ đáp ứng câu hỏi theo rubric. Ví dụ hiện tại chưa triển khai evaluator hoặc công bố điểm số. Nguồn: https://docs.langchain.com/langsmith/observability-quickstart.
+0271 [p] 3. LLM/ Chat Model
+0272 [p] 3.1. Lý Thuyết
+0273 [p] LLM (Large Language Model): Mô hình ngôn ngữ lớn nhận chuỗi văn bản làm input và trả về chuỗi văn bản. (truyền thống hơn).
+0274 [p] Chat Model: Dạng mở rộng, được thiết kế để làm việc với hội thoại. Nhận vào một danh sách tin nhắn (messages) và trả về một tin nhắn mới.
+0275 [p] Nói một cách ngắn gọn thì : 
+0276 [p] LLM: text → text
+0277 [p] Chat Model: messages → message
+0278 [p] Phân Biệt LLM (text → text) và Chat Model (messages → message)
+0279 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId25'}]]
+0280 [p] 3.2.  Giải thích & Minh họa
+0281 [p] LLM cổ điển (Đơn giản và liên tục): LLM xử lý mọi thứ dưới dạng một chuỗi văn bản (string) liên tục, giống như việc bạn đang viết một email hoặc một đoạn văn dài.
+0282 [p] Cấu trúc dữ liệu: 
+0283 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId26'}]]
+0284 [p] Minh họa chi tiết:
+0285 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId27'}]]
+0286 [p] Hạn chế: Khi bạn muốn duy trì hội thoại, bạn phải tự mình nối tất cả các câu trả lời trước đó vào chuỗi Prompt mới (quá trình thủ công).
+0287 [p] Chat Model Hiện Đại (Cấu Trúc và Phân Vai): Chat Model nhận một danh sách các đối tượng tin nhắn có cấu trúc, mỗi đối tượng mang một vai trò và nội dung riêng.
+0288 [p] Cấu trúc dữ liệu:
+0289 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId28'}]]
+0290 [p] Minh họa chi tiết: Tình huống tương tự, bạn muốn hỏi về AI và đặt ngữ cảnh cho mô hình, nhưng lần này trong một cuộc hội thoại.
+0291 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId29'}]]
+0292 [p] Lợi ích:
+0293 [p] Phân tách rõ ràng: Hướng dẫn hệ thống (System Message) được tách biệt khỏi câu hỏi của người dùng (Human Message), giúp mô hình xử lý hiệu quả hơn.
+0294 [p]  Quản lý lịch sử tự nhiên: Việc gửi một danh sách các tin nhắn đã tạo thành lịch sử hội thoại một cách tự nhiên.
+0295 [p] Sơ đồ luồng thực thi của chatbot trong LangGraph:
+0296 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId30'}]]
+0297 [p] Sơ đồ LangGraph gồm State, các node xử lý và cạnh điều kiện; luồng chọn một nhánh rồi kết thúc tại END.
+0298 [p] State lưu question và answer. Hàm route đọc question để chọn node call_model hoặc empty_input; mỗi node trả về phần cập nhật answer.
+0299 [p] ChatGroq là thành phần gọi mô hình bên trong node call_model. LangGraph quản lý trạng thái và đường đi của chương trình. Ví dụ dưới đây không lưu lịch sử giữa các lần gọi.
+0300 [p] 3.3 Code mẫu
+0301 [p] 3.3.1 Xây dựng chatbot bằng StateGraph
+0302 [p] Bước 1: Cài đặt thư viện cần thiết
+0303 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId31'}]]
+0304 [p] Bước 2: Thiết lập khóa Groq và chọn mô hình
+0305 [p] Tạo khóa tại Groq Console → API Keys. Đọc khóa từ biến môi trường hoặc nhập bằng getpass; không ghi khóa thật trong mã hay ảnh.
+0306 [p] MODEL_NAME có thể đổi qua GROQ_MODEL; chọn mô hình đang được tài khoản hỗ trợ.
+0307 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId32'}]]
+0308 [p] Bước 3: Khai báo State, node, cạnh và chạy đồ thị
+0309 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId33'}]]
+0310 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId34'}]]
+0311 [p]  Giải thích
+0312 [p] StateGraph(State) xác định lược đồ trạng thái. Hai node call_model và empty_input chỉ trả về khóa answer cần cập nhật.
+0313 [p] add_conditional_edges(START, route) chọn call_model khi câu hỏi có nội dung và chọn empty_input khi câu hỏi rỗng. Hai node đều nối tới END.
+0314 [p] compile() tạo đồ thị có thể thực thi. graph.invoke(...) nhận State ban đầu và trả State sau xử lý; print(result["answer"]) hiển thị câu trả lời.
+0315 [p] Khi thử với câu hỏi rỗng, đồ thị trả lời yêu cầu nhập câu hỏi và không gọi LLM. Kết quả từ dịch vụ Groq cần được nhóm chạy thực tế với khóa hợp lệ.
+0316 [p] 3.3.2 Chat Model trong node của LangGraph
+0317 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId35'}]]
+0318 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId36'}]]
+0319 [p] * Giải thích: 
+0320 [p] Bước 1: Cài langchain-openai, dùng LangGraph đã cài ở trên và chuẩn bị OPENAI_API_KEY bằng biến môi trường hoặc getpass.
+0321 [p] ChatOpenAI là thành phần tích hợp mô hình; StateGraph, MessagesState và các cạnh thuộc LangGraph.
+0322 [p] HumanMessage và SystemMessage biểu diễn nội dung hội thoại; MessagesState dùng bộ gộp add_messages cho khóa messages.
+0323 [p] Bước 2: Khởi tạo mô hình và node chatbot
+0324 [p] ChatOpenAI(model="gpt-4o-mini", temperature=0) tạo mô hình được gọi bên trong hàm chatbot.
+0325 [p] Node chatbot đọc state["messages"], gọi mô hình và trả {"messages": [reply]} để bổ sung phản hồi vào trạng thái.
+0326 [p] Bước 3: Khai báo luồng và dữ liệu đầu vào
+0327 [p] Luồng thực thi là START → chatbot → END. builder.compile() tạo đồ thị trước khi gọi graph.invoke(...).
+0328 [p] State đầu vào chứa SystemMessage thiết lập vai trò và HumanMessage yêu cầu giải thích ngắn gọn về trí tuệ nhân tạo.
+0329 [p] MessagesState gộp phản hồi do node trả về vào messages trong một lần thực thi; ví dụ chưa cấu hình checkpointer để lưu qua nhiều lần gọi.
+0330 [p] Bước 4: Gọi đồ thị để xử lý hội thoại
+0331 [p] graph.invoke(...) truyền State qua các node theo cạnh đã khai báo. Chat Model chỉ được gọi khi thực thi node chatbot.
+0332 [p] Kết quả là một State dạng từ điển, trong đó messages chứa các tin nhắn đầu vào và phản hồi AIMessage.
+0333 [p] Bước 5: Đọc nội dung phản hồi cuối cùng
+0334 [p] result["messages"][-1].content lấy văn bản của tin nhắn cuối trong State kết quả.
+0335 [p] 3.4 Thực hành.
+0336 [p] Mục tiêu: Hiểu rõ sự khác biệt về "trạng thái" (state) giữa hai mô hình.
+0337 [p] Trong quá trình tương tác với mô hình ngôn ngữ lớn (Large Language Models– LLM) thông qua LangGraph, vấn đề “trạng thái” (state) là yếu tố quan trọng ảnh hưởng đến khả năng mô hình duy trì bối cảnh hội thoại. Ở mục này, nhóm tiến hành thực nghiệm nhằm so sánh sự khác biệt giữa mô hình LLM dạng stateless và Chat Model khi cung cấp lịch sử hội thoại.
+0338 [p] Khái niệm: 
+0339 [p] Stateless: Mô hình không lưu trữ bất kỳ thông tin nào từ lượt tương tác trước. Mỗi yêu cầu (request) được xử lý hoàn toàn độc lập.
+0340 [p] Stateful: Mô hình có khả năng duy trì hoặc sử dụng lại lịch sử hội thoại bằng cách truyền vào một danh sách tin nhắn (message list). Ngữ cảnh trước đó được bảo tồn trong phạm vi phiên tương tác.
+0341 [p] Thử nghiệm với LLM (Stateless)
+0342 [p] Trong LangGraph, khi gọi .invoke() và chỉ cung cấp một chuỗi văn bản, mô hình xử lý đầu vào như một phiên làm việc mới.
+0343 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId37'}]]
+0344 [p] Lần 1: Prompt: “Tên tôi là An.” → Mô hình trả lời bình thường.
+0345 [p] Lần 2: Prompt: “Tên tôi là gì?” → Do không có lịch sử, mô hình không thể suy luận ra tên người dùng.
+0346 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId38'}]]
+0347 [p] => Kết luận: LLM không tự ghi nhớ thông tin từ lần tương tác trước nếu không có cơ chế lưu trữ riêng.
+0348 [p] Thử nghiệm với Chat Model (Stateful qua message list)
+0349 [p] Chat Model trong LangGraph hỗ trợ truyền vào danh sách các HumanMessage và AIMessage. Khi lịch sử hội thoại được đưa vào, mô hình có thể dựa vào dữ liệu đó để trả lời chính xác hơn.
+0350 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId39'}]]
+0351 [p] Lần 1: Prompt đầu vào là “Tên tôi là An.” → Mô hình phản hồi bình thường.
+0352 [p] Lần 2: Danh sách tin nhắn được truyền lại gồm:
+0353 [p] Phát biểu ban đầu của người dùng
+0354 [p] Phản hồi của mô hình.
+0355 [p] Câu hỏi “Tên tôi là gì?”
+0356 [p] → Nhờ lịch sử này, mô hình trả lời chính xác: “Bạn tên là An.”
+0357 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId40'}]]
+0358 [p] => Kết luận: Chat Model không tự ghi nhớ, nhưng có khả năng giữ state khi lịch sử được truyền vào thủ công.
+0359 [p] Nhận xét: 
+0360 [tbl] Tiêu chíLLM StatelessChat Model StatefulTự ghi nhớKhôngKhôngNhớ dựa vào lịch sử chuyển vàoKhôngCóPhù hợp choPrompt đơn lẻChatbot, đối thoạiNgữ cảnhKhông duy trìDuy trì nếu truyền message list
+0361 [p] Điểm đáng chú ý: Chat Model không tự lưu state. Khả năng “giữ ngữ cảnh” chỉ xảy ra bởi vì lập trình viên cung cấp lại lịch sử hội thoại.
+0362 [p] Nguyên nhân khác biệt
+0363 [p] LLM dạng stateless: Thiết kế theo dạng xử lý độc lập để phục vụ tác vụ sinh văn bản đơn lẻ.
+0364 [p] Chat Model: Được thiết kế để hoạt động theo cấu trúc tin nhắn (message-based), hỗ trợ theo dõi ngữ cảnh thông qua lịch sử.
+0365 [p] → Do đó, trong các ứng dụng chatbot thực tế, việc quản lý trạng thái là yếu tố bắt buộc nhằm đảm bảo trải nghiệm tự nhiên và mạch lạc.
+0366 [p] 4. Prompt Template
+0367 [p] 4.1 Lý thuyết
+0368 [p] Prompt Template: giúp bạn tạo khung (mẫu) cho prompt, trong đó có thể chèn biến động.
+0369 [p] Có nhiều loại:
+0370 [p] StringPromptTemplate:  đầu ra là chuỗi (string).
+0371 [p] ChatPromptTemplate: đầu ra là danh sách tin nhắn (messages) cho Chat Model.
+0372 [p] MessagesPlaceholder: chèn cả danh sách messages vào 1 chỗ trong prompt.
+0373 [p] 4.2 Giải thích & Minh họa
+0374 [p] Bạn muốn AI viết lời chào cho nhiều tên khác nhau. Nếu không có template, bạn sẽ phải viết đi viết lại prompt.
+0375 [p] Với PromptTemplate, bạn chỉ cần viết một khung: “Xin chào {name}, chúc bạn một ngày tốt lành!”.
+0376 [p] Khi gọi, bạn truyền name= “Lan” → AI nhận prompt: “Xin chào Lan, chúc bạn một ngày tốt lành!”.
+0377 [p] Sơ đồ giản lược:
+0378 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId41'}]]
+0379 [p] 4.3 Code mẫu
+0380 [p] 4.3 Code mẫu
+0381 [p] 4.3.1 String PromptTemplates: Dùng để định dạng một chuỗi string duy nhất. Thường dùng cho input đơn giản.
+0382 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId42'}]]
+0383 [p] Giải thích:
+0384 [p] Bước 1: Import lớp PromptTemplate từ thư viện LangChain (langchain_core.prompts).
+0385 [p] Bước 2:Tạo một mẫu prompt có chỗ giữ chỗ {topic}. Đây là nơi sẽ thay bằng dữ liệu thực tế.
+0386 [p] Bước 3:Gọi phương thức format và truyền đối số topic="cats". Kết quả là chuỗi hoàn chỉnh với {topic} được thay bằng "cats".
+0387 [p] Bước 4:In ra prompt sau khi format: "Tell me a joke about cats".
+0388 [p] Ý nghĩa thực tiễn: dùng khi cần tái sử dụng cùng 1 khuôn mẫu prompt cho nhiều input khác nhau (ví dụ: làm tính năng generate nhiều câu hỏi/ nhiều khách hàng).
+0389 [p] Kết quả: Tell me a joke about cats
+0390 [p] 4.3.2 ChatPromptTemplates: Dùng để định dạng danh sách các messages (hội thoại). Một ChatPromptTemplate là một danh sách các template messages.
+0391 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId43'}]]
+0392 [p] Giải thích:
+0393 [p] Dòng 1: Import ChatPromptTemplate để tạo prompt dạng hội thoại.
+0394 [p] Bước 1: Tạo prompt gồm 2 tin nhắn mẫu:
+0395 [p] system: định nghĩa vai trò AI là trợ lý hữu ích.
+0396 [p] user: câu hỏi có chứa biến {topic}.
+0397 [p] Bước 2: Dùng format_messages(topic="cats") để điền giá trị vào biến {topic} → thành câu hỏi cụ thể “Tell me a joke about cats”.
+0398 [p] Bước 3: In ra các message đã được định dạng, kết quả là một danh sách message (system + user).
+0399 [p] Kết quả:
+0400 [p] content='You are a helpful assistant.'
+0401 [p] content='Tell me a joke about cats'
+0402 [p] 4.3.3 MessagesPlaceholder: Dùng để chèn một danh sách messages vào một vị trí cụ thể trong ChatPromptTemplate. Hữu ích khi ta muốn người dùng có thể truyền vào nhiều messages (ví dụ lịch sử hội thoại).
+0403 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId44'}]]
+0404 [p] Giải thích:
+0405 [p] Dòng 1: Import các class cần dùng (ChatPromptTemplate, MessagesPlaceholder, HumanMessage).
+0406 [p] Bước 1: Tạo prompt với 2 phần:
+0407 [p] system: định nghĩa AI là trợ lý hữu ích.
+0408 [p] MessagesPlaceholder("msgs"): để trống một chỗ cho danh sách message sẽ được chèn sau này.
+0409 [p] Bước 2: Khi gọi invoke({"msgs": [HumanMessage(content="hi!")]}), ta truyền vào một list gồm một tin nhắn người dùng (hi!).
+0410 [p] Bước 3: Lấy ra danh sách messages hoàn chỉnh bằng .to_messages() và in ra.
+0411 [p] Kết quả: 
+0412 [p] content='You are a helpful assistant.'
+0413 [p] content='hi!'.
+0414 [p] 4.4 Thực hành 
+0415 [p] Mục tiêu: Xây dựng một prompt động, có cấu trúc. 
+0416 [p] Import các thư viện cần thiết.
+0417 [p] from langchain_core.prompts import ChatPromptTemplate
+0418 [p] from langchain_core.messages import SystemMessage, HumanMessage
+0419 [p] Định nghĩa nội dung Templates: 
+0420 [p] Vai trò của Bot( system_template): Đây là một chuỗi hướng dẫn tĩnh. Nó xác định giới hạn, vai trò và trách nhiệm của chatbot, đảm bảo nó hoạt động trong khuôn khổ nhiệm vụ và đạo đức.
+0421 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId45'}]]
+0422 [p] Tin nhắn của người dùng( human_template): Đây là chuỗi template động . Nó sử dụng hai biến (placeholders): {user_feeling} và {user_topic}. Các biến này sẽ được thay thế bằng dữ liệu cụ thể khi bạn chạy promt. Điều này giúp prompt trở nên linh hoạt và có thể tái sử dụng cho nhiều tình huống khác nhau chỉ bằng cách thay đổi giá trị input.
+0423 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId46'}]]
+0424 [p] Tạo chatpromt template hoàn chỉnh.
+0425 [p] ChatPromptTemplate được tạo từ các cặp (vai trò, chuỗi template): ("system", system_template) và ("human", human_template).
+0426 [p] Chuỗi trong cặp template hỗ trợ điền biến. Ngược lại, HumanMessage(content=human_template) là một tin nhắn đã tạo sẵn và không tự thay placeholder khi định dạng ChatPromptTemplate.
+0427 [p] #  Tạo ChatPromptTemplate hoàn chỉnh
+0428 [p] chat_prompt = ChatPromptTemplate.from_messages(
+0429 [p]     [
+0430 [p]         SystemMessage(content=system_template),
+0431 [p]         HumanMessage(content=human_template)
+0432 [p]     ]
+0433 [p] )
+0434 [p] Kết quả : Biến chat_prompt giờ đây là một khuôn mẫu có cấu trúc và sẵn  sàng nhận dữ liệu để tạo ra prompt cuối cùng
+0435 [p] Định dạng và tạo Prompt cuối cùng
+0436 [p] data_mau là dictionary có các khóa user_feeling và user_topic khớp với tên biến của human_template.
+0437 [p] chat_prompt.format(**data_mau) điền các biến và trả chuỗi biểu diễn prompt. Nếu cần danh sách tin nhắn để gọi chat model, dùng chat_prompt.format_messages(**data_mau).
+0438 [p] prompt_hoan_chinh là chuỗi đã điền dữ liệu. Kết quả dưới đây được chạy kiểm chứng cục bộ, chưa gọi API mô hình.
+0439 [p] data_mau = {
+0440 [p]     "user_feeling": "căng thẳng",
+0441 [p]     "user_topic": "công việc"
+0442 [p] }
+0443 [p] 
+0444 [p] #  Tạo prompt hoàn chỉnh với dữ liệu mẫu (sử dụng .format())
+0445 [p] prompt_hoan_chinh = chat_prompt.format(**data_mau)
+0446 [p] print("--- Prompt Hoàn Chỉnh (Dùng để gửi đến LLM) ---")
+0447 [p] print(prompt_hoan_chinh)
+0448 [p] Kết quả: 
+0449 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId47'}]]
+0450 [p] 5. Graph và thành phần Chain dùng trong node
+0451 [p] 5.1 Lý thuyết
+0452 [p] LangGraph điều phối bằng StateGraph, State, node và edge. Chain là thành phần thuộc LangChain và có thể được gọi bên trong một node; không phải tên gọi thay thế cho đồ thị LangGraph.
+0453 [p] Các lớp Chain trong ví dụ tham khảo bên dưới thuộc API LangChain đời cũ:
+0454 [p] LLMChain: lớp ghép prompt và mô hình của LangChain đời cũ; có thể biểu đạt tương đương bằng LCEL prompt | model.
+0455 [p] SequentialChain: lớp ghép chuỗi tuần tự của LangChain đời cũ; cần phiên bản phụ thuộc phù hợp để tái hiện.
+0456 [p] RouterChain: lớp định tuyến của LangChain đời cũ. Với LangGraph, thể hiện định tuyến bằng cạnh điều kiện trên State.
+0457 [p] Mục tiêu: đơn giản hóa luồng xử lý phức tạp, ví dụ: nhập câu hỏi → sinh câu trả lời → tóm tắt → dịch sang ngôn ngữ khác.
+0458 [p] 5.2 Giải thích & Minh họa
+0459 [p] Ví dụ minh họa 1 – LLMChain cơ bản1. Input: "Viết một câu thơ về mùa thu"2. Chain: sử dụng LLM + Prompt để sinh văn bản.3. Output: "Mùa thu vàng lá rơi bên thềm..."
+0460 [p] Ví dụ minh họa 2 – SequentialChain1. Người dùng nhập: "Tóm tắt văn bản này và dịch sang tiếng Việt"+ Bước 1: Chain A (tóm tắt văn bản bằng tiếng Anh).+ Bước 2: Chain B (dịch kết quả sang tiếng Việt).
+0461 [p] Sơ đồ minh họa cơ bản:
+0462 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId48'}]]
+0463 [p] 5.3 Code tham khảo LangChain đời cũ; phần thực hành tiếp theo dùng StateGraph
+0464 [p] Lưu ý: Phần này minh họa cách viết chain đời cũ (LLMChain, SequentialChain). Trong thực tế và các bài thực hành tiếp theo, chúng ta sử dụng LCEL hoặc LangGraph (StateGraph) để tối ưu hiệu năng và khả năng điều hướng.
+0465 [p] 5.3.1 LLMChain cơ bản
+0466 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId49'}]]
+0467 [p] Giải thích:
+0468 [p] B1:Import thư viện cần dùng:
+0469 [p] LLMChain: để tạo chain sử dụng mô hình ngôn ngữ.
+0470 [p] PromptTemplate: định nghĩa cấu trúc của prompt.
+0471 [p] OpenAI: gọi mô hình LLM của OpenAI.
+0472 [p] B2: Khởi tạo mô hình LLM:
+0473 [p] temperature=0.7 điều chỉnh độ sáng tạo (0 → chắc chắn, 1 → sáng tạo cao).
+0474 [p] Biến llm giữ mô hình AI mà ta sẽ dùng trong chain.
+0475 [p] B3: Định nghĩa Prompt Template:
+0476 [p] input_variables=["topic"]: chỉ rõ rằng prompt sẽ cần một biến đầu vào tên là topic.
+0477 [p] template=...: mẫu câu mà AI sẽ dựa vào để sinh văn bản.
+0478 [p] Ví dụ: nếu input "mùa thu" → prompt thành "Viết một đoạn văn ngắn về mùa thu".
+0479 [p] B4: Tạo LLMChain:
+0480 [p] chain.run("mùa thu"): truyền giá trị "mùa thu" vào biến topic.
+0481 [p] Prompt sẽ thành: "Viết một đoạn văn ngắn về mùa thu".
+0482 [p] AI sinh ra đoạn văn và lưu vào result.
+0483 [p] print(result) in ra đoạn văn sinh được.
+0484 [p] Tóm lại:
+0485 [p] 1. Import các module cần thiết.
+0486 [p] 2. Khởi tạo mô hình LLM.
+0487 [p] 3. Định nghĩa prompt template có chỗ trống {topic}.
+0488 [p] 4. Tạo LLMChain từ LLM + Prompt.
+0489 [p] 5. Gọi chain với input "mùa thu" để sinh văn bản.
+0490 [p] 5.3.2: SequentialChain
+0491 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId50'}]]
+0492 [p] Giải thích:
+0493 [p] SequentialChain: Cho phép kết nối nhiều LLMChain theo thứ tự. Đầu ra (output_key) của chain trước sẽ tự động được truyền làm đầu vào (input_variables) cho chain tiếp theo.
+0494 [p] Chain 1: Tóm tắt văn bản
+0495 [p] Tạo prompt: nhận input text → yêu cầu AI tóm tắt.
+0496 [p] output_key="summary": đặt tên cho kết quả là "summary".
+0497 [p] Ví dụ: Input = "Artificial Intelligence is transforming the world rapidly."
+0498 [p] → Output = "AI is changing the world quickly.”
+0499 [p] Chain 2: Dịch sang tiếng Việt
+0500 [p] Nhận đầu vào là "summary" từ chain trước.
+0501 [p] yêu cầu AI dịch sang tiếng Việt.
+0502 [p] output_key="translation": kết quả cuối cùng sẽ được lưu với tên "translation".
+0503 [p] Ví dụ: Input = "AI is changing the world quickly."
+0504 [p] → Output = "Trí tuệ nhân tạo đang thay đổi thế giới rất nhanh."
+0505 [p] Ghép hai chain lại với nhau
+0506 [p] SequentialChain nhận chains=[summary_chain, translate_chain]; không dùng tên tham số graphs. Đây là API LangChain đời cũ, cần môi trường tương thích.
+0507 [p] Bước 1 → tóm tắt (summary).
+0508 [p] Bước 2 → dịch (translation).
+0509 [p] input_variables=["text"]: đầu vào ban đầu.
+0510 [p] output_variables=["summary", "translation"]: đầu ra gồm cả bản tóm tắt và bản dịch.
+0511 [p] Thực thi toàn bộ chuỗi
+0512 [p] Truyền đoạn văn bản tiếng Anh vào.
+0513 [p] Chain thực hiện:
+0514 [p] Tóm tắt: "AI is changing the world quickly." Dịch sang tiếng Việt: "Trí tuệ nhân tạo đang thay đổi thế giới rất nhanh."
+0515 [p] Tóm tắt quy trình hoạt động
+0516 [p] Nhập văn bản gốc (text).
+0517 [p] Chain 1 → Tóm tắt văn bản.
+0518 [p] Chain 2 → Dịch bản tóm tắt sang tiếng Việt.
+0519 [p] Kết quả cuối: bản dịch ngắn gọn bằng tiếng Việt.
+0520 [p] 5.4 Thực hành
+0521 [p] Mục tiêu: Dùng StateGraph điều phối chatbot theo chủ đề. Nhánh answer gọi ChatGroq; nhánh clarify yêu cầu bổ sung khi thiếu chủ đề.
+0522 [p] Cài LangGraph và thư viện tích hợp Groq. Lấy khóa tại Groq Console → API Keys; chọn MODEL_NAME được tài khoản hỗ trợ.
+0523 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId51'}]]
+0524 [p] Hàm Khởi Tạo Mô Hình (initialize_model): 
+0525 [p] Hàm này nhận khóa API và tên mô hình để khởi tạo đối tượng ChatGroq.
+0526 [p] Kiểm tra API Key: Nó kiểm tra xem khóa API có được cung cấp hay không. Nếu không, nó sẽ in thông báo lỗi và dừng chương trình.
+0527 [p] Khởi tạo ChatGroq: Tạo đối tượng LLM chính, truyền vào tên mô hình (model), nhiệt độ (temperature), và khóa API. Đây là cầu nối để giao tiếp với dịch vụ LLM của Groq.
+0528 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId52'}]]
+0529 [p] Tạo tin nhắn từ State: make_messages chèn trực tiếp cảm xúc và chủ đề vào nội dung human message trước khi gọi mô hình.
+0530 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId53'}]]
+0531 [p] Xây dựng và chạy đồ thị StateGraph:
+0532 [p] ChatState lưu user_feeling, user_topic và answer. initialize_model tạo ChatGroq dùng trong node answer.
+0533 [p] Hàm route kiểm tra user_topic. Nếu có chủ đề, đồ thị chọn answer; nếu thiếu, đồ thị chọn clarify. Mỗi node trả cập nhật answer.
+0534 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId54'}]]
+0535 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId55'}]]
+0536 [p] Sơ đồ luồng thực thi tương ứng với mã StateGraph:
+0537 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId56'}]]
+0538 [p] Giải thích các bước chính:
+0539 [p] Dữ liệu đầu vào: input_data cung cấp cảm xúc, chủ đề và answer rỗng cho ChatState.
+0540 [p] Cạnh điều kiện: route đọc user_topic ngay từ START và chọn một trong hai node answer hoặc clarify.
+0541 [p] Node answer tạo messages từ State, gọi ChatGroq và lấy reply.content. Node clarify tạo lời nhắc bổ sung chủ đề, không gọi LLM.
+0542 [p] Cập nhật State và kết thúc: node trả {"answer": ...}; LangGraph gộp cập nhật vào State và đi tới END. graph.invoke(...) trả State cuối cùng.
+0543 [p] Kiểm tra nhánh thiếu chủ đề (không gọi LLM): đặt user_topic="". Ảnh dưới ghi lại kết quả kiểm tra bằng LangGraph; không phải phản hồi sinh từ Groq.
+0544 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId57'}]]
+0545 [p] 6. Tool & Tools
+0546 [p] 6.1 Lý Thuyết 
+0547 [p] Tool : Là một công cụ đơn lẻ trong LangGraph.
+0548 [p] Thực chất là một hàm Python hoặc hành động cụ thể mà Agent có thể gọi khi cần.
+0549 [p] Cấu trúc cơ bản của Tool:
+0550 [p] name: tên của tool.
+0551 [p] description: mô tả công dụng.
+0552 [p] func: hàm được thực thi.
+0553 [p] Tools : Là tập hợp nhiều Tool (một danh sách).
+0554 [p] Được đưa vào Agent, để Agent tự động chọn tool phù hợp với yêu cầu người dùng.
+0555 [p] Giúp Agent linh hoạt hơn, vì có thể vừa tính toán, vừa tìm kiếm, vừa dịch ngôn ngữ,...
+0556 [p] 6.2  Giải thích & Minh họaVí dụ 1  minh họa Tool – Calculator
+0557 [p] Người dùng: “2 + 3 * 4 bằng bao nhiêu?”
+0558 [p] LLM không giỏi tính toán chính xác → gọi Tool calculator để trả về 14.
+0559 [p] Quy trình các bước:User ====> Agent ====>  Tool: Calculator ====>  Kết quả: 14
+0560 [p] Ví dụ 2  minh họa Tools – Calculator + Search
+0561 [p] Người dùng: “Thủ đô Nhật Bản là gì? Và tính 25 * 4.”
+0562 [p] Agent có 2 tool: search và calculator.
+0563 [p] Agent sẽ tự chọn tool phù hợp cho từng phần của câu hỏi.
+0564 [p] Quy trình các bước:
+0565 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId58'}]]
+0566 [p] 6.3 Code mẫu
+0567 [p] 6.3.1 Tool (Tạo 1 Tool đơn giản)
+0568 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId59'}]]
+0569 [p] * Giải thích:
+0570 [p] @tool được import từ langchain_core.tools. Ví dụ mới phân tích AST và chỉ cho phép số, +, -, *, /, dấu ngoặc và dấu âm/dương; từ chối lời gọi hàm hoặc truy cập thuộc tính. Không dùng eval cho chuỗi từ người dùng. “2 ++ 5” hợp lệ trong Python và bằng 7; “2 + * 5” mới là ví dụ lỗi cú pháp.
+0571 [p] 6.3.2 Tools (Dùng nhiều Tools trong Agent)
+0572 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId60'}]]
+0573 [p] * Giải thích
+0574 [p] Ảnh này minh họa initialize_agent/AgentExecutor của LangChain đời cũ, không phải API StateGraph. temperature=0 giảm tính ngẫu nhiên nhưng không bảo đảm tính đúng. Giá trị 100 là đáp án toán học kỳ vọng cho 25 * 4; cần trace hoặc log thực thi để xác nhận tool đã được gọi.
+0575 [p] 7. Giao diện cho chatbot.
+0576 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId61'}]]
+0577 [p] 
+0578 [p] Chương 5: Embedding và Vector Database
+0579 [p] a) Embedding.
+0580 [p] Dữ liệu phi cấu trúc (văn bản, âm thanh,..) không có định dạng sẵn do đó khó lưu và tìm kiếm trên các cơ sở dữ liệu truyền thống.
+0581 [p] Embedding sẽ giúp chuyển đổi dữ liệu thành vector số học ( mã số nhiều chiều) mà máy tính có thể hiểu và so sánh => bản chất: embedding giống như “ mã hóa ngữ nghĩa/ngữ cảnh” của dữ liệu thành vector nhiều chiều.
+0582 [p] Đặc điểm: các điểm gần nhau trong không gian vector thường mang ý nghĩa tương tự ví dụ như king – man + woman ≈ queen.
+0583 [p] Vai trò: là cầu nối giúp máy tính hiểu và xử lý dữ liệu phi cấu trúc trong Vector Database và các ưng dụng AI/ML – sẽ được sử dụng trong kiến trước RAG - Retrieval Augmented Generation.
+0584 [p]  Ứng dụng  cụ thể trong đề tài: chuyển tài liệu tâm lí thành vector để tìm kiếm theo ngữ nghĩa.
+0585 [p]  Thực hành:
+0586 [p]                            [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId62'}]]
+0587 [p] Trong hình, ta thực hiện embedding một danh sách gồm 5 câu văn bản bằng cách sử dụng class OpenAIEmbeddings từ thư viện langchain_openai.
+0588 [p] Đối tượng embeddings_model được khởi tạo từ class OpenAIEmbeddings và dùng phương thức embed_documents() để ánh xạ từng chuỗi trong danh sách thành một vector 1536 chiều.
+0589 [p] b) Vector Database.
+0590 [p] Là một loại cơ sở dữ liệu đặc thù, lưu trữ thông tin dưới dạng các vertor nhiều chiều, biểu diễn cho những đặc trung hoặc thuộc tính nhất định.
+0591 [p] Số chiều trong mỗi vector có thể khác nhau từ chỉ vài chiều đến hàng ngàn chiều tùy thuộc vào độ phức tạp và mức chi tiết của dữ liệu. Dữ liệu có thể là văn bản, âm thanh, hình ảnh, video,… được chuyển đổi thành vector bằng nhiều phương pháp khác nhau như máy học, word embeddings,…
+0592 [p] Lợi ích: khả năng tìm kiếm và truy xuất dữ liệu nhanh chóng, chính xác dựa trên độ gần hoặc mức độ tương đồng vector. Điều này cho phép việc tìm kiếm dựa vào ngữ nghĩa hay ngữ cảnh, thay vì chỉ dựa vào một đối chiếu chính xác hoặc tiêu chí cố định như các cơ sở dữ liệu trền thống.
+0593 [p] => CSDL truyền thống tìm chính xác dữ liệu khớp, còn CSDL vector tìm kết quả gần nhất bằng các thước đo tương đồng.
+0594 [p] => Vector Database là nền tảng cốt lõi để xử lý dữ liệu phi cấu trúc ứng dụng mạnh mẽ trong AI/ML,..
+0595 [p] Các hoạt động: sử dụng Approximate Nearest Neighbor (ANN) search để tìm vector gần nhất thay vì tìm khớp tuyệt đối – kĩ thuật tối ưu cho dữ liệu lớn.
+0596 [p] Thư viện:
+0597 [p] langchain_community.vectorstores: chung cho nhiều DB.
+0598 [p] Các tích hợp vector store thuộc hệ sinh thái LangChain. Với FAISS dùng langchain_community.vectorstores.FAISS và cài faiss-cpu; không dùng các tên gói langgraph-faiss hoặc langgraph-chroma.
+0599 [p] Vector database cụ thể trong đề tài là FAISS:
+0600 [p] FAISS (Facebook AI Similarity Search) là thư viện mã nguồn mở do Meta (Facebook AI Research) phát triển, đóng vai trò như một vector database, cho phép lưu trữ và truy vấn embeddings một cách hiệu quả, thường được dùng trong các hệ thống semantic search và RAG.
+0601 [p] Mục đích chính: tìm kiếm và so sánh độ tương đồng giữa các vector lớn một cách nhanh chóng và hiệu quả. FAISS được thiết kế để xử lý dữ liệu có kích thước rất lớn (hàng triệu đến hàng tỷ vector), vượt xa khả năng tìm kiếm tuyến tính thông thường.
+0602 [p]       - Thực hành:
+0603 [p]                  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId63'}]]
+0604 [p] Đoạn mã khởi tạo FAISS qua tích hợp LangChain; vector store này có thể được gọi trong node truy xuất của LangGraph.
+0605 [p] index = faiss.IndexFlatL2(...) tạo FAISS index với số chiều bằng độ dài embedding là nơi lưu trữ các vector.
+0606 [p] vector_store = FAISS(...) kết hợp embedding function, FAISS index, và InMemoryDocstore (nơi lưu văn bản gốc tương ứng với mỗi vector (ở đây dùng bộ nhớ tạm trong RAM))  để hình thành một cơ sở dữ liệu vector rỗng, sẵn sàng thêm và tìm kiếm văn bản theo ngữ nghĩa.
+0607 [p] Chunking thường được thực hiện trước embedding và lập chỉ mục vector. Chia nhỏ văn bản không đòi hỏi phải có sentence embedding hoặc vector database.
+0608 [p] c) Thực hành hiểu về tìm kiếm tương đồng ngữ nghĩa (semantic search). 
+0609 [p] Mục tiêu: Hiểu và thực hành tìm kiếm tương đồng ngữ nghĩa (Semantic Search) sử dụng Embedding và Vector Database.
+0610 [p] Yêu cầu:
+0611 [p] Tạo danh sách 5 câu về tâm lý (Tiếng Việt).
+0612 [p] Vector hóa 5 câu bằng model embedding.
+0613 [p] Lưu trữ vectors vào Vector Store (FAISS).
+0614 [p] Thực hiện tìm kiếm tương đồng với truy vấn "Những cảm xúc tích cực".
+0615 [p] Phân tích và giải thích kết quả.
+0616 [p] Các bước thực hiện
+0617 [p] Bước 1: Chuẩn bị môi trường
+0618 [p] Cài môi trường ví dụ: python -m pip install langgraph langchain-core langchain-community faiss-cpu. Cần cố định bộ phiên bản tương thích khi tái hiện; đây là các gói có vai trò khác nhau.
+0619 [p] !pip install faiss-cpu: Cài đặt thư viện FAISS (bản chạy trên CPU). FAISS là một thư viện của Facebook AI, chuyên dụng cho việc lưu trữ và tìm kiếm vector hiệu suất cao.
+0620 [p] !pip install sentence-transformers: Cài đặt thư viện cung cấp các mô hình embedding mã nguồn mở, được tối ưu hóa để tạo ra các vector đại diện cho câu.
+0621 [p] Cài langchain-huggingface để dùng tích hợp mô hình Hugging Face. Đây là gói tích hợp LangChain, không phải một module có tên langgraph-huggingface.
+0622 [p] Bước 2:  Import Thư viện và Khởi tạo Dữ liệu
+0623 [p] Các thư viện chính được import: FAISS (từ langchain_community.vectorstores) và HuggingFaceEmbeddings (từ langchain_huggingface).
+0624 [p] Một danh sách (list) gồm 5 câu tiếng Việt được tạo để làm cơ sở dữ liệu:
+0625 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId64'}]]
+0626 [p] Bước 3: Tải và Cấu hình Model Embedding
+0627 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId65'}]]
+0628 [p] Một model embedding cụ thể từ Hugging Face được chọn: sentence-transformers/paraphrase-multilingual-mpnet-base-v2. Đây là một model đa ngôn ngữ (hỗ trợ tiếng Việt), hiệu quả trong việc hiểu ngữ nghĩa của câu.
+0629 [p]  model_kwargs={'device': 'cpu'}: Chỉ định model chạy trên CPU (thay vì GPU).
+0630 [p] normalize_embeddings=True: chuẩn hóa vectors về độ dài 1, giúp tính toán khoảng cách chính xác hơn.
+0631 [p] Qúa trình hoạt động: Model sẽ tự động tải về từ HuggingFace Hub lần đầu tiên. Các lần sau sẽ sử dụng bản đã cache trên máy.
+0632 [p] Bước 4: Tạo FAISS Vector Store
+0633 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId66'}]]
+0634 [p] Vector hóa: Mỗi câu trong `sentences` được chuyển thành vector 768 chiều.
+0635 [p] Index hóa: FAISS tạo cấu trúc index để tìm kiếm nhanh.
+0636 [p] Lưu trữ:Vectors được lưu trong bộ nhớ cùng với metadata (văn bản gốc).
+0637 [p] Cách hoạt động rõ ràng: Nó lấy từng câu trong danh sách sentences. Tiếp theo nó dùng đối tượng embeddings (đã khởi tạo ở Bước 2) để biến mỗi câu thành một vector (một chuỗi số thực). Và cuối cùng Nó lưu trữ 5 vector này vào một chỉ mục (index) của FAISS, sẵn sàng cho việc tìm kiếm.
+0638 [p] Bước 5: Thực Hiện Semantic Search
+0639 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId67'}]]
+0640 [p] Phương thức similarity_search_with_score đầu tiên lấy câu query ("Những cảm xúc tích cực").
+0641 [p] Nó sử dụng cùng một model embeddings để biến câu query này thành một vector.
+0642 [p] Sau đó, nó so sánh vector của query với tất cả 5 vector đang được lưu trong db (FAISS) để tìm ra 3 vector (k=3) có khoảng cách gần nhất (tức là có ngữ nghĩa giống nhất).
+0643 [p] Nó trả về 3 văn bản gốc tương ứng và điểm số (score) khoảng cách của chúng.
+0644 [p] Phân tích: tại sao “tôi rất vui hôm nay” và “tôi hạnh phúc” được trả về dù không chứa từ "tích cực" ?
+0645 [tbl] HạngCâu trả vềScoreCó từ “Tích cực”1Tôi hạnh phúc0.9986Không2Tôi rất vui hôm nay1.0009Không
+0646 [p] Giải thích: Bởi vì Semantic Search tìm kiếm theo nghĩa, không phải từ khóa.
+0647 [p] Keyword Search (Truyền thống)
+0648 [p] Query: “cảm xúc tích cực” → Tìm câu có chứa từ “tích cực”→ Kết quả: không tìm thấy
+0649 [p] Vấn đề: Không hiểu “vui” và “hạnh phúc” có nghĩa là “tích cực”.
+0650 [p] Semantic Search (Hiện đại)
+0651 [p] Query: “cảm xúc tích cực” → Chuyển thành vector [0.23, -0.45, 0.67, ..., 0.12] → Tìm các câu có vector gần nhau → Kết quả: “vui”, “hạnh phúc” được tìm thấy.
+0652 [p] Ưu điểm: Hiểu “vui” = một dạng của “tích cực”.
+0653 [p] Cơ chế hoạt động:
+0654 [p] Bước 1: mô hình sentence-transformers/paraphrase-multilingual-mpnet-base-v2 biến câu thành vector để so sánh ngữ nghĩa. Model card mô tả không gian vector 768 chiều; báo cáo không khẳng định số lượng “hàng tỷ câu” khi chưa có nguồn xác nhận.
+0655 [p] Bước 2: Chuyển thành Vector: Mỗi câu được chuyển thành vector 768 số (đơn giản hóa dưới đây):Ví dụ: 
+0656 [p] Cảm xúc tích cực → [0.80, 0.90, -0.10, ...] 
+0657 [p] Tôi hạnh phúc → [0.75, 0.85, -0.05, ...] ← Gần
+0658 [p] Tôi vui → [0.72, 0.88, -0.02, ...] ← Gần 
+0659 [p] Tôi lo lắng → [-0.70, -0.80, 0.90, ...] ← Xa
+0660 [p] Bước 3: với FAISS IndexFlatL2, score trả về là khoảng cách Euclid bình phương: score = sum((A[i] - B[i])²), không lấy căn bậc hai. Các số dưới đây là số được ghi trong lần minh họa, không phải điểm chuẩn chung cho mọi lần chạy.
+0661 [p] hạnh phúc: 0.9986 ← Gần nhất (nghĩa giống nhất)
+0662 [p] vui: 1.0009 ← Gần
+0663 [p] bình yên: 1.2749 ← Xa hơn
+0664 [p] lo lắng: ~1.60 ← Rất xa (không vào top 
+0665 [p] => Nguyên tắc: Score nhỏ = Gần = Nghĩa giống
+0666 [p] Chương 6: Chunking – xử lý dữ liệu văn bản.
+0667 [p] Là quá trình chia nhỏ dữ liệu phi cấu trúc (văn bản, tài liệu,..) thành nhiều phần nhỏ hơn gọi là chunks.
+0668 [p] Mục tiêu: giúp quá trình embedding và truy xuất vector hiệu quả hơn.
+0669 [p] Vì mô hình LLM có giới hạn về số lượng token do đó chunking sẽ cho phép xử lí từng phần nhỏ thay vì toàn bộ văn bản dài.
+0670 [p] Trong LangGraph, chunking được hỗ trợ thông qua text splitters là langchain_text_splitters, chứa:
+0671 [p]                 + CharacterTextSplitter.
+0672 [p]                 + RecursiveCharacterTextSplitter.
+0673 [p]                 +TokenTextSplitter.
+0674 [p]                 + MarkdownHeaderTextSplitter.
+0675 [p] Kỹ thuật được sử dụng trong đề tài là RecursiveCharacterTextSplitter.
+0676 [p]      - Thực hành:
+0677 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId68'}]]
+0678 [p] Từ langchain_text_splitters, ta sử dụng class RecursiveCharacterTextSplitter để thực hiện chunking văn bản.
+0679 [p] Tham số quan trọng: chunk_size: độ dài tối đa của mỗi chunk (tính theo ký tự hoặc token, tùy cấu hình) và chunk_overlap: số ký tự (hoặc token) chồng lấn giữa các chunk liên tiếp.
+0680 [p] Chương 7: Retrieval Augmented Generation (RAG)    
+0681 [p] a) Xử lí văn bản cho RAG.
+0682 [p] Dữ liệu phục vụ cho RAG cần là những tài liệu chuyên biệt liên quan đến các vấn đề tâm lí (bài viết, nghiên cứu, tài liệu hỗ trợ). Việc chuẩn bị dữ liệu phù hợp sẽ giúp hệ thống đưa ra câu trả lời chính xác và hữu ích hơn.
+0683 [p] Quá trình xử lý dữ liệu văn bản bao gồm việc chuyển đổi các file (PDF, DOCX, …) thành dạng vector để LLM có thể sử dụng.
+0684 [p] Thư viện LangGraph hỗ trợ nhiều công cụ cho quá trình này, từ text splitter để chia nhỏ văn bản cho đến embedding models và vectorstores để lưu trữ. 
+0685 [p] Quy trình cơ bản:
+0686 [p]                   [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId69'}]]
+0687 [p] Tải dữ liệu lên có thể là file pdf, docs,….
+0688 [p] Chunking: Dữ liệu văn bản được chia nhỏ thành các đoạn (chunks) để phù hợp với giới hạn token của mô hình – như đã trình bày ở Chương 6.
+0689 [p] Embedding: Các chunks sau đó được chuyển đổi thành vector số học bằng cách sử dụng embedding từ mô hình LLM – như đã đề cập ở Chương 5.
+0690 [p] Lưu trữ: Các vector được lưu trong cơ sở dữ liệu vector (ví dụ: FAISS) – cũng đã giới thiệu ở Chương 5.
+0691 [p] Nhờ quá trình này, hệ thống RAG có thể nhanh chóng truy xuất các đoạn văn bản liên quan, sau đó cung cấp cho LLM để tạo câu trả lời phù hợp và có ngữ cảnh.
+0692 [p] Thực hành trên file pdf:
+0693 [p]        [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId70'}]]
+0694 [p] PyPDFLoader đọc nội dung từ file PDF thành danh sách documents.
+0695 [p] Tiếp theo sử dụng RecursiveCharacterTextSplitter chia văn bản thành nhiều đoạn nhỏ để không vượt giới hạn token – chunk.
+0696 [p] Sử dụng OpenAIEmbeddings để sử dụng model embedding của OpenAI.
+0697 [p] Cuối cùng là FAISS.from_documents lưu toàn bộ embeddings và văn bản vào vector database FAISS để phục vụ cho RAG.
+0698 [p] b) Kiến trúc RAG.
+0699 [p] Là một kiến trúc kết hợp giữa retrieval(truy xuất thông tin từ cơ sở dữ liệu vector) và generation ( sinh nội dung từ LLM).
+0700 [p] Gần đây thì LLM bùng nổ mạnh mẽ giúp ích rất nhiều trong tất cả lĩnh việc cuộc sống tuy nhiên  LLM lại gặp những vấn đề sau:
+0701 [p] Tham số từ vài triệu đến vài trăm tỉ tham số => rất nặng.
+0702 [p] Khó cập nhật kiến thức mới.
+0703 [p] Nguồn gốc thông tin chưa rõ ràng.
+0704 [p] Có nguy cơ là thông tin sai lệch -hallucination.
+0705 [p] Tốn nhiều chi phí, tài nguyên và thời gian để các doanh nghiệp ứng dụng LLM vào công ty, dữ liệu nội bộ.
+0706 [p]       => Do đó kiến trúc RAG là một giải pháp tối ưu để vừa sử dụng khả năng tạo sinh mạnh mẽ của LLM vừa kết hợp với dữ liệu nội bộ.
+0707 [p] Quy trình cơ bản:
+0708 [p]            [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId71'}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId72'}]]
+0709 [p] Người dùng đưa câu hỏi.
+0710 [p] Hệ thống thực hiện embedding câu hỏi -> tìm các chunks liên quan trong Vector DB -> xếp hạng lại chunks theo mức độ tương đồng và chọn ra “k” chunks có mức độ tương đồng cao nhất.
+0711 [p] Sau đó các chunk này sẽ được đưa vào LLM để làm ngữ cảnh từ đó LLM đưa ra câu trả lời chính xác, đầy đủ hơn.
+0712 [p] Thư viện hỗ trợ:
+0713 [p] Retriever thường được tạo từ vector_store.as_retriever(); gọi retriever.invoke(query) để lấy Document. Dùng các node retrieve và generate cùng cạnh nối chúng khi triển khai RAG bằng StateGraph; không import từ langgraph.retrievers hoặc langgraph.graphs.retrieval_qa.
+0714 [p] Kết quả truy xuất được đưa vào context trong State, sau đó node generate tạo prompt và gọi LLM.
+0715 [p] langchain-community cung cấp nhiều tích hợp dữ liệu/vector store. Vị trí import của retriever nâng cao phụ thuộc phiên bản; không giả định chúng nằm trong langgraph-community.
+0716 [p] Thực hành sau khi đã xử lý văn bản và lưu trữ trong FAISS:
+0717 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId73'}]]
+0718 [p] Hàm retrieve với đầu vào là state. Bên trong hàm sử dụng vector_store.similarity_search(...) với câu hỏi từ người dùng. Hàm này sẽ tìm các văn bản trong FAISS có mức độ tương đồng cao nhất với câu hỏi. Kết quả trả về là một danh sách tài liệu liên quan để làm ngữ cảnh.
+0719 [p] Hàm generate với đầu vào là state. Đầu tiên, lấy các tài liệu liên quan đã được trả về từ retrieve. Tiếp theo, dùng prompt.invoke(...) để nhúng câu hỏi và các tài liệu này vào một prompt được định nghĩa sẵn. Sau đó, gọi mô hình ngôn ngữ llm.invoke(...) để sinh câu trả lời dựa trên ngữ cảnh. Cuối cùng, trả về câu trả lời được sinh ra.
+0720 [p]  c) Thực hành
+0721 [p] Xử lý tài liệu lớn và thực hiện RAG cơ bản.Tài liệu là một bài viết 1-2 trang (PDF) về chủ đề "Kỹ thuật hít thở giảm stress". 
+0722 [p] Mục tiêu xây dựng hệ thống RAG (Retrieval-Augmented Generation) để:
+0723 [p] Đọc file PDF và chia nhỏ thành chunks
+0724 [p] Vector hóa và lưu trữ trong FAISS
+0725 [p] Trả lời câu hỏi dựa trên nội dung tài liệu
+0726 [p] Yêu cầu
+0727 [p] Kết nối Google Drive và load file PDF
+0728 [p] Chia tài liệu thành các chunks nhỏ (Chunking)
+0729 [p] Vector hóa chunks bằng embedding model
+0730 [p] Lưu vào Vector Store (FAISS)
+0731 [p] Tạo RAG graph (LLM + Retriever)
+0732 [p] Hỏi đáp với tài liệu
+0733 [p] Các bước thực hiện
+0734 [p] Bước 1: Cài đặt thư viện
+0735 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId74'}]]
+0736 [p] Bước 2:  Import thư viện
+0737 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId75'}]]
+0738 [p] Bước 3: Thiết lập API KEY
+0739 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId76'}]]
+0740 [p] Cần API key của HuggingFace để sử dụng models
+0741 [p] Lưu API key vào biến môi trường
+0742 [p] Có thể lưu trong Colab Secrets để bảo mật hơn
+0743 [p] Bước 4: Kết nối google drive và load pdf
+0744 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId77'}]]
+0745 [p] Bước 5: Chia tài liệu thành chunks (chunking)
+0746 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId78'}]]
+0747 [p] Tại sao cần Chunking? Bởi vì LLM có giới hạn độ dài input (context window), khi chia nhỏ giúp tìm kiếm chính xác hơn, Mỗi chunk chứa đủ ngữ cảnh để hiểu.
+0748 [p] Tham số quan trọng:
+0749 [p] chunk_size = 500: Mỗi chunk tối đa 500 ký tự, không quá dài → LLM xử lý nhanh, không quá ngắn → đủ ngữ cảnh.
+0750 [p] chunk_overlap = 50: Overlap 50 ký tự giữa các chunks liền kề, tránh cắt mất thông tin ở ranh giới, đảm bảo tính liên tục.
+0751 [p] RecursiveCharacterTextSplitter: Chia theo thứ tự ưu tiên (1. Đoạn văn , 2. Câu , 3. Từ , 4. Kí tự) hoặc giữ nguyên cấu trúc văn bản tốt nhất.
+0752 [p] Bước 6:  Vector hóa và lưu vào faiss
+0753 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId79'}]]
+0754 [p] Sử dụng ModelEmbedding:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Model embedding cho tiếng Việt. Chuyển text thành vector 768 chiều. Vậy vector đầu ra có 768 chiều (mỗi câu/đoạn văn thành một mảng 768 số thực).
+0755 [p]  Quá trình Vector hóa (Vectorization): 
+0756 [p] Đầu tiên chia văn bản thành chunks (đã có overlap để giữ ngữ cảnh liên tục).
+0757 [p] Tiếp theo mỗi chunk được chuyển thành vector 768 chiều:
+0758 [tbl] ChunkNội dungVector 768 sốChunk 1"thở.  Để ý xem..."[0.23, -0.45, ..., 0.12]Chunk 2"thở sâu để giảm..."[0.15, -0.38, ..., 0.09]………Chunk 22……
+0759 [p] Mỗi vector này là biểu diễn số học của ngữ nghĩa chunk đó.
+0760 [p] Khi thực hiện tìm kiếm theo nội dung, mô hình sẽ so sánh vector này để tìm chunk ngữ nghĩa gần nhất.
+0761 [p] FAISS Vector Store:
+0762 [p] 1. Lưu trữ vector: Bạn có 22 chunk → 22 vector 768 chiều. Kèm theo metadata: ví dụ chunk text gốc, vị trí trong tài liệu, ID…
+0763 [p] 2. Tạo index: ví dụ dùng chỉ mục Flat để so sánh vét cạn với các vector. FAISS còn có các chỉ mục tìm kiếm gần đúng; không thể khẳng định mọi chỉ mục FAISS đều có độ phức tạp O(log n).
+0764 [p] 3. Similarity search: Khi người dùng nhập query (1. Query được embedding → vector 768 chiều, 2. FAISS tìm các vector gần nhất (nearest neighbors) → các chunk có nội dung gần với query). Khoảng cách: thường dùng cosine similarity hoặc L2 distance để đo độ gần.
+0765 [p] Bước 7: Tạo StateGraph cho truy xuất và sinh câu trả lời
+0766 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId80'}]]
+0767 [p] 1. LLM: bigscience/mt0-base có 580 triệu tham số; mt0-large mới có 1,2 tỷ tham số. Ví dụ dùng mt0-base qua Transformers trên CPU; model card: https://huggingface.co/bigscience/mt0-base.
+0768 [p] max_new_tokens=256 giới hạn số token mới sinh. device=-1 chọn CPU trong Transformers pipeline; device=0 chọn GPU thứ nhất nếu có. Với giải mã không lấy mẫu (do_sample=False), temperature không điều khiển lấy mẫu; muốn dùng temperature cần bật do_sample=True.
+0769 [p] 2. Retriever: k=2 yêu cầu tối đa hai tài liệu liên quan. Giao diện retriever thông thường trả danh sách Document; muốn lấy cả score cần gọi phương thức tìm kiếm có score của vector store.
+0770 [p] Mã minh họa dùng RAGState, node retrieve và node generate với luồng START → retrieve → generate → END. Cần chuẩn bị retriever từ FAISS và llm đã cấu hình trước khi chạy. Ví dụ không có node chấm context hoặc kiểm chứng câu trả lời, không dùng RetrievalQA/chain_type="stuff". Lưu context trong State để quan sát; muốn trả nguồn cần bổ sung trường source_documents.
+0771 [p] Bước 8: Gọi đồ thị RAG bằng State đầu vào
+0772 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId81'}]]
+0773 [p] Kết quả lưu từ phiên bản RetrievalQA cũ: ảnh bên dưới không phải lần chạy của mã StateGraph đã sửa. Cần chạy lại với tài liệu và mô hình thực để thu kết quả mới; không dùng ảnh này để xác nhận phiên bản sửa đã thành công.
+0774 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId82'}]]
+0775 [p] Chương 8: Memory cho hội thoại
+0776 [p] Memory giúp lưu trữ và quản lý ngữ cảnh hội thoại.
+0777 [p] Thay vì mỗi lần trả lời chỉ dựa vào input hiện tại, ta có thể cho phép LLM “ghi nhớ những gì xảy ra trước đó”.
+0778 [p] Các trường hợp:
+0779 [p] Bộ nhớ ngắn hạn trong LangGraph: lưu messages trong State và compile với checkpointer; truyền cùng thread_id để tiếp tục một hội thoại. ConversationBufferMemory/ConversationBufferWindowMemory trong ví dụ dưới thuộc LangChain đời cũ.
+0780 [p] Tóm tắt hội thoại: triển khai node tóm tắt và cập nhật State theo chính sách context. ConversationSummaryMemory là lớp LangChain đời cũ, không phải lớp memory gốc của LangGraph.
+0781 [p] Bộ nhớ dài hạn: có thể dùng store hoặc kho dữ liệu truy xuất theo nhu cầu. VectorStoreRetrieverMemory trong ví dụ tham khảo thuộc LangChain đời cũ.
+0782 [p] MySQL có thể lưu dữ liệu hội thoại qua mã ứng dụng tự xây dựng. Việc đọc SQL hoặc dùng langchain-community không tự tạo persistence/checkpoint cho đồ thị.
+0783 [p] Ứng dụng dùng InMemorySaver theo cặp user_id/session_id; node answer truyền tối đa 5 tin nhắn gần nhất. Fixture kiểm tra lịch sử được truyền, chưa đánh giá model thật nhớ đúng; ID do request tự khai chỉ tách State, không xác nhận quyền người dùng (13.7).
+0784 [p] Bộ nhớ phiên ở RAM, mất khi restart; chưa có MySQL lưu bền vững. Các ảnh ConversationBufferWindowMemory dưới đây là ví dụ LangChain riêng, không chứng minh bộ nhớ của ứng dụng cuối.
+0785 [p] Thực hành: Sử dụng ConversationBufferWindowMemory mô phỏng cuộc hội thoại.
+0786 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId83'}]]
+0787 [p] Cài các phiên bản tương thích và ghi lại requirements để tái hiện. Nâng tất cả lên bản mới nhất có thể gây lỗi với ví dụ LangChain đời cũ; không xem upgrade là cách bảo đảm hết xung đột.
+0788 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId84'}]]
+0789 [p] import các thư viện cần thiết như: ConversationChain dùng cho hội thoại, nhận 1 input và trả về 1 output tích hợp với loại memory ConversationBufferWindowMemory chỉ giữ k lượt memory gần nhất.
+0790 [p] hàm create_conversation_chain dùng để tạo conversation với k và model tuỳ chọn, model dùng ở đây là “bigscience/mt0-base” - một mô hình ngôn ngữ mã nguồn mở do cộng đồng BigScience phát triển, được lưu trữ trên nền tảng Hugging Face có thể sử dụng mà không cần key.
+0791 [p] memory = ConversationBufferWindowMemory(k=k_value) — tạo memory giữ đúng k lượt (mỗi lượt = user+assistant).
+0792 [p] conv = ConversationChain(llm=llm, memory=memory, verbose=False) — tạo chain hội thoại nối LLM + Memory.
+0793 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId85'}]]
+0794 [p] system_prompt là instruction cố định cho bot, đảm bảo bot trả lời theo phong cách người dùng mong muốn (ngắn gọn, thân thiện và bằng tiếng Việt).
+0795 [p] Biến inputs dùng để tạo bộ câu hỏi cố định phục vụ cho việc so sánh và đánh giá.
+0796 [p] 2 dòng print ở dưới dùng để in kiểm tra lại xem prompt và câu hỏi đã đúng với yêu cầu hay chưa. 
+0797 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId86'}]]
+0798 [p] Vòng lặp for duyệt qua lần lượt k = 1, 2, 3 để thực hiện so sánh.
+0799 [p] Tạo chuỗi hội thoại memory với k_value = k để chỉ định chatbot sẽ nhớ bao nhiêu lượt hội thoại gần nhất.
+0800 [p] Vòng lặp bên trong dùng để mô phỏng từng lượt hội thoại với danh sách 4 câu người dùng đã được chuẩn bị sẵn. enumerate() dùng để đếm số lượt hội thoại. combinet_input ghép prompt hệ thống với tin nhắn người dùng hiện tại, giúp mô hình hiểu ngữ cảnh và vai trò của mình.
+0801 [p] conv.memory.buffer là phần lưu trữ nội dung hội thoại mà bot còn nhớ. Sau mỗi lượt, sẽ in ra bộ nhớ này để kiểm tra chatbot đang lưu giữ những câu nào.
+0802 [p] Kết quả:
+0803 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId87'}]]
+0804 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId88'}]]
+0805 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId89'}]]
+0806 [p] Các ảnh dưới đây minh họa dữ liệu còn trong buffer với k = 1, 2, 3. Chúng chưa đủ để chấm mô hình sử dụng lịch sử đúng; cần đọc câu trả lời ở lượt tiếp nối theo đáp án kỳ vọng.
+0807 [p] k = 1: buffer chỉ giữ lượt gần nhất trong ví dụ. Không suy ra mô hình trả lời đúng câu hỏi về màu sắc chỉ từ nội dung buffer.
+0808 [p] k = 2: buffer giữ hai lượt gần nhất. Khả năng trả lời về Hà Nội hoặc màu xanh phải được kiểm tra riêng trên đầu ra mô hình.
+0809 [p] k = 3: buffer giữ tối đa ba lượt của ví dụ; đây là kiểm tra dữ liệu được lưu, chưa phải đánh giá chất lượng sử dụng ngữ cảnh.
+0810 [p] k lớn hơn giữ nhiều lượt trong cửa sổ của ví dụ LangChain này, nhưng tăng context và chi phí, có thể thêm nhiễu và không bảo đảm trả lời đúng hơn. Cần đánh giá chất lượng trên cùng tập hội thoại.
+0811 [p] Chương 9: Cache - Tham khảo.
+0812 [p] Phần MySQL/FAISS dưới đây minh họa truy xuất tương đồng, chưa phải semantic answer cache. Ứng dụng đã có exact cache trong RAM cho RAG: TTL 300 giây, tối đa 128 mục, khóa theo câu hỏi/user/nguồn/model/prompt. Các ca hit/miss thực tế và giới hạn được trình bày ở 13.6.
+0813 [p] Tránh gọi mô hình nhiều lần cho cùng một input hay những câu đã từng hỏi – cho một người dùng.
+0814 [p] Giảm chi phí khi sử dụng API của LLM (ví dụ OpenAI, Anthropic).
+0815 [p]                + Tăng tốc độ phản hồi cho người dùng.
+0816 [p] Cache có thể lưu trong RAM hoặc cơ sở dữ liệu. Bản demo hiện chỉ dùng RAM, không có cache bền vững sau restart.
+0817 [p] Cách hoạt động: Khi người dùng gửi câu hỏi, sẽ kiểm tra trong cache:
+0818 [p] Nếu đã có kết quả cho input này → trả về ngay.
+0819 [p] Nếu chưa có → gọi LLM, sau đó lưu lại kết quả vào cache.
+0820 [p] Ví dụ cache ở lớp LangChain và cache node của LangGraph:
+0821 [p] LangGraph có InMemoryCache trong langgraph.cache.memory và CachePolicy cho node; phải cấu hình khi xây dựng/compile đồ thị.
+0822 [p] SQLiteCache là ví dụ cache LLM trong hệ sinh thái LangChain; không mặc định thay thế checkpointer hoặc cache node.
+0823 [p] RedisCache là một tích hợp cache của LangChain; cần cài gói và cấu hình tương ứng.
+0824 [p] Các cache nhà cung cấp khác phải được xác minh theo phiên bản tích hợp; ví dụ MySQL dưới đây không sử dụng chúng.
+0825 [p] Thiết kế đề xuất, chưa được triển khai đầy đủ trong mã minh họa: một bảng cache hỏi–đáp có thể chứa:
+0826 [p] ID.
+0827 [p] Câu hỏi.
+0828 [p] Câu trả lời.
+0829 [p] Thời gian.
+0830 [p] Để trở thành semantic cache cần thêm quy tắc hit/miss, ngưỡng phù hợp, kiểm tra hiệu lực và ghi lại kết quả khi cache miss.
+0831 [p] Truy cập  MySQL sau đó lưu trữ dữ liệu qua dạng vector, lưu trữ tại FAISS.
+0832 [p] Mã minh họa hiện chỉ tìm các nội dung gần câu hỏi trong FAISS; chưa đối chiếu ngưỡng, chưa trả lại đáp án cache và chưa ghi cặp hỏi–đáp mới.
+0833 [p] Thực hành : tập trung vào đọc dữ liệu từ MySQL, lưu trữ vào FAISS và tìm kiếm:
+0834 [p]                  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId90'}]]
+0835 [p] Ảnh mã thực tế gọi SELECT * FROM caching rồi lấy row[1]. Bình luận trong ảnh gọi bảng documents không khớp câu SQL. Chưa có schema để xác nhận row[1] là cột nào; ví dụ chỉ được ghi nhận là đọc dữ liệu và tìm gần trong FAISS, không dùng để chứng minh cache hỏi–đáp hoàn chỉnh.
+0836 [p] Sau đó sẽ lấy hết dữ liệu từ bảng đó rồi embedding thành vector.
+0837 [p] Cuối cùng là lưu trữ vào FAISS.
+0838 [p]              [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId91'}]]
+0839 [p] Sau khi load dữ liệu và nhúng (embedding) vào FAISS, ta có một cơ sở dữ liệu vector để truy xuất nhanh.
+0840 [p] similarity_search trả tài liệu liên quan theo top-k. Kết quả này là đầu vào cho retrieval, chưa đủ bằng chứng xác nhận cache hit.
+0841 [p]  Chương 10: Agents và Tools
+0842 [p] Agent trong LangGraph là thành phần cho phép mô hình ngôn ngữ (LLM) quyết định hành động cần thực hiện dựa trên input từ người dùng và ngữ cảnh.
+0843 [p] Thay vì chỉ trả lời trực tiếp, Agent có thể:
+0844 [p] Gọi một Tool (ví dụ: tìm kiếm trong cơ sở dữ liệu, gọi API).
+0845 [p] Thực hiện tính toán.
+0846 [p] Truy xuất thông tin từ Vector Database.
+0847 [p] Kết hợp nhiều hành động để đưa ra câu trả lời cuối cùng.
+0848 [p] => Agent đóng vai trò như một “bộ não điều phối”, còn Tool là “cánh tay thực thi”.
+0849 [p] Quy trình hợp động cơ bản:
+0850 [p] Người dùng nhập câu hỏi hoặc yêu cầu.
+0851 [p] Agent phân tích và quyết định cần gọi Tool nào (hoặc trả lời trực tiếp).
+0852 [p] Cuối cùng, Agent tổng hợp và trả lời người dùng.
+0853 [p] Các loại Agent phổ biến trong LangGraph:
+0854 [p] Zero-Shot ReAct Agent: Dùng LLM để quyết định hành động mà không cần huấn luyện thêm, áp dụng kỹ thuật Reason + Act.
+0855 [p] Conversational Agent: Hỗ trợ hội thoại dài, duy trì mạch trò chuyện với Memory.
+0856 [p] Structured Chat Agent: Giao tiếp với Tool theo dạng input/output được cấu trúc rõ ràng.
+0857 [p] Multi-Agent System (LangGraph hỗ trợ): nhiều Agent phối hợp với nhau, có thể có Agent giám sát (Supervisor).
+0858 [p] Các thư viện hỗ trợ:
+0859 [p] Điều phối agent có thể triển khai bằng StateGraph trong langgraph.graph. Không import từ langgraph.agents; các API agent cấp cao thuộc LangChain hoặc API prebuilt tương ứng phiên bản.
+0860 [p] Định nghĩa tool bằng langchain_core.tools.tool; thực thi trong đồ thị có thể dùng ToolNode từ langgraph.prebuilt. Không import từ langgraph.tools.
+0861 [p] langgraph: hỗ trợ xây dựng hệ thống multi-agent với supervisor, checkpoint, memory nâng cao.
+0862 [p] langgraph-prebuilt: cung cấp các mẫu Agent dựng sẵn (tiết kiệm thời gian khi phát triển).
+0863 [p] langgraph-supervisor: cho phép xây dựng Agent giám sát, điều phối nhiều Agent khác.
+0864 [p] langgraph-swarm: dành cho hệ thống nhiều Agent hoạt động song song.
+0865 [p] agentevals: tiện ích đánh giá hiệu suất Agent trong các tình huống khác nhau.
+0866 [p] Ứng dụng hiện có hai nhánh truy xuất: RAGTOOL và SearchWebTool. StateGraph chọn nhánh theo mode hoặc từ khóa tại classify, không giao việc phân loại hiện tại cho LLM.
+0867 [p] Nhánh answer gọi model trực tiếp; rag/web lấy nguồn rồi chuyển tới grounded để sinh và kiểm tra đáp án. Không đăng ký một LLMTool riêng trong ứng dụng cuối.
+0868 [p] Tool rag: là tool sử dụng kiến trúc RAG – đã đề cập ở chương 7.
+0869 [p] Tool search_web: giúp tìm kiếm các bộ phim hay câu truyện động lực để gợi ý cho người dùng xem/đọc.
+0870 [p] Thực hành code mẫu: tạo agent để điều hướng các tool :
+0871 [p]        [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId92'}]]
+0872 [p] Ảnh tham khảo dùng create_react_agent từ langgraph.prebuilt. API này đã bị đánh dấu deprecated trong v1; tài liệu khuyến nghị langchain.agents.create_agent. Có thể dùng StateGraph trực tiếp khi cần kiểm soát luồng.
+0873 [p] Ảnh tham khảo trên minh họa LLMTool và RetrieverTool; đây là ví dụ riêng, không phải danh sách công cụ của ứng dụng cuối.
+0874 [p] Mô hình gpt-4o-mini trong ảnh thuộc ví dụ tham khảo. Các lần đo thật của ứng dụng ở Chương 13 dùng Groq openai/gpt-oss-20b; không gán cấu hình ảnh cũ cho log mới.
+0875 [p] Thực hành: sửa Agent tính toán bằng StateGraph và tool calling; đối chiếu các lần chạy lỗi của phiên bản cũ.
+0876 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId93'}]]
+0877 [p] Cài langgraph và langchain-groq cho ví dụ Agent tính toán.
+0878 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId94'}]]
+0879 [p] ChatGroq từ langchain_groq gọi mô hình qua API Groq bên trong node. Đổi tên mô hình qua biến môi trường GROQ_MODEL theo mô hình được tài khoản hỗ trợ. Ví dụ chưa được xác nhận bằng lần gọi Groq thực tế.
+0880 [p] Vì lý do bảo mật, API Key không được ghi trực tiếp trong mã nguồn mà được nhập thông qua lệnh getpass(), giúp ẩn giá trị khi người dùng nhập và tránh rò rỉ khóa truy cập trong môi trường thực thi.
+0881 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId95'}]]
+0882 [p] Định nghĩa add và multiply bằng @tool từ langchain_core.tools. bind_tools cung cấp lược đồ công cụ cho chat model có hỗ trợ tool calling.
+0883 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId96'}]]
+0884 [p] Xây dựng vòng lặp assistant → tools → assistant bằng StateGraph. tools_condition kết thúc khi không còn tool_calls.
+0885 [p] Đây là mẫu minh họa LLM tool calling, chưa dùng làm bằng chứng model tự chọn công cụ. ToolNode thực thi tool_calls; recursion_limit chỉ giới hạn số bước. Phần kiểm chứng của đồ án giữ ở executor add/multiply riêng và router theo luật tại mục 13.5.
+0886 [p] Luồng bắt đầu tại assistant, đọc messages và gọi mô hình đã bind_tools.
+0887 [p] Nếu phản hồi chứa tool_calls, tools_condition chọn node tools; nếu không, đồ thị kết thúc.
+0888 [p] Các ảnh lỗi dưới đây thuộc AgentExecutor cũ. Mục 13.5 có trace executor StructuredTool/StateGraph: add, multiply, tham số sai và tràn số đều đạt điều kiện kỳ vọng, không gọi LLM. Đây chưa phải bằng chứng Groq tự chọn tool đúng.
+0889 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId97'}]]
+0890 [p] Lần chạy cũ: yêu cầu “Tính 5 + 6” bằng agent_executor. Ảnh tiếp theo ghi lỗi parser; đáp án kỳ vọng là 11.
+0891 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId98'}]]
+0892 [p] Ảnh hiển thị OutputParserException: Could not parse LLM output. Lần chạy không hoàn tất thành công; dù văn bản mô hình nhắc số 11, ảnh không chứng minh add đã được thực thi. Giữ ảnh làm bằng chứng lỗi của phiên bản cũ, không coi là kết quả của mã StateGraph mới.
+0893 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId99'}]]
+0894 [p] Lần chạy cũ: yêu cầu “Tính 5 * 6” bằng agent_executor. Đáp án kỳ vọng là 30; cần đọc trạng thái lỗi trong ảnh.
+0895 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId100'}]]
+0896 [p] Ảnh báo OutputParserException, chưa xác nhận Agent gọi multiply thành công. Số 30 trong văn bản sinh không thay thế trace thực thi tool. Đồ án chỉ xác nhận multiply qua executor riêng ở 13.5, chưa đo khả năng chọn công cụ của LLM.
+0897 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId101'}]]
+0898 [p] Lần chạy cũ: yêu cầu “Tính (2 + 3) * 4”. Luồng kỳ vọng là add(2, 3) rồi multiply(5, 4), đáp án 20.
+0899 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId102'}]]
+0900 [p] Ảnh cũ báo lỗi parser, chưa chứng minh chuỗi add rồi multiply đã chạy. Bộ kiểm tra 13.5 truyền sẵn tên/arguments cho đồ thị toán riêng; router chatbot không gắn đồ thị này. Kết quả không xác nhận model điều phối biểu thức (2 + 3) × 4.
+0901 [p] Chương 11: Tích hợp API và Triển khai.
+0902 [p] API triển khai là lớp giao tiếp do ứng dụng xây dựng để gọi đồ thị LangGraph. Trong đề tài, FastAPI nhận yêu cầu HTTP, gọi graph/agent và trả phản hồi; LangServe không phải API cốt lõi hay thành phần bắt buộc của LangGraph.
+0903 [p] API có thể triển khai dễ dàng với FastAPI hoặc Django, và hỗ trợ nhiều mô hình khác nhau (OpenAI, HuggingFace, Anthropic, v.v.).
+0904 [p] Tích hợp nhà cung cấp dùng các gói như langchain-openai, langchain-anthropic và langchain-huggingface; chúng được gọi bên trong node hoặc tool, còn FastAPI cung cấp endpoint.
+0905 [p] Cụ thể trong đề tài sẽ sử dụng FastAPI tạo endpoint cuối để từ giao diện gửi câu hỏi người dùng về và Agent gọi đến để sử dụng LLM đưa ra kết quả. Cuối cùng là gửi kết quả về giao diện.
+0906 [p] Mục đích sử dụng FastAPI thay vì LangServe là FastAPI linh hoạt và dễ tích hợp với giao diện.
+0907 [p] Code mẫu sử dụng LangServe kết hợp FastAPi để tạo route:
+0908 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId103'}]]
+0909 [p] Đầu tiên cần cài đặt các thư viện như trên ảnh code.
+0910 [p] Tiếp theo import các thư viện và Agent hoặc rag_chain thực tế. Trong code đang sử dụng agent.
+0911 [p] Sau đó khởi tạo agent.
+0912 [p] Sử dụng FastAPI để khởi tạo một đối tượng app với các tham số title (tiêu đề của API), version ( phiên bản của API) và description( mô tả của API).
+0913 [p] Tiếp theo hàm add_routes() của LangServe sẽ tự động sinh ra ba endpoint REST API cho Agent (hoặc Chain) mà bạn truyền vào:
+0914 [p] - POST /chat/invoke → gọi agent đưa ra một câu trả lời trực tiếp với input JSON.
+0915 [p] - POST /chat/stream → Gọi agent nhưng stream kết quả theo thời gian thực.
+0916 [p] /chat/playground → giao diện web test trực tiếp.
+0917 [p] add_routes của LangServe tạo các route cho Runnable được truyền vào; đây là ví dụ triển khai tham khảo, khác endpoint FastAPI /chatbot của ứng dụng cuối.
+0918 [p] Để chạy thì mở Terminal với ví tụ này là file server.py, thì chạy lệnh sau:  uvicorn server:app --reload --port 8000.
+0919 [p] Sau khi chạy, có thể truy cập: http://localhost:8000/chat/playground để xem giao diện kiểm thử API tự động.
+0920 [p] Code mẫu sử dụng API:
+0921 [p]              [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId103'}]]
+0922 [p] Sử dụng class FastAPI để khởi tạo đối tượng ứng dụng app.
+0923 [p] ChatOpenAI từ langchain_openai khởi tạo mô hình gpt-4o-mini. Đây là lớp tích hợp nhà cung cấp; ví dụ FastAPI này gọi mô hình trực tiếp, chưa xây dựng StateGraph.
+0924 [p] Định nghĩa một class đầu vào gồm có message là câu hỏi hiện tại và history chứa danh sách hội thoại trước đó (theo thiết kế ở mục 8, ta chỉ lấy 2 câu gần nhất của người dùng).
+0925 [p] Cuối cùng định nghĩa một endpoint là “/ask” thực hiện ghép câu hỏi và lịch sử thành prompt. Sau đó gọi LLM để đưa ra câu trả lời cuối cùng là trả về kết quả.
+0926 [p] Thực hành: Xây dựng API Mục tiêu: Triển khai một chain thành một API. Tạo một endpoint API /ask_document (phương thức POST). 
+0927 [p] Từ phần thực hành chương 6 & 7, nhóm em thực hiện được một kiến trúc RAG để sử dụng truy vấn tài liệu làm ngữ cảnh cho LLM trả lời. Nhóm em đã biến đổi thành một class tool là RAGTOOL.
+0928 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId106'}]]
+0929 [p] File main.py: Đây là file chịu trách nhiệm xây dựng API với endpoint /ask_document:
+0930 [p] Trước hết, FastAPI được sử dụng để khởi tạo ứng dụng (app).
+0931 [p] Tiếp theo, Pydantic được dùng để định nghĩa hai lớp dữ liệu:
+0932 [p] MessageIn: chứa trường question (kiểu string), đại diện cho câu hỏi đầu vào.
+0933 [p] MessageOut: chứa trường response (kiểu string), đại diện cho câu trả lời đầu ra.
+0934 [p] Một đối tượng rag_tool được khởi tạo từ lớp RAGTOOL (đã được định nghĩa ở trên).
+0935 [p] Cuối cùng, endpoint /ask_document được tạo, nhận đầu vào là một đối tượng MessageIn và trả về MessageOut.Trong hàm xử lý của endpoint này, phương thức _run() của đối tượng rag_tool được gọi để sinh ra và trả về câu trả lời tương ứng.
+0936 [p] Kết quả đạt được: 
+0937 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId107'}]]
+0938 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId108'}]]
+0939 [p] Nhóm em đã thiết kế một giao diện đơn giản nhằm hỗ trợ việc giao tiếp với endpoint /ask_document đã xây dựng Giao diện cho phép người dùng nhập câu hỏi, sau đó gửi yêu cầu (request) chứa nội dung câu hỏi đó đến endpoint dưới dạng JSON. Qua hình ảnh kết quả cho thấy: 
+0940 [p] Ảnh cho thấy giao diện nhận phản hồi qua API /ask_document tham khảo. Muốn xác nhận đường gọi công cụ phải đối chiếu trace, không chỉ dựa vào HTTP 200. API /chatbot hiện dùng hợp đồng lỗi riêng: ok/refused/error, mã HTTP và retry/timeout ở 13.8.
+0941 [p] Chương 12: Mô tả và phân tích thiết kế đồ án (sơ lược)
+0942 [p] a) Ý tưởng và mục tiêu đồ án: 
+0943 [p] Ý tưởng: Dùng LangGraph điều phối chatbot trò chuyện và tra cứu tài liệu/web. Đây là demo thông tin tham khảo, chưa cung cấp tư vấn chuyên môn, chẩn đoán hoặc điều trị.
+0944 [p] Mục tiêu chính:
+0945 [p] Cung cấp trò chuyện và thông tin tham khảo trong phạm vi demo; chưa có đánh giá chuyên gia hoặc bằng chứng an toàn lâm sàng.
+0946 [p] Đưa ra các phương án hỗ trợ, bài tập tự chăm sóc tinh thần (self-care), và hướng dẫn cơ bản để giảm căng thẳng.
+0947 [p] RAG dùng Stress.pdf (6 trang); nội dung PDF không ghi tác giả/ngày xuất bản. Bài Vinmec tương ứng cập nhật 22/07/2024; đối chiếu này chưa xác nhận chuỗi xuất bản PDF. Hồ sơ và URL ở tài liệu tham khảo; nguồn không thay cho đánh giá chất lượng trả lời.
+0948 [p] Tổ chức luồng, công cụ và bộ nhớ theo mô-đun; đánh giá latency, token và lỗi bằng số liệu thực tế ở Chương 13.
+0949 [p] b) Các chức năng chính.
+0950 [p] Ứng dụng đã có checkpoint trong RAM và namespace user/session; kiểm thử truyền lịch sử, tách phiên được ghi ở 13.7. Chưa có lưu trữ bền vững hoặc điểm model thật sử dụng lịch sử đúng.
+0951 [p] Thông tin tự chăm sóc ở mức tham khảo; RAG/web thiếu nguồn phù hợp thì từ chối. Chưa kiểm chứng tác dụng điều trị hoặc khả năng bảo đảm an toàn.
+0952 [p] RAG truy xuất Stress.pdf về bài tập thở; kiểm tra citation/quote không tự thẩm định độ tin cậy y khoa của nguồn.
+0953 [p] Tavily truy xuất nội dung và URL để tạo ngữ cảnh. Đợt đo hiện tại gồm 4 câu kỹ thuật; chưa đủ để kết luận chất lượng với tin tức, phim hoặc hỗ trợ tâm lý.
+0954 [p] c) Công nghệ sử dụng.
+0955 [p] Giao diện: HTML, CSS, JS.
+0956 [p] Backend: Python; FastAPI làm API server.
+0957 [p] LangGraph điều phối State/node/edge; bản chọn v1.3 dùng PDF/BM25, Tavily, model và exact cache. FAISS/embedding thuộc phép đo lịch sử 24/10. Đây là graph có nhánh xác định, chưa mở rộng multi-agent.
+0958 [p] Lựa chọn công nghệ từ trải nghiệm triển khai
+0959 [tbl] Tình huốngCách chọnCăn cứ và giới hạnChat/RAG/web có nhánh, cache và phiênStateGraphĐã tách node để trace, kiểm lỗi và giữ State; router theo luật. Chưa so tốc độ với code trực tiếp.Hỏi đáp một lượt, một modelHàm/API trực tiếpKhông cần điều phối trạng thái; graph làm tăng cấu hình và phụ thuộc.RAG tuyến tính retrieve rồi generatePipeline PythonKhông vòng lặp, không phiên/nhánh: chưa cần graph. Chỉ cân nhắc khi thêm kiểm chứng hoặc điều phối phức tạp.
+0960 [p] Nhận xét từ việc tổ chức luồng và đối chiếu source/trace; chưa có benchmark định lượng giữa hai cách. Graph không tự sửa retrieval, grounding hoặc chất lượng nguồn.
+0961 [p] d) Thiết kế hệ thống.
+0962 [p] Giao diện người dùng (Frontend): 
+0963 [p] Người dùng gửi input (text).
+0964 [p] Hiển thị phản hồi, trạng thái xử lý, nguồn và trace/usage; chưa có gợi ý follow-up.
+0965 [p] Backend / FastAPI: Tiếp nhận request, truyền tới layer xử lý hội thoại.
+0966 [p] * Pipeline chính: 
+0967 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId109'}]]
+0968 [p] Frontend gửi yêu cầu tới /chatbot; backend gọi StateGraph và trả response cùng status, định danh trace, nguồn và usage. Các lỗi kỹ thuật trả mã HTTP lỗi thay vì câu xin lỗi trong HTTP 200.
+0969 [p] * Pipeline điều phối theo luật:
+0970 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId110'}]]
+0971 [p] Workflow bản chọn: START → classify → answer/rag/web/refuse; rag/web chuyển nguồn tới grounded rồi END hoặc refuse. classify dùng mode/từ khóa; yêu cầu chẩn đoán/kê thuốc ngoài phạm vi đi refuse. Nguồn thiếu, JSON sai hoặc citation không hợp lệ cũng đi refuse. RAG/web 28/10 dùng cùng 9 file runtime; số liệu ở 13.3–13.4, định danh ở 13.9.
+0972 [p] Pipeline RAG tham khảo dưới đây không thay trace ứng dụng cuối. Bản chọn kiểm tra citation ID/quote, chuẩn hóa whitespace/bullet và trả span gốc, không đổi từ, số hoặc đơn vị. RAG đã có 13 phiếu người chấm; web có 4 phiếu qua hội thoại có Codex hỗ trợ (13.10 và 13.4). Đây là demo tham khảo, chưa kết luận hiệu quả hỗ trợ tâm lý.
+0973 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId111'}]]
+0974 [p] Chương 13: Triển khai và kết quả.
+0975 [p] a) Cấu trúc thư mục bản bàn giao
+0976 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId112'}]]
+0977 [p] Ảnh trên là cấu trúc cũ backend_fastapi. Bản chọn đặt main.py và các module ở gốc; frontend/ là giao diện, benchmarks/ là mã đo, handover/ là minh chứng.
+0978 [p] agent.py: tạo StateGraph định tuyến theo luật và các node trả lời/truy xuất/từ chối.
+0979 [p] searchweb_tool.py: truy xuất Tavily; bốn câu kỹ thuật được kiểm tra ở 13.4.
+0980 [p] Rag_tool.py: truy xuất Stress.pdf bằng BM25 và trả đoạn nguồn cho model.
+0981 [p] .env: cấu hình khóa cục bộ theo .env.example; không đưa khóa vào Git hoặc gói nộp.
+0982 [p] File main.py: đây là file chính, file này sẽ tạo ra các endpoint(/chatbot) để nhận câu hỏi từ giao diện và gửi câu trả lời về giao diện.
+0983 [p] requirements-locked.txt: khóa thư viện của bản BM25 được đo; không cài chồng stack FAISS lịch sử.
+0984 [p] frontend/index.html: giao diện HTML/CSS/JS do FastAPI phục vụ tại /.
+0985 [p] b) Hướng dẫn cài đặt và chạy 
+0986 [p] B1: Dùng source/ trong gói Ket_qua_viec7_da_push_doi_chieu_bao_cao_20261029.zip hoặc nhánh GitHub codex/week8-evidence-v13, commit 60b2a03. Đã push/pull nhánh; chưa merge main (01ad2c0).
+0987 [p] B2: Mở source có main.py; dùng Python 3.13.2, tạo môi trường ảo bằng python -m venv .venv và kích hoạt .venv.
+0988 [p] B3: Cài python -m pip install -r requirements-locked.txt; kiểm tra nguồn/thư viện bằng python -m benchmarks.verify_handover --strict.
+0989 [p] B4: Chép .env.example thành .env, điền GROQ_API_KEY và TAVILY_API_KEY cục bộ; giữ model openai/gpt-oss-20b, không chia sẻ khóa.
+0990 [p] B5: Chạy python start_api.py; tại http://127.0.0.1:8000, /docs kiểm tra API, /health đối chiếu định danh.
+0991 [p] B6: Mở http://127.0.0.1:8000/ để dùng frontend cùng API. Gói Windows 29/10 đã ghi nhận khởi động demo từ worktree; chỉ kiểm tra GET, chưa gọi model thật trong đợt này.
+0992 [p] c) Demo sản phẩm:
+0993 [p] Thực thi ứng dụng chatbot với pipeline đề cập ở chương 12:
+0994 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId113'}]]
+0995 [p] Ảnh Agent với llama-3.1-8b-instant là minh họa lịch sử, thiếu định danh để ghép chắc chắn với log. Các lần đo thật dùng openai/gpt-oss-20b; đối chiếu phiên bản/trace tại 13.9, không gán kết quả mới cho ảnh cũ.
+0996 [p] RAGTOOL: tool truy vấn dữ liệu để làm ngữ cảnh trả lời những câu hỏi về những thông tin nội bộ cụ thể trong demo này là tài về hít thở sâu.
+0997 [p] SearchWebTool có khả năng truy xuất nội dung web; các câu gợi ý phim trong ảnh là minh họa cũ. Kết quả web thật hiện chỉ gồm 4 câu kỹ thuật ở 13.4.
+0998 [p] Nếu không chọn nhánh RAG/web/từ chối, router chuyển sang answer để model trả lời trực tiếp.
+0999 [p] 
+1000 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId114'}]]
+1001 [p] Đây là đoạn code nhóm em sử dụng FastAPI để xây dựng endpoint giao tiếp với phía giao diện:
+1002 [p] Endpoint với tên là “/chatbot” sẽ nhận câu hỏi từ phía giao diện và gọi tới agent để tạo ra câu trả lời. Sau đó gửi câu trả lời này về phía giao diện.
+1003 [p] Kết quả như hai hình dưới đây:
+1004 [p]  [IMAGE [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId115'}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId116'}]]
+1005 [p] Ảnh và log “Đang gọi tới RAG”, Groq và /chatbot 200 cho thấy đã gọi nhánh RAG ở bản cũ. Thiếu định danh và nguồn đối chiếu nên chưa đủ chấm chất lượng.
+1006 [p] Ảnh câu “bạn có khỏe không” có phản hồi; thiếu trace nên chưa xác định chắc chắn toàn bộ đường đi.
+1007 [p] Log “Đang thực thi searchwebtool” chứng minh gọi nhánh web ở bản cũ; chưa chứng minh nguồn hợp lệ hoặc đáp án đúng.
+1008 [p] Ảnh/log cũ là minh chứng tích hợp, không phải điểm chất lượng nội dung. Kết quả đo mới theo từng chức năng ở 13.2–13.4; định danh phiên bản và trace ở 13.9.
+1009 [p] d) Đánh giá thực nghiệm và đo lường hiệu năng
+1010 [p] 13.1 Phạm vi và cách đánh giá
+1011 [p] Kết quả được trình bày theo từng chức năng. Hội thoại, RAG và web có số liệu gọi dịch vụ thật; công cụ toán, bộ nhớ và lỗi được kiểm tra bằng các ca riêng. Hoàn tất kỹ thuật, có nguồn và đúng nội dung là ba mức đánh giá khác nhau.
+1012 [p] Hội thoại đo 20/10; RAG/web có lượt 24/10 và 28/10 dùng Groq openai/gpt-oss-20b. Latency trọn phản hồi HTTP; p50/p95 nearest-rank, tách warm-up/diagnostic và lượt khác cấu hình. Hai lượt RAG 28/10 tính cả kết nối lạnh và chuẩn bị PDF ở yêu cầu đầu; giữ nguyên số đo.
+1013 [p] 13.2 Hội thoại trực tiếp
+1014 [p] 10/10 câu thử có phản hồi, không ghi nhận fallback, exception hoặc tool call. Nội dung chưa có điểm người chấm.
+1015 [tbl] Số caTB (ms)p50 (ms)p95 (ms)Lỗi kỹ thuật10754,073705,1891.108,5630/10
+1016 [p] 
+1017 [p] Usage đủ 10/10: 3.242 input + 1.467 output = 4.709 token. Một warm-up và 3 ca đầu vào sai được tách riêng; không dùng kết quả hội thoại để suy ra chất lượng RAG/web.
+1018 [p] 13.3 Truy xuất tài liệu RAG
+1019 [p] Phép đo thật ngày 24/10 dùng Stress.pdf (6 trang), embedding tiếng Việt, FAISS, chunk 500/overlap 50/top-2 và Groq. Tám câu dưới đây có đáp án trong PDF; không gộp với kiểm tra truy xuất tuần 8.
+1020 [tbl] Số caTB (ms)p50 (ms)p95 (ms)Có đáp án và nguồn82.237,7922.095,2542.859,4303/8
+1021 [p] 
+1022 [p] Usage đủ 8/8: 6.177 input + 5.673 output = 11.850 token; lỗi kỹ thuật 0/8. AI chấm 1 đủ đáp án, 1 một phần, 1 lạc đề, 5 từ chối; trung bình 3,5/8. Lượt 24/10 chưa có phiếu người chấm; tách khỏi bộ 13 phản hồi đã chấm ở 13.10. Có nguồn chưa bảo đảm đáp án đúng.
+1023 [p] Bản tuần 8 evidence-v1.3-rag-check dùng BM25 cân bằng các mục được hỏi, chunk tối đa 650 ký tự, overlap mục tiêu 180, top-3, giữ trang/offset gốc. Retrieval offline tìm đủ span ở 25/25 câu có đáp án. Ngày 28/10, 5 câu hồi quy chạy Groq thật đều trả lời có nguồn, AI đối chiếu khớp tham chiếu. TB 1.620,215 ms; p50 1.523,576 ms; p95 2.329,489 ms. Usage: 4.785 input + 1.448 output = 6.233 token.
+1024 [p] Cùng phiên bản mã/model, bộ 8 câu mới giữ nguyên trước chạy: 6 câu có đáp án trả lời khớp PDF, 2 câu ngoài nguồn từ chối phù hợp theo đối chiếu AI; 0 lỗi kỹ thuật. TB 2.091,149 ms; p50 1.445,913 ms; p95 3.389,450 ms. Usage đủ 8/8: 9.003 input + 2.451 output = 11.454 token. Hai đợt không cache/retry/warm-up, p95 dùng nearest-rank. Thống kê riêng 5 câu hồi quy và 8 câu mới; các câu do AI soạn từ cùng PDF, chưa đại diện nguồn/cách hỏi khác.
+1025 [p] 13.4 Tìm kiếm web
+1026 [p] Đo lại ngày 28/10: bốn câu kỹ thuật FastAPI/LangGraph chạy Tavily và Groq openai/gpt-oss-20b trên cùng mã với RAG. 4/4 hoàn tất HTTP 200; web_03/04 trả lời có nguồn, web_01/02 từ chối do quote không khớp. Lượt 24/10 trả lời web_01/03; hai lượt được giữ riêng.
+1027 [tbl] Số caTB (ms)p50 (ms)p95 (ms)Lỗi kỹ thuật46.921,1866.807,4978.114,2200/4
+1028 [p] 
+1029 [p] Usage đủ 4/4: 5.310 input + 3.343 output = 8.653 token; không cache/retry/warm-up. Log giữ 12 kết quả nguồn với URL, context, quote, retrieved_at và khoảng tìm kiếm UTC; đây không phải ngày xuất bản. Huỳnh Lê Sơn (thành viên nhóm) chọn điểm qua hội thoại có Codex hỗ trợ: 20/32, trung bình 5,00/8; chưa thẩm định độc lập từng URL. Mẫu chỉ gồm bốn câu kỹ thuật, chưa đại diện tin tức hoặc tư vấn tâm lý.
+1030 [p] 13.5 Công cụ toán và định tuyến
+1031 [p] Đồ thị toán riêng nhận sẵn tên/arguments để gọi add hoặc multiply, không qua LLM và không gắn vào router chatbot. Bốn ca đạt kỳ vọng:
+1032 [tbl] CaĐầu vàoKết quảCộngadd(5, 6)11,0Nhânmultiply(5, 6)30,0Sai kiểuadd("bad", 6)ValidationErrorTràn sốmultiply(1e308, 1e308)ArithmeticError
+1033 [p] 
+1034 [p] classify chọn nhánh theo mode/từ khóa, không gọi LLM; 12 ca chỉ xác nhận khớp luật. Token 0 thuộc bốn ca executor, chưa chứng minh LLM chọn tool, lập kế hoạch hoặc giải chuỗi (2 + 3) × 4.
+1035 [p] 13.6 Cache câu trả lời
+1036 [p] Exact cache RAG bật khi use_cache=true, có user_id, không có session_id. Khóa: câu hỏi/user/nguồn/model/prompt version. RAM, TTL 300 giây, tối đa 128 mục.
+1037 [tbl] Tình huốngKết quả thực tếLần đầuMiss: 2.162,275 ms; 1.561 token.Lặp lại cùng khóaHit: 40,615 ms; không gọi model/retrieval; 0 token.Đổi user hoặc thêm phủ địnhMiss; không dùng lại đáp án của khóa trước.
+1038 [p] 
+1039 [p] Bảng là bốn ca cũ, chưa đủ suy ra tiết kiệm toàn hệ thống. Fixture mới kiểm tra TTL 300 giây bằng đồng hồ ảo và đổi khóa. Chưa có semantic cache/MySQL.
+1040 [p] 13.7 Bộ nhớ và tách phiên
+1041 [p] InMemorySaver lưu State theo user_id/session_id, tuần tự hóa cùng phiên. Node answer nhận tối đa 5 tin nhắn; grounded chỉ nhận câu hỏi hiện tại và nguồn, chưa dùng lịch sử.
+1042 [p] Ba ca fixture cũ chỉ kiểm tra truyền lịch sử. Kiểm tra bổ sung xác nhận cửa sổ 5 tin, tách ID và State rỗng khi tạo lại Agent. Dùng lại cùng ID vẫn nhận lịch sử: chưa có xác thực/phân quyền. Chưa chấm model thật nhớ đúng; RAM mất khi restart, chưa lưu MySQL.
+1043 [p] 13.8 Đầu vào sai và xử lý lỗi
+1044 [p] API phân biệt ok, refused và error. Ba payload thiếu question, null và sai kiểu đều trả 422 đúng kỳ vọng, không gọi model.
+1045 [tbl] HTTPTrường hợp200Hoàn tất hoặc từ chối có chủ đích; xem status/code.422Đầu vào không hợp lệ.429Quota hoặc rate limit của nhà cung cấp.502Lỗi xác thực, phụ thuộc hoặc graph.503Thiếu cấu hình/nguồn hoặc vượt giới hạn phiên, số bước.504Hết thời gian model hoặc deadline yêu cầu.
+1046 [p] 
+1047 [p] Bản v1.3 có 57/57 unit test đạt, gồm kiểm tra retrieval và lỗi giả lập timeout/quota/auth/thiếu PDF/deadline. Model timeout 25 giây, web 20 giây, API deadline 60 giây; recursion_limit=12 giới hạn bước, output tối đa 1.536 token, retry=0. Đây không phải 57 lượt gọi provider hoặc thống kê độ tin cậy dài hạn.
+1048 [p] 13.9 Truy vết và phiên bản
+1049 [p] trace_id ghép từng phản hồi với log server; graph_id xác định mã/cấu hình, model_id phân biệt model thật và adapter. Không gán định danh mới cho ảnh/log cũ thiếu thông tin.
+1050 [tbl] Bộ kiểm tragraph_idAPI fixture 23/106eeac0b91e3774e785c9Toán executor 23/10956082db5e2e66ebbe33RAG/web 28/10 v1.3beebab186d50bedb4180
+1051 [p] 
+1052 [p] 13.10 Chấm nội dung bởi người thật
+1053 [p] Quote khớp chỉ xác nhận trích dẫn. Phiếu chấm chứa câu hỏi, đáp án kỳ vọng, phản hồi và nguồn để đối chiếu; bốn tiêu chí 0–2 là căn cứ/đủ ý, liên quan, phạm vi và nguồn. Phiếu ghép bằng trace_id/graph_id; giữ nguyên điểm, nhận xét, tách khỏi AI audit.
+1054 [p] Huỳnh Lê Sơn chấm 13 câu RAG: 96/104, trung bình 7,38/8; 5 hồi quy: 7,60/8, 8 câu mới khóa trước chạy: 7,25/8. Dùng lại bộ này để sửa/chạy mã thì xếp hồi quy. Một người trên cùng PDF; điểm rubric không phải tỷ lệ đúng hoặc chấm chuyên gia. 
+1055 [p] 13.11 Tổng hợp kết quả và phần cần hoàn thiện
+1056 [tbl] Chức năngKết quả chínhGiới hạnHội thoại10/10 hoàn tất kỹ thuật.Chưa chấm nội dung.RAG thật28/10: 5 câu hồi quy; 8 câu mới (6 trả lời, 2 từ chối). Điểm 13 câu: 7,38/8.Một người chấm, cùng PDF; không suy rộng ngoài tập kiểm tra.Web thật28/10: 2/4 trả lời có nguồn, 2/4 từ chối. Điểm: 5,00/8.4 câu kỹ thuật; chấm có Codex hỗ trợ, chưa thẩm định URL độc lập.Toán4/4 ca executor đạt; router có 12 ca khớp luật.Chưa đo LLM chọn tool, lập kế hoạch hoặc giải chuỗi toán.Cache4 ca hit/miss cũ đạt.Exact RAM; chưa suy rộng tiết kiệm.Bộ nhớ3 ca fixture cũ đạt.Chưa chấm nhớ đúng; chưa phân quyền/lưu bền.Lỗi57 unit test của v1.3 đạt.Lỗi giả lập, chưa đo sự cố dài hạn.
+1057 [p] 
+1058 [p] RAG có 13 phiếu, web có 4 phiếu kỹ thuật. Windows 29/10 đã kiểm tra GET demo, push/pull nhánh bàn giao; chưa merge main hoặc xác minh triển khai máy khác. Kết quả giới hạn ở mẫu đã thử; chưa có bằng chứng hiệu quả lâm sàng.
+1059 [p] Phần 4: Tổng kết
+1060 [p] Chương 14: Đánh giá và tổng kết
+1061 [p] Tóm tắt kết quả đạt được: 
+1062 [p] Đề tài đã trình bày các khái niệm State, Node, Edge và điều phối luồng của LangGraph, đồng thời xây dựng bản demo chatbot trò chuyện hỗ trợ tâm lý. Mức hoàn thành được phân biệt giữa chức năng đã tích hợp và chức năng đã có kết quả kiểm thử.
+1063 [p] Bản evidence-v1.3-rag-check đã tích hợp API/frontend, đạt 57 unit test. RAG 28/10 gồm 5 câu hồi quy và 8 câu mới, điểm 13 câu là 7,38/8; web gồm 4 câu, 2 trả lời/2 từ chối, điểm 5,00/8 qua chấm có Codex hỗ trợ. Windows 29/10 đã kiểm tra GET demo, push/pull nhánh bàn giao; chưa merge main, chưa gọi lại provider. Kết quả chưa chứng minh tính đồng cảm hoặc hiệu quả lâm sàng.
+1064 [p] LangGraph đảm nhiệm việc tổ chức và điều phối đồ thị. Agent và tool được kết nối với các thành phần tích hợp như mô hình ngôn ngữ, retriever, embedding và chia đoạn tài liệu; các thành phần này không được xem đồng loạt là API riêng của LangGraph.
+1065 [p] Frontend web giao tiếp với backend FastAPI qua endpoint /chatbot. Trong 10 yêu cầu hội thoại được đo, tất cả hoàn tất về kỹ thuật; latency trung bình là 754,073 ms, p95 là 1.108,563 ms và tổng usage quan sát là 4.709 token. Ba ca đầu vào sai trả HTTP 422 đúng kỳ vọng. Các kết quả này không chứng minh độ tin cậy dài hạn, bộ nhớ phiên hoặc hiệu quả hỗ trợ tâm lý.
+1066 [p] Đánh giá ưu và nhược điểm của công nghệ: 
+1067 [p] Ưu điểm:
+1068 [p] LangGraph hỗ trợ linh hoạt trong việc xây dựng hệ thống đa công cụ (multi-tool agent).
+1069 [p] Dễ dàng kết nối và mở rộng với các mô hình ngôn ngữ khác nhau (OpenAI, HuggingFace, Qwen,...).
+1070 [p] Cấu trúc rõ ràng, tách biệt giữa logic, công cụ và dữ liệu, giúp việc bảo trì và mở rộng dễ dàng.
+1071 [p] Có cộng đồng phát triển mạnh, tài liệu hướng dẫn chi tiết, cập nhật thường xuyên.
+1072 [p] Nhược điểm:
+1073 [p] Hiệu năng còn phụ thuộc vào mô hình LLM được sử dụng (nếu chạy local có thể chậm).
+1074 [p] Một số thư viện của LangGraph thay đổi nhanh, cần thường xuyên cập nhật.
+1075 [p] Quá trình tích hợp nhiều công cụ (Tool, Agent, RAG) dễ phát sinh lỗi tương thích giữa các phiên bản.
+1076 [p] Những khó khăn gặp phải và giải pháp: 
+1077 [p] Khó khăn:
+1078 [p] Gặp khó khăn trong việc bắt đầu tìm hiểu tài liệu của LangGraph.
+1079 [p] Gặp khó khăn trong việc cài đặt các thư viện đúng phiên bản các thành phần.
+1080 [p] Đã có đáp án tham chiếu RAG và rubric bốn tiêu chí; một người chấm 13 câu RAG, web có 4 phiếu chấm có Codex hỗ trợ. Mẫu còn nhỏ, chưa đánh giá độc lập nhiều người hoặc so sánh các model trên cùng điều kiện; không quy chất lượng cho số tham số model.
+1081 [p] Khó có những tài liệu quan trọng cho vấn đề tâm lí.
+1082 [p] Các lượt chat, RAG và web đã có latency/usage riêng nhưng mẫu nhỏ, chạy tuần tự; chưa đo tải đồng thời hoặc phân rã đầy đủ thời gian từng bước để kết luận điểm nghẽn hiệu năng.
+1083 [p] Giải pháp:
+1084 [p] Tìm hiểu từng bước một từ cơ bản đến sâu.
+1085 [p] Thực hiện từ code đơn giản đến điều chỉnh cho phù hợp với nhu cầu.
+1086 [p] Xây dựng prompt hệ thống riêng chi tiết chỉ rõ vai trò và ràng buộc cho chatbot.
+1087 [p] Lựa chọn tài liệu có tác giả, nguồn và ngày cập nhật rõ ràng; xây dựng bộ câu hỏi cùng đáp án kỳ vọng trước khi đánh giá RAG.
+1088 [p] So sánh các model trên cùng bộ câu hỏi và điều kiện đo; căn cứ chất lượng, latency và token usage để lựa chọn, thay vì mặc định model trả phí tốt hơn.
+1089 [p] Chương 15: Hướng phát triển trong tương lai
+1090 [p] Hướng phát triển cho đồ án:
+1091 [p] Trong tương lai, hệ thống chatbot có thể được mở rộng và cải tiến theo các hướng sau:
+1092 [p] Cải thiện tính cá nhân hóa:
+1093 [p] Tích hợp cơ chế theo dõi trạng thái tâm lý người dùng theo thời gian để đưa ra gợi ý phù hợp hơn.
+1094 [p] Tùy chỉnh phong cách trò chuyện dựa trên hồ sơ hoặc lịch sử tương tác.
+1095 [p] Nâng cao khả năng hiểu ngữ cảnh:
+1096 [p] Đánh giá khả năng sử dụng ngữ cảnh trên bộ hội thoại có đáp án; chưa mở rộng sang phát hiện khủng hoảng trong phạm vi đồ án.
+1097 [p] Tích hợp phân tích đa phương thức (text + giọng nói) để hỗ trợ trò chuyện tự nhiên hơn.
+1098 [p] Tối ưu hóa hiệu năng và chi phí:
+1099 [p] Tăng cường cơ chế cache, tối ưu prompt engineering để giảm số lần gọi mô hình tốn kém.
+1100 [p] Tích hợp cơ chế nén hoặc tối ưu dữ liệu lịch sử hội thoại.
+1101 [p] Tích hợp thêm tính năng hỗ trợ:
+1102 [p] Gợi ý bài tập thực hành cụ thể (ví dụ: bài tập thở, thiền, journaling).
+1103 [p] Cung cấp nguồn tài liệu kiểm chứng khoa học từ nhiều lĩnh vực liên quan đến tâm lý.
+1104 [p] Phát triển chatbot đa ngôn ngữ để hỗ trợ người dùng ở nhiều khu vực khác nhau.
+1105 [p] Đảm bảo an toàn và đạo đức:
+1106 [p] Củng cố cơ chế từ chối và thông tin chuyển tiếp; phát hiện khủng hoảng vẫn là hướng nghiên cứu chưa được kiểm chứng.
+1107 [p] Tăng cường kiểm duyệt nội dung để đảm bảo phản hồi an toàn, không gây hiểu nhầm hoặc ảnh hưởng tiêu cực.
+1108 [p] Định hướng phát triển của bản thân: 
+1109 [p]  Sau khi hoàn thành đồ án này,nhóm chúng em định hướng phát triển theo các hướng sau:
+1110 [p] Nâng cao kiến thức về LLM và LangGraph: Tiếp tục nghiên cứu sâu hơn về cơ chế hoạt động của LangGraph (Agents, Tools, RAG, Memory) cũng như khả năng kết hợp với các mô hình LLM mới.
+1111 [p] Mở rộng sang các công nghệ liên quan: Tìm hiểu thêm về vector database (FAISS, Pinecone, Weaviate), cơ chế tối ưu hóa chi phí khi triển khai LLM, và bảo mật dữ liệu người dùng.
+1112 [p] Nghiên cứu ứng dụng AI trong chăm sóc sức khỏe tinh thần: Tiếp tục tìm hiểu cách ứng dụng AI trong lĩnh vực tâm lý học, đảm bảo yếu tố đạo đức và an toàn.
+1113 [p] Rèn luyện kỹ năng phát triển hệ thống: Nâng cao khả năng triển khai backend với FastAPI, tối ưu cơ sở dữ liệu, và sử dụng Docker/Kubernetes để mở rộng hệ thống thực tế.
+1114 [p] Định hướng học thuật và nghề nghiệp: Có kế hoạch theo đuổi các khóa học nâng cao hoặc dự án nghiên cứu về AI ứng dụng trong y tế và đời sống, đồng thời phát triển kỹ năng để có thể tham gia vào các dự án AI quy mô lớn trong tương lai.
+1115 [p] Tài liệu tham khảo.
+1116 [p] LangGraph và lịch sử hội thoại: https://docs.langchain.com/oss/python/langgraph/persistence
+1117 [p] Tìm hiểu về RAG: https://arxiv.org/abs/2312.10997. 
+1118 [p] Tìm hiểu về Agent: https://arxiv.org/abs/2503.21460.
+1119 [p] Python trong Visual Studio Code: https://code.visualstudio.com/docs/python/python-tutorial
+1120 [p] 
+1121 [p] LangGraph Graph API: https://docs.langchain.com/oss/python/langgraph/graph-api.
+1122 [p] Giao diện Chat Model: https://docs.langchain.com/oss/python/integrations/chat/openai.
+1123 [p] Thiết lập Groq API key: https://console.groq.com/docs/quickstart.
+1124 [p] Kiểm thử và bài lab: https://docs.langchain.com/oss/python/langgraph/persistence
+1125 [p] Token metadata của ChatGroq: https://docs.langchain.com/oss/python/integrations/chat/groq
+1126 [p] Giám sát LangSmith: https://docs.langchain.com/langsmith/observability-quickstart
+1127 [p] Tavily Search API: https://docs.tavily.com/documentation/api-reference/endpoint/search
+1128 [p] FAISS (stack lịch sử): https://github.com/facebookresearch/faiss/wiki
+1129 [p] Model card embedding lịch sử: https://huggingface.co/VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+1130 [p] Nguồn đối chiếu Stress.pdf: Vinmec, “Các kỹ thuật thở sâu để giảm căng thẳng”, cập nhật 22/07/2024; truy cập 29/10/2026. Chưa thấy tên tác giả cá nhân; không lấy metadata người xuất PDF làm tác giả.
+1131 [p] https://www.vinmec.com/vie/bai-viet/cac-ky-thuat-tho-sau-de-giam-cang-thang-vi
+1132 [p] Cơ sở chọn luồng: https://docs.langchain.com/oss/python/langgraph/workflows-agents (truy cập 29/10/2026). Đây là cơ sở thiết kế; so sánh ở Chương 12 là nhận xét của nhóm.
+1133 [p] Phụ lục A Hands-on Lab LangGraph trong 30–45 phút
+1134 [p] A.1 Mục tiêu chuẩn bị và tiến trình
+1135 [p] Lab cốt lõi dùng hàm Python theo luật, không gọi LLM hay cần API key: khai báo State, thêm node/cạnh, compile, kiểm tra thread_id và latency/lỗi. Starter ở labs/starter, đáp án ở labs/solution. Gọi Groq là mở rộng tự chọn, không quyết định hoàn thành lab.
+1136 [p] Chuẩn bị Python 3.11 trở lên, VS Code hoặc trình soạn thảo và terminal. Thời lượng tính từ lúc môi trường sẵn sàng; tải thư viện qua mạng có thể làm tăng thời gian. Tạo thư mục lab_langgraph, mở terminal tại thư mục này. Các đoạn mã là văn bản có thể sao chép.
+1137 [tbl] BướcThời gianViệc hoàn thành1. Môi trường5 phútTạo venv, cài gói và kiểm tra import.2. State và node10 phútTạo lab_graph.py, định nghĩa ba nhánh.3. Edge và phiên5 phútCompile với checkpointer; thử cùng/khác thread.4. Chạy và ghi log10 phútTạo metrics.py, lab_run.py và chạy kiểm tra.5. Tự đánh giá5 phútĐọc JSONL, giải thích kết quả và nộp minh chứng.6. Groq mở rộngThêm 10 phútThay node answer và quan sát token metadata.
+1138 [p] Trên Windows, dùng Command Prompt (cmd) để chạy:
+1139 [p] python -m venv .venv
+1140 [p] .venv\Scripts\activate.bat
+1141 [p] python -m pip install langgraph==1.2.16 langchain-core==1.7.0
+1142 [p] python -c "from langgraph.graph import StateGraph; print('OK')"
+1143 [p] Trên macOS/Linux, kích hoạt bằng source .venv/bin/activate. Ghi python --version và python -m pip freeze để tái lập. Lab đã kiểm tra với langgraph 1.2.16 và langchain-core 1.7.0; không cần cài toàn bộ chatbot hoặc khóa trả phí.
+1144 [p] A.2 Khai báo State và ba node xử lý
+1145 [p] Tạo lab_graph.py. Sao chép phần dưới, sau đó nối tiếp mã ở A.3 vào cùng file. Node lookup chỉ tra cứu một nội dung cố định phục vụ học tập; đây chưa phải RAG dùng vector database. Node answer hiện phản hồi theo quy tắc, không phải mô hình sinh ngôn ngữ.
+1146 [p] from typing import TypedDict
+1147 [p] from langgraph.graph import StateGraph, START, END
+1148 [p] from langgraph.checkpoint.memory import InMemorySaver
+1149 [p]  
+1150 [p] class State(TypedDict):
+1151 [p]     question: str
+1152 [p]     answer: str
+1153 [p]     branch: str
+1154 [p]     turns: int
+1155 [p]     usage: dict
+1156 [p]  
+1157 [p] def no_usage():
+1158 [p]     return dict(input_tokens=0, output_tokens=0, total_tokens=0)
+1159 [p]  
+1160 [p] def route(state):
+1161 [p]     q = state["question"].strip().casefold()
+1162 [p]     if not q:
+1163 [p]         return "clarify"
+1164 [p]     return "lookup" if "langgraph" in q else "answer"
+1165 [p]  
+1166 [p] def finish(state, answer, branch, usage):
+1167 [p]     return {"answer": answer, "branch": branch,
+1168 [p]             "turns": state.get("turns", 0) + 1, "usage": usage}
+1169 [p]  
+1170 [p] def clarify(state):
+1171 [p]     return finish(state, "Vui lòng nhập câu hỏi.",
+1172 [p]                   "clarify", no_usage())
+1173 [p]  
+1174 [p] def lookup(state):
+1175 [p]     text = "LangGraph tổ chức luồng xử lý bằng State, Node và Edge."
+1176 [p]     return finish(state, text, "lookup", no_usage())
+1177 [p]  
+1178 [p] def answer(state):
+1179 [p]     if state["question"] == "!error":
+1180 [p]         raise RuntimeError("Lỗi chủ động của bài lab")
+1181 [p]     return finish(state, "Đã nhận: " + state["question"],
+1182 [p]                   "answer", no_usage())
+1183 [p] route đọc question và chọn clarify nếu rỗng, lookup nếu có từ “langgraph”, còn lại chọn answer. finish chỉ trả những khóa cần cập nhật. turns đếm lượt xử lý thành công; đây không phải danh sách lịch sử hội thoại.
+1184 [p] A.3 Tạo cạnh và quan sát trạng thái phiên
+1185 [p] Nối tiếp lab_graph.py bằng đoạn sau:
+1186 [p] builder = StateGraph(State)
+1187 [p] for name, fn in [("clarify", clarify), ("lookup", lookup),
+1188 [p]                  ("answer", answer)]:
+1189 [p]     builder.add_node(name, fn)
+1190 [p] builder.add_conditional_edges(START, route, {
+1191 [p]     "clarify": "clarify", "lookup": "lookup", "answer": "answer"})
+1192 [p] for name in ["clarify", "lookup", "answer"]:
+1193 [p]     builder.add_edge(name, END)
+1194 [p] graph = builder.compile(checkpointer=InMemorySaver())
+1195 [p]  
+1196 [p] def ask(question, thread_id):
+1197 [p]     config = {"configurable": {"thread_id": thread_id}}
+1198 [p]     return graph.invoke({"question": question}, config)
+1199 [p] Chạy python trong terminal để vào chế độ tương tác, rồi nhập từng dòng sau (không cần tạo file mới):
+1200 [p] from lab_graph import ask
+1201 [p] print(ask("Xin chào", "s1")["turns"])  # 1
+1202 [p] print(ask("Lần hai", "s1")["turns"])  # 2
+1203 [p] print(ask("Phiên khác", "s2")["turns"])  # 1
+1204 [p] exit()
+1205 [p] Cùng đối tượng graph và cùng thread_id sẽ dùng lại State trong RAM. Đổi thread_id tách phiên. Không truyền lại turns=0 mỗi lượt vì sẽ ghi đè bộ đếm. Khi đóng tiến trình rồi chạy lại, InMemorySaver mất dữ liệu; ví dụ này chưa cung cấp bộ nhớ bền vững sau khởi động lại.
+1206 [p] Tự kiểm tra: xác định dòng tạo cạnh điều kiện, dòng compile và nơi truyền thread_id. Nếu bỏ checkpointer thì không còn cơ chế khôi phục State giữa các lần invoke theo ví dụ này. Tăng turns không có nghĩa mô hình tự nhớ nội dung hội thoại, vì State chưa có messages.
+1207 [p] A.4 Chạy ca kiểm thử và xuất log
+1208 [p] Tạo metrics.py trong cùng thư mục bằng toàn bộ đoạn mã dưới đây. Hàm observe đo thời gian chạy cục bộ của lời gọi graph.invoke, ghi trạng thái và loại exception; chỉ lấy token từ usage do kết quả trả về. Đây là phép đo bài lab, khác phép đo HTTP ở Chương 13.
+1209 [p] import time
+1210 [p]  
+1211 [p] def observe(call, case_id, group="baseline"):
+1212 [p]     start = time.perf_counter()
+1213 [p]     try:
+1214 [p]         result = call()
+1215 [p]         status, error = "ok", None
+1216 [p]     except Exception as exc:
+1217 [p]         result = {}
+1218 [p]         status, error = "error", type(exc).__name__
+1219 [p]     elapsed = (time.perf_counter() - start) * 1000
+1220 [p]     usage = result.get("usage") or {}
+1221 [p]     row = {
+1222 [p]         "case_id": case_id, "group": group,
+1223 [p]         "latency_ms": round(elapsed, 3),
+1224 [p]         "status": status, "error_type": error,
+1225 [p]         "input_tokens": usage.get("input_tokens"),
+1226 [p]         "output_tokens": usage.get("output_tokens"),
+1227 [p]         "total_tokens": usage.get("total_tokens"),
+1228 [p]     }
+1229 [p]     return result, row
+1230 [p] Nếu có exception hoặc thiếu usage, các trường token được ghi null; chỉ ghi 0 khi node xác nhận không gọi LLM. Sau đó tạo lab_run.py bằng mã ở trang tiếp theo và chạy python lab_run.py trong một tiến trình mới. Nếu thử nhiều lần trong cùng phiên tương tác, dùng thread_id mới để tránh cộng dồn turns.
+1231 [p] import json
+1232 [p] from metrics import observe
+1233 [p] from lab_graph import ask
+1234 [p]  
+1235 [p] cases = [("A1", "", "clarify"),
+1236 [p]          ("A2", "LangGraph là gì?", "lookup"),
+1237 [p]          ("A3", "Xin chào", "answer")]
+1238 [p] rows, checks = [], []
+1239 [p] for case_id, question, expected in cases:
+1240 [p]     result, row = observe(
+1241 [p]         lambda q=question, tid=case_id: ask(q, tid), case_id)
+1242 [p]     checks.append(row["status"] == "ok"
+1243 [p]                   and result.get("branch") == expected)
+1244 [p]     rows.append(row)
+1245 [p]     print(case_id, row["status"], result.get("branch"))
+1246 [p]  
+1247 [p] _, fault = observe(lambda: ask("!error", "fault-1"),
+1248 [p]                    "A4", group="fault_injection")
+1249 [p] checks.append(fault["status"] == "error"
+1250 [p]               and fault["error_type"] == "RuntimeError")
+1251 [p] rows.append(fault)
+1252 [p] with open("lab_metrics.jsonl", "w", encoding="utf-8") as f:
+1253 [p]     for row in rows:
+1254 [p]         f.write(json.dumps(row, ensure_ascii=False) + "\n")
+1255 [p] assert all(checks), "Có ca không đạt; xem lab_metrics.jsonl"
+1256 [p] assert ask("LangGraph lượt 1", "memory-1")["turns"] == 1
+1257 [p] assert ask("LangGraph lượt 2", "memory-1")["turns"] == 2
+1258 [p] assert ask("LangGraph phiên mới", "memory-2")["turns"] == 1
+1259 [p] print("PASS: 3 nhánh, 1 lỗi chủ động, 2 thread; đã ghi JSONL.")
+1260 [p] Kết quả cần quan sát: A1 → clarify, A2 → lookup, A3 → answer; cuối cùng xuất dòng PASS và file lab_metrics.jsonl gồm 4 dòng. A4 chủ động gây RuntimeError, được ghi group=fault_injection. Tên lỗi được kiểm tra trong assert; không đưa A4 vào error rate của baseline.
+1261 [p] Trong chế độ cốt lõi, ba yêu cầu thành công không gọi LLM nên input/output/total tokens bằng 0; dòng lỗi không có metadata nên là null. Latency là phép đo thực tế trên máy người học, không có một con số cố định để chép theo. Đây là thời gian chạy đồ thị cục bộ, không phải latency của API chatbot.
+1262 [p] A.5 Tự đánh giá và mở rộng gọi Groq
+1263 [p] Tiêu chí hoàn thành phần cốt lõi
+1264 [p] Nộp lab_graph.py, lab_run.py, metrics.py, lab_metrics.jsonl và ảnh terminal có PASS. Đạt khi đủ ba nhánh, bắt được lỗi chủ động, kiểm tra turns lần lượt 1–2–1 và giải thích được vì sao token bằng 0 ở các ca không gọi LLM. Chụp ảnh sau khi chạy, không ghi số liệu latency của người khác.
+1265 [p] Nếu không import được langgraph, kiểm tra terminal đã dùng đúng venv và chạy python -m pip show langgraph. Nếu turns sai, khởi động tiến trình mới hoặc đổi thread_id. Nếu thiếu metrics, đặt metrics.py cùng thư mục với lab_run.py.
+1266 [p] Mở rộng gọi Groq tùy chọn trong 10 phút
+1267 [p] Cài python -m pip install langchain-groq==1.1.3. Trong lab_graph.py, thay toàn bộ hàm answer cũ bằng đoạn dưới, đặt trước builder = StateGraph(State). Chọn GROQ_MODEL được tài khoản hỗ trợ; khóa được nhập kín bằng getpass hoặc lấy từ môi trường. Không đưa khóa vào báo cáo.
+1268 [p] import os
+1269 [p] from getpass import getpass
+1270 [p] from langchain_groq import ChatGroq
+1271 [p] llm = ChatGroq(
+1272 [p]     model=os.getenv("GROQ_MODEL", "llama-3.1-8b-instant"),
+1273 [p]     api_key=os.getenv("GROQ_API_KEY") or getpass("Groq key: "),
+1274 [p]     temperature=0, max_tokens=128, timeout=30, max_retries=0)
+1275 [p]  
+1276 [p] def answer(state):
+1277 [p]     if state["question"] == "!error":
+1278 [p]         raise RuntimeError("Lỗi chủ động của bài lab")
+1279 [p]     reply = llm.invoke(state["question"])
+1280 [p]     return finish(state, reply.content, "answer",
+1281 [p]                   dict(reply.usage_metadata or {}))
+1282 [p] Chỉ làm mở rộng khi tự bố trí được khóa/quota. Các ca qua answer mới gọi Groq; đọc usage trong JSONL, thiếu metadata giữ null. Lỗi khóa/quota/timeout cần được ghi đúng. Hoàn thành phần cốt lõi không phụ thuộc bước này và không cần chi phí provider.
+1283 [sectPr] 

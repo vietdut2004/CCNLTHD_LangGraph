@@ -33,3 +33,4 @@ evidence/verification/**/pytest_tmp*/
 evidence_week8/
 evidence_recheck/
 lab_metrics.jsonl
+report_revision/individual_assets/chrome_profile/

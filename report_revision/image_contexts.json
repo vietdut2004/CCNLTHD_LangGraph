@@ -1,0 +1,1015 @@
+[
+  {
+    "index": 5,
+    "rid": "rId19",
+    "image": "image15.png",
+    "context": [
+      "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+      "TRƯỜNG ĐẠI HỌC SÀI GÒN",
+      "        ",
+      " ",
+      "TÌM HIỂU VÀ ỨNG DỤNG FRAMEWORK LANGGRAPH "
+    ]
+  },
+  {
+    "index": 99,
+    "rid": "rId20",
+    "image": "image14.png",
+    "context": [
+      "Quản lý trạng thái: dùng State và bộ gộp cập nhật; cấu hình checkpointer cùng thread_id khi cần duy trì trạng thái giữa các lần gọi. Lưu lâu dài cần backend lưu trữ phù hợp.",
+      "Hỗ trợ tác nhân (Agents) sử dụng công cụ: Cho phép các “AI agent” truy cập và sử dụng nhiều công cụ (Google Search, máy tính, API) để thực hiện tác vụ vượt ngoài việc chỉ tạo văn bản.",
+      "Các mốc và thay đổi kiến trúc:",
+      "LangGraph có hệ thống phiên bản chính thức, bao gồm bản v1. Khi tái hiện ví dụ cần ghi phiên bản cài đặt; không phân chia lịch sử LangGraph theo các giai đoạn phát triển của LangChain."
+    ]
+  },
+  {
+    "index": 227,
+    "rid": "rId22",
+    "image": "image30.png",
+    "context": [
+      "Tạo môi trường ảo bằng mô-đun venv: python -m venv venv (venv là tên thư mục môi trường).",
+      "Kích hoạt môi trường ảo và kiểm tra Python:",
+      "Bước 3: Cài đặt LangGraph và các thư viện tích hợp cần thiết:"
+    ]
+  },
+  {
+    "index": 255,
+    "rid": "rId23",
+    "image": "image21.png",
+    "context": [
+      "a) Giới thiệu.",
+      "LangSmith là một nền tảng xây dựng các ứng dụng LLM ở cấp độ production. Cho phép giám sát -monitor- và đánh giá -evaluate- ứng dụng do đó sẽ giúp triển khai nhanh chóng và tự tin hơn.",
+      "                ",
+      "b) Các thư viện hỗ trợ.",
+      "langsmith( python SDK) : thư viện chính dành cho Python. Ngoài ra còn có cho JavaScript/TypeScript."
+    ]
+  },
+  {
+    "index": 262,
+    "rid": "rId24",
+    "image": "image27.png",
+    "context": [
+      "c) Code mẫu.",
+      "Mục tiêu: minh họa cấu hình tracing LangSmith cho lời gọi đồ thị. Chưa có kết quả đánh giá từ dịch vụ trong ví dụ này.",
+      "Biến môi trường trong mã dùng tên LANGSMITH_TRACING, LANGSMITH_API_KEY và LANGSMITH_PROJECT.",
+      "LANGSMITH_TRACING=\"true\": bật tracing; giá trị khóa truy cập đọc từ môi trường hoặc nhập bằng getpass."
+    ]
+  },
+  {
+    "index": 279,
+    "rid": "rId25",
+    "image": "image23.png",
+    "context": [
+      "Chat Model: messages → message",
+      "Phân Biệt LLM (text → text) và Chat Model (messages → message)",
+      "3.2.  Giải thích & Minh họa",
+      "LLM cổ điển (Đơn giản và liên tục): LLM xử lý mọi thứ dưới dạng một chuỗi văn bản (string) liên tục, giống như việc bạn đang viết một email hoặc một đoạn văn dài."
+    ]
+  },
+  {
+    "index": 283,
+    "rid": "rId26",
+    "image": "image18.png",
+    "context": [
+      "LLM cổ điển (Đơn giản và liên tục): LLM xử lý mọi thứ dưới dạng một chuỗi văn bản (string) liên tục, giống như việc bạn đang viết một email hoặc một đoạn văn dài.",
+      "Cấu trúc dữ liệu: ",
+      "Minh họa chi tiết:"
+    ]
+  },
+  {
+    "index": 285,
+    "rid": "rId27",
+    "image": "image26.png",
+    "context": [
+      "Minh họa chi tiết:",
+      "Hạn chế: Khi bạn muốn duy trì hội thoại, bạn phải tự mình nối tất cả các câu trả lời trước đó vào chuỗi Prompt mới (quá trình thủ công).",
+      "Chat Model Hiện Đại (Cấu Trúc và Phân Vai): Chat Model nhận một danh sách các đối tượng tin nhắn có cấu trúc, mỗi đối tượng mang một vai trò và nội dung riêng."
+    ]
+  },
+  {
+    "index": 289,
+    "rid": "rId28",
+    "image": "image24.png",
+    "context": [
+      "Chat Model Hiện Đại (Cấu Trúc và Phân Vai): Chat Model nhận một danh sách các đối tượng tin nhắn có cấu trúc, mỗi đối tượng mang một vai trò và nội dung riêng.",
+      "Cấu trúc dữ liệu:",
+      "Minh họa chi tiết: Tình huống tương tự, bạn muốn hỏi về AI và đặt ngữ cảnh cho mô hình, nhưng lần này trong một cuộc hội thoại."
+    ]
+  },
+  {
+    "index": 291,
+    "rid": "rId29",
+    "image": "image17.png",
+    "context": [
+      "Minh họa chi tiết: Tình huống tương tự, bạn muốn hỏi về AI và đặt ngữ cảnh cho mô hình, nhưng lần này trong một cuộc hội thoại.",
+      "Lợi ích:",
+      "Phân tách rõ ràng: Hướng dẫn hệ thống (System Message) được tách biệt khỏi câu hỏi của người dùng (Human Message), giúp mô hình xử lý hiệu quả hơn."
+    ]
+  },
+  {
+    "index": 296,
+    "rid": "rId30",
+    "image": "image29.png",
+    "context": [
+      " Quản lý lịch sử tự nhiên: Việc gửi một danh sách các tin nhắn đã tạo thành lịch sử hội thoại một cách tự nhiên.",
+      "Sơ đồ luồng thực thi của chatbot trong LangGraph:",
+      "Sơ đồ LangGraph gồm State, các node xử lý và cạnh điều kiện; luồng chọn một nhánh rồi kết thúc tại END.",
+      "State lưu question và answer. Hàm route đọc question để chọn node call_model hoặc empty_input; mỗi node trả về phần cập nhật answer."
+    ]
+  },
+  {
+    "index": 303,
+    "rid": "rId31",
+    "image": "image16.png",
+    "context": [
+      "3.3.1 Xây dựng chatbot bằng StateGraph",
+      "Bước 1: Cài đặt thư viện cần thiết",
+      "Bước 2: Thiết lập khóa Groq và chọn mô hình",
+      "Tạo khóa tại Groq Console → API Keys. Đọc khóa từ biến môi trường hoặc nhập bằng getpass; không ghi khóa thật trong mã hay ảnh."
+    ]
+  },
+  {
+    "index": 307,
+    "rid": "rId32",
+    "image": "image31.png",
+    "context": [
+      "Tạo khóa tại Groq Console → API Keys. Đọc khóa từ biến môi trường hoặc nhập bằng getpass; không ghi khóa thật trong mã hay ảnh.",
+      "MODEL_NAME có thể đổi qua GROQ_MODEL; chọn mô hình đang được tài khoản hỗ trợ.",
+      "Bước 3: Khai báo State, node, cạnh và chạy đồ thị"
+    ]
+  },
+  {
+    "index": 309,
+    "rid": "rId33",
+    "image": "image28.png",
+    "context": [
+      "Bước 3: Khai báo State, node, cạnh và chạy đồ thị",
+      " Giải thích"
+    ]
+  },
+  {
+    "index": 310,
+    "rid": "rId34",
+    "image": "image13.png",
+    "context": [
+      "Bước 3: Khai báo State, node, cạnh và chạy đồ thị",
+      " Giải thích",
+      "StateGraph(State) xác định lược đồ trạng thái. Hai node call_model và empty_input chỉ trả về khóa answer cần cập nhật."
+    ]
+  },
+  {
+    "index": 317,
+    "rid": "rId35",
+    "image": "image22.png",
+    "context": [
+      "Khi thử với câu hỏi rỗng, đồ thị trả lời yêu cầu nhập câu hỏi và không gọi LLM. Kết quả từ dịch vụ Groq cần được nhóm chạy thực tế với khóa hợp lệ.",
+      "3.3.2 Chat Model trong node của LangGraph",
+      "* Giải thích: "
+    ]
+  },
+  {
+    "index": 318,
+    "rid": "rId36",
+    "image": "image25.png",
+    "context": [
+      "3.3.2 Chat Model trong node của LangGraph",
+      "* Giải thích: ",
+      "Bước 1: Cài langchain-openai, dùng LangGraph đã cài ở trên và chuẩn bị OPENAI_API_KEY bằng biến môi trường hoặc getpass."
+    ]
+  },
+  {
+    "index": 343,
+    "rid": "rId37",
+    "image": "image20.png",
+    "context": [
+      "Thử nghiệm với LLM (Stateless)",
+      "Trong LangGraph, khi gọi .invoke() và chỉ cung cấp một chuỗi văn bản, mô hình xử lý đầu vào như một phiên làm việc mới.",
+      "Lần 1: Prompt: “Tên tôi là An.” → Mô hình trả lời bình thường.",
+      "Lần 2: Prompt: “Tên tôi là gì?” → Do không có lịch sử, mô hình không thể suy luận ra tên người dùng."
+    ]
+  },
+  {
+    "index": 346,
+    "rid": "rId38",
+    "image": "image41.png",
+    "context": [
+      "Lần 1: Prompt: “Tên tôi là An.” → Mô hình trả lời bình thường.",
+      "Lần 2: Prompt: “Tên tôi là gì?” → Do không có lịch sử, mô hình không thể suy luận ra tên người dùng.",
+      "=> Kết luận: LLM không tự ghi nhớ thông tin từ lần tương tác trước nếu không có cơ chế lưu trữ riêng.",
+      "Thử nghiệm với Chat Model (Stateful qua message list)"
+    ]
+  },
+  {
+    "index": 350,
+    "rid": "rId39",
+    "image": "image42.png",
+    "context": [
+      "Thử nghiệm với Chat Model (Stateful qua message list)",
+      "Chat Model trong LangGraph hỗ trợ truyền vào danh sách các HumanMessage và AIMessage. Khi lịch sử hội thoại được đưa vào, mô hình có thể dựa vào dữ liệu đó để trả lời chính xác hơn.",
+      "Lần 1: Prompt đầu vào là “Tên tôi là An.” → Mô hình phản hồi bình thường.",
+      "Lần 2: Danh sách tin nhắn được truyền lại gồm:"
+    ]
+  },
+  {
+    "index": 357,
+    "rid": "rId40",
+    "image": "image40.png",
+    "context": [
+      "Câu hỏi “Tên tôi là gì?”",
+      "→ Nhờ lịch sử này, mô hình trả lời chính xác: “Bạn tên là An.”",
+      "=> Kết luận: Chat Model không tự ghi nhớ, nhưng có khả năng giữ state khi lịch sử được truyền vào thủ công.",
+      "Nhận xét: "
+    ]
+  },
+  {
+    "index": 378,
+    "rid": "rId41",
+    "image": "image50.png",
+    "context": [
+      "Khi gọi, bạn truyền name= “Lan” → AI nhận prompt: “Xin chào Lan, chúc bạn một ngày tốt lành!”.",
+      "Sơ đồ giản lược:",
+      "4.3 Code mẫu",
+      "4.3 Code mẫu"
+    ]
+  },
+  {
+    "index": 382,
+    "rid": "rId42",
+    "image": "image47.png",
+    "context": [
+      "4.3 Code mẫu",
+      "4.3.1 String PromptTemplates: Dùng để định dạng một chuỗi string duy nhất. Thường dùng cho input đơn giản.",
+      "Giải thích:",
+      "Bước 1: Import lớp PromptTemplate từ thư viện LangChain (langchain_core.prompts)."
+    ]
+  },
+  {
+    "index": 391,
+    "rid": "rId43",
+    "image": "image49.png",
+    "context": [
+      "Kết quả: Tell me a joke about cats",
+      "4.3.2 ChatPromptTemplates: Dùng để định dạng danh sách các messages (hội thoại). Một ChatPromptTemplate là một danh sách các template messages.",
+      "Giải thích:",
+      "Dòng 1: Import ChatPromptTemplate để tạo prompt dạng hội thoại."
+    ]
+  },
+  {
+    "index": 403,
+    "rid": "rId44",
+    "image": "image45.png",
+    "context": [
+      "content='Tell me a joke about cats'",
+      "4.3.3 MessagesPlaceholder: Dùng để chèn một danh sách messages vào một vị trí cụ thể trong ChatPromptTemplate. Hữu ích khi ta muốn người dùng có thể truyền vào nhiều messages (ví dụ lịch sử hội thoại).",
+      "Giải thích:",
+      "Dòng 1: Import các class cần dùng (ChatPromptTemplate, MessagesPlaceholder, HumanMessage)."
+    ]
+  },
+  {
+    "index": 421,
+    "rid": "rId45",
+    "image": "image43.png",
+    "context": [
+      "Định nghĩa nội dung Templates: ",
+      "Vai trò của Bot( system_template): Đây là một chuỗi hướng dẫn tĩnh. Nó xác định giới hạn, vai trò và trách nhiệm của chatbot, đảm bảo nó hoạt động trong khuôn khổ nhiệm vụ và đạo đức.",
+      "Tin nhắn của người dùng( human_template): Đây là chuỗi template động . Nó sử dụng hai biến (placeholders): {user_feeling} và {user_topic}. Các biến này sẽ được thay thế bằng dữ liệu cụ thể khi bạn chạy promt. Điều này giúp prompt trở nên linh hoạt và có thể tái sử dụng cho nhiều tình huống khác nhau chỉ bằng cách thay đổi giá trị input."
+    ]
+  },
+  {
+    "index": 423,
+    "rid": "rId46",
+    "image": "image46.png",
+    "context": [
+      "Tin nhắn của người dùng( human_template): Đây là chuỗi template động . Nó sử dụng hai biến (placeholders): {user_feeling} và {user_topic}. Các biến này sẽ được thay thế bằng dữ liệu cụ thể khi bạn chạy promt. Điều này giúp prompt trở nên linh hoạt và có thể tái sử dụng cho nhiều tình huống khác nhau chỉ bằng cách thay đổi giá trị input.",
+      "Tạo chatpromt template hoàn chỉnh.",
+      "ChatPromptTemplate được tạo từ các cặp (vai trò, chuỗi template): (\"system\", system_template) và (\"human\", human_template)."
+    ]
+  },
+  {
+    "index": 449,
+    "rid": "rId47",
+    "image": "image39.png",
+    "context": [
+      "print(prompt_hoan_chinh)",
+      "Kết quả: ",
+      "5. Graph và thành phần Chain dùng trong node",
+      "5.1 Lý thuyết"
+    ]
+  },
+  {
+    "index": 462,
+    "rid": "rId48",
+    "image": "image48.png",
+    "context": [
+      "Ví dụ minh họa 2 – SequentialChain1. Người dùng nhập: \"Tóm tắt văn bản này và dịch sang tiếng Việt\"+ Bước 1: Chain A (tóm tắt văn bản bằng tiếng Anh).+ Bước 2: Chain B (dịch kết quả sang tiếng Việt).",
+      "Sơ đồ minh họa cơ bản:",
+      "5.3 Code tham khảo LangChain đời cũ; phần thực hành tiếp theo dùng StateGraph",
+      "Lưu ý: Phần này minh họa cách viết chain đời cũ (LLMChain, SequentialChain). Trong thực tế và các bài thực hành tiếp theo, chúng ta sử dụng LCEL hoặc LangGraph (StateGraph) để tối ưu hiệu năng và khả năng điều hướng."
+    ]
+  },
+  {
+    "index": 466,
+    "rid": "rId49",
+    "image": "image19.png",
+    "context": [
+      "Lưu ý: Phần này minh họa cách viết chain đời cũ (LLMChain, SequentialChain). Trong thực tế và các bài thực hành tiếp theo, chúng ta sử dụng LCEL hoặc LangGraph (StateGraph) để tối ưu hiệu năng và khả năng điều hướng.",
+      "5.3.1 LLMChain cơ bản",
+      "Giải thích:",
+      "B1:Import thư viện cần dùng:"
+    ]
+  },
+  {
+    "index": 491,
+    "rid": "rId50",
+    "image": "image38.png",
+    "context": [
+      "5. Gọi chain với input \"mùa thu\" để sinh văn bản.",
+      "5.3.2: SequentialChain",
+      "Giải thích:",
+      "SequentialChain: Cho phép kết nối nhiều LLMChain theo thứ tự. Đầu ra (output_key) của chain trước sẽ tự động được truyền làm đầu vào (input_variables) cho chain tiếp theo."
+    ]
+  },
+  {
+    "index": 523,
+    "rid": "rId51",
+    "image": "image33.png",
+    "context": [
+      "Mục tiêu: Dùng StateGraph điều phối chatbot theo chủ đề. Nhánh answer gọi ChatGroq; nhánh clarify yêu cầu bổ sung khi thiếu chủ đề.",
+      "Cài LangGraph và thư viện tích hợp Groq. Lấy khóa tại Groq Console → API Keys; chọn MODEL_NAME được tài khoản hỗ trợ.",
+      "Hàm Khởi Tạo Mô Hình (initialize_model): ",
+      "Hàm này nhận khóa API và tên mô hình để khởi tạo đối tượng ChatGroq."
+    ]
+  },
+  {
+    "index": 528,
+    "rid": "rId52",
+    "image": "image32.png",
+    "context": [
+      "Kiểm tra API Key: Nó kiểm tra xem khóa API có được cung cấp hay không. Nếu không, nó sẽ in thông báo lỗi và dừng chương trình.",
+      "Khởi tạo ChatGroq: Tạo đối tượng LLM chính, truyền vào tên mô hình (model), nhiệt độ (temperature), và khóa API. Đây là cầu nối để giao tiếp với dịch vụ LLM của Groq.",
+      "Tạo tin nhắn từ State: make_messages chèn trực tiếp cảm xúc và chủ đề vào nội dung human message trước khi gọi mô hình."
+    ]
+  },
+  {
+    "index": 530,
+    "rid": "rId53",
+    "image": "image37.png",
+    "context": [
+      "Tạo tin nhắn từ State: make_messages chèn trực tiếp cảm xúc và chủ đề vào nội dung human message trước khi gọi mô hình.",
+      "Xây dựng và chạy đồ thị StateGraph:",
+      "ChatState lưu user_feeling, user_topic và answer. initialize_model tạo ChatGroq dùng trong node answer."
+    ]
+  },
+  {
+    "index": 534,
+    "rid": "rId54",
+    "image": "image44.png",
+    "context": [
+      "ChatState lưu user_feeling, user_topic và answer. initialize_model tạo ChatGroq dùng trong node answer.",
+      "Hàm route kiểm tra user_topic. Nếu có chủ đề, đồ thị chọn answer; nếu thiếu, đồ thị chọn clarify. Mỗi node trả cập nhật answer.",
+      "Sơ đồ luồng thực thi tương ứng với mã StateGraph:"
+    ]
+  },
+  {
+    "index": 535,
+    "rid": "rId55",
+    "image": "image34.png",
+    "context": [
+      "Hàm route kiểm tra user_topic. Nếu có chủ đề, đồ thị chọn answer; nếu thiếu, đồ thị chọn clarify. Mỗi node trả cập nhật answer.",
+      "Sơ đồ luồng thực thi tương ứng với mã StateGraph:"
+    ]
+  },
+  {
+    "index": 537,
+    "rid": "rId56",
+    "image": "image36.png",
+    "context": [
+      "Sơ đồ luồng thực thi tương ứng với mã StateGraph:",
+      "Giải thích các bước chính:",
+      "Dữ liệu đầu vào: input_data cung cấp cảm xúc, chủ đề và answer rỗng cho ChatState."
+    ]
+  },
+  {
+    "index": 544,
+    "rid": "rId57",
+    "image": "image35.png",
+    "context": [
+      "Cập nhật State và kết thúc: node trả {\"answer\": ...}; LangGraph gộp cập nhật vào State và đi tới END. graph.invoke(...) trả State cuối cùng.",
+      "Kiểm tra nhánh thiếu chủ đề (không gọi LLM): đặt user_topic=\"\". Ảnh dưới ghi lại kết quả kiểm tra bằng LangGraph; không phải phản hồi sinh từ Groq.",
+      "6. Tool & Tools",
+      "6.1 Lý Thuyết "
+    ]
+  },
+  {
+    "index": 565,
+    "rid": "rId58",
+    "image": "image63.png",
+    "context": [
+      "Agent sẽ tự chọn tool phù hợp cho từng phần của câu hỏi.",
+      "Quy trình các bước:",
+      "6.3 Code mẫu",
+      "6.3.1 Tool (Tạo 1 Tool đơn giản)"
+    ]
+  },
+  {
+    "index": 568,
+    "rid": "rId59",
+    "image": "image58.png",
+    "context": [
+      "6.3 Code mẫu",
+      "6.3.1 Tool (Tạo 1 Tool đơn giản)",
+      "* Giải thích:",
+      "@tool được import từ langchain_core.tools. Ví dụ mới phân tích AST và chỉ cho phép số, +, -, *, /, dấu ngoặc và dấu âm/dương; từ chối lời gọi hàm hoặc truy cập thuộc tính. Không dùng eval cho chuỗi từ người dùng. “2 ++ 5” hợp lệ trong Python và bằng 7; “2 + * 5” mới là ví dụ lỗi cú pháp."
+    ]
+  },
+  {
+    "index": 572,
+    "rid": "rId60",
+    "image": "image60.png",
+    "context": [
+      "@tool được import từ langchain_core.tools. Ví dụ mới phân tích AST và chỉ cho phép số, +, -, *, /, dấu ngoặc và dấu âm/dương; từ chối lời gọi hàm hoặc truy cập thuộc tính. Không dùng eval cho chuỗi từ người dùng. “2 ++ 5” hợp lệ trong Python và bằng 7; “2 + * 5” mới là ví dụ lỗi cú pháp.",
+      "6.3.2 Tools (Dùng nhiều Tools trong Agent)",
+      "* Giải thích",
+      "Ảnh này minh họa initialize_agent/AgentExecutor của LangChain đời cũ, không phải API StateGraph. temperature=0 giảm tính ngẫu nhiên nhưng không bảo đảm tính đúng. Giá trị 100 là đáp án toán học kỳ vọng cho 25 * 4; cần trace hoặc log thực thi để xác nhận tool đã được gọi."
+    ]
+  },
+  {
+    "index": 576,
+    "rid": "rId61",
+    "image": "image67.jpg",
+    "context": [
+      "Ảnh này minh họa initialize_agent/AgentExecutor của LangChain đời cũ, không phải API StateGraph. temperature=0 giảm tính ngẫu nhiên nhưng không bảo đảm tính đúng. Giá trị 100 là đáp án toán học kỳ vọng cho 25 * 4; cần trace hoặc log thực thi để xác nhận tool đã được gọi.",
+      "7. Giao diện cho chatbot.",
+      "Chương 5: Embedding và Vector Database"
+    ]
+  },
+  {
+    "index": 586,
+    "rid": "rId62",
+    "image": "image106.png",
+    "context": [
+      " Ứng dụng  cụ thể trong đề tài: chuyển tài liệu tâm lí thành vector để tìm kiếm theo ngữ nghĩa.",
+      " Thực hành:",
+      "                          ",
+      "Trong hình, ta thực hiện embedding một danh sách gồm 5 câu văn bản bằng cách sử dụng class OpenAIEmbeddings từ thư viện langchain_openai.",
+      "Đối tượng embeddings_model được khởi tạo từ class OpenAIEmbeddings và dùng phương thức embed_documents() để ánh xạ từng chuỗi trong danh sách thành một vector 1536 chiều."
+    ]
+  },
+  {
+    "index": 603,
+    "rid": "rId63",
+    "image": "image66.png",
+    "context": [
+      "Mục đích chính: tìm kiếm và so sánh độ tương đồng giữa các vector lớn một cách nhanh chóng và hiệu quả. FAISS được thiết kế để xử lý dữ liệu có kích thước rất lớn (hàng triệu đến hàng tỷ vector), vượt xa khả năng tìm kiếm tuyến tính thông thường.",
+      "      - Thực hành:",
+      "                ",
+      "Đoạn mã khởi tạo FAISS qua tích hợp LangChain; vector store này có thể được gọi trong node truy xuất của LangGraph.",
+      "index = faiss.IndexFlatL2(...) tạo FAISS index với số chiều bằng độ dài embedding là nơi lưu trữ các vector."
+    ]
+  },
+  {
+    "index": 625,
+    "rid": "rId64",
+    "image": "image69.png",
+    "context": [
+      "Các thư viện chính được import: FAISS (từ langchain_community.vectorstores) và HuggingFaceEmbeddings (từ langchain_huggingface).",
+      "Một danh sách (list) gồm 5 câu tiếng Việt được tạo để làm cơ sở dữ liệu:",
+      "Bước 3: Tải và Cấu hình Model Embedding"
+    ]
+  },
+  {
+    "index": 627,
+    "rid": "rId65",
+    "image": "image64.png",
+    "context": [
+      "Bước 3: Tải và Cấu hình Model Embedding",
+      "Một model embedding cụ thể từ Hugging Face được chọn: sentence-transformers/paraphrase-multilingual-mpnet-base-v2. Đây là một model đa ngôn ngữ (hỗ trợ tiếng Việt), hiệu quả trong việc hiểu ngữ nghĩa của câu.",
+      " model_kwargs={'device': 'cpu'}: Chỉ định model chạy trên CPU (thay vì GPU)."
+    ]
+  },
+  {
+    "index": 633,
+    "rid": "rId66",
+    "image": "image78.png",
+    "context": [
+      "Qúa trình hoạt động: Model sẽ tự động tải về từ HuggingFace Hub lần đầu tiên. Các lần sau sẽ sử dụng bản đã cache trên máy.",
+      "Bước 4: Tạo FAISS Vector Store",
+      "Vector hóa: Mỗi câu trong `sentences` được chuyển thành vector 768 chiều.",
+      "Index hóa: FAISS tạo cấu trúc index để tìm kiếm nhanh."
+    ]
+  },
+  {
+    "index": 639,
+    "rid": "rId67",
+    "image": "image77.png",
+    "context": [
+      "Cách hoạt động rõ ràng: Nó lấy từng câu trong danh sách sentences. Tiếp theo nó dùng đối tượng embeddings (đã khởi tạo ở Bước 2) để biến mỗi câu thành một vector (một chuỗi số thực). Và cuối cùng Nó lưu trữ 5 vector này vào một chỉ mục (index) của FAISS, sẵn sàng cho việc tìm kiếm.",
+      "Bước 5: Thực Hiện Semantic Search",
+      "Phương thức similarity_search_with_score đầu tiên lấy câu query (\"Những cảm xúc tích cực\").",
+      "Nó sử dụng cùng một model embeddings để biến câu query này thành một vector."
+    ]
+  },
+  {
+    "index": 677,
+    "rid": "rId68",
+    "image": "image57.png",
+    "context": [
+      "Kỹ thuật được sử dụng trong đề tài là RecursiveCharacterTextSplitter.",
+      "     - Thực hành:",
+      "Từ langchain_text_splitters, ta sử dụng class RecursiveCharacterTextSplitter để thực hiện chunking văn bản.",
+      "Tham số quan trọng: chunk_size: độ dài tối đa của mỗi chunk (tính theo ký tự hoặc token, tùy cấu hình) và chunk_overlap: số ký tự (hoặc token) chồng lấn giữa các chunk liên tiếp."
+    ]
+  },
+  {
+    "index": 686,
+    "rid": "rId69",
+    "image": "image56.png",
+    "context": [
+      "Thư viện LangGraph hỗ trợ nhiều công cụ cho quá trình này, từ text splitter để chia nhỏ văn bản cho đến embedding models và vectorstores để lưu trữ. ",
+      "Quy trình cơ bản:",
+      "                 ",
+      "Tải dữ liệu lên có thể là file pdf, docs,….",
+      "Chunking: Dữ liệu văn bản được chia nhỏ thành các đoạn (chunks) để phù hợp với giới hạn token của mô hình – như đã trình bày ở Chương 6."
+    ]
+  },
+  {
+    "index": 693,
+    "rid": "rId70",
+    "image": "image62.png",
+    "context": [
+      "Nhờ quá trình này, hệ thống RAG có thể nhanh chóng truy xuất các đoạn văn bản liên quan, sau đó cung cấp cho LLM để tạo câu trả lời phù hợp và có ngữ cảnh.",
+      "Thực hành trên file pdf:",
+      "      ",
+      "PyPDFLoader đọc nội dung từ file PDF thành danh sách documents.",
+      "Tiếp theo sử dụng RecursiveCharacterTextSplitter chia văn bản thành nhiều đoạn nhỏ để không vượt giới hạn token – chunk."
+    ]
+  },
+  {
+    "index": 708,
+    "rid": "rId71",
+    "image": "image65.png",
+    "context": [
+      "      => Do đó kiến trúc RAG là một giải pháp tối ưu để vừa sử dụng khả năng tạo sinh mạnh mẽ của LLM vừa kết hợp với dữ liệu nội bộ.",
+      "Quy trình cơ bản:",
+      "          ",
+      "Người dùng đưa câu hỏi.",
+      "Hệ thống thực hiện embedding câu hỏi -> tìm các chunks liên quan trong Vector DB -> xếp hạng lại chunks theo mức độ tương đồng và chọn ra “k” chunks có mức độ tương đồng cao nhất."
+    ]
+  },
+  {
+    "index": 708,
+    "rid": "rId72",
+    "image": "image70.png",
+    "context": [
+      "      => Do đó kiến trúc RAG là một giải pháp tối ưu để vừa sử dụng khả năng tạo sinh mạnh mẽ của LLM vừa kết hợp với dữ liệu nội bộ.",
+      "Quy trình cơ bản:",
+      "          ",
+      "Người dùng đưa câu hỏi.",
+      "Hệ thống thực hiện embedding câu hỏi -> tìm các chunks liên quan trong Vector DB -> xếp hạng lại chunks theo mức độ tương đồng và chọn ra “k” chunks có mức độ tương đồng cao nhất."
+    ]
+  },
+  {
+    "index": 717,
+    "rid": "rId73",
+    "image": "image53.png",
+    "context": [
+      "langchain-community cung cấp nhiều tích hợp dữ liệu/vector store. Vị trí import của retriever nâng cao phụ thuộc phiên bản; không giả định chúng nằm trong langgraph-community.",
+      "Thực hành sau khi đã xử lý văn bản và lưu trữ trong FAISS:",
+      "Hàm retrieve với đầu vào là state. Bên trong hàm sử dụng vector_store.similarity_search(...) với câu hỏi từ người dùng. Hàm này sẽ tìm các văn bản trong FAISS có mức độ tương đồng cao nhất với câu hỏi. Kết quả trả về là một danh sách tài liệu liên quan để làm ngữ cảnh.",
+      "Hàm generate với đầu vào là state. Đầu tiên, lấy các tài liệu liên quan đã được trả về từ retrieve. Tiếp theo, dùng prompt.invoke(...) để nhúng câu hỏi và các tài liệu này vào một prompt được định nghĩa sẵn. Sau đó, gọi mô hình ngôn ngữ llm.invoke(...) để sinh câu trả lời dựa trên ngữ cảnh. Cuối cùng, trả về câu trả lời được sinh ra."
+    ]
+  },
+  {
+    "index": 735,
+    "rid": "rId74",
+    "image": "image52.png",
+    "context": [
+      "Các bước thực hiện",
+      "Bước 1: Cài đặt thư viện",
+      "Bước 2:  Import thư viện"
+    ]
+  },
+  {
+    "index": 737,
+    "rid": "rId75",
+    "image": "image55.png",
+    "context": [
+      "Bước 2:  Import thư viện",
+      "Bước 3: Thiết lập API KEY"
+    ]
+  },
+  {
+    "index": 739,
+    "rid": "rId76",
+    "image": "image59.png",
+    "context": [
+      "Bước 3: Thiết lập API KEY",
+      "Cần API key của HuggingFace để sử dụng models",
+      "Lưu API key vào biến môi trường"
+    ]
+  },
+  {
+    "index": 744,
+    "rid": "rId77",
+    "image": "image61.png",
+    "context": [
+      "Có thể lưu trong Colab Secrets để bảo mật hơn",
+      "Bước 4: Kết nối google drive và load pdf",
+      "Bước 5: Chia tài liệu thành chunks (chunking)"
+    ]
+  },
+  {
+    "index": 746,
+    "rid": "rId78",
+    "image": "image51.png",
+    "context": [
+      "Bước 5: Chia tài liệu thành chunks (chunking)",
+      "Tại sao cần Chunking? Bởi vì LLM có giới hạn độ dài input (context window), khi chia nhỏ giúp tìm kiếm chính xác hơn, Mỗi chunk chứa đủ ngữ cảnh để hiểu.",
+      "Tham số quan trọng:"
+    ]
+  },
+  {
+    "index": 753,
+    "rid": "rId79",
+    "image": "image54.png",
+    "context": [
+      "RecursiveCharacterTextSplitter: Chia theo thứ tự ưu tiên (1. Đoạn văn , 2. Câu , 3. Từ , 4. Kí tự) hoặc giữ nguyên cấu trúc văn bản tốt nhất.",
+      "Bước 6:  Vector hóa và lưu vào faiss",
+      "Sử dụng ModelEmbedding:VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Model embedding cho tiếng Việt. Chuyển text thành vector 768 chiều. Vậy vector đầu ra có 768 chiều (mỗi câu/đoạn văn thành một mảng 768 số thực).",
+      " Quá trình Vector hóa (Vectorization): "
+    ]
+  },
+  {
+    "index": 766,
+    "rid": "rId80",
+    "image": "image98.png",
+    "context": [
+      "3. Similarity search: Khi người dùng nhập query (1. Query được embedding → vector 768 chiều, 2. FAISS tìm các vector gần nhất (nearest neighbors) → các chunk có nội dung gần với query). Khoảng cách: thường dùng cosine similarity hoặc L2 distance để đo độ gần.",
+      "Bước 7: Tạo StateGraph cho truy xuất và sinh câu trả lời",
+      "1. LLM: bigscience/mt0-base có 580 triệu tham số; mt0-large mới có 1,2 tỷ tham số. Ví dụ dùng mt0-base qua Transformers trên CPU; model card: https://huggingface.co/bigscience/mt0-base.",
+      "max_new_tokens=256 giới hạn số token mới sinh. device=-1 chọn CPU trong Transformers pipeline; device=0 chọn GPU thứ nhất nếu có. Với giải mã không lấy mẫu (do_sample=False), temperature không điều khiển lấy mẫu; muốn dùng temperature cần bật do_sample=True."
+    ]
+  },
+  {
+    "index": 772,
+    "rid": "rId81",
+    "image": "image89.png",
+    "context": [
+      "Mã minh họa dùng RAGState, node retrieve và node generate với luồng START → retrieve → generate → END. Cần chuẩn bị retriever từ FAISS và llm đã cấu hình trước khi chạy. Ví dụ không có node chấm context hoặc kiểm chứng câu trả lời, không dùng RetrievalQA/chain_type=\"stuff\". Lưu context trong State để quan sát; muốn trả nguồn cần bổ sung trường source_documents.",
+      "Bước 8: Gọi đồ thị RAG bằng State đầu vào",
+      "Kết quả lưu từ phiên bản RetrievalQA cũ: ảnh bên dưới không phải lần chạy của mã StateGraph đã sửa. Cần chạy lại với tài liệu và mô hình thực để thu kết quả mới; không dùng ảnh này để xác nhận phiên bản sửa đã thành công."
+    ]
+  },
+  {
+    "index": 774,
+    "rid": "rId82",
+    "image": "image93.png",
+    "context": [
+      "Kết quả lưu từ phiên bản RetrievalQA cũ: ảnh bên dưới không phải lần chạy của mã StateGraph đã sửa. Cần chạy lại với tài liệu và mô hình thực để thu kết quả mới; không dùng ảnh này để xác nhận phiên bản sửa đã thành công.",
+      "Chương 8: Memory cho hội thoại",
+      "Memory giúp lưu trữ và quản lý ngữ cảnh hội thoại."
+    ]
+  },
+  {
+    "index": 786,
+    "rid": "rId83",
+    "image": "image82.png",
+    "context": [
+      "Bộ nhớ phiên ở RAM, mất khi restart; chưa có MySQL lưu bền vững. Các ảnh ConversationBufferWindowMemory dưới đây là ví dụ LangChain riêng, không chứng minh bộ nhớ của ứng dụng cuối.",
+      "Thực hành: Sử dụng ConversationBufferWindowMemory mô phỏng cuộc hội thoại.",
+      "Cài các phiên bản tương thích và ghi lại requirements để tái hiện. Nâng tất cả lên bản mới nhất có thể gây lỗi với ví dụ LangChain đời cũ; không xem upgrade là cách bảo đảm hết xung đột."
+    ]
+  },
+  {
+    "index": 788,
+    "rid": "rId84",
+    "image": "image97.png",
+    "context": [
+      "Cài các phiên bản tương thích và ghi lại requirements để tái hiện. Nâng tất cả lên bản mới nhất có thể gây lỗi với ví dụ LangChain đời cũ; không xem upgrade là cách bảo đảm hết xung đột.",
+      "import các thư viện cần thiết như: ConversationChain dùng cho hội thoại, nhận 1 input và trả về 1 output tích hợp với loại memory ConversationBufferWindowMemory chỉ giữ k lượt memory gần nhất.",
+      "hàm create_conversation_chain dùng để tạo conversation với k và model tuỳ chọn, model dùng ở đây là “bigscience/mt0-base” - một mô hình ngôn ngữ mã nguồn mở do cộng đồng BigScience phát triển, được lưu trữ trên nền tảng Hugging Face có thể sử dụng mà không cần key."
+    ]
+  },
+  {
+    "index": 793,
+    "rid": "rId85",
+    "image": "image85.png",
+    "context": [
+      "memory = ConversationBufferWindowMemory(k=k_value) — tạo memory giữ đúng k lượt (mỗi lượt = user+assistant).",
+      "conv = ConversationChain(llm=llm, memory=memory, verbose=False) — tạo chain hội thoại nối LLM + Memory.",
+      "system_prompt là instruction cố định cho bot, đảm bảo bot trả lời theo phong cách người dùng mong muốn (ngắn gọn, thân thiện và bằng tiếng Việt).",
+      "Biến inputs dùng để tạo bộ câu hỏi cố định phục vụ cho việc so sánh và đánh giá."
+    ]
+  },
+  {
+    "index": 797,
+    "rid": "rId86",
+    "image": "image95.png",
+    "context": [
+      "Biến inputs dùng để tạo bộ câu hỏi cố định phục vụ cho việc so sánh và đánh giá.",
+      "2 dòng print ở dưới dùng để in kiểm tra lại xem prompt và câu hỏi đã đúng với yêu cầu hay chưa. ",
+      "Vòng lặp for duyệt qua lần lượt k = 1, 2, 3 để thực hiện so sánh.",
+      "Tạo chuỗi hội thoại memory với k_value = k để chỉ định chatbot sẽ nhớ bao nhiêu lượt hội thoại gần nhất."
+    ]
+  },
+  {
+    "index": 803,
+    "rid": "rId87",
+    "image": "image91.png",
+    "context": [
+      "conv.memory.buffer là phần lưu trữ nội dung hội thoại mà bot còn nhớ. Sau mỗi lượt, sẽ in ra bộ nhớ này để kiểm tra chatbot đang lưu giữ những câu nào.",
+      "Kết quả:"
+    ]
+  },
+  {
+    "index": 804,
+    "rid": "rId88",
+    "image": "image81.png",
+    "context": [
+      "Kết quả:",
+      "Các ảnh dưới đây minh họa dữ liệu còn trong buffer với k = 1, 2, 3. Chúng chưa đủ để chấm mô hình sử dụng lịch sử đúng; cần đọc câu trả lời ở lượt tiếp nối theo đáp án kỳ vọng."
+    ]
+  },
+  {
+    "index": 805,
+    "rid": "rId89",
+    "image": "image101.png",
+    "context": [
+      "Các ảnh dưới đây minh họa dữ liệu còn trong buffer với k = 1, 2, 3. Chúng chưa đủ để chấm mô hình sử dụng lịch sử đúng; cần đọc câu trả lời ở lượt tiếp nối theo đáp án kỳ vọng.",
+      "k = 1: buffer chỉ giữ lượt gần nhất trong ví dụ. Không suy ra mô hình trả lời đúng câu hỏi về màu sắc chỉ từ nội dung buffer."
+    ]
+  },
+  {
+    "index": 834,
+    "rid": "rId90",
+    "image": "image83.png",
+    "context": [
+      "Mã minh họa hiện chỉ tìm các nội dung gần câu hỏi trong FAISS; chưa đối chiếu ngưỡng, chưa trả lại đáp án cache và chưa ghi cặp hỏi–đáp mới.",
+      "Thực hành : tập trung vào đọc dữ liệu từ MySQL, lưu trữ vào FAISS và tìm kiếm:",
+      "                ",
+      "Ảnh mã thực tế gọi SELECT * FROM caching rồi lấy row[1]. Bình luận trong ảnh gọi bảng documents không khớp câu SQL. Chưa có schema để xác nhận row[1] là cột nào; ví dụ chỉ được ghi nhận là đọc dữ liệu và tìm gần trong FAISS, không dùng để chứng minh cache hỏi–đáp hoàn chỉnh.",
+      "Sau đó sẽ lấy hết dữ liệu từ bảng đó rồi embedding thành vector."
+    ]
+  },
+  {
+    "index": 838,
+    "rid": "rId91",
+    "image": "image72.png",
+    "context": [
+      "Sau đó sẽ lấy hết dữ liệu từ bảng đó rồi embedding thành vector.",
+      "Cuối cùng là lưu trữ vào FAISS.",
+      "            ",
+      "Sau khi load dữ liệu và nhúng (embedding) vào FAISS, ta có một cơ sở dữ liệu vector để truy xuất nhanh.",
+      "similarity_search trả tài liệu liên quan theo top-k. Kết quả này là đầu vào cho retrieval, chưa đủ bằng chứng xác nhận cache hit."
+    ]
+  },
+  {
+    "index": 871,
+    "rid": "rId92",
+    "image": "image80.png",
+    "context": [
+      "Tool search_web: giúp tìm kiếm các bộ phim hay câu truyện động lực để gợi ý cho người dùng xem/đọc.",
+      "Thực hành code mẫu: tạo agent để điều hướng các tool :",
+      "      ",
+      "Ảnh tham khảo dùng create_react_agent từ langgraph.prebuilt. API này đã bị đánh dấu deprecated trong v1; tài liệu khuyến nghị langchain.agents.create_agent. Có thể dùng StateGraph trực tiếp khi cần kiểm soát luồng.",
+      "Ảnh tham khảo trên minh họa LLMTool và RetrieverTool; đây là ví dụ riêng, không phải danh sách công cụ của ứng dụng cuối."
+    ]
+  },
+  {
+    "index": 876,
+    "rid": "rId93",
+    "image": "image76.png",
+    "context": [
+      "Mô hình gpt-4o-mini trong ảnh thuộc ví dụ tham khảo. Các lần đo thật của ứng dụng ở Chương 13 dùng Groq openai/gpt-oss-20b; không gán cấu hình ảnh cũ cho log mới.",
+      "Thực hành: sửa Agent tính toán bằng StateGraph và tool calling; đối chiếu các lần chạy lỗi của phiên bản cũ.",
+      "Cài langgraph và langchain-groq cho ví dụ Agent tính toán."
+    ]
+  },
+  {
+    "index": 878,
+    "rid": "rId94",
+    "image": "image86.png",
+    "context": [
+      "Cài langgraph và langchain-groq cho ví dụ Agent tính toán.",
+      "ChatGroq từ langchain_groq gọi mô hình qua API Groq bên trong node. Đổi tên mô hình qua biến môi trường GROQ_MODEL theo mô hình được tài khoản hỗ trợ. Ví dụ chưa được xác nhận bằng lần gọi Groq thực tế.",
+      "Vì lý do bảo mật, API Key không được ghi trực tiếp trong mã nguồn mà được nhập thông qua lệnh getpass(), giúp ẩn giá trị khi người dùng nhập và tránh rò rỉ khóa truy cập trong môi trường thực thi."
+    ]
+  },
+  {
+    "index": 881,
+    "rid": "rId95",
+    "image": "image73.png",
+    "context": [
+      "ChatGroq từ langchain_groq gọi mô hình qua API Groq bên trong node. Đổi tên mô hình qua biến môi trường GROQ_MODEL theo mô hình được tài khoản hỗ trợ. Ví dụ chưa được xác nhận bằng lần gọi Groq thực tế.",
+      "Vì lý do bảo mật, API Key không được ghi trực tiếp trong mã nguồn mà được nhập thông qua lệnh getpass(), giúp ẩn giá trị khi người dùng nhập và tránh rò rỉ khóa truy cập trong môi trường thực thi.",
+      "Định nghĩa add và multiply bằng @tool từ langchain_core.tools. bind_tools cung cấp lược đồ công cụ cho chat model có hỗ trợ tool calling."
+    ]
+  },
+  {
+    "index": 883,
+    "rid": "rId96",
+    "image": "image79.png",
+    "context": [
+      "Định nghĩa add và multiply bằng @tool từ langchain_core.tools. bind_tools cung cấp lược đồ công cụ cho chat model có hỗ trợ tool calling.",
+      "Xây dựng vòng lặp assistant → tools → assistant bằng StateGraph. tools_condition kết thúc khi không còn tool_calls.",
+      "Đây là mẫu minh họa LLM tool calling, chưa dùng làm bằng chứng model tự chọn công cụ. ToolNode thực thi tool_calls; recursion_limit chỉ giới hạn số bước. Phần kiểm chứng của đồ án giữ ở executor add/multiply riêng và router theo luật tại mục 13.5."
+    ]
+  },
+  {
+    "index": 889,
+    "rid": "rId97",
+    "image": "image68.png",
+    "context": [
+      "Nếu phản hồi chứa tool_calls, tools_condition chọn node tools; nếu không, đồ thị kết thúc.",
+      "Các ảnh lỗi dưới đây thuộc AgentExecutor cũ. Mục 13.5 có trace executor StructuredTool/StateGraph: add, multiply, tham số sai và tràn số đều đạt điều kiện kỳ vọng, không gọi LLM. Đây chưa phải bằng chứng Groq tự chọn tool đúng.",
+      "Lần chạy cũ: yêu cầu “Tính 5 + 6” bằng agent_executor. Ảnh tiếp theo ghi lỗi parser; đáp án kỳ vọng là 11."
+    ]
+  },
+  {
+    "index": 891,
+    "rid": "rId98",
+    "image": "image74.png",
+    "context": [
+      "Lần chạy cũ: yêu cầu “Tính 5 + 6” bằng agent_executor. Ảnh tiếp theo ghi lỗi parser; đáp án kỳ vọng là 11.",
+      "Ảnh hiển thị OutputParserException: Could not parse LLM output. Lần chạy không hoàn tất thành công; dù văn bản mô hình nhắc số 11, ảnh không chứng minh add đã được thực thi. Giữ ảnh làm bằng chứng lỗi của phiên bản cũ, không coi là kết quả của mã StateGraph mới."
+    ]
+  },
+  {
+    "index": 893,
+    "rid": "rId99",
+    "image": "image84.png",
+    "context": [
+      "Ảnh hiển thị OutputParserException: Could not parse LLM output. Lần chạy không hoàn tất thành công; dù văn bản mô hình nhắc số 11, ảnh không chứng minh add đã được thực thi. Giữ ảnh làm bằng chứng lỗi của phiên bản cũ, không coi là kết quả của mã StateGraph mới.",
+      "Lần chạy cũ: yêu cầu “Tính 5 * 6” bằng agent_executor. Đáp án kỳ vọng là 30; cần đọc trạng thái lỗi trong ảnh."
+    ]
+  },
+  {
+    "index": 895,
+    "rid": "rId100",
+    "image": "image71.png",
+    "context": [
+      "Lần chạy cũ: yêu cầu “Tính 5 * 6” bằng agent_executor. Đáp án kỳ vọng là 30; cần đọc trạng thái lỗi trong ảnh.",
+      "Ảnh báo OutputParserException, chưa xác nhận Agent gọi multiply thành công. Số 30 trong văn bản sinh không thay thế trace thực thi tool. Đồ án chỉ xác nhận multiply qua executor riêng ở 13.5, chưa đo khả năng chọn công cụ của LLM."
+    ]
+  },
+  {
+    "index": 897,
+    "rid": "rId101",
+    "image": "image75.png",
+    "context": [
+      "Ảnh báo OutputParserException, chưa xác nhận Agent gọi multiply thành công. Số 30 trong văn bản sinh không thay thế trace thực thi tool. Đồ án chỉ xác nhận multiply qua executor riêng ở 13.5, chưa đo khả năng chọn công cụ của LLM.",
+      "Lần chạy cũ: yêu cầu “Tính (2 + 3) * 4”. Luồng kỳ vọng là add(2, 3) rồi multiply(5, 4), đáp án 20."
+    ]
+  },
+  {
+    "index": 899,
+    "rid": "rId102",
+    "image": "image88.png",
+    "context": [
+      "Lần chạy cũ: yêu cầu “Tính (2 + 3) * 4”. Luồng kỳ vọng là add(2, 3) rồi multiply(5, 4), đáp án 20.",
+      "Ảnh cũ báo lỗi parser, chưa chứng minh chuỗi add rồi multiply đã chạy. Bộ kiểm tra 13.5 truyền sẵn tên/arguments cho đồ thị toán riêng; router chatbot không gắn đồ thị này. Kết quả không xác nhận model điều phối biểu thức (2 + 3) × 4.",
+      "Chương 11: Tích hợp API và Triển khai."
+    ]
+  },
+  {
+    "index": 908,
+    "rid": "rId103",
+    "image": "image90.png",
+    "context": [
+      "Mục đích sử dụng FastAPI thay vì LangServe là FastAPI linh hoạt và dễ tích hợp với giao diện.",
+      "Code mẫu sử dụng LangServe kết hợp FastAPi để tạo route:",
+      "Đầu tiên cần cài đặt các thư viện như trên ảnh code.",
+      "Tiếp theo import các thư viện và Agent hoặc rag_chain thực tế. Trong code đang sử dụng agent."
+    ]
+  },
+  {
+    "index": 921,
+    "rid": "rId103",
+    "image": "image90.png",
+    "context": [
+      "Sau khi chạy, có thể truy cập: http://localhost:8000/chat/playground để xem giao diện kiểm thử API tự động.",
+      "Code mẫu sử dụng API:",
+      "            ",
+      "Sử dụng class FastAPI để khởi tạo đối tượng ứng dụng app.",
+      "ChatOpenAI từ langchain_openai khởi tạo mô hình gpt-4o-mini. Đây là lớp tích hợp nhà cung cấp; ví dụ FastAPI này gọi mô hình trực tiếp, chưa xây dựng StateGraph."
+    ]
+  },
+  {
+    "index": 928,
+    "rid": "rId106",
+    "image": "image87.png",
+    "context": [
+      "Thực hành: Xây dựng API Mục tiêu: Triển khai một chain thành một API. Tạo một endpoint API /ask_document (phương thức POST). ",
+      "Từ phần thực hành chương 6 & 7, nhóm em thực hiện được một kiến trúc RAG để sử dụng truy vấn tài liệu làm ngữ cảnh cho LLM trả lời. Nhóm em đã biến đổi thành một class tool là RAGTOOL.",
+      "File main.py: Đây là file chịu trách nhiệm xây dựng API với endpoint /ask_document:",
+      "Trước hết, FastAPI được sử dụng để khởi tạo ứng dụng (app)."
+    ]
+  },
+  {
+    "index": 937,
+    "rid": "rId107",
+    "image": "image94.png",
+    "context": [
+      "Cuối cùng, endpoint /ask_document được tạo, nhận đầu vào là một đối tượng MessageIn và trả về MessageOut.Trong hàm xử lý của endpoint này, phương thức _run() của đối tượng rag_tool được gọi để sinh ra và trả về câu trả lời tương ứng.",
+      "Kết quả đạt được: ",
+      "Nhóm em đã thiết kế một giao diện đơn giản nhằm hỗ trợ việc giao tiếp với endpoint /ask_document đã xây dựng Giao diện cho phép người dùng nhập câu hỏi, sau đó gửi yêu cầu (request) chứa nội dung câu hỏi đó đến endpoint dưới dạng JSON. Qua hình ảnh kết quả cho thấy: "
+    ]
+  },
+  {
+    "index": 938,
+    "rid": "rId108",
+    "image": "image96.png",
+    "context": [
+      "Kết quả đạt được: ",
+      "Nhóm em đã thiết kế một giao diện đơn giản nhằm hỗ trợ việc giao tiếp với endpoint /ask_document đã xây dựng Giao diện cho phép người dùng nhập câu hỏi, sau đó gửi yêu cầu (request) chứa nội dung câu hỏi đó đến endpoint dưới dạng JSON. Qua hình ảnh kết quả cho thấy: ",
+      "Ảnh cho thấy giao diện nhận phản hồi qua API /ask_document tham khảo. Muốn xác nhận đường gọi công cụ phải đối chiếu trace, không chỉ dựa vào HTTP 200. API /chatbot hiện dùng hợp đồng lỗi riêng: ok/refused/error, mã HTTP và retry/timeout ở 13.8."
+    ]
+  },
+  {
+    "index": 967,
+    "rid": "rId109",
+    "image": "image103.png",
+    "context": [
+      "Backend / FastAPI: Tiếp nhận request, truyền tới layer xử lý hội thoại.",
+      "* Pipeline chính: ",
+      "Frontend gửi yêu cầu tới /chatbot; backend gọi StateGraph và trả response cùng status, định danh trace, nguồn và usage. Các lỗi kỹ thuật trả mã HTTP lỗi thay vì câu xin lỗi trong HTTP 200.",
+      "* Pipeline điều phối theo luật:"
+    ]
+  },
+  {
+    "index": 970,
+    "rid": "rId110",
+    "image": "image99.png",
+    "context": [
+      "Frontend gửi yêu cầu tới /chatbot; backend gọi StateGraph và trả response cùng status, định danh trace, nguồn và usage. Các lỗi kỹ thuật trả mã HTTP lỗi thay vì câu xin lỗi trong HTTP 200.",
+      "* Pipeline điều phối theo luật:",
+      "Workflow bản chọn: START → classify → answer/rag/web/refuse; rag/web chuyển nguồn tới grounded rồi END hoặc refuse. classify dùng mode/từ khóa; yêu cầu chẩn đoán/kê thuốc ngoài phạm vi đi refuse. Nguồn thiếu, JSON sai hoặc citation không hợp lệ cũng đi refuse. RAG/web 28/10 dùng cùng 9 file runtime; số liệu ở 13.3–13.4, định danh ở 13.9.",
+      "Pipeline RAG tham khảo dưới đây không thay trace ứng dụng cuối. Bản chọn kiểm tra citation ID/quote, chuẩn hóa whitespace/bullet và trả span gốc, không đổi từ, số hoặc đơn vị. RAG đã có 13 phiếu người chấm; web có 4 phiếu qua hội thoại có Codex hỗ trợ (13.10 và 13.4). Đây là demo tham khảo, chưa kết luận hiệu quả hỗ trợ tâm lý."
+    ]
+  },
+  {
+    "index": 973,
+    "rid": "rId111",
+    "image": "image102.png",
+    "context": [
+      "Workflow bản chọn: START → classify → answer/rag/web/refuse; rag/web chuyển nguồn tới grounded rồi END hoặc refuse. classify dùng mode/từ khóa; yêu cầu chẩn đoán/kê thuốc ngoài phạm vi đi refuse. Nguồn thiếu, JSON sai hoặc citation không hợp lệ cũng đi refuse. RAG/web 28/10 dùng cùng 9 file runtime; số liệu ở 13.3–13.4, định danh ở 13.9.",
+      "Pipeline RAG tham khảo dưới đây không thay trace ứng dụng cuối. Bản chọn kiểm tra citation ID/quote, chuẩn hóa whitespace/bullet và trả span gốc, không đổi từ, số hoặc đơn vị. RAG đã có 13 phiếu người chấm; web có 4 phiếu qua hội thoại có Codex hỗ trợ (13.10 và 13.4). Đây là demo tham khảo, chưa kết luận hiệu quả hỗ trợ tâm lý.",
+      "Chương 13: Triển khai và kết quả.",
+      "a) Cấu trúc thư mục bản bàn giao"
+    ]
+  },
+  {
+    "index": 976,
+    "rid": "rId112",
+    "image": "image104.png",
+    "context": [
+      "Chương 13: Triển khai và kết quả.",
+      "a) Cấu trúc thư mục bản bàn giao",
+      "Ảnh trên là cấu trúc cũ backend_fastapi. Bản chọn đặt main.py và các module ở gốc; frontend/ là giao diện, benchmarks/ là mã đo, handover/ là minh chứng.",
+      "agent.py: tạo StateGraph định tuyến theo luật và các node trả lời/truy xuất/từ chối."
+    ]
+  },
+  {
+    "index": 994,
+    "rid": "rId113",
+    "image": "image100.png",
+    "context": [
+      "c) Demo sản phẩm:",
+      "Thực thi ứng dụng chatbot với pipeline đề cập ở chương 12:",
+      "Ảnh Agent với llama-3.1-8b-instant là minh họa lịch sử, thiếu định danh để ghép chắc chắn với log. Các lần đo thật dùng openai/gpt-oss-20b; đối chiếu phiên bản/trace tại 13.9, không gán kết quả mới cho ảnh cũ.",
+      "RAGTOOL: tool truy vấn dữ liệu để làm ngữ cảnh trả lời những câu hỏi về những thông tin nội bộ cụ thể trong demo này là tài về hít thở sâu."
+    ]
+  },
+  {
+    "index": 1000,
+    "rid": "rId114",
+    "image": "image92.png",
+    "context": [
+      "Nếu không chọn nhánh RAG/web/từ chối, router chuyển sang answer để model trả lời trực tiếp.",
+      "Đây là đoạn code nhóm em sử dụng FastAPI để xây dựng endpoint giao tiếp với phía giao diện:",
+      "Endpoint với tên là “/chatbot” sẽ nhận câu hỏi từ phía giao diện và gọi tới agent để tạo ra câu trả lời. Sau đó gửi câu trả lời này về phía giao diện."
+    ]
+  },
+  {
+    "index": 1004,
+    "rid": "rId115",
+    "image": "image105.png",
+    "context": [
+      "Endpoint với tên là “/chatbot” sẽ nhận câu hỏi từ phía giao diện và gọi tới agent để tạo ra câu trả lời. Sau đó gửi câu trả lời này về phía giao diện.",
+      "Kết quả như hai hình dưới đây:",
+      "Ảnh và log “Đang gọi tới RAG”, Groq và /chatbot 200 cho thấy đã gọi nhánh RAG ở bản cũ. Thiếu định danh và nguồn đối chiếu nên chưa đủ chấm chất lượng.",
+      "Ảnh câu “bạn có khỏe không” có phản hồi; thiếu trace nên chưa xác định chắc chắn toàn bộ đường đi."
+    ]
+  },
+  {
+    "index": 1004,
+    "rid": "rId116",
+    "image": "image107.png",
+    "context": [
+      "Endpoint với tên là “/chatbot” sẽ nhận câu hỏi từ phía giao diện và gọi tới agent để tạo ra câu trả lời. Sau đó gửi câu trả lời này về phía giao diện.",
+      "Kết quả như hai hình dưới đây:",
+      "Ảnh và log “Đang gọi tới RAG”, Groq và /chatbot 200 cho thấy đã gọi nhánh RAG ở bản cũ. Thiếu định danh và nguồn đối chiếu nên chưa đủ chấm chất lượng.",
+      "Ảnh câu “bạn có khỏe không” có phản hồi; thiếu trace nên chưa xác định chắc chắn toàn bộ đường đi."
+    ]
+  }
+]

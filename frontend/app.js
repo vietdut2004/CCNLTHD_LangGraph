@@ -1,219 +1,214 @@
-'use strict';
+"use strict";
 
-(() => {
-  const STORAGE_KEY = 'sgu-chat-report-ui-v1';
-  const greeting = 'Chào bạn! Hôm nay bạn cảm thấy thế nào? Cứ thoải mái chia sẻ với mình nhé.';
-  const messages = document.getElementById('messages');
-  const input = document.getElementById('message-input');
-  const sendButton = document.getElementById('send-button');
-  const connectionStatus = document.getElementById('connection-status');
-  let sending = false;
+const messages = document.getElementById("messages");
+const form = document.getElementById("chat-form");
+const question = document.getElementById("question");
+const send = document.getElementById("send");
+const newChat = document.getElementById("new-chat");
+const errorBox = document.getElementById("error");
+const connection = document.getElementById("connection");
+const activity = document.getElementById("activity");
+const conversation = document.getElementById("conversation");
+const STORAGE_KEY = "support-chat-thread";
+const GREETING = "Chào bạn! Hôm nay bạn cảm thấy thế nào? Cứ thoải mái chia sẻ với mình nhé.";
+let threadId = null;
+let busy = false;
 
-  function randomId() {
-    if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
-    return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
+// Only the thread ID is stored in this tab. Message history belongs to LangGraph.
+function savedThread() {
+  try { return sessionStorage.getItem(STORAGE_KEY); } catch { return null; }
+}
+function saveThread(id) {
+  try {
+    if (id) sessionStorage.setItem(STORAGE_KEY, id);
+    else sessionStorage.removeItem(STORAGE_KEY);
+  } catch { /* The chat still works when browser storage is unavailable. */ }
+}
+
+function runErrorMessage(error) {
+  // Agent Server reports the exception class separately from its raw message.
+  // Never show the raw provider message: it can contain credentials or input.
+  const type = error && typeof error === "object" ? error.error : null;
+  switch (type) {
+    case "APIConnectionError":
+      return "Máy chủ không kết nối được dịch vụ AI. Hãy kiểm tra kết nối Internet của máy đang chạy chatbot rồi thử lại.";
+    case "APITimeoutError":
+    case "TimeoutError":
+      return "Dịch vụ AI phản hồi quá thời gian chờ. Vui lòng thử lại sau.";
+    case "AuthenticationError":
+    case "PermissionDeniedError":
+      return "Chưa xác thực được quyền truy cập dịch vụ AI. Hãy kiểm tra GROQ_API_KEY và quyền truy cập mô hình trong file .env.";
+    case "RateLimitError":
+      return "Dịch vụ AI đã chạm giới hạn sử dụng. Vui lòng đợi hạn mức được khôi phục hoặc kiểm tra hạn mức tài khoản Groq.";
+    default:
+      return "Trợ lý chưa thể trả lời. Hãy kiểm tra cấu hình dịch vụ hoặc thử lại sau.";
   }
+}
 
-  function readConversation() {
-    try {
-      const stored = JSON.parse(sessionStorage.getItem(STORAGE_KEY));
-      if (stored && typeof stored.userId === 'string' && typeof stored.sessionId === 'string' && Array.isArray(stored.turns)) {
-        return stored;
-      }
-    } catch { /* A blocked or full browser store must not prevent chatting. */ }
-    return { userId: `browser-${randomId()}`, sessionId: randomId(), turns: [] };
-  }
-
-  const conversation = readConversation();
-  document.getElementById('conversation-id').textContent = conversation.sessionId;
-
-  function saveConversation() {
-    try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(conversation)); }
-    catch { /* Keep the current in-memory conversation when browser storage is unavailable. */ }
-  }
-
-  function scrollToLatest() { messages.scrollTop = messages.scrollHeight; }
-
-  function safeUrl(value) {
-    if (typeof value !== 'string') return null;
-    try {
-      const url = new URL(value);
-      return ['https:', 'http:'].includes(url.protocol) ? url.href : null;
-    } catch { return null; }
-  }
-
-  function showEvidence(bubble, result, httpStatus, elapsedMs) {
-    const sources = Array.isArray(result.sources) ? result.sources : [];
-    if (!sources.length && !result.trace_id && !result.code) return;
-    const details = document.createElement('details');
-    details.className = 'response-details';
-    const summary = document.createElement('summary');
-    summary.textContent = sources.length ? `Nguồn tham khảo (${sources.length}) · Chi tiết` : 'Chi tiết phản hồi';
-    details.append(summary);
-
-    if (sources.length) {
-      const list = document.createElement('ol');
-      list.className = 'source-list';
-      for (const source of sources) {
-        if (!source || typeof source !== 'object') continue;
-        const item = document.createElement('li');
-        const title = [source.title || source.id || 'Nguồn', source.page ? `trang ${source.page}` : null].filter(Boolean).join(' · ');
-        const url = safeUrl(source.url);
-        const label = document.createElement(url ? 'a' : 'span');
-        label.className = 'source-title';
-        label.textContent = title;
-        if (url) {
-          label.href = url;
-          label.target = '_blank';
-          label.rel = 'noopener noreferrer';
-        }
-        item.append(label);
-        if (typeof source.quote === 'string' && source.quote) {
-          const quote = document.createElement('blockquote');
-          quote.className = 'source-quote';
-          quote.textContent = source.quote;
-          item.append(quote);
-        }
-        if (typeof source.retrieved_at === 'string' && source.retrieved_at) {
-          const time = document.createElement('div');
-          time.className = 'source-time';
-          time.textContent = `Truy xuất: ${source.retrieved_at}`;
-          item.append(time);
-        }
-        list.append(item);
-      }
-      details.append(list);
-    }
-
-    const trace = document.createElement('pre');
-    trace.className = 'trace-data';
-    trace.textContent = JSON.stringify({
-      http_status: httpStatus,
-      status: result.status ?? null,
-      code: result.code ?? null,
-      trace_id: result.trace_id ?? null,
-      route: result.route ?? null,
-      model_id: result.model_id ?? null,
-      graph_id: result.graph_id ?? null,
-      latency_ms_browser: elapsedMs,
-      usage: result.usage ?? null
-    }, null, 2);
-    details.append(trace);
-    bubble.append(details);
-  }
-
-  function appendMessage(turn) {
-    const row = document.createElement('div');
-    row.className = `message-row ${turn.role === 'user' ? 'user' : 'assistant'}${turn.error ? ' error' : ''}${turn.pending ? ' pending' : ''}`;
-    const bubble = document.createElement('div');
-    bubble.className = 'bubble';
-    const text = document.createElement('p');
-    text.className = 'message-text';
-    text.textContent = turn.text;
-    bubble.append(text);
-    if (turn.result) showEvidence(bubble, turn.result, turn.httpStatus, turn.elapsedMs);
-    row.append(bubble);
-    messages.append(row);
-    scrollToLatest();
-    return row;
-  }
-
-  function errorText(code) {
-    const descriptions = {
-      CONFIG_GROQ_MISSING: 'Chưa cấu hình khóa API cho chatbot. Bạn hãy kiểm tra cấu hình trên máy chạy rồi thử lại.',
-      CONFIG_TAVILY_MISSING: 'Chưa cấu hình tìm kiếm web. Bạn hãy kiểm tra khóa Tavily trên máy chạy rồi thử lại.',
-      UPSTREAM_AUTH: 'Dịch vụ tạo câu trả lời chưa xác thực được. Bạn hãy kiểm tra khóa API trên máy chạy.',
-      UPSTREAM_QUOTA: 'Dịch vụ đang giới hạn lượt sử dụng. Bạn đợi một lát rồi gửi lại nhé.',
-      UPSTREAM_TIMEOUT: 'Chatbot mất nhiều thời gian hơn dự kiến. Bạn có thể thử gửi lại câu hỏi.',
-      RAG_SOURCE_MISSING: 'Chưa tìm thấy tài liệu trên máy chạy. Bạn hãy kiểm tra lại tệp PDF.',
-      INVALID_REQUEST: 'Câu hỏi chưa hợp lệ. Bạn kiểm tra lại nội dung rồi gửi lại nhé.',
-      SESSION_LIMIT: 'Máy chạy đang có nhiều phiên trò chuyện. Bạn hãy khởi động lại ứng dụng rồi thử lại.'
-    };
-    return descriptions[code] || 'Mình chưa nhận được câu trả lời từ dịch vụ. Bạn thử lại sau nhé.';
-  }
-
-  appendMessage({ role: 'assistant', text: greeting });
-  for (const turn of conversation.turns) {
-    if (turn && ['user', 'assistant'].includes(turn.role) && typeof turn.text === 'string') appendMessage(turn);
-  }
-  saveConversation();
-
-  fetch('/health').then(async response => {
-    if (!response.ok) throw new Error('health');
-    const health = await response.json();
-    if (health.fixture) {
-      connectionStatus.textContent = 'Đang chạy chế độ kiểm thử giả lập; phản hồi không phải kết quả model thật.';
-      connectionStatus.hidden = false;
-    } else if (!health.configured) {
-      connectionStatus.textContent = 'Máy chạy chưa có khóa API. Bạn cần cấu hình trước khi trò chuyện.';
-      connectionStatus.hidden = false;
-    }
-  }).catch(() => {
-    connectionStatus.textContent = 'Chưa kết nối được máy chạy chatbot. Bạn kiểm tra lại chương trình nhé.';
-    connectionStatus.hidden = false;
+async function api(path, body) {
+  const response = await fetch(path, body === undefined ? {} : {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
   });
-
-  function resizeInput() {
-    input.style.height = '46px';
-    input.style.height = `${Math.min(Math.max(input.scrollHeight, 46), 160)}px`;
+  if (!response.ok) {
+    const error = new Error(response.status === 404
+      ? "Cuộc trò chuyện không còn tồn tại. Hãy tạo cuộc trò chuyện mới."
+      : "Chưa thể xử lý yêu cầu. Vui lòng thử lại sau.");
+    error.status = response.status;
+    throw error;
   }
-  input.addEventListener('input', resizeInput);
-  input.addEventListener('keydown', event => {
-    if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
-      event.preventDefault();
-      if (!sending) document.getElementById('chat-form').requestSubmit();
-    }
-  });
+  const data = await response.json();
+  if (data.__error__) throw new Error(runErrorMessage(data.__error__));
+  return data;
+}
 
-  document.getElementById('chat-form').addEventListener('submit', async event => {
+function contentText(content) {
+  if (typeof content === "string") return content;
+  if (!Array.isArray(content)) return "";
+  return content.filter(block => block.type === "text").map(block => block.text || "").join("\n");
+}
+
+function addMessage(role, text) {
+  const bubble = document.createElement("div");
+  bubble.className = `message ${role}`;
+  // Text nodes prevent model output or user input from becoming executable HTML.
+  const urlPattern = /https?:\/\/[^\s<>]+/g;
+  let offset = 0;
+  for (const match of text.matchAll(urlPattern)) {
+    const url = match[0].replace(/[.,;:!?)\]]+$/, "");
+    bubble.append(document.createTextNode(text.slice(offset, match.index)));
+    const link = document.createElement("a");
+    link.href = url;
+    link.textContent = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    bubble.append(link);
+    offset = match.index + url.length;
+  }
+  bubble.append(document.createTextNode(text.slice(offset)));
+  messages.append(bubble);
+  messages.scrollTop = messages.scrollHeight;
+  return bubble;
+}
+
+function renderHistory(history = []) {
+  messages.replaceChildren();
+  addMessage("assistant", GREETING);
+  for (const message of history) {
+    const role = message.type || message.role;
+    if (!["human", "user", "ai", "assistant"].includes(role)) continue;
+    if (message.tool_calls?.length) continue;
+    const text = contentText(message.content);
+    if (text) addMessage(["human", "user"].includes(role) ? "user" : "assistant", text);
+  }
+}
+
+function setBusy(value, label = "") {
+  busy = value;
+  send.disabled = value;
+  newChat.disabled = value;
+  question.readOnly = value;
+  activity.textContent = label;
+  form.setAttribute("aria-busy", String(value));
+}
+
+function showError(error) {
+  errorBox.textContent = error instanceof TypeError
+    ? "Không kết nối được máy chủ. Hãy kiểm tra chương trình đang chạy và thử lại."
+    : error.message;
+  errorBox.hidden = false;
+}
+
+async function initialize(fresh = false) {
+  setBusy(true, "Đang mở cuộc trò chuyện…");
+  errorBox.hidden = true;
+  try {
+    threadId = fresh ? null : savedThread();
+    let history = [];
+    if (threadId) {
+      try {
+        const state = await api(`/threads/${encodeURIComponent(threadId)}/state`);
+        history = state.values?.messages || [];
+      } catch (error) {
+        if (error.status !== 404) throw error;
+        threadId = null;
+      }
+    }
+    if (!threadId) {
+      const thread = await api("/threads", {});
+      threadId = thread.thread_id;
+    }
+    saveThread(threadId);
+    renderHistory(history);
+    conversation.textContent = `Conversation ID: ${threadId}`;
+    connection.textContent = "Sẵn sàng";
+    connection.classList.add("ready");
+  } catch (error) {
+    threadId = null;
+    connection.textContent = "Chưa kết nối";
+    connection.classList.remove("ready");
+    showError(error);
+  } finally {
+    setBusy(false);
+    question.focus();
+  }
+}
+
+form.addEventListener("submit", async event => {
+  event.preventDefault();
+  if (busy) return;
+  const text = question.value.trim();
+  if (!text) return;
+  if (!threadId) await initialize();
+  if (!threadId) return;
+  errorBox.hidden = true;
+  setBusy(true, "Trợ lý đang trả lời…");
+  addMessage("user", text);
+  question.value = "";
+  question.style.height = "auto";
+  const pending = addMessage("assistant", "");
+  pending.classList.add("pending");
+  pending.setAttribute("aria-label", "Trợ lý đang trả lời");
+  for (let i = 0; i < 3; i++) pending.append(document.createElement("i"));
+  try {
+    // Native stateful run: LangGraph loads and checkpoints the entire conversation.
+    const result = await api(`/threads/${encodeURIComponent(threadId)}/runs/wait`, {
+      assistant_id: "chatbot",
+      input: { messages: [{ type: "human", content: text }] },
+      config: { recursion_limit: 16 },
+      multitask_strategy: "reject",
+    });
+    const last = result.messages?.at(-1);
+    if (!last || !["ai", "assistant"].includes(last.type || last.role)
+        || last.tool_calls?.length || !contentText(last.content)) {
+      throw new Error("Trợ lý chưa tạo được câu trả lời. Vui lòng thử lại.");
+    }
+    renderHistory(result.messages);
+  } catch (error) {
+    showError(error);
+    // Restore committed state after an interrupted response; don't retry a run automatically.
+    try {
+      const state = await api(`/threads/${encodeURIComponent(threadId)}/state`);
+      renderHistory(state.values?.messages || []);
+    } catch { /* Keep visible messages if the server is unreachable. */ }
+  } finally {
+    pending.remove();
+    setBusy(false);
+    question.focus();
+  }
+});
+
+question.addEventListener("keydown", event => {
+  if (event.key === "Enter" && !event.shiftKey && !event.isComposing) {
     event.preventDefault();
-    const question = input.value.trim();
-    if (!question || sending) return;
-    sending = true;
-    sendButton.disabled = true;
-    input.readOnly = true;
-    const userTurn = { role: 'user', text: question };
-    appendMessage(userTurn);
-    conversation.turns.push(userTurn);
-    saveConversation();
-    input.value = '';
-    resizeInput();
-    const waiting = appendMessage({ role: 'assistant', text: 'Đang trả lời…', pending: true });
-    const started = performance.now();
-    let assistantTurn;
-    try {
-      const response = await fetch('/chatbot', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          question,
-          mode: 'auto',
-          user_id: conversation.userId,
-          session_id: conversation.sessionId,
-          use_cache: false
-        })
-      });
-      const result = await response.json();
-      const failed = !response.ok || result.status === 'error';
-      assistantTurn = {
-        role: 'assistant',
-        text: failed ? errorText(result.code) : (typeof result.response === 'string' && result.response.trim() ? result.response : 'Dịch vụ trả về phản hồi trống. Bạn thử lại nhé.'),
-        error: failed,
-        result,
-        httpStatus: response.status,
-        elapsedMs: Math.round(performance.now() - started)
-      };
-    } catch {
-      assistantTurn = { role: 'assistant', text: 'Không kết nối được chatbot. Bạn kiểm tra chương trình đang chạy rồi thử lại nhé.', error: true };
-    } finally {
-      waiting.remove();
-      appendMessage(assistantTurn);
-      conversation.turns.push(assistantTurn);
-      saveConversation();
-      sending = false;
-      sendButton.disabled = false;
-      input.readOnly = false;
-      input.focus();
-    }
-  });
-})();
+    if (!busy) form.requestSubmit();
+  }
+});
+question.addEventListener("input", () => {
+  question.style.height = "auto";
+  question.style.height = `${Math.min(question.scrollHeight, 120)}px`;
+});
+newChat.addEventListener("click", () => { if (!busy) initialize(true); });
+renderHistory();
+initialize();

@@ -1,0 +1,11 @@
+test_page_and_assets_are_served (test_chatbot.FrontendTests.test_page_and_assets_are_served) ... ok
+test_thread_memory_and_isolation (test_chatbot.GraphTests.test_thread_memory_and_isolation) ... ok
+test_tool_result_returns_to_assistant (test_chatbot.GraphTests.test_tool_result_returns_to_assistant) ... ok
+test_graph_passes_retrieved_text_and_page_to_model (test_chatbot.RagTests.test_graph_passes_retrieved_text_and_page_to_model) ... ok
+test_tool_error_does_not_expose_provider_secrets (test_chatbot.RagTests.test_tool_error_does_not_expose_provider_secrets) ... Document retrieval failed; check PDF, embeddings and provider configuration.
+ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.186s
+
+OK

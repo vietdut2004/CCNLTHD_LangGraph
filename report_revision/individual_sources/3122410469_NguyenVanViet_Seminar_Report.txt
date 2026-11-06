@@ -1,0 +1,211 @@
+0: 
+1: 
+2: BỘ GIÁO DỤC VÀ ĐÀO TẠO
+3: TRƯỜNG ĐẠI HỌC SÀI GÒN
+4: 
+5: 
+6: 
+7: XÂY DỰNG TRANSFORMER CHO BÀI 
+8: TOÁN PHÂN LOẠI CẢM XÚC VĂN BẢN
+9: Bộ môn: Seminar chuyên đề.
+10: Giảng viên hướng dẫn: Thầy PGS.TS Nguyễn Tuấn Đăng
+11:         Sinh viên: Nguyễn Văn Việt              Mssv: 3122410469
+12:     Lớp: 		DKP1221
+13:     Năm học: 	2025 – 2026
+14: 
+15: LỜI CẢM ƠN
+16: Chúng em xin cảm ơn Thầy PGS.TS Nguyễn Tuấn Đăng đã truyền đạt kiến thức bổ ích và thiết thực trong thời gian qua, giúp chúng em hiểu rõ kiến thức liên quan đến môn học và đồ án. Thầy đã hết mình giảng dạy và truyền đạt những kinh nghiệm về môn học để chúng em hiểu rõ qua đó có cơ sở vững chắc hơn. Cùng với đó Thầy cũng đã hết lòng giúp đỡ và theo sát chúng em trong suốt quá trình làm đồ án, chỉ ra hướng đi cho chúng em hoàn thành đồ án tốt nhất. Nhờ đó chúng em đã hoàn thành đồ án này đúng hạn quy định, tránh những sai phạm không đáng, trang bị những kiến thức quý báu và chúng em tin rằng từ môn học này sẽ giúp chúng em rất nhiều về quá trình học và công việc trong thời gian tới của chúng em.
+17: 
+18: 
+19: 
+20: 
+21: 
+22: 
+23: 
+24: 
+25: 
+26: 
+27: 
+28: 
+29: 
+30: 
+31: MỞ ĐẦU VÀ PHÁT BIỂU BÀI TOÁN
+32: 	Đồ án này tập trung giải quyết bài toán phân loại cảm xúc văn bản (Sentiment Analysis). Cụ thể, mô hình sẽ tiếp nhận đầu vào là các câu văn tiếng Anh ngắn chứa đựng các đánh giá, quan điểm. Đầu ra của hệ thống yêu cầu phân loại tự động câu văn đó vào một trong ba lớp cảm xúc (nhãn): Tích cực (Positive), Tiêu cực (Negative), hoặc Trung tính (Neutral).
+33: 	Mục tiêu cốt lõi của đồ án không phải là chạy đua để đạt được độ chính xác (accuracy) cao nhất hay xây dựng một mô hình phức tạp khổng lồ. Thay vào đó, trọng tâm học thuật được đặt vào việc tìm hiểu sâu sắc "hộp đen" của các mô hình ngôn ngữ hiện đại. Thông qua việc tự tay xây dựng kiến trúc từ đầu, đồ án hướng tới việc nắm bắt và hiểu rõ bản chất toán học cũng như luồng xử lý dữ liệu của cơ chế Self-Attention – trái tim của kiến trúc Transformer.
+34: 	Để đáp ứng mục tiêu học thuật trên, phạm vi cài đặt của đồ án được quy định rõ ràng:
+35: 		- Thành phần tự cài đặt (from scratch): Trực tiếp lập trình các hàm và lớp cốt lõi quyết định tính chất của Transformer, bao gồm cơ chế tính toán độ chú ý scaled_dot_product_attention, khối SelfAttention và mạng truyền thẳng FeedForwardNetwork.
+36: 		- Thành phần sử dụng thư viện: Tận dụng các module cơ sở có sẵn của PyTorch để tối ưu quá trình xây dựng, bao gồm các lớp nhúng từ nn.Embedding, lớp chuẩn hóa nn.LayerNorm, các biến đổi tuyến tính nn.Linear và hàm kích hoạt F.relu, F.softmax.
+37: 	Thực nghiệm được tiến hành trên một tập dữ liệu nhỏ gọn bao gồm 600 mẫu câu tiếng Anh. Tập dữ liệu được thiết kế cân bằng hoàn toàn giữa 3 nhãn (Positive, Negative, Neutral) để tránh tình trạng mô hình bị thiên lệch. Dữ liệu được phân chia thành 3 tập con phục vụ cho quá trình huấn luyện và đánh giá với tỷ lệ: tập huấn luyện (Train set): 420 mẫu, tập xác thực (Validation set): 90 mẫu, tập kiểm thử (Test set): 90 mẫu.
+38: CHƯƠNG I. MÔ TẢ KIẾN TRÚC
+39: 1.1. Sơ đồ kiến trúc tổng thể.
+40: 
+41: 1.2. Mô tả luồng dữ liệu.
+42: 	Mô hình được xây dựng dựa trên kiến trúc Transformer Encoder dành cho bài toán phân loại với luồng dữ liệu đi qua các giai đoạn tuần tự như sau: 
+43: 		- Token IDs  Embedding: Dữ liệu đầu vào (input_ids) là các chỉ số từ vựng (token IDs) rời rạc trước tiên đi qua lớp Embedding để chuyển đổi thành các vector nhúng liên tục.
+44: 		-  Đến Positional Encoding: Sau đó, các vector nhúng này được cộng trực tiếp với mã hóa vị trí (Positional Encoding) nhằm cung cấp cho mô hình thông tin về thứ tự của các từ trong câu.		
+45: 		- Dữ liệu tiếp tục đi qua khối Encoder. Khối này bao gồm hai thành phần cốt lõi:
+46: 			+ Cơ chế Self-Attention: Đánh giá và tính toán trọng số ngữ cảnh giữa các token.
+47: 			+ Mạng Feed Forward Network (FFN): Xử lý và trích xuất các đặc trưng phi tuyến tính.	Với các kết nối thặng dư (Add) và chuẩn hóa tầng (LayerNorm) bọc quanh mỗi mạng con.
+48: 		- Sau đó đến Mean Pooling: Đầu ra của khối Encoder là một ma trận chứa biểu diễn ngữ cảnh của toàn bộ các token. Ma trận này được gộp lại bằng phương pháp Mean Pooling (lấy trung bình theo chiều dài chuỗi dim=1) để tạo ra một vector duy nhất mang ý nghĩa đại diện cho toàn bộ câu (pooled).
+49: 		-  Cuối cùng là Classifier Head: vector đại diện này được đưa qua một lớp tuyến tính (Linear Classifier) để tính toán phân phối xác suất (logits) cho từng lớp nhãn (Positive, Negative, Neutral) phục vụ dự đoán và tính hàm loss.
+50: 1.3. Giải thích vai trò của từng thành phần.
+51: 	Vai trò của từng thành phần: 
+52: 		- Embedding: Chuyển đổi các từ ngữ rời rạc thành các biểu diễn không gian vector số học, giúp mô hình tính toán được sự tương quan ngữ nghĩa ban đầu.
+53: 		- Positional Encoding: Vì cơ chế Attention không xử lý dữ liệu theo tuần tự như RNN/LSTM, thành phần này là bắt buộc để "thêm" thông tin về vị trí, giúp mô hình phân biệt được trật tự trước sau của các từ trong câu văn.
+54: 		- Self-Attention: Đóng vai trò cốt lõi trong việc đánh giá và tính toán trọng số ngữ cảnh giữa các token. Nó tính toán mức độ “tương quan” của một từ so với tất cả các từ khác trong chuỗi, qua đó nhận diện được những từ khóa mang tính chất quyết định cảm xúc.
+55: 		- Add & LayerNorm: Ổn định hóa luồng dữ liệu. Giúp dữ liệu không bị biến dạng quá lớn sau các phép nhân ma trận và đảm bảo đạo hàm luôn trôi chảy trong quá trình huấn luyện.
+56: 		- FFN (Feed Forward Network): Khối Self-Attention chủ yếu xử lý trích xuất ngữ cảnh bằng các phép biến đổi tuyến tính. Do đó, FFN được thêm vào để cung cấp khả năng học các biểu diễn phi tuyến phức tạp cho từng token một cách độc lập.
+57: 		- Classifier Head: Đóng vai trò như một bộ phân loại cuối cùng, ánh xạ vector ngữ nghĩa tổng hợp của toàn câu về không gian dự đoán 3 chiều (tương ứng với 3 nhãn cảm xúc).
+58: 1.4. Lí do chỉ dùng 1 Transformer Encoder Block.
+59: 	Chỉ sử dụng 1 Transformer Encoder Block vì kiến trúc Transformer nguyên bản (như BERT) thường sử dụng rất nhiều khối Encoder (từ 12 đến 24 khối) để giải quyết các bài toán phức tạp trên tập dữ liệu khổng lồ. Tuy nhiên, đồ án chỉ sử dụng 1 Transformer Encoder Block vì tập huấn luyện chỉ gồm 420 mẫu. Nếu sử dụng nhiều block, mô hình dễ bị overfitting do số lượng tham số lớn. Một block là lựa chọn phù hợp để cân bằng giữa khả năng học ngữ cảnh và khả năng tổng quát hóa.
+60: 1.5. Cơ chế Add & LayerNorm
+61: 	Trong kiến trúc Transformer Block, sau mỗi mạng con (Self-Attention và FFN), đầu ra đều được đi qua khối Add & LayerNorm. Quá trình này được biểu diễn bằng công thức tổng quát: 
+62: 			LayerNorm ( x + Sublayer(x))
+63: 	Việc này giải quyết 2 bài toán lớn trong Deep Learning:
+64: 		- Cơ chế Add (Residual Connection / Kết nối thặng dư):Phép cộng x + Sublayer(x) cho phép luồng dữ liệu gốc (x) đi tắt qua mạng con. Khi mô hình có quá nhiều lớp, đạo hàm trong quá trình lan truyền ngược (backpropagation) rất dễ bị triệt tiêu về 0. Khối Add tạo ra một "đường cao tốc" giúp gradient truyền đi dễ dàng hơn, giải quyết triệt để vấn đề mất mát đạo hàm (vanishing gradient) và đảm bảo thông tin vị trí từ Positional Encoding không bị phai nhạt qua nhiều tầng.
+65: 		- Cơ chế Layer Normalization (Chuẩn hóa tầng): Khác với Batch Normalization (chuẩn hóa trên một batch), LayerNorm thực hiện chuẩn hóa các đặc trưng (features) ngay trên từng mẫu dữ liệu độc lập sao cho trung bình bằng 0 và phương sai bằng 1. Việc này giúp phân phối đầu ra của mỗi sublayer luôn ổn định bất chấp độ dài chuỗi đầu vào khác nhau. Nhờ đó, mô hình giảm bớt sự nhạy cảm với các trọng số khởi tạo và hội tụ nhanh hơn rất nhiều trong quá trình huấn luyện.
+66: 
+67: 
+68: 
+69: 
+70: 
+71: 
+72: 
+73: 
+74: 
+75: 
+76: 
+77: 
+78: 
+79: 
+80: CHƯƠNG II. CHI TIẾT CÀI ĐẶT SELF-ATTENTION  VÀ FFN/ENCODERBLOCK.
+81: 	Trong kiến trúc Transformer Encoder, hai thành phần cốt lõi (tự cài đặt) bao gồm cơ chế Scaled Dot-Product Attention và mạng Feed Forward Network (FFN).
+82: 		- Cơ chế Scaled Dot-Product Attention: Dữ liệu sau khi được tiền xử lý sẽ được chiếu qua các lớp tuyến tính để tạo ra 3 ma trận Query (Q), Key(K) và Value (V):
+83: 				Q = xWq : là ma trận chứa thông tin truy vấn (đại diện cho token đang cần tìm kiếm thông tin ngữ cảnh).
+84: 				K = xWk : là ma trận chứa "chìa khóa" hay đặc trưng của các token khác (để so khớp xem có phù hợp với truy vấn Q hay không).
+85: 				V = xWv : là ma trận chứa giá trị thông tin thực sự sẽ được trích xuất nếu Q và K có độ tương quan cao.
+86: 			+ Sau đó, sự chú ý ( attention) được tính toán theo công thức:
+87: 				
+88: 			+ Cơ chế này tính toán mức độ “ tương quan” của mỗi token so với tất cả các token khác trong chuỗi. Việc nhân ma trận Q và KT tạo ra điểm số chú ý (attention scores) thô. Điểm này bắt buộc phải được chia cho  ( căn bậc 2 của số chiều của k) để làm ổn định giá trị, vì nếu không chia các giá trị dot-product quá lớn sẽ bị đẩy vào vùng bão hòa của hàm softmax, gây ra hiện tượng mất mát đạo hàm ( vanishing gradient – gradient rất nhỏ). Cuối cùng, hàm softmax biến đổi các điểm số này thành các trọng số có xác suất từ 0 đến 1 rồi nhân với ma trận V để tổng hợp lại thông tin ngữ cảnh cho từng token.
+89: 
+90: Hình 1. Đoạn code của hàm scaled_dot_product
+91: 		Dựa vào hình 1, chi tiết code hàm scaled_dot_product_attention như sau: 
+92: 			+ Dòng lệnh scores = torch.matmul(Q, K.transpose(-2,-1)) / math.sqrt(d_k) thực hiện phép nhân ma trận giữa Q và chuyển vị của K. Ở đây, hàm transpose(-2, -1) được sử dụng để hoán đổi 2 chiều cuối của tensor K (từ B, L, d_k thành B, d_k, L), giúp phép nhân ma trận diễn ra hợp lệ ( [B, L, d_k] @ [B, d_k,L] => [B,L,L] . Kết quả sau đó được chia cho sqrt{d_k} để tránh hiện tượng các giá trị quá lớn làm bão hòa đạo hàm của hàm Softmax.
+93: 			+ Dòng lệnh weights = F.softmax(scores, dim=-1) áp dụng hàm Softmax dọc theo chiều cuối cùng (dim=-1, tương ứng với chiều độ dài chuỗi seq_len). Bước này chuyển đổi các điểm số thô thành một phân phối xác suất có tổng bằng 1, thể hiện mức độ "chú ý" của mỗi token lên các token khác.
+94: 			+ Cuối cùng, output = torch.matmul(weights, V) thực hiện nhân ma trận trọng số vừa tính được với ma trận giá trị V để tạo ra biểu diễn ngữ cảnh mới cho từng token ( [B, L, L] @ [ B, L, d_k] => [ B, L, d_k])
+95: 		- Mạng truyền thẳng ( Feed Forward NetWork – FNN):
+96: 			+ Công thức toán học:  FFN (x)  = max (0, xW1 + b1)W2 + b2
+97: 			+ Thành phần này bao gồm 2 lớp biến đổi tuyến tính ( Linear Layer) xen kẽ bỏi hàm kích hoạt phi tuyến ReLU. Khối Self-Attention ở bước trước chủ yếu thực hiện việc trích xuất thông tin ngữ cảnh dựa trên các phép nhân ma trận tuyến tính. Do đó, FFN được them vào để cung cấp khả năng học các biểu diễn phi tuyến phức tạp. Dữ liệu ban đầu được chiếu lên một không gian có số chiều mở rộng (dff) thông qua W1, áp dụng ReLU để lọc bỏ các giá trị âm (tạo tính phi tuyến) và sau đó được chiếu thu hẹp lại về không gian ban đầu (dmodel) thông qua W2.
+98: 
+99: Hình 2. Đoạn code cài đặt lớp Feed Forward Network (FFN)
+100: 		Dựa vào hình 2, mã nguồn của mạng truyền thẳng mô phỏng chính xác công thức toán học: FFN(x) = max(0, xW1 + b1)W2 + b2. Cơ chế hoạt động chi tiết của lớp FeedForwardNetwork như sau:
+101: 			+ Hàm __init__: Khởi tạo 2 lớp tuyến tính. Lớp thứ nhất self.fc1 có nhiệm vụ chiếu dữ liệu từ không gian ban đầu (d_model) sang một không gian mở rộng (d_ff, thường lớn hơn d_model). Lớp thứ hai self.fc2 làm nhiệm vụ thu hẹp dữ liệu từ d_ff trở về lại d_model để kích thước đầu ra khớp với kích thước ban đầu, đảm bảo phép cộng thặng dư (Residual Connection) phía sau có thể thực hiện được.
+102: 			+ Hàm forward: Dữ liệu đầu vào x được đưa qua lớp tuyến tính thứ nhất self.fc1(x), sau đó đi qua hàm kích hoạt ReLU F.relu(x) để loại bỏ các giá trị âm (tương đương phép toán max(0, ...)), và cuối cùng đi qua lớp tuyến tính thứ hai self.fc2(x) để cho ra kết quả biểu diễn cuối cùng của khối.
+103: CHƯƠNG III. THIẾT LẬP THỰC NGHIỆM.
+104: 	Đầu tiên khi tải thư mục về, tạo một môi trường ảo và sau đó chạy câu lệnh “pip install -r requirements.txt” để tải các thư viện cần thiết của đồ án.	
+105: 	Hệ thống được module hóa thành các file độc lập và vận hành theo quy trình tuần tự: data_utils.py  model.py  train.py   visualize.py: 
+106: 		- data_utils.py: Đọc dữ liệu, tiền xử lý văn bản, xây dựng bộ từ vựng (vocab_size = 1110) và chia dữ liệu thành Train/Validation/Test:
+107: 			+ Tập Train: 420 mẫu (140 Negative, 140 Neutral, 140 Positive)
+108: 			+ Tập Validation: 90 mẫu (30 Negative, 30 Neutral, 30 Positive)
+109: 			+ Tập Test: 90 mẫu (30 Negative, 30 Neutral, 30 Positive)
+110: 		- model.py: Định nghĩa kiến trúc mô hình gồm khối Transformer Encoder và mô hình cơ sở MLP.
+111: 		- train.py: Tệp huấn luyện chính, thực hiện khởi tạo mô hình, định nghĩa hàm mất mát CrossEntropy, bộ tối ưu hóa và vòng lặp huấn luyện. Mô hình tốt nhất trên tập Validation sẽ được lưu dưới dạng tệp .pt.
+112: 		- visualize.py: Tải mô hình đã huấn luyện, dự đoán trên câu mới và trích xuất Attention để trực quan hóa bằng Heatmap.
+113: 	Đồ án thử nghiệm nhiều cấu hình để tìm ra mô hình tối ưu:
+114: 		- Kích thước mô hình: (d_model=32, d_ff=64), (d_model=64, d_ff=128) và (d_model=128, d_ff=256).
+115: 		- max_len: Giới hạn chiều dài câu phù hợp với dữ liệu tiếng Anh ngắn.
+116: 		- num_epochs = 20: Đủ để quan sát quá trình hội tụ và hiện tượng quá khớp.
+117: 		- batch_size và learning_rate: Giữ cố định giữa các thí nghiệm để đảm bảo so sánh công bằng.
+118: 	Để đảm bảo kết quả có thể tái lập, đồ án áp dụng các biện pháp:
+119: 		- Cố định seed = 42 cho torch, numpy và random.
+120: 		- Sử dụng đường dẫn tương đối khi đọc dữ liệu và lưu kết quả.
+121: 		- Cung cấp tệp requirements.txt để tái tạo đúng môi trường chạy bằng lệnh pip install -r requirements.txt.
+122: 	Mô hình cơ sở được sử dụng là MLPBaseline_d64. Mô hình này thực hiện Mean Pooling trực tiếp trên lớp Embedding, sau đó đưa qua mạng MLP để phân loại, không sử dụng cơ chế Self-Attention.
+123: 		- Việc so sánh với MLP giúp làm nổi bật ưu thế của Transformer trong việc nắm bắt ngữ cảnh, thứ tự và mức độ quan trọng của từ trong câu.
+124: 
+125: 
+126: 
+127: 
+128: 
+129: 
+130: 
+131: 
+132: 
+133: 
+134: CHƯƠNG IV. KẾT QUẢ THỰC NGHIỆM 
+135: 	Kết quả huấn luyện như sau: 
+136: 
+137: Hình 3. Hình tóm tắt kết quả huấn luyện của 4 cấu hình
+138: 	Kết quả được tổng hợp chi tiết trong bảng sau:
+139: .	Dựa vào bảng số liệu trên, Transformer_d128_ff256 là cấu hình đem lại hiệu suất tốt nhất. Dưới đây là đồ thị mô tả quá trình hội tụ (Learning Curve) của cấu hình này trong suốt 20 epochs: 
+140: 
+141: Hình 4. Log theo dõi của cấu hình d128_ff256
+142: 
+143: Hình 5. Learning curve của cấu hình d128_ff256
+144: 	Kết quả thực nghiệm cho thấy cấu hình Transformer_d128_ff256 đạt hiệu suất tốt nhất với độ chính xác trên tập Validation đạt cao nhất (96.67%) và độ chính xác trên tập Test rất tốt ( 97.78%). Nguyên nhân dẫn đến kết quả bao gồm: 
+145: 		- Ưu thế của kiến trúc Transformer so với MLP: Cả 3 cấu hình Tranformer đều vượt trội hoàn toàn so với mô hình cơ sở (MLPBaseline_d64). Mô hình MLP thực hiện Mean Pooling ngay sau lớp Embedding nên làm mất đi thông tin về thứ tự từ và sự tương quan ngữ cảnh. Ngược lại, cơ chế Self-Attention của Transformer cho phép mô hình tính toán trọng số tương quan giữa các token trong câu từ đó bắt được chính xác các từ mang tính chất chìa khóa -nổi bật- quyết định cảm xúc của câu.
+146: 		- Với việc tăng số chiều vector nhúng (dmodel) lên 128 và không gian mạng FFN (dff) lên 256 giúp mô hình có sức chứa tham số lớn hơn. Điều này cho phép mô hình học được không gian biểu diễn đặc trưng phức tạp và sâu sắc hơn so với các bản thu gọn (d =64 hay d=32).
+147: 	Dựa vào đồ thị Learning Curve và log theo dỗi của cấu hình tốt nhất (d128_ff256), có hể thấy hiện tưởng Overfitting( quá khớp) có xảy ra ở mức độ nhẹ. Cụ thể như sau:
+148: 		- Trong giai đoạn đầu (từ Epoch 1 đến Epoch 10), cả train_loss và val_loss đều có xu hướng giảm mạnh và bám khá sát nhau, cho thấy mô hình đang học tốt.
+149: 		- Tuy nhiên, bắt đầu từ khoảng Epoch 11 - 12 trở đi, khoảng cách giữa hai đường bắt đầu giãn rộng . Trong khi train_loss tiếp tục cắm đầu giảm sâu và tiệm cận về mốc 0.0055 ở epoch 20 (gần như đạt Train Acc 100%), thì val_loss bắt đầu chững lại, đi ngang và có những nhịp nảy nhẹ (dao động quanh mốc 0.07 đến 0.13) chứ không tiếp tục hội tụ sâu.
+150: 		- Điều này chứng tỏ từ sau epoch 12, mô hình đã bắt đầu học thuộc lòng (memorize) dữ liệu huấn luyện thay vì rút ra được các đặc trưng khái quát hóa mới.
+151: 	Khi tăng/ giảm d_model và d_ff , sẽ có tác động sau:
+152: 		- Nếu khi giảm như mô hình (d32_f64) thì mô hình thiếu tham số, không đủ sức chứa để học ngữ cảnh phức tạp dẫn đến hiệu suất giảm mạnh nhất.
+153: 		- Khi tăng (Từ d64_ff128 lên d128_ff256): Không gian biểu diễn mở rộng giúp trích xuất đặc trưng tốt hơn  Train loss giảm sâu, đạt kết quả tối ưu. Tuy nhiên khi tăng cần phải so sánh với lượng dữ liệu hiện có nếu tăng quá lớn so với dữ liệu thì kết quả sẽ không những không cải thiện thêm độ chính xác và còn có các tác dụng ngược như mô hình sẽ học vẹt dẫn đến sai trên thực tế và tốn nhiều tài nguyên huấn luyện.
+154: CHƯƠNG V. PHÂN TÍCH ATTENTION.
+155: 	Để kiểm chứng khả năng bắt ngữ cảnh thực tế của khối Self-Attention, cấu hình mô hình tốt nhất (Transformer_d128_ff256) được đem ra thử nghiệm trực quan hóa thông qua Attention Heatmap. Quá trình thử nghiệm được tiến hành trên 3 mẫu câu đặc trưng:
+156: 		- Trường hợp 1, mô hình phân loại đúng. Sử dụng câu “ This movie is absolutely brilliant” :
+157: 		+ Kỳ vọng mô hình sẽ phân loại câu này là Positive và trọng số  Attention sẽ tập trung mạnh vào các từ absolutely và brilliant.
+158: 
+159: Hình 6. Kết quả chạy test câu this movie is absolutely brilliant
+160: 
+161: Hình 7. Heatmap của câu this movie is absolutely brilliant
+162: 			+ Dựa vào hình 6 và 7, mô hình dự đoán chính xác nhãn Positive. Quan sát biểu đồ Heatmap (Hình 7), điểm sáng (trọng số cao nhất) tập trung mạnh vào từ khóa mang tính quyết định cảm xúc là "brilliant", theo sau là từ "absolutely" với trọng số thấp hơn một chút, hoàn toàn khớp với kỳ vọng ban đầu.
+163: 		- Trường hợp 2, mô hình phân loại sai. Sử dụng câu  “ the film was pretty wonderful today”.
+164: 		 	+ Kì vọng mô hình sẽ phân loại câu này là Positive và trọng số attention sẽ tập trung vào cụm “ pretty wonderful”
+165: 
+166: Hình 8. Kết quả chạy test câu the film was pretty wonderful today
+167: 
+168: Hình 9. Heatmap của câu the film was pretty wonderful today
+169: 			+ Dựa vào log dự đoán (hình 8), mô hình đã phân loại sai thành nhãn Negative. Phân tích vào Heatmap (Hình 9), có thể thấy có chế Attention đã hoạt động kém hiệu quả trong trường hợp này. Thay vì chú ý vào tính từ cốt lõi mang cảm xúc là “wonderful”, mô hình lại phân bổ trọng số lớn nhất ( màu vàng sáng) vào từ “was” và “pretty”. Nguyên nhân có thể do bộ từ vựng (vocab) nhỏ, dữ liệu huấn luyện chưa đủ lớn và từ “wonderful” xuất hiện ít trong các mẫu Positive của tập huấn luyện do đó khiến mô hình chưa học được biểu diễn chính xác cho từ này và bị nhiễu bởi các từ ngữ pháp xung quanh.
+170: 		- Trường hợp 3, do trong tập Test không có câu phỉ định (not/ never/ don’t) nên em sẽ nhận diện câu đánh lừa. Sử dụng câu 3 “ the film was remarkably messy for me”.
+171:  			+ Đây là một câu đánh lừa ngữ cảnh. Từ remarkably thường đi kèm với các tính từ tích cực, nhưng ở trường hợp này lại được ghép với tính từ tiêu cực "messy". Mô hình cần vượt qua được từ nhiễu để đánh giá đúng nhãn Negative.
+172: 
+173: Hình 10. Kết quả chạy của câu the film was remarkably messy for me
+174: 
+175: Hình 11. Heatmap của câu the film was remarkably messy for me
+176: 			+ Mô hình dự đoán chính xác nhãn negative. Biểu đồ Heatmap (hình 11) cho thấy một kết quả cực kỳ ấn tượng, khối Self-Attention đã phớt lờ hoàn toàn từ gây nhiễu “remarkably” và dồn toàn bộ sự chú ý (cột sáng màu vàng nhất) và đúng từ khóa cốt lõi “messy”. Điều này chứng minh súc mạnh của kiến trúc Transformer trong việc năm bắt sự tương quan ngữ cảnh thực sự của câu thay vì chỉ đếm tự vựng đơn thuần một các máy móc.
+177: => Nhìn chung, mô hình có xu hướng tập trung trọng số Attention vào các tình từ mang sắc thái đánh giá ( brilliant, messy). Điều này hoàn toàn hợp lí với bản chất của bài toán phân loại cảm xúc, tuy nhiên đôi khi vẫn bị nhầm lẫn bới các phó từ hoặc động từ tobe.
+178: CHƯƠNG VI. PHÂN TÍCH LỖI – ERROR ANALYSIS
+179: Để xác định các trường hợp dự đoán sai, em xây dựng thêm hàm find_error_sentences trong file analysis_utils.py nhằm đối chiếu nhãn dự đoán và nhãn thực tế trên tập Validation và Test. Kết quả cho thấy mô hình Transformer_d128_ff256 phân loại sai tổng cộng 5 câu, gồm 2 câu ở tập Test và 3 câu ở tập Validation.
+180: Hình 12. Hình Log kết quả tìm các câu mô hình d128_ff256 phân loại sai trên test và validation
+181: 	Dựa trên kết quả ở Hình 12, lỗi của mô hình không xuất hiện ngẫu nhiên mà tập trung vào một số từ khóa nhất định:
+182: 			- Đối với từ "wonderful" (Tuyệt vời): Cả 3 câu chứa từ này (đều mang nhãn thực tế là Positive) đều bị mô hình dự đoán nhầm thành Negative một cách hệ thống.
+183: 		- Đối với từ "terrible" (Tồi tệ): Cả 2 câu chứa từ này (đều mang nhãn thực tế là Negative) lại bị mô hình đánh giá nhầm thành Positive.
+184: 	Để tìm nguyên nhân, em sử dụng hàm count_word_frequency trong analysis_utils.py để đếm tần suất xuất hiện của hai từ này trong tập Train. Kết quả cho thấy: 
+185: 
+186: Hình 13. Kết quả đếm từ "wonderful" và "terrible" của mỗi lớp trong tập Train
+187: 		- Từ “wonderful” xuất hiện 14 lần trong các câu Positive (100%).
+188: 		- Từ “terrible” xuất hiện 9 lần trong các câu Negative (100%).	
+189: 	Qua đó ta có thể suy luận Mặc dù hai từ khóa này có tính phân loại hoàn hảo trong tập huấn luyện, mô hình vẫn thất bại trên tập Test. Nguyên nhân chính nằm ở cơ chế Self-Attention khi hoạt động trên một lượng dữ liệu quá nhỏ. Do Self-Attention phân tán sự chú ý trên toàn bộ các từ trong câu, mô hình đã bị "quá khớp" (overfitting) vào các tương quan giả (spurious correlations) của những từ ngữ pháp phụ trợ thay vì học được trọng số quyết định cho tính từ cảm xúc chính.
+190: 		- Ví dụ: Trong trường hợp câu "the film was pretty wonderful today" đã phân tích ở trên, thay vì tập trung vào "wonderful", khối Attention lại bị "đánh lừa" và gán trọng số quá lớn cho các từ nhiễu như "pretty" hay "was" – những từ có thể tình cờ xuất hiện nhiều trong các câu Negative khác của tập Train. Hậu quả là tín hiệu tích cực của "wonderful" bị lấn át hoàn toàn, dẫn đến nhãn đầu ra bị sai lệch.
+191: 		- Điều này chứng tỏ trên một tập dữ liệu nhỏ, Self-Attention dễ bị "đánh lừa" bởi các mối tương quan giả (spurious correlations) của các từ ngữ pháp xung quanh.
+192: 	Từ những phân tích sâu sắc trên, để giúp mô hình bắt đúng từ khóa cảm xúc và phớt lờ các từ nhiễu, em đề xuất các hướng cải thiện sau:
+193: 		- Sử dụng Pre-trained Word Embeddings (GloVe, Word2Vec): Cung cấp sẵn trọng số ngữ nghĩa để mô hình nhận diện ngay các từ mang cảm xúc mạnh, định hướng chính xác cho cơ chế Attention.
+194: 		- Tăng cường dữ liệu (Data Augmentation): Đa dạng hóa cấu trúc câu trong tập Train (vd: ghép từ khóa với nhiều phó từ khác nhau) giúp mô hình quen với việc lọc bỏ từ phụ.
+195: 		- Áp dụng Điều chuẩn (Dropout): Thêm kỹ thuật Dropout vào khối Self-Attention và FFN để ngăn mô hình phụ thuộc quá mức vào một vài từ ngữ cảnh cục bộ, tăng khả năng tổng quát hóa trên tập Test.
+196: 
+197: CHƯƠNG VII. KẾT LUẬN
+198: 	Trong báo cáo này, em đã tìm hiểu, xây dựng và huấn luyện thành công mô hình phân loại cảm xúc văn bản dựa trên kiến trúc cốt lõi của Transformer Encoder, cụ thể:
+199: 		- Tìm hiểu và xây dựng cấu trúc mạng từ đầu và luồng xử lý dữ liệu bao gồm: Embedding -> Khối mã hóa vị trí (Positional Encoding) -> Self-Attention -> Khối dự đoán (Classifier Head).
+200: 		- Tự cài đặt các thành phần trong Self-Attention: Scaled Dot-Product Self-Attention và mạng truyền thẳng (Feed Forward Network).
+201: 		- Qua thực nghiệm, cấu hình Transformer tốt nhất (d_model=128, d_ff=256) đạt độ chính xác 97.78% trên tập Test, bỏ xa mạng MLP cơ sở.
+202: 		- Trực quan hóa Attention Heatmap thành công. Phân tích lỗi chỉ ra điểm yếu của Self-Attention trên dữ liệu nhỏ là dễ bị "quá khớp" vào các từ nhiễu (spurious correlations).
+203: 	Việc tự tay cài đặt cơ chế Self-Attention thay vì sử dụng các thư viện có sẵn (như HuggingFace hay nn.Transformer) mang lại những bài học chuyên môn vô giá, giúp em hiểu rõ "hộp đen" của các mô hình ngôn ngữ lớn hiện nay:
+204: 		- Hiểu sâu về bản chất toán học của ngữ cảnh: Em nhận ra rằng "sự chú ý" (attention) thực chất chỉ là các phép nhân ma trận (dot product) giữa các vector Query và Key để đo lường độ tương đồng cosine. Trọng số này quyết định lượng thông tin (Value) mà một từ được phép nhận từ các từ xung quanh nó.
+205: 		- Tầm quan trọng của các chi tiết kỹ thuật nhỏ: Những thao tác tưởng chừng phụ trợ lại mang tính sống còn. Ví dụ, việc chia cho   là thao tác sống còn giúp hàm Softmax không bị bão hòa, ngăn chặn triệt để tình trạng vanishing gradient.
+206: 		- Bản chất "đói dữ liệu": Self-Attention rất mạnh nhưng dễ bị đánh lừa bởi dữ liệu ít. Việc hiểu rõ điểm yếu này là nền tảng để em phát triển các ứng dụng NLP thực tế sau này.
+207: TÀI LIỆU THAM KHẢO
+208: 	Vaswani et al. (2017), Attention Is All you Need, arXiv: 1706.03762.
+TABLES
+[[["Cấu hình mô hình", "d_model", "d_ff", "Train Loss", "TrainAcc", "ValAcc", "TestAcc"], ["Transformer_d128_ff256", "128", "256", "0.0091", "0.9976", "0.9667", "0.9778"], ["Transformer_d64_ff128", "64", "128", "0.039", "0.9905", "0.9556", "0.9778"], ["Transformer_d32_ff64", "32", "64", "0.1915", "0.9167", "0.8889", "0.8444"], ["MLPBaseline_d64", "64", "", "0.5321", "0.8762", "0.7667", "0.8111"]]]

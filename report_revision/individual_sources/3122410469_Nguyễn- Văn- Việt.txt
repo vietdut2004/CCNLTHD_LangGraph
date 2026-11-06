@@ -1,0 +1,66 @@
+0: BÀI KIỂM TRA
+1: TRANSFORMER BLOCK
+2: Họ và 	tên: Nguyễn Văn Việt		MSSV: 3122410469
+3: Câu 1:
+4: a)  Kích thước:
+5: 	WQ = [ 4*4]  						WV = [4*4]
+6: 	WK = [4*4]						WO = [ 4*4]
+7: b) Tính
+8: Vì đề bài có 2 head nên: 
+9: 	dk =   = 2
+10: 	dv =   = 2
+11: 	- Vai trò của multi-head là ho phép mô hình học và chú ý đến nhiều khía cạnh thông tin khác nhau từ cùng một câu đầu vào - Chia nhiều head mỗi head có thể tập trung một quan hệ cụ thể.
+12: 	- Vai  trò của scaling: Chia cho  là để chuẩn hóa giá trị dot-product, tránh số quá lớn khi dk tăng  giúp softmax ổn định hơn và học tốt hơn.
+13: Câu 2: 
+14: a) 
+15: WQ = WK = 
+16: b)
+17: q2 = X2 * WQ =  [ 0.7  1.2  0.3  1.1] * 
+18: = [0.35	0.36	0.15	1.1]
+19: k1 = X1 *WK 
+20:     = [1.0   0.6   0.8   0.2]  * 
+21:     = [0.5	0.18	0.4	0.2]
+22: k2 = X2 *WK 
+23:     = [0.7   1.2   0.3   1.1]  * 
+24:     = [ 0.35	0.36	0.15	1.1 ]
+25: k3 = X3 *WK 
+26:     = [0.2   0.9   1.3   0.5]  * 
+27:      = [ 0.1	0.27	0.65	1.5 ]
+28: Câu 3. Token “ transforms”
+29: Vì đây là câu tính self Attention nên dk = 4
+30: a)
+31: s1 =   =   = 0.26
+32: s2 =   =   = 0.742
+33: s3 =   =   = 0.94
+34: b)   =    = =    = 0.218
+35: 
+36:   =    = =    = 0.353
+37:    =    = =    = 0.43
+38:    = [ 0.218   0.353  0.43] 
+39: c) Token quan trọng nhất là token thứ 3 “education”. Vì dựa vào câu b ta thấy “transform” chú ý nhiều nhất tới “education” với   cao nhất, cho thấy mô hình học được mối quan hệ ngữ nghĩa giữa động từ và tân ngữ.
+40: Câu 4: Multi -head Attention
+41: a) Tách
+42: q2(1) = [0.35    0.36]
+43: q2(2) = [ 0.15  1.1]
+44: kj(1) = 
+45: kj(2) = 
+46: 
+47: b) 
+48: Ta có: 
+49: * Head1:
+50: 	 = softmax (  ) = [ 0.341    0.344	0.315]
+51: *Head2: 
+52: 	 = softmax (  ) = [ 0.173	0.339	0.488]
+53: => Head 2 có trọng số lớn hơn vì giá trị attention lớn nhất của head này (0.488) cao hơn so với head 1 (0.344), cho thấy head 2 tập trung mạnh hơn vào một token cụ thể.
+54: Câu 5: FNN
+55: Chọn W1 với 2 phần tử khác 0 => W1 =
+56: 
+57: a) Tính h
+58: h = ReLU ( x2 *W1) 
+59:    = ReLU ( [ 0.7  1.2  0.3  1.1] *     
+60:  )
+61: 	= ReLU ([ 0.131    0     0  0.456]
+62: 	= [ 0.131    0     0   0.456 ]
+63: b) Dựa vào h và x2 ta thấy h thưa hơn so với x2 do ma trận W1 có nhiều giá trị 0 và do tác động của trọng số => chỉ giữ lại một phần thông tin quan trọng từ . Điều này cho thấy lớp FNN có vai trò biến đổi và trích xuất đặc trưng từ dữ liệu đầu vào.
+TABLES
+[[["0.5", "0 ", "0", "0"], ["0", "0.3", "0", "0"], ["0", "0", "0.5", "0"], ["0", "0", "0", "1.0"]], [["0.5", "0 ", "0", "0"], ["0", "0.3", "", "0"], ["0", "0", "0.5", "0"], ["0", "0", "0", "1.0"]], [["0.5", "0 ", "0", "0"], ["0", "0.3", "0", "0"], ["0", "0", "0.5", "0"], ["0", "0", "0", "1.0"]], [["0.5", "0 ", "0", "0"], ["0", "0.3", "0", "0"], ["0", "0", "0.5", "0"], ["0", "0", "0", "1.0"]], [["0.5", "0 ", "0", "0"], ["0", "0.3", "0", "0"], ["0", "0", "0.5", "0"], ["0", "0", "0", "1.0"]], [["0.5", "0.18"], ["0.35", "0.36"], ["0.1", "0.27"]], [["0.4", "0.2"], ["0.15", "1.1"], ["0.65", "1.5"]], [["0.1", "0", "0", "0"], ["0", "0", "0", "0.2"], ["0", "0", "0", "0"], ["0", "0", "0", "0"]], [["0.1", "0", "0", "0"], ["0", "0", "0", "0.2"], ["0", "0", "0", "0"], ["0", "0", "0", "0"]]]

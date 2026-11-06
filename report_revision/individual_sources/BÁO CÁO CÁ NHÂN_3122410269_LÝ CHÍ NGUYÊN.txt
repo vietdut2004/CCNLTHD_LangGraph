@@ -1,0 +1,117 @@
+0: 
+1: 
+2: 
+3: BỘ GIÁO DỤC VÀ ĐÀO TẠO
+4: TRƯỜNG ĐẠI HỌC SÀI GÒN
+5: 
+6: 
+7: 
+8: BÁO CÁO CÁ NHÂN VỀ ĐỀ TÀI TÌM HIỀU 
+9: FRAMEWORK LANGCHAIN
+10: Môn học: Các công nghệ lập trình hiện đại – nhóm lớp 01
+11: Giảng viên hướng dẫn: Thầy Phạm Thi Vương
+12: 
+13: 		Thành viên nhóm 10:
+14: 		Lý Chí Nguyên  	    	    	Mssv: 3122410269
+15: 
+16: 
+17: 
+18: 
+19: LỜI CẢM ƠN
+20: Em xin gửi lời cảm ơn chân thành và sâu sắc đến Thầy Phạm Thi Vương – người đã tận tình giảng dạy, truyền đạt cho chúng em những kiến thức bổ ích và thiết thực trong suốt thời gian học tập và thực hiện đồ án. Thầy không chỉ giúp chúng em hiểu rõ hơn về các kiến thức chuyên môn mà còn định hướng, đưa ra những lời khuyên quý báu, giúp chúng em lựa chọn được hướng đi phù hợp cho đồ án cũng như con đường học tập sau này. Trong suốt quá trình thực hiện, Thầy luôn theo sát và hỗ trợ chúng em vượt qua những khó khăn, giúp chúng em hoàn thiện đồ án một cách tốt nhất, đúng tiến độ và tránh được những sai sót không đáng có. Nhờ sự tận tâm và chỉ dẫn của Thầy, chúng em đã tích lũy thêm nhiều kinh nghiệm quý báu, củng cố nền tảng kiến thức vững chắc để có thể vận dụng hiệu quả trong học tập và công việc sau này.
+21: 
+22: 
+23: 
+24: 
+25: 
+26: 
+27: 
+28: 
+29: 
+30: 
+31: 
+32: 
+33: 
+34: 
+35: 
+36: 
+37: 
+38: 
+39: 
+40: 
+41: 
+42: 
+43: 
+44: 
+45: 
+46: 
+47: 
+48: 
+49: 
+50: 
+51: 1. Giới thiệu và lý do chọn đề tài 
+52: - Trong kỷ nguyên công nghệ 4.0, Trí tuệ nhân tạo (AI) và đặc biệt là các mô hình ngôn ngữ lớn (LLM – Large Language Models) đã và đang tạo nên cuộc cách mạng trong xử lý ngôn ngữ tự nhiên (NLP). Những tiến bộ này hỗ trợ mạnh mẽ cho giáo dục, y tế, thương mại điện tử và chăm sóc khách hàng. Tuy nhiên, các LLM truyền thống vẫn tồn tại một vài mặt hạn chế như: khả năng ghi nhớ ngữ cảnh còn giới hạn, dữ liệu huấn luyện nhanh lỗi thời và thiếu khả năng truy xuất thông tin mới theo yêu cầu thực tế.
+53: - LangChain ra đời nhằm khắc phục những hạn chế đó. Đây là một framework mã nguồn mở nổi bật, cho phép kết hợp sức mạnh của LLM với dữ liệu riêng, công cụ tìm kiếm và API bên ngoài, từ đó giúp xây dựng các chatbot thông minh có khả năng trả lời chính xác, cập nhật liên tục và thích ứng linh hoạt theo ngữ cảnh. Với ưu điểm dễ mở rộng và cộng đồng phát triển mạnh mẽ, LangChain đã trở thành một trong những nền tảng tiêu chuẩn trong hệ sinh thái AI hiện nay, giúp rút ngắn thời gian phát triển ứng dụng mà không cần huấn luyện lại mô hình từ đầu.
+54: - Việc nghiên cứu LangChain mang lại nhiều lợi ích thiết thực cho định hướng phát triển của cá nhân em:
+55: Tính cấp thiết và mới mẻ: LangChain mở ra hướng đi đột phá, biến LLM từ công cụ đơn lẻ thành thành phần của hệ thống AI phức tạp, cần thiết để bắt kịp tốc độ phát triển công nghệ.
+56: Giá trị ứng dụng thực tiễn: Kiến thức về xây dựng chatbot với LangChain có thể ứng dụng trực tiếp vào chăm sóc khách hàng, trợ lý ảo, hệ thống hỏi đáp thông minh hoặc nền tảng hỗ trợ ra quyết định.
+57: Định hướng nghề nghiệp: Đây là nền tảng quan trọng giúp định hướng rõ ràng hơn trên con đường theo đuổi các vị trí như AI Engineer, Machine Learning Engineer hoặc Developer.
+58: -  Việc tìm hiểu công nghệ Langchain là cần thiết cho định hướng phát triển của bản thân vì nó thể hiện sự nghiêm túc và tầm nhìn của em đối với lĩnh vực đang theo đuổi. Thay vì chỉ dừng ở lý thuyết chung chung, việc nghiên cứu LangChain giúp em nhận ra đây chính là ‘chiếc cầu nối’ giữa kiến thức hiện tại và mục tiêu phát triển trong tương lai.
+59:   	 Chính vì vậy, trong học phần môn “Các công nghệ lập trình hiện đại”, em đã lựa chọn đề tài “Tìm hiểu Framework LangChain” vì đây là một trong những công nghệ tiêu biểu trong lĩnh vực Trí tuệ nhân tạo (AI), đặc biệt là trong việc ứng dụng các mô hình ngôn ngữ lớn (LLM) vào thực tiễn.
+60: 	- Thông qua đề tài này, em mong muốn có thể hiểu rõ hơn cơ chế hoạt động của LangChain, cách framework này kết nối mô hình AI với dữ liệu, công cụ và API từ đó xây dựng được các chatbot thông minh và trang bị cho bản thân kiến thức nền tảng vững chắc phục vụ định hướng phát triển nghề nghiệp trong môi trường AI của mình.
+61: 2. Tổng quan về LangChain và cơ hội nghề nghiệp
+62: 	- LangChain được sáng lập bởi Harrison Chase, một kỹ sư từng làm việc trong lĩnh vực Machine Learning tại startup Robust Intelligence. Vào khoảng tháng 10 năm 2022, anh bắt đầu phát triển LangChain với mục tiêu xây dựng một framework giúp mô hình ngôn ngữ lớn (LLM) có thể tương tác linh hoạt với dữ liệu và công cụ bên ngoài. Sau đó, Harrison Chase đã thành lập công ty riêng LangChain, Inc. để tiếp tục phát triển và thương mại hóa dự án này.
+63: 	- LangChain là một framework mã nguồn mở cho phép lập trình viên xây dựng các ứng dụng thông minh dựa trên mô hình ngôn ngữ lớn như GPT (OpenAI), Claude (Anthropic), hay Gemini (Google). Điểm mạnh của LangChain là khả năng kết nối LLM với dữ liệu riêng thông qua cơ chế RAG (Retrieval-Augmented Generation), tích hợp công cụ bên ngoài (Tools), và duy trì ngữ cảnh hội thoại (Memory). Nhờ đó, LangChain hỗ trợ mạnh mẽ việc phát triển chatbot, trợ lý ảo, hệ thống hỏi đáp chuyên ngành hoặc ứng dụng AI tùy chỉnh theo doanh nghiệp.
+64: 	- Dự án LangChain phát triển với tốc độ ấn tượng, liên tục bổ sung tính năng mới, tối ưu kiến trúc và mở rộng hệ sinh thái. Dù không sử dụng hệ thống phiên bản chính thức như “v1.0” hay “v2.0”, cộng đồng thường chia các giai đoạn phát triển của LangChain theo thay đổi cấu trúc và triết lý thiết kế - minh chứng cho sự năng động và đổi mới không ngừng của framework này.
+65: 	- Hiện nay, LangChain sở hữu một cộng đồng toàn cầu quy mô lớn, hoạt động sôi nổi và tăng trưởng mạnh :
+66: GitHub langchain-ai/langchain đạt hơn 90k + stars (2025) với hàng trăm contributors tích cực.
+67: Cộng đồng Discord/Slack hàng chục nghìn thành viên, thường xuyên thảo luận, Q&A.
+68: Rất nhiều tutorial, repo mẫu, blog hướng dẫn từ cộng đồng toàn cầu.
+69: 	- Cơ hội nghề nghiệp: Việc nắm vững LangChain mở ra nhiều vị trí hấp dẫn trong ngành Trí tuệ nhân tạo và Phát triển phần mềm thông minh như:
+70: AI Engineer / Machine Learning Engineer: Xây dựng, huấn luyện và triển khai mô hình AI/ML; tích hợp các LLM như GPT, Claude, LLaMA… vào hệ thống ứng dụng thực tế.
+71: Chatbot Developer: Thiết kế và xây dựng trợ lý ảo thông minh dựa trên LangChain, kết hợp với vector database và API.
+72: Data Scientist: Ứng dụng LangChain cùng cơ sở dữ liệu vector (Vector Database) để xây dựng quy trình RAG, khai thác dữ liệu thông minh và hỗ trợ phân tích chuyên sâu.
+73: Prompt Engineer: Thiết kế và tối ưu prompt cho các mô hình ngôn ngữ lớn nhằm nâng cao độ chính xác và tính sáng tạo của phản hồi.
+74: Backend Developer:  xây dựng API tích hợp LangChain vào hệ thống backend của doanh nghiệp.
+75: - Hiện nay, nhiều tập đoàn và công ty công nghệ lớn như OpenAI, Google, Microsoft, FPT AI, Techvify, MincaAI… đang ứng dụng LangChain trong sản phẩm thực tế hoặc tuyển dụng nhân sự có kinh nghiệm về framework này. Điều đó cho thấy LangChain không chỉ là một công cụ học tập, mà còn là chìa khóa mở ra cơ hội nghề nghiệp vững chắc trong kỷ nguyên AI hiện nay.
+76: 3. Nhiệm vụ và đóng góp cá nhân
+77: Trong nhóm 10, em đảm nhận vai trò nghiên cứu và thực hành nội dung kỹ thuật của đề tài. Cụ thể, các nhiệm vụ chính của em là:
+78: 	- Tham gia cùng các bạn trong nhóm lựa chọn đề tài phù hợp với định hướng của cả nhóm và mục tiêu của học phần.
+79: - Cập nhật tiến độ thực hiện công việc được giao hàng tuần với nhóm trưởng.
+80: 	- Cùng các thành viên khác trong nhóm thảo luận, trao đổi để đưa ra ý kiến và đề xuất giúp nâng cao chất lượng nội dung và sản phẩm trong các buổi báo cáo tuần.
+81: 
+82: 	- Cụ thể trong quá trình thực hiện, em phụ trách tìm hiểu và triển khai thành phần SearchWebTool – công cụ hỗ trợ giúp Agent có khả năng tìm kiếm thông tin từ web và trả lời những dữ liệu theo yêu cầu của người dùng. Ví dụ: 
+83: Khi người dùng nhập: “bạn gợi ý cho mình vài bộ phim truyền động lực sống”. Do nội dung liên quan đến tra cứu thông tin phim nên Agent sẽ gọi SearchWebTool để tìm kiếm và trả về kết quả phù hợp từ Internet là danh sách thông tin các bộ phim.  
+84: 
+85: 
+86: 	- Bên cạnh đó, em còn phụ trách nghiên cứu thực hành về cơ chế Memory trong LangChain, thông qua việc mô phỏng một cuộc hội thoại ngắn, nhằm quan sát cách hệ thống lưu trữ và tái sử dụng thông tin trong quá trình phản hồi. 
+87: 	- Thực hành xây dựng một Agent tính toán có khả năng tự chọn công cụ (Tool) như phép cộng và nhân thông qua decorator @tool, giúp hệ thống tự xác định và chọn lựa công cụ phù hợp khi được người dùng yêu cầu thực hiện phép tính.
+88: 4. Khó khăn và cách khắc phục.
+89: Trong quá trình thực hiện đồ án, em gặp phải một số khó khăn như sau:
+90: 	- Khó khăn trong quá trình làm việc nhóm: do ban đầu các thành viên chưa hiểu rõ ý tưởng và cách triển khai nên việc phối hợp chưa được đồng nhất. Tuy nhiên, sau nhiều buổi thảo luận mọi người dần hiểu nhau hơn, cùng hỗ trợ lẫn nhau và hoàn thành đồ án một cách trôi chảy, hiệu quả hơn. 
+91: - Lỗi cài đặt thư viện LangChain: do phiên bản mới có nhiều thay đổi so với trước đây nhiều gói bị tách nhỏ (langchain-core, langchain-community), dẫn đến lỗi import. Em đã khắc phục bằng cách cài đặt lại môi trường ảo và kiểm tra version tương thích với sự hỗ trợ từ các thành viên trong nhóm.
+92: - Khó khăn trong việc tìm kiếm các model miễn phí phù hợp để áp dụng vào đồ án cũng như các bài tập thực hành giúp chatbot trả lời tốt nhất. Sau khi trao đổi cùng các thành viên trong nhóm, chúng em đã tìm kiếm và biết đến Groq giúp gọi API tới những model miễn phí nhưng chất lượng rất tốt phù hợp cho đồ án của mình.
+93: - Khó khăn trong việc hiểu rõ cơ chế hoạt động và mô phỏng cách Agent ghi nhớ và suy luận dựa trên ngữ cảnh hội thoại. Để khắc phục, em đã thực hiện với nhiều thử nghiệm khác nhau từ đó quan sát cách phản hồi và rút ra kết luận chính xác nhất về cách Agent lưu trữ và tái sử dụng thông tin trong quá trình đối thoại. 
+94: 	=> Qua quá trình này, em đã cải thiện được kỹ năng xử lý và khắc phục các lỗi gặp trong quá trình thực hiện, kỹ năng làm việc nhóm, đọc hiểu tài liệu kỹ thuật, và hiểu sâu hơn về cách LangChain vận hành thực tế.
+95: 5. Kết luận và hướng phát triển
+96: a) Kết luận: 
+97: 	- Qua quá trình tìm hiểu Framework LangChain, em đã hiểu rõ hơn về kiến trúc tổng thể của các hệ thống AI hiện đại và cách kết hợp mô hình ngôn ngữ lớn (LLM) với dữ liệu riêng, công cụ và API bên ngoài để tạo ra các ứng dụng thông minh.
+98: 	- Đề tài không chỉ giúp em nâng cao kỹ năng lập trình Python, mà còn rèn luyện tư duy hệ thống, khả năng tích hợp các thành phần AI từ backend, cơ sở dữ liệu đến tầng triển khai API.
+99: 	- Đề tài đã hoàn thành mục tiêu ban đầu, cụ thể là tìm hiểu chuyên sâu về framework LangChain và ứng dụng để xây dựng chatbot trò chuyện hỗ trợ tâm lý. Hệ thống chatbot có khả năng trò chuyện tự nhiên, đồng cảm, truy xuất thông tin nội bộ (RAG) và tìm kiếm nội dung truyền cảm hứng trên Internet (Search Web Tool).
+100: 	- Đã vận dụng thành công nhiều thành phần của LangChain như: Agent, Tool, Retriever, RAG, Tokenizer, Embedding, Chunking, Memory...
+101: 	- Chatbot được tích hợp với giao diện web thông qua FastAPI, giúp người dùng dễ dàng tương tác trực quan.
+102: 	=> Đề tài này là nền tảng quan trọng giúp em tiếp tục phát triển định hướng nghề nghiệp trong tương lai, đặc biệt là trong các vị trí như AI Developer, LLM Engineer và Machine Learning Engineer, góp phần củng cố kiến thức và kỹ năng cần thiết cho học tập cũng như công việc sau này.
+103: b) Hướng phát triển: 
+104: 	- Sau khi hoàn thành đồ án này, nhóm chúng em định hướng phát triển theo các hướng sau:
+105: Tích hợp LangSmith để đánh giá chất lượng phản hồi của mô hình.
+106: Sử dụng Docker để triển khai hệ thống đa microservices.
+107: Áp dụng LangGraph để xây dựng hệ thống multi-agent thông minh.
+108: Nâng cao kiến thức về LLM và LangChain: tiếp tục nghiên cứu sâu hơn về cơ chế hoạt động của LangChain (Agents, Tools, RAG, Memory) cũng như khả năng kết hợp với các mô hình LLM mới.
+109: Mở rộng sang các công nghệ liên quan: tìm hiểu thêm về vector database (FAISS, Pinecone, Weaviate), cơ chế tối ưu hóa chi phí khi triển khai LLM, và bảo mật dữ liệu người dùng.
+110: Nghiên cứu ứng dụng AI trong chăm sóc sức khỏe tinh thần: tiếp tục tìm hiểu cách ứng dụng AI trong lĩnh vực tâm lý học, đảm bảo yếu tố đạo đức và an toàn.
+111: Rèn luyện kỹ năng phát triển hệ thống: nâng cao khả năng triển khai backend với FastAPI, tối ưu cơ sở dữ liệu, và sử dụng Docker/Kubernetes để mở rộng hệ thống thực tế.
+112: Định hướng học thuật và nghề nghiệp: có kế hoạch theo đuổi các khóa học nâng cao hoặc dự án nghiên cứu về AI ứng dụng trong y tế và đời sống,  đồng thời phát triển kỹ năng để có thể tham gia vào các dự án AI quy mô lớn trong tương lai.
+113: 
+114: 
+TABLES
+[]

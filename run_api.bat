@@ -1,10 +1,12 @@
 @echo off
 setlocal
-set PYTHONIOENCODING=utf-8
-set "PROJECT_PYTHON=%~dp0.venv\Scripts\python.exe"
-if not exist "%PROJECT_PYTHON%" set "PROJECT_PYTHON=python"
-pushd "%~dp0"
-"%PROJECT_PYTHON%" "%~dp0start_api.py"
-set "RUN_EXIT_CODE=%ERRORLEVEL%"
-popd
-exit /b %RUN_EXIT_CODE%
+set "PYTHON=%~dp0.venv\Scripts\python.exe"
+if not exist "%PYTHON%" set "PYTHON=python"
+"%PYTHON%" "%~dp0start_langgraph.py" %*
+set "CHATBOT_EXIT_CODE=%errorlevel%"
+if not "%CHATBOT_EXIT_CODE%"=="0" (
+    echo.
+    echo Khong khoi dong duoc chatbot. Xem thong bao loi ben tren.
+    pause
+)
+exit /b %CHATBOT_EXIT_CODE%

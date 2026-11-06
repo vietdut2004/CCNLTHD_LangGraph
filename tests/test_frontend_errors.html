@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<meta charset="utf-8">
+<title>Frontend error regression tests</title>
+<body data-test-status="running">
+<div id="messages"></div>
+<form id="chat-form"><textarea id="question"></textarea><button id="send">Send</button></form>
+<button id="new-chat">New</button>
+<div id="error" hidden></div><span id="connection"></span>
+<span id="activity"></span><span id="conversation"></span>
+<pre id="result">RUNNING</pre>
+<script>
+// Only a synthetic local response is used. Tests never contact an AI provider.
+window.fetch = async () => ({ok: true, status: 200, json: async () => ({thread_id: "test-thread"})});
+</script>
+<script src="../frontend/app.js"></script>
+<script>
+window.addEventListener("load", async () => {
+  let checks = 0;
+  const assert = (condition, message) => {
+    if (!condition) throw new Error(message);
+    checks++;
+  };
+  const secret = "provider-secret-must-never-appear";
+  const fallback = "Trợ lý chưa thể trả lời. Hãy kiểm tra cấu hình dịch vụ hoặc thử lại sau.";
+  const cases = [
+    ["APIConnectionError", "kết nối Internet"],
+    ["APITimeoutError", "thời gian chờ"],
+    ["TimeoutError", "thời gian chờ"],
+    ["AuthenticationError", "GROQ_API_KEY"],
+    ["PermissionDeniedError", "quyền truy cập"],
+    ["RateLimitError", "giới hạn sử dụng"],
+  ];
+  try {
+    for (const [type, expected] of cases) {
+      const payload = {error: type, message: secret, traceback: secret};
+      const message = runErrorMessage(payload);
+      assert(message.includes(expected), `Missing actionable message for ${type}`);
+      assert(!message.includes(secret), `Provider details exposed for ${type}`);
+      window.fetch = async () => ({ok: true, status: 200, json: async () => ({__error__: payload})});
+      let thrown = null;
+      try { await api("/threads/test-thread/runs/wait", {}); }
+      catch (error) { thrown = error; }
+      assert(thrown instanceof Error && thrown.message === message, `Run failure swallowed for ${type}`);
+    }
+    for (const payload of [null, undefined, false, true, "AuthenticationError: " + secret,
+      {message: secret}, {error: "UnknownError", message: secret}, {error: {message: secret}}]) {
+      assert(runErrorMessage(payload) === fallback, "Unknown or malformed errors must use a safe fallback");
+    }
+    const result = {messages: [{type: "ai", content: "Xin chào"}]};
+    let request;
+    window.fetch = async (path, options) => {
+      request = {path, options};
+      return {ok: true, status: 200, json: async () => result};
+    };
+    const input = {assistant_id: "chatbot", input: {messages: [{type: "human", content: "Hi"}]}};
+    assert(await api("/threads/test-thread/runs/wait", input) === result,
+      "Successful runs must return graph values without changing the schema");
+    assert(request.options.method === "POST" && JSON.parse(request.options.body).assistant_id === "chatbot",
+      "Native run request must remain unchanged");
+    window.fetch = async () => ({ok: false, status: 404, json: async () => ({message: secret})});
+    let missing;
+    try { await api("/threads/missing/state"); } catch (error) { missing = error; }
+    assert(missing.status === 404 && missing.message.includes("Cuộc trò chuyện không còn tồn tại"),
+      "Missing-thread detection must remain available to initialize()");
+    assert(!missing.message.includes(secret), "HTTP failures must not expose raw server payloads");
+    document.body.dataset.testStatus = "passed";
+    document.getElementById("result").textContent = `PASS: ${checks} frontend error checks`;
+  } catch (error) {
+    document.body.dataset.testStatus = "failed";
+    document.getElementById("result").textContent = "FAIL: " + error.message;
+  }
+});
+</script>
+</body>
+</html>

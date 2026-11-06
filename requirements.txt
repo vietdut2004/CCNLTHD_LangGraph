@@ -1,2 +1,18 @@
-# Canonical environment for the restored embedding + FAISS demo.
--r requirements-locked.txt
+fastapi
+uvicorn
+python-dotenv
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+langchain-groq
+langchain-huggingface
+langchain-tavily
+langserve
+langgraph
+langgraph-sdk
+langgraph-cli[inmem]==0.4.33
+langsmith
+faiss-cpu
+pypdf
+sentence-transformers

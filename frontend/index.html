@@ -3,35 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8ff">
   <title>Hỗ trợ tâm lý</title>
-  <link rel="icon" href="/frontend/assets/sgu-report.png" type="image/png">
-  <link rel="stylesheet" href="/frontend/style.css">
-  <script src="/frontend/app.js" defer></script>
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
 </head>
 <body>
-  <div class="chat-app">
-    <aside class="sidebar" aria-label="Chatbot đồng hành">
-      <div class="brand">
-        <img class="brand-logo" src="/frontend/assets/sgu-report.png" alt="SGU" width="45" height="45">
-        <div>
-          <div class="brand-title">Hỗ trợ tâm lý</div>
-          <div class="brand-subtitle">Chatbot đồng hành</div>
-        </div>
-      </div>
+  <div class="app">
+    <aside class="sidebar" aria-label="Thanh bên">
+      <a class="brand" href="/" aria-label="Hỗ trợ tâm lý — trang chủ">
+        <img src="/static/logo.svg" width="34" height="34" alt="Biểu tượng hỗ trợ tâm lý">
+        <span><strong>Hỗ trợ tâm lý</strong><small>Chatbot đồng hành</small></span>
+      </a>
+      <button class="new-chat" id="new-chat" type="button"><span aria-hidden="true">＋</span> Cuộc trò chuyện mới</button>
     </aside>
-    <main class="chat-panel">
+    <main class="chat">
       <header class="chat-header">
-        <h1>Hỗ trợ tâm lý</h1>
-        <p>Trợ lý đồng hành trong hành trình tâm lý của bạn</p>
+        <div><h1>Hỗ trợ tâm lý</h1><p>Trợ lý đồng hành trong hành trình tâm lý của bạn</p></div>
+        <span class="connection" id="connection" role="status">Đang kết nối…</span>
       </header>
-      <p class="connection-status" id="connection-status" role="status" hidden></p>
-      <section class="messages" id="messages" role="log" aria-label="Cuộc trò chuyện" aria-live="polite" aria-relevant="additions text"></section>
-      <form class="composer" id="chat-form">
-        <label class="sr-only" for="message-input">Chia sẻ suy nghĩ hoặc cảm xúc của bạn</label>
-        <textarea id="message-input" rows="1" maxlength="8000" placeholder="Chia sẻ suy nghĩ hoặc cảm xúc của bạn..." required></textarea>
-        <button id="send-button" type="submit">Gửi</button>
-      </form>
-      <footer class="conversation-footer">Conversation ID: <span id="conversation-id"></span></footer>
+      <section class="messages" id="messages" role="log" aria-label="Nội dung trò chuyện" aria-live="polite" aria-relevant="additions text"></section>
+      <div class="composer-area">
+        <p class="error" id="error" role="alert" hidden></p>
+        <form class="composer" id="chat-form">
+          <label class="sr-only" for="question">Chia sẻ suy nghĩ hoặc cảm xúc của bạn</label>
+          <textarea id="question" name="question" rows="1" maxlength="8000" placeholder="Chia sẻ suy nghĩ hoặc cảm xúc của bạn..." required></textarea>
+          <button id="send" type="submit">Gửi</button>
+        </form>
+        <footer><span id="conversation">Cuộc trò chuyện mới</span><span id="activity" role="status"></span></footer>
+      </div>
     </main>
   </div>
 </body>

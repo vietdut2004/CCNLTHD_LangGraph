@@ -1,93 +1,67 @@
-# Chatbot Hỗ trợ tâm lý — Nhóm 15
+# Chatbot hỗ trợ tâm lý — LangGraph
 
+Giao diện tiếng Việt theo ảnh tham chiếu: thanh bên trắng, nền tím nhạt, tin nhắn trợ lý trắng, tin nhắn người dùng hồng, ô nhập và nút Gửi ở dưới. Giao diện tự thích ứng trên điện thoại. Biểu tượng trái tim là SVG thay thế; có thể thay `frontend/logo.svg` bằng logo chính thức nếu có.
 
+## Chạy trên Windows
 
-## Cài đặt và chạy
-
-Dùng Windows, Python **3.13.2**. Tại thư mục có `main.py`:
+Yêu cầu Python 3.11 trở lên.
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-if (-not (Test-Path .env)) { Copy-Item .env.example .env }
-# Tự điền GROQ_API_KEY và TAVILY_API_KEY vào .env cục bộ.
-.\.venv\Scripts\python.exe -X utf8 -m benchmarks.verify_handover --strict
-.\.venv\Scripts\python.exe start_api.py
+.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-Mở http://127.0.0.1:8000/ ; API tại `/docs`, định danh tại `/health`.
-Chỉ dùng một worker vì cache/checkpoint lưu RAM. Giữ model mặc định ở trên.
-`requirements.txt` dẫn tới **một lock duy nhất**: `requirements-locked.txt`.
-Các recipe cũ ở `docs/historical_requirements/`, không cài chồng.
-Không đưa `.env`, API key hoặc `.venv` vào Git/bài nộp.
-
-Khi khởi động, ứng dụng chuẩn bị model embedding và chỉ mục PDF trước khi nhận
-yêu cầu; đợi `Application startup complete` rồi mở giao diện. Model tải đúng
-revision từ Hugging Face nếu chưa có cache. Bước chuẩn bị không gọi Groq, có
-log riêng `.cache/rag_preparation.json`, không trừ thời gian này khỏi các số
-đo cũ. Không đóng gói `.cache` hoặc hồ sơ trình duyệt. Giao diện giữ mã phiên
-trong tab để gửi lịch sử nhiều lượt; dữ liệu phía server mất khi restart.
-
-## Kiểm tra không gọi dịch vụ
+Nếu chưa có `.env`, sao chép `.env.example` thành `.env` rồi điền `GROQ_API_KEY`. Điền thêm `TAVILY_API_KEY` để tìm kiếm web. Giữ lại khóa hiện có nếu đã cấu hình; không đưa khóa vào mã giao diện.
 
 ```powershell
-.\.venv\Scripts\python.exe -X utf8 -m pytest -q -p no:cacheprovider tests
-.\.venv\Scripts\python.exe -X utf8 -m benchmarks.smoke_handover
-.\.venv\Scripts\python.exe -X utf8 -m benchmarks.check_rag_retrieval --output evidence_recheck
-.\.venv\Scripts\python.exe -X utf8 -m benchmarks.verify_final
+.venv\Scripts\python.exe start_langgraph.py
 ```
 
-Smoke dùng model/web fixture và PDF/embedding/FAISS thật. Không gọi đây là kết quả Groq/Tavily mới.
-Hai ca unit cần model embedding thật được bỏ qua mặc định; có thể bật bằng
-`RUN_LOCAL_EMBEDDING_TESTS=1`. Kiểm tra retrieval riêng dùng model thật và lưu
-đủ đoạn/điểm/trang. Tắt demo trước khi chạy retrieval offline để không nạp hai
-bản embedding cùng lúc trên máy ít RAM. Các script live chỉ chạy khi chủ động
-dùng quota.
+Mở **http://127.0.0.1:2024**. Cũng có thể nhấp đúp `run_langgraph.bat`. Các lệnh `start_api.py`, `run_api.bat`, `run_api.ps1` chuyển về cùng máy chủ LangGraph. Không chạy Live Server hoặc `uvicorn main:app`: các API threads/runs do LangGraph Agent Server cung cấp.
 
-Chạy tám câu RAG cũ bằng Groq thật, dùng output chưa tồn tại:
+Trong VS Code, cũng có thể mở `agent.py` rồi chọn **Run Python File** để khởi động web, hoặc chạy `.\run_langgraph.bat` trong terminal PowerShell. Giữ terminal chạy trong lúc sử dụng; nhấn Ctrl+C để dừng. Nếu chạy bằng cách nhấp đúp và có lỗi, cửa sổ sẽ giữ lại thông báo để kiểm tra.
+
+Chương trình tự mở trình duyệt khi web đã sẵn sàng. Nếu không muốn tự mở, chạy `.\run_api.bat --no-browser`. Nhật ký khởi động được lưu tại `.cache/last_startup.log`. Nếu chatbot đã chạy, lệnh khởi động sẽ sử dụng lại máy chủ đang có.
+
+Để khởi động lại, kể cả khi máy chủ đang chạy nền, dùng:
 
 ```powershell
-.\.venv\Scripts\python.exe -X utf8 -m benchmarks.run_rag_live --base-url http://127.0.0.1:8000 --prepare-index --delay 30 --output ..\rag_live_recheck --ids rag_01 rag_02 rag_03 rag_04 rag_05 rag_06 rag_07 rag_08
+.\run_langgraph.bat --restart
 ```
 
-Log chuẩn bị FAISS nằm riêng; không warm-up model hoặc retry tự động. Thiếu
-token usage để `null` trong JSON và trống trong CSV. Bước kiểm tra strict đối
-chiếu source hiện tại và kiểm tra nguyên vẹn dữ liệu lịch sử, không gán định
-danh mới cho các log cũ.
+Cũng có thể nhấp đúp `restart_langgraph.bat`. Lệnh này dừng cây tiến trình LangGraph đã xác định thuộc môi trường `.venv` của dự án rồi chạy lại; không xóa lịch sử hoặc dừng các chương trình Python khác. Nếu đang có terminal máy chủ, có thể nhấn Ctrl+C để dừng rồi chạy lại `run_langgraph.bat`. Giữ terminal mới mở trong lúc dùng chatbot.
 
-Chế độ `--base-url` dùng API đang chạy và đọc trace của API đó, không nạp thêm
-embedding trong một tiến trình server thứ hai.
+Enter gửi tin; Shift+Enter xuống dòng. Nút “Cuộc trò chuyện mới” mở thread riêng. Tải lại cùng tab khôi phục hội thoại từ máy chủ. Tab chỉ lưu mã thread trong `sessionStorage`, không lưu nội dung tin nhắn trong trình duyệt. Tạo hội thoại mới không xóa thread cũ trên máy chủ.
 
-## Nội dung code và minh chứng
+## Kiến trúc
 
-- `agent.py`, `main.py`, `frontend/`: API `/chatbot`, model chọn RAG/web hoặc trả
-  lời trực tiếp; nguồn được kiểm citation/quote. Chỉ thực thi tối đa một tool
-  trong một lượt, chưa phải agent lập kế hoạch nhiều bước.
-- `Stress.pdf`, `Rag_tool.py`, `faiss_retrieval.py`: checkpoint
-  `VoVanPhuc/sup-SimCSE-VietNamese-phobert-base` revision
-  `608779b86741a8acd8c8d38132974ff04086b138`, PyVi, mean pooling, chuẩn hóa vector,
-  FAISS IndexFlatL2; chunk tối đa 1000 ký tự, overlap 180, top-6. Khoảng cách L2
-  bình phương nhỏ hơn nghĩa là gần hơn, không phải xác suất đáp án đúng.
-- `retrieval.py`: BM25 lịch sử để đối chiếu, không làm fallback cho FAISS.
-- `response_cache.py`: exact cache RAM TTL 300 giây, capacity 128. Bộ nhớ phiên
-  dùng InMemorySaver; ID caller tự khai không phải cơ chế đăng nhập/phân quyền.
-- `math_graph.py`: executor riêng, chưa gắn vào chatbot hoặc LLM tool choice.
-- `handover/`: nguyên bản log/trace/context/usage, bộ đề và phiếu người chấm.
-- `evidence/`: chat lịch sử, lỗi auth, các lượt kiểm tra có ngày và chỉ mục từng câu.
-- `docs/`: bảng phủ, giới hạn, AI Disclosure, chỉ mục bộ đề và nhật ký thay đổi.
-- `labs/`: bài tập độc lập có starter/solution; gói lab được phát riêng khi nộp.
+```mermaid
+flowchart LR
+  UI[Giao diện web] --> API[LangGraph Agent Server]
+  API --> A[assistant]
+  A -->|có tool call| T[ToolNode]
+  T -->|kết quả công cụ| A
+  A -->|đã có câu trả lời| E[END]
+  T --> R[rag_tool: retrieve → answer]
+  T --> W[search_web: Tavily]
+```
 
-RAG **BM25 lịch sử**: 5 hồi quy + 8 câu ngày 28/10; 13 phiếu đạt **96/104**.
-Web **lịch sử 28/10**: 4 câu kỹ thuật, **2 trả lời/2 từ chối**, điểm **20/32**.
-Một người chấm; web có Codex hỗ trợ, chưa thẩm định URL độc lập. Không quy các điểm
-này thành độ chính xác hay hiệu quả lâm sàng. HTTP 200, quote khớp và retrieval có
-đủ span là ba minh chứng riêng, không tự chứng minh đáp án đúng.
+- `agent.py`: `StateGraph(MessagesState)`, node trợ lý bất đồng bộ, rẽ nhánh công cụ và vòng lặp trả lời.
+- `graph.py`: xuất đồ thị `chatbot` cho Agent Server. Runtime quản lý checkpoint và lịch sử theo thread; không gắn checkpointer riêng vào graph triển khai.
+- `Rag_tool.py`: đồ thị RAG lấy ngữ cảnh từ `Stress.pdf` rồi tạo câu trả lời có chỉ dẫn nguồn/trang. FAISS và Hugging Face hỗ trợ truy xuất; Groq cung cấp mô hình ngôn ngữ. Không còn `RetrievalQA` trong luồng ứng dụng.
+- `main.py`: chỉ phục vụ giao diện qua cấu hình `http.app` trong `langgraph.json`. Frontend gọi `POST /threads`, `GET /threads/{id}/state`, `POST /threads/{id}/runs/wait` trực tiếp, thay cho endpoint `/chatbot` cũ.
+- `frontend/`: HTML/CSS/JS thuần, không cần Node.js hoặc bước build. Giao diện hiển thị nội dung dưới dạng văn bản và liên kết an toàn.
 
-Các điểm người chấm, 57 test cũ và kết quả BM25 không phải kết quả của FAISS
-khôi phục. Source v1.3 gốc còn nguyên trong
-`handover/evidence/cache_memory_20261029/source_snapshots/` để kiểm hash.
+LangGraph điều phối toàn bộ luồng xử lý; HTML/CSS/JS vẫn là phần giao diện, các thư viện mô hình và tìm kiếm vẫn là tích hợp cần thiết. Đây không phải mô hình AI chạy ngoại tuyến: trả lời cần kết nối Groq, tìm web cần Tavily. Lần tra cứu PDF đầu có thể tải mô hình embedding nên sẽ chậm hơn. `langgraph dev` phục vụ phát triển trên máy cá nhân, dữ liệu runtime nằm trong `.langgraph_api/`; không dùng cấu hình dev này làm dịch vụ công khai.
 
-Các README/metadata trong thư mục bằng chứng là ghi chú tại thời điểm xuất; giữ
-nguyên cả lỗi, từ chối và trạng thái trước push. Nhật ký bản cuối ở `docs/JOURNAL.md`.
-Word/notebook cũ, ảnh sinh báo cáo và launcher CLI không thuộc demo đã được loại
-khỏi cây nộp; vẫn còn trong lịch sử Git. Báo cáo được nộp riêng cùng code.
+Các notebook và script bài tập cũ (`chain.py`, `promt.py`…) được giữ để tham khảo, không tham gia luồng chatbot. `LangServe.py` là tên tương thích để truy cập app giao diện, không cung cấp API LangServe riêng.
+
+## Kiểm tra
+
+```powershell
+.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+Các kiểm tra dùng mô hình và công cụ giả để xác minh vòng gọi công cụ, bộ nhớ phân tách theo thread, đồ thị RAG và phục vụ giao diện mà không gọi API tính phí.
+
+Tài liệu tham khảo: [Custom routes trong Agent Server](https://docs.langchain.com/langsmith/custom-routes), [rẽ nhánh công cụ với tools_condition](https://reference.langchain.com/python/langgraph.prebuilt/tool_node/tools_condition).
